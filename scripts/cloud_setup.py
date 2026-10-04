@@ -4,21 +4,27 @@ import argparse, json, shutil, subprocess, sys
 from pathlib import Path
 
 def plan(root, dirs):
-    commands=[]; problems=[]; found=False
+    commands=[]; problems=[]; found=False; seen=set()
     for name in dirs:
         p=(root/name).resolve()
         if not p.is_relative_to(root):
             problems.append('Project directory escapes repository: '+name); continue
+        if p in seen: continue
+        seen.add(p)
         if (p/'package.json').is_file():
             found=True
             try: data=json.loads((p/'package.json').read_text())
             except (ValueError,OSError) as e:
                 problems.append('Invalid package.json: '+name); continue
+            if not isinstance(data,dict):
+                problems.append('package.json must be an object at '+name); continue
             locks=[x for x in ['package-lock.json','pnpm-lock.yaml','yarn.lock'] if (p/x).is_file()]
             if len(locks)!=1:
                 problems.append('Need exactly one supported lockfile at '+name); continue
             manager={'package-lock.json':'npm','pnpm-lock.yaml':'pnpm','yarn.lock':'yarn'}[locks[0]]
             pinned=data.get('packageManager','')
+            if not isinstance(pinned,str):
+                problems.append('Invalid packageManager at '+name); continue
             if pinned and pinned.split('@')[0]!=manager:
                 problems.append('packageManager/lock mismatch at '+name); continue
             if manager=='yarn':
