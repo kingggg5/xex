@@ -1,0 +1,21 @@
+[package]
+name = "xexoria-chat-filter"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Bounded English/Thai chat policy filter and anti-flood guard for an authoritative game server"
+publish = false
+exclude = [".library_transfer/**"]
+
+[dependencies]
+aho-corasick = "=1.1.5"
+unicode-normalization = "=0.1.25"
+unicode-segmentation = "=1.13.3"
+
+[[bench]]
+name = "throughput"
+harness = false
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

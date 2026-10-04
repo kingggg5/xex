@@ -1,0 +1,299 @@
+{
+  "stage": "candidate_only",
+  "blender": "5.2.2 LTS",
+  "generator": "Modular Tree 5.5.2",
+  "archive_sha256": "58aab6e397ae4659f8c4c08e5ac774b249476e681f4023f72a17ea413918897f",
+  "wheel_sha256": "38c9cc4224397a2e88730e8ead5341189ff4595cfe2ba63875c308d7e15a4bfb",
+  "source_url": "https://github.com/GoodPie/modular_tree/releases/tag/5.5.2",
+  "generator_code_license": {
+    "addon": "GPL-3.0-or-later",
+    "core": "MIT"
+  },
+  "original_geometry": "Native MTree seeded trunk/branch engine, source-authored leaf distribution",
+  "texture_license": "CC0-1.0",
+  "api_repair": "NodesModifier.properties.inputs.<identifier>.value, Blender 5.2",
+  "api_source": "https://developer.blender.org/docs/release_notes/5.2/python_api/",
+  "textures": [
+    {
+      "file": "textures/pine_twig_cc0.png",
+      "source": "https://polyhaven.com/a/pine_tree_01",
+      "channel": "twig_diff",
+      "license_source": "https://polyhaven.com/license",
+      "upstream_md5": "a4fa4a55aab9231915a4023ea9841577",
+      "sha256": "d02c031de64b8ad671f3dd0da19870fa4783d912ae6674aeab0702871deeaeaa"
+    },
+    {
+      "file": "textures/pine_bark_cc0.jpg",
+      "source": "https://polyhaven.com/a/pine_tree_01",
+      "channel": "bark_diff",
+      "license_source": "https://polyhaven.com/license",
+      "upstream_md5": "7d3a558ed614c7e75594c7be3bf80311",
+      "sha256": "5c76836b01c3536fa0e24207b67bf4f3315b53ebe2b4ecc6f08dfcf3f8d74929"
+    },
+    {
+      "file": "textures/broadleaf_cluster_cc0.png",
+      "source": "https://polyhaven.com/a/tree_small_02",
+      "channel": "leaves_diff",
+      "license_source": "https://polyhaven.com/license",
+      "upstream_md5": "2c667193084725e8553062ddbdc73c7d",
+      "sha256": "d3fc48522c76aa1f91076c6b86f302669822ebe4e2acabd67d42c4d57eaa5ba0"
+    },
+    {
+      "file": "textures/broadleaf_bark_cc0.jpg",
+      "source": "https://polyhaven.com/a/tree_small_02",
+      "channel": "branch_diff",
+      "license_source": "https://polyhaven.com/license",
+      "upstream_md5": "88b531469f5dba2fc44ca85df3776e7c",
+      "sha256": "a71b768e330c0c6cca097e30314f6b4e842ef724a1370f6aab14b4434eec64cb"
+    },
+    {
+      "file": "textures/pine_twig_alpha_cc0.png",
+      "source": "https://polyhaven.com/a/pine_tree_01",
+      "channel": "twig_alpha",
+      "license_source": "https://polyhaven.com/license",
+      "upstream_md5": "641911a5a3f543911dad04ebb26e7bca",
+      "sha256": "6f91aa99f2c27108d6f817f874954aa7df8bfbb4dea2673e9322555a6ae79d99"
+    },
+    {
+      "file": "textures/broadleaf_alpha_cc0.png",
+      "source": "https://polyhaven.com/a/tree_small_02",
+      "channel": "leaves_alpha",
+      "license_source": "https://polyhaven.com/license",
+      "upstream_md5": "63199ba87a9e8928424bd8c3b8017bd0",
+      "sha256": "4f143e2dda8a6a572f427ac378b92255d21761e4611de0d26e21816c01aa533b"
+    }
+  ],
+  "assets": [
+    {
+      "name": "oak",
+      "lod": 0,
+      "file": "oak_LOD0.glb",
+      "sha256": "f919bf755f0027815ee2c6e204add912eae4d7021e7fa2d1df114db7e8268c0c",
+      "triangles": 6182,
+      "budget_pass": true,
+      "parts": {
+        "oak_LOD0_branches": 1934,
+        "oak_LOD0_foliage": 4248
+      },
+      "height_m": 7.8,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "preset": "OAK",
+        "seed": 101,
+        "height": 7.8,
+        "radial": 8,
+        "leaf_scale": 0.78,
+        "max_radius": 0.1,
+        "densities": [
+          120.0,
+          30.0
+        ],
+        "branch_density": 1.05,
+        "split_probability": 0.22,
+        "bark_budget": [
+          3000,
+          650
+        ],
+        "texture": "broadleaf_cluster_cc0.png",
+        "alpha": "broadleaf_alpha_cc0.png",
+        "bark": "broadleaf_bark_cc0.jpg",
+        "uv": [
+          0.005,
+          0.415,
+          0.0,
+          0.995
+        ],
+        "card_width": 0.41
+      },
+      "alpha_mask_materials": [
+        "oak_CC0_foliage"
+      ],
+      "material_count": 2,
+      "uv_layers": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "oak",
+      "lod": 1,
+      "file": "oak_LOD1.glb",
+      "sha256": "9bec9ee0d3f98b1aa8306dad44ad4417158c5bc24dbe0624cadafa95bb314ef4",
+      "triangles": 1733,
+      "budget_pass": true,
+      "parts": {
+        "oak_LOD1_branches": 645,
+        "oak_LOD1_foliage": 1088
+      },
+      "height_m": 7.8,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "preset": "OAK",
+        "seed": 101,
+        "height": 7.8,
+        "radial": 8,
+        "leaf_scale": 0.78,
+        "max_radius": 0.1,
+        "densities": [
+          120.0,
+          30.0
+        ],
+        "branch_density": 1.05,
+        "split_probability": 0.22,
+        "bark_budget": [
+          3000,
+          650
+        ],
+        "texture": "broadleaf_cluster_cc0.png",
+        "alpha": "broadleaf_alpha_cc0.png",
+        "bark": "broadleaf_bark_cc0.jpg",
+        "uv": [
+          0.005,
+          0.415,
+          0.0,
+          0.995
+        ],
+        "card_width": 0.41
+      },
+      "alpha_mask_materials": [
+        "oak_CC0_foliage"
+      ],
+      "material_count": 2,
+      "uv_layers": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "conifer",
+      "lod": 0,
+      "file": "conifer_LOD0.glb",
+      "sha256": "c8b216ca478934592ba19b05db2954e885659ac742af4f095b8b76b3b411c328",
+      "triangles": 7792,
+      "budget_pass": true,
+      "parts": {
+        "conifer_LOD0_branches": 2696,
+        "conifer_LOD0_foliage": 5096
+      },
+      "height_m": 10.8,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "preset": "PINE",
+        "seed": 303,
+        "height": 10.8,
+        "radial": 6,
+        "leaf_scale": 1.05,
+        "max_radius": 0.1,
+        "densities": [
+          170.0,
+          19.0
+        ],
+        "branch_density": 1.65,
+        "split_probability": 0.1,
+        "bark_budget": [
+          2700,
+          600
+        ],
+        "texture": "pine_twig_cc0.png",
+        "alpha": "pine_twig_alpha_cc0.png",
+        "bark": "pine_bark_cc0.jpg",
+        "uv": [
+          0.001,
+          0.205,
+          0.545,
+          0.998
+        ],
+        "card_width": 0.46
+      },
+      "alpha_mask_materials": [
+        "conifer_CC0_foliage"
+      ],
+      "material_count": 2,
+      "uv_layers": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "conifer",
+      "lod": 1,
+      "file": "conifer_LOD1.glb",
+      "sha256": "a1db8ed16809a0783a888197b5f19f84d3cb36ded1e77d1e75c03243de7f1d46",
+      "triangles": 1895,
+      "budget_pass": true,
+      "parts": {
+        "conifer_LOD1_branches": 1147,
+        "conifer_LOD1_foliage": 748
+      },
+      "height_m": 10.8,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "preset": "PINE",
+        "seed": 303,
+        "height": 10.8,
+        "radial": 6,
+        "leaf_scale": 1.05,
+        "max_radius": 0.1,
+        "densities": [
+          170.0,
+          19.0
+        ],
+        "branch_density": 1.65,
+        "split_probability": 0.1,
+        "bark_budget": [
+          2700,
+          600
+        ],
+        "texture": "pine_twig_cc0.png",
+        "alpha": "pine_twig_alpha_cc0.png",
+        "bark": "pine_bark_cc0.jpg",
+        "uv": [
+          0.001,
+          0.205,
+          0.545,
+          0.998
+        ],
+        "card_width": 0.46
+      },
+      "alpha_mask_materials": [
+        "conifer_CC0_foliage"
+      ],
+      "material_count": 2,
+      "uv_layers": [
+        1,
+        1
+      ]
+    }
+  ],
+  "upstream_source_integrity": {
+    "pass": true,
+    "checked_original_files": 47
+  },
+  "license_files": [
+    {
+      "file": "licenses/LICENSE-generator-addon-GPL-3.0.md",
+      "sha256": "80d2fe6cb9f3829ef85a5a9618231007397611caf3d5a42a62827cc0a0bfc49a"
+    },
+    {
+      "file": "licenses/LICENSE-generator-core-MIT.md",
+      "sha256": "fdc21d33a95bc7d95ffa5c82f5c345810ef9cd7568a1f7578fe753ffabc1f901"
+    }
+  ],
+  "output_geometry_license": "Project-authored output; no public CC0 dedication"
+}

@@ -1,0 +1,43 @@
+{
+ "schema": "xexoria.terrain-lab-layout/1",
+ "status": "LAB ONLY - fixed 64 m review cell for the terrain splat lab (terrain spec §8.5). Not game content.",
+ "units": "metres, Babylon XZ (+x east, +z north)",
+ "cell": {"id": "terrain_lab", "bounds_xz": [-32, 32, -32, 32]},
+ "paths": [
+  {"id": "gate_road", "width_m": 4.6, "points": [[-6, 34], [-6, 8], [-5.2, -2], [-4, -6]]},
+  {"id": "southbound_trail", "width_m": 3.8, "points": [[-4, -6], [-9, -12], [-12, -19], [-9, -26], [-1, -30], [8, -34]]},
+  {"id": "east_return_path", "width_m": 2.5, "points": [[-5.4, 1], [6, 2.5], [16, 3], [26, 1], [34, 0]]},
+  {"id": "camp_spur", "width_m": 2.5, "points": [[16, 3], [17, 11], [21, 19], [24, 34]]}
+ ],
+ "water": [
+  {"id": "lab_stream", "kind": "stream", "surface_y": -0.35, "bed_y": -0.9, "width_m": [3.0, 3.6],
+   "points": [[-30, -20], [-22, -18.5], [-15, -19.2], [-6, -21.5], [2, -22]]}
+ ],
+ "bridges": [
+  {"id": "lab_bridge", "center_xz": [-11.55, -20.05], "along_xz": [0.39, -0.921], "length_m": 6.6, "deck_width_m": 3.6, "deck_y": 0}
+ ],
+ "relief": [
+  {"id": "lab_hill", "kind": "hill", "center_xz": [17, -16], "radius_m": 10.5, "height_m": 5.0, "toe_radius_m": 9.0},
+  {"id": "lab_cliff", "kind": "cliff", "polygon_xz": [[-31, 4], [-25.5, 4], [-25, 26], [-31, 26]], "height_m": 6.0, "ledge_y": 3.4}
+ ],
+ "rocks": [
+  {"id": "outcrop", "kind": "outcrop", "center_xz": [16, -21.5], "radius_m": 2.2, "height_m": 2.6},
+  {"id": "boulder_a", "kind": "boulder", "center_xz": [7, 17], "radius_m": 1.3, "height_m": 1.4},
+  {"id": "boulder_b", "kind": "boulder", "center_xz": [-19, 9], "radius_m": 1.0, "height_m": 1.1},
+  {"id": "boulder_c", "kind": "boulder", "center_xz": [24, -3], "radius_m": 0.8, "height_m": 0.8},
+  {"id": "boulder_d", "kind": "boulder", "center_xz": [1.5, -25], "radius_m": 1.1, "height_m": 1.2}
+ ],
+ "trees": [
+  {"id": "lab_oak_a", "position_xz": [10, 24], "canopy_radius_m": 3.4, "trunk_radius_m": 0.35},
+  {"id": "lab_oak_b", "position_xz": [-20, -4], "canopy_radius_m": 2.8, "trunk_radius_m": 0.3}
+ ],
+ "witness": {"position_xz": [-1.5, 9], "height_m": 1.8},
+ "anchors": {
+  "road_ruts": [-6, 14],
+  "junction": [-5, 0],
+  "bridge": [-11.55, -20.05],
+  "hill_toe": [10, -14],
+  "cliff_toe": [-22, 15],
+  "curve": [-11, -20]
+ }
+}

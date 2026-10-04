@@ -1,0 +1,309 @@
+{
+  "schema": "xexoria.blueprint-cc0/1",
+  "version": "sheep-v1-r03",
+  "assets": [
+    {
+      "id": "blueprint_cc0_sheep",
+      "status": "CC0_STANDIN",
+      "family": "licensed-animated-farm",
+      "lods": [
+        {
+          "lod": 0,
+          "file": "assets/models/blueprint-cc0/candidates/sheep-v1/r03/runtime/blueprint_cc0_sheep_lod0.meshopt.glb",
+          "tris": 612,
+          "sha256": "a3d1ee6efd031dd2d0157f1cad0db8d549fd721c61089b8f5fc6ceb0177ab66b",
+          "bytes": 173496,
+          "skins": 1,
+          "joints": 24,
+          "clips": [
+            {
+              "name": "Death",
+              "seconds": 1.0833333730697632,
+              "channels": 72
+            },
+            {
+              "name": "Idle",
+              "seconds": 6.25,
+              "channels": 72
+            },
+            {
+              "name": "Jump",
+              "seconds": 1.125,
+              "channels": 72
+            },
+            {
+              "name": "Run",
+              "seconds": 0.8333333134651184,
+              "channels": 72
+            },
+            {
+              "name": "Walk",
+              "seconds": 2.6666667461395264,
+              "channels": 72
+            },
+            {
+              "name": "WalkSlow",
+              "seconds": 2,
+              "channels": 72
+            }
+          ]
+        },
+        {
+          "lod": 1,
+          "file": "assets/models/blueprint-cc0/candidates/sheep-v1/r03/runtime/blueprint_cc0_sheep_lod1.meshopt.glb",
+          "tris": 426,
+          "sha256": "b648852fe59f9bddd8b774c307d17c2c8bd85ee85f78579a5adf911eb2cb9617",
+          "bytes": 175220,
+          "skins": 1,
+          "joints": 24,
+          "clips": [
+            {
+              "name": "Death",
+              "seconds": 1.0833333730697632,
+              "channels": 72
+            },
+            {
+              "name": "Idle",
+              "seconds": 6.25,
+              "channels": 72
+            },
+            {
+              "name": "Jump",
+              "seconds": 1.125,
+              "channels": 72
+            },
+            {
+              "name": "Run",
+              "seconds": 0.8333333134651184,
+              "channels": 72
+            },
+            {
+              "name": "Walk",
+              "seconds": 2.6666667461395264,
+              "channels": 72
+            },
+            {
+              "name": "WalkSlow",
+              "seconds": 2,
+              "channels": 72
+            }
+          ]
+        },
+        {
+          "lod": 2,
+          "file": "assets/models/blueprint-cc0/candidates/sheep-v1/r03/runtime/blueprint_cc0_sheep_lod2.meshopt.glb",
+          "tris": 244,
+          "sha256": "21639a85692e8aa3fc0e7a3ab0e120a1452b4c6e641fabecbd9ed15cc7c2e0fe",
+          "bytes": 167560,
+          "skins": 1,
+          "joints": 24,
+          "clips": [
+            {
+              "name": "Death",
+              "seconds": 1.0833333730697632,
+              "channels": 72
+            },
+            {
+              "name": "Idle",
+              "seconds": 6.25,
+              "channels": 72
+            },
+            {
+              "name": "Jump",
+              "seconds": 1.125,
+              "channels": 72
+            },
+            {
+              "name": "Run",
+              "seconds": 0.8333333134651184,
+              "channels": 72
+            },
+            {
+              "name": "Walk",
+              "seconds": 2.6666667461395264,
+              "channels": 72
+            },
+            {
+              "name": "WalkSlow",
+              "seconds": 2,
+              "channels": 72
+            }
+          ]
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.25476,
+          0,
+          -0.67885
+        ],
+        "max": [
+          0.25476,
+          1,
+          0.67885
+        ]
+      },
+      "textures": {
+        "count": 0,
+        "shared_materials": [
+          "sheep_wool_ivory",
+          "sheep_face_hooves_brown"
+        ]
+      },
+      "licence": "CC0",
+      "source": "https://opengameart.org/content/lowpoly-animated-farm-animal-pack",
+      "standinFor": [
+        "F1"
+      ],
+      "provenance": {
+        "author": "Quaternius",
+        "published": "2018-06-08",
+        "source": "https://opengameart.org/content/lowpoly-animated-farm-animal-pack",
+        "licence": "CC0-1.0",
+        "archive_url": "https://opengameart.org/sites/default/files/Farm%20Animals%20by%20%40Quaternius.zip",
+        "archive_sha256": "9ff42b7e2445eaf259e4734c08172637db92e4b59a6145909ac56d946152c39b",
+        "sheep_blend_sha256": "d4f137f393e5b3e5ba28af0977efbaef6e0ba7a6682e35b35f868f5caff47c7e",
+        "archive_original": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\cc0\\quaternius-farm-animal-2018-author-mirror\\Farm Animals by @Quaternius.zip",
+        "changes": [
+          "Metreunit/centre-foot normalization; sourcepose parity maxerror3.2098083538618706e-7m.",
+          "Matte nonmetal woolivory/facebrown materialslots preserved.",
+          "Bounded612/426/244triLODs; sourcejoint/validclips retained.",
+          "Removed95 dead curves targeting nonexistent sourceTail1–4bones; no new motion."
+        ],
+        "source_immutable": true
+      },
+      "rig": {
+        "jointCount": 24,
+        "skinCount": 1,
+        "clips": [
+          {
+            "name": "Death",
+            "seconds": 1.0833333730697632,
+            "channels": 72
+          },
+          {
+            "name": "Idle",
+            "seconds": 6.25,
+            "channels": 72
+          },
+          {
+            "name": "Jump",
+            "seconds": 1.125,
+            "channels": 72
+          },
+          {
+            "name": "Run",
+            "seconds": 0.8333333134651184,
+            "channels": 72
+          },
+          {
+            "name": "Walk",
+            "seconds": 2.6666667461395264,
+            "channels": 72
+          },
+          {
+            "name": "WalkSlow",
+            "seconds": 2,
+            "channels": 72
+          }
+        ],
+        "defaultClip": "Idle",
+        "metres": true,
+        "needsSkinnedLoader": true,
+        "retained_source_motion": true
+      },
+      "collider": {
+        "admission": "ROOT_OWNED_NOT_ADMITTED",
+        "kind": "decorative-living-animal",
+        "rule": "Do not createhardbody blockers without paired visible/server authority. Measured restbbox is provided; noAI/navigationspawn invented."
+      }
+    }
+  ],
+  "placementSuggestions": [
+    {
+      "id": "bp_F1_sheep_001",
+      "asset_id": "blueprint_cc0_sheep",
+      "x": 35.5,
+      "z": -25.8,
+      "y": 0,
+      "yaw": 0.2,
+      "target_height": 1,
+      "animation": {
+        "clip": "Idle",
+        "phase01": 0
+      },
+      "status": "PLACEMENT_SUGGESTION_NOT_ADMITTED"
+    },
+    {
+      "id": "bp_F1_sheep_002",
+      "asset_id": "blueprint_cc0_sheep",
+      "x": 38.4,
+      "z": -25.8,
+      "y": 0,
+      "yaw": -0.4,
+      "target_height": 1,
+      "animation": {
+        "clip": "Idle",
+        "phase01": 0.16666666666666666
+      },
+      "status": "PLACEMENT_SUGGESTION_NOT_ADMITTED"
+    },
+    {
+      "id": "bp_F1_sheep_003",
+      "asset_id": "blueprint_cc0_sheep",
+      "x": 41.1,
+      "z": -25.8,
+      "y": 0,
+      "yaw": 0.7,
+      "target_height": 1,
+      "animation": {
+        "clip": "Idle",
+        "phase01": 0.3333333333333333
+      },
+      "status": "PLACEMENT_SUGGESTION_NOT_ADMITTED"
+    },
+    {
+      "id": "bp_F1_sheep_004",
+      "asset_id": "blueprint_cc0_sheep",
+      "x": 35.5,
+      "z": -31.5,
+      "y": 0,
+      "yaw": -0.6,
+      "target_height": 1,
+      "animation": {
+        "clip": "Idle",
+        "phase01": 0.5
+      },
+      "status": "PLACEMENT_SUGGESTION_NOT_ADMITTED"
+    },
+    {
+      "id": "bp_F1_sheep_005",
+      "asset_id": "blueprint_cc0_sheep",
+      "x": 38.4,
+      "z": -31.5,
+      "y": 0,
+      "yaw": 0.1,
+      "target_height": 1,
+      "animation": {
+        "clip": "Idle",
+        "phase01": 0.6666666666666666
+      },
+      "status": "PLACEMENT_SUGGESTION_NOT_ADMITTED"
+    },
+    {
+      "id": "bp_F1_sheep_006",
+      "asset_id": "blueprint_cc0_sheep",
+      "x": 41.1,
+      "z": -31.5,
+      "y": 0,
+      "yaw": -0.2,
+      "target_height": 1,
+      "animation": {
+        "clip": "Idle",
+        "phase01": 0.8333333333333334
+      },
+      "status": "PLACEMENT_SUGGESTION_NOT_ADMITTED"
+    }
+  ],
+  "integration": "Root owns loader/collider/source admission. Six samegeometry animals: sharegeometry/material/clips, clone24joint skeleton peranimal. Existing staticdressing bake drops skin/animation; do not silently use it. These positions are derived interior suggestions for currentF1fence, not source edits."
+}

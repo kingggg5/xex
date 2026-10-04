@@ -1,0 +1,28 @@
+import fs from'node:fs';import path from'node:path';import{createHash}from'node:crypto';import{fileURLToPath}from'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../..'),out=path.join(root,'assets/models/reference-city/r5/arrival-hlod-r01'),hash=b=>createHash('sha256').update(b).digest('hex');
+function parse(p){const bytes=fs.readFileSync(p);if(bytes.readUInt32LE(0)!==0x46546c67||bytes.readUInt32LE(8)!==bytes.length)throw Error('GLB header');let doc,bin;for(let i=12;i<bytes.length;){const n=bytes.readUInt32LE(i),t=bytes.readUInt32LE(i+4);if(t===0x4e4f534a)doc=JSON.parse(bytes.subarray(i+8,i+8+n).toString().trim());if(t===0x004e4942)bin=bytes.subarray(i+8,i+8+n);i+=8+n;}return{doc,bin,bytes};}
+const base=parse(path.join(out,'baseline-decoded-inspection.glb')),candidate=parse(path.join(out,'arrival-hlod-r01-runtime.glb')),batch=JSON.parse(fs.readFileSync(path.join(out,'batch-final-receipt.json'))),inspect=JSON.parse(fs.readFileSync(path.join(out,'cpu-inspection.json'))),arch=JSON.parse(fs.readFileSync(path.join(out,'architecture-receipt.json')));
+const drop=new Map();for(const id of arch.selected_ids){const c=inspect.components.find(c=>c.id===id);if(!drop.has(c.mesh))drop.set(c.mesh,new Set());c.triangleOrdinals.forEach(i=>drop.get(c.mesh).add(i));}
+function raw(g,id){const a=g.doc.accessors[id],v=g.doc.bufferViews[a.bufferView],stride=v.byteStride??(a.type==='SCALAR'?2:a.type==='VEC3'?8:a.type==='VEC4'?4:8);return{a,stride,data:g.bin.subarray((v.byteOffset??0)+(a.byteOffset??0))};}
+function indices(g,id){const x=raw(g,id);return Array.from({length:x.a.count},(_,i)=>x.data.readUInt16LE(i*2));}
+function positions(g,id,node){const x=raw(g,id);return Array.from({length:x.a.count},(_,i)=>[0,1,2].map(a=>node.translation[a]+x.data.readInt16LE(i*x.stride+a*2)/32767*node.scale[a]));}
+function area(a,b,c){const u=a.map((x,i)=>x-b[i]),v=c.map((x,i)=>x-b[i]);return Math.hypot(u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]);}
+const witness=[];let baseDegenerate=0,newDegenerate=0,total=0;const oldBounds={min:[Infinity,Infinity,Infinity],max:[-Infinity,-Infinity,-Infinity]},newBounds=structuredClone(oldBounds);
+for(let i=0;i<8;i++){
+ const bp=base.doc.meshes[i].primitives[0],cp=candidate.doc.meshes[i].primitives[0],bn=base.doc.nodes[i],cn=candidate.doc.nodes[i];
+ for(const field of['translation','scale','rotation','matrix'])if(JSON.stringify(bn[field])!==JSON.stringify(cn[field]))throw Error('Original node transform changed');
+ for(const attr of['POSITION','NORMAL']){const b=raw(base,bp.attributes[attr]),c=raw(candidate,cp.attributes[attr]);if(!c.data.subarray(0,b.a.count*b.stride).equals(b.data.subarray(0,b.a.count*b.stride)))throw Error('Original '+attr+' changed');}
+ if(!candidate.doc.accessors[cp.attributes.POSITION].min||!candidate.doc.accessors[cp.attributes.POSITION].max)throw Error('Position min/max missing');
+ const bi=indices(base,bp.indices),ci=indices(candidate,cp.indices),kept=[];for(let t=0;t<bi.length/3;t++)if(!drop.get(i)?.has(t))kept.push(...bi.slice(t*3,t*3+3));
+ if(ci.slice(0,kept.length).some((v,j)=>v!==kept[j]))throw Error('Unchanged triangle indices altered');
+ const bpos=positions(base,bp.attributes.POSITION,bn),cpos=positions(candidate,cp.attributes.POSITION,cn);if(cpos.flat().some(x=>!Number.isFinite(x)))throw Error('Nonfinite positions');
+ for(const [ids,pos,bounds] of[[bi,bpos,oldBounds],[ci,cpos,newBounds]])for(const id of ids){if(id>=pos.length)throw Error('Out-of-range index');for(let a=0;a<3;a++){bounds.min[a]=Math.min(bounds.min[a],pos[id][a]);bounds.max[a]=Math.max(bounds.max[a],pos[id][a]);}}
+ for(let t=0;t<bi.length;t+=3)if(area(...bi.slice(t,t+3).map(id=>bpos[id]))<1e-9)baseDegenerate++;
+ for(let t=kept.length;t<ci.length;t+=3)if(area(...ci.slice(t,t+3).map(id=>cpos[id]))<1e-9)newDegenerate++;
+ total+=ci.length/3;witness.push({material:base.doc.materials[bp.material].name,originalVertices:bpos.length,retainedOriginalTriangles:kept.length/3,newTriangles:(ci.length-kept.length)/3,originalPositionNormalPrefixExact:true,originalRetainedIndicesExact:true});
+}
+const bboxError=Math.max(...['min','max'].flatMap(k=>oldBounds[k].map((v,i)=>Math.abs(v-newBounds[k][i]))));
+if(total!==22864||total>25000||candidate.bytes.length>4194304||candidate.doc.materials.length!==8||candidate.doc.meshes.length!==8||newDegenerate||bboxError>1e-4)throw Error('Candidate validation failed');
+if(JSON.stringify(base.doc.materials)!==JSON.stringify(candidate.doc.materials))throw Error('Shared material contract changed');
+const baselineCurrent=hash(fs.readFileSync(path.join(root,'apps/client/src/assets/models/env_reference_city_hlod.glb')));if(baselineCurrent!==inspect.source.sha256)throw Error('Protected runtime source changed');
+const receipt={schema:'xexoria.arrival-hlod.validation/1',status:'CPU_STATIC_PASS_NATIVE_VISUAL_IMPORT_PERFORMANCE_UNVERIFIED',candidateSHA:hash(candidate.bytes),sourceSHA:baselineCurrent,totalTriangles:total,materialCount:8,meshPrimitiveCount:8,bytes:candidate.bytes.length,images:0,vertexBindingsWithInstanceMatrix:8,baselineDegenerateTriangles:baseDegenerate,addedDegenerateTriangles:newDegenerate,activeBoundsGltf:{before:oldBounds,after:newBounds,maxErrorM:bboxError},preservationWitness:witness,addedPositionQuantizationErrorM:batch.maxAddedArchitecturePositionErrorM,colliderOrPlacementWrites:0};fs.writeFileSync(path.join(out,'validation-receipt.json'),JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify({status:receipt.status,triangles:total,bytes:receipt.bytes,baselineDegenerate:baseDegenerate,addedDegenerate:newDegenerate,bboxError,candidateSHA:receipt.candidateSHA}));

@@ -1,0 +1,3839 @@
+{
+  "schema": "aetherfield.city-layout/1",
+  "revision": "r6-candidate",
+  "working_title": "Aetherhold (placeholder name)",
+  "reference": {
+    "path": "docs/ui/city-layout-target-20260928.png",
+    "use": "Composition, layout and style target only. Positions were measured on a metric grid laid over the TOP VIEW panel (0.28 m per pixel at 3x). Reference pixels are never embedded in assets."
+  },
+  "units": "meters",
+  "axes": "Blender Z-up. Origin = fountain centre at plaza level. +Y = north (towards the Magic Castle), +X = east (towards the market). The Town Gate is on the south edge. glTF export converts to Y-up (Blender Y becomes glTF -Z).",
+  "facing_rule": "Each building's front door faces the point given in face_toward, or the angle facing_deg (counter-clockwise from +X / east; 90 = north, 270 = south).",
+  "island": {
+    "shape": "rounded rectangle with irregular cliff noise",
+    "x_min": -120,
+    "x_max": 120,
+    "y_min": -160,
+    "y_max": 128,
+    "corner_radius": 38,
+    "edge_noise_m": 4,
+    "underside_depth_m": 75,
+    "underside_style": "Hanging rock mass: layered warm-brown strata, broken ledges, grass and roots spilling over the lip, stalactite spurs. Small satellite rocks float nearby."
+  },
+  "levels": {
+    "plaza": 0,
+    "south_terrace": 0,
+    "canal_water_surface": -1,
+    "castle_terrace": 9,
+    "wizard_terrace": 6,
+    "windmill_hill": 8,
+    "blacksmith_yard": 0.3,
+    "guild_street": 0,
+    "gate_forecourt": -0.5
+  },
+  "plaza": {
+    "center": [
+      0,
+      0
+    ],
+    "radius": 42,
+    "paving": "Radial flagstone rings (light warm stone) with darker blue-grey accent bands every ~8 m and eight radial seams aligned with the avenues.",
+    "planter_ring_radius": 17.5,
+    "planter_count": 12,
+    "lamp_ring_radius": 24,
+    "lamp_count": 12,
+    "bench_ring_radius": 30,
+    "avenues": [
+      {
+        "id": "north_stairs",
+        "to": [
+          0,
+          44
+        ],
+        "width": 14
+      },
+      {
+        "id": "south_canal",
+        "to": [
+          0,
+          -48
+        ],
+        "width": 12
+      },
+      {
+        "id": "northwest_wizard",
+        "to": [
+          -48,
+          58
+        ],
+        "width": 9
+      },
+      {
+        "id": "northeast_windmill",
+        "to": [
+          44,
+          50
+        ],
+        "width": 8
+      },
+      {
+        "id": "west_smithy",
+        "to": [
+          -58,
+          -10
+        ],
+        "width": 10
+      },
+      {
+        "id": "southwest_guild",
+        "to": [
+          -62,
+          -52
+        ],
+        "width": 9
+      },
+      {
+        "id": "southeast_potion",
+        "to": [
+          70,
+          -54
+        ],
+        "width": 9
+      },
+      {
+        "id": "east_market",
+        "to": [
+          50,
+          -20
+        ],
+        "width": 10
+      }
+    ]
+  },
+  "fountain": {
+    "center": [
+      0,
+      0
+    ],
+    "plinth_radius": 14,
+    "basin_radius": 11.5,
+    "tier2_radius": 6,
+    "tier2_height": 2.4,
+    "tier3_radius": 3,
+    "tier3_height": 4.6,
+    "statue": "Original winged guardian (robed figure, arms raised, two layered stone wings) on a pedestal at +6 m; total statue height about 7.5 m.",
+    "crystal_height": 17,
+    "crystal_size": 3.2
+  },
+  "portal": {
+    "center": [
+      40,
+      10
+    ],
+    "dais_radius": 8.5,
+    "rune_radius": 6.5,
+    "style": "Raised stone dais with concentric glowing blue rune rings, three short stone pylons with floating shards, a vertical light column (runtime VFX)."
+  },
+  "water": {
+    "canal": {
+      "path": [
+        [
+          0,
+          -46
+        ],
+        [
+          0,
+          -74
+        ],
+        [
+          0,
+          -112
+        ],
+        [
+          0,
+          -148
+        ]
+      ],
+      "width": 12,
+      "note": "Central canal from a small pool at the plaza's south edge to the Town Gate, crossed by the Canal Bridge and the Ring Bridge; passes under the gate and pours off the island edge."
+    },
+    "pools": [
+      {
+        "id": "gate_pool_west",
+        "center": [
+          -48,
+          -128
+        ],
+        "size": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "gate_pool_east",
+        "center": [
+          49,
+          -128
+        ],
+        "size": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "ne_garden_upper",
+        "center": [
+          72,
+          92
+        ],
+        "size": [
+          22,
+          16
+        ]
+      },
+      {
+        "id": "ne_garden_mid",
+        "center": [
+          64,
+          66
+        ],
+        "size": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "ne_garden_low",
+        "center": [
+          56,
+          40
+        ],
+        "size": [
+          18,
+          14
+        ]
+      },
+      {
+        "id": "nw_castle_pool",
+        "center": [
+          -44,
+          104
+        ],
+        "size": [
+          18,
+          12
+        ],
+        "level": 9
+      },
+      {
+        "id": "ne_castle_pool",
+        "center": [
+          44,
+          104
+        ],
+        "size": [
+          18,
+          12
+        ],
+        "level": 9
+      }
+    ],
+    "waterfalls": [
+      {
+        "id": "gate_fall_west",
+        "lip": [
+          -48,
+          -160
+        ],
+        "width": 12,
+        "drop": 60
+      },
+      {
+        "id": "gate_fall_east",
+        "lip": [
+          49,
+          -160
+        ],
+        "width": 12,
+        "drop": 60
+      },
+      {
+        "id": "gate_fall_centre",
+        "lip": [
+          0,
+          -160
+        ],
+        "width": 8,
+        "drop": 55
+      },
+      {
+        "id": "ne_cascade_1",
+        "lip": [
+          68,
+          80
+        ],
+        "width": 6,
+        "drop": 2.5
+      },
+      {
+        "id": "ne_cascade_2",
+        "lip": [
+          60,
+          53
+        ],
+        "width": 6,
+        "drop": 2.5
+      }
+    ],
+    "pool_level_rule": "Ground pools take the terrain height at their centre (terrain.Heights); castle pools are raised basins on the castle terrace."
+  },
+  "landmarks": [
+    {
+      "id": "magic_castle",
+      "kind": "castle",
+      "center": [
+        0,
+        96
+      ],
+      "level": "castle_terrace",
+      "footprint": [
+        64,
+        36
+      ],
+      "facing_deg": 270,
+      "height_to_main_spire_tip": 72,
+      "notes": "Grand gothic front with a purple-glowing portal door (8 m) at (0, 78); central keep + tallest spire; eight or more slender blue-slate spires with gold finials; side wings with round towers to x = +/-40; banners on every tower; ivy on lower walls."
+    },
+    {
+      "id": "grand_stairs",
+      "kind": "stairs",
+      "from": [
+        0,
+        42
+      ],
+      "to": [
+        0,
+        78
+      ],
+      "width": 16,
+      "rise": 9,
+      "notes": "Three flights with two landings; carved balustrades; lamp pylons and banners at each landing."
+    },
+    {
+      "id": "north_arcades",
+      "kind": "arcade",
+      "spans": [
+        [
+          [
+            -72,
+            118
+          ],
+          [
+            -22,
+            118
+          ]
+        ],
+        [
+          [
+            22,
+            118
+          ],
+          [
+            72,
+            118
+          ]
+        ]
+      ],
+      "level": "castle_terrace",
+      "notes": "Stone arcades/aqueduct along the north rim with pools behind them."
+    },
+    {
+      "id": "wizard_tower",
+      "kind": "wizard_tower",
+      "center": [
+        -65,
+        88
+      ],
+      "level": "wizard_terrace",
+      "base_radius": 8,
+      "height": 62,
+      "spire_tip": 78,
+      "rings": [
+        {
+          "height": 22,
+          "radius": 13
+        },
+        {
+          "height": 40,
+          "radius": 11
+        }
+      ],
+      "notes": "Slender pale-stone tower, purple-glowing lancet windows, buttressed base with a small gatehouse, blue spire, two slowly rotating rune rings (runtime animation)."
+    },
+    {
+      "id": "windmill",
+      "kind": "windmill",
+      "center": [
+        94,
+        108
+      ],
+      "level": "windmill_hill",
+      "base_radius": 6,
+      "height": 17,
+      "sail_radius": 12,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "White-plaster tower with a stone base, wooden cap, four lattice sails (runtime rotation), a small shed and fenced garden."
+    },
+    {
+      "id": "blacksmith",
+      "kind": "blacksmith",
+      "center": [
+        -72,
+        -18
+      ],
+      "level": "blacksmith_yard",
+      "footprint": [
+        26,
+        20
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Timber-and-stone forge hall; open workshop front with blue/cream striped awning; roaring forge (emissive + runtime fire/embers); big stone chimney (runtime smoke); anvils, weapon racks, barrels of swords, quench trough, coal pile."
+    },
+    {
+      "id": "armory_house",
+      "kind": "house_large",
+      "center": [
+        -30,
+        54
+      ],
+      "level": "plaza",
+      "footprint": [
+        16,
+        12
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        30
+      ],
+      "notes": "Blue-roofed armour shop near the NW stairs; small red/white market canopy in front."
+    },
+    {
+      "id": "guild_hall",
+      "kind": "guild_hall",
+      "center": [
+        -90,
+        -56
+      ],
+      "level": "guild_street",
+      "footprint": [
+        30,
+        22
+      ],
+      "stories": 3,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Largest civic timber hall: cross gables, dormers, corner turret, balcony, guild banners, lanterns."
+    },
+    {
+      "id": "tavern",
+      "kind": "tavern",
+      "center": [
+        -58,
+        -88
+      ],
+      "level": "guild_street",
+      "footprint": [
+        20,
+        16
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        -40
+      ],
+      "notes": "Cosy two-and-a-half-storey inn: cream awning, hanging sign, outdoor tables and barrels, warm windows."
+    },
+    {
+      "id": "market",
+      "kind": "market_square",
+      "center": [
+        66,
+        -22
+      ],
+      "level": "plaza",
+      "stall_rows": [
+        [
+          [
+            50,
+            -8
+          ],
+          [
+            84,
+            -8
+          ]
+        ],
+        [
+          [
+            50,
+            -34
+          ],
+          [
+            84,
+            -34
+          ]
+        ]
+      ],
+      "stalls_per_row": 4,
+      "featured_cart_stall": {
+        "slot": "1-1",
+        "scale": 2,
+        "source": "assets/third-party/quaternius-fantasy-props-megakit/standard/stall-cart/glTF/Stall_Cart_Empty.gltf",
+        "license": "CC0 1.0 Universal"
+      },
+      "notes": "Striped canopies (red/white, blue/white, cream, green); crates of produce, pottery, fabrics, potions; carts, barrels, sacks."
+    },
+    {
+      "id": "potion_shop",
+      "kind": "potion_shop",
+      "center": [
+        98,
+        -62
+      ],
+      "level": "plaza",
+      "footprint": [
+        16,
+        14
+      ],
+      "stories": 2,
+      "face_toward": [
+        40,
+        -30
+      ],
+      "notes": "Green-roofed alchemist's shop; cauldron chimney with green glow and smoke (runtime); herb racks, bottles, a small greenhouse."
+    },
+    {
+      "id": "nw_residential_rows",
+      "kind": "house_small_group",
+      "centers": [
+        [
+          -108,
+          68
+        ],
+        [
+          -94,
+          48
+        ],
+        [
+          -110,
+          26
+        ],
+        [
+          -84,
+          12
+        ],
+        [
+          -50,
+          30
+        ],
+        [
+          -46,
+          48
+        ]
+      ],
+      "level": "plaza",
+      "footprint": [
+        11,
+        9
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Six varied original rowhouses fill the northwest residential lanes without overlapping the observatory or castle approach.",
+      "r6_cut_centers": [
+        [
+          -110,
+          26
+        ],
+        [
+          -46,
+          48
+        ]
+      ],
+      "centers_r6": [
+        [
+          -108,
+          68
+        ],
+        [
+          -94,
+          48
+        ],
+        [
+          -84,
+          12
+        ],
+        [
+          -50,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "west_residential_rows",
+      "kind": "house_small_group",
+      "centers": [
+        [
+          -112,
+          -8
+        ],
+        [
+          -104,
+          -28
+        ],
+        [
+          -114,
+          -48
+        ],
+        [
+          -70,
+          -42
+        ],
+        [
+          -50,
+          -56
+        ],
+        [
+          -42,
+          -72
+        ]
+      ],
+      "level": "plaza",
+      "footprint": [
+        11,
+        9
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Six small homes close the empty west loop while leaving the smithy, guild hall and tavern yards readable.",
+      "r6_cut_centers": [
+        [
+          -104,
+          -28
+        ],
+        [
+          -114,
+          -48
+        ],
+        [
+          -42,
+          -72
+        ]
+      ],
+      "centers_r6": [
+        [
+          -112,
+          -8
+        ],
+        [
+          -70,
+          -42
+        ],
+        [
+          -50,
+          -56
+        ]
+      ]
+    },
+    {
+      "id": "east_residential_rows",
+      "kind": "house_small_group",
+      "centers": [
+        [
+          108,
+          20
+        ],
+        [
+          110,
+          0
+        ],
+        [
+          106,
+          -28
+        ],
+        [
+          114,
+          -50
+        ],
+        [
+          78,
+          -116
+        ],
+        [
+          108,
+          -120
+        ]
+      ],
+      "level": "plaza",
+      "footprint": [
+        11,
+        9
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Six southeast and east-lane homes make the potion shop and cottage approach read as a lived-in district.",
+      "r6_cut_centers": [
+        [
+          106,
+          -28
+        ],
+        [
+          108,
+          -120
+        ]
+      ],
+      "centers_r6": [
+        [
+          108,
+          20
+        ],
+        [
+          110,
+          0
+        ],
+        [
+          114,
+          -50
+        ],
+        [
+          78,
+          -116
+        ]
+      ]
+    },
+    {
+      "id": "se_cottages",
+      "kind": "house_small_group",
+      "centers": [
+        [
+          72,
+          -98
+        ],
+        [
+          96,
+          -104
+        ]
+      ],
+      "level": "south_terrace",
+      "footprint": [
+        12,
+        10
+      ],
+      "face_toward": [
+        0,
+        -60
+      ],
+      "r6_cut_centers": [
+        [
+          72,
+          -98
+        ]
+      ],
+      "centers_r6": [
+        [
+          96,
+          -104
+        ]
+      ]
+    },
+    {
+      "id": "sw_well_gazebo",
+      "kind": "gazebo",
+      "center": [
+        -28,
+        -58
+      ],
+      "level": "plaza",
+      "footprint": [
+        7,
+        7
+      ]
+    },
+    {
+      "id": "canal_bridge",
+      "kind": "bridge_arched",
+      "center": [
+        0,
+        -74
+      ],
+      "span_axis": "x",
+      "length": 20,
+      "width": 10,
+      "notes": "Stone arch bridge with balustrades and lamp pylons; the bridge seen in the hero view."
+    },
+    {
+      "id": "ring_bridge",
+      "kind": "bridge_arched",
+      "center": [
+        0,
+        -112
+      ],
+      "span_axis": "x",
+      "length": 18,
+      "width": 8
+    },
+    {
+      "id": "town_gate",
+      "kind": "gate",
+      "center": [
+        0,
+        -152
+      ],
+      "level": "gate_forecourt",
+      "facing_deg": 270,
+      "width": 30,
+      "notes": "Front balustrade wall along the south edge with square pillars, lantern caps and hanging blue banners; central arch over the canal outflow; gate pillars with crystals."
+    }
+  ],
+  "paths": [
+    {
+      "id": "south_ring_road",
+      "points": [
+        [
+          -100,
+          -84
+        ],
+        [
+          -60,
+          -104
+        ],
+        [
+          0,
+          -112
+        ],
+        [
+          60,
+          -104
+        ],
+        [
+          100,
+          -84
+        ]
+      ],
+      "width": 8
+    },
+    {
+      "id": "gate_avenue",
+      "points": [
+        [
+          0,
+          -112
+        ],
+        [
+          0,
+          -150
+        ]
+      ],
+      "width": 10,
+      "note": "Two lanes either side of the canal"
+    },
+    {
+      "id": "west_loop",
+      "points": [
+        [
+          -52,
+          -9
+        ],
+        [
+          -58,
+          3.5
+        ],
+        [
+          -88,
+          1.5
+        ],
+        [
+          -98,
+          -12
+        ],
+        [
+          -98,
+          -30
+        ],
+        [
+          -114.5,
+          -47
+        ],
+        [
+          -110,
+          -62
+        ],
+        [
+          -110.5,
+          -74
+        ],
+        [
+          -100,
+          -86
+        ]
+      ],
+      "width": 7,
+      "points_r5": [
+        [
+          -58,
+          -10
+        ],
+        [
+          -96,
+          -20
+        ],
+        [
+          -104,
+          -60
+        ],
+        [
+          -100,
+          -84
+        ]
+      ],
+      "note_r6": "Re-laid around the smithy, guild hall and apothecary; the R5 centreline ran through them."
+    },
+    {
+      "id": "east_loop",
+      "points": [
+        [
+          84,
+          -42
+        ],
+        [
+          80,
+          -56
+        ],
+        [
+          82,
+          -74
+        ],
+        [
+          100,
+          -85
+        ]
+      ],
+      "width": 7,
+      "points_r5": [
+        [
+          50,
+          -20
+        ],
+        [
+          100,
+          -30
+        ],
+        [
+          108,
+          -60
+        ],
+        [
+          100,
+          -84
+        ]
+      ],
+      "note_r6": "Re-laid around the smithy, guild hall and apothecary; the R5 centreline ran through them."
+    },
+    {
+      "id": "wizard_path",
+      "points": [
+        [
+          -48,
+          58
+        ],
+        [
+          -60,
+          74
+        ],
+        [
+          -65,
+          80
+        ]
+      ],
+      "width": 6
+    },
+    {
+      "id": "windmill_path",
+      "points": [
+        [
+          44,
+          50
+        ],
+        [
+          80,
+          88
+        ],
+        [
+          90,
+          100
+        ]
+      ],
+      "width": 5
+    }
+  ],
+  "vegetation": {
+    "perimeter_belt": {
+      "inset_m": [
+        3,
+        16
+      ],
+      "spacing_m": 7.5,
+      "mix": {
+        "pine": 0.45,
+        "round_oak": 0.4,
+        "blossom": 0.08,
+        "autumn": 0.07
+      }
+    },
+    "groves": [
+      {
+        "center": [
+          -40,
+          80
+        ],
+        "radius": 12,
+        "count": 8
+      },
+      {
+        "center": [
+          36,
+          80
+        ],
+        "radius": 10,
+        "count": 6
+      },
+      {
+        "center": [
+          -100,
+          20
+        ],
+        "radius": 14,
+        "count": 10
+      },
+      {
+        "center": [
+          106,
+          20
+        ],
+        "radius": 12,
+        "count": 8
+      },
+      {
+        "center": [
+          -30,
+          -120
+        ],
+        "radius": 10,
+        "count": 6
+      },
+      {
+        "center": [
+          30,
+          -120
+        ],
+        "radius": 10,
+        "count": 6
+      }
+    ],
+    "flower_beds": "Along avenue edges, inside the plaza planter ring, at building fronts and around pools."
+  },
+  "runtime_contract": {
+    "animated_nodes": [
+      "anim_windmill_sails",
+      "anim_wizard_ring_*",
+      "anim_crystal_*",
+      "anim_portal_disc",
+      "anim_banner_*"
+    ],
+    "fx_meshes": [
+      "fx_water_*",
+      "fx_waterfall_*",
+      "fx_portal_beam",
+      "fx_window_glow_*"
+    ],
+    "emitters": [
+      "emit_smoke_*",
+      "emit_fire_*",
+      "emit_embers_*",
+      "emit_spray_*",
+      "emit_sparkle_*",
+      "emit_mist_*"
+    ],
+    "lights": [
+      "light_lamp_*",
+      "light_forge",
+      "light_portal",
+      "light_castle_door"
+    ],
+    "rule": "Objects with these prefixes are exported as separate named nodes (never merged) so the client can animate, scroll or spawn effects on them. Everything else is merged by material."
+  },
+  "review_cameras": {
+    "hero_front": {
+      "note": "Matches the main hero image: elevated three-quarter view from the south, looking north across the plaza to the castle.",
+      "location": [
+        26,
+        -236,
+        196
+      ],
+      "target": [
+        0,
+        -8,
+        4
+      ],
+      "lens_mm": 35
+    },
+    "front": {
+      "location": [
+        0,
+        -330,
+        150
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "back": {
+      "location": [
+        0,
+        330,
+        170
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "left": {
+      "location": [
+        -330,
+        0,
+        170
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "right": {
+      "location": [
+        330,
+        0,
+        170
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "top": {
+      "location": [
+        0,
+        -16,
+        420
+      ],
+      "target": [
+        0,
+        -16,
+        0
+      ],
+      "lens_mm": 45,
+      "note": "Orthographic top map, ortho_scale 310"
+    },
+    "plaza_street": {
+      "location": [
+        -6,
+        -40,
+        3.2
+      ],
+      "target": [
+        0,
+        20,
+        8
+      ],
+      "lens_mm": 28
+    },
+    "arrival_gate": {
+      "location": [
+        0,
+        -190,
+        14
+      ],
+      "target": [
+        0,
+        -60,
+        8
+      ],
+      "lens_mm": 32
+    }
+  },
+  "derived_from": {
+    "layout": "assets/blender/city_r5/layout.json",
+    "master": "assets/models/reference-city/r5/market-repair-candidate/reference_city_market_gate_repaired.blend",
+    "master_sha256": "bda8d7857108bf57cd75f59ee8aad0b170a50fef66b0b26e563bce9c4374d373"
+  },
+  "districts_r6": {
+    "gate_and_canal": {
+      "identity": "Civic arrival: crystal pillar lanterns, blue crest banners, guard post and arriving trader, flower boxes at both bridges.",
+      "palette": [
+        "warm stone",
+        "blue crest banners",
+        "gold",
+        "blue crystal light"
+      ],
+      "silhouette": "twin round towers, crystal lanterns, bridge lamp rhythm"
+    },
+    "fountain_plaza": {
+      "identity": "Mosaic plaza: cream/blue meander borders, eight-point compass star, fountain-base flower beds, four bench nooks, avenue-mouth lamp pairs with banners.",
+      "palette": [
+        "cream carved stone",
+        "slate-blue mosaic",
+        "terracotta ring",
+        "ivory/lilac/gold flowers"
+      ],
+      "silhouette": "fountain + statue, ring of crystal lamps"
+    },
+    "market": {
+      "identity": "Paved market square with three stall clusters (produce, crafts, arcane) around an open centre; goods on the ground beside each stall.",
+      "palette": [
+        "striped red/blue/green canopies",
+        "warm timber",
+        "produce colours (no glow)"
+      ],
+      "silhouette": "canopy roofline, cart"
+    },
+    "craftsmen_west": {
+      "identity": "Smithy, guild hall and tavern on a re-laid west loop; woodcutter yard, guild supplies, tavern green.",
+      "palette": [
+        "dark timber",
+        "iron",
+        "red/cream awnings",
+        "log piles"
+      ],
+      "silhouette": "smithy chimney, guild turret"
+    },
+    "residential_lanes": {
+      "identity": "12 of 20 houses kept, each turned to face its lane or green; variants (lean-to, porch, window boxes, flower borders); six story yards.",
+      "palette": [
+        "plaster",
+        "timber",
+        "mixed roofs",
+        "hedges and flower borders"
+      ],
+      "silhouette": "varied roof angles instead of 20 clones facing the fountain"
+    },
+    "castle_approach": {
+      "identity": "Grand stairs kept clear; castle terrace trees raised onto the terrace lawn; rose window glass visible again.",
+      "palette": [
+        "pale stone",
+        "navy/blue slate",
+        "gold"
+      ],
+      "silhouette": "castle spires"
+    }
+  },
+  "r6_dressing": {
+    "schema": "xexoria.city-r6-dressing/1",
+    "operations": [
+      {
+        "op": "dedupe",
+        "note": "Exact duplicate meshes (castle portal arch built twice, etc.)"
+      },
+      {
+        "op": "delete",
+        "op_id": "cut_duplicate_houses",
+        "rules": [
+          {
+            "root": "kit_nw_residential_rows_3",
+            "whole_root": true
+          },
+          {
+            "root": "kit_nw_residential_rows_6",
+            "whole_root": true
+          },
+          {
+            "root": "kit_west_residential_rows_2",
+            "whole_root": true
+          },
+          {
+            "root": "kit_west_residential_rows_3",
+            "whole_root": true
+          },
+          {
+            "root": "kit_west_residential_rows_6",
+            "whole_root": true
+          },
+          {
+            "root": "kit_east_residential_rows_3",
+            "whole_root": true
+          },
+          {
+            "root": "kit_east_residential_rows_6",
+            "whole_root": true
+          },
+          {
+            "root": "kit_se_cottages_1",
+            "whole_root": true
+          }
+        ]
+      },
+      {
+        "op": "delete",
+        "op_id": "plaza_rings_removed",
+        "rules": [
+          {
+            "pattern": "^(garden stone planter|garden dark soil|garden leafy stem|garden blossom|plaza bench |city lamp )",
+            "root": "kit_city_vegetation",
+            "max_radius": 45
+          }
+        ]
+      },
+      {
+        "op": "delete",
+        "op_id": "house_clutter_removed",
+        "rules": [
+          {
+            "pattern": "^(nw|west|east)_residential_rows_\\d (front barrel|herb keg|shop sign)"
+          },
+          {
+            "pattern": "^se_cottages_\\d (front barrel|herb keg|shop sign)"
+          },
+          {
+            "pattern": "^(armory_house|apothecary|blacksmith forge hall) street crest"
+          },
+          {
+            "pattern": "^tavern (shop sign|street crest)"
+          }
+        ]
+      },
+      {
+        "op": "delete",
+        "op_id": "static_portal_spike_removed",
+        "rules": [
+          {
+            "pattern": "^portal vertical light column"
+          }
+        ]
+      },
+      {
+        "op": "delete",
+        "op_id": "window_over_shop_door_removed",
+        "rules": [
+          {
+            "pattern": "^(apothecary|armory_house) front window 1-2 "
+          },
+          {
+            "pattern": "^blacksmith forge hall front window 1-3 "
+          }
+        ]
+      },
+      {
+        "op": "coplanar_insets",
+        "rules": [
+          {
+            "pattern": "^castle lower plinth$",
+            "scale": [
+              1.002,
+              1.002,
+              1
+            ]
+          },
+          {
+            "pattern": "^castle plinth moulding$",
+            "scale": [
+              1.003,
+              1.003,
+              1
+            ]
+          },
+          {
+            "pattern": "^castle rear cloister",
+            "offset": [
+              0,
+              0,
+              0.012
+            ]
+          },
+          {
+            "pattern": "^castle facade buttress",
+            "offset": [
+              0,
+              -0.012,
+              0
+            ]
+          },
+          {
+            "pattern": "^terrain / channel coping",
+            "offset": [
+              0,
+              0,
+              0.012
+            ]
+          },
+          {
+            "pattern": "^north arcade carved arch",
+            "scale": [
+              1,
+              0.995,
+              1
+            ],
+            "alternate": true
+          },
+          {
+            "pattern": "^fountain guardian wing feather",
+            "scale": [
+              1,
+              0.985,
+              0.985
+            ],
+            "alternate": true
+          }
+        ]
+      },
+      {
+        "op": "reparent_orphans",
+        "skip_owner_pattern": "^bridge blue lamp finial"
+      },
+      {
+        "op": "fountain_foot"
+      },
+      {
+        "op": "gate_merlons"
+      },
+      {
+        "op": "lift_mortar",
+        "lift_m": 0.015
+      },
+      {
+        "op": "rose_window"
+      },
+      {
+        "op": "simplify_hardware",
+        "pattern": " shutter strap| hinge strap|(vertical|horizontal) mullion|gold mullion|window lead",
+        "max_thickness_m": 0.12
+      },
+      {
+        "op": "houses",
+        "cut": [],
+        "face_heading_deg": {
+          "kit_nw_residential_rows_1": 128,
+          "kit_nw_residential_rows_2": 148,
+          "kit_nw_residential_rows_4": 182,
+          "kit_nw_residential_rows_5": 262,
+          "kit_west_residential_rows_1": 86,
+          "kit_west_residential_rows_4": 150,
+          "kit_west_residential_rows_5": 322,
+          "kit_east_residential_rows_1": 254,
+          "kit_east_residential_rows_2": 288,
+          "kit_east_residential_rows_4": 318,
+          "kit_east_residential_rows_5": 352,
+          "kit_se_cottages_2": 340
+        }
+      },
+      {
+        "op": "reroute_paths",
+        "paths": [
+          {
+            "id": "west_loop",
+            "width": 7,
+            "lift": 0.13,
+            "points": [
+              [
+                -52,
+                -9
+              ],
+              [
+                -58,
+                3.5
+              ],
+              [
+                -88,
+                1.5
+              ],
+              [
+                -98,
+                -12
+              ],
+              [
+                -98,
+                -30
+              ],
+              [
+                -114.5,
+                -47
+              ],
+              [
+                -110,
+                -62
+              ],
+              [
+                -110.5,
+                -74
+              ],
+              [
+                -100,
+                -86
+              ]
+            ]
+          },
+          {
+            "id": "east_loop",
+            "width": 7,
+            "points": [
+              [
+                84,
+                -42
+              ],
+              [
+                80,
+                -56
+              ],
+              [
+                82,
+                -74
+              ],
+              [
+                100,
+                -85
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "op": "bridge_lamps"
+      },
+      {
+        "op": "trees",
+        "castle_terrace_poly": [
+          [
+            -52,
+            72
+          ],
+          [
+            52,
+            72
+          ],
+          [
+            52,
+            106
+          ],
+          [
+            80,
+            106
+          ],
+          [
+            80,
+            125
+          ],
+          [
+            -80,
+            125
+          ],
+          [
+            -80,
+            106
+          ],
+          [
+            -52,
+            106
+          ]
+        ],
+        "keep_clear": [
+          [
+            -40.804,
+            49.305,
+            5.5
+          ]
+        ]
+      },
+      {
+        "op": "plaza_mosaic",
+        "bands": [
+          {
+            "id": "fountain meander",
+            "replace_radius": [
+              14.25,
+              16.3
+            ],
+            "radius": [
+              14.2,
+              16.35
+            ],
+            "border_m": 0.22
+          },
+          {
+            "id": "outer meander",
+            "replace_radius": [
+              37.1,
+              39.8
+            ],
+            "radius": [
+              37.03,
+              39.84
+            ],
+            "border_m": 0.26
+          }
+        ],
+        "star": {
+          "radius": [
+            18.5,
+            31.6
+          ],
+          "ray_half_deg": 9,
+          "ray_tint": [
+            0.44,
+            0.58,
+            0.96
+          ],
+          "ring_r": 28.46,
+          "ring_half_m": 0.6,
+          "ring_tint": [
+            1,
+            0.72,
+            0.55
+          ]
+        },
+        "fountain_beds": [
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              -164.22,
+              -146.01
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              -134.01,
+              -96
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              -84,
+              -43.65
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              -15.8,
+              11.43
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              13.43,
+              42.65
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              54.65,
+              84
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              96,
+              123.61
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              135.61,
+              157.7
+            ]
+          },
+          {
+            "r": [
+              11.7,
+              13.15
+            ],
+            "a": [
+              159.7,
+              183.78
+            ]
+          }
+        ],
+        "perimeter_beds": [
+          {
+            "r": [
+              35,
+              36.6
+            ],
+            "a": [
+              -61.5,
+              -51.24
+            ]
+          },
+          {
+            "r": [
+              35,
+              36.6
+            ],
+            "a": [
+              61.43,
+              72.28
+            ]
+          },
+          {
+            "r": [
+              35,
+              36.6
+            ],
+            "a": [
+              143.2,
+              157.69
+            ]
+          },
+          {
+            "r": [
+              35,
+              36.6
+            ],
+            "a": [
+              160.89,
+              175.37
+            ]
+          }
+        ]
+      },
+      {
+        "op": "market",
+        "remove_stalls": [
+          "1-3",
+          "2-1",
+          "2-2",
+          "2-4"
+        ],
+        "move_stalls": {
+          "1-2": [
+            -3.5,
+            -1.5,
+            12
+          ],
+          "1-4": [
+            1.5,
+            -4.5,
+            -15
+          ],
+          "2-3": [
+            0.5,
+            2.5,
+            8
+          ]
+        },
+        "move_cart": [
+          -3,
+          -7,
+          -20
+        ],
+        "square_poly": [
+          [
+            46,
+            -2
+          ],
+          [
+            84,
+            -2
+          ],
+          [
+            88,
+            -6
+          ],
+          [
+            88,
+            -38
+          ],
+          [
+            84,
+            -43
+          ],
+          [
+            51,
+            -43
+          ],
+          [
+            46,
+            -38
+          ]
+        ]
+      },
+      {
+        "op": "gate"
+      },
+      {
+        "op": "house_variants",
+        "variants": {
+          "kit_nw_residential_rows_1": [
+            "porch",
+            "window_boxes"
+          ],
+          "kit_nw_residential_rows_2": [
+            "lean_to_west"
+          ],
+          "kit_nw_residential_rows_4": [
+            "flower_border",
+            "window_boxes"
+          ],
+          "kit_nw_residential_rows_5": [
+            "porch"
+          ],
+          "kit_west_residential_rows_1": [
+            "lean_to_east",
+            "window_boxes"
+          ],
+          "kit_west_residential_rows_4": [
+            "porch"
+          ],
+          "kit_west_residential_rows_5": [
+            "flower_border"
+          ],
+          "kit_east_residential_rows_1": [
+            "window_boxes",
+            "flower_border"
+          ],
+          "kit_east_residential_rows_2": [
+            "lean_to_east"
+          ],
+          "kit_east_residential_rows_4": [
+            "porch",
+            "window_boxes"
+          ],
+          "kit_east_residential_rows_5": [
+            "lean_to_west",
+            "flower_border"
+          ],
+          "kit_se_cottages_2": [
+            "window_boxes"
+          ]
+        }
+      },
+      {
+        "op": "clusters",
+        "op_id": "plaza_clusters",
+        "owner": "kit_city_vegetation",
+        "clusters": [
+          {
+            "id": "plaza bench nook",
+            "items": [
+              {
+                "kind": "Bench",
+                "at": [
+                  12.773,
+                  27.145
+                ],
+                "yaw": 169.8,
+                "scale": 1.3,
+                "name": "plaza bench CC0"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  12.041,
+                  31.368
+                ],
+                "scale": 1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  16.19,
+                  27.486
+                ],
+                "yaw": 149.5,
+                "length": 1.4,
+                "depth": 1.4,
+                "height": 0.6,
+                "name": "garden stone planter nook"
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  -12.298,
+                  27.364
+                ],
+                "yaw": 189.2,
+                "scale": 1.3,
+                "name": "plaza bench CC0"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -11.492,
+                  31.574
+                ],
+                "scale": 1
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  -17.207,
+                  -24.575
+                ],
+                "yaw": 325,
+                "scale": 1.3,
+                "name": "plaza bench CC0"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -19.272,
+                  -27.524
+                ],
+                "scale": 1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -15.465,
+                  -27.9
+                ],
+                "yaw": 331,
+                "length": 1.4,
+                "depth": 1.4,
+                "height": 0.6,
+                "name": "garden stone planter nook"
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  17.207,
+                  -24.575
+                ],
+                "yaw": 395,
+                "scale": 1.3,
+                "name": "plaza bench CC0"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  19.272,
+                  -27.524
+                ],
+                "scale": 1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  15.465,
+                  -27.9
+                ],
+                "yaw": 389,
+                "length": 1.4,
+                "depth": 1.4,
+                "height": 0.6,
+                "name": "garden stone planter nook"
+              }
+            ]
+          },
+          {
+            "id": "avenue mouth lamps",
+            "items": [
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  9.4,
+                  38.6
+                ],
+                "arm_yaw": 0,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -9.4,
+                  38.6
+                ],
+                "arm_yaw": 180,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  14.6,
+                  -38.2
+                ],
+                "arm_yaw": 0,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -14.6,
+                  -38.2
+                ],
+                "arm_yaw": 180,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  39.665,
+                  -9.081
+                ],
+                "arm_yaw": 77.1048007124943,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  34.985,
+                  -20.779
+                ],
+                "arm_yaw": -120.70778160893735,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -38.545,
+                  -13.039
+                ],
+                "arm_yaw": -71.31035349140487,
+                "banner": true,
+                "scale": 1.05
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -40.686,
+                  -0.622
+                ],
+                "arm_yaw": -269.12414101058914,
+                "banner": true,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "id": "guild quest board",
+            "items": [
+              {
+                "kind": "notice_board",
+                "at": [
+                  -23.395,
+                  -29.944
+                ],
+                "yaw": 322
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -21.305,
+                  -32.188
+                ],
+                "yaw": 20,
+                "scale": 1.2
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  -25.219,
+                  -27.618
+                ],
+                "yaw": 0,
+                "scale": 1.35
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  -26.092,
+                  -29.388
+                ],
+                "yaw": 40,
+                "scale": 1.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "clusters",
+        "op_id": "gate_clusters",
+        "owner": "kit_town_gate",
+        "clusters": [
+          {
+            "id": "gate watch post",
+            "items": [
+              {
+                "kind": "WeaponStand",
+                "at": [
+                  -17.5,
+                  -145
+                ],
+                "yaw": 90,
+                "scale": 1.45
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  -19.4,
+                  -146.6
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  -20.3,
+                  -145.2
+                ],
+                "yaw": 33,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -19.6,
+                  -143.1
+                ],
+                "yaw": 12,
+                "scale": 1.55
+              },
+              {
+                "kind": "Stool",
+                "at": [
+                  -16.6,
+                  -142.6
+                ],
+                "yaw": 30,
+                "scale": 1.55
+              },
+              {
+                "kind": "Torch_Metal",
+                "at": [
+                  -18.2,
+                  -150.25
+                ],
+                "z": 3.1,
+                "yaw": 180,
+                "scale": 1.5
+              },
+              {
+                "kind": "Torch_Metal",
+                "at": [
+                  18.2,
+                  -150.25
+                ],
+                "z": 3.1,
+                "yaw": 180,
+                "scale": 1.5
+              }
+            ]
+          },
+          {
+            "id": "gate arriving trader",
+            "items": [
+              {
+                "kind": "Stall_Cart_Empty",
+                "at": [
+                  18.6,
+                  -139
+                ],
+                "yaw": 102,
+                "scale": 1.8
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  16.4,
+                  -142.4
+                ],
+                "yaw": 15,
+                "scale": 1.55
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  17.2,
+                  -143.2
+                ],
+                "yaw": 70,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  20.6,
+                  -142.6
+                ],
+                "yaw": -8,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  21,
+                  -142.4
+                ],
+                "z": null,
+                "yaw": 25,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  21.9,
+                  -140.6
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "bridge flower boxes",
+            "items": [
+              {
+                "kind": "planter_box",
+                "at": [
+                  -14.9,
+                  -79.6
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -14.9,
+                  -68.4
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -14.9,
+                  -116.6
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -14.9,
+                  -107.4
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  14.9,
+                  -79.6
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  14.9,
+                  -68.4
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  14.9,
+                  -116.6
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  14.9,
+                  -107.4
+                ],
+                "yaw": 90,
+                "length": 2.8,
+                "depth": 1,
+                "name": "garden stone planter bridge box"
+              }
+            ]
+          },
+          {
+            "id": "canal promenade lamps",
+            "items": [
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -14.7,
+                  -136
+                ],
+                "arm_yaw": 0,
+                "banner": true,
+                "scale": 1
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -14.7,
+                  -94
+                ],
+                "arm_yaw": 0,
+                "banner": true,
+                "scale": 1
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -14.7,
+                  -54
+                ],
+                "arm_yaw": 0,
+                "banner": true,
+                "scale": 1
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  14.7,
+                  -136
+                ],
+                "arm_yaw": 180,
+                "banner": true,
+                "scale": 1
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  14.7,
+                  -94
+                ],
+                "arm_yaw": 180,
+                "banner": true,
+                "scale": 1
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  14.7,
+                  -54
+                ],
+                "arm_yaw": 180,
+                "banner": true,
+                "scale": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "clusters",
+        "op_id": "market_clusters",
+        "owner": "kit_market_square",
+        "clusters": [
+          {
+            "id": "market produce",
+            "items": [
+              {
+                "kind": "Stall_Empty",
+                "at": [
+                  52,
+                  -30.5
+                ],
+                "yaw": 78,
+                "scale": 1.75
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  54.6,
+                  -27.2
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  55.6,
+                  -28.4
+                ],
+                "yaw": 40,
+                "scale": 1.55
+              },
+              {
+                "kind": "FarmCrate_Empty",
+                "at": [
+                  50.4,
+                  -26.6
+                ],
+                "yaw": 12,
+                "scale": 1.7
+              },
+              {
+                "kind": "FarmCrate_Empty",
+                "at": [
+                  49.9,
+                  -27.6
+                ],
+                "yaw": -20,
+                "scale": 1.7
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  57.4,
+                  -23.4
+                ],
+                "yaw": 30,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  53.6,
+                  -33.6
+                ],
+                "yaw": 8,
+                "scale": 1.55
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  58,
+                  -24.5
+                ],
+                "yaw": 75,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  49,
+                  -13.5
+                ],
+                "yaw": 18,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel_Holder",
+                "at": [
+                  62.6,
+                  -2.6
+                ],
+                "yaw": 180,
+                "scale": 1.45
+              }
+            ]
+          },
+          {
+            "id": "market crafts",
+            "items": [
+              {
+                "kind": "Stall_Empty",
+                "at": [
+                  83,
+                  -21
+                ],
+                "yaw": -96,
+                "scale": 1.75
+              },
+              {
+                "kind": "Table_Large",
+                "at": [
+                  79.4,
+                  -27.8
+                ],
+                "yaw": 8,
+                "scale": 1.45
+              },
+              {
+                "kind": "Pot_1",
+                "at": [
+                  78.8,
+                  -27.6
+                ],
+                "z_above": 1.04,
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  85.2,
+                  -26.6
+                ],
+                "yaw": -12,
+                "scale": 1.55
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  84.2,
+                  -18.2
+                ],
+                "yaw": 25,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  84.6,
+                  -24
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Chair_1",
+                "at": [
+                  81.6,
+                  -29.6
+                ],
+                "yaw": 200,
+                "scale": 1.45
+              }
+            ]
+          },
+          {
+            "id": "market arcane",
+            "items": [
+              {
+                "kind": "Cauldron",
+                "at": [
+                  64.8,
+                  -40.2
+                ],
+                "yaw": 0,
+                "scale": 1.5
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  61.2,
+                  -39.6
+                ],
+                "yaw": 15,
+                "scale": 1.55
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  68.4,
+                  -41
+                ],
+                "yaw": -20,
+                "scale": 1.55
+              },
+              {
+                "kind": "Bucket_Metal",
+                "at": [
+                  66.6,
+                  -38
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  58.6,
+                  -40.6
+                ],
+                "scale": 0.95
+              }
+            ]
+          },
+          {
+            "id": "market centre",
+            "items": [
+              {
+                "kind": "market_cross",
+                "at": [
+                  67,
+                  -20.5
+                ],
+                "name": "garden stone planter market cross"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  67,
+                  -16.6
+                ],
+                "yaw": 0,
+                "length": 2.6,
+                "depth": 1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  67,
+                  -24.4
+                ],
+                "yaw": 0,
+                "length": 2.6,
+                "depth": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "clusters",
+        "op_id": "story_yards",
+        "owner": "kit_city_vegetation",
+        "clusters": [
+          {
+            "id": "cooper yard",
+            "items": [
+              {
+                "kind": "Barrel",
+                "at": [
+                  -86.4,
+                  43.6
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  -85.5,
+                  42.2
+                ],
+                "yaw": 40,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  -87.6,
+                  42
+                ],
+                "yaw": 10,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel_Holder",
+                "at": [
+                  -84.6,
+                  45.6
+                ],
+                "yaw": 60,
+                "scale": 1.45
+              },
+              {
+                "kind": "Bucket_Wooden_1",
+                "at": [
+                  -88.2,
+                  44.8
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "gardener plot",
+            "items": [
+              {
+                "kind": "hedge",
+                "at": [
+                  -60,
+                  22
+                ],
+                "to": [
+                  -60,
+                  36
+                ],
+                "height": 0.95
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -58,
+                  26
+                ],
+                "yaw": 90,
+                "length": 2.6,
+                "depth": 1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -58,
+                  32
+                ],
+                "yaw": 90,
+                "length": 2.6,
+                "depth": 1
+              },
+              {
+                "kind": "Pot_1",
+                "at": [
+                  -57.6,
+                  29
+                ],
+                "yaw": 0,
+                "scale": 1.6
+              },
+              {
+                "kind": "Bucket_Wooden_1",
+                "at": [
+                  -58.2,
+                  28.2
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "woodcutter yard",
+            "items": [
+              {
+                "kind": "log_pile",
+                "at": [
+                  -108.5,
+                  -22
+                ],
+                "yaw": 8
+              },
+              {
+                "kind": "log_pile",
+                "at": [
+                  -108,
+                  -28.5
+                ],
+                "yaw": -6
+              },
+              {
+                "kind": "Workbench",
+                "at": [
+                  -105.2,
+                  -33.2
+                ],
+                "yaw": 95,
+                "scale": 1.45
+              },
+              {
+                "kind": "Anvil",
+                "at": [
+                  -104.8,
+                  -25.4
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "guild supplies",
+            "items": [
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -106.5,
+                  -61
+                ],
+                "yaw": 10,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -107.6,
+                  -62.5
+                ],
+                "yaw": -15,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel",
+                "at": [
+                  -105.3,
+                  -63.4
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -104.2,
+                  -60.4
+                ],
+                "yaw": 30,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "laundry yard",
+            "items": [
+              {
+                "kind": "laundry_line",
+                "at": [
+                  -112,
+                  22
+                ],
+                "to": [
+                  -104,
+                  30.5
+                ]
+              },
+              {
+                "kind": "Bucket_Wooden_1",
+                "at": [
+                  -106.4,
+                  23.4
+                ],
+                "yaw": 0,
+                "scale": 1.6
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  -109.6,
+                  21.2
+                ],
+                "yaw": 30,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "tavern green",
+            "items": [
+              {
+                "kind": "Table_Large",
+                "at": [
+                  -45,
+                  -73
+                ],
+                "yaw": 35,
+                "scale": 1.45
+              },
+              {
+                "kind": "Stool",
+                "at": [
+                  -46.8,
+                  -71.2
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Stool",
+                "at": [
+                  -43.2,
+                  -74.8
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Stool",
+                "at": [
+                  -46.1,
+                  -75.4
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Table_Large",
+                "at": [
+                  -38.8,
+                  -78.6
+                ],
+                "yaw": -20,
+                "scale": 1.45
+              },
+              {
+                "kind": "Stool",
+                "at": [
+                  -38,
+                  -76.4
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Stool",
+                "at": [
+                  -39.6,
+                  -80.8
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Barrel_Holder",
+                "at": [
+                  -50,
+                  -78
+                ],
+                "yaw": 125,
+                "scale": 1.45
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -42,
+                  -69.4
+                ],
+                "scale": 0.95
+              }
+            ]
+          },
+          {
+            "id": "carter yard",
+            "items": [
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -60.6,
+                  -45.6
+                ],
+                "yaw": 10,
+                "scale": 1.55
+              },
+              {
+                "kind": "Crate_Wooden",
+                "at": [
+                  -61.8,
+                  -44.4
+                ],
+                "yaw": -25,
+                "scale": 1.55
+              },
+              {
+                "kind": "FarmCrate_Empty",
+                "at": [
+                  -59.4,
+                  -43.6
+                ],
+                "yaw": 40,
+                "scale": 1.7
+              },
+              {
+                "kind": "Bag",
+                "at": [
+                  -62.6,
+                  -46.6
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "herbalist yard",
+            "items": [
+              {
+                "kind": "Table_Large",
+                "at": [
+                  101,
+                  8
+                ],
+                "yaw": 15,
+                "scale": 1.45
+              },
+              {
+                "kind": "Pot_1",
+                "at": [
+                  100.2,
+                  7.8
+                ],
+                "z_above": 1.04,
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  100.6,
+                  11.4
+                ],
+                "yaw": 15,
+                "length": 2.8,
+                "depth": 1
+              }
+            ]
+          },
+          {
+            "id": "market green",
+            "items": [
+              {
+                "kind": "hedge",
+                "at": [
+                  98,
+                  -20
+                ],
+                "to": [
+                  110,
+                  -22
+                ]
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  98,
+                  -36
+                ],
+                "to": [
+                  110,
+                  -34
+                ]
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  103,
+                  -27.8
+                ],
+                "yaw": 95,
+                "scale": 1.3
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  108,
+                  -27.6
+                ],
+                "yaw": 95,
+                "length": 2.6,
+                "depth": 1.1
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  99.4,
+                  -27.5
+                ],
+                "scale": 0.95
+              }
+            ]
+          },
+          {
+            "id": "herb garden",
+            "items": [
+              {
+                "kind": "planter_box",
+                "at": [
+                  68,
+                  -93
+                ],
+                "yaw": 8,
+                "length": 3,
+                "depth": 1.1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  72.6,
+                  -92.2
+                ],
+                "yaw": 8,
+                "length": 3,
+                "depth": 1.1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  77.2,
+                  -91.4
+                ],
+                "yaw": 8,
+                "length": 3,
+                "depth": 1.1
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  64.6,
+                  -89
+                ],
+                "to": [
+                  80.6,
+                  -86.6
+                ],
+                "height": 0.9
+              },
+              {
+                "kind": "Bucket_Wooden_1",
+                "at": [
+                  70.4,
+                  -94.6
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "skywatch overlook",
+            "items": [
+              {
+                "kind": "balustrade",
+                "at": [
+                  99,
+                  -137
+                ],
+                "to": [
+                  111,
+                  -127
+                ]
+              },
+              {
+                "kind": "telescope",
+                "at": [
+                  104.2,
+                  -129.6
+                ],
+                "yaw": -45
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  101.2,
+                  -128.6
+                ],
+                "yaw": -50,
+                "scale": 1.3
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  109,
+                  -124
+                ],
+                "scale": 0.95,
+                "arm_yaw": -40,
+                "banner": true
+              }
+            ]
+          },
+          {
+            "id": "wizard walk garden",
+            "items": [
+              {
+                "kind": "hedge",
+                "at": [
+                  -30.619,
+                  47.35
+                ],
+                "to": [
+                  -40.183,
+                  58.906
+                ],
+                "height": 0.9
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -30.991,
+                  50.936
+                ],
+                "yaw": 140,
+                "length": 2.4,
+                "depth": 1
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -36.729,
+                  57.87
+                ],
+                "yaw": 140,
+                "length": 2.4,
+                "depth": 1
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  -33.706,
+                  54.531
+                ],
+                "yaw": 140,
+                "scale": 1.3
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -31.703,
+                  56.188
+                ],
+                "scale": 0.95
+              }
+            ]
+          },
+          {
+            "id": "cottage rope yard",
+            "items": [
+              {
+                "kind": "Barrel",
+                "at": [
+                  104.6,
+                  -100.4
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              },
+              {
+                "kind": "Rope_2",
+                "at": [
+                  103.2,
+                  -99.2
+                ],
+                "yaw": 20,
+                "scale": 1.55
+              },
+              {
+                "kind": "Bucket_Metal",
+                "at": [
+                  105.4,
+                  -98.6
+                ],
+                "yaw": 0,
+                "scale": 1.55
+              }
+            ]
+          },
+          {
+            "id": "canal parterre",
+            "items": [
+              {
+                "kind": "hedge",
+                "at": [
+                  27,
+                  -88
+                ],
+                "to": [
+                  39.8,
+                  -88
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  44.2,
+                  -88
+                ],
+                "to": [
+                  57,
+                  -88
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  27,
+                  -68
+                ],
+                "to": [
+                  39.8,
+                  -68
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  44.2,
+                  -68
+                ],
+                "to": [
+                  57,
+                  -68
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  27,
+                  -88
+                ],
+                "to": [
+                  27,
+                  -80.2
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  27,
+                  -75.8
+                ],
+                "to": [
+                  27,
+                  -68
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  57,
+                  -88
+                ],
+                "to": [
+                  57,
+                  -80.2
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  57,
+                  -75.8
+                ],
+                "to": [
+                  57,
+                  -68
+                ],
+                "height": 0.95,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  29.799999999999997,
+                  -80.4
+                ],
+                "to": [
+                  39,
+                  -80.4
+                ],
+                "height": 0.6,
+                "width": 0.6,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  34.4,
+                  -83.4
+                ],
+                "yaw": 0,
+                "length": 7.2,
+                "depth": 2.6,
+                "height": 0.42,
+                "name": "garden stone planter parterre bed"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  29.799999999999997,
+                  -75.6
+                ],
+                "to": [
+                  39,
+                  -75.6
+                ],
+                "height": 0.6,
+                "width": 0.6,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  34.4,
+                  -72.6
+                ],
+                "yaw": 0,
+                "length": 7.2,
+                "depth": 2.6,
+                "height": 0.42,
+                "name": "garden stone planter parterre bed"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  45,
+                  -80.4
+                ],
+                "to": [
+                  54.2,
+                  -80.4
+                ],
+                "height": 0.6,
+                "width": 0.6,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  49.6,
+                  -83.4
+                ],
+                "yaw": 0,
+                "length": 7.2,
+                "depth": 2.6,
+                "height": 0.42,
+                "name": "garden stone planter parterre bed"
+              },
+              {
+                "kind": "hedge",
+                "at": [
+                  45,
+                  -75.6
+                ],
+                "to": [
+                  54.2,
+                  -75.6
+                ],
+                "height": 0.6,
+                "width": 0.6,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  49.6,
+                  -72.6
+                ],
+                "yaw": 0,
+                "length": 7.2,
+                "depth": 2.6,
+                "height": 0.42,
+                "name": "garden stone planter parterre bed"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  42,
+                  -78
+                ],
+                "scale": 1.1,
+                "arm_yaw": 90,
+                "banner": true
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  39,
+                  -84.6
+                ],
+                "yaw": 0,
+                "scale": 1.3,
+                "name": "plaza bench CC0 parterre"
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  45,
+                  -71.4
+                ],
+                "yaw": 180,
+                "scale": 1.3,
+                "name": "plaza bench CC0 parterre"
+              },
+              {
+                "kind": "strip",
+                "points": [
+                  [
+                    27.6,
+                    -78
+                  ],
+                  [
+                    56.4,
+                    -78
+                  ]
+                ],
+                "width": 2.6,
+                "name": "terrain / path canal parterre east-west"
+              },
+              {
+                "kind": "strip",
+                "points": [
+                  [
+                    42,
+                    -87.4
+                  ],
+                  [
+                    42,
+                    -68.6
+                  ]
+                ],
+                "width": 2.6,
+                "name": "terrain / path canal parterre north-south"
+              }
+            ]
+          },
+          {
+            "id": "nw residents green",
+            "items": [
+              {
+                "kind": "hedge",
+                "at": [
+                  -84,
+                  33
+                ],
+                "to": [
+                  -72,
+                  33
+                ],
+                "height": 0.9,
+                "name": "garden stone planter hedge"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  -78,
+                  38
+                ],
+                "yaw": 0,
+                "length": 3.2,
+                "depth": 1.2,
+                "name": "garden stone planter green bed"
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  -78,
+                  35
+                ],
+                "yaw": 0,
+                "scale": 1.3,
+                "name": "plaza bench CC0 green"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  -73,
+                  40
+                ],
+                "scale": 0.95
+              },
+              {
+                "kind": "flowers",
+                "at": [
+                  -82.5,
+                  41.5
+                ],
+                "radius": 1.1,
+                "mounds": 4
+              },
+              {
+                "kind": "flowers",
+                "at": [
+                  -73.5,
+                  44
+                ],
+                "radius": 0.9,
+                "mounds": 3
+              }
+            ]
+          },
+          {
+            "id": "ne pool terrace",
+            "items": [
+              {
+                "kind": "Bench",
+                "at": [
+                  52,
+                  29.4
+                ],
+                "yaw": 0,
+                "scale": 1.3,
+                "name": "plaza bench CC0 pool"
+              },
+              {
+                "kind": "Bench",
+                "at": [
+                  60,
+                  29.4
+                ],
+                "yaw": 0,
+                "scale": 1.3,
+                "name": "plaza bench CC0 pool"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  47.4,
+                  29.8
+                ],
+                "yaw": 0,
+                "length": 1.6,
+                "depth": 1.6,
+                "height": 0.62,
+                "name": "garden stone planter pool"
+              },
+              {
+                "kind": "planter_box",
+                "at": [
+                  64.6,
+                  29.8
+                ],
+                "yaw": 0,
+                "length": 1.6,
+                "depth": 1.6,
+                "height": 0.62,
+                "name": "garden stone planter pool"
+              },
+              {
+                "kind": "crystal_lamp",
+                "at": [
+                  56,
+                  28.2
+                ],
+                "scale": 1,
+                "arm_yaw": 90,
+                "banner": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "meadow_drifts",
+        "seed": 4404,
+        "max_per_patch": 4,
+        "min_gap_m": 14,
+        "patches": [
+          {
+            "bbox": [
+              14,
+              -102,
+              90,
+              -34
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              34,
+              -14,
+              94,
+              90
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              -94,
+              -2,
+              -42,
+              102
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              -94,
+              -134,
+              -50,
+              -94
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              10,
+              38,
+              46,
+              62
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              -42,
+              -102,
+              -14,
+              -70
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              46,
+              74,
+              74,
+              102
+            ],
+            "spacing": 17
+          },
+          {
+            "bbox": [
+              -42,
+              -66,
+              -14,
+              -34
+            ],
+            "spacing": 17
+          }
+        ]
+      },
+      {
+        "op": "snap_floaters",
+        "iterations": 3,
+        "max_snap_m": 1.25,
+        "embed_m": 0.012,
+        "max_members": 70,
+        "reach_overrides": {
+          "castle central nave slate dormer": 2.2
+        },
+        "allow_pattern": "window|counter|goods crate|display|standard|banner|sigil|staff|crest|lancet|capital|dormer|chimney|herb|hanging|sign|bracket|bench|lantern|stall|glasshouse|tree|planter|lamp|CC0|flower|mound|blossom|merlon|well water|rack|blade"
+      },
+      {
+        "op": "canopy_clear",
+        "min_hits": 4,
+        "building_pattern": " (masonry body|foundation plinth)$|^castle |curtain wall|round tower|observatory|windmill plaster tower|guild |tavern|smithy|forge",
+        "terrace_pattern": "^terrain / (castle|wizard) terrace"
+      },
+      {
+        "op": "resolve_coplanar",
+        "min_cover": 0.97,
+        "decal_lift_m": 0.004,
+        "decal_pattern": "^terrain / plaza pavers mosaic .*meander line",
+        "cover_pattern": "coping|paving|tread|landing|cap\\b|top\\b|roof|slab|floor|sill"
+      },
+      {
+        "op": "edge_gap_skirts",
+        "embed_m": 0.06,
+        "ring_tol_m": 0.02
+      }
+    ],
+    "house_cut": [
+      "kit_nw_residential_rows_3",
+      "kit_nw_residential_rows_6",
+      "kit_west_residential_rows_2",
+      "kit_west_residential_rows_3",
+      "kit_west_residential_rows_6",
+      "kit_east_residential_rows_3",
+      "kit_east_residential_rows_6",
+      "kit_se_cottages_1"
+    ],
+    "house_facing_runtime_heading_deg": {
+      "kit_nw_residential_rows_1": 128,
+      "kit_nw_residential_rows_2": 148,
+      "kit_nw_residential_rows_4": 182,
+      "kit_nw_residential_rows_5": 262,
+      "kit_west_residential_rows_1": 86,
+      "kit_west_residential_rows_4": 150,
+      "kit_west_residential_rows_5": 322,
+      "kit_east_residential_rows_1": 254,
+      "kit_east_residential_rows_2": 288,
+      "kit_east_residential_rows_4": 318,
+      "kit_east_residential_rows_5": 352,
+      "kit_se_cottages_2": 340
+    },
+    "rule": "Every op runs on a loaded copy of the selected R5 master; outputs go to assets/models/reference-city/r6-candidate/."
+  },
+  "r6_tail_repair": {
+    "schema": "xexoria.r6-tail-repair/1",
+    "recipe": "assets/blender/city_r5/repair_r6_tail.py",
+    "input_sha256": "8e062f47ab2211b412c7aedf0fd67848b1b1257b16dbe286370cefb9765cfd02",
+    "params": {
+      "seed": 0,
+      "channel_side_separation_m": 0.016,
+      "road_lifts_m": {
+        "terrain / path market square": 0.03,
+        "terrain / path west_loop": 0.08
+      },
+      "channel_prefix": "terrain / channel coping gate_pool_"
+    },
+    "immutable_input": "%USERPROFILE%\\Downloads\\Xexoria-Game\\agent-output\\20261003-r6-finish\\revisions\\0919-pre-tail\\reference_city_r6_candidate.blend"
+  }
+}

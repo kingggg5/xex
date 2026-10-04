@@ -1,0 +1,2 @@
+export function applyPalmDefectOverlay<T extends {id:string;asset_id:string;blueprint_id?:string;target_height?:number;cell?:string}>(entries: readonly T[], overlay:{schema:string;patches:{id:string;x:number;z:number;yaw:number;pitch:number}[];targetHeightM:number;groundingOffsetM:number}):T[];
+export function distanceFromSegmentXZ(point:readonly number[],start:readonly number[],end:readonly number[]):number;

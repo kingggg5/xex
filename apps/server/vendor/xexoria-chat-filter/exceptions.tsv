@@ -1,0 +1,4 @@
+# Rule-specific literal exceptions: rule_id, containing phrase
+# Only suppress a candidate contained in this occurrence; never the entire message.
+th_hia	เหี้ยม
+th_maeng	แม่งาน

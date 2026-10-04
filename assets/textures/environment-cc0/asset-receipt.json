@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "package_id": "xexoria_environment_cc0_kloofendal_1k_v1",
+  "downloaded_at_utc": "2026-10-01T08:42:57.017700+00:00",
+  "purpose": "Native Babylon.js PBR shared sky image-based lighting; source panorama is not visible sky geometry",
+  "asset_id": "kloofendal_48d_partly_cloudy_puresky",
+  "name": "Kloofendal 48d Partly Cloudy (Pure Sky)",
+  "authors": {
+    "Greg Zaal": "Original",
+    "Jarod Guest": "Sky edits"
+  },
+  "asset_page": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+  "metadata_endpoints": [
+    "https://api.polyhaven.com/info/kloofendal_48d_partly_cloudy_puresky",
+    "https://api.polyhaven.com/files/kloofendal_48d_partly_cloudy_puresky"
+  ],
+  "download_url_from_files_api": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloofendal_48d_partly_cloudy_puresky_1k.hdr",
+  "license": {
+    "identifier": "CC0-1.0",
+    "official_asset_license_url": "https://polyhaven.com/license",
+    "legal_code_url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "api_terms_url": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+    "api_used_only_for_development_acquisition": true,
+    "live_api_calls_in_game": false
+  },
+  "closed_hash_roster": [
+    {
+      "path": "kloofendal_48d_partly_cloudy_puresky_1k.hdr",
+      "bytes": 1435119,
+      "sha256": "fd94c84997b8a3c353b62c2125a9b44e19509956986a126e472684432a02d798",
+      "upstream_md5": "c69498687e876bf68d2a8b8a62234eb9"
+    }
+  ],
+  "validation": {
+    "header": "#?RADIANCE\nFORMAT=32-bit_rle_rgbe",
+    "width": 1024,
+    "height": 512,
+    "format": "Radiance RGBE RLE panorama",
+    "byte_count_match": true,
+    "upstream_md5_match": true,
+    "source_untouched": true
+  },
+  "runtime_caps": {
+    "mobile_cube_face": 64,
+    "desktop_cube_face": 128,
+    "generate_mips": true,
+    "linear_space": true,
+    "spherical_harmonics": true,
+    "prefilter_on_load": true,
+    "prefilter_irradiance_on_load": false,
+    "supersampling": false
+  },
+  "limitations": [
+    "File integrity and license checks do not prove native GPU rendering or frame time.",
+    "HDR panorama conversion and radiance prefilter run once during loading; benchmark mobile initialization separately.",
+    "Final GPU storage format is capability-dependent; memory estimates are not telemetry."
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "schema": "xexoria.water-art-grotto-manifest/1",
+  "id": "sm_grotto_organic_r03",
+  "candidate": "water-art-pass4b-r03",
+  "revision": 3,
+  "status": "SOURCE_CANDIDATE_NATIVE_UNVERIFIED",
+  "family": "stone",
+  "recipe": "sculpt.boulder-volume-negative-passage/1",
+  "material_slot": "sm_stone_mat",
+  "runtime_material": "Parent assigns existing shared sm_stone PBR and canonical KTX2 atlas; GLBs have no texture/sampler references.",
+  "pivot": [
+    0,
+    0,
+    0
+  ],
+  "anchor_at_pivot": true,
+  "placement": {
+    "x": -4,
+    "y": 0,
+    "z": -39,
+    "yaw": 0,
+    "scale": 1
+  },
+  "coordinate_contract": "Blender local (-worldX-4,-worldZ-39,worldY) -> glTF (bx,bz,-by) -> default Babylon X-reflection -> local(worldX+4,worldY,worldZ+39). Do not remove the default X reflection, rotate, recenter or ground by bounds.",
+  "bounds": {
+    "min": [
+      -6.458170413970947,
+      0,
+      -5.593734264373779
+    ],
+    "max": [
+      4.892000198364258,
+      9.900612831115723,
+      7.0117340087890625
+    ]
+  },
+  "lods": [
+    {
+      "suffix": "lod0",
+      "file": "apps/client/src/assets/world/water-art-pass4b-r03/sm_grotto_organic_r03_lod0.glb",
+      "sha256": "8d294bd365acc7037d04ef598c5bf596b56307af1ccc17772029340145eb1b34",
+      "bytes": 398904,
+      "triangles": 5460,
+      "draw_calls": 1,
+      "materials": 1,
+      "vertex_attributes": [
+        [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0",
+          "COLOR_0"
+        ]
+      ],
+      "attributeReceipts": [
+        {
+          "POSITION": {
+            "count": 16205,
+            "type": "VEC3",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true
+          },
+          "NORMAL": {
+            "count": 16205,
+            "type": "VEC3",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true,
+            "minLength": 0.9999999221410688,
+            "maxLength": 1.000000135473986
+          },
+          "TEXCOORD_0": {
+            "count": 16205,
+            "type": "VEC2",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true
+          },
+          "COLOR_0": {
+            "count": 16205,
+            "type": "VEC3",
+            "componentType": 5121,
+            "normalized": true,
+            "finite": true,
+            "minimumComponent": 111,
+            "maximumComponent": 255
+          }
+        }
+      ],
+      "boundsWorld": {
+        "min": [
+          -10.458170413970947,
+          0,
+          -44.59373426437378
+        ],
+        "max": [
+          0.8920001983642578,
+          9.900612831115723,
+          -31.988265991210938
+        ]
+      },
+      "boundsBabylonLocal": {
+        "min": [
+          -6.458170413970947,
+          0,
+          -5.593734264373779
+        ],
+        "max": [
+          4.892000198364258,
+          9.900612831115723,
+          7.0117340087890625
+        ]
+      },
+      "khronos": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "textureFree": true,
+      "postprocessStatus": "PASS"
+    },
+    {
+      "suffix": "lod1",
+      "file": "apps/client/src/assets/world/water-art-pass4b-r03/sm_grotto_organic_r03_lod1.glb",
+      "sha256": "0318b32ff5dbc11868f4364b6bee3b593b82fce7c1fa18458dcdba7bafcd11bb",
+      "bytes": 137056,
+      "triangles": 1920,
+      "draw_calls": 1,
+      "materials": 1,
+      "vertex_attributes": [
+        [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0",
+          "COLOR_0"
+        ]
+      ],
+      "attributeReceipts": [
+        {
+          "POSITION": {
+            "count": 5316,
+            "type": "VEC3",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true
+          },
+          "NORMAL": {
+            "count": 5316,
+            "type": "VEC3",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true,
+            "minLength": 0.9999999209567397,
+            "maxLength": 1.0000001233973024
+          },
+          "TEXCOORD_0": {
+            "count": 5316,
+            "type": "VEC2",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true
+          },
+          "COLOR_0": {
+            "count": 5316,
+            "type": "VEC3",
+            "componentType": 5121,
+            "normalized": true,
+            "finite": true,
+            "minimumComponent": 111,
+            "maximumComponent": 255
+          }
+        }
+      ],
+      "boundsWorld": {
+        "min": [
+          -10.462759971618652,
+          0,
+          -44.626389026641846
+        ],
+        "max": [
+          0.8920001983642578,
+          9.902265548706055,
+          -31.9717059135437
+        ]
+      },
+      "boundsBabylonLocal": {
+        "min": [
+          -6.462759971618652,
+          0,
+          -5.626389026641846
+        ],
+        "max": [
+          4.892000198364258,
+          9.902265548706055,
+          7.028294086456299
+        ]
+      },
+      "khronos": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "textureFree": true,
+      "postprocessStatus": "PASS"
+    },
+    {
+      "suffix": "lod2",
+      "file": "apps/client/src/assets/world/water-art-pass4b-r03/sm_grotto_organic_r03_lod2.glb",
+      "sha256": "5247fddc1a7c07eedd039baab9595833e1177cfd29f1a6a2f2ec28dad14c2848",
+      "bytes": 35764,
+      "triangles": 578,
+      "draw_calls": 1,
+      "materials": 1,
+      "vertex_attributes": [
+        [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0",
+          "COLOR_0"
+        ]
+      ],
+      "attributeReceipts": [
+        {
+          "POSITION": {
+            "count": 1289,
+            "type": "VEC3",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true
+          },
+          "NORMAL": {
+            "count": 1289,
+            "type": "VEC3",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true,
+            "minLength": 0.9999999326184148,
+            "maxLength": 1.000000113087132
+          },
+          "TEXCOORD_0": {
+            "count": 1289,
+            "type": "VEC2",
+            "componentType": 5126,
+            "normalized": false,
+            "finite": true
+          },
+          "COLOR_0": {
+            "count": 1289,
+            "type": "VEC3",
+            "componentType": 5121,
+            "normalized": true,
+            "finite": true,
+            "minimumComponent": 112,
+            "maximumComponent": 255
+          }
+        }
+      ],
+      "boundsWorld": {
+        "min": [
+          -10.528414249420166,
+          0,
+          -44.6842155456543
+        ],
+        "max": [
+          0.8920001983642578,
+          9.888068199157715,
+          -32.00353527069092
+        ]
+      },
+      "boundsBabylonLocal": {
+        "min": [
+          -6.528414249420166,
+          0,
+          -5.684215545654297
+        ],
+        "max": [
+          4.892000198364258,
+          9.888068199157715,
+          6.996464729309082
+        ]
+      },
+      "khronos": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "textureFree": true,
+      "postprocessStatus": "PASS"
+    }
+  ],
+  "collider": {
+    "suffix": "collider",
+    "file": "apps/client/src/assets/world/water-art-pass4b-r03/sm_grotto_organic_r03_collider.glb",
+    "sha256": "08f69a3f2c40fa849c3cf3291a78505dd89815c9efa861d457ebd387121d61eb",
+    "bytes": 32012,
+    "triangles": 578,
+    "draw_calls": 1,
+    "materials": 0,
+    "vertex_attributes": [
+      [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0"
+      ]
+    ],
+    "attributeReceipts": [
+      {
+        "POSITION": {
+          "count": 1289,
+          "type": "VEC3",
+          "componentType": 5126,
+          "normalized": false,
+          "finite": true
+        },
+        "NORMAL": {
+          "count": 1289,
+          "type": "VEC3",
+          "componentType": 5126,
+          "normalized": false,
+          "finite": true,
+          "minLength": 0.9999999326184148,
+          "maxLength": 1.000000113087132
+        },
+        "TEXCOORD_0": {
+          "count": 1289,
+          "type": "VEC2",
+          "componentType": 5126,
+          "normalized": false,
+          "finite": true
+        }
+      }
+    ],
+    "boundsWorld": {
+      "min": [
+        -10.528414249420166,
+        0,
+        -44.6842155456543
+      ],
+      "max": [
+        0.8920001983642578,
+        9.888068199157715,
+        -32.00353527069092
+      ]
+    },
+    "boundsBabylonLocal": {
+      "min": [
+        -6.528414249420166,
+        0,
+        -5.684215545654297
+      ],
+      "max": [
+        4.892000198364258,
+        9.888068199157715,
+        6.996464729309082
+      ]
+    },
+    "khronos": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "textureFree": true,
+    "postprocessStatus": "PASS",
+    "intended_visible_draw_calls": 0
+  },
+  "shadow": {
+    "suffix": "shadow",
+    "file": "apps/client/src/assets/world/water-art-pass4b-r03/sm_grotto_organic_r03_shadow.glb",
+    "sha256": "d0e135dcb2dac2778d959902c8b957d2b811b3967aba92db2b36e972bd3bee14",
+    "bytes": 124212,
+    "triangles": 1920,
+    "draw_calls": 1,
+    "materials": 0,
+    "vertex_attributes": [
+      [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0"
+      ]
+    ],
+    "attributeReceipts": [
+      {
+        "POSITION": {
+          "count": 5316,
+          "type": "VEC3",
+          "componentType": 5126,
+          "normalized": false,
+          "finite": true
+        },
+        "NORMAL": {
+          "count": 5316,
+          "type": "VEC3",
+          "componentType": 5126,
+          "normalized": false,
+          "finite": true,
+          "minLength": 0.9999999209567397,
+          "maxLength": 1.0000001233973024
+        },
+        "TEXCOORD_0": {
+          "count": 5316,
+          "type": "VEC2",
+          "componentType": 5126,
+          "normalized": false,
+          "finite": true
+        }
+      }
+    ],
+    "boundsWorld": {
+      "min": [
+        -10.462759971618652,
+        0,
+        -44.626389026641846
+      ],
+      "max": [
+        0.8920001983642578,
+        9.902265548706055,
+        -31.9717059135437
+      ]
+    },
+    "boundsBabylonLocal": {
+      "min": [
+        -6.462759971618652,
+        0,
+        -5.626389026641846
+      ],
+      "max": [
+        4.892000198364258,
+        9.902265548706055,
+        7.028294086456299
+      ]
+    },
+    "khronos": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "textureFree": true,
+    "postprocessStatus": "PASS",
+    "intended_visible_draw_calls": 0
+  },
+  "textures": {
+    "atlas": "sm_stone",
+    "source": {
+      "atlas": "sm_stone",
+      "repeat_m": 2.5,
+      "source_px_per_m": 409.6,
+      "normal_convention": "OpenGL +Y",
+      "orm": "R=AO,G=roughness,B=metal"
+    },
+    "gpu_mib": 3.333,
+    "draw_calls": 1,
+    "ktx2_files": [
+      "assets/models/sunmeadow-props/stone/runtime/textures/sm_stone_normal-5aac6efc0e22.ktx2",
+      "assets/models/sunmeadow-props/stone/runtime/textures/sm_stone_orm-ffc61f77267c.ktx2",
+      "assets/models/sunmeadow-props/stone/runtime/textures/sm_stone_albedo-384298f87985.ktx2"
+    ],
+    "texture_receipts": [
+      {
+        "name": "sm_stone_normal",
+        "slots": [
+          "normalTexture"
+        ],
+        "mode": "UASTC",
+        "cache": "hit",
+        "source_bytes": 282531,
+        "source_sha256": "58c3ac4edd9b0724b7e879ee0cb2e69e6ff83bbc2c843b78c49114c25d48ef08",
+        "file": "assets/models/sunmeadow-props/stone/runtime/textures/sm_stone_normal-5aac6efc0e22.ktx2",
+        "bytes": 434806,
+        "sha256": "5aac6efc0e22b6b644a3dad0fc35e8ee94540a986afc8bbcb651682b0b0824b1",
+        "codec": "UASTC",
+        "width": 1024,
+        "height": 1024,
+        "levels": 11,
+        "alpha": false,
+        "srgb": false,
+        "supercompression": "zstd",
+        "gpu_bytes": 1398128,
+        "gpu_target": "ASTC 4x4 / BC7 (8 bpp)",
+        "rgba8_fallback_bytes": 5592404
+      },
+      {
+        "name": "sm_stone_orm",
+        "slots": [
+          "occlusionTexture",
+          "metallicRoughnessTexture"
+        ],
+        "mode": "UASTC",
+        "cache": "hit",
+        "source_bytes": 135708,
+        "source_sha256": "c9417797e8ca8a71d2353060b0bf5f9cc1bce8af1c4e22fddb65678ce5658a6a",
+        "file": "assets/models/sunmeadow-props/stone/runtime/textures/sm_stone_orm-ffc61f77267c.ktx2",
+        "bytes": 242279,
+        "sha256": "ffc61f77267c0712812525daf9d5c65f41453fc3dec1bc6bd38ddef60aab6396",
+        "codec": "UASTC",
+        "width": 1024,
+        "height": 1024,
+        "levels": 11,
+        "alpha": false,
+        "srgb": false,
+        "supercompression": "zstd",
+        "gpu_bytes": 1398128,
+        "gpu_target": "ASTC 4x4 / BC7 (8 bpp)",
+        "rgba8_fallback_bytes": 5592404
+      },
+      {
+        "name": "sm_stone_albedo",
+        "slots": [
+          "baseColorTexture"
+        ],
+        "mode": "ETC1S",
+        "cache": "hit",
+        "source_bytes": 218136,
+        "source_sha256": "9bb1e271cd483084f36063570d8e4c4413352f547442d5a6de4f62de257757d8",
+        "file": "assets/models/sunmeadow-props/stone/runtime/textures/sm_stone_albedo-384298f87985.ktx2",
+        "bytes": 61561,
+        "sha256": "384298f87985993b9153f4a437eea2606b95e11524778fef35741a3bc6ce2822",
+        "codec": "ETC1S",
+        "width": 1024,
+        "height": 1024,
+        "levels": 11,
+        "alpha": false,
+        "srgb": true,
+        "supercompression": "BasisLZ",
+        "gpu_bytes": 699064,
+        "gpu_target": "ETC2 RGB / BC1 (4 bpp)",
+        "rgba8_fallback_bytes": 5592404
+      }
+    ]
+  },
+  "metadata": {
+    "opening_width_m": 4.8,
+    "opening_height_m": 5.1,
+    "floor_world_y": 0,
+    "inner_east_crown_m": 8.35,
+    "source_film_immutable": true,
+    "collider_note": "Separate geometry-only proxy preserves negative passage. Baseline raw/server collider admission is outside this source candidate.",
+    "visual_remove_ids": [
+      "v3_grotto_mouth",
+      "v3_grotto_tunnel",
+      "water_art_grotto_bluff_000",
+      "water_art_grotto_bluff_001",
+      "water_art_grotto_bluff_002",
+      "water_art_grotto_bluff_003",
+      "water_art_grotto_bluff_004",
+      "water_art_grotto_bluff_005",
+      "water_art_grotto_bluff_006"
+    ]
+  },
+  "provenance": {
+    "source_receipt": "planning/evidence/water-art-pass4b-20261003/r03/sculpt-source-provenance.json",
+    "editable_source": "assets/blender/water/r03/sm_grotto_organic_r03.blend",
+    "recipe": "assets/blender/water/r03/sculpt_grotto_r03.py",
+    "postpack": "assets/blender/water/r03/postpack-runtime.mjs",
+    "sourceHashes": {
+      "assets/models/sunmeadow-props/stone/source/sm_boulder_03_lod0.glb": "c76f6266ce051bc6126dcfe4b6047ea33e8e8253aa3c63e74dce8c839324b251",
+      "assets/models/sunmeadow-props/stone/source/sm_boulder_04_lod0.glb": "a28fc0e18d07bf63423e583279b3859d89bf4348982f892866898d212c09a956"
+    }
+  },
+  "verdicts": {
+    "technical": "Source probes plus exported/redecoded parity recorded separately",
+    "visual": "BLENDER REVIEW only; parent native review pending",
+    "gameplay": "UNVERIFIED",
+    "device": "UNVERIFIED"
+  }
+}

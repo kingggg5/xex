@@ -1,0 +1,222 @@
+{
+  "cold_client": [
+    {
+      "json": "{\"t\":\"interact\",\"npc\":\"sella\"}",
+      "name": "interact"
+    },
+    {
+      "json": "{\"t\":\"choose\",\"npc\":\"sella\",\"token\":\"abc123\",\"choice\":\"accept\"}",
+      "name": "choose"
+    },
+    {
+      "json": "{\"t\":\"claim\",\"quest\":\"three_windmarks\",\"op_id\":\"123e4567-e89b-12d3-a456-426614174000\"}",
+      "name": "claim"
+    },
+    {
+      "json": "{\"t\":\"use_item\",\"item\":\"trail_potion\",\"op_id\":\"123e4567-e89b-12d3-a456-426614174000\"}",
+      "name": "use_item"
+    },
+    {
+      "json": "{\"t\":\"party_create\"}",
+      "name": "party_create"
+    },
+    {
+      "json": "{\"t\":\"party_join\",\"code\":\"K7Q2XA\"}",
+      "name": "party_join"
+    },
+    {
+      "json": "{\"t\":\"party_leave\"}",
+      "name": "party_leave"
+    },
+    {
+      "json": "{\"t\":\"resync\"}",
+      "name": "resync"
+    },
+    {
+      "json": "{\"t\":\"activate\",\"marker\":\"windmark_1\"}",
+      "name": "activate"
+    },
+    {
+      "json": "{\"t\":\"store_buy\",\"item\":\"trail_potion\",\"op_id\":\"123e4567-e89b-12d3-a456-426614174000\"}",
+      "name": "store_buy"
+    },
+    {
+      "json": "{\"t\":\"box_open\",\"item\":\"meadow_box\",\"op_id\":\"123e4567-e89b-12d3-a456-426614174000\"}",
+      "name": "box_open"
+    },
+    {
+      "json": "{\"t\":\"cosmetics_equip\",\"slot\":\"skin\",\"id\":\"skin_crimson\",\"op_id\":\"123e4567-e89b-12d3-a456-426614174000\"}",
+      "name": "cosmetics_equip"
+    },
+    {
+      "json": "{\"t\":\"chat\",\"channel\":\"room\",\"text\":\"hello field\"}",
+      "name": "chat"
+    },
+    {
+      "json": "{\"t\":\"friend_add\",\"handle\":\"a1b2c3d4\"}",
+      "name": "friend_add"
+    },
+    {
+      "json": "{\"t\":\"friend_remove\",\"handle\":\"e5f6a7b8\"}",
+      "name": "friend_remove"
+    },
+    {
+      "json": "{\"t\":\"group_create\"}",
+      "name": "group_create"
+    },
+    {
+      "json": "{\"t\":\"group_join\",\"code\":\"A1B2C3\"}",
+      "name": "group_join"
+    },
+    {
+      "json": "{\"t\":\"group_leave\"}",
+      "name": "group_leave"
+    }
+  ],
+  "cold_server": [
+    {
+      "json": "{\"t\":\"character_state\",\"rev\":3,\"level\":2,\"exp\":117,\"hp\":80,\"max_hp\":100,\"bag\":[{\"slot\":0,\"item\":\"trail_potion\",\"count\":2}],\"pouch\":{\"dew_bead\":5},\"gold\":250,\"coin\":10,\"skin\":null,\"pet\":null,\"owned_cosmetics\":[\"skin_ember\"],\"handle\":\"a1b2c3d4\",\"name\":\"Traveler-1234\"}",
+      "name": "character_state"
+    },
+    {
+      "json": "{\"t\":\"quest_state\",\"rev\":7,\"quest\":\"three_windmarks\",\"state\":\"active\",\"objectives\":{\"hunt\":1,\"windmark\":2},\"step_ticks\":{\"accepted\":42}}",
+      "name": "quest_state"
+    },
+    {
+      "json": "{\"t\":\"dialogue\",\"npc\":\"sella\",\"token\":\"abc123\",\"text_key\":\"sella_greet\",\"choices\":[{\"id\":\"accept\",\"label_key\":\"quest_accept\"},{\"id\":\"later\",\"label_key\":\"quest_later\"}]}",
+      "name": "dialogue"
+    },
+    {
+      "json": "{\"t\":\"dialogue_closed\",\"npc\":\"sella\",\"reason\":\"done\"}",
+      "name": "dialogue_closed"
+    },
+    {
+      "json": "{\"t\":\"op_result\",\"op_id\":\"123e4567-e89b-12d3-a456-426614174000\",\"status\":\"ok\",\"reason\":\"claimed\",\"ends_at_ms\":0,\"grants\":[{\"def\":\"gale_seed\",\"count\":1}]}",
+      "name": "op_result"
+    },
+    {
+      "json": "{\"t\":\"party_state\",\"rev\":1,\"members\":[{\"id\":2,\"name\":\"Ash\"}],\"leader\":2,\"code\":\"K7Q2XA\",\"expires_s\":600}",
+      "name": "party_state"
+    },
+    {
+      "json": "{\"t\":\"notice\",\"key\":\"welcome\",\"params\":{\"motd\":1}}",
+      "name": "notice"
+    },
+    {
+      "json": "{\"t\":\"chat\",\"channel\":\"room\",\"from\":\"Traveler-1234\",\"text\":\"hello field\"}",
+      "name": "chat"
+    },
+    {
+      "json": "{\"t\":\"friends\",\"entries\":[{\"handle\":\"a1b2c3d4\",\"name\":\"Traveler-1234\",\"online\":true,\"channel\":2,\"in_tower\":false},{\"handle\":\"e5f6a7b8\",\"name\":\"Traveler-9ABC\",\"online\":false,\"channel\":null,\"in_tower\":false}]}",
+      "name": "friends"
+    },
+    {
+      "json": "{\"t\":\"group\",\"code\":\"A1B2C3\",\"members\":[{\"handle\":\"a1b2c3d4\",\"name\":\"Traveler-1234\",\"online\":true,\"channel\":null,\"in_tower\":true}]}",
+      "name": "group"
+    }
+  ],
+  "contentHash": "76178777f179d667",
+  "fixtures": [
+    {
+      "direction": "client_to_server",
+      "hex": "31a708012000a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf",
+      "name": "join_ticket"
+    },
+    {
+      "direction": "client_to_server",
+      "hex": "31a708020e000100000002000000ff7f01800000",
+      "name": "input_full_axes"
+    },
+    {
+      "direction": "client_to_server",
+      "hex": "31a70803130001000000030000000200000000000029000000",
+      "name": "action_arc_slash"
+    },
+    {
+      "direction": "client_to_server",
+      "hex": "31a7080408000700000040e20100",
+      "name": "ping_basic"
+    },
+    {
+      "direction": "client_to_server",
+      "hex": "31a708100e007b2274223a22726573796e63227d",
+      "name": "cold_resync"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a70881230002000000010000002a000000000000000000c03f000010c0010067d679f17787177614",
+      "name": "welcome_basic"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708822c002a0000000000000007000000000000c03f000010c0010000020000000000c03f000010c00000500064000100",
+      "name": "snapshot_one_player"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708826e002a0000000000000007000000000000c03f000010c0010101020000000000c03f000010c000005000640001006500000001000060400000804000005a0000005a00000001000000000000604000008040010000000000200000020000000065000000011c00010000604000008040",
+      "name": "snapshot_player_monster_event_u64"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a7088302000300",
+      "name": "error_room_full"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a7088302000700",
+      "name": "error_rate_limited"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708840e000900000001009c09000000000000",
+      "name": "action_result_accepted"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708840e000a00000000010809000000000000",
+      "name": "action_result_rejected"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a7088510000700000040e20100a401000000000000",
+      "name": "pong_basic"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708826e002a0000000000000007000000000000c03f000010c0010101020000000000c03f000010c0000050006400010065000000010000604000008040000070110100a086010003000000000000604000008040010000000000200000020000000065000000012a00200000604000008040",
+      "name": "crit_hit"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708826e002a0000000000000007000000000000c03f000010c0010101020000000000c03f000010c0000050006400010065000000010000604000008040000070110100a086010003000000000000604000008040010000000000200000020000000065000000012a00210000604000008040",
+      "name": "crit_defeat"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708826e002a0000000000000007000000000000c03f000010c0010101020000000000c03f000010c0000050006400010065000000010000604000008040000070110100a086010007000000000000604000008040010000000000200000020000000065000000010000400000604000008040",
+      "name": "miss_hit"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708826e002a0000000000000007000000000000c03f000010c0010101020000000000c03f000010c0000050006400010065000000010000604000008040000070110100a086010007000000000000604000008040010000000000200000020000000065000000011c00000000604000008040",
+      "name": "monster_u32_hp"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a70886a700010000002a00000000000000000000000000000007000000000000c03f000010c0020000000000c03f000010c000005000640001000000000001650000000100030000003f00000040000010c00000500064000100000000000100650000007f0000604000008040000070110100a086010003010532000000000000000000c03f000010c001000001010000000000200000020000000065000000012a00200000604000008040",
+      "name": "interest_full"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a708864c00010000002b000000000000002a0000000000000008000000000000e03f000010c0020000000000e03f000010c000004b00640001000000000001650000000100030000008110000000000000",
+      "name": "interest_delta"
+    },
+    {
+      "direction": "server_to_client",
+      "hex": "31a70881230002000000010000002a000000000000000000c03f000010c0010067d679f17787177614",
+      "name": "interest_welcome"
+    }
+  ],
+  "protocolVersion": 8
+}

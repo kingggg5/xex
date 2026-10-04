@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "name": "aetherfield-content-v0",
+  "version": "0.1.0",
+  "tick_hz": 20,
+  "min_protocol": 7,
+  "player": {
+    "hp": 100,
+    "speed": 4.5,
+    "jump_v": 5.0,
+    "gravity": 14.0,
+    "sprint_mult": 1.5,
+    "pet_follow_dist": 1.4,
+    "pet_speed_mult": 1.35
+  }
+}

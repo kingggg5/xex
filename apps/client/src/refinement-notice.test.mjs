@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {refinementNotice} from './refinement-notice.mjs';
+test('committed failed refinement is explicitly a failure instead of obtained loot',()=>{assert.match(refinementNotice('accepted','refine_failed','en'),/failed/i);assert.match(refinementNotice('accepted','refine_failed','th'),/ไม่สำเร็จ/);assert.doesNotMatch(refinementNotice('accepted','refine_failed'),/obtained/i);});
+test('rejections and unrelated grants cannot show refinement success',()=>{assert.equal(refinementNotice('rejected','refine_success'),null);assert.equal(refinementNotice('accepted','picked_up'),null);assert.match(refinementNotice('accepted','refine_success'),/succeeded/);});

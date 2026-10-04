@@ -1,0 +1,1074 @@
+{
+  "schema": "xexoria.level-base.v1",
+  "region": "rimecrest_snow",
+  "version": "v1-claude-20261002",
+  "status": "DESIGN: Claude map lane. Colliding props and POIs placed by the layout; read by tools/levels/render_layout_plan.py and check_monster_spawns.py, and by the Blender blockout later. Not live content.",
+  "units": "metres",
+  "axes": "Babylon XZ: +x east, +z north (same as planning/levels/rimecrest-v1-layout.json)",
+  "rules": [
+    "collider_radius_m is the planar collider (trunk capsule, rock hull, ruin footprint) used by every clearance check",
+    "collides false = dressing or NPC; drawn hollow in the plan, never a static collider",
+    "vegetation zones in the layout add scattered trees; the scatter keeps the layout and monster keep-clear rules"
+  ],
+  "props": [
+    {
+      "id": "rimecrest_ring_stone_1",
+      "kind": "stone",
+      "position_xz": [
+        -43.14,
+        -40.17
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 2.6,
+      "collides": true,
+      "note": "windstone ring stone: Sunmeadow ring-stone master (F09) in a snow material; leans 4 deg outward"
+    },
+    {
+      "id": "rimecrest_ring_stone_2",
+      "kind": "stone",
+      "position_xz": [
+        -44.75,
+        -46.9
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 2.6,
+      "collides": true,
+      "note": "windstone ring stone: Sunmeadow ring-stone master (F09) in a snow material; leans 4 deg outward"
+    },
+    {
+      "id": "rimecrest_ring_stone_3",
+      "kind": "stone",
+      "position_xz": [
+        -38.11,
+        -44.93
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 2.6,
+      "collides": true,
+      "note": "windstone ring stone: Sunmeadow ring-stone master (F09) in a snow material; leans 4 deg outward"
+    },
+    {
+      "id": "rimecrest_hollow_boulder_1",
+      "kind": "rock",
+      "position_xz": [
+        -46.93,
+        -34.73
+      ],
+      "collider_radius_m": 1.8,
+      "height_m": 2.2,
+      "collides": true,
+      "note": "snow-capped boulder sheltering the arrival hollow"
+    },
+    {
+      "id": "rimecrest_hollow_boulder_2",
+      "kind": "rock",
+      "position_xz": [
+        -52.2,
+        -39.88
+      ],
+      "collider_radius_m": 2.2,
+      "height_m": 2.8,
+      "collides": true,
+      "note": "snow-capped boulder sheltering the arrival hollow"
+    },
+    {
+      "id": "rimecrest_hollow_boulder_3",
+      "kind": "rock",
+      "position_xz": [
+        -51.61,
+        -46.76
+      ],
+      "collider_radius_m": 1.6,
+      "height_m": 1.9,
+      "collides": true,
+      "note": "snow-capped boulder sheltering the arrival hollow"
+    },
+    {
+      "id": "rimecrest_hollow_boulder_4",
+      "kind": "rock",
+      "position_xz": [
+        -47.56,
+        -52.9
+      ],
+      "collider_radius_m": 2.0,
+      "height_m": 2.4,
+      "collides": true,
+      "note": "snow-capped boulder sheltering the arrival hollow"
+    },
+    {
+      "id": "rimecrest_hollow_boulder_5",
+      "kind": "rock",
+      "position_xz": [
+        -40.02,
+        -53.29
+      ],
+      "collider_radius_m": 1.5,
+      "height_m": 1.7,
+      "collides": true,
+      "note": "snow-capped boulder sheltering the arrival hollow"
+    },
+    {
+      "id": "rimecrest_hollow_boulder_6",
+      "kind": "rock",
+      "position_xz": [
+        -32.94,
+        -51.08
+      ],
+      "collider_radius_m": 1.9,
+      "height_m": 2.3,
+      "collides": true,
+      "note": "snow-capped boulder sheltering the arrival hollow"
+    },
+    {
+      "id": "rimecrest_hollow_pine_1",
+      "kind": "tree",
+      "position_xz": [
+        -44.43,
+        -30.21
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 11,
+      "collides": true,
+      "note": "hero snow pine framing the hollow (outside the lure corridor)"
+    },
+    {
+      "id": "rimecrest_hollow_pine_2",
+      "kind": "tree",
+      "position_xz": [
+        -56.96,
+        -42.95
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 12,
+      "collides": true,
+      "note": "hero snow pine framing the hollow (outside the lure corridor)"
+    },
+    {
+      "id": "rimecrest_hollow_pine_3",
+      "kind": "tree",
+      "position_xz": [
+        -53.19,
+        -51.55
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 10,
+      "collides": true,
+      "note": "hero snow pine framing the hollow (outside the lure corridor)"
+    },
+    {
+      "id": "rimecrest_hollow_pine_4",
+      "kind": "tree",
+      "position_xz": [
+        -44.02,
+        -58.36
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 12,
+      "collides": true,
+      "note": "hero snow pine framing the hollow (outside the lure corridor)"
+    },
+    {
+      "id": "rimecrest_hollow_pine_5",
+      "kind": "tree",
+      "position_xz": [
+        -34.25,
+        -57.42
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 11,
+      "collides": true,
+      "note": "hero snow pine framing the hollow (outside the lure corridor)"
+    },
+    {
+      "id": "rimecrest_camp_hearth",
+      "kind": "camp",
+      "position_xz": [
+        -24.0,
+        -25.0
+      ],
+      "collider_radius_m": 0.9,
+      "height_m": 0.6,
+      "collides": true,
+      "note": "stone-ringed campfire: warm light = safe"
+    },
+    {
+      "id": "rimecrest_camp_tent",
+      "kind": "camp",
+      "position_xz": [
+        -32.5,
+        -25.5
+      ],
+      "collider_radius_m": 2.4,
+      "height_m": 4.2,
+      "collides": true,
+      "note": "felt-and-hide herder tent"
+    },
+    {
+      "id": "rimecrest_camp_stall",
+      "kind": "camp",
+      "position_xz": [
+        -17.5,
+        -28.5
+      ],
+      "collider_radius_m": 1.6,
+      "height_m": 2.8,
+      "collides": true,
+      "note": "vendor stall: yak-wool awning, tea kettle, baskets"
+    },
+    {
+      "id": "rimecrest_camp_board",
+      "kind": "sign",
+      "position_xz": [
+        -25.5,
+        -17.0
+      ],
+      "collider_radius_m": 0.45,
+      "height_m": 2.4,
+      "collides": true,
+      "note": "quest board (daily bounties)"
+    },
+    {
+      "id": "rimecrest_camp_rack",
+      "kind": "camp",
+      "position_xz": [
+        -15.5,
+        -25.5
+      ],
+      "collider_radius_m": 0.9,
+      "height_m": 2.2,
+      "collides": true,
+      "note": "drying rack with hides and fish"
+    },
+    {
+      "id": "rimecrest_camp_baskets",
+      "kind": "camp",
+      "position_xz": [
+        -34.0,
+        -29.5
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 1.0,
+      "collides": true,
+      "note": "pack baskets"
+    },
+    {
+      "id": "rimecrest_camp_woodpile",
+      "kind": "camp",
+      "position_xz": [
+        -15.5,
+        -31.0
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "split pine and yak-dung bricks"
+    },
+    {
+      "id": "rimecrest_camp_streamer_w",
+      "kind": "sign",
+      "position_xz": [
+        -34.5,
+        -20.5
+      ],
+      "collider_radius_m": 0.2,
+      "height_m": 4.0,
+      "collides": true,
+      "note": "cloth wind-streamer pole echoing the windstones"
+    },
+    {
+      "id": "rimecrest_camp_streamer_e",
+      "kind": "sign",
+      "position_xz": [
+        -14.6,
+        -33.0
+      ],
+      "collider_radius_m": 0.2,
+      "height_m": 4.0,
+      "collides": true,
+      "note": "cloth wind-streamer pole"
+    },
+    {
+      "id": "rimecrest_signpost_hearth",
+      "kind": "sign",
+      "position_xz": [
+        -24.0,
+        -18.6
+      ],
+      "collider_radius_m": 0.3,
+      "height_m": 2.6,
+      "collides": true,
+      "note": "Thai/English: Glassmere Shore Lv 12-14 (W) / Rimehold Lv 18-20 (NE)"
+    },
+    {
+      "id": "rimecrest_npc_mirun",
+      "kind": "camp",
+      "position_xz": [
+        -22.4,
+        -26.6
+      ],
+      "collider_radius_m": 0.5,
+      "height_m": 2.4,
+      "collides": false,
+      "note": "Mirun, Ruun's apprentice (NPC, not a static collider)"
+    },
+    {
+      "id": "rimecrest_shore_boulder_1",
+      "kind": "rock",
+      "position_xz": [
+        -45.0,
+        12.0
+      ],
+      "collider_radius_m": 1.4,
+      "height_m": 1.8,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_shore_boulder_2",
+      "kind": "rock",
+      "position_xz": [
+        -40.5,
+        31.0
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 1.4,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_shore_boulder_3",
+      "kind": "rock",
+      "position_xz": [
+        -43.0,
+        45.5
+      ],
+      "collider_radius_m": 1.6,
+      "height_m": 2.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_shore_boulder_4",
+      "kind": "rock",
+      "position_xz": [
+        -36.0,
+        7.5
+      ],
+      "collider_radius_m": 1.1,
+      "height_m": 1.3,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_frozen_boat",
+      "kind": "camp",
+      "position_xz": [
+        -29.0,
+        19.5
+      ],
+      "collider_radius_m": 1.4,
+      "height_m": 1.0,
+      "collides": true,
+      "note": "rowboat frozen into the shelf ice"
+    },
+    {
+      "id": "rimecrest_fishing_hut",
+      "kind": "camp",
+      "position_xz": [
+        -28.5,
+        58.5
+      ],
+      "collider_radius_m": 2.0,
+      "height_m": 3.2,
+      "collides": true,
+      "note": "abandoned ice-fishing shelter on the shelf"
+    },
+    {
+      "id": "rimecrest_cairn_point_cairn",
+      "kind": "stone",
+      "position_xz": [
+        -46.0,
+        61.0
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 2.5,
+      "collides": true,
+      "note": "cairn on the headland tip (on relief, not walkable)"
+    },
+    {
+      "id": "rimecrest_cove_boulder_1",
+      "kind": "ice",
+      "position_xz": [
+        -53.0,
+        80.0
+      ],
+      "collider_radius_m": 1.5,
+      "height_m": 2.0,
+      "collides": true,
+      "note": "glacier ice block"
+    },
+    {
+      "id": "rimecrest_cove_boulder_2",
+      "kind": "ice",
+      "position_xz": [
+        -39.5,
+        86.5
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 1.6,
+      "collides": true,
+      "note": "glacier ice block"
+    },
+    {
+      "id": "rimecrest_wind_rune_1",
+      "kind": "stone",
+      "position_xz": [
+        -27.5,
+        101.0
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "half-buried wind-rune stone (quest object)"
+    },
+    {
+      "id": "rimecrest_wind_rune_2",
+      "kind": "stone",
+      "position_xz": [
+        -6.5,
+        103.0
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "half-buried wind-rune stone (quest object)"
+    },
+    {
+      "id": "rimecrest_wind_rune_3",
+      "kind": "stone",
+      "position_xz": [
+        35.0,
+        95.5
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "half-buried wind-rune stone (quest object)"
+    },
+    {
+      "id": "rimecrest_ridge_pine_1",
+      "kind": "tree",
+      "position_xz": [
+        -26.5,
+        92.0
+      ],
+      "collider_radius_m": 0.65,
+      "height_m": 13,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_ridge_pine_2",
+      "kind": "tree",
+      "position_xz": [
+        -12.5,
+        89.0
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 12,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_ridge_pine_3",
+      "kind": "tree",
+      "position_xz": [
+        -2.5,
+        94.5
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 14,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_ridge_pine_4",
+      "kind": "tree",
+      "position_xz": [
+        8.0,
+        91.0
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 12,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_ridge_pine_5",
+      "kind": "tree",
+      "position_xz": [
+        15.5,
+        98.0
+      ],
+      "collider_radius_m": 0.65,
+      "height_m": 13,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_ridge_pine_6",
+      "kind": "tree",
+      "position_xz": [
+        31.0,
+        93.5
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 12,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_mouth_leg_w",
+      "kind": "ice",
+      "position_xz": [
+        -4.6,
+        106.0
+      ],
+      "collider_radius_m": 1.6,
+      "height_m": 11,
+      "collides": true,
+      "note": "west leg of the Rimeheart Mouth ice arch"
+    },
+    {
+      "id": "rimecrest_mouth_leg_e",
+      "kind": "ice",
+      "position_xz": [
+        8.6,
+        106.0
+      ],
+      "collider_radius_m": 1.6,
+      "height_m": 11,
+      "collides": true,
+      "note": "east leg of the Rimeheart Mouth ice arch"
+    },
+    {
+      "id": "rimecrest_mouth_warning_cairn",
+      "kind": "stone",
+      "position_xz": [
+        -1.6,
+        100.5
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 1.8,
+      "collides": true,
+      "note": "bones and a broken shield on a cairn: elite warning"
+    },
+    {
+      "id": "rimecrest_grotto_crystal_1",
+      "kind": "ice",
+      "position_xz": [
+        -9.5,
+        114.5
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 3.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_grotto_crystal_2",
+      "kind": "ice",
+      "position_xz": [
+        12.5,
+        117.0
+      ],
+      "collider_radius_m": 1.3,
+      "height_m": 3.4,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_grotto_crystal_3",
+      "kind": "ice",
+      "position_xz": [
+        -4.0,
+        120.0
+      ],
+      "collider_radius_m": 1.0,
+      "height_m": 2.6,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_rimehold_tower",
+      "kind": "ruin",
+      "position_xz": [
+        34.0,
+        46.0
+      ],
+      "collider_radius_m": 4.0,
+      "height_m": 21,
+      "collides": true,
+      "note": "Rimehold bell tower: the lure; bronze bell + frost-crystal finial that glints"
+    },
+    {
+      "id": "rimecrest_rimehold_column_1",
+      "kind": "ruin",
+      "position_xz": [
+        22.0,
+        56.0
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 6.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_rimehold_column_2",
+      "kind": "ruin",
+      "position_xz": [
+        28.5,
+        56.5
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 5.0,
+      "collides": true,
+      "note": "broken"
+    },
+    {
+      "id": "rimecrest_rimehold_column_3",
+      "kind": "ruin",
+      "position_xz": [
+        40.0,
+        56.5
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 6.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_rimehold_column_4",
+      "kind": "ruin",
+      "position_xz": [
+        47.0,
+        56.0
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 4.0,
+      "collides": true,
+      "note": "broken"
+    },
+    {
+      "id": "rimecrest_rimehold_column_5",
+      "kind": "ruin",
+      "position_xz": [
+        22.0,
+        22.0
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 5.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_rimehold_column_6",
+      "kind": "ruin",
+      "position_xz": [
+        48.5,
+        22.5
+      ],
+      "collider_radius_m": 0.7,
+      "height_m": 6.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_rimehold_fallen_column_1",
+      "kind": "ruin",
+      "position_xz": [
+        45.0,
+        33.0
+      ],
+      "collider_radius_m": 1.1,
+      "height_m": 1.2,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_rimehold_fallen_column_2",
+      "kind": "ruin",
+      "position_xz": [
+        23.0,
+        30.5
+      ],
+      "collider_radius_m": 1.1,
+      "height_m": 1.2,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_ward_brazier_1",
+      "kind": "ruin",
+      "position_xz": [
+        22.5,
+        51.0
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 1.4,
+      "collides": true,
+      "note": "frost-ward brazier (quest object; cold until relit)"
+    },
+    {
+      "id": "rimecrest_ward_brazier_2",
+      "kind": "ruin",
+      "position_xz": [
+        47.0,
+        49.5
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 1.4,
+      "collides": true,
+      "note": "frost-ward brazier (quest object)"
+    },
+    {
+      "id": "rimecrest_ward_brazier_3",
+      "kind": "ruin",
+      "position_xz": [
+        47.5,
+        18.5
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 1.4,
+      "collides": true,
+      "note": "frost-ward brazier (quest object)"
+    },
+    {
+      "id": "rimecrest_rimehold_gate_post_w1",
+      "kind": "ruin",
+      "position_xz": [
+        16.0,
+        35.6
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 4.5,
+      "collides": true,
+      "note": "west gate post"
+    },
+    {
+      "id": "rimecrest_rimehold_gate_post_w2",
+      "kind": "ruin",
+      "position_xz": [
+        16.0,
+        44.4
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 4.5,
+      "collides": true,
+      "note": "west gate post"
+    },
+    {
+      "id": "rimecrest_rimehold_gate_post_s1",
+      "kind": "ruin",
+      "position_xz": [
+        32.0,
+        12.0
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 4.5,
+      "collides": true,
+      "note": "south gate post (toward Sunscald)"
+    },
+    {
+      "id": "rimecrest_rimehold_gate_post_s2",
+      "kind": "ruin",
+      "position_xz": [
+        41.0,
+        12.0
+      ],
+      "collider_radius_m": 0.8,
+      "height_m": 4.5,
+      "collides": true,
+      "note": "south gate post"
+    },
+    {
+      "id": "rimecrest_geyser_cone_1",
+      "kind": "vent",
+      "position_xz": [
+        51.89,
+        -25.55
+      ],
+      "collider_radius_m": 0.9,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "geyser cone: erupts every 40-70 s (VFX), plume 22-26 m"
+    },
+    {
+      "id": "rimecrest_geyser_cone_2",
+      "kind": "vent",
+      "position_xz": [
+        44.69,
+        -50.33
+      ],
+      "collider_radius_m": 0.9,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "geyser cone"
+    },
+    {
+      "id": "rimecrest_geyser_cone_3",
+      "kind": "vent",
+      "position_xz": [
+        18.7,
+        -38.96
+      ],
+      "collider_radius_m": 0.9,
+      "height_m": 1.2,
+      "collides": true,
+      "note": "geyser cone"
+    },
+    {
+      "id": "rimecrest_basalt_column_1",
+      "kind": "rock",
+      "position_xz": [
+        54.55,
+        -27.97
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 5.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_basalt_column_2",
+      "kind": "rock",
+      "position_xz": [
+        54.32,
+        -40.67
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 4.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_basalt_column_3",
+      "kind": "rock",
+      "position_xz": [
+        21.06,
+        -46.53
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 6.0,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_basalt_column_4",
+      "kind": "rock",
+      "position_xz": [
+        17.65,
+        -29.08
+      ],
+      "collider_radius_m": 1.2,
+      "height_m": 4.5,
+      "collides": true
+    },
+    {
+      "id": "rimecrest_sun_disc_toppled",
+      "kind": "ruin",
+      "position_xz": [
+        26.4,
+        -50.63
+      ],
+      "collider_radius_m": 2.2,
+      "height_m": 3.0,
+      "collides": true,
+      "note": "toppled golden sun-disc, cracked, half in the mineral crust"
+    },
+    {
+      "id": "rimecrest_exit_sun_disc",
+      "kind": "ruin",
+      "position_xz": [
+        44.95,
+        -18.5
+      ],
+      "collider_radius_m": 1.0,
+      "height_m": 3.2,
+      "collides": true,
+      "note": "standing sun-disc frame behind the exit portal"
+    },
+    {
+      "id": "rimecrest_emberpass_post_s",
+      "kind": "gate",
+      "position_xz": [
+        56.0,
+        71.6
+      ],
+      "collider_radius_m": 1.0,
+      "height_m": 6.0,
+      "collides": true,
+      "note": "Emberpass gate post"
+    },
+    {
+      "id": "rimecrest_emberpass_post_n",
+      "kind": "gate",
+      "position_xz": [
+        56.0,
+        80.4
+      ],
+      "collider_radius_m": 1.0,
+      "height_m": 6.0,
+      "collides": true,
+      "note": "Emberpass gate post"
+    },
+    {
+      "id": "rimecrest_emberpass_sign",
+      "kind": "sign",
+      "position_xz": [
+        53.0,
+        72.4
+      ],
+      "collider_radius_m": 0.3,
+      "height_m": 2.2,
+      "collides": true,
+      "note": "sign: Road closed: Lv 20 / ทางปิด: Lv 20"
+    },
+    {
+      "id": "rimecrest_soak_bench_w",
+      "kind": "stone",
+      "position_xz": [
+        16.6,
+        0.8
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 0.5,
+      "collides": true,
+      "note": "stone bench at the herders' soak"
+    },
+    {
+      "id": "rimecrest_soak_bench_e",
+      "kind": "stone",
+      "position_xz": [
+        22.6,
+        0.6
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 0.5,
+      "collides": true,
+      "note": "stone bench at the herders' soak"
+    },
+    {
+      "id": "rimecrest_isle_cairn",
+      "kind": "stone",
+      "position_xz": [
+        -6.5,
+        44.0
+      ],
+      "collider_radius_m": 1.0,
+      "height_m": 4.0,
+      "collides": true,
+      "note": "rime-warden cairn: lore + the view of every landmark"
+    },
+    {
+      "id": "rimecrest_isle_chest",
+      "kind": "camp",
+      "position_xz": [
+        -4.3,
+        45.2
+      ],
+      "collider_radius_m": 0.6,
+      "height_m": 0.8,
+      "collides": true,
+      "note": "hidden chest: one-time per character"
+    },
+    {
+      "id": "rimecrest_isle_lore_stone",
+      "kind": "stone",
+      "position_xz": [
+        -6.8,
+        41.2
+      ],
+      "collider_radius_m": 0.5,
+      "height_m": 1.0,
+      "collides": true,
+      "note": "lore stone (journal entry)"
+    }
+  ],
+  "pois": [
+    {
+      "id": "windstone_arrival",
+      "x": -42.0,
+      "z": -44.0,
+      "role": "spawn: arrival from Sunmeadow (dais centre, jitter r 1.5)"
+    },
+    {
+      "id": "hearthhorn_camp",
+      "x": -24.0,
+      "z": -21.4,
+      "role": "spawn: destination of the Sunscald exit portal"
+    },
+    {
+      "id": "camp_regroup",
+      "x": -24.0,
+      "z": -12.0,
+      "role": "respawn point after death"
+    },
+    {
+      "id": "emberpass_gate_in",
+      "x": 50.0,
+      "z": 76.9,
+      "role": "spawn: return from the lava region (future)"
+    },
+    {
+      "id": "basin_exit",
+      "x": 43.5,
+      "z": -21.01,
+      "role": "Sunscald exit portal (post-fight)"
+    },
+    {
+      "id": "fishing_hole_1",
+      "x": -27.0,
+      "z": 15.5,
+      "role": "quest object (lv1): ice-fishing hole"
+    },
+    {
+      "id": "fishing_hole_2",
+      "x": -26.0,
+      "z": 33.5,
+      "role": "quest object (lv1): ice-fishing hole"
+    },
+    {
+      "id": "fishing_hole_3",
+      "x": -25.5,
+      "z": 51.5,
+      "role": "quest object (lv1): ice-fishing hole"
+    },
+    {
+      "id": "wind_rune_1",
+      "x": -27.5,
+      "z": 101.0,
+      "role": "quest object (lv2)"
+    },
+    {
+      "id": "wind_rune_2",
+      "x": -6.5,
+      "z": 103.0,
+      "role": "quest object (lv2)"
+    },
+    {
+      "id": "wind_rune_3",
+      "x": 35.0,
+      "z": 95.5,
+      "role": "quest object (lv2)"
+    },
+    {
+      "id": "ward_brazier_1",
+      "x": 22.5,
+      "z": 51.0,
+      "role": "quest object (lv3)"
+    },
+    {
+      "id": "ward_brazier_2",
+      "x": 47.0,
+      "z": 49.5,
+      "role": "quest object (lv3)"
+    },
+    {
+      "id": "ward_brazier_3",
+      "x": 47.5,
+      "z": 18.5,
+      "role": "quest object (lv3)"
+    },
+    {
+      "id": "cairn_isle_cache",
+      "x": -4.3,
+      "z": 45.2,
+      "role": "hidden reward chest"
+    },
+    {
+      "id": "stillfall_reveal",
+      "x": -35.4,
+      "z": 64.5,
+      "role": "design anchor: the Stillfall comes into view here"
+    }
+  ]
+}

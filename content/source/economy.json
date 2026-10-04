@@ -1,0 +1,138 @@
+{
+  "starting": {
+    "gold": 250,
+    "coin": 10
+  },
+  "kill_gold": 5,
+  "quest_claim_gold": 100,
+  "duplicate_cosmetic_coin": 25,
+  "store": [
+    {
+      "item": "trail_potion",
+      "currency": "gold",
+      "price": 25
+    },
+    {
+      "item": "ember_root",
+      "currency": "gold",
+      "price": 35
+    },
+    {
+      "item": "gale_plume",
+      "currency": "gold",
+      "price": 40
+    },
+    {
+      "item": "frontier_blade",
+      "currency": "gold",
+      "price": 80
+    },
+    {
+      "item": "frontier_vest",
+      "currency": "gold",
+      "price": 60
+    },
+    {
+      "item": "meadow_box",
+      "currency": "gold",
+      "price": 60
+    },
+    {
+      "cosmetic": "skin_crimson",
+      "currency": "gold",
+      "price": 120
+    },
+    {
+      "cosmetic": "skin_verdant",
+      "currency": "gold",
+      "price": 120
+    },
+    {
+      "cosmetic": "skin_sand",
+      "currency": "gold",
+      "price": 120
+    },
+    {
+      "cosmetic": "skin_gold",
+      "currency": "coin",
+      "price": 30
+    },
+    {
+      "cosmetic": "pet_sprout",
+      "currency": "gold",
+      "price": 80
+    }
+  ],
+  "skins": {
+    "skin_crimson": {
+      "tunic": "#a83a4e"
+    },
+    "skin_verdant": {
+      "tunic": "#3f7a41"
+    },
+    "skin_sand": {
+      "tunic": "#b89355"
+    },
+    "skin_gold": {
+      "tunic": "#d4af37"
+    },
+    "skin_rose": {
+      "tunic": "#c96b8e"
+    }
+  },
+  "pets": {
+    "pet_sprout": {
+      "tint": "#8fd06a"
+    }
+  },
+  "boxes": {
+    "meadow_box": {
+      "table": [
+        {
+          "weight": 30,
+          "gold": 15
+        },
+        {
+          "weight": 20,
+          "gold": 40
+        },
+        {
+          "weight": 15,
+          "item": "dew_bead",
+          "min": 1,
+          "max": 3
+        },
+        {
+          "weight": 15,
+          "item": "trail_potion",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "weight": 10,
+          "cosmetic": "skin_rose"
+        },
+        {
+          "weight": 10,
+          "coin": 20
+        }
+      ]
+    },
+    "mvp_chest": {
+      "table": [
+        {
+          "weight": 5,
+          "item": "sunmeadow_rune",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "weight": 95,
+          "item": "dew_bead",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  }
+}

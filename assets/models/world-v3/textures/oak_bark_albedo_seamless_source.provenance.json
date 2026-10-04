@@ -1,0 +1,58 @@
+{
+  "asset": "assets/models/world-v3/textures/oak_bark_albedo_seamless_source.png",
+  "purpose": "One built-in ImageGen edit of the original bark source, targeting wrap continuity and flatter albedo lighting. Original retained unchanged.",
+  "generator": {
+    "tool": "Built-in Codex ImageGen",
+    "mode": "edit",
+    "paid_provider_or_tripo_calls": false,
+    "edit_count": 1,
+    "input": "assets/models/world-v3/textures/oak_bark_albedo_source.png",
+    "input_sha256": "f0a8b39e20e08635556c8051a8de8a9ae441ffea83e516dedefc539432a90776",
+    "generated_output": "%USERPROFILE%/.codex/generated_images/01a0f1f6-77ca-7f92-ac64-81894e016e02/exec-1d3445b6-7b06-48d8-b2f8-bfa53f604172.png"
+  },
+  "edit_prompt": "Keep the same believable oak bark colors, fissure scale, tiny pores and lichen. Make opposite left/right edges and top/bottom edges join seamlessly as a repeated texture, including boundary-crossing bark ridges. Match edge color and texture structure; no visible cut strips or cross-fade blur. Neutral PBR albedo illumination, slightly reduce bright ridge highlights and directional crevice shadows, preserve crisp fine detail. Still one full square bark material texture, no text, frame, scene or extra panels.",
+  "file": {
+    "format": "PNG",
+    "dimensions_px": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 3667600,
+    "sha256": "0506287a5c20f2fff3b98004390ef31e52c4dd71dd1ecb40b504ff02925c10e4"
+  },
+  "inspection": {
+    "visual": "The same bark palette and fissure scale remain, with crisp detail and slightly flatter relief. No tiled 2x2 composite was created; the source image was inspected directly and seams were evaluated numerically.",
+    "seam_test_method": "Compared corresponding opposite-edge RGB values against ordinary one-pixel neighbor differences along the same image axes; channel absolute differences on 0-255 scale.",
+    "left_right_seam": {
+      "mean_abs_rgb_delta": 24.042,
+      "median_abs_channel_delta": 19,
+      "p95_abs_channel_delta": 63,
+      "max_abs_channel_delta": 117
+    },
+    "ordinary_horizontal_neighbors": {
+      "mean_abs_rgb_delta": 18.2,
+      "median_abs_channel_delta": 14,
+      "p95_abs_channel_delta": 50,
+      "max_abs_channel_delta": 147
+    },
+    "top_bottom_seam": {
+      "mean_abs_rgb_delta": 23.137,
+      "median_abs_channel_delta": 18,
+      "p95_abs_channel_delta": 61,
+      "max_abs_channel_delta": 127
+    },
+    "ordinary_vertical_neighbors": {
+      "mean_abs_rgb_delta": 14.037,
+      "median_abs_channel_delta": 10,
+      "p95_abs_channel_delta": 41,
+      "max_abs_channel_delta": 141
+    },
+    "broad_luminance_band_range_32_bands": {
+      "left_to_right": 17.481,
+      "top_to_bottom": 5.129
+    },
+    "assessment": "Still not seamless by edge statistics: mean and 95th-percentile edge differences remain higher than ordinary adjacent pixels, especially top-to-bottom. Some directional ridge/crevice relief remains. This candidate is not marked approved; parent should decide on integration."
+  }
+}

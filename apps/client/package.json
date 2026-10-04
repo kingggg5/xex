@@ -1,0 +1,44 @@
+{
+  "name": "aetherfield-client",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/build-codec-worker.mjs && node scripts/sync-coordinate-fixture.mjs && node scripts/sync-content.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "prebuild": "node scripts/build-codec-worker.mjs && node scripts/sync-coordinate-fixture.mjs && node scripts/sync-content.mjs",
+    "build": "tsc --noEmit && svelte-check --tsconfig ./tsconfig.json && vite build",
+    "assets:warrior": "node scripts/build-character-asset.mjs",
+    "assets:city": "node scripts/build-city-asset.mjs --revision r5",
+    "assets:city:r1": "node scripts/build-city-asset.mjs --revision r1",
+    "assets:city:r2": "node scripts/build-city-asset.mjs --revision r2",
+    "assets:city:r3": "node scripts/build-city-asset.mjs --revision r3",
+    "assets:city:r4": "node scripts/build-city-asset.mjs --revision r4",
+    "assets:city:r5": "node scripts/build-city-asset.mjs --revision r5",
+    "assets:city:textures:r4": "python ../../assets/blender/process_reference_city_textures_r4.py",
+    "assets:city:textures:r5": "python ../../assets/blender/city_r5/foundry/build_materials_r5.py",
+    "assets:world:sunmeadow": "node scripts/build-world-cells.mjs",
+    "assets:world:oak": "node scripts/build-hero-oak.mjs",
+    "assets:city:hlod": "node scripts/build-city-hlod.mjs",
+    "test": "node --test",
+    "preview": "vite preview --host 127.0.0.1",
+    "precheck": "node scripts/build-codec-worker.mjs",
+    "check": "tsc --noEmit && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@babylonjs/core": "9.27.1",
+    "@babylonjs/loaders": "9.27.1",
+    "@rive-app/canvas": "2.44.0",
+    "svelte": "5.57.1"
+  },
+  "devDependencies": {
+    "@babylonjs/ktx2decoder": "9.27.1",
+    "@gltf-transform/cli": "4.5.0",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "esbuild": "0.28.2",
+    "meshoptimizer": "1.3.0",
+    "svelte-check": "4.7.6",
+    "typescript": "6.0.2",
+    "vite": "8.3.0"
+  }
+}

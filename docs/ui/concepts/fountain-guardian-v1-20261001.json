@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "asset": "existing_fountain_guardian_form_v1",
+  "type": "concept_reference_not_runtime_render",
+  "image": "docs/ui/concepts/fountain-guardian-v1-20261001.png",
+  "sha256": "271fd2301972478bbd76e54b6988774d4865d2448822e4266ea22bbef9347f3a",
+  "source_reference": "docs/ui/blueprint.png",
+  "generation": "Native ImageGen, original guardian concept derived from supplied blueprint",
+  "approval": "Explicit user reply: Use this guardian concept",
+  "form_contract": {"height_m": 9.5, "wing_span_m": [14,16], "mount_world_xyz": [0,7.4,176]},
+  "mesh_direction": "Adult robed guardian, raised hands supporting blue crystal, curved layered feather groups, real anatomy and cloth forms",
+  "ownership": "Root mesh/UV/LOD/collider candidate; Claude rendering and city material/texture pass",
+  "limits": "The concept does not guarantee topology, UVs, exact finger count, material slots or game performance. Native Babylon validation is separate."
+}

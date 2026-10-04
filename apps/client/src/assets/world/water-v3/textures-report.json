@@ -1,0 +1,188 @@
+{
+ "schema": "xexoria.water-textures/1",
+ "generator": "assets/blender/water/forge_water_textures.py",
+ "licence": "project-authored, procedural (no third-party source)",
+ "files": {
+  "water_ripple_normal_512.png": {
+   "size": [
+    512,
+    512
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "2851b9c5f7edbd53b6181872ba54424fe14eb22796778d7f02116f0ab2ec645d",
+   "bytes": 362820,
+   "seam_score": 1.018,
+   "mean_tilt_deg": 9.0
+  },
+  "water_ripple_normal_256.png": {
+   "size": [
+    256,
+    256
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "7937a28ba6bfc4d9c6ccea65d4249d9f71f564e5e0b3bdc172d2313e200a90de",
+   "bytes": 115041,
+   "seam_score": 1.009
+  },
+  "water_swell_normal_256.png": {
+   "size": [
+    256,
+    256
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "d4aee800567f2c5055e25e15ec6ddb1e83ac9f51d36cdfec185fc0c700538c0c",
+   "bytes": 33769,
+   "seam_score": 1.2,
+   "mean_tilt_deg": 5.0
+  },
+  "water_foam_noise_256.png": {
+   "size": [
+    256,
+    256
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "d09283796d106c02e294fe207a9072b38be962ac7a3666fa45ce1d990aa727f0",
+   "bytes": 144106,
+   "seam_score": 1.094,
+   "voronoi_cells": 90
+  },
+  "water_foam_noise_128.png": {
+   "size": [
+    128,
+    128
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "d728c86ca7499f9decd51b5b3831d09921c6b4343083d008070dc9534c61ee91",
+   "bytes": 41583,
+   "seam_score": 1.087
+  },
+  "waterfall_streaks_128x512.png": {
+   "size": [
+    128,
+    512
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "06ea139bfe578de4ed387f3ba0c422e04b45f277e8c6eae79e0d595b3f2dcf17",
+   "bytes": 116078,
+   "seam_score": 1.106
+  },
+  "waterfall_streaks_64x256.png": {
+   "size": [
+    64,
+    256
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "a52785fe9629a64d3f086c12fb1ad5b19570eb73ebf43b87fe0b94aa050d1fe6",
+   "bytes": 36299,
+   "seam_score": 1.109
+  },
+  "stream_bed_albedo_512.png": {
+   "size": [
+    512,
+    512
+   ],
+   "channels": 3,
+   "dither": true,
+   "sha256": "ca87d8e078a9b0a723fe9342ab872178bc6259a31081b1b0df63ab000e6406bf",
+   "bytes": 294094,
+   "seam_score": 0.851,
+   "lum_std_1m": 0.0576,
+   "lum_mean": 0.5598
+  },
+  "stream_bed_normal_512.png": {
+   "size": [
+    512,
+    512
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "60b2cb61853d37aa42716cdf7b4d391f94ea189d227df7ab21391ac8660279ca",
+   "bytes": 264027,
+   "seam_score": 0.881
+  },
+  "stream_bed_orm_512.png": {
+   "size": [
+    512,
+    512
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "81fec9f454470a473baf677735346864b7bc624b0f1c221e21f76db4571022db",
+   "bytes": 168652,
+   "seam_score": 0.86
+  },
+  "bank_strip_albedo_256x512.png": {
+   "size": [
+    256,
+    512
+   ],
+   "channels": 4,
+   "dither": true,
+   "sha256": "238b878c8703083bdfdade4b6a505f414091666c9151c6aa7fb919a60c35c092",
+   "bytes": 197732,
+   "zone_mean_srgb": {
+    "U0.00-0.12": [
+     140.244,
+     126.877,
+     99.043
+    ],
+    "U0.12-0.30": [
+     67.906,
+     59.999,
+     45.58
+    ],
+    "U0.30-0.55": [
+     86.843,
+     88.03,
+     51.703
+    ],
+    "U0.55-0.85": [
+     97.337,
+     119.188,
+     58.862
+    ]
+   },
+   "alpha_mean_last_15pct": 0.488,
+   "v_seam_score": 1.253
+  },
+  "bank_strip_normal_256x512.png": {
+   "size": [
+    256,
+    512
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "36a4b579d53c7beee43c4bf2d815ef2abffbcb68120ca98afef6b91b61e7c9d0",
+   "bytes": 201619
+  },
+  "river_stone_albedo_512.png": {
+   "size": [
+    512,
+    512
+   ],
+   "channels": 3,
+   "dither": true,
+   "sha256": "7bad2829075517ddf04f93a4e9eb91c0e6eff8cb08ed3e023b908be05253a441",
+   "bytes": 213353,
+   "seam_score": 0.947
+  },
+  "river_stone_normal_512.png": {
+   "size": [
+    512,
+    512
+   ],
+   "channels": 3,
+   "dither": false,
+   "sha256": "2f1d70230b979e5c0daf354f1af0d75b3fe352fc5013bcb284e3280c7f91a575",
+   "bytes": 190769,
+   "seam_score": 0.0
+  }
+ }
+}

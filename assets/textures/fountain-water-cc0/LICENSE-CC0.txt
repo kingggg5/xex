@@ -1,0 +1,20 @@
+Asset: ProcTexture Wave Normal Map, 1024x1024 export
+License identifier: CC0-1.0
+
+The publisher's asset page and Terms of Use state that exported texture maps
+and material outputs are released under CC0 1.0, permitting commercial use,
+modification and sharing without attribution. This statement concerns the
+downloaded texture outputs, not the site's code, branding or documentation.
+
+Verified on 2026-10-01:
+https://proctexture.com/textures/water/normal-maps/wave-normal-map
+https://proctexture.com/terms
+
+CC0 reference:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Original download:
+https://proctexture.com/pbr-packs/water/wave-normal-map.zip
+
+Only normal.png was extracted for the working candidate. The original source
+ZIP is retained for provenance. The PNG bytes have not been edited.

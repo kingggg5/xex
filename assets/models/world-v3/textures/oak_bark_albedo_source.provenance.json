@@ -1,0 +1,29 @@
+{
+  "asset": "assets/models/world-v3/textures/oak_bark_albedo_source.png",
+  "purpose": "Original oak bark base-color/albedo source texture; not resampled or integrated into runtime.",
+  "generator": {
+    "tool": "Built-in Codex ImageGen",
+    "mode": "generate",
+    "paid_provider_or_tripo_calls": false,
+    "generation_count": 1,
+    "generated_output": "%USERPROFILE%/.codex/generated_images/01a0f1f6-77ca-7f92-ac64-81894e016e02/exec-cd1bea08-210d-4a9b-afed-7a659d3f4e02.png"
+  },
+  "prompt": "Create a square seamless tiling physically plausible oak bark base-color/albedo texture for a grounded painterly fantasy MMO. Flat orthographic material scan, fills entire image, oak trunk bark with long irregular vertical fissures, branching thin cracks, chunky interlocking ridges, subtle tiny pores and restrained gray-green lichen embedded in a few crevices. Brown-gray and warm taupe muted palette, avoid orange/red stripes, no plank boards or evenly repeating vertical seams. Natural medium-scale bark features plus fine surface detail. Soft totally diffuse neutral illumination suitable for PBR albedo, no directional shadows, no AO baked into broad areas, no glare/highlights, no environment, no object silhouette, no labels/text/border, opposite edges visually tile continuously. Match a lush light-filled Sunmeadow woodland art direction, believable stylized detail without heavy outlined/cartoon grooves. One texture only, not a grid, no normal/roughness panels.",
+  "file": {
+    "format": "PNG",
+    "dimensions_px": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 3560461,
+    "sha256": "f0a8b39e20e08635556c8051a8de8a9ae441ffea83e516dedefc539432a90776"
+  },
+  "inspection": {
+    "visual": "Repeated vertical bark plates with branching fissures, muted brown-gray/taupe palette, lichen flecks; no boards, text, border, environment, or silhouette.",
+    "seam_check": "Not seamless at pixel boundaries. Mean absolute RGB delta across left/right edges is 22.108 (p95 60, max 102); across top/bottom is 18.262 (p95 51, max 93), on a 0-255 scale. Expect visible repetition seams if tiled directly.",
+    "lighting_check": "No broad cast shadow or obvious scene lighting, but bark ridges have fairly strong local highlight/shadow relief. Mean luminance range across 32 bands is 18.915 left-to-right and 5.521 top-to-bottom, so neutrality is imperfect.",
+    "limitations": "Single generated source only; edge matching and albedo neutrality are imperfect. Runtime integration/resampling and further material-map authoring are outside this task."
+  }
+}

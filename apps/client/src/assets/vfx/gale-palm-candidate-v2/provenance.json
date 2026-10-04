@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "asset": "gale-palm-wave",
+  "version": "candidate-v2",
+  "status": "SOURCE_ART_CANDIDATE_NATIVE_REVIEW_REQUIRED",
+  "date": "2026-10-02",
+  "provider": "Codex built-in image_gen",
+  "generationCalls": 1,
+  "repairCalls": 1,
+  "reference": "content/ChatGPT Image Oct 1, 2026, 10_45_00 PM.png",
+  "referenceUse": "Approved contact sheet visually inspected; initial generation used its silhouette and palette as descriptive reference. Repair referenced the generated v1 PNG.",
+  "prompt": "Use case: stylized-concept; production game VFX texture, not a scene or UI icon.\nCreate ONE isolated spectral palm-wave sprite on a genuinely transparent alpha background for a high-quality fantasy MMO using Babylon.js. It should capture the readable green palm-projectile silhouette in the approved fs_palm_wave gameplay reference: a broad open palm facing the viewer, four separate fingers pointing upward and one clearly separate thumb extending diagonally outward, all five digits unmistakable at small gameplay size. Show only the hand and a short dissolving wrist, with restrained flowing wind strands curling through the palm and around its lower edges.\nDesign: slightly foreshortened open-palm frontal view, strong asymmetrical human hand silhouette, convincing knuckle/finger proportions, broad palm and clean finger gaps. The hand is made of translucent mint-green wind energy with a saturated jade interior and darker teal outer edge. Fine layered wind filaments define structure without becoming dense noise. Brightness remains green throughout: no white core, white clipping, overexposure or large bloom halo. Clear negative-space gaps between the fingers are more important than tiny detail.\nComposition: centered, complete hand occupying about 72–80% of a square canvas, upright orientation, comfortable transparent margins around every finger and thumb. Thin fading trails may extend a little from the wrist; no cropped fingers. Texture suitable for a single alpha-blended camera-facing quad, with no baked cast shadow.\nAvoid: circular sigil, circle frame, rune ring, magic symbol, closed fist, extra fingers, duplicate hands, skin, arm, gauntlet, character, environment, floor, text, labels, watermark, collage, tile grid or checkerboard drawn into the pixels. No solid background. Deliver one crisp polished RGBA sprite with clean semitransparent edges and true transparent space around it.",
+  "repairPrompt": "Edit target: the supplied spectral-palm sprite. Preserve this exact jade-green open hand, all five fingers, broad palm, thumb, translucent wind filaments, and the existing original fantasy VFX style. Change ONLY the framing and the brightest filaments. Keep a square RGBA texture. Scale the complete hand/wrist down so it occupies about 74% of canvas height, centered, with at least 10% genuinely empty transparent margin on every side, including the fingertips and the fading wrist. No alpha noise or clipped wisps may touch any canvas edge. Keep highlights mint-green instead of near-white, preserving a dark teal edge and readable finger gaps. No circle, ring, sigil, text, character, background or shadow. Preserve true transparent alpha everywhere around the hand; do not draw a checkerboard.",
+  "originalOutputs": [
+    "%USERPROFILE%/.codex/generated_images/01a0fbc1-25b7-7771-b62b-c4636d5913fb/exec-57fd5244-bb8c-42fa-8b75-630f61d67bed.png",
+    "%USERPROFILE%/.codex/generated_images/01a0fbc1-25b7-7771-b62b-c4636d5913fb/exec-ae398598-1a66-4535-9c38-d103d7d48842.png"
+  ],
+  "artifacts": [
+    {
+      "path": "%USERPROFILE%\\Downloads\\Xexoria-Game\\agent-output\\20261002-go-vfx-art\\gale-palm-wave-original-v1.png",
+      "bytes": 1532417,
+      "sha256": "41c01b31e17f751a671224a4c6cf8a19bae333444355356e4f2dda12abc1f494"
+    },
+    {
+      "path": "%USERPROFILE%\\Downloads\\Xexoria-Game\\agent-output\\20261002-go-vfx-art\\gale-palm-wave-repair-v2.png",
+      "bytes": 929584,
+      "sha256": "46b954cb5e3f4b545271f40b67efe919b046afc63239888f5c489b2f4a8d5f36"
+    },
+    {
+      "path": "%USERPROFILE%\\Documents\\game\\apps\\client\\src\\assets\\vfx\\gale-palm-candidate-v2\\gale-palm-wave.png",
+      "bytes": 929584,
+      "sha256": "46b954cb5e3f4b545271f40b67efe919b046afc63239888f5c489b2f4a8d5f36"
+    },
+    {
+      "path": "%USERPROFILE%\\Documents\\game\\apps\\client\\src\\assets\\vfx\\kit-v1\\vfx_palm_sigil.png",
+      "bytes": 423319,
+      "sha256": "e4f83d1f569750a3f5bfdcf255f2bdab2cf36910668ad15fe7de70900f363636"
+    }
+  ],
+  "inspection": {
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "alphaRange": [
+      0,
+      255
+    ],
+    "cornersAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "edgeMaxAlpha": 1,
+    "visibleAlpha32Bounds": [
+      320,
+      160,
+      1008,
+      1117
+    ],
+    "fullyTransparentPixels": 1181979,
+    "semiTransparentPixels": 390518,
+    "visibleNearWhitePixels": 578,
+    "rgbaBytesWithoutMipmaps": 6290064,
+    "estimatedCompleteMipChainMiB": 7.9982
+  },
+  "visualReview": {
+    "silhouette": "Five clearly separate digits and thumb, broad palm; circular sigil removed.",
+    "framing": "Visible alpha>=32 region fits clear margins; faint alpha1 edge noise remains in source and is feathered in Gale-only shader.",
+    "defects": [
+      "Dense fine filaments may soften at maximum zoom.",
+      "Some source filaments remain near-white; no in-game clipping verdict without capture.",
+      "Wrist texture resembles dense vapor; in-game projectile speed may obscure internal detail."
+    ]
+  },
+  "integration": {
+    "texture": "apps/client/src/assets/vfx/gale-palm-candidate-v2/gale-palm-wave.png",
+    "consumer": "gale-sigil billboard in combat-vfx-skills.ts",
+    "sourceColor": true,
+    "blend": "alpha",
+    "intensity": 0.95,
+    "alphaFeather": [
+      0.025,
+      0.075
+    ],
+    "unchanged": "Original kit PNG, all Nova/Rift textures, model GLBs, shared entries and UI."
+  },
+  "checks": {
+    "focusedTests": 16,
+    "focusedResult": "PASS",
+    "typeScript": "PASS",
+    "nativeCaptures": "UNVERIFIED",
+    "threeVisualPasses": "NOT_RUN",
+    "GTX1050CPUAndGPU": "UNVERIFIED",
+    "iPhone11": "UNVERIFIED"
+  },
+  "vendoring": {
+    "gameDevCli": "UNAVAILABLE: not on PATH, no callable package tooling; no install",
+    "fallback": "Existing project texture layout, inspected bytes, immutable originals, closed SHA roster and provenance",
+    "rightsRecord": "Owner-authorized native-generated source artwork. No third-party asset download; no CC0 or SPDX licence claim."
+  },
+  "jevReceipt": "%USERPROFILE%/Downloads/Xexoria-Game/agent-output/20261002-go-root/jev-context-selection.json"
+}

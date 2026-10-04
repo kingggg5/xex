@@ -1,0 +1,455 @@
+XEXORIA — PRODUCTION QUALITY ENTRY POINT
+Created: 2026-10-01 (Asia/Bangkok)
+Language: Thai for the owner; English asset prompts are supported.
+
+USER-REQUIRED DELIVERY STACK — MUST FOLLOW
+For Xexoria delivery work, use Harness best-in-code as the workflow and GPT as
+the primary planner, builder and reviewer. This is the user's project-workflow
+choice; it remains subordinate to system/developer rules and the current scope.
+Read .harness/runtime/SKILL.md first. Use the installed best-in-code only when
+the project pin is absent. Read .harness/INDEX.md, IDENTITY.json and STATE.json
+when present; preserve Project/Run identity and the owner's shared-state control.
+A side conversation must not take over, resume, or modify the main run's state.
+
+JEV ALWAYS-ON — REQUIRED AT TASK LEVEL
+The user's requirement is to use Jev throughout Xexoria work for speed and context
+efficiency. It is not an optional extra reserved for difficult tasks. At the start
+of every project task, use the approved Jev integration for a bounded context or
+next-step selection when it is operational. Reuse that result and session handle;
+refresh the judgment when the goal, candidates or evidence materially changes.
+Do not mark Jev NOT_APPLICABLE merely because a task is small or document-only.
+If Jev cannot be used, report UNAVAILABLE, FAILED or UNVERIFIED with the exact
+reason and continue authorized work with an explicit fallback. Never silently
+substitute GPT-only work or claim a Jev call that did not happen.
+Always-on means a persistent workflow default, not a new request for every file
+read, arithmetic operation, click or frame. Batch related judgments and avoid
+duplicate calls. Actual latency, token and cost savings must still be measured.
+
+Required combination for applicable steps:
+- GPT reasons, writes, integrates and reviews actual visual evidence. Keep the
+  selected model/effort fixed per task unless the user requests a change.
+- Jev is the required context/decision companion for every project task;
+  GPT and deterministic code retain responsibility for correctness and action scope.
+- For browser journeys, use the installed jev-browser runtime together with the
+  supported CUA/browser tools when available and relevant. Use observed targets,
+  prepared subgoals, bounded steps and independently checked postconditions.
+- CUA with semantic DOM/AX handles controls and real UI state; supported computer
+  use and screenshots handle canvas/visual work. Follow the tool's current API,
+  chosen browser and fresh-state rules. Never infer visual quality from DOM alone.
+- Use Fast Jev Codex for context carryover when its hooks, trust, credentials and
+  data-sharing scope are ready. Verify current hook receipts; it supplements native
+  compaction. Keep durable task evidence in the permitted project artifacts.
+- Use Context7/current official documentation for relevant library/API questions;
+  use local scripts, APIs and CLIs for reproducible work where they fit better.
+
+Load the relevant installed skills before use. Do not silently skip a required
+route or pretend an unavailable tool ran. Record USED_VERIFIED, NOT_APPLICABLE,
+UNAVAILABLE, FAILED or UNVERIFIED with a reason and an authorized fallback.
+Keep Jev active at task level; use other parts according to the current step.
+Fast Jev compaction hooks run on their lifecycle events, not on every action.
+This policy does not authorize new installs, private-data transmission or paid jobs.
+Never print credentials. Never claim cache hits or token savings without telemetry.
+Detailed routing and evidence rules: docs/harness-jev-gpt-toolchain.md.
+
+Before planning or changing game art, levels, characters, VFX, UI, movement,
+collision or delivery, read docs/production-quality-standard.md sections 1–5
+and 16–17, then only the category sections needed for the current task.
+This file is a project quality brief, not proof that any work has passed review.
+It does not automatically load itself into an LLM, enable tools, launch agents,
+authorize spending, or replace system/developer instructions and the current
+user request. A task owner must explicitly load it or link it from their workflow.
+
+THE USER'S INTENT
+Keep the familiar Ragnarok MMO feeling: exploration, meaningful progression,
+classes, equipment, encounters and social places. Present an original, coherent
+modern 3D world. Use God of War for grounded construction, material and lighting
+discipline; Warcraft for readable silhouettes, landmarks and expressive fantasy.
+AAA is a craft target. Do not claim AAA parity, a large team, or production scale
+because a prompt, model generation, build, test suite or polygon count succeeded.
+
+MANDATORY WORKING RULES
+1. Finish one excellent playable Sunmeadow region before extending the lava region.
+   Keep two combat clearings, compact connections, useful discoveries and a return
+   route. Preserve metre scale and the character's clearance.
+2. Start from a reference breakdown and a frozen player-camera baseline. Lock the
+   shared palette, silhouettes, construction language and material scale.
+3. First make the route physically playable: floors, stairs, slopes, bridges,
+   doorways, colliders and server movement must agree. No cosmetic height fix
+   that leaves the actual player beneath the floor or passing through a wall.
+4. Prefer proven free assets and tools when their output fits the art direction.
+   Trees normally start from a procedural tree generator or a suitable licensed
+   kit, followed by art direction, foliage/LOD/wind work and engine verification.
+   Do not replace mature tools with a rushed home-made generator.
+   Tree decision (owner asked 2026-10-01 and again 2026-10-02; CC0 downloads are
+   approved): docs/reviews/2026-10-02-trees-free-assets-decision.md. Route A is the
+   Quaternius Stylized Nature MegaKit (CC0); route B is EZ-Tree v2 or the pinned
+   Modular Tree, with the stylized clump recipe. Home-made tree generators, Tripo
+   trees and photographic leaves on stylized trees are no longer allowed. Report
+   any rejected route to the owner the same day.
+5. Use image generation for concept decisions and appropriate source artwork.
+   A beautiful generated image is not a playable-scene result. Image-to-3D output
+   still needs geometry, UV, material, rig and multi-angle inspection.
+6. Work in a two-role loop: Concept/Art Direction -> Build/Technical Art -> actual
+   Babylon capture -> evidence-based critique -> repair. Use real tool capacity;
+   do not invent parallel agents or describe a self-review as independent review.
+7. Separate technical, visual, gameplay and device-performance verdicts. Failure
+   in one cannot be offset by success in another. Unknown means unverified.
+8. Review full-player, side, close and elevated views, plus animation and traversal.
+   Keep the camera, light, build, preset and asset revision fixed for comparisons.
+9. Preserve clean silhouettes and readable combat. Put detail into useful forms,
+   normal/roughness maps and controlled dressing. More clutter, bloom, triangles,
+   unique textures or an 8K source do not establish better quality.
+10. Use the hybrid pipeline: authored GLB/material/audio files, bounded shaders,
+    particles and procedural systems, and HTML/Svelte UI. Measure simultaneous
+    rendering, texture residency, decode cost and frame times separately from bytes.
+11. Keep source art immutable, versions reproducible, and asset licences/provenance
+    recorded. A local reference folder is not evidence that its contents are CC0.
+    - Quaternius packs released after 2026-08-28 use Quaternius's own "QAL"
+      licence, not CC0. QAL allows use in the game but not redistribution of the
+      assets.
+    - Older Quaternius copies (Stylized Nature, Fantasy Props, Medieval Village)
+      carry CC0 in their own licence files.
+    - Before using any new Quaternius zip, read the licence file inside it. QAL
+      packs, such as the Bestiary kit, need the owner's approval.
+    - RaGEZONE content is leaked or proprietary. Never use it; open-source
+      emulators found there are study-only.
+    - Source: docs/reviews/2026-10-02-free-asset-scout.md.
+12. Report the strongest remaining defects plainly. Repair them before expanding
+    scope; when a method repeatedly fails, change the method and explain why.
+13. Prefer reviewed Blender Python recipes for repeatable kit assembly, exact
+    dimensions, validation, LODs, baking, export and review renders. Keep existing
+    generators and hand-authored detail where they produce better results. A long
+    script is not a substitute for good forms or actual engine inspection.
+14. Treat Tripo DCC Bridge as an optional ingestion route. Read the Blender/Tripo
+    workflow before use; verify the receiver and received asset, then preserve an
+    immutable source. Bridge success is not rig, material or game-readiness proof.
+
+FIRST-PASS QUALITY — NO RE-PROMPTING (OWNER RULE, 2026-10-01)
+The owner had to prompt 4-5 times before work was good enough. Every agent
+(Codex threads and workers, froggy, Claude) must reach the quality bar in its
+first report. "Best", "AAA", "many details" and "not kid models" are standing
+requirements; the owner should never have to repeat them in a prompt.
+1. Before building, extract every explicit and implied requirement from the
+   request and from the checklists below. Write a short build spec covering:
+   - the target reference;
+   - the numbers (sizes, budgets, timings, palette);
+   - the definition of done;
+   - the evidence you will capture.
+   Keep the spec in the task report.
+2. For any visual deliverable, run build -> capture -> critique against the
+   spec -> repair at least 3 times before reporting. Each pass fixes the 3-5
+   most visible defects first. Compare before/after images from the same camera.
+3. When two techniques fit, choose the better player-visible result unless its
+   measured cost breaks the budget. That means:
+   - lit and normal-mapped over flat;
+   - blended over popping;
+   - layered materials over single colours;
+   - authored forms over primitives;
+   - a real engine capture over a mock-up or a Blender-only render.
+4. Finish the edges in the same task. Unfinished edges are defects, not
+   follow-ups. The edges are:
+   - both renderers (WebGPU and WebGL2);
+   - disposal and cleanup;
+   - tests;
+   - LODs, colliders and receipts;
+   - naming and docs;
+   - a review page or capture.
+5. If a request is ambiguous, pick the reading that is better for the player,
+   state the assumption in one line and continue. Ask only for approvals
+   (installs, paid jobs, downloads, publishing) or for owner-only choices.
+6. Never report "done" with a known major defect. Report what passed, with its
+   evidence, what is still weak, and the next repair you recommend.
+
+LOOK TARGET (OWNER REFERENCES, 2026-10-01)
+A stylised, hand-painted fantasy MMO with Warcraft-like readability, combined
+with the Ragnarok warmth and God of War construction discipline described above.
+- Forms: chunky, confident proportions. Key features are oversized (hands,
+  weapons, shoulder pads, monster heads). Shapes are bevelled, thick and readable.
+- Colour: saturated but harmonious. A warm sun key with a soft blue sky fill.
+  Shared palette: warm stone, light plaster, dark timber, blue slate.
+- Textures: the style lives in the albedo. Paint into it:
+  - large top-light gradients;
+  - occlusion in crevices;
+  - crisp edge highlights;
+  - hue variation.
+  Normal maps stay supportive. Roughness varies across a surface but is never
+  noisy.
+- Combat: big, timed spell shapes (ground swirls, rising motes, staff glow),
+  instant hit flashes, and nameplates and health bars that read at 13 m.
+- World: lived-in clusters placed with purpose, never in rows. Examples: carts,
+  haystacks, crates, barrels, tents, palisades, broadleaf trees, mushrooms and
+  painted rocks.
+- UI: ornate gold and bronze frames, a round minimap, unit frames, an action bar
+  with crest bookends, a quest tracker and chat panels. Thai text stays legible.
+- Originality: no Blizzard or WoW characters, crests, gryphon bookends, icons,
+  logos or fonts. Xexoria has its own crest beast and icon language.
+Full plan with budgets and samples:
+docs/reviews/2026-10-01-froggy-full-game-art-plan.md
+
+VERIFIED PROJECT FACTS — REUSE, DO NOT RE-DERIVE
+- Client: Babylon.js 9.27.1, WebGPU first with a WebGL2 fallback
+  (apps/client/src/scene.ts). Every custom shader must work in both GLSL and
+  WGSL. Either follow the MaterialPluginBase pattern in meadow-surface.ts and
+  nature-motion.ts, or build a NodeMaterial whose shaderLanguage comes from
+  engine.isWebGPU, as in city-water-engine.ts. Verify each renderer separately.
+- Image processing: ACES tone mapping, contrast 1.04, exposure 1.0
+  (environment.ts). world-weather.ts raises exposure by up to 0.22 at night.
+- Axes: a Blender glTF export maps Blender (x, y, z) to Babylon (-x, z, -y).
+  This was verified with NullEngine.
+- Facing: radians, computed as atan2(dx, dz). 0 faces +Z and pi/2 faces +X, on
+  both client and server. Normalise to [0, 2pi) when admitting content.
+- Player camera: ArcRotateCamera, radius 13 m, beta 1.18 rad (about 22 degrees
+  above horizontal), vertical FOV 1.02 rad, target 1.65 m above the feet.
+  Include a 1.8 m human witness in every Blender review.
+- Texture set:
+  - <name>_albedo.png, sRGB;
+  - <name>_normal.png, OpenGL convention (+Y up);
+  - <name>_orm.png, linear, with R = ambient occlusion, G = roughness and
+    B = metallic.
+- City tile sizes in metres: wall 2.4, plaster 3.0, timber 2.0, roof 2.2,
+  trim 1.6, foundation 2.4, flagstone 4.0, accent 2.0, cobble 2.6, paver 2.0,
+  grass 6.0, cliff 9.0. Meadow ground UV = world XZ / 6.
+- Blender 5.2.2 LTS is at
+  "C:\Program Files\Blender Foundation\Blender 5.2\blender.exe".
+  Run it headless: blender -b --factory-startup --python <script.py> -- <args>
+- Workstation: a GTX 1050 with 2 GB VRAM, and 12 CPU threads.
+  - Render Cycles on the CPU (--device cpu) whenever the game or a browser
+    capture is running.
+  - Never run two GPU-heavy jobs at once.
+  - Stop only processes you started, by PID.
+- Triangles: 64 percent of the reference city's triangles are small detail
+  geometry, and the runtime merges the city into 61 material meshes.
+  - Prefer texture for paving, capped bevels, instancing and per-district export.
+  - Use permissive simplification only for far HLOD.
+  Source: docs/reviews/2026-10-01-triangle-optimization-research.md.
+- Local files outside the repo live under %USERPROFILE%\Downloads\Xexoria-Game\
+  (reorganized 2026-10-02; move log: Downloads\_reorg-2026-10-02-moves.csv):
+  - references\: warz, FULL WARMZ 2.0, docs (MMO research) and research notes;
+  - sources\: owner art inputs, Tripo and ChatGPT outputs (boss, lava, snow,
+    hero02, bovine, solar scorpion, hero oak source GLBs, concept images).
+    Downloads\hero stays at the root while seal-review.mjs reads it;
+  - kits\: downloaded free kits and archives (Quaternius, Tripo bridge, Poly Haven);
+  - agent-output\<yyyymmdd>-<topic>\: review builds, server targets, database
+    copies, logs and lookdev ZIPs.
+  Never write to the Downloads root or create new top-level Downloads folders.
+  After collect_evidence.py imports a lookdev ZIP, move the ZIP into
+  agent-output\lookdev\. Paths in older receipts are historical; use the move log.
+
+CRAFT CHECKLISTS — APPLY EVERY RELEVANT LINE
+Meshes
+- The silhouette reads at 13 m in greyscale. Proportions follow the approved
+  concept sheet, not primitives. Raw boxes, cylinders or scaled spheres are never
+  finished forms.
+- Construction logic: every part is supported, joined and has thickness. Door and
+  window frames have depth, beams rest on supports, roofs have eaves and ridge
+  caps.
+- Chamfer hard edges with weighted normals: about 2-4 cm on architecture and
+  0.5-1.5 cm on props. Bake high-poly detail into the normal and AO maps.
+- Geometry:
+  - metre scale;
+  - pivot at the ground contact;
+  - manifold;
+  - no coplanar overlaps (z-fighting);
+  - edge flow at joints that deform.
+- Every placed asset ships with LOD0-2, a collider proxy and, where needed, a
+  shadow proxy. Count triangles after export. Budgets are in section 2 of the
+  froggy art plan.
+
+Textures and materials
+- Build the albedo in layers:
+  1. base colour;
+  2. large top-light gradient;
+  3. painted cavity occlusion;
+  4. edge highlights;
+  5. hue and value variation;
+  6. story marks (moss, soot, wear).
+- No flat untextured fills except deliberate accents. Keep albedo values in a
+  believable range: never pure black or pure white.
+- Texel density, consistent within a view:
+  - about 512 px/m for hero props and the key parts of characters;
+  - about 256 px/m for general architecture.
+- Break up tiling with macro variation, trim sheets, decals and vertex colour.
+  Judge repeats from the player camera, not only in close-up.
+- After KTX2 compression, check again:
+  - colour space (albedo sRGB, data maps linear);
+  - normal Y direction;
+  - ORM channels;
+  - alpha edges and mipmaps.
+
+Lighting, shadows and post
+- The sun key, sky fill and IBL work as one set. Forms read in light and in
+  shade.
+- Contact shadows ground every object.
+- No shadow acne, peter-panning or shimmering while the camera moves. Tune the
+  cascades for the 13 m camera.
+- Emissives and bloom never clip lamps, crystals, water or portals to white.
+- Review dawn, noon, dusk and night, all from the one shared world clock.
+
+Sky, clouds and fog
+- The sky gradient and the sun glow agree with the sun direction and the fog
+  colour.
+- Clouds are lit and layered and they drift. Never ball clouds or evenly spaced
+  puffs.
+- Fog creates depth (aerial perspective). It never washes the scene flat.
+
+Foliage, grass and nature
+- Grass is clumped, colour-varied and moved by the wind. Never a carpet or a
+  flat tint.
+- Trees have taper, root flare, a branch hierarchy and gaps in the crown.
+  Leaves are cards or clusters with correct alpha, back faces and mipmaps, and
+  controlled overdraw.
+- Distant trees and rocks become impostor cards or HLOD, with the same palette
+  and fog. Check the swap distance for popping.
+  - Impostor baker: assets/blender/tools/impostor_baker.py
+  - Runtime: apps/client/src/impostors.ts
+
+Water and snow
+- Water has a flow direction, depth tint, Fresnel, foam where it meets objects,
+  and moving normals. Water never glows, and bloom never sits on water.
+- Snow sits on upward-facing surfaces, drifts against obstacles and keeps its
+  material detail. It shows footprints and wet edges where the game supports
+  them.
+
+VFX, smoke and fire
+- Every effect shows an event and a direction: anticipation -> impact ->
+  dissipation. Give windup, active and fade timings in milliseconds that match
+  the combat contract.
+- Each school has core and edge colours. Effects read over grass, stone and snow,
+  and at night. They are scaled for the 13 m camera, pooled, and capped in
+  lifetime and count.
+- Smoke and fire use flipbooks, simulated in Blender or hand-painted, with soft
+  particles and wind drift. They rise, spread and fade believably, and never
+  hide combat.
+
+UI
+- One ornate gold and bronze frame language: consistent bevels, gems and corner
+  pieces. Icons share one painted style at 128 px.
+- Test at 1920x1080 and 844x390, by day and by night, with long Thai strings.
+  Nothing may overlap the joystick, skills, chat or interaction prompts.
+- Never show a menu or system as working when it is not built.
+
+Levels and dungeons
+- The blockout is walkable from the start: floors, stairs, slopes, colliders and
+  server movement agree. Test it with the real game camera from the first
+  blockout.
+- Interiors keep the 13 m camera boom clear, or rely on camera collision. Measure
+  the boom in every room.
+- Each space has one clear landmark, a readable route and a way back.
+
+EVIDENCE PACKAGE (EVERY VISUAL CHANGE)
+- Label every image CONCEPT, BLENDER REVIEW or BABYLON CAPTURE. Never present one
+  as another.
+- Capture before/after from the same cameras:
+  - the player view (13 m);
+  - side;
+  - close (about 2 m);
+  - elevated.
+  Add clips for motion, wind, water, VFX and LOD swaps.
+- For shader or material changes, capture both WebGPU and WebGL2.
+- Record the numbers, naming the device, renderer, resolution and preset:
+  - triangles after export;
+  - draw calls;
+  - texture memory;
+  - frame time p50 and p95.
+- Save everything under planning/evidence/<topic>/ with a receipt holding the
+  source and runtime hashes and the commands used.
+
+WRITING PROMPTS FOR ANOTHER AGENT
+Prompts to Codex and froggy are written in English and are complete specs.
+Never send "make it better" on its own. Each prompt includes:
+- the goal and why it matters;
+- references (paths or URLs);
+- exact numbers: sizes, budgets, timings, palette;
+- the files the agent owns and the files it must not touch;
+- the engine or tool to use;
+- a numbered definition-of-done checklist;
+- the evidence to deliver;
+- the self-review loop it must run (at least 3 passes);
+- the report format;
+- anything that needs the owner's approval.
+
+LANES AND FILE OWNERSHIP (owner re-split 2026-10-02; replaces 2026-10-01)
+- Owner: designs the game systems, decides keep or drop on ideas, and approves
+  installs, paid jobs and publishing. Free CC0 downloads are approved.
+- Claude (Opus 5.5): maps and visuals.
+  - Structure, plans, briefs and review gates.
+  - Map layout and level design for every region, Sunmeadow first.
+  - Blender map construction: whole-map blockout -> modelled forms ->
+    procedural surface detail (shader/mesh/material rules) -> texture
+    renders and bakes.
+  - Trees and foliage; see docs/reviews/2026-10-02-trees-free-assets-decision.md.
+  - Lighting, sky lighting, fog, post and colour tone. Dungeon and level
+    blockouts. The texture forge, review renders, and the LOD and impostor tools.
+  - Files, after Codex root's hand-off: environment.ts, meadow-surface.ts,
+    nature-motion.ts, impostors.ts, hero-oak*.ts, assets/blender/world/**,
+    assets/blender/trees/**, assets/blender/city_r5/** (map art), and the
+    Blender sources for the statue, houses and props.
+  - Claude may use sub-agents for bounded steps and reviews their output.
+- Codex root (GPT): gameplay and effects. The server (Rust), city-npc.ts,
+  city-fountain.ts water FX, gameplay systems and combat combos. It verifies
+  Claude's walk surfaces and colliders against server movement.
+- Codex UI thread: apps/client/src/ui/**, ui.ts, style.css and
+  apps/client/src/assets/ui/**.
+- VFX lane (Codex): combat-fx.ts, world-combat-labels.ts, ambient-*.ts,
+  world-celestial.ts, world-weather.ts and cloud-surface.ts.
+- GPT ImageGen and froggy (cloud agent): concept sheets and painted source art
+  (leaf clusters, bark, silhouettes, palettes), plus samples from the froggy
+  art plan. No Tripo tree meshes.
+- Rules:
+  - one owner per file at a time;
+  - patch only your own hunk of a shared file;
+  - never revert another owner's hunk;
+  - hand off through docs/reviews/.
+Full table: docs/reviews/2026-10-01-claude-codex-collaboration-plan.md
+
+READ ONLY WHAT THE TASK NEEDS
+- docs/production-quality-standard.md — current quality contract and templates
+- docs/harness-jev-gpt-toolchain.md — required Harness/GPT/Jev/CUA/DOM/Fast Jev workflow
+- docs/delivery-and-asset-playbook.md — asset pipeline and source packages
+- docs/city-art-roadmap.md — reference city composition and layout
+- docs/region-loading-and-dungeons.md — outdoor streaming / dungeon transitions
+- docs/ui-runtime-architecture.md — Svelte/Babylon data boundary and UI lifecycle
+- docs/local-ai-asset-tools-20261001.md — pinned offline-AI evaluation and limits
+- docs/mr-mak-adoption-review-20261001.md — inspected external workflows and local mapping
+- docs/blender-python-tripo-workflow.md — Python-first production, Bridge checks and research
+- references/ro-research/ragnarok-complete-research.md — reference system families
+- references/shinobi-duel/ and references/summer-cycle/ — selected craft examples
+- docs/reviews/2026-10-01-claude-codex-collaboration-plan.md — roles, pipeline, ownership
+- docs/reviews/2026-10-01-visual-quality-program.md — discovery-loop pillars V0-V7
+- docs/reviews/2026-10-01-engine-selection.md — engine per job; pending approvals
+- docs/reviews/2026-10-02-trees-free-assets-decision.md — trees, free assets, stylized recipe, Codex brief
+- docs/plans/2026-10-02-visual-detail-master-plan.md — master plan for map, shaders, props, models, weather and atmosphere: pillars, phases, gates
+- docs/reviews/2026-10-02-claude-supervisor-handoff.md — Claude supervisor hand-off (2026-10-02 20:30 ICT): live agents, Codex/froggy/Tripo state, open owner decisions, next steps, rules
+- docs/references/lumivara-xexoria-deep-review-th.md — owner's deep review of Lumivara (Thai). Gameplay priorities P0/P1/P2 (§8), data contracts and UI states (§9), acceptance tests (§10). Copy principles only, never Lumivara names or art (§12.4). Tasks are in docs/reviews/2026-10-02-claude-to-codex-inbox.md (A16, A17, B10, C4–C6)
+- docs/reviews/2026-10-01-vfx-brief-for-codex.md — combat FX, then sky, clouds, birds
+- docs/reviews/2026-10-01-froggy-full-game-art-plan.md — look target, budgets, samples
+- docs/reviews/2026-10-01-dungeon-program-roadmap.md — zone transitions, dungeon slate
+- docs/reviews/2026-10-01-triangle-optimization-research.md — LOD/HLOD measurements
+- docs/levels/sunken-temple-of-aurel.md — first dungeon layout (8 m grid)
+
+Historical plans and status reports are dated evidence. Inspect current code,
+assets and receipts before claiming a feature exists. Preserve the long-term
+roadmap, but never use its schedule to excuse a failed current quality gate.
+
+MR. MAK WORKFLOW REFERENCE
+Read the adoption review before using references/mr-mak-workspace/.agents/skills.
+The inspected checkout is f122637a26c584ae1d3e48470d11874517913748 (0.4.15).
+Use its concept/build/review separation, source-safe level edits, material bake
+checks, animation handoff and VFX lifecycle checks as appropriate. Their provider,
+Three.js, Unity, desktop and optional voice routes are not automatically this
+project's runtime. No desktop installation, skill registration, provider setup
+or inference execution is implied by the checkout or this brief.
+
+EXPECTED HANDOFF
+A handoff contains:
+- what changed;
+- the actual source, build and asset IDs;
+- the build spec and its definition-of-done results, line by line;
+- how many build/capture/repair passes ran;
+- before/after evidence;
+- the visual verdict;
+- the walk, combat and system verdict;
+- measured device results, or an explicit note of missing evidence;
+- the remaining defects, strongest first;
+- the smallest next repair.
+Use the review form in the detailed standard.

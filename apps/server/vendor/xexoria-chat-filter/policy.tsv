@@ -1,0 +1,13 @@
+# Small illustrative policy. Tab-separated: id, language, boundary, action, term
+# Thai candidates require context review; these examples are NOT a complete lexicon.
+en_fuck	en	word	mask	fuck
+en_fucking	en	word	mask	fucking
+en_shit	en	word	mask	shit
+en_bullshit	en	word	mask	bullshit
+en_asshole	en	word	mask	asshole
+en_bitch	en	word	review	bitch
+th_khuay	th	substring	review	ควย
+th_hia	th	substring	review	เหี้ย
+th_sas	th	substring	review	สัส
+th_yet	th	substring	review	เย็ด
+th_maeng	th	substring	review	แม่ง

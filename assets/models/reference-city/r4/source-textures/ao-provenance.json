@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "stone_wall_04",
+    "map": "AO",
+    "resolution": "1k",
+    "format": "jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_wall_04/stone_wall_04_ao_1k.jpg",
+    "path": "assets/models/reference-city/r4/source-textures/stone_wall_04_ao_1k.jpg",
+    "bytes": 744270,
+    "sha256": "d6b778cb56fa7380acc8debfaf9dbe3cfbc29e7ddd178ffc3a2998ae494961c2"
+  },
+  {
+    "slug": "roof_tiles",
+    "map": "AO",
+    "resolution": "1k",
+    "format": "jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_ao_1k.jpg",
+    "path": "assets/models/reference-city/r4/source-textures/roof_tiles_ao_1k.jpg",
+    "bytes": 565196,
+    "sha256": "2127ba0805214ea95a0ea454624d163bce497e947ef0f99bb337cd810b54fc60"
+  },
+  {
+    "slug": "cobblestone_floor_001",
+    "map": "arm",
+    "resolution": "1k",
+    "format": "jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_001/cobblestone_floor_001_arm_1k.jpg",
+    "path": "assets/models/reference-city/r4/source-textures/cobblestone_floor_001_arm_1k.jpg",
+    "bytes": 191651,
+    "sha256": "a22891ec85735b468ff75ae6eb8ea0d92caf0bd4fe9b2e1b029d9c578bf46cf5"
+  },
+  {
+    "slug": "cliff_side",
+    "map": "AO",
+    "resolution": "1k",
+    "format": "jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cliff_side/cliff_side_ao_1k.jpg",
+    "path": "assets/models/reference-city/r4/source-textures/cliff_side_ao_1k.jpg",
+    "bytes": 412993,
+    "sha256": "726a57a786c5130a8bcb7c78d81657b68652dd4ee424a7e4683225cfdbb00dfc"
+  },
+  {
+    "slug": "weathered_planks",
+    "map": "AO",
+    "resolution": "1k",
+    "format": "jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_planks/weathered_planks_ao_1k.jpg",
+    "path": "assets/models/reference-city/r4/source-textures/weathered_planks_ao_1k.jpg",
+    "bytes": 594177,
+    "sha256": "a4ff0df66640229e315f75637a135622504094cf4d6d57c6cca4dacf619b1a5b"
+  },
+  {
+    "slug": "plastered_stone_wall",
+    "map": "AO",
+    "resolution": "1k",
+    "format": "jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_ao_1k.jpg",
+    "path": "assets/models/reference-city/r4/source-textures/plastered_stone_wall_ao_1k.jpg",
+    "bytes": 678440,
+    "sha256": "d1a8fdbf39639536c11911354e6675c80678a7e0d59190bc541a5b7d153cec0d"
+  }
+]

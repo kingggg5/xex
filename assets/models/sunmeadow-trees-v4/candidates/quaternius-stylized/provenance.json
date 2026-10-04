@@ -1,0 +1,1226 @@
+{
+ "asset": "Quaternius Stylized Nature MegaKit (Standard, free) - 7 picks, STYLIZED (Route A step 2)",
+ "status": "RUNTIME ADMITTED (C-P1-TREE, not committed): candidate GLBs through the export helper, runtime GLBs + shared KTX2 in apps/client/src/assets/models/sunmeadow-trees-v4",
+ "written_ict": "2026-10-02T20:17:45+07:00",
+ "route": "docs/reviews/2026-10-02-trees-free-assets-decision.md section 5, Route A step 3 (normalise + stylize) on the step-2 picks of planning/evidence/sunmeadow-trees-v4/route-a/selection.json",
+ "source": {
+  "pack_page": "https://quaternius.com/packs/stylizednaturemegakit.html",
+  "download_page": "https://quaternius.itch.io/stylized-nature-megakit",
+  "download_flow": "itch.io: Download Now -> 'No thanks, just take me to the downloads' -> 'Stylized Nature MegaKit[Standard].zip' (itch upload id 11055123, listed 99 MB); served from the itch.io storage mirror (signed URL not recorded)",
+  "download_tool": "Playwright MCP browser, saved directly with download.saveAs() into the kit folder",
+  "downloaded_ict": "2026-10-02T11:31:36+07:00",
+  "approval": "Owner approved free CC0 downloads (2026-10-01 10:40 and 2026-10-02; decision doc section 7)"
+ },
+ "licence": {
+  "spdx": "CC0-1.0",
+  "verdict": "CC0 1.0 Universal, stated by the archive's own licence file, the pack page and the itch.io listing",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "in_archive": {
+   "file": "License_Standard.txt",
+   "bytes": 852,
+   "archive_date": "2024-07-30 17:35:40",
+   "text": "This is the standard FREE version of the Stylized Nature MegaKit, which only contains \r\na portion of the models (68/116). You can buy the PRO version which has all the models,\r\nor the SOURCE version which has all the models and also includes Unity(URP), Unreal Engine and Godot projects\r\nwith the stylized shader already set up.\r\n\r\nYou can get the other versions from the website https://quaternius.com\r\n\r\n-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n-------------------------------------------------------\r\nJoin the Discord Server:\r\nhttps://discord.gg/vJqnRUYRfT\r\n"
+  },
+  "pack_page_statement": {
+   "url": "https://quaternius.com/packs/stylizednaturemegakit.html",
+   "quote": [
+    "License CC0 (link: https://creativecommons.org/publicdomain/zero/1.0/)",
+    "Free to use in personal, educational and commercial projects. (CC0 License)"
+   ],
+   "fetched_ict": "2026-10-02T11:28+07:00"
+  },
+  "itch_page_statement": {
+   "url": "https://quaternius.itch.io/stylized-nature-megakit",
+   "quote": [
+    "Free to use in personal, educational and commercial projects. (CC0 License)",
+    "Asset license: Creative Commons Zero v1.0 Universal"
+   ],
+   "listing_updated": "16 September 2026 @ 08:17 UTC",
+   "fetched_ict": "2026-10-02T11:29+07:00"
+  },
+  "discrepancy_to_report": {
+   "url": "https://quaternius.com/license.html",
+   "quote": [
+    "Quaternius Asset License (QAL) v1.0",
+    "Last updated: 8/28/2026",
+    "You can use these assets, free of charge, in personal, educational, and commercial games and other projects, with no credit required. You just can't resell or redistribute the assets themselves as assets.",
+    "7. Changes to This License: We may publish updated versions of this License for future Asset releases. Changes will not apply retroactively to Assets you've already obtained under an earlier version"
+   ],
+   "assessment": "The site-wide licence page now shows a newer custom licence (QAL v1.0, 2026-08-28) that is not CC0. This archive (2024-07-30) ships CC0 text, and the pack page and the itch listing (updated 2026-09-16) still state CC0 1.0 for this pack on the download date; a CC0 dedication cannot be withdrawn for copies obtained under it. Even under QAL, use inside the game is allowed without credit. Prudent rule either way: keep the raw kit outside the repo (Downloads\\Xexoria-Game\\kits) and ship only derived, game-ready assets; never republish the kit files as an asset pack.",
+   "fetched_ict": "2026-10-02T11:28+07:00"
+  },
+  "page_snapshots": {
+   "folder": "planning/evidence/sunmeadow-trees-v4/route-a/licence-snapshots/",
+   "files": {
+    "itch-stylized-nature-megakit-20261002.html": {
+     "bytes": 31100,
+     "sha256": "56a4dc03ebe52546a7bf6789dca2e65980982efd68a4caa80ae1d8199205a8dc"
+    },
+    "quaternius-license-page-20261002.html": {
+     "bytes": 10301,
+     "sha256": "d1b56be5228d372b049b45cc7447a823da7989a6cf7036f60cfac2284c8fcb0d"
+    },
+    "quaternius-pack-page-20261002.html": {
+     "bytes": 19899,
+     "sha256": "5ea514ac8547a0d9c35e74441ea4dc290652af2d01c4fb423fa7bf1728a85eb3"
+    }
+   }
+  },
+  "rule": "llm.txt rule 11: a local folder is not evidence of CC0; the statements above are the evidence"
+ },
+ "archive": {
+  "name": "Stylized Nature MegaKit[Standard].zip",
+  "path": "%USERPROFILE%/Downloads/Xexoria-Game/kits/quaternius-stylized-nature-megakit/Stylized Nature MegaKit[Standard].zip",
+  "bytes": 104088529,
+  "sha256": "298f6732b872e4cf7b30e6e7abf9641c7f6dc6b326df37ac089533ed7e3d58c9",
+  "immutable": "never modified; all work uses the extracted copy or in-memory imports",
+  "entries": 459,
+  "files": 454,
+  "uncompressed_bytes": 122116746,
+  "crc_test": "zipfile.testzip() = None (all entries OK)"
+ },
+ "extracted_copy": {
+  "path": "%USERPROFILE%/Downloads/Xexoria-Game/kits/quaternius-stylized-nature-megakit/extracted",
+  "files": 454,
+  "bytes": 122116746,
+  "size_mismatches_vs_archive": []
+ },
+ "step1_provenance": "assets/models/sunmeadow-trees-v4/candidates/quaternius/provenance.json",
+ "kit_files_used": {
+  "meshes": "glTF/<model>.gltf + .bin of the 7 picks (imported read-only into an empty Blender scene)",
+  "bark": {
+   "Bark_NormalTree.png": {
+    "bytes": 3894788,
+    "sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+   },
+   "Bark_NormalTree_Normal.png": {
+    "bytes": 4384496,
+    "sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+   },
+   "derived": "regraded to the decision-doc bark palette and resized to 1024 px (textures/qn_bark_albedo.png, textures/qn_bark_normal.png; textures/bark_regrade.json)"
+  },
+  "leaf_textures": "NOT used: Leaves_NormalTree_C / Leaf_Pine_C / Leaves_TwistedTree_C are single flat colours; every card is re-mapped to the painted cluster atlas below",
+  "flowers": "Flowers.png NOT used: the 38 kit flower meshes of Bush_Common_Flowers became 38 two-triangle quads mapped to the red blossom cell of the atlas"
+ },
+ "original_work": {
+  "leaf_atlas": {
+   "file": "textures/qn_leaf_atlas_albedo.png",
+   "final_atlas_report": "planning/evidence/sunmeadow-trees-v4/route-a-stylized/atlas-forge/out-pass4/atlas_report.json",
+   "final_atlas_calibration": {
+    "_why": "pass-3 BLENDER REVIEW: 4/7 inside the palette gate; misses are highlights only - broadleaf S/M p90 -0.08 luma and value range 0.46 vs 0.60; conifer L p50 -0.07, p90 -0.105. Push the upper tones (brighter, more yellow), keep or slightly lower the darks; bush palette unchanged (both bushes pass)",
+    "broadleaf": {
+     "gain_lo": 0.85,
+     "gain_hi": 3.5,
+     "r_lo": 1.05,
+     "r_hi": 1.6,
+     "b_lo": 1.0,
+     "b_hi": 0.75
+    },
+    "conifer": {
+     "gain_lo": 1.35,
+     "gain_hi": 4.2,
+     "r_lo": 1.15,
+     "r_hi": 1.65,
+     "b_lo": 0.9,
+     "b_hi": 0.7
+    },
+    "bush": {
+     "gain_lo": 2.0,
+     "gain_hi": 1.9,
+     "r": 1.1,
+     "b": 1.4
+    },
+    "leaf_contrast": 1.6,
+    "leaflet_contrast": 1.5
+   },
+   "made_by": "Claude forge (decision doc 4.2 step 6, source 4): Blender 5.2.2 geometry passes (forge_leaf_atlas.py) + numpy painting (paint_leaf_atlas.py); no photo leaves, no third-party pixels",
+   "evidence": "planning/evidence/sunmeadow-trees-v4/route-a-stylized/atlas-forge"
+  }
+ },
+ "derived_licence_note": "Kit content is CC0-1.0 (modification and redistribution allowed without attribution; credit kept as a courtesy). The atlas and all scripts are project-original.",
+ "recipe": {
+  "scripts": {
+   "assets/blender/trees_v4/stylize/finalize.py": "b2fa6c5afe8e645b64eba9afbe3a4fdda96a4f6103e4ea0cae8e5c216b872f0e",
+   "assets/blender/trees_v4/stylize/forge_leaf_atlas.py": "6a77f7c1cde076698a59bb2e943d1b6318faae51ff3083297b7d02fec397f5e6",
+   "assets/blender/trees_v4/stylize/lod_strip.py": "0975a1b50cd16a68e0642d9d56d5ddfb37575a5b4b2ae59ca3033c9da1291df6",
+   "assets/blender/trees_v4/stylize/paint_leaf_atlas.py": "960db7adb153b5381b33b331cc7539850eb4e5fce5f9db8c9c48aced9383effd",
+   "assets/blender/trees_v4/stylize/probe_cards.py": "5a02d3553f73513fc9046204be4aed844679282d40cde23142324353ff03ee1c",
+   "assets/blender/trees_v4/stylize/probe_uv_dump.py": "35dd0b86ba6f0eabcc0c8e51805d0cc4ce1fdbf95176a4232e1f5bed935b32b9",
+   "assets/blender/trees_v4/stylize/regrade_bark.py": "379f5602d242300d96f725fd6874b148491d88a086ff017c007e91bea20d4d8b",
+   "assets/blender/trees_v4/stylize/render_stylized.py": "d28b542529b36f970dc725810f6f01e5bbcda30e90627be9dba089ed7e6709ea",
+   "assets/blender/trees_v4/stylize/review_sheets.py": "33b15f50a312e22a73fd18e235c58d8dc8d5211f44ca967186b7d3ae464d0752",
+   "assets/blender/trees_v4/stylize/run_gate.py": "010a70e38c6fdd9d470415b917acc70626b5c967b4197420ceb5e19e5ca56f91",
+   "assets/blender/trees_v4/stylize/run_pass.py": "0cbcca6b59bc05a4ba73c6ecbde7cc854d66f4f5ff9d9668bfb97e136c8cdc60",
+   "assets/blender/trees_v4/stylize/stylize_kit.py": "0d5672f761e68af59a94e2fdc4bbb7604f32ce145c8182c7fcb0bce428877ddf",
+   "assets/blender/trees_v4/stylize/verify_glb.py": "5ac0e9a885334773c359e1156ac5f3fb2d8164d9c2010a77b8fbaac33b8cbe37"
+  },
+  "global": {
+   "c0_min": 0.55,
+   "c0_gamma": 1.6,
+   "c0_w_out": 0.45,
+   "c0_w_top": 0.35,
+   "c0_w_h": 0.2,
+   "hue_shift": 0.04,
+   "normal_mix": 0.9,
+   "alpha_cutoff": 0.45,
+   "seed": 11,
+   "bark_c0_min": 0.55,
+   "roughness_foliage": 0.9,
+   "roughness_bark": 0.95,
+   "conifer_cells": "C1_frond,C2_frond",
+   "card_tilt_deg": 35.0
+  },
+  "per_model": {
+   "CommonTree_2": {
+    "crown_base_to": null,
+    "wh_target": 0.86,
+    "card_scale": 1.12,
+    "add_clumps": 2,
+    "clumps": 6,
+    "bark_ratio": 0.62,
+    "flare": 2.0,
+    "buttresses": 5,
+    "delete_inner": 0.0,
+    "lod1_bark": 520,
+    "c0_gamma": 2.4,
+    "trunk_scale": 1.08
+   },
+   "CommonTree_5": {
+    "crown_base_to": 2.8,
+    "wh_target": 0.84,
+    "card_scale": 1.1,
+    "add_clumps": 3,
+    "clumps": 7,
+    "bark_ratio": 1.0,
+    "flare": 2.0,
+    "buttresses": 5,
+    "delete_inner": 0.0,
+    "lod1_bark": 520,
+    "c0_gamma": 2.4
+   },
+   "CommonTree_1": {
+    "crown_base_to": 2.6,
+    "wh_target": 0.85,
+    "card_scale": 1.08,
+    "add_clumps": 2,
+    "clumps": 8,
+    "bark_ratio": 0.58,
+    "flare": 2.0,
+    "buttresses": 6,
+    "delete_inner": 0.1,
+    "lod1_bark": 520
+   },
+   "Pine_2": {
+    "crown_base_to": null,
+    "narrow": 0.84,
+    "trunk_scale": 1.25,
+    "flare": 1.6,
+    "buttresses": 4,
+    "bark_ratio": 0.6,
+    "frond_dup": true,
+    "tiers": 6,
+    "lod1_bark": 420,
+    "remove_low_limbs": true
+   },
+   "Pine_5": {
+    "crown_base_to": 2.2,
+    "narrow": 0.86,
+    "trunk_scale": 1.0,
+    "flare": 1.6,
+    "buttresses": 4,
+    "bark_ratio": 1.0,
+    "frond_dup": true,
+    "tiers": 7,
+    "lod1_bark": 380,
+    "remove_low_limbs": false
+   },
+   "Bush_Common_Flowers": {
+    "clumps": 3,
+    "keep_cards": 390,
+    "flower_quads": true,
+    "blossom_share": 0.25,
+    "bush_cells": [
+     [
+      "B5_bush",
+      1.0
+     ]
+    ]
+   },
+   "Bush_Common": {
+    "clumps": 3,
+    "keep_cards": 400,
+    "flower_quads": false,
+    "blossom_share": 0.0,
+    "bush_cells": [
+     [
+      "B5_bush",
+      1.0
+     ]
+    ]
+   }
+  },
+  "blender": "5.2.2 LTS",
+  "final_pass": 5,
+  "gltf_export_options": {
+   "at_collection_center": false,
+   "check_existing": false,
+   "collection": "xex_export__qn_broadleaf_s_lod0",
+   "export_action_filter": false,
+   "export_active_vertex_color_when_no_material": false,
+   "export_all_influences": false,
+   "export_all_vertex_colors": false,
+   "export_anim_scene_split_object": true,
+   "export_anim_single_armature": true,
+   "export_anim_slide_to_zero": true,
+   "export_animation_mode": "ACTIONS",
+   "export_animations": false,
+   "export_apply": true,
+   "export_armature_object_remove": false,
+   "export_attributes": false,
+   "export_bake_animation": false,
+   "export_cameras": false,
+   "export_convert_animation_pointer": false,
+   "export_copyright": "CC0-1.0 Quaternius Stylized Nature MegaKit (Standard); stylized for Xexoria (Route A step 2)",
+   "export_current_frame": false,
+   "export_def_bones": false,
+   "export_draco_color_quantization": 10,
+   "export_draco_generic_quantization": 12,
+   "export_draco_mesh_compression_enable": false,
+   "export_draco_mesh_compression_level": 6,
+   "export_draco_normal_quantization": 10,
+   "export_draco_position_quantization": 14,
+   "export_draco_texcoord_quantization": 12,
+   "export_extra_animations": false,
+   "export_extras": true,
+   "export_force_sampling": true,
+   "export_format": "GLTF_SEPARATE",
+   "export_frame_range": false,
+   "export_frame_step": 1,
+   "export_gltfpack_kn": false,
+   "export_gltfpack_noq": true,
+   "export_gltfpack_sa": false,
+   "export_gltfpack_si": 1.0,
+   "export_gltfpack_slb": false,
+   "export_gltfpack_tc": true,
+   "export_gltfpack_tq": 8,
+   "export_gltfpack_vc": 8,
+   "export_gltfpack_vn": 8,
+   "export_gltfpack_vp": 14,
+   "export_gltfpack_vpi": "Integer",
+   "export_gltfpack_vt": 12,
+   "export_gn_mesh": false,
+   "export_gpu_instances": false,
+   "export_hierarchy_flatten_bones": false,
+   "export_hierarchy_flatten_objs": false,
+   "export_hierarchy_full_collections": false,
+   "export_image_add_webp": false,
+   "export_image_format": "AUTO",
+   "export_image_quality": 100,
+   "export_image_webp_fallback": false,
+   "export_import_convert_lighting_mode": "SPEC",
+   "export_influence_nb": 4,
+   "export_jpeg_quality": 100,
+   "export_keep_originals": false,
+   "export_leaf_bone": false,
+   "export_lights": false,
+   "export_loglevel": -1,
+   "export_materials": "EXPORT",
+   "export_merge_animation": "ACTION",
+   "export_meshopt_compression_enable": false,
+   "export_meshopt_extension": "EXT_meshopt_compression",
+   "export_morph": false,
+   "export_morph_animation": true,
+   "export_morph_normal": true,
+   "export_morph_reset_sk_data": true,
+   "export_morph_tangent": false,
+   "export_negative_frame": "SLIDE",
+   "export_nla_strips": true,
+   "export_nla_strips_merged_animation_name": "Animation",
+   "export_normals": true,
+   "export_optimize_animation_keep_anim_armature": true,
+   "export_optimize_animation_keep_anim_object": false,
+   "export_optimize_animation_size": true,
+   "export_optimize_disable_viewport": false,
+   "export_original_specular": false,
+   "export_pointer_animation": false,
+   "export_reset_pose_bones": true,
+   "export_rest_position_armature": true,
+   "export_sampling_interpolation_fallback": "LINEAR",
+   "export_shared_accessors": false,
+   "export_skins": false,
+   "export_tangents": true,
+   "export_texcoords": true,
+   "export_texture_dir": "tex",
+   "export_try_omit_sparse_sk": false,
+   "export_try_sparse_sk": true,
+   "export_unused_images": false,
+   "export_unused_textures": false,
+   "export_use_gltfpack": false,
+   "export_vertex_color": "MATERIAL",
+   "export_vertex_color_name": "Color",
+   "export_yup": true,
+   "use_active_collection": false,
+   "use_active_collection_with_nested": false,
+   "use_active_scene": true,
+   "use_mesh_edges": false,
+   "use_mesh_vertices": false,
+   "use_renderable": false,
+   "use_selection": false,
+   "use_visible": false,
+   "will_save_settings": false
+  }
+ },
+ "runtime_contract": {
+  "materials": "<species>_bark (OPAQUE) + <species>_foliage (MASK, alphaCutoff 0.45, doubleSided)",
+  "COLOR_0": "VEC3 float multiplier, Material mode",
+  "TEXCOORD_1": "x = sway weight 0 at ground -> 1 at the tips; y = per-clump phase 0..1",
+  "pivot": "origin at the trunk's ground contact, ground = y 0 (glTF), buried skirt to about -0.25 m kept for slopes",
+  "extensions": "candidate GLBs: none (no meshopt, no Draco), images external in textures-shared/; runtime GLBs: EXT_meshopt_compression, KHR_mesh_quantization, KHR_texture_basisu"
+ },
+ "species": {
+  "qn_broadleaf_s": {
+   "kit_model": "CommonTree_2",
+   "role": "broadleaf S",
+   "height_m": 5.5,
+   "kit_files": {
+    "CommonTree_2.gltf": {
+     "bytes": 3866,
+     "sha256": "67160975f0ac991b4a2ffb2add4ab4037b5e9c1bef9f66dac5235fcf0ba9bd52"
+    },
+    "CommonTree_2.bin": {
+     "bytes": 423024,
+     "sha256": "a273d69de31a675a9d7e3eb3c43f804aef2d1b031692111b9e76eb3b0b686d0c"
+    }
+   },
+   "lod0": {
+    "file": "qn_broadleaf_s_lod0.glb",
+    "triangles": 4885
+   },
+   "lod1": {
+    "file": "qn_broadleaf_s_lod1.glb",
+    "triangles": 1569
+   },
+   "materials": [
+    "qn_broadleaf_s_bark",
+    "qn_broadleaf_s_foliage"
+   ],
+   "before": {
+    "trunk_r_1m_m": 0.266,
+    "trunk_r_ground_m": 0.395,
+    "flare_ground_over_1m": 1.49,
+    "first_split_m": 2.0,
+    "ring_edges_at_0p25m": 32,
+    "crown_base_p5_m": 2.659,
+    "crown_top_m": 5.5,
+    "crown_width_m": 3.248,
+    "crown_width_over_height": 0.591,
+    "triangles": 5648
+   },
+   "after": {
+    "trunk_r_1m_m": 0.27,
+    "trunk_r_ground_m": 0.546,
+    "flare_ground_over_1m": 2.02,
+    "first_split_m": 2.0,
+    "ring_edges_at_0p25m": 50,
+    "crown_base_p5_m": 2.569,
+    "crown_top_m": 5.5,
+    "crown_width_m": 4.883,
+    "crown_width_over_height": 0.888,
+    "bark_tris": 3001,
+    "foliage_tris": 1884,
+    "triangles": 4885,
+    "cards": 942,
+    "clumps_or_tiers": 6
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "tree_lod0",
+     "tree_lod1"
+    ]
+   }
+  },
+  "qn_broadleaf_m": {
+   "kit_model": "CommonTree_5",
+   "role": "broadleaf M",
+   "height_m": 7.5,
+   "kit_files": {
+    "CommonTree_5.gltf": {
+     "bytes": 3860,
+     "sha256": "fb7061f2bf9fe850870b056431f8f66cd8fdeb443c90695c5efbcf1fe6876d53"
+    },
+    "CommonTree_5.bin": {
+     "bytes": 252996,
+     "sha256": "0e617612d50e6bb2ca3c64338383f8938ce9e04d55b548ff11cec7a7b7d8f072"
+    }
+   },
+   "lod0": {
+    "file": "qn_broadleaf_m_lod0.glb",
+    "triangles": 4662
+   },
+   "lod1": {
+    "file": "qn_broadleaf_m_lod1.glb",
+    "triangles": 1569
+   },
+   "materials": [
+    "qn_broadleaf_m_bark",
+    "qn_broadleaf_m_foliage"
+   ],
+   "before": {
+    "trunk_r_1m_m": 0.353,
+    "trunk_r_ground_m": 0.537,
+    "flare_ground_over_1m": 1.52,
+    "first_split_m": 3.0,
+    "ring_edges_at_0p25m": 34,
+    "crown_base_p5_m": 3.401,
+    "crown_top_m": 7.5,
+    "crown_width_m": 4.375,
+    "crown_width_over_height": 0.583,
+    "triangles": 3182
+   },
+   "after": {
+    "trunk_r_1m_m": 0.336,
+    "trunk_r_ground_m": 0.668,
+    "flare_ground_over_1m": 1.99,
+    "first_split_m": 2.0,
+    "ring_edges_at_0p25m": 53,
+    "crown_base_p5_m": 2.836,
+    "crown_top_m": 7.5,
+    "crown_width_m": 6.579,
+    "crown_width_over_height": 0.877,
+    "bark_tris": 2212,
+    "foliage_tris": 2450,
+    "triangles": 4662,
+    "cards": 1225,
+    "clumps_or_tiers": 7
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "tree_lod0",
+     "tree_lod1"
+    ]
+   }
+  },
+  "qn_broadleaf_l": {
+   "kit_model": "CommonTree_1",
+   "role": "broadleaf L",
+   "height_m": 9.5,
+   "kit_files": {
+    "CommonTree_1.gltf": {
+     "bytes": 3869,
+     "sha256": "b51cdea6545edb51d102dd6c27caafe62aa75e3c328ac8f9039f4e7bfd690bfa"
+    },
+    "CommonTree_1.bin": {
+     "bytes": 491576,
+     "sha256": "9dd689e84e1aa2f5b08db8def591254d582783c73737af54ba0d89b3e549c3ae"
+    }
+   },
+   "lod0": {
+    "file": "qn_broadleaf_l_lod0.glb",
+    "triangles": 5184
+   },
+   "lod1": {
+    "file": "qn_broadleaf_l_lod1.glb",
+    "triangles": 1569
+   },
+   "materials": [
+    "qn_broadleaf_l_bark",
+    "qn_broadleaf_l_foliage"
+   ],
+   "before": {
+    "trunk_r_1m_m": 0.54,
+    "trunk_r_ground_m": 0.719,
+    "flare_ground_over_1m": 1.33,
+    "first_split_m": 4.0,
+    "ring_edges_at_0p25m": 32,
+    "crown_base_p5_m": 4.165,
+    "crown_top_m": 9.5,
+    "crown_width_m": 6.013,
+    "crown_width_over_height": 0.633,
+    "triangles": 6265
+   },
+   "after": {
+    "trunk_r_1m_m": 0.475,
+    "trunk_r_ground_m": 0.949,
+    "flare_ground_over_1m": 2.0,
+    "first_split_m": 3.0,
+    "ring_edges_at_0p25m": 56,
+    "crown_base_p5_m": 2.873,
+    "crown_top_m": 9.5,
+    "crown_width_m": 7.636,
+    "crown_width_over_height": 0.804,
+    "bark_tris": 2872,
+    "foliage_tris": 2312,
+    "triangles": 5184,
+    "cards": 1156,
+    "clumps_or_tiers": 8
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "tree_lod0",
+     "tree_lod1"
+    ]
+   }
+  },
+  "qn_conifer_m": {
+   "kit_model": "Pine_2",
+   "role": "conifer M",
+   "height_m": 8.0,
+   "kit_files": {
+    "Pine_2.gltf": {
+     "bytes": 3833,
+     "sha256": "57bd4732170b6c7e51bcf78fe5adaabf142f95a50378d8d3051d1f20a04d3c2f"
+    },
+    "Pine_2.bin": {
+     "bytes": 258336,
+     "sha256": "5ba81ed2b131243bf02f5fb18e278083205ce16b0f30c364ccbe9355e7637c60"
+    }
+   },
+   "lod0": {
+    "file": "qn_conifer_m_lod0.glb",
+    "triangles": 2779
+   },
+   "lod1": {
+    "file": "qn_conifer_m_lod1.glb",
+    "triangles": 1366
+   },
+   "materials": [
+    "qn_conifer_m_bark",
+    "qn_conifer_m_foliage"
+   ],
+   "before": {
+    "trunk_r_1m_m": 0.179,
+    "trunk_r_ground_m": 0.238,
+    "flare_ground_over_1m": 1.33,
+    "first_split_m": 1.5,
+    "ring_edges_at_0p25m": 32,
+    "crown_base_p5_m": 2.331,
+    "crown_top_m": 8.0,
+    "crown_width_m": 6.133,
+    "crown_width_over_height": 0.767,
+    "triangles": 3648
+   },
+   "after": {
+    "trunk_r_1m_m": 0.221,
+    "trunk_r_ground_m": 0.353,
+    "flare_ground_over_1m": 1.6,
+    "first_split_m": 2.0,
+    "ring_edges_at_0p25m": 64,
+    "crown_base_p5_m": 2.136,
+    "crown_top_m": 8.0,
+    "crown_width_m": 5.369,
+    "crown_width_over_height": 0.671,
+    "bark_tris": 1239,
+    "foliage_tris": 1540,
+    "triangles": 2779,
+    "cards": 70,
+    "clumps_or_tiers": 6
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "tree_lod0",
+     "tree_lod1"
+    ]
+   }
+  },
+  "qn_conifer_l": {
+   "kit_model": "Pine_5",
+   "role": "conifer L",
+   "height_m": 12.0,
+   "kit_files": {
+    "Pine_5.gltf": {
+     "bytes": 3815,
+     "sha256": "bb060ce1420af32dc996241078d36e4c991577397474aa64f4c691362c482cfa"
+    },
+    "Pine_5.bin": {
+     "bytes": 120996,
+     "sha256": "18982d7f6c430d1a42568d4ef62017398dedb1ddc60dfbab047f8cddea9cf797"
+    }
+   },
+   "lod0": {
+    "file": "qn_conifer_l_lod0.glb",
+    "triangles": 3140
+   },
+   "lod1": {
+    "file": "qn_conifer_l_lod1.glb",
+    "triangles": 1361
+   },
+   "materials": [
+    "qn_conifer_l_bark",
+    "qn_conifer_l_foliage"
+   ],
+   "before": {
+    "trunk_r_1m_m": 0.364,
+    "trunk_r_ground_m": 0.517,
+    "flare_ground_over_1m": 1.42,
+    "first_split_m": null,
+    "ring_edges_at_0p25m": 32,
+    "crown_base_p5_m": 3.397,
+    "crown_top_m": 12.0,
+    "crown_width_m": 8.936,
+    "crown_width_over_height": 0.745,
+    "triangles": 1646
+   },
+   "after": {
+    "trunk_r_1m_m": 0.322,
+    "trunk_r_ground_m": 0.518,
+    "flare_ground_over_1m": 1.61,
+    "first_split_m": null,
+    "ring_edges_at_0p25m": 55,
+    "crown_base_p5_m": 2.2,
+    "crown_top_m": 12.0,
+    "crown_width_m": 7.824,
+    "crown_width_over_height": 0.652,
+    "bark_tris": 824,
+    "foliage_tris": 2316,
+    "triangles": 3140,
+    "cards": 106,
+    "clumps_or_tiers": 7
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "tree_lod0",
+     "tree_lod1"
+    ]
+   }
+  },
+  "qn_bush_flowers": {
+   "kit_model": "Bush_Common_Flowers",
+   "role": "bush",
+   "height_m": 1.2,
+   "kit_files": {
+    "Bush_Common_Flowers.gltf": {
+     "bytes": 3654,
+     "sha256": "08768c680e3abeafd25858c9d3f369bcb7eed014661d3b6825a397f2a6a3deea"
+    },
+    "Bush_Common_Flowers.bin": {
+     "bytes": 128928,
+     "sha256": "15f56a013afe0eecaded0eb97fd8f323305af11e1f0f7bb9b68472ec4cdc20d5"
+    }
+   },
+   "lod0": {
+    "file": "qn_bush_flowers_lod0.glb",
+    "triangles": 856
+   },
+   "lod1": {
+    "file": "qn_bush_flowers_lod1.glb",
+    "triangles": 420
+   },
+   "materials": [
+    "qn_bush_flowers_foliage"
+   ],
+   "before": {
+    "crown_base_p5_m": 0.19,
+    "crown_top_m": 1.2,
+    "crown_width_m": 1.728,
+    "crown_width_over_height": 1.44,
+    "triangles": 1368
+   },
+   "after": {
+    "crown_base_p5_m": 0.143,
+    "crown_top_m": 1.2,
+    "crown_width_m": 1.666,
+    "crown_width_over_height": 1.388,
+    "bark_tris": 0,
+    "foliage_tris": 856,
+    "triangles": 856,
+    "cards": 428,
+    "clumps_or_tiers": 3
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_flowers_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_flowers_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "bush_lod0",
+     "bush_lod1"
+    ]
+   }
+  },
+  "qn_bush": {
+   "kit_model": "Bush_Common",
+   "role": "bush",
+   "height_m": 1.2,
+   "kit_files": {
+    "Bush_Common.gltf": {
+     "bytes": 2101,
+     "sha256": "77811fca92610cb254713d3d49d5029ab6cf13050c3afb61aa942786a7b2ca90"
+    },
+    "Bush_Common.bin": {
+     "bytes": 91800,
+     "sha256": "a5e1a773c8ba78fd9c05a8b342131eba4879302a8fddd2c5186cab9ee1ef4966"
+    }
+   },
+   "lod0": {
+    "file": "qn_bush_lod0.glb",
+    "triangles": 800
+   },
+   "lod1": {
+    "file": "qn_bush_lod1.glb",
+    "triangles": 420
+   },
+   "materials": [
+    "qn_bush_foliage"
+   ],
+   "before": {
+    "crown_base_p5_m": 0.155,
+    "crown_top_m": 1.2,
+    "crown_width_m": 1.728,
+    "crown_width_over_height": 1.44,
+    "triangles": 900
+   },
+   "after": {
+    "crown_base_p5_m": 0.173,
+    "crown_top_m": 1.2,
+    "crown_width_m": 1.591,
+    "crown_width_over_height": 1.326,
+    "bark_tris": 0,
+    "foliage_tris": 800,
+    "triangles": 800,
+    "cards": 400,
+    "clumps_or_tiers": 3
+   },
+   "readback_all_ok": true,
+   "export_helper": {
+    "receipts": [
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_lod0.receipt.json",
+     "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_lod1.receipt.json"
+    ],
+    "status": [
+     "PASS",
+     "PASS"
+    ],
+    "budget_classes": [
+     "bush_lod0",
+     "bush_lod1"
+    ]
+   }
+  }
+ },
+ "files": {
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod0.glb": {
+   "bytes": 478784,
+   "sha256": "56c4717419e3a516fa36a860b95bf516695d3b2c26eb8b853f350c5a5f37a64a"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod0.receipt.json": {
+   "bytes": 18666,
+   "sha256": "26cc4bb6a29a959c4aee2119251bff95ff40036baac8cebb9414edbf61446eb3"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod1.glb": {
+   "bytes": 186840,
+   "sha256": "192c0c1884327bc7f1b9c5c02accf8f798361f750ad0fc90b2b1c42197b42df7"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod1.receipt.json": {
+   "bytes": 18662,
+   "sha256": "1520f0e299de1f300d4a4a36d449a3b0b3e7c9e40207108504c3eff840aad79f"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod0.glb": {
+   "bytes": 459048,
+   "sha256": "6f4046eb0db3da8e8c0c677732d22f0b73c906a32532f369dac124dee57eebd2"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod0.receipt.json": {
+   "bytes": 18674,
+   "sha256": "ded53b88c61fa6f2ed40eb4129e1d43c4b449296e012ae974ba55e1c39d9910a"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod1.glb": {
+   "bytes": 182148,
+   "sha256": "a3045bb17e83267cdd9222ef53aecfaa2c05a939769cbb17e7dbe14a32523b77"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod1.receipt.json": {
+   "bytes": 18660,
+   "sha256": "4a12e547a301450779937bbce68b10f2abfa8aff923766630be3523f8c6bf8d1"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod0.glb": {
+   "bytes": 425720,
+   "sha256": "9df49f5df3f1d73049e44376770ed8a902838f8f8c2f896f796fad0f9a229504"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod0.receipt.json": {
+   "bytes": 19443,
+   "sha256": "18599b07ad37fc5306e94c69ee7df66d932b0efd6e9d1cc9c500aa0bdc57688b"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod1.glb": {
+   "bytes": 186708,
+   "sha256": "e0c73664b9f514827dcd79ccaede75db05ce9d893daf9be898b82888bf317ed1"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod1.receipt.json": {
+   "bytes": 18674,
+   "sha256": "022b394fcd1a0d72f76d2cb939aa3a5671aadff024f02c2268e08c4a8b1f25b3"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_flowers_lod0.glb": {
+   "bytes": 96420,
+   "sha256": "83afd7674c51a5df048b9c2da7fed71f0cf23c0c641a970c59f27b054938d438"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_flowers_lod0.receipt.json": {
+   "bytes": 15363,
+   "sha256": "81c040042c28731d20603cbedf1cb422fe59a1805aab5bce4f1e9b7151e3571f"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_flowers_lod1.glb": {
+   "bytes": 48452,
+   "sha256": "e93a349ceeada47b76b391e5b9c7c84490a29fdc05f74d8cfb7817d303fb813e"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_flowers_lod1.receipt.json": {
+   "bytes": 15359,
+   "sha256": "cca834de4544f6018ff560c4f3b760dafec716f698d838ed3f093ae7d036d627"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_lod0.glb": {
+   "bytes": 90420,
+   "sha256": "c11a3e652e2f12d7499cedd413496cdc19e9707bcaee3ad9a003d1726c6dc618"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_lod0.receipt.json": {
+   "bytes": 15170,
+   "sha256": "a668ddbc42aaea780adf700759723f2c5409905aea4fb8ebafd7039f04252e17"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_lod1.glb": {
+   "bytes": 48404,
+   "sha256": "4d6bc02615abd35fdd3c702f68224cfcd29d5feef3eecfec138813e4d885f07a"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_bush_lod1.receipt.json": {
+   "bytes": 15162,
+   "sha256": "3b3fe84f3c8667c92f88c8b8a9c54538f054bc3753c3117231a8e14a306b3135"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod0.glb": {
+   "bytes": 219232,
+   "sha256": "a529c852afbcb07feb36e264183812fee2cddf22ef56a1c10003c7706ac3a43c"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod0.receipt.json": {
+   "bytes": 18599,
+   "sha256": "0ca627ebdc5a5816b0364cf43be8ec270e681efbbefc64906e71c32fffe048b9"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod1.glb": {
+   "bytes": 96280,
+   "sha256": "379aa1f2ba618b8695df8f1fae47bb2bdc35626f73208507e11b8a25845ad9b7"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod1.receipt.json": {
+   "bytes": 18598,
+   "sha256": "75126ba04d630af7bfcb67c4cca0f4cc5a4b30c5751ab68cfb694a9e558ea2db"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod0.glb": {
+   "bytes": 174840,
+   "sha256": "f0f585c19312d63b3a047712c944b7f4d5e43f7caef9fab9288605b5e54c5e48"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod0.receipt.json": {
+   "bytes": 18599,
+   "sha256": "004a15106f7e5db63261b2e4216d09aec8b1fa348f9a5d8165c6a5a61ed882f4"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod1.glb": {
+   "bytes": 92564,
+   "sha256": "e128eca51053b7279093e67fce0ee8e1d5250a5b07af6e46654d79171446c673"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod1.receipt.json": {
+   "bytes": 18582,
+   "sha256": "8fbe5313041db58b6182623d47bbdac20cf2ff570952469ae89d2c15fab81563"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures/bark_regrade.json": {
+   "bytes": 1430,
+   "sha256": "a06622a762a1b40f9bd319e5645d810920f3919770bfcb95d5bf445c18465acd"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures/qn_bark_albedo.png": {
+   "bytes": 1390245,
+   "sha256": "1e7259e6ba7ef557451aa1f8472276a5370ace15324f989c43992bfde4d4fe44"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures/qn_bark_normal.png": {
+   "bytes": 995496,
+   "sha256": "f6ce77a9b378ac78d89a4a7569c1716a7d78c2e594552e1b579c8dadf09ff924"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures/qn_leaf_atlas_albedo.png": {
+   "bytes": 552669,
+   "sha256": "4aabecbf529874dfca0c295cd3348ee555a580f8ca132bf48d4d93e60c63eb2e"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures-shared/qn_bark_albedo-1e7259e6ba7e.png": {
+   "bytes": 1390245,
+   "sha256": "1e7259e6ba7ef557451aa1f8472276a5370ace15324f989c43992bfde4d4fe44"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures-shared/qn_bark_normal-f6ce77a9b378.png": {
+   "bytes": 995496,
+   "sha256": "f6ce77a9b378ac78d89a4a7569c1716a7d78c2e594552e1b579c8dadf09ff924"
+  },
+  "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/textures-shared/qn_leaf_atlas_albedo-4aabecbf5298.png": {
+   "bytes": 552669,
+   "sha256": "4aabecbf529874dfca0c295cd3348ee555a580f8ca132bf48d4d93e60c63eb2e"
+  }
+ },
+ "runtime": {
+  "folder": "apps/client/src/assets/models/sunmeadow-trees-v4",
+  "made_by": "apps/client/scripts/gltf-postprocess.mjs (EXT_meshopt_compression + KHR_mesh_quantization, KHR_texture_basisu: ETC1S colour, UASTC normal; one shared KTX2 folder)",
+  "files": {
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_broadleaf_l_lod0.glb": {
+    "bytes": 160596,
+    "sha256": "d0471132b66666726891867fa2dbcf43dc189f0f0a6bdd0f870b8ffb9de70852"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_broadleaf_l_lod1.glb": {
+    "bytes": 68076,
+    "sha256": "2c666e63bedfc5d140c669e7d3cd1a8fa91c913ab8d207c05647172e400d8b0b"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_broadleaf_m_lod0.glb": {
+    "bytes": 151360,
+    "sha256": "17d04ba3bce536d13ca36285950cbe54623adfc5a09ef513271cc94eb924b40b"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_broadleaf_m_lod1.glb": {
+    "bytes": 65476,
+    "sha256": "9eaff4fec36a7302d73e72e4c439ae57e34f10bfdf09bfe9f25a20f22e003f91"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_broadleaf_s_lod0.glb": {
+    "bytes": 144084,
+    "sha256": "3a880a61d91c9d220abe1691da8285f22e43498efa5c1b3615273bf720becfe9"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_broadleaf_s_lod1.glb": {
+    "bytes": 67972,
+    "sha256": "ecb83fc528003bcd29a25fecda74d28f76a51ad82cd323cde04ad77d46a7f45f"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_bush_flowers_lod0.glb": {
+    "bytes": 41944,
+    "sha256": "3d00db2dc3489f03d7d765a41cf68c87c086945c43faf20785085be001bcaf8a"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_bush_flowers_lod1.glb": {
+    "bytes": 22732,
+    "sha256": "9d155bd2422e9ddc4f3a8934f35b9702678f06cc3ab296deb188d59680a4a7be"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_bush_lod0.glb": {
+    "bytes": 39260,
+    "sha256": "21a17c2d04c72f400d09370530be903c2d5c3ce0932704f67768c5aec5154062"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_bush_lod1.glb": {
+    "bytes": 22416,
+    "sha256": "d464d12c9cd505b786ee8e3a009049a4f3066b97ad705af7154074d2a6f471b0"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_conifer_l_lod0.glb": {
+    "bytes": 72872,
+    "sha256": "2500362ea9a20284ffc0987fe206d26346d393108fdbfaef7f86a5d3c0734c18"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_conifer_l_lod1.glb": {
+    "bytes": 35908,
+    "sha256": "34697ee496161d7342013163410d3d1114a881b1644ac49b95b32433a400e327"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_conifer_m_lod0.glb": {
+    "bytes": 60772,
+    "sha256": "988d1585fd19c006496a9f833580ad774fc5cf52b31711a037e5d31278ea764a"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/qn_conifer_m_lod1.glb": {
+    "bytes": 35008,
+    "sha256": "e0e748b9093853e32ed4f6c06312a1f0e9ea86f56ec4fd6073826654a287c58e"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/textures/ktx2-cache.json": {
+    "bytes": 1457,
+    "sha256": "d36c1d2e83a7056c6d605a90780f9f0811b1aea46e0d81bbdb327e9722ae96eb"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/textures/qn_bark_albedo-2499e9ed006f.ktx2": {
+    "bytes": 187187,
+    "sha256": "2499e9ed006fcfdc711f9de0b514f73cbd8ccc7d751d4a52014f50c889b76c72"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/textures/qn_bark_normal-d1b7a0a2defb.ktx2": {
+    "bytes": 1013564,
+    "sha256": "d1b7a0a2defb37bd11b891a7f9813c8f62cfd6872a25b9590a67f9862a442125"
+   },
+   "apps/client/src/assets/models/sunmeadow-trees-v4/textures/qn_leaf_atlas_albedo-26ae04a5dfd0.ktx2": {
+    "bytes": 179412,
+    "sha256": "26ae04a5dfd0215847161e41e00d017d0a5d68009699c01559aa0bea75b907c7"
+   }
+  },
+  "postprocess": {
+   "qn_broadleaf_l_lod0": {
+    "status": "PASS",
+    "budget_class": "tree_lod0",
+    "tier": "high",
+    "triangles": 5184,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 160596,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_broadleaf_l_lod0.report.json"
+   },
+   "qn_broadleaf_l_lod1": {
+    "status": "PASS",
+    "budget_class": "tree_lod1",
+    "tier": "high",
+    "triangles": 1569,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 68076,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_broadleaf_l_lod1.report.json"
+   },
+   "qn_broadleaf_m_lod0": {
+    "status": "PASS",
+    "budget_class": "tree_lod0",
+    "tier": "high",
+    "triangles": 4662,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 151360,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_broadleaf_m_lod0.report.json"
+   },
+   "qn_broadleaf_m_lod1": {
+    "status": "PASS",
+    "budget_class": "tree_lod1",
+    "tier": "high",
+    "triangles": 1569,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 65476,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_broadleaf_m_lod1.report.json"
+   },
+   "qn_broadleaf_s_lod0": {
+    "status": "PASS",
+    "budget_class": "tree_lod0",
+    "tier": "high",
+    "triangles": 4885,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 144084,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_broadleaf_s_lod0.report.json"
+   },
+   "qn_broadleaf_s_lod1": {
+    "status": "PASS",
+    "budget_class": "tree_lod1",
+    "tier": "high",
+    "triangles": 1569,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 67972,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_broadleaf_s_lod1.report.json"
+   },
+   "qn_bush_flowers_lod0": {
+    "status": "PASS",
+    "budget_class": "bush_lod0",
+    "tier": "high",
+    "triangles": 856,
+    "draw_calls": 1,
+    "texture_mib": 1.333,
+    "glb_bytes": 41944,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_bush_flowers_lod0.report.json"
+   },
+   "qn_bush_flowers_lod1": {
+    "status": "PASS",
+    "budget_class": "bush_lod1",
+    "tier": "high",
+    "triangles": 420,
+    "draw_calls": 1,
+    "texture_mib": 1.333,
+    "glb_bytes": 22732,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_bush_flowers_lod1.report.json"
+   },
+   "qn_bush_lod0": {
+    "status": "PASS",
+    "budget_class": "bush_lod0",
+    "tier": "high",
+    "triangles": 800,
+    "draw_calls": 1,
+    "texture_mib": 1.333,
+    "glb_bytes": 39260,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_bush_lod0.report.json"
+   },
+   "qn_bush_lod1": {
+    "status": "PASS",
+    "budget_class": "bush_lod1",
+    "tier": "high",
+    "triangles": 420,
+    "draw_calls": 1,
+    "texture_mib": 1.333,
+    "glb_bytes": 22416,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_bush_lod1.report.json"
+   },
+   "qn_conifer_l_lod0": {
+    "status": "PASS",
+    "budget_class": "tree_lod0",
+    "tier": "high",
+    "triangles": 3140,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 72872,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_conifer_l_lod0.report.json"
+   },
+   "qn_conifer_l_lod1": {
+    "status": "PASS",
+    "budget_class": "tree_lod1",
+    "tier": "high",
+    "triangles": 1361,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 35908,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_conifer_l_lod1.report.json"
+   },
+   "qn_conifer_m_lod0": {
+    "status": "PASS",
+    "budget_class": "tree_lod0",
+    "tier": "high",
+    "triangles": 2779,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 60772,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_conifer_m_lod0.report.json"
+   },
+   "qn_conifer_m_lod1": {
+    "status": "PASS",
+    "budget_class": "tree_lod1",
+    "tier": "high",
+    "triangles": 1366,
+    "draw_calls": 2,
+    "texture_mib": 3.333,
+    "glb_bytes": 35008,
+    "breaches": [],
+    "report": "planning/evidence/trees-in-babylon-20261002/migration/postprocess/qn_conifer_m_lod1.report.json"
+   }
+  }
+ }
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "aetherfield.hero-oak-package/1",
+  "source": {
+    "path": "assets/models/hero-oak/v1/source.glb",
+    "sha256": "e94771196fb9839f4551faf9d344883971b037fa27516a197b6a2edfea79b2da",
+    "provider": "Tripo Studio",
+    "model": "Smart Mesh P2.0",
+    "job_id": "6a99dbb8-6e74-464c-846c-384db112d414",
+    "requested_quads": 6000,
+    "observed_editor_faces": 7815,
+    "observed_editor_vertices": 6049,
+    "privacy": "Private",
+    "credits_before": 25190,
+    "credits_after": 25160,
+    "geometry_credits": 0,
+    "geometry_trial_used": true,
+    "texture_credits": 30,
+    "reference": "assets/models/hero-oak/v1/reference.png",
+    "reference_sha256": "2855aa95de63ec0182474d1767dcbad153bfc2070faa0a732ecad7fe590af88b",
+    "image_prompt_call_id": "call_Odo4oFCWNa37f9HPyfQCClJA",
+    "prompt_record": "assets/models/world-v2/image-generation-provenance.json"
+  },
+  "license": {
+    "id": "LicenseRef-Tripo-Paid-Generated",
+    "account_basis": "User reports Pro; private generation and paid controls observed at creation.",
+    "guide": "https://www.tripo3d.ai/help/privacy-policy/how-to-use-tripo-models-commercially",
+    "checked_on": "2026-09-30",
+    "input": "Original host-generated reference; not a named-game model or downloaded game texture."
+  },
+  "editable_master": "assets/models/hero-oak/v1/hero_oak.blend",
+  "normalization": {
+    "height_m": 8.6,
+    "low_solid_radius_m": 0.7,
+    "capsule_clearance_height_m": 1.8,
+    "split_plane_height_m": 2.2,
+    "lods": [
+      {
+        "lod": 0,
+        "triangles": 11742,
+        "path": "hero_oak_lod0.geometry.glb"
+      },
+      {
+        "lod": 1,
+        "triangles": 4864,
+        "path": "hero_oak_lod1.geometry.glb"
+      },
+      {
+        "lod": 2,
+        "triangles": 1721,
+        "path": "hero_oak_lod2.geometry.glb"
+      }
+    ],
+    "source_unchanged": true
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "triangles": 11742,
+      "source_sha256": "8ff317feafbb8a5e9ec668a1b0d091a990fee169ae985e9a4112935effb67b12",
+      "path": "apps/client/src/assets/world/hero_oak_lod0.meshopt.glb",
+      "bytes": 270340,
+      "sha256": "656f9cf7a6bfe0a03f288698914c561cd96fdf725379d38a148b1ef4bf4313f0"
+    },
+    {
+      "lod": 1,
+      "triangles": 4864,
+      "source_sha256": "68b41692745fed9a8ab1313059183095a22e95815dde177f66cfc6cbd1b09e3f",
+      "path": "apps/client/src/assets/world/hero_oak_lod1.meshopt.glb",
+      "bytes": 159988,
+      "sha256": "bed6bb5898c06b3100fe6932bca7c30fe2d9710e06fa67bb4c01ae7305b02848"
+    },
+    {
+      "lod": 2,
+      "triangles": 1721,
+      "source_sha256": "be4a8481ddf347718ce4bc7f8b70dec7d99fc492f52acbacc9e1a17b9cbdaed2",
+      "path": "apps/client/src/assets/world/hero_oak_lod2.meshopt.glb",
+      "bytes": 63684,
+      "sha256": "ff29c68fdbf5ad7fc146291cec51b100474d5af3429cff60efccd9cb93968267"
+    }
+  ],
+  "texture": {
+    "path": "apps/client/src/assets/world/hero_oak_albedo.ktx2",
+    "width": 2048,
+    "height": 2048,
+    "levels": 12,
+    "codec": "BasisLZ/ETC1S",
+    "color_space": "sRGB",
+    "bytes": 929340,
+    "sha256": "ca9635dfa79bc9ef5d4675179310791993c19e89c1cf036a201d90b31f8aff60"
+  },
+  "placement_ids": [
+    "sunmeadow_pine_west_mid",
+    "sunmeadow_oak_east"
+  ],
+  "coverage_thresholds": {
+    "medium": 0.035,
+    "distant": 0.006
+  },
+  "footprint_evidence": "planning/evidence/hero-oak-footprint-build-20260930.json",
+  "footprint_evidence_sha256": "576d7fe11fbd05625987b3d3f01359e3eb28797f8771e6a4f062ca26eb68d1b7",
+  "footprint_status": "PASS",
+  "limitations": [
+    "GPU import and two-backend motion verification are pending browser reconnection.",
+    "No measured Android/iOS frame-time or memory result.",
+    "Three mesh LODs share one resident texture; mip filtering is not texture residency streaming.",
+    "Source has baked texture detail and no authored normal/ORM maps or skeletal rig.",
+    "Wind is procedural vertex deformation, not a physical tree simulation."
+  ],
+  "art_quality_gate": {
+    "status": "REJECTED_FOR_DEFAULT_GAME",
+    "evidence": "planning/evidence/nature-art-review-20260930.json",
+    "reason": "Folded opaque foliage masses, leaf plates, truncated root flare and bark distortion do not match the reference.",
+    "use": "Development-only heroOakPreview=1 comparison; default cells retain authored trees."
+  }
+}

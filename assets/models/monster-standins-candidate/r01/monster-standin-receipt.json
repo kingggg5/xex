@@ -1,0 +1,242 @@
+{
+  "schema": "xexoria.monster-standins.cpu-candidate.v1",
+  "revision": "r01",
+  "status": "CC0_INTERIM_CPU_CANDIDATE_NOT_VISUALLY_ACCEPTED",
+  "scope": "Existing 13 monster visuals only; no placement/server/stat edits.",
+  "species": [
+    {
+      "kind": 1,
+      "species": "puddlekin",
+      "model": "Slime",
+      "source": "source/author-monsters-2018/Animated Monster Pack by @Quaternius/OBJ/Slime.obj",
+      "height": 0.9,
+      "texture": null,
+      "licenceFile": "source/author-monsters-2018/Animated Monster Pack by @Quaternius/License.txt",
+      "page": "https://opengameart.org/content/lowpoly-animated-monsters",
+      "insideLicence": "PRESENT",
+      "licence": "CC0-1.0",
+      "author": "Quaternius",
+      "insideLicenceFile": "PRESENT",
+      "licencePageSnapshot": "source/author-monsters-2018/primary-author-page.html",
+      "licencePageSha256": "c326876541759ecc7950dbe9f5b36f5c7253302de4ab9fa26960d94ffae0cbe7",
+      "sourceObjSha256": "c66fb3da272787b50ed22651949d8f592eabe83d1475ef4f3da24cd2d6b4b8c5",
+      "sourceMtlSha256": "d1657d867aa50e618f6cc7d49efd7222d3bd01ba53f069041e4ebe5d93f074bf",
+      "licenceFileSha256": "2b04fed13cc05aa0ae58f42cc8fd194121204e3151ee8abb8d35049a9b1c1d93",
+      "originalBounds": {
+        "min": [
+          -1.268387,
+          -0.014279,
+          -1.530877
+        ],
+        "max": [
+          1.268387,
+          1.933755,
+          1.530877
+        ]
+      },
+      "normalizedBounds": {
+        "min": [
+          -0.7072716903298403,
+          0,
+          -0.5860001930151116
+        ],
+        "max": [
+          0.7072716903298403,
+          0.9,
+          0.5860001930151116
+        ]
+      },
+      "heightM": 0.9,
+      "sourceFacing": "+X",
+      "runtimeFacing": "+Z",
+      "feetY": 0,
+      "rig": "STATIC_AUTHOR_OBJ: FBX/blend masters retained for future animated conversion",
+      "triangles": 1440,
+      "vertices": 2912,
+      "draws": 2,
+      "bytes": 80676,
+      "runtime": "runtime/puddlekin.glb",
+      "runtimeSha256": "2fa7278ba6ee70cbd55c01c22b38c0d9dae50cba43003045afb1f096cf08ebf7"
+    },
+    {
+      "kind": 2,
+      "species": "mossling",
+      "model": "Tree",
+      "source": "source/author-monsters-2020/extracted/Cute Animated Monsters - Aug 2020/OBJ/Tree.obj",
+      "height": 0.95,
+      "texture": "source/author-monsters-2020/extracted/Cute Animated Monsters - Aug 2020/Textures/Tree_Texture.png",
+      "licenceFile": null,
+      "page": "https://opengameart.org/content/textured-cute-monster-pack",
+      "insideLicence": "ABSENT",
+      "licence": "CC0-1.0",
+      "author": "Quaternius",
+      "insideLicenceFile": "ABSENT",
+      "licencePageSnapshot": "source/author-monsters-2020/primary-author-page.html",
+      "licencePageSha256": "1a0c87a4089be6f750a5d912b2a12afe0fa778ebcf17df590ed154bc6298b1c4",
+      "sourceObjSha256": "3dda2be24897b299498ca98e153edb35e28a1f954c3fa7f2f0c824ac318cb2cc",
+      "sourceMtlSha256": "ae501ce042c1e0c095741f82f00212b065c103057130241a3e7a0828bc6b7bc2",
+      "licenceFileSha256": null,
+      "originalBounds": {
+        "min": [
+          -1.407449,
+          -0.040688,
+          -0.959767
+        ],
+        "max": [
+          1.402947,
+          2.867591,
+          0.7671
+        ]
+      },
+      "normalizedBounds": {
+        "min": [
+          -0.45901307955667253,
+          0,
+          -0.2820437189829449
+        ],
+        "max": [
+          0.45901307955667253,
+          0.95,
+          0.2820437189829449
+        ]
+      },
+      "heightM": 0.95,
+      "sourceFacing": "+Z",
+      "runtimeFacing": "+Z",
+      "feetY": 0,
+      "rig": "STATIC_AUTHOR_OBJ: FBX/blend masters retained for future animated conversion",
+      "triangles": 1368,
+      "vertices": 1498,
+      "draws": 1,
+      "bytes": 279456,
+      "runtime": "runtime/mossling.glb",
+      "runtimeSha256": "b09cbd34b80da712d648c2c9dfbcf6491ddb4ff1ecb35afce3e68c3fc59810d8"
+    },
+    {
+      "kind": 3,
+      "species": "thistle_boar",
+      "model": "Pig",
+      "source": "source/author-farm-2018/Pig.obj",
+      "height": 1.1,
+      "texture": null,
+      "licenceFile": "source/author-farm-2018/License.txt",
+      "page": "https://opengameart.org/content/lowpoly-animated-farm-animal-pack",
+      "insideLicence": "PRESENT",
+      "licence": "CC0-1.0",
+      "author": "Quaternius",
+      "insideLicenceFile": "PRESENT",
+      "licencePageSnapshot": "source/author-farm-2018/primary-author-page.html",
+      "licencePageSha256": "5af0f87c83d9849f2e4e19defa8b0d24d480c8074f4a1af1c27ce92fab09bad9",
+      "sourceObjSha256": "3d626d868588100f0456b972052ca3fc9481bff59afa0734a9663319c07fa871",
+      "sourceMtlSha256": "02cfdb7150de2ae0a8898f31a56655e747dc77afaaf316d825b7c6bf00218fcb",
+      "licenceFileSha256": "551ec32f604f57be7eca26fc6e6331b3c6d765804726ac259bc7891276634353",
+      "originalBounds": {
+        "min": [
+          -1.652528,
+          -0.004261,
+          -4.54204
+        ],
+        "max": [
+          1.651101,
+          4.57078,
+          5.228424
+        ]
+      },
+      "normalizedBounds": {
+        "min": [
+          -0.3971540255049081,
+          0,
+          -1.1745807742487993
+        ],
+        "max": [
+          0.3971540255049081,
+          1.1,
+          1.1745807742487993
+        ]
+      },
+      "heightM": 1.1,
+      "sourceFacing": "+Z",
+      "runtimeFacing": "+Z",
+      "feetY": 0,
+      "rig": "STATIC_AUTHOR_OBJ: FBX/blend masters retained for future animated conversion",
+      "triangles": 562,
+      "vertices": 1158,
+      "draws": 2,
+      "bytes": 33336,
+      "runtime": "runtime/thistle_boar.glb",
+      "runtimeSha256": "5856abb75808ef371564316e24b5fe90450e3c2d8cf5d4fe0ae8f66afd4823ab"
+    },
+    {
+      "kind": 4,
+      "species": "glade_wisp",
+      "model": "Ghost",
+      "source": "source/author-monsters-2020/extracted/Cute Animated Monsters - Aug 2020/OBJ/Ghost.obj",
+      "height": 0.6,
+      "texture": "source/author-monsters-2020/extracted/Cute Animated Monsters - Aug 2020/Textures/Ghost_Texture.png",
+      "licenceFile": null,
+      "page": "https://opengameart.org/content/textured-cute-monster-pack",
+      "insideLicence": "ABSENT",
+      "licence": "CC0-1.0",
+      "author": "Quaternius",
+      "insideLicenceFile": "ABSENT",
+      "licencePageSnapshot": "source/author-monsters-2020/primary-author-page.html",
+      "licencePageSha256": "1a0c87a4089be6f750a5d912b2a12afe0fa778ebcf17df590ed154bc6298b1c4",
+      "sourceObjSha256": "228f90b2928b7641da0db41d921ebd5b031062620fa41ae45d3ca8d0fb95a952",
+      "sourceMtlSha256": "1fb5d1de81f35e4d1ec88e9e0d918af2063a68085eea850b0f48813d3febcd5a",
+      "licenceFileSha256": null,
+      "originalBounds": {
+        "min": [
+          -0.725799,
+          -0.004727,
+          -0.725837
+        ],
+        "max": [
+          0.725596,
+          1.447333,
+          0.739201
+        ]
+      },
+      "normalizedBounds": {
+        "min": [
+          -0.2998626089830999,
+          0,
+          -0.3026812941613983
+        ],
+        "max": [
+          0.2998626089830999,
+          0.6,
+          0.3026812941613983
+        ]
+      },
+      "heightM": 0.6,
+      "sourceFacing": "+Z",
+      "runtimeFacing": "+Z",
+      "feetY": 0,
+      "rig": "STATIC_AUTHOR_OBJ: FBX/blend masters retained for future animated conversion",
+      "triangles": 1000,
+      "vertices": 877,
+      "draws": 1,
+      "bytes": 169328,
+      "runtime": "runtime/glade_wisp.glb",
+      "runtimeSha256": "adc7e02d62f6e3ac725d1c157e8259d3b08c98c06bcbf6afb7baa9df44677676"
+    }
+  ],
+  "lodPolicy": {
+    "geometry": "Interim static sources fit LOD1 triangle caps (Slime1440/1500, Tree1368/1600, Pig562, Ghost1000); retain authored geometry at distance. This revision does NOT claim generated LOD2 geometry or final creature budgets.",
+    "textures": "Tree/Ghost source PNGs only; no unique per-actor textures. Low can bias shared source mipmaps after measured review.",
+    "device": "UNVERIFIED: paired renderer/device tests remain required."
+  },
+  "gates": {
+    "provenance": "Root independently verified 2020 primary author CC0 page and exact archive link; inside licence file ABSENT is recorded.",
+    "technical": "PASS_CPU: 3 meaningful tests pass; all4 GLBs zero validator errors; targeted TypeScript semantic check zero diagnostics. No engine/device proof.",
+    "visual": "UNVERIFIED: no engine captures",
+    "gameplay": "UNVERIFIED: integration not performed",
+    "device": "UNVERIFIED: quiet GPU gate pending"
+  },
+  "authorArchive2020": {
+    "url": "https://opengameart.org/sites/default/files/cute_animated_monsters_-_aug_2020.zip",
+    "sha256": "844824c04936a9af954ee82011f98ad8c14ba291a20a0dd0b83c172764ba0eb2",
+    "insideLicenceFile": "ABSENT",
+    "primaryAuthorVerification": "Root independently verified explicit author CC0 page and exact link on 2026-10-04"
+  }
+}

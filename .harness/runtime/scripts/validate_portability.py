@@ -1,0 +1,850 @@
+#!/usr/bin/env python3
+"""Dependency-free structural and initialized-project checks for Harness."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Any
+
+sys.dont_write_bytecode = True
+
+from memory_ops import PROJECT_ID_PATTERN, MemoryErrorWithCode, configure_utf8_stdio, parse_time, path_is_link_or_junction, validate_project_memory
+from context_compiler import validate_tool_registry
+from eval_matrix import EvalError, validate_suite
+from execution_kernel import KernelError, validate_contract as validate_run_contract
+from validate_loop_contract import validate_contract as validate_loop_contract
+from validate_task_graph import validate_graph
+from anthropic_adapter import AdapterError, load_config as load_adapter_config
+from performance_budget import PerformanceError, compare as compare_performance, validate_budget as validate_performance_budget, validate_result as validate_performance_result
+
+
+ALLOWED_OPERATIONS = {"start", "resume", "review", "init", "memory"}
+ALLOWED_SCALES = {"auto", "quick", "standard", "full"}
+ROUTER_CONTEXT_TRANSFERS = {
+	"same-session": "current-session",
+	"isolated-child": "bounded-role-packet",
+}
+ROUTER_CONTEXT_LABELS = {
+	"same-session": {"same-context"},
+	"isolated-child": {"isolated", "independent-review"},
+}
+ROUTER_CACHE_OBSERVATIONS = {"UNKNOWN", "REPORTED", "UNAVAILABLE"}
+ROUTER_CONTEXT_FIELDS = (
+	"expected_context_boundary",
+	"expected_context_isolation_label",
+	"expected_context_transfer",
+	"expected_cache_observation",
+)
+ALLOWED_STATES = {
+	"INTAKE", "DISCOVERY", "PLAN", "WAITING_PLAN", "DESIGN", "WAITING_DESIGN",
+	"BUILD", "INTEGRATE", "VERIFY", "REWORK", "WAITING_DECISION",
+	"WAITING_ACCEPTANCE", "DONE", "BLOCKED",
+}
+
+REQUIRED_FILES = (
+	".codex-plugin/plugin.json",
+	".claude-plugin/plugin.json",
+	"gemini-extension.json",
+	"bin/harness.js",
+	"README.md",
+	"SECURITY.md",
+	"adapters/project/AGENTS.md.fragment",
+	"adapters/project/CLAUDE.md.fragment",
+	"adapters/project/GEMINI.md.fragment",
+	"adapters/project/GENERIC.md",
+	"skills/best-in-code/SKILL.md",
+	"skills/best-in-code/agents/openai.yaml",
+	"skills/best-in-code/references/mode-routing.md",
+	"skills/best-in-code/references/workflow-graph.md",
+	"skills/best-in-code/references/graph-engineering.md",
+	"skills/best-in-code/references/graph-runtime.md",
+	"skills/best-in-code/references/loop-engineering.md",
+	"skills/best-in-code/references/loop-runtime.md",
+	"skills/best-in-code/references/execution-isolation.md",
+	"skills/best-in-code/references/execution-runtime.md",
+	"skills/best-in-code/references/context-compiler.md",
+	"skills/best-in-code/references/eval-runtime.md",
+	"skills/best-in-code/references/model-routing.md",
+	"skills/best-in-code/references/decision-runtime.md",
+	"skills/best-in-code/references/performance-engineering.md",
+	"skills/best-in-code/references/requirements-analysis.md",
+	"skills/best-in-code/references/capability-contract.md",
+	"skills/best-in-code/references/provider-adapters.md",
+	"skills/best-in-code/references/memory-loop.md",
+	"skills/best-in-code/references/harness-evaluation.md",
+	"skills/best-in-code/scripts/init_project.py",
+	"skills/best-in-code/scripts/bounded_json.py",
+	"skills/best-in-code/scripts/memory_ops.py",
+	"skills/best-in-code/scripts/context_compiler.py",
+	"skills/best-in-code/scripts/context_eval_trace_tests.py",
+	"skills/best-in-code/scripts/jev_runtime.py",
+	"skills/best-in-code/scripts/jev_runtime_tests.py",
+	"skills/best-in-code/references/jev-runtime.md",
+	"skills/best-in-code/references/async-operation-runtime.md",
+	"skills/best-in-code/assets/templates/TURN-POLICY.json",
+	"skills/best-in-code/assets/templates/RUN-CONTRACT-JEV.json",
+	"skills/best-in-code/scripts/eval_matrix.py",
+	"skills/best-in-code/scripts/decision_runtime.py",
+	"skills/best-in-code/scripts/decision_runtime_tests.py",
+	"skills/best-in-code/scripts/performance_budget.py",
+	"skills/best-in-code/scripts/performance_budget_tests.py",
+	"skills/best-in-code/scripts/execution_kernel.py",
+	"skills/best-in-code/scripts/execution_runtime_tests.py",
+	"skills/best-in-code/scripts/reference_adapter.py",
+	"skills/best-in-code/scripts/trace_ops.py",
+	"skills/best-in-code/scripts/doctor_runtime_tests.py",
+	"skills/best-in-code/scripts/migrate_project.py",
+	"skills/best-in-code/scripts/graph_tests.py",
+	"skills/best-in-code/scripts/graph_runtime.py",
+	"skills/best-in-code/scripts/graph_runtime_tests.py",
+	"skills/best-in-code/scripts/loop_tests.py",
+	"skills/best-in-code/scripts/loop_runtime.py",
+	"skills/best-in-code/scripts/loop_runtime_tests.py",
+	"skills/best-in-code/scripts/run_memory_evals.py",
+	"skills/best-in-code/scripts/upgrade_project.py",
+	"skills/best-in-code/scripts/validate_portability.py",
+	"skills/best-in-code/scripts/validate_task_graph.py",
+	"skills/best-in-code/scripts/validate_loop_contract.py",
+	"skills/best-in-code/assets/evals/router-cases.json",
+	"skills/best-in-code/assets/evals/memory-cases.json",
+	"skills/best-in-code/assets/evals/BEHAVIOR-SUITE.json",
+	"skills/best-in-code/assets/evals/DECISION-SUITE.json",
+	"skills/best-in-code/assets/evals/DECISION-REPRESENTATIVE-SUITE.json",
+	"skills/best-in-code/assets/templates/IDENTITY.json",
+	"skills/best-in-code/assets/templates/MEMORY.json",
+	"skills/best-in-code/assets/templates/INDEX.md",
+	"skills/best-in-code/assets/templates/CONFIG.md",
+	"skills/best-in-code/assets/templates/DECISION-QUESTIONS.json",
+	"skills/best-in-code/assets/templates/PERFORMANCE-EVIDENCE.md",
+	"skills/best-in-code/assets/templates/PERFORMANCE-RESULT.json",
+	"skills/best-in-code/assets/templates/PERFORMANCE-BUDGET.json",
+	"skills/best-in-code/assets/templates/CONTEXT.md",
+	"skills/best-in-code/assets/templates/PROJECT-MAP.md",
+	"skills/best-in-code/assets/templates/LOOP-CONTRACT.json",
+	"skills/best-in-code/assets/templates/RUN-CONTRACT.json",
+	"skills/best-in-code/assets/templates/ADAPTER-ARGV.json",
+	"skills/best-in-code/assets/templates/CONTEXT-MANIFEST.json",
+	"skills/best-in-code/assets/templates/TOOL-REGISTRY.json",
+	"skills/best-in-code/assets/templates/TASK-GRAPH.json",
+	"skills/best-in-code/assets/templates/PREFERENCES.md",
+	"skills/best-in-code/assets/templates/DECISIONS.md",
+	"skills/best-in-code/assets/templates/STATE.json",
+	"skills/best-in-code/assets/templates/WORKFLOW.md",
+	"skills/best-in-code/assets/templates/ROLE-PACKET.md",
+	"skills/best-in-code/assets/templates/EVIDENCE.md",
+	"skills/best-in-code/assets/templates/EVALUATION.md",
+	"examples/graph-engineering-feature.json",
+	"examples/graph-engineering-feature.md",
+	"examples/loop-engineering-performance.json",
+	"examples/loop-engineering-performance.md",
+	"examples/performance-baseline.json",
+	"examples/performance-current.json",
+	"examples/performance-budget.json",
+	"examples/executable-agent-graph.md",
+)
+
+SCHEMA_EXPECTATIONS = {
+	"INDEX.md": 2,
+	"CONFIG.md": 2,
+	"CONTEXT.md": 4,
+	"PROJECT-MAP.md": 1,
+	"PREFERENCES.md": 2,
+	"DECISIONS.md": 3,
+	"WORKFLOW.md": 4,
+	"ROLE-PACKET.md": 1,
+	"EVIDENCE.md": 1,
+	"EVALUATION.md": 1,
+	"DESIGN.md": 2,
+}
+MANAGED_START = "<!-- harness:start -->"
+MANAGED_END = "<!-- harness:end -->"
+
+
+def parse_args() -> argparse.Namespace:
+	parser = argparse.ArgumentParser(description="Validate Harness portability and an optional initialized project")
+	parser.add_argument("--root", help="Harness plugin root; defaults to script-derived root")
+	parser.add_argument("--project", help="Optional initialized project to validate")
+	parser.add_argument("--project-only", action="store_true", help="Validate only --project, without scanning the package root")
+	parser.add_argument("--require-adapters", action="store_true", help="Require all four project adapters")
+	parser.add_argument("--json", action="store_true", help="Print structured output")
+	return parser.parse_args()
+
+
+def load_json(path: Path, errors: list[str]) -> Any:
+	try:
+		return json.loads(path.read_text(encoding="utf-8"))
+	except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+		errors.append(f"Invalid UTF-8 JSON {path}: {exc}")
+		return None
+
+
+def load_text(path: Path, errors: list[str]) -> str | None:
+	try:
+		return path.read_text(encoding="utf-8")
+	except (OSError, UnicodeDecodeError) as exc:
+		errors.append(f"Invalid UTF-8 text {path}: {exc}")
+		return None
+
+
+def exact_managed_block(content: str, expected: str) -> bool:
+	normalized = content.replace("\r\n", "\n").replace("\r", "\n")
+	normalized_expected = expected.replace("\r\n", "\n").replace("\r", "\n").rstrip("\n")
+	if normalized.count(MANAGED_START) != 1 or normalized.count(MANAGED_END) != 1:
+		return False
+	start = normalized.find(MANAGED_START)
+	end = normalized.find(MANAGED_END)
+	start_after = start + len(MANAGED_START)
+	end_after = end + len(MANAGED_END)
+	if end <= start:
+		return False
+	if (
+		(start != 0 and normalized[start - 1] != "\n") or normalized[start_after:start_after + 1] != "\n"
+		or normalized[end - 1:end] != "\n" or (end_after != len(normalized) and normalized[end_after] != "\n")
+	):
+		return False
+	return normalized[start:end_after] == normalized_expected
+
+
+def check_required(root: Path, errors: list[str]) -> None:
+	for relative in REQUIRED_FILES:
+		if not (root / relative).is_file():
+			errors.append(f"Missing required file: {relative}")
+
+
+def check_tree_hygiene(root: Path, errors: list[str]) -> None:
+	for path in root.rglob("*"):
+		if any(part in {"vendor", "node_modules", ".git", ".venv", "dist", ".release-smoke"} for part in path.parts):
+			continue
+		if path_is_link_or_junction(path):
+			errors.append(f"Package contains unsupported symlink: {path.relative_to(root)}")
+		if path.name == "__pycache__" or path.suffix.lower() == ".pyc":
+			errors.append(f"Package contains generated Python cache: {path.relative_to(root)}")
+
+
+def check_json_files(root: Path, errors: list[str]) -> None:
+	for path in root.rglob("*.json"):
+		if any(part in {"vendor", "node_modules", ".git", ".venv", "dist", ".release-smoke"} for part in path.parts):
+			continue
+		load_json(path, errors)
+
+
+def check_skill(root: Path, errors: list[str]) -> None:
+	path = root / "skills" / "best-in-code" / "SKILL.md"
+	if not path.is_file():
+		return
+	content = path.read_text(encoding="utf-8")
+	if len(content.splitlines()) > 500:
+		errors.append("SKILL.md exceeds 500 lines")
+	match = re.match(r"^---\n(.*?)\n---\n", content, re.DOTALL)
+	if not match:
+		errors.append("SKILL.md frontmatter is missing or malformed")
+		return
+	frontmatter = match.group(1)
+	if not re.search(r"^name:[ \t]*best-in-code[ \t]*$", frontmatter, re.MULTILINE):
+		errors.append("SKILL.md name must be best-in-code")
+	description = re.search(r"^description:[ \t]*(.+)$", frontmatter, re.MULTILINE)
+	if not description or len(description.group(1).strip()) < 80:
+		errors.append("SKILL.md description must include specific trigger guidance")
+	if "flowchart " in content:
+		errors.append("SKILL.md must not duplicate the canonical graph")
+
+
+def check_openai_yaml(root: Path, errors: list[str]) -> None:
+	path = root / "skills" / "best-in-code" / "agents" / "openai.yaml"
+	if not path.is_file():
+		return
+	content = path.read_text(encoding="utf-8")
+	if any(line.startswith("\t") for line in content.splitlines()):
+		errors.append("openai.yaml must use spaces because YAML forbids tab indentation")
+	match = re.search(r'^\s*short_description:\s*"([^"]+)"', content, re.MULTILINE)
+	if not match or not 25 <= len(match.group(1)) <= 64:
+		errors.append("openai.yaml short_description must be 25-64 characters")
+
+
+def check_links(root: Path, errors: list[str]) -> None:
+	link_pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+	for path in root.rglob("*.md"):
+		if any(part in {"vendor", "node_modules", ".git", ".venv", "dist", ".release-smoke"} for part in path.parts):
+			continue
+		content = path.read_text(encoding="utf-8")
+		for target in link_pattern.findall(content):
+			clean = target.strip().strip("<>").split("#", 1)[0]
+			if not clean or re.match(r"^[a-z][a-z0-9+.-]*:", clean, re.IGNORECASE):
+				continue
+			if not (path.parent / clean).resolve().exists():
+				errors.append(f"Broken relative link in {path.relative_to(root)}: {target}")
+
+
+def check_no_personal_paths(root: Path, errors: list[str]) -> None:
+	pattern = re.compile(r"(?i)([a-z]:[\\/](?:users|documents and settings)[\\/]|/(?:users|home)/[^/\s]+/)")
+	for path in root.rglob("*"):
+		if any(part in {"vendor", "node_modules", ".git", ".venv", "dist", ".release-smoke"} for part in path.parts):
+			continue
+		if not path.is_file() or path.suffix.lower() not in {".md", ".json", ".yaml", ".yml", ".py", ".fragment"}:
+			continue
+		if pattern.search(path.read_text(encoding="utf-8")):
+			errors.append(f"Personal absolute path found in {path.relative_to(root)}")
+
+
+def check_one_graph(root: Path, errors: list[str]) -> None:
+	skill_root = root / "skills" / "best-in-code"
+	owners = [path.relative_to(root).as_posix() for path in skill_root.rglob("*.md") if re.search(r"^flowchart\s", path.read_text(encoding="utf-8"), re.MULTILINE)]
+	expected = ["skills/best-in-code/references/workflow-graph.md"]
+	if owners != expected:
+		errors.append(f"Canonical graph must exist only in workflow-graph.md; found {owners}")
+
+
+def check_templates(root: Path, errors: list[str]) -> None:
+	template_root = root / "skills" / "best-in-code" / "assets" / "templates"
+	for name, expected in SCHEMA_EXPECTATIONS.items():
+		path = template_root / name
+		if not path.is_file():
+			continue
+		match = re.search(r"^- Schema version:[ \t]*(\d+)[ \t]*$", path.read_text(encoding="utf-8"), re.MULTILINE)
+		if not match or int(match.group(1)) != expected:
+			errors.append(f"{name} must declare schema version {expected}")
+	state = load_json(template_root / "STATE.json", errors)
+	if isinstance(state, dict):
+		if state.get("schema_version") != 2:
+			errors.append("STATE.json schema_version must be 2")
+		for field in ("state_revision", "memory_revision_seen"):
+			if not isinstance(state.get(field), int) or state.get(field, -1) < 0:
+				errors.append(f"STATE.json {field} must be a non-negative integer")
+		if state.get("operation") not in ALLOWED_OPERATIONS:
+			errors.append("STATE.json has invalid operation")
+		if state.get("requested_scale") not in ALLOWED_SCALES:
+			errors.append("STATE.json has invalid requested_scale")
+		if state.get("selected_scale") is not None and state.get("selected_scale") not in ALLOWED_SCALES - {"auto"}:
+			errors.append("STATE.json has invalid selected_scale")
+		if state.get("state") not in ALLOWED_STATES or not isinstance(state.get("next_action"), str):
+			errors.append("STATE.json has invalid state or next_action")
+	identity = load_json(template_root / "IDENTITY.json", errors)
+	if isinstance(identity, dict) and identity.get("schema_version") != 1:
+		errors.append("IDENTITY.json schema_version must be 1")
+	memory = load_json(template_root / "MEMORY.json", errors)
+	if isinstance(memory, dict):
+		if memory.get("schema_version") != 1 or memory.get("revision") != 0:
+			errors.append("MEMORY.json must start at schema 1 revision 0")
+		if memory.get("records") != [] or memory.get("tombstones") != []:
+			errors.append("MEMORY.json template must start empty")
+	for relative in (
+		"skills/best-in-code/assets/templates/LOOP-CONTRACT.json",
+		"examples/loop-engineering-performance.json",
+	):
+		contract = load_json(root / relative, errors)
+		if contract is not None:
+			for error in validate_loop_contract(contract):
+				errors.append(f"Invalid loop contract {relative}: {error}")
+	performance_result = load_json(template_root / "PERFORMANCE-RESULT.json", errors)
+	if performance_result is not None:
+		try:
+			validate_performance_result(performance_result, "performance result template")
+		except PerformanceError as exc:
+			errors.append(f"Invalid PERFORMANCE-RESULT.json: {exc}")
+	performance_budget = load_json(template_root / "PERFORMANCE-BUDGET.json", errors)
+	if performance_budget is not None:
+		try:
+			validate_performance_budget(performance_budget, "performance budget template")
+		except PerformanceError as exc:
+			errors.append(f"Invalid PERFORMANCE-BUDGET.json: {exc}")
+	performance_baseline = load_json(root / "examples/performance-baseline.json", errors)
+	performance_current = load_json(root / "examples/performance-current.json", errors)
+	performance_example_budget = load_json(root / "examples/performance-budget.json", errors)
+	if performance_baseline is not None and performance_current is not None and performance_example_budget is not None:
+		try:
+			report = compare_performance(performance_baseline, performance_current, performance_example_budget)
+			if report["status"] != "PASS":
+				errors.append("Performance examples must pass their declared budget")
+		except PerformanceError as exc:
+			errors.append(f"Invalid performance example: {exc}")
+	for relative in (
+		"skills/best-in-code/assets/templates/TASK-GRAPH.json",
+		"examples/graph-engineering-feature.json",
+	):
+		graph = load_json(root / relative, errors)
+		if graph is not None:
+			for error in validate_graph(graph):
+				errors.append(f"Invalid task graph {relative}: {error}")
+	run_contract = load_json(template_root / "RUN-CONTRACT.json", errors)
+	if run_contract is not None:
+		try:
+			validate_run_contract(run_contract)
+		except KernelError as exc:
+			errors.append(f"Invalid executable run contract: {exc}")
+	jev_contract = load_json(template_root / "RUN-CONTRACT-JEV.json", errors)
+	if isinstance(jev_contract, dict):
+		try:
+			validate_run_contract(jev_contract)
+		except KernelError as exc:
+			errors.append(f"Invalid schema-v3 Jev run contract: {exc}")
+	registry = load_json(template_root / "TOOL-REGISTRY.json", errors)
+	from jev_runtime import TurnError, validate_policy
+	turn_policy = load_json(template_root / "TURN-POLICY.json", errors)
+	if turn_policy is not None:
+		try:
+			validate_policy(turn_policy)
+		except TurnError as exc:
+			errors.append(f"Invalid turn policy: {exc}")
+	if registry is not None:
+		for error in validate_tool_registry(registry):
+			errors.append(f"Invalid tool registry: {error}")
+	adapter_argv = load_json(template_root / "ADAPTER-ARGV.json", errors)
+	if not isinstance(adapter_argv, list) or not adapter_argv or not all(isinstance(item, str) and item for item in adapter_argv):
+		errors.append("ADAPTER-ARGV.json must be a non-empty string array")
+	elif adapter_argv[0] != "@harness-python":
+		errors.append("ADAPTER-ARGV.json must use @harness-python as its portable executable token")
+	if isinstance(run_contract, dict):
+		default_verifier = next((item for item in run_contract.get("verifiers", []) if isinstance(item, dict) and item.get("id") == "test"), None)
+		if not isinstance(default_verifier, dict) or not isinstance(default_verifier.get("argv"), list) or not default_verifier["argv"] or default_verifier["argv"][0] != "@harness-python":
+			errors.append("RUN-CONTRACT.json default verifier must use @harness-python as its portable executable token")
+	context_manifest = load_json(template_root / "CONTEXT-MANIFEST.json", errors)
+	if isinstance(context_manifest, dict):
+		if context_manifest.get("schema_version") != 1 or not re.fullmatch(r"sha256:[0-9a-f]{64}", str(context_manifest.get("integrity", {}).get("manifest_sha256", ""))):
+			errors.append("CONTEXT-MANIFEST.json template shape is invalid")
+	behavior_suite = load_json(root / "skills" / "best-in-code" / "assets" / "evals" / "BEHAVIOR-SUITE.json", errors)
+	if behavior_suite is not None:
+		try:
+			validate_suite(behavior_suite)
+		except EvalError as exc:
+			errors.append(f"Invalid behavior suite: {exc}")
+
+
+def check_adapters(root: Path, errors: list[str]) -> None:
+	adapter_root = root / "adapters" / "project"
+	checks = {
+		"AGENTS.md.fragment": ".harness/runtime/SKILL.md",
+		"CLAUDE.md.fragment": "@AGENTS.md",
+		"GEMINI.md.fragment": "@./AGENTS.md",
+		"GENERIC.md": ".harness/runtime/SKILL.md",
+	}
+	for name, marker in checks.items():
+		path = adapter_root / name
+		if not path.is_file() or marker not in path.read_text(encoding="utf-8"):
+			errors.append(f"Adapter missing required canonical pointer: {name}")
+
+
+def check_cli(root: Path, errors: list[str]) -> None:
+	path = root / "bin" / "harness.js"
+	if not path.is_file():
+		return
+	content = path.read_text(encoding="utf-8")
+	for marker in (
+		'"loop-validate": { script: "validate_loop_contract.py"',
+		'"loop-run": { script: "loop_runtime.py"',
+		'"graph-validate": { script: "validate_task_graph.py"',
+		'"graph-run": { script: "graph_runtime.py"',
+		'run: { script: "execution_kernel.py", prefix: ["run"] }',
+		'"context-build": { script: "context_compiler.py", prefix: ["compile"] }',
+		'"eval-matrix": { script: "eval_matrix.py", prefix: [] }',
+		'trace: { script: "trace_ops.py", prefix: [] }',
+	):
+		if marker not in content:
+			errors.append(f"CLI launcher is missing mapping: {marker}")
+
+
+def router_context_errors(case: dict[str, Any]) -> list[str]:
+	"""Validate a single routing tuple without inferring cache behavior.
+
+	A fail-closed graph resume crosses a context reset by definition, so it must
+	use the isolated-child tuple even when its evaluator fixture otherwise looks
+	like an ordinary graph case.
+	"""
+	errors: list[str] = []
+	case_id = case.get("id", "unknown")
+	boundary = case.get("expected_context_boundary")
+	has_context_field = any(field in case for field in ROUTER_CONTEXT_FIELDS)
+	runtime = case.get("expected_graph_runtime")
+	requires_isolated_child = isinstance(runtime, dict) and runtime.get("resume") == "fail-closed"
+	if boundary is None:
+		if has_context_field:
+			errors.append(f"Router context tuple is incomplete in {case_id}")
+		if requires_isolated_child:
+			errors.append(f"Session-resilient router case requires isolated-child in {case_id}")
+		return errors
+	if boundary not in ROUTER_CONTEXT_TRANSFERS:
+		errors.append(f"Invalid router context boundary in {case_id}")
+		return errors
+	if case.get("expected_context_transfer") != ROUTER_CONTEXT_TRANSFERS[boundary]:
+		errors.append(f"Router context transfer does not match boundary in {case_id}")
+	if case.get("expected_context_isolation_label") not in ROUTER_CONTEXT_LABELS[boundary]:
+		errors.append(f"Router context-isolation label does not match boundary in {case_id}")
+	observation = case.get("expected_cache_observation")
+	if observation not in ROUTER_CACHE_OBSERVATIONS:
+		errors.append(f"Invalid router cache observation in {case_id}")
+	if observation == "REPORTED":
+		evidence = case.get("expected_cache_evidence")
+		if not isinstance(evidence, str) or not evidence.strip():
+			errors.append(f"Reported router cache observation requires attributable evidence in {case_id}")
+	if requires_isolated_child and boundary != "isolated-child":
+		errors.append(f"Session-resilient router case requires isolated-child in {case_id}")
+	return errors
+
+
+def check_router_context_regressions(errors: list[str]) -> None:
+	"""Keep the fixture validator closed against crosswise routing tuples."""
+	negative_cases = (
+		{
+			"id": "negative-crosswise-tuple",
+			"expected_context_boundary": "isolated-child",
+			"expected_context_isolation_label": "same-context",
+			"expected_context_transfer": "current-session",
+			"expected_cache_observation": "UNAVAILABLE",
+		},
+		{
+			"id": "negative-blank-reported-evidence",
+			"expected_context_boundary": "same-session",
+			"expected_context_isolation_label": "same-context",
+			"expected_context_transfer": "current-session",
+			"expected_cache_observation": "REPORTED",
+			"expected_cache_evidence": " \t ",
+		},
+		{
+			"id": "negative-resume-without-boundary",
+			"expected_graph_runtime": {"resume": "fail-closed"},
+		},
+	)
+	for case in negative_cases:
+		if not router_context_errors(case):
+			errors.append(f"Router context validation accepted invalid regression case {case['id']}")
+
+
+def check_fixtures(root: Path, errors: list[str]) -> None:
+	eval_root = root / "skills" / "best-in-code" / "assets" / "evals"
+	router = load_json(eval_root / "router-cases.json", errors)
+	if isinstance(router, dict):
+		cases = router.get("cases", [])
+		ids = [case.get("id") for case in cases if isinstance(case, dict)]
+		if len(ids) < 10 or len(ids) != len(set(ids)):
+			errors.append("Router fixtures need at least 10 unique cases")
+		for case in cases:
+			if case.get("expected_operation") not in ALLOWED_OPERATIONS:
+				errors.append(f"Invalid router operation in {case.get('id')}")
+			scale = case.get("expected_scale")
+			if scale is not None and scale not in ALLOWED_SCALES - {"auto"}:
+				errors.append(f"Invalid router scale in {case.get('id')}")
+		if not any("Business Analyst" in case.get("required_roles", []) for case in cases):
+			errors.append("Router fixtures need a requirements-trigger case with Business Analyst")
+		if not any("Business Analyst required" in case.get("forbidden_claims", []) for case in cases):
+			errors.append("Router fixtures need an implementation-ready case that skips Business Analyst")
+		if not any(".harness/PROJECT-MAP.md" in case.get("required_artifacts", []) for case in cases):
+			errors.append("Router fixtures need a complex-repository project-map activation case")
+		if not any("PROJECT-MAP required" in case.get("forbidden_claims", []) for case in cases):
+			errors.append("Router fixtures need a small-task project-map skip case")
+		if not any(isinstance(case.get("expected_model_profiles"), dict) for case in cases):
+			errors.append("Router fixtures need an adaptive model-profile case")
+		if not any(case.get("expected_model_fallback") == "current model with labeled passes" for case in cases):
+			errors.append("Router fixtures need an unavailable model-selector fallback case")
+		if not any(case.get("expected_user_pinned_model") for case in cases):
+			errors.append("Router fixtures need a user-pinned model preservation case")
+		for case in cases:
+			if isinstance(case, dict):
+				errors.extend(router_context_errors(case))
+		check_router_context_regressions(errors)
+		for boundary, transfer in ROUTER_CONTEXT_TRANSFERS.items():
+			if not any(case.get("expected_context_boundary") == boundary and case.get("expected_context_transfer") == transfer for case in cases):
+				errors.append(f"Router fixtures need a {boundary} context-boundary case")
+		if not any(".harness/TASK-GRAPH.json" in case.get("required_artifacts", []) for case in cases):
+			errors.append("Router fixtures need a graph-engineering activation case")
+		if not any("TASK-GRAPH.json required" in case.get("forbidden_claims", []) for case in cases):
+			errors.append("Router fixtures need a quick-task graph skip case")
+		if not any(case.get("expected_graph_shape") == "single-owner-chain" for case in cases):
+			errors.append("Router fixtures need a sequential-work single-owner case")
+		if not any(case.get("expected_isolation_strategy") == "git-worktree" for case in cases):
+			errors.append("Router fixtures need an isolated concurrent-writer case")
+		if not any(isinstance(case.get("expected_execution_envelope"), dict) for case in cases):
+			errors.append("Router fixtures need a bounded long-running execution case")
+		if not any("concurrent writers in one shared worktree" in case.get("forbidden_claims", []) for case in cases):
+			errors.append("Router fixtures need a shared-worktree concurrency fallback case")
+		if not any(isinstance(case.get("expected_graph_runtime"), dict) and case["expected_graph_runtime"].get("resume") == "fail-closed" for case in cases):
+			errors.append("Router fixtures need a session-resilient graph-ledger case")
+		if not any(".harness/LOOP-CONTRACT.json" in case.get("required_artifacts", []) for case in cases):
+			errors.append("Router fixtures need a bounded loop-contract activation case")
+		if not any("LOOP-CONTRACT.json required" in case.get("forbidden_claims", []) for case in cases):
+			errors.append("Router fixtures need a short-task loop-contract skip case")
+		if not any(case.get("expected_loop_level") == "scheduled" and case.get("expected_loop_fallback") for case in cases):
+			errors.append("Router fixtures need an unavailable scheduler fallback case")
+		if not any(isinstance(case.get("expected_loop_runtime"), dict) and case["expected_loop_runtime"].get("writer") == "Project Manager" for case in cases):
+			errors.append("Router fixtures need a durable loop-ledger case")
+	memory = load_json(eval_root / "memory-cases.json", errors)
+	if isinstance(memory, dict):
+		cases = memory.get("cases", [])
+		ids = [case.get("id") for case in cases if isinstance(case, dict)]
+		if ids != [f"M{number:02d}" for number in range(1, 42)]:
+			errors.append("Memory fixtures must contain ordered unique M01-M41 cases")
+		for case in cases:
+			if not all(field in case for field in ("setup", "operation", "expected", "prohibited")):
+				errors.append(f"Memory fixture {case.get('id')} lacks executable input/oracle fields")
+
+
+def check_manifests(root: Path, errors: list[str]) -> None:
+	codex = load_json(root / ".codex-plugin" / "plugin.json", errors)
+	claude = load_json(root / ".claude-plugin" / "plugin.json", errors)
+	gemini = load_json(root / "gemini-extension.json", errors)
+	for label, data in (("Codex", codex), ("Claude", claude), ("Gemini", gemini)):
+		if isinstance(data, dict) and data.get("name") != "harness":
+			errors.append(f"{label} manifest name must be harness")
+	if isinstance(claude, dict) and claude.get("skills") != "./skills/":
+		errors.append("Claude manifest must point to the shared ./skills/ tree")
+	versions = []
+	for data in (codex, claude, gemini):
+		if isinstance(data, dict) and isinstance(data.get("version"), str):
+			versions.append(data["version"].split("+", 1)[0])
+	if len(versions) != 3 or len(set(versions)) != 1:
+		errors.append(f"Codex, Claude, and Gemini manifest base versions must match: {versions}")
+
+
+def collect_project_ids(harness_dir: Path, errors: list[str]) -> set[str]:
+	ids: set[str] = set()
+	for path in harness_dir.glob("*"):
+		if not path.is_file() or path_is_link_or_junction(path):
+			continue
+		if path.suffix.lower() == ".json":
+			data = load_json(path, errors)
+			value = data.get("project_id") if isinstance(data, dict) else None
+			if value:
+				if not isinstance(value, str) or not PROJECT_ID_PATTERN.fullmatch(value):
+					errors.append(f"Invalid Project ID in {path.name}: {value}")
+				else:
+					ids.add(value)
+		elif path.suffix.lower() == ".md":
+			content = load_text(path, errors)
+			if content is None:
+				continue
+			for match in re.finditer(r"^- Project ID(?: or GLOBAL)?:[ \t]*([^\r\n]*)$", content, re.MULTILINE):
+				value = match.group(1).strip()
+				if value and value != "GLOBAL":
+					if not PROJECT_ID_PATTERN.fullmatch(value):
+						errors.append(f"Invalid Project ID in {path.name}: {value}")
+					else:
+						ids.add(value)
+	return ids
+
+
+def runtime_digest(runtime_skill: Path) -> str:
+	links = sorted(path for path in runtime_skill.rglob("*") if path_is_link_or_junction(path))
+	if links:
+		raise ValueError(f"runtime contains symlink: {links[0]}")
+	generated = sorted(path for path in runtime_skill.rglob("*") if path.name == "__pycache__" or path.suffix.lower() == ".pyc")
+	if generated:
+		raise ValueError(f"runtime contains generated Python cache: {generated[0]}")
+	digest = hashlib.sha256()
+	files = sorted((path for path in runtime_skill.rglob("*") if path.is_file() and path.name != "HARNESS-RUNTIME.json"), key=lambda path: path.relative_to(runtime_skill).as_posix())
+	for path in files:
+		relative = path.relative_to(runtime_skill).as_posix().encode("utf-8")
+		digest.update(len(relative).to_bytes(4, "big"))
+		digest.update(relative)
+		data = path.read_bytes()
+		digest.update(len(data).to_bytes(8, "big"))
+		digest.update(data)
+	return f"sha256:{digest.hexdigest()}"
+
+
+AGENT_MUTATING_TOOLS = {"Write", "Edit", "MultiEdit", "NotebookEdit"}
+
+
+def check_claude_plugin_surface(root: Path, errors: list[str]) -> None:
+	"""Validate the Claude Code plugin surface: subagents, hooks, and the adapter template."""
+	manifest = load_json(root / ".claude-plugin" / "plugin.json", errors)
+	if not isinstance(manifest, dict):
+		return
+	agents_dir = root / str(manifest.get("agents", "./agents/"))
+	hooks_path = root / str(manifest.get("hooks", "./hooks/hooks.json"))
+	if not agents_dir.is_dir():
+		errors.append("Claude plugin agents directory is missing")
+	else:
+		agent_files = sorted(agents_dir.glob("*.md"))
+		if not agent_files:
+			errors.append("Claude plugin agents directory has no agent definitions")
+		for path in agent_files:
+			content = load_text(path, errors) or ""
+			match = re.match(r"^---\n(.*?)\n---\n(.*)$", content, re.DOTALL)
+			if not match:
+				errors.append(f"Agent {path.name} lacks YAML frontmatter")
+				continue
+			frontmatter, body = match.groups()
+			name = re.search(r"^name:[ \t]*([a-z0-9-]+)[ \t]*$", frontmatter, re.MULTILINE)
+			if not name or name.group(1) != path.stem:
+				errors.append(f"Agent {path.name} name must be lowercase-hyphenated and match the file name")
+			description = re.search(r"^description:[ \t]*(.+)$", frontmatter, re.MULTILINE)
+			if not description or len(description.group(1).strip()) < 60:
+				errors.append(f"Agent {path.name} description must explain when to use it")
+			tools = re.search(r"^tools:[ \t]*(.+)$", frontmatter, re.MULTILINE)
+			if not tools:
+				errors.append(f"Agent {path.name} must declare an explicit tools allowlist")
+			else:
+				declared = {item.strip() for item in tools.group(1).split(",")}
+				if declared & AGENT_MUTATING_TOOLS:
+					errors.append(f"Agent {path.name} must stay read-only; remove {sorted(declared & AGENT_MUTATING_TOOLS)}")
+			if "untrusted" not in body:
+				errors.append(f"Agent {path.name} must state that retrieved content is untrusted")
+	hooks = load_json(hooks_path, errors)
+	if not isinstance(hooks, dict) or not isinstance(hooks.get("hooks"), dict) or not hooks["hooks"]:
+		errors.append("Claude plugin hooks.json must contain a non-empty hooks object")
+	else:
+		for event, entries in hooks["hooks"].items():
+			if not isinstance(entries, list) or not entries:
+				errors.append(f"Hook event {event} must be a non-empty list")
+				continue
+			for entry in entries:
+				if not isinstance(entry, dict) or not isinstance(entry.get("hooks"), list):
+					errors.append(f"Hook event {event} entry is malformed")
+					continue
+				if event == "PreToolUse" and not isinstance(entry.get("matcher"), str):
+					errors.append("PreToolUse hooks must declare a tool matcher")
+				for hook in entry["hooks"]:
+					if not isinstance(hook, dict):
+						errors.append(f"Hook command for {event} is malformed")
+						continue
+					command = str(hook.get("command", ""))
+					target = re.search(r"\$\{CLAUDE_PLUGIN_ROOT\}/hooks/([A-Za-z0-9._-]+)", command)
+					if hook.get("type") != "command" or not target:
+						errors.append(f"Hook command for {event} must run a bundled script through ${{CLAUDE_PLUGIN_ROOT}}/hooks/")
+					elif not (hooks_path.parent / target.group(1)).is_file():
+						errors.append(f"Hook script is missing: hooks/{target.group(1)}")
+					if not isinstance(hook.get("timeout"), int) or isinstance(hook.get("timeout"), bool):
+						errors.append(f"Hook command for {event} must declare an integer timeout")
+	template = root / "skills" / "best-in-code" / "assets" / "templates" / "ANTHROPIC-ADAPTER.json"
+	contract = load_json(root / "skills" / "best-in-code" / "assets" / "templates" / "RUN-CONTRACT.json", errors)
+	try:
+		config = load_adapter_config(str(template))
+	except AdapterError as exc:
+		errors.append(f"ANTHROPIC-ADAPTER.json template is invalid: {exc}")
+		return
+	if isinstance(contract, dict):
+		roles = contract.get("delegation", {}).get("roles", []) if isinstance(contract.get("delegation"), dict) else []
+		profiles = {role.get("model_profile") for role in roles if isinstance(role, dict)}
+		missing = sorted(str(profile) for profile in profiles if profile not in config["profiles"])
+		if missing:
+			errors.append(f"ANTHROPIC-ADAPTER.json template lacks bindings for run-contract profiles: {missing}")
+		unused = sorted(profile for profile in config["profiles"] if profile not in profiles)
+		if unused:
+			errors.append(f"ANTHROPIC-ADAPTER.json template binds profiles absent from the run contract: {unused}")
+		for profile, binding in config["profiles"].items():
+			if binding["model"] not in config["pricing_microusd_per_million_tokens"]:
+				errors.append(f"ANTHROPIC-ADAPTER.json profile {profile} binds an unpriced model")
+
+
+def check_project(project: Path, require_adapters: bool, errors: list[str]) -> None:
+	try:
+		root = project.expanduser().resolve(strict=True)
+	except OSError as exc:
+		errors.append(f"Invalid project path: {exc}")
+		return
+	harness_dir = root / ".harness"
+	if not harness_dir.is_dir() or path_is_link_or_junction(harness_dir):
+		errors.append("Project .harness directory is missing or symlinked")
+		return
+	for name in ("IDENTITY.json", "MEMORY.json", "INDEX.md", "CONFIG.md", "CONTEXT.md", "PREFERENCES.md", "DECISIONS.md", "STATE.json", "WORKFLOW.md"):
+		path = harness_dir / name
+		if not path.is_file() or path_is_link_or_junction(path):
+			errors.append(f"Initialized project missing or symlinked .harness/{name}")
+	ids = collect_project_ids(harness_dir, errors)
+	if len(ids) != 1:
+		errors.append(f"Initialized project must have exactly one non-empty Project ID; found {sorted(ids)}")
+	try:
+		memory_result = validate_project_memory(argparse.Namespace(project=str(root), logical_scope="."))
+	except (OSError, UnicodeDecodeError, MemoryErrorWithCode) as exc:
+		errors.append(f"Memory validation failed: {exc}")
+	else:
+		errors.extend(f"Memory validation: {error}" for error in memory_result.get("errors", []))
+	state = load_json(harness_dir / "STATE.json", errors)
+	if isinstance(state, dict):
+		if ids and state.get("project_id") != next(iter(ids)):
+			errors.append("STATE.json Project ID differs from identity")
+		if state.get("run_id") == "" and state.get("state") != "INTAKE":
+			errors.append("Blank Run ID must remain in INTAKE state")
+		if not isinstance(state.get("state_revision"), int) or not isinstance(state.get("memory_revision_seen"), int):
+			errors.append("STATE.json revisions must be integers")
+	index_path = harness_dir / "INDEX.md"
+	index = load_text(index_path, errors) if index_path.is_file() else ""
+	index = index or ""
+	if isinstance(state, dict):
+		run_match = re.search(r"^- Active run ID:[ \t]*([^\r\n]*)$", index, re.MULTILINE)
+		state_match = re.search(r"^- Active state:[ \t]*([^\r\n]*)$", index, re.MULTILINE)
+		if not run_match or run_match.group(1).strip() != str(state.get("run_id", "")):
+			errors.append("INDEX active run differs from STATE.json")
+		if not state_match or state_match.group(1).strip() != str(state.get("state", "")):
+			errors.append("INDEX active state differs from STATE.json")
+	runtime_root = harness_dir / "runtime"
+	runtime_manifest = load_json(runtime_root / "HARNESS-RUNTIME.json", errors)
+	if not runtime_root.is_dir() or path_is_link_or_junction(runtime_root) or not (runtime_root / "SKILL.md").is_file() or path_is_link_or_junction(runtime_root / "SKILL.md"):
+		errors.append("Project-pinned Harness runtime is missing or symlinked")
+	elif not isinstance(runtime_manifest, dict):
+		errors.append("Project-pinned Harness runtime manifest must be an object")
+	else:
+		required_manifest = {"schema_version", "source_version", "source_digest", "created_at", "update_policy"}
+		created_at_valid = isinstance(runtime_manifest.get("created_at"), str)
+		if created_at_valid:
+			try:
+				parse_time(runtime_manifest["created_at"])
+			except MemoryErrorWithCode:
+				created_at_valid = False
+		if set(runtime_manifest) != required_manifest or runtime_manifest.get("schema_version") != 1 or not isinstance(runtime_manifest.get("source_version"), str) or not runtime_manifest.get("source_version") or not re.fullmatch(r"sha256:[0-9a-f]{64}", str(runtime_manifest.get("source_digest", ""))) or not created_at_valid or runtime_manifest.get("update_policy") != "pinned; replace only after human-reviewed package update":
+			errors.append("Project-pinned Harness runtime manifest schema is invalid")
+		try:
+			actual_runtime_digest = runtime_digest(runtime_root)
+		except ValueError as exc:
+			errors.append(f"Project-pinned Harness runtime is invalid: {exc}")
+		else:
+			if runtime_manifest.get("source_digest") != actual_runtime_digest:
+				errors.append("Project-pinned Harness runtime digest mismatch")
+	if require_adapters:
+		plugin_root = Path(__file__).resolve().parents[3]
+		checks = {
+			"AGENTS.md": plugin_root / "adapters" / "project" / "AGENTS.md.fragment",
+			"CLAUDE.md": plugin_root / "adapters" / "project" / "CLAUDE.md.fragment",
+			"GEMINI.md": plugin_root / "adapters" / "project" / "GEMINI.md.fragment",
+			"AI-HARNESS.md": plugin_root / "adapters" / "project" / "GENERIC.md",
+		}
+		for name, expected_path in checks.items():
+			path = root / name
+			content = load_text(path, errors) if path.is_file() and not path_is_link_or_junction(path) else None
+			expected = load_text(expected_path, errors)
+			if content is None or expected is None or not exact_managed_block(content, expected):
+				errors.append(f"Project adapter missing or invalid: {name}")
+
+
+def main() -> int:
+	configure_utf8_stdio()
+	args = parse_args()
+	if args.project_only and not args.project:
+		print(json.dumps({"ok":False,"errors":["--project-only requires --project"]},ensure_ascii=False,indent=2) if args.json else "--project-only requires --project", file=sys.stderr)
+		return 2
+	root = Path(args.root).expanduser().resolve() if args.root else Path(__file__).resolve().parents[3]
+	errors: list[str] = []
+	if not args.project_only:
+		check_required(root, errors)
+		check_tree_hygiene(root, errors)
+		check_json_files(root, errors)
+		check_skill(root, errors)
+		check_openai_yaml(root, errors)
+		check_links(root, errors)
+		check_no_personal_paths(root, errors)
+		check_one_graph(root, errors)
+		check_templates(root, errors)
+		check_adapters(root, errors)
+		check_cli(root, errors)
+		check_fixtures(root, errors)
+		check_manifests(root, errors)
+		check_claude_plugin_surface(root, errors)
+	if args.project:
+		check_project(Path(args.project), args.require_adapters, errors)
+	result = {"ok": not errors, "root": str(root), "errors": errors, "checks": (0 if args.project_only else 14) + int(bool(args.project))}
+	if args.json:
+		print(json.dumps(result, ensure_ascii=False, indent=2))
+	elif errors:
+		print("Harness portability validation failed:", file=sys.stderr)
+		for error in errors:
+			print(f"- {error}", file=sys.stderr)
+	else:
+		print(f"Harness portability validation passed ({result['checks']} check groups).")
+	return 0 if not errors else 1
+
+
+if __name__ == "__main__":
+	raise SystemExit(main())

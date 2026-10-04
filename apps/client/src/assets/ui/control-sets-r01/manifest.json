@@ -1,0 +1,741 @@
+{
+  "version": 1,
+  "format": "PNG RGBA raster atlas",
+  "generator": "Built-in image_gen reference edits. Pixels preserved exactly as returned. No manual recoloring, extraction, cropping, or alpha alteration.",
+  "provenance": "Supplied image_gen reference-edit pack. Authorship/rights attributed to supplied metadata, not independently established.",
+  "sourceArchiveSha256": "0bc073fcc1200f0805f59fca47ef5eaa206d941155c7b279713270d975504f54",
+  "sourceManifestSha256": "5d00fbc371e91db45cd5e661b5e2f1f5e2807e009b63d4745e5f4438b682c6dd",
+  "originalBytesPreserved": true,
+  "nativeStylePreserved": true,
+  "unsupportedSitAction": "Sit sprite is preview/reference only; no game action added.",
+  "styles": [
+    {
+      "id": "a02-frostglass",
+      "name": "Frostglass",
+      "file": "a02-frostglass.png",
+      "sha256": "3df04ff9dda27b7084e66af4149ec6c4257b5cae5ae833fa411b788886562a4b",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "first",
+        "index": 2
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            30,
+            0,
+            1013,
+            996
+          ],
+          "main_alpha_bounds_xywh": [
+            34,
+            0,
+            1005,
+            992
+          ],
+          "pivot_xy_in_rect": [
+            508,
+            502
+          ],
+          "pivot_uv_in_rect": [
+            0.501481,
+            0.504016
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 196.644,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1053,
+            92,
+            429,
+            423
+          ],
+          "main_alpha_bounds_xywh": [
+            1057,
+            96,
+            421,
+            415
+          ],
+          "pivot_xy_in_rect": [
+            215,
+            211
+          ],
+          "pivot_uv_in_rect": [
+            0.501166,
+            0.498818
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 51.273,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1071,
+            588,
+            392,
+            386
+          ],
+          "main_alpha_bounds_xywh": [
+            1075,
+            592,
+            384,
+            378
+          ],
+          "pivot_xy_in_rect": [
+            197,
+            193
+          ],
+          "pivot_uv_in_rect": [
+            0.502551,
+            0.5
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 55.143,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 16,
+      "sourceMember": "xexoria-selected-controls/atlases/a02-frostglass.png"
+    },
+    {
+      "id": "a04-wildwood-jade",
+      "name": "Wildwood Jade",
+      "file": "a04-wildwood-jade.png",
+      "sha256": "6a98549dd573e9fcafdcff0ddbe08ab4db8693dcf765df368a4b6f1fa871247c",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "first",
+        "index": 4
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            19,
+            13,
+            976,
+            942
+          ],
+          "main_alpha_bounds_xywh": [
+            23,
+            17,
+            968,
+            934
+          ],
+          "pivot_xy_in_rect": [
+            486,
+            473
+          ],
+          "pivot_uv_in_rect": [
+            0.497951,
+            0.502123
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 193.033,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1097,
+            137,
+            350,
+            348
+          ],
+          "main_alpha_bounds_xywh": [
+            1101,
+            141,
+            342,
+            340
+          ],
+          "pivot_xy_in_rect": [
+            175,
+            172
+          ],
+          "pivot_uv_in_rect": [
+            0.5,
+            0.494253
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 51.703,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1103,
+            582,
+            389,
+            375
+          ],
+          "main_alpha_bounds_xywh": [
+            1107,
+            586,
+            381,
+            367
+          ],
+          "pivot_xy_in_rect": [
+            192,
+            191
+          ],
+          "pivot_uv_in_rect": [
+            0.493573,
+            0.509333
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 53.985,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 14,
+      "sourceMember": "xexoria-selected-controls/atlases/a04-wildwood-jade.png"
+    },
+    {
+      "id": "a05-astral-orbit",
+      "name": "Astral Orbit",
+      "file": "a05-astral-orbit.png",
+      "sha256": "0905f46b0999f7921a4a549a989177b23bae98c56b95579de9b326f252f8b9fd",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "first",
+        "index": 5
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            14,
+            9,
+            1001,
+            970
+          ],
+          "main_alpha_bounds_xywh": [
+            18,
+            13,
+            993,
+            962
+          ],
+          "pivot_xy_in_rect": [
+            491,
+            486
+          ],
+          "pivot_uv_in_rect": [
+            0.490509,
+            0.501031
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 193.806,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1080,
+            122,
+            391,
+            395
+          ],
+          "main_alpha_bounds_xywh": [
+            1084,
+            126,
+            383,
+            387
+          ],
+          "pivot_xy_in_rect": [
+            195,
+            197
+          ],
+          "pivot_uv_in_rect": [
+            0.498721,
+            0.498734
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 52.532,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1085,
+            602,
+            360,
+            368
+          ],
+          "main_alpha_bounds_xywh": [
+            1089,
+            606,
+            352,
+            360
+          ],
+          "pivot_xy_in_rect": [
+            185,
+            181
+          ],
+          "pivot_uv_in_rect": [
+            0.513889,
+            0.491848
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 57.244,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 16,
+      "sourceMember": "xexoria-selected-controls/atlases/a05-astral-orbit.png"
+    },
+    {
+      "id": "a08-dawn-petal",
+      "name": "Dawn Petal",
+      "file": "a08-dawn-petal.png",
+      "sha256": "3cfe59ee5d620ad028f34b70abe8c2859cd0dfd7cafe83089c39e1d1f27e38f3",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "first",
+        "index": 8
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            43,
+            23,
+            1030,
+            975
+          ],
+          "main_alpha_bounds_xywh": [
+            47,
+            27,
+            1022,
+            967
+          ],
+          "pivot_xy_in_rect": [
+            515,
+            490
+          ],
+          "pivot_uv_in_rect": [
+            0.5,
+            0.502564
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 189.32,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1084,
+            125,
+            390,
+            383
+          ],
+          "main_alpha_bounds_xywh": [
+            1088,
+            129,
+            382,
+            375
+          ],
+          "pivot_xy_in_rect": [
+            196,
+            194
+          ],
+          "pivot_uv_in_rect": [
+            0.502564,
+            0.506527
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 51.067,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1083,
+            632,
+            392,
+            345
+          ],
+          "main_alpha_bounds_xywh": [
+            1087,
+            636,
+            384,
+            337
+          ],
+          "pivot_xy_in_rect": [
+            197,
+            171
+          ],
+          "pivot_uv_in_rect": [
+            0.502551,
+            0.495652
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 49.286,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 14,
+      "sourceMember": "xexoria-selected-controls/atlases/a08-dawn-petal.png"
+    },
+    {
+      "id": "a10-dragonbone",
+      "name": "Dragonbone",
+      "file": "a10-dragonbone.png",
+      "sha256": "92b286a59b37c4d7ee48359051f178d551efd5ad2d7e791558f00c13aabca4e6",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "first",
+        "index": 10
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            19,
+            11,
+            976,
+            947
+          ],
+          "main_alpha_bounds_xywh": [
+            23,
+            15,
+            968,
+            939
+          ],
+          "pivot_xy_in_rect": [
+            487,
+            469
+          ],
+          "pivot_uv_in_rect": [
+            0.498975,
+            0.495248
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 194.057,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1071,
+            108,
+            372,
+            372
+          ],
+          "main_alpha_bounds_xywh": [
+            1075,
+            112,
+            364,
+            364
+          ],
+          "pivot_xy_in_rect": [
+            187,
+            187
+          ],
+          "pivot_uv_in_rect": [
+            0.502688,
+            0.502688
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 52.0,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1052,
+            651,
+            424,
+            298
+          ],
+          "main_alpha_bounds_xywh": [
+            1056,
+            655,
+            416,
+            290
+          ],
+          "pivot_xy_in_rect": [
+            212,
+            150
+          ],
+          "pivot_uv_in_rect": [
+            0.5,
+            0.503356
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 39.358,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 14,
+      "sourceMember": "xexoria-selected-controls/atlases/a10-dragonbone.png"
+    },
+    {
+      "id": "b04-floating-thumbstick",
+      "name": "Floating Thumbstick",
+      "file": "b04-floating-thumbstick.png",
+      "sha256": "dd5690f2cd04068bc379065f4d102337aa414f90ea7c510d3822f2627ddde819",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "second",
+        "index": 4
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            77,
+            61,
+            891,
+            879
+          ],
+          "main_alpha_bounds_xywh": [
+            81,
+            65,
+            883,
+            871
+          ],
+          "pivot_xy_in_rect": [
+            447,
+            440
+          ],
+          "pivot_uv_in_rect": [
+            0.501684,
+            0.500569
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 197.306,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1041,
+            137,
+            419,
+            374
+          ],
+          "main_alpha_bounds_xywh": [
+            1045,
+            141,
+            411,
+            366
+          ],
+          "pivot_xy_in_rect": [
+            223,
+            186
+          ],
+          "pivot_uv_in_rect": [
+            0.53222,
+            0.497326
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 46.415,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1089,
+            690,
+            390,
+            270
+          ],
+          "main_alpha_bounds_xywh": [
+            1093,
+            694,
+            382,
+            262
+          ],
+          "pivot_xy_in_rect": [
+            197,
+            135
+          ],
+          "pivot_uv_in_rect": [
+            0.505128,
+            0.5
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 38.769,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 48,
+      "sourceMember": "xexoria-selected-controls/atlases/b04-floating-thumbstick.png"
+    },
+    {
+      "id": "b09-crystal-silver",
+      "name": "Crystal Silver",
+      "file": "b09-crystal-silver.png",
+      "sha256": "8a4cfba9cfe863ad51755041e7f6467fec637ad8e72782ca3870bfffd327ab4e",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "second",
+        "index": 9
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            92,
+            43,
+            895,
+            894
+          ],
+          "main_alpha_bounds_xywh": [
+            96,
+            47,
+            887,
+            886
+          ],
+          "pivot_xy_in_rect": [
+            450,
+            450
+          ],
+          "pivot_uv_in_rect": [
+            0.502793,
+            0.503356
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 199.777,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1046,
+            135,
+            402,
+            423
+          ],
+          "main_alpha_bounds_xywh": [
+            1050,
+            139,
+            394,
+            415
+          ],
+          "pivot_xy_in_rect": [
+            203,
+            210
+          ],
+          "pivot_uv_in_rect": [
+            0.504975,
+            0.496454
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 54.716,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1077,
+            615,
+            355,
+            355
+          ],
+          "main_alpha_bounds_xywh": [
+            1081,
+            619,
+            347,
+            347
+          ],
+          "pivot_xy_in_rect": [
+            181,
+            178
+          ],
+          "pivot_uv_in_rect": [
+            0.509859,
+            0.501408
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 56.0,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 22,
+      "sourceMember": "xexoria-selected-controls/atlases/b09-crystal-silver.png"
+    },
+    {
+      "id": "b13-celestial-rune",
+      "name": "Celestial Rune",
+      "file": "b13-celestial-rune.png",
+      "sha256": "f952931d7ee880c0c6362d8d3f0e5e8934c2296b4e3827c24878b4174f0ddc5b",
+      "width": 1536,
+      "height": 1024,
+      "selection": {
+        "set": "second",
+        "index": 13
+      },
+      "components": {
+        "base": {
+          "rect_xywh": [
+            77,
+            44,
+            938,
+            920
+          ],
+          "main_alpha_bounds_xywh": [
+            81,
+            48,
+            930,
+            912
+          ],
+          "pivot_xy_in_rect": [
+            472,
+            460
+          ],
+          "pivot_uv_in_rect": [
+            0.503198,
+            0.5
+          ],
+          "display_width_css_px": 200,
+          "display_height_css_px": 196.162,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "thumb": {
+          "rect_xywh": [
+            1065,
+            122,
+            397,
+            394
+          ],
+          "main_alpha_bounds_xywh": [
+            1069,
+            126,
+            389,
+            386
+          ],
+          "pivot_xy_in_rect": [
+            198,
+            194
+          ],
+          "pivot_uv_in_rect": [
+            0.498741,
+            0.492386
+          ],
+          "display_width_css_px": 52,
+          "display_height_css_px": 51.607,
+          "main_component_alpha_pixels_clipped": 0
+        },
+        "sit": {
+          "rect_xywh": [
+            1061,
+            572,
+            395,
+            395
+          ],
+          "main_alpha_bounds_xywh": [
+            1065,
+            576,
+            387,
+            387
+          ],
+          "pivot_xy_in_rect": [
+            197,
+            199
+          ],
+          "pivot_uv_in_rect": [
+            0.498734,
+            0.503797
+          ],
+          "display_width_css_px": 56,
+          "display_height_css_px": 56.0,
+          "main_component_alpha_pixels_clipped": 0
+        }
+      },
+      "suggestedTravelRadiusCssPx": 32,
+      "sourceMember": "xexoria-selected-controls/atlases/b13-celestial-rune.png"
+    }
+  ]
+}

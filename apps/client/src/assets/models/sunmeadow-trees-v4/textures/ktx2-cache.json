@@ -1,0 +1,50 @@
+{
+ "schema": "xexoria.ktx2-cache/1",
+ "entries": {
+  "36a4d24e810acba030384d03532891274f64801d9bc20dffc00c546706bd9c37": {
+   "file": "qn_bark_normal-d1b7a0a2defb.ktx2",
+   "sha256": "d1b7a0a2defb37bd11b891a7f9813c8f62cfd6872a25b9590a67f9862a442125",
+   "bytes": 1013564,
+   "source_sha256": "f6ce77a9b378ac78d89a4a7569c1716a7d78c2e594552e1b579c8dadf09ff924",
+   "mode": "uastc",
+   "settings": {
+    "level": 2,
+    "rdo": true,
+    "rdoLambda": 2,
+    "zstd": 9
+   },
+   "slots": [
+    "normalTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  },
+  "93820cc0184336bc725fa076c5fe21fe5ce72ead9392d6c9a9a7e1c08741f0c6": {
+   "file": "qn_bark_albedo-2499e9ed006f.ktx2",
+   "sha256": "2499e9ed006fcfdc711f9de0b514f73cbd8ccc7d751d4a52014f50c889b76c72",
+   "bytes": 187187,
+   "source_sha256": "1e7259e6ba7ef557451aa1f8472276a5370ace15324f989c43992bfde4d4fe44",
+   "mode": "etc1s",
+   "settings": {
+    "quality": 180
+   },
+   "slots": [
+    "baseColorTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  },
+  "78074d53373f8c750d907cbb9968f2fa078903e3f32be6574f6340dd00dcde77": {
+   "file": "qn_leaf_atlas_albedo-26ae04a5dfd0.ktx2",
+   "sha256": "26ae04a5dfd0215847161e41e00d017d0a5d68009699c01559aa0bea75b907c7",
+   "bytes": 179412,
+   "source_sha256": "4aabecbf529874dfca0c295cd3348ee555a580f8ca132bf48d4d93e60c63eb2e",
+   "mode": "etc1s",
+   "settings": {
+    "quality": 180
+   },
+   "slots": [
+    "baseColorTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  }
+ }
+}

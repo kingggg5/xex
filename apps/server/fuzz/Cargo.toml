@@ -1,0 +1,28 @@
+[package]
+name = "aetherfield-server-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.aetherfield-server]
+path = ".."
+
+[[bin]]
+name = "hot_decode"
+path = "fuzz_targets/hot_decode.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "cold_validate"
+path = "fuzz_targets/cold_validate.rs"
+test = false
+doc = false
+bench = false

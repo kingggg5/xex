@@ -1,0 +1,975 @@
+{
+ "asset_id": "env_sunmeadow_water_v3",
+ "blender": "5.2.2 LTS",
+ "blender_build_hash": "d13f752e3b9c",
+ "budget_class": "prop",
+ "color0_conversions": [
+  {
+   "accessor": 8,
+   "alpha_max": 1.0,
+   "alpha_min": 1.0,
+   "count": 973,
+   "from": "VEC4/UNSIGNED_SHORT/normalized",
+   "mesh": "fx_waterfall_sm_lod0",
+   "to": "VEC3/FLOAT"
+  },
+  {
+   "accessor": 13,
+   "alpha_max": 1.0,
+   "alpha_min": 1.0,
+   "count": 705,
+   "from": "VEC4/UNSIGNED_SHORT/normalized",
+   "mesh": "fx_waterfall_sm_lod1",
+   "to": "VEC3/FLOAT"
+  },
+  {
+   "accessor": 18,
+   "alpha_max": 1.0,
+   "alpha_min": 1.0,
+   "count": 366,
+   "from": "VEC4/UNSIGNED_SHORT/normalized",
+   "mesh": "fx_waterfall_sm_lod2",
+   "to": "VEC3/FLOAT"
+  }
+ ],
+ "embed_images": false,
+ "export_seconds": 0.91,
+ "exporter_messages": [],
+ "exporter_options": {
+  "at_collection_center": false,
+  "check_existing": false,
+  "collection": "xex_export__env_sunmeadow_water_v3",
+  "export_action_filter": false,
+  "export_active_vertex_color_when_no_material": false,
+  "export_all_influences": false,
+  "export_all_vertex_colors": false,
+  "export_anim_scene_split_object": true,
+  "export_anim_single_armature": true,
+  "export_anim_slide_to_zero": true,
+  "export_animation_mode": "ACTIONS",
+  "export_animations": false,
+  "export_apply": true,
+  "export_armature_object_remove": false,
+  "export_attributes": false,
+  "export_bake_animation": false,
+  "export_cameras": false,
+  "export_convert_animation_pointer": false,
+  "export_copyright": "Xexoria original seeded procedural water; no third-party assets",
+  "export_current_frame": false,
+  "export_def_bones": false,
+  "export_draco_color_quantization": 10,
+  "export_draco_generic_quantization": 12,
+  "export_draco_mesh_compression_enable": false,
+  "export_draco_mesh_compression_level": 6,
+  "export_draco_normal_quantization": 10,
+  "export_draco_position_quantization": 14,
+  "export_draco_texcoord_quantization": 12,
+  "export_extra_animations": false,
+  "export_extras": true,
+  "export_force_sampling": true,
+  "export_format": "GLTF_SEPARATE",
+  "export_frame_range": false,
+  "export_frame_step": 1,
+  "export_gltfpack_kn": false,
+  "export_gltfpack_noq": true,
+  "export_gltfpack_sa": false,
+  "export_gltfpack_si": 1.0,
+  "export_gltfpack_slb": false,
+  "export_gltfpack_tc": true,
+  "export_gltfpack_tq": 8,
+  "export_gltfpack_vc": 8,
+  "export_gltfpack_vn": 8,
+  "export_gltfpack_vp": 14,
+  "export_gltfpack_vpi": "Integer",
+  "export_gltfpack_vt": 12,
+  "export_gn_mesh": false,
+  "export_gpu_instances": false,
+  "export_hierarchy_flatten_bones": false,
+  "export_hierarchy_flatten_objs": false,
+  "export_hierarchy_full_collections": false,
+  "export_image_add_webp": false,
+  "export_image_format": "AUTO",
+  "export_image_quality": 100,
+  "export_image_webp_fallback": false,
+  "export_import_convert_lighting_mode": "SPEC",
+  "export_influence_nb": 4,
+  "export_jpeg_quality": 100,
+  "export_keep_originals": false,
+  "export_leaf_bone": false,
+  "export_lights": false,
+  "export_loglevel": -1,
+  "export_materials": "EXPORT",
+  "export_merge_animation": "ACTION",
+  "export_meshopt_compression_enable": false,
+  "export_meshopt_extension": "EXT_meshopt_compression",
+  "export_morph": false,
+  "export_morph_animation": true,
+  "export_morph_normal": true,
+  "export_morph_reset_sk_data": true,
+  "export_morph_tangent": false,
+  "export_negative_frame": "SLIDE",
+  "export_nla_strips": true,
+  "export_nla_strips_merged_animation_name": "Animation",
+  "export_normals": true,
+  "export_optimize_animation_keep_anim_armature": true,
+  "export_optimize_animation_keep_anim_object": false,
+  "export_optimize_animation_size": true,
+  "export_optimize_disable_viewport": false,
+  "export_original_specular": false,
+  "export_pointer_animation": false,
+  "export_reset_pose_bones": true,
+  "export_rest_position_armature": true,
+  "export_sampling_interpolation_fallback": "LINEAR",
+  "export_shared_accessors": false,
+  "export_skins": false,
+  "export_tangents": false,
+  "export_texcoords": true,
+  "export_texture_dir": "tex",
+  "export_try_omit_sparse_sk": false,
+  "export_try_sparse_sk": true,
+  "export_unused_images": false,
+  "export_unused_textures": false,
+  "export_use_gltfpack": false,
+  "export_vertex_color": "ACTIVE",
+  "export_vertex_color_name": "Color",
+  "export_yup": true,
+  "use_active_collection": false,
+  "use_active_collection_with_nested": false,
+  "use_active_scene": true,
+  "use_mesh_edges": false,
+  "use_mesh_vertices": false,
+  "use_renderable": false,
+  "use_selection": false,
+  "use_visible": false,
+  "will_save_settings": false
+ },
+ "exporter_options_defaulted_on_purpose": {
+  "filter_glob": {
+   "default": "*.glb",
+   "reason": "file-browser filter (HIDDEN); no effect on the written file"
+  },
+  "gltf_export_id": {
+   "default": "",
+   "reason": "id used by File > Export All Collections exporters; unused for operator calls"
+  },
+  "ui_tab": {
+   "default": "GENERAL",
+   "reason": "export-dialog tab selector; no effect on the written file"
+  }
+ },
+ "exporter_rna_sha256": "5fb696d40d591624dacb08fcb591068070c7153392f890bc6f062be1644c1e66",
+ "failures": [],
+ "glb": {
+  "animations": [],
+  "asset": {
+   "copyright": "Xexoria original seeded procedural water; no third-party assets",
+   "extras": {
+    "xex_budget_class": "prop",
+    "xex_color0": "RGB",
+    "xex_double_sided": "explicit",
+    "xex_export_helper": "1.0.0",
+    "xex_profile": "prop"
+   },
+   "generator": "Khronos glTF Blender I/O v5.2.40",
+   "version": "2.0"
+  },
+  "binary_bytes": 141784,
+  "bounds_gltf": {
+   "max": [
+    36.45,
+    7.55,
+    11.4318
+   ],
+   "min": [
+    -72.06245,
+    -1.45,
+    -93.2
+   ]
+  },
+  "cameras": 0,
+  "extensionsRequired": [],
+  "extensionsUsed": [],
+  "images": [],
+  "lights": 0,
+  "material_count": 4,
+  "materials": [
+   {
+    "alphaCutoff": null,
+    "alphaMode": "OPAQUE",
+    "doubleSided": false,
+    "extensions": [],
+    "name": "fx_water_sm_surface-placeholder",
+    "primitives": 1,
+    "textures": {},
+    "triangles": 989
+   },
+   {
+    "alphaCutoff": null,
+    "alphaMode": "OPAQUE",
+    "doubleSided": false,
+    "extensions": [],
+    "name": "fx_waterfall_sm_lod0-placeholder",
+    "primitives": 1,
+    "textures": {},
+    "triangles": 1380
+   },
+   {
+    "alphaCutoff": null,
+    "alphaMode": "OPAQUE",
+    "doubleSided": false,
+    "extensions": [],
+    "name": "fx_waterfall_sm_lod1-placeholder",
+    "primitives": 1,
+    "textures": {},
+    "triangles": 1016
+   },
+   {
+    "alphaCutoff": null,
+    "alphaMode": "OPAQUE",
+    "doubleSided": false,
+    "extensions": [],
+    "name": "fx_waterfall_sm_lod2-placeholder",
+    "primitives": 1,
+    "textures": {},
+    "triangles": 476
+   }
+  ],
+  "mesh_count": 4,
+  "meshes": [
+   {
+    "name": "fx_water_sm_surface",
+    "nodes": [
+     "fx_water_sm_surface"
+    ],
+    "primitives": [
+     {
+      "attributes": {
+       "NORMAL": "VEC3/FLOAT",
+       "POSITION": "VEC3/FLOAT",
+       "TEXCOORD_0": "VEC2/FLOAT",
+       "TEXCOORD_1": "VEC2/FLOAT"
+      },
+      "color0_mean": null,
+      "material": "fx_water_sm_surface-placeholder",
+      "material_index": 0,
+      "mode": 4,
+      "requires_normal_tangent": false,
+      "targets": 0,
+      "triangles": 989,
+      "vertices": 717
+     }
+    ],
+    "triangles": 989,
+    "vertices": 717
+   },
+   {
+    "name": "fx_waterfall_sm_lod0",
+    "nodes": [
+     "fx_waterfall_sm_lod0"
+    ],
+    "primitives": [
+     {
+      "attributes": {
+       "COLOR_0": "VEC3/FLOAT",
+       "NORMAL": "VEC3/FLOAT",
+       "POSITION": "VEC3/FLOAT",
+       "TEXCOORD_0": "VEC2/FLOAT"
+      },
+      "color0_mean": [
+       0.6051,
+       0.7103,
+       0.9067
+      ],
+      "material": "fx_waterfall_sm_lod0-placeholder",
+      "material_index": 1,
+      "mode": 4,
+      "requires_normal_tangent": false,
+      "targets": 0,
+      "triangles": 1380,
+      "vertices": 973
+     }
+    ],
+    "triangles": 1380,
+    "vertices": 973
+   },
+   {
+    "name": "fx_waterfall_sm_lod1",
+    "nodes": [
+     "fx_waterfall_sm_lod1"
+    ],
+    "primitives": [
+     {
+      "attributes": {
+       "COLOR_0": "VEC3/FLOAT",
+       "NORMAL": "VEC3/FLOAT",
+       "POSITION": "VEC3/FLOAT",
+       "TEXCOORD_0": "VEC2/FLOAT"
+      },
+      "color0_mean": [
+       0.5758,
+       0.7984,
+       0.8839
+      ],
+      "material": "fx_waterfall_sm_lod1-placeholder",
+      "material_index": 2,
+      "mode": 4,
+      "requires_normal_tangent": false,
+      "targets": 0,
+      "triangles": 1016,
+      "vertices": 705
+     }
+    ],
+    "triangles": 1016,
+    "vertices": 705
+   },
+   {
+    "name": "fx_waterfall_sm_lod2",
+    "nodes": [
+     "fx_waterfall_sm_lod2"
+    ],
+    "primitives": [
+     {
+      "attributes": {
+       "COLOR_0": "VEC3/FLOAT",
+       "NORMAL": "VEC3/FLOAT",
+       "POSITION": "VEC3/FLOAT",
+       "TEXCOORD_0": "VEC2/FLOAT"
+      },
+      "color0_mean": [
+       0.6087,
+       0.8156,
+       0.9007
+      ],
+      "material": "fx_waterfall_sm_lod2-placeholder",
+      "material_index": 3,
+      "mode": 4,
+      "requires_normal_tangent": false,
+      "targets": 0,
+      "triangles": 476,
+      "vertices": 366
+     }
+    ],
+    "triangles": 476,
+    "vertices": 366
+   }
+  ],
+  "nodes": 15,
+  "primitives": 4,
+  "skins": [],
+  "textures": 0,
+  "triangles": 3861,
+  "vertices": 2761
+ },
+ "gltf_addon": "5.2.40",
+ "helper": "assets/blender/tools/export_helper.py",
+ "helper_sha256": "8c99735adc1ea9304a8a656707bf8c8c285d0e72842ec299d7444127a1b58e41",
+ "helper_version": "1.0.0",
+ "images": [],
+ "inputs": [
+  {
+   "bytes": 138952,
+   "path": "planning/levels/sunmeadow-v2-layout.json",
+   "sha256": "d263582c15fabe8efbbac8e2ed55c1929e3b14c8b9d043309fb1003cc627314d"
+  },
+  {
+   "bytes": 497267,
+   "path": "planning/evidence/water-art-pass4b-20261003/water-geometry.json",
+   "sha256": "d1859ec3b4bc1c789acd68e9d913776112f44669d40faa3a08eef6b40ceca23a"
+  },
+  {
+   "bytes": 5436,
+   "path": "assets/blender/water/export_water_v3.py",
+   "sha256": "99cdec92b1c97fe70e0c67f0df72bdf6f50bdee1a2705f2840d038bdd402f671"
+  }
+ ],
+ "notes": [
+  "No quantization/meshopt: metre UV0 and atlas UV1 are shader data.",
+  "Canonical world GLB uses alignWorldAuthoredGlb."
+ ],
+ "objects": [
+  {
+   "name": "anchor_sm_falls_landing",
+   "type": "EMPTY"
+  },
+  {
+   "name": "anchor_sm_falls_lip",
+   "type": "EMPTY"
+  },
+  {
+   "name": "anchor_sm_falls_mouth",
+   "type": "EMPTY"
+  },
+  {
+   "name": "anchor_sm_pool_basin",
+   "type": "EMPTY"
+  },
+  {
+   "name": "anchor_sm_pool_outlet",
+   "type": "EMPTY"
+  },
+  {
+   "name": "anchor_sm_stream_exit_landing",
+   "type": "EMPTY"
+  },
+  {
+   "name": "anchor_sm_stream_exit_lip",
+   "type": "EMPTY"
+  },
+  {
+   "name": "emit_mist_sm_bluff_falls",
+   "type": "EMPTY"
+  },
+  {
+   "name": "emit_spray_sm_bluff_falls",
+   "type": "EMPTY"
+  },
+  {
+   "name": "emit_spray_sm_bluff_falls_lip",
+   "type": "EMPTY"
+  },
+  {
+   "name": "emit_spray_sm_stream_exit",
+   "type": "EMPTY"
+  },
+  {
+   "name": "fx_water_sm_surface",
+   "type": "MESH"
+  },
+  {
+   "name": "fx_waterfall_sm_lod0",
+   "type": "MESH"
+  },
+  {
+   "name": "fx_waterfall_sm_lod1",
+   "type": "MESH"
+  },
+  {
+   "name": "fx_waterfall_sm_lod2",
+   "type": "MESH"
+  }
+ ],
+ "output": "apps/client/src/assets/world/water-art-pass4b/env_sunmeadow_water_v3.glb",
+ "outputs": [
+  {
+   "bytes": 148092,
+   "kind": "glb",
+   "path": "apps/client/src/assets/world/water-art-pass4b/env_sunmeadow_water_v3.glb",
+   "sha256": "aa49421427f21510be35ee77d880543dc5d2cc5b2af217e8453b908bdf68f13a"
+  }
+ ],
+ "policy": {
+  "animations": false,
+  "apply_modifiers": true,
+  "cameras_lights": "never",
+  "color0": "RGB",
+  "double_sided": {
+   "fx_water_sm_surface-placeholder": {
+    "double_sided": false,
+    "reason": "profile prop: opaque material single-sided (GAP-4)"
+   },
+   "fx_waterfall_sm_lod0-placeholder": {
+    "double_sided": false,
+    "reason": "profile prop: opaque material single-sided (GAP-4)"
+   },
+   "fx_waterfall_sm_lod1-placeholder": {
+    "double_sided": false,
+    "reason": "profile prop: opaque material single-sided (GAP-4)"
+   },
+   "fx_waterfall_sm_lod2-placeholder": {
+    "double_sided": false,
+    "reason": "profile prop: opaque material single-sided (GAP-4)"
+   }
+  },
+  "images": "external shared folder, deduplicated by SHA-256",
+  "tangents": {
+   "exported": false,
+   "materials_with_normal_maps": [],
+   "rule": "forced"
+  },
+  "vertex_alpha_links_detached": [],
+  "y_up": true
+ },
+ "postprocess_command": "node apps/client/scripts/gltf-postprocess.mjs apps/client/src/assets/world/water-art-pass4b/env_sunmeadow_water_v3.glb --class prop --out <runtime>.glb --texture-out <runtime textures dir>",
+ "preflight": {
+  "images": []
+ },
+ "profile": "prop",
+ "profile_summary": "Placed props (cart, barrel, crate, lamp): opaque single-sided, shared trim/atlas textures",
+ "receipt": "apps/client/src/assets/world/water-art-pass4b/env_sunmeadow_water_v3.receipt.json",
+ "reimport": {
+  "actions_created": 0,
+  "armatures": 0,
+  "bounds_blender": {
+   "max": [
+    36.45,
+    93.2,
+    7.55
+   ],
+   "min": [
+    -72.06245,
+    -11.4318,
+    -1.45
+   ]
+  },
+  "cameras": 0,
+  "lights": 0,
+  "materials": {
+   "fx_water_sm_surface-placeholder": {
+    "blend_method": "DITHERED",
+    "use_backface_culling": true
+   },
+   "fx_waterfall_sm_lod0-placeholder": {
+    "blend_method": "DITHERED",
+    "use_backface_culling": true
+   },
+   "fx_waterfall_sm_lod1-placeholder": {
+    "blend_method": "DITHERED",
+    "use_backface_culling": true
+   },
+   "fx_waterfall_sm_lod2-placeholder": {
+    "blend_method": "DITHERED",
+    "use_backface_culling": true
+   }
+  },
+  "mesh_objects": 4,
+  "meshes": [
+   {
+    "color_attributes": [],
+    "object": "fx_water_sm_surface.001",
+    "triangles": 989,
+    "uv_layers": 2
+   },
+   {
+    "color_attributes": [
+     {
+      "data_type": "BYTE_COLOR",
+      "domain": "CORNER",
+      "name": "Color"
+     }
+    ],
+    "object": "fx_waterfall_sm_lod0.001",
+    "triangles": 1380,
+    "uv_layers": 1
+   },
+   {
+    "color_attributes": [
+     {
+      "data_type": "BYTE_COLOR",
+      "domain": "CORNER",
+      "name": "Color"
+     }
+    ],
+    "object": "fx_waterfall_sm_lod1.001",
+    "triangles": 1016,
+    "uv_layers": 1
+   },
+   {
+    "color_attributes": [
+     {
+      "data_type": "BYTE_COLOR",
+      "domain": "CORNER",
+      "name": "Color"
+     }
+    ],
+    "object": "fx_waterfall_sm_lod2.001",
+    "triangles": 476,
+    "uv_layers": 1
+   }
+  ],
+  "mode": "scratch",
+  "objects": 15,
+  "seconds": 0.24,
+  "triangles": 3861
+ },
+ "schema": "xexoria.export-receipt/1",
+ "seconds": 1.23,
+ "sizes": {
+  "binary_chunk_bytes": 141784,
+  "glb_bytes": 148092,
+  "referenced_texture_bytes": 0,
+  "unique_texture_files": 0
+ },
+ "source": {
+  "bounds_blender": {
+   "max": [
+    36.45,
+    93.2,
+    7.55
+   ],
+   "min": [
+    -72.06245,
+    -11.4318,
+    -1.45
+   ]
+  },
+  "meshes": [
+   {
+    "color_alpha_min": 1.0,
+    "color_attributes": [],
+    "color_mean_by_material": {},
+    "materials": [
+     "fx_water_sm_surface-placeholder"
+    ],
+    "modifiers": [],
+    "object": "fx_water_sm_surface",
+    "polygons": 989,
+    "shape_keys": 0,
+    "triangles": 989,
+    "uv_layers": [
+     "UVMap",
+     "WaterAtlas"
+    ],
+    "vertices": 717
+   },
+   {
+    "color_alpha_min": 1.0,
+    "color_attributes": [
+     {
+      "data_type": "FLOAT_COLOR",
+      "domain": "POINT",
+      "name": "Color"
+     }
+    ],
+    "color_mean_by_material": {
+     "fx_waterfall_sm_lod0-placeholder": [
+      0.6051,
+      0.7103,
+      0.9067
+     ]
+    },
+    "materials": [
+     "fx_waterfall_sm_lod0-placeholder"
+    ],
+    "modifiers": [],
+    "object": "fx_waterfall_sm_lod0",
+    "polygons": 1380,
+    "shape_keys": 0,
+    "triangles": 1380,
+    "uv_layers": [
+     "UVMap"
+    ],
+    "vertices": 973
+   },
+   {
+    "color_alpha_min": 1.0,
+    "color_attributes": [
+     {
+      "data_type": "FLOAT_COLOR",
+      "domain": "POINT",
+      "name": "Color"
+     }
+    ],
+    "color_mean_by_material": {
+     "fx_waterfall_sm_lod1-placeholder": [
+      0.5758,
+      0.7984,
+      0.8839
+     ]
+    },
+    "materials": [
+     "fx_waterfall_sm_lod1-placeholder"
+    ],
+    "modifiers": [],
+    "object": "fx_waterfall_sm_lod1",
+    "polygons": 1016,
+    "shape_keys": 0,
+    "triangles": 1016,
+    "uv_layers": [
+     "UVMap"
+    ],
+    "vertices": 705
+   },
+   {
+    "color_alpha_min": 1.0,
+    "color_attributes": [
+     {
+      "data_type": "FLOAT_COLOR",
+      "domain": "POINT",
+      "name": "Color"
+     }
+    ],
+    "color_mean_by_material": {
+     "fx_waterfall_sm_lod2-placeholder": [
+      0.6087,
+      0.8155,
+      0.9007
+     ]
+    },
+    "materials": [
+     "fx_waterfall_sm_lod2-placeholder"
+    ],
+    "modifiers": [],
+    "object": "fx_waterfall_sm_lod2",
+    "polygons": 476,
+    "shape_keys": 0,
+    "triangles": 476,
+    "uv_layers": [
+     "UVMap"
+    ],
+    "vertices": 366
+   }
+  ],
+  "triangles": 3861
+ },
+ "status": "PASS",
+ "texture_dir": "apps/client/src/assets/world/water-art-pass4b/textures",
+ "validation": [
+  {
+   "check": "no_forbidden_extensions",
+   "detail": "none",
+   "pass": true
+  },
+  {
+   "check": "extensions_required_subset_used",
+   "detail": {
+    "required": [],
+    "used": []
+   },
+   "pass": true
+  },
+  {
+   "check": "extensions_babylon_loadable",
+   "detail": "all loadable",
+   "pass": true
+  },
+  {
+   "check": "no_expensive_material_extensions",
+   "detail": "none",
+   "pass": true
+  },
+  {
+   "check": "triangles_source_eq_glb",
+   "detail": {
+    "glb": 3861,
+    "source": 3861
+   },
+   "pass": true
+  },
+  {
+   "check": "triangles_glb_eq_reimport",
+   "detail": {
+    "glb": 3861,
+    "reimport": 3861
+   },
+   "pass": true
+  },
+  {
+   "check": "bounds_source_eq_glb_yup",
+   "detail": {
+    "glb_bounds_gltf": {
+     "max": [
+      36.45,
+      7.55,
+      11.4318
+     ],
+     "min": [
+      -72.06245,
+      -1.45,
+      -93.2
+     ]
+    },
+    "max_dev_m": 0.0,
+    "source_bounds_as_gltf": {
+     "max": [
+      36.45,
+      7.55,
+      11.4318
+     ],
+     "min": [
+      -72.06245,
+      -1.45,
+      -93.2
+     ]
+    },
+    "tolerance_m": 0.0010851
+   },
+   "pass": true
+  },
+  {
+   "check": "bounds_source_eq_reimport",
+   "detail": {
+    "max_dev_m": 0.0,
+    "tolerance_m": 0.0010851
+   },
+   "pass": true
+  },
+  {
+   "check": "materials_match",
+   "detail": {
+    "glb": [
+     "fx_water_sm_surface-placeholder",
+     "fx_waterfall_sm_lod0-placeholder",
+     "fx_waterfall_sm_lod1-placeholder",
+     "fx_waterfall_sm_lod2-placeholder"
+    ],
+    "source": [
+     "fx_water_sm_surface-placeholder",
+     "fx_waterfall_sm_lod0-placeholder",
+     "fx_waterfall_sm_lod1-placeholder",
+     "fx_waterfall_sm_lod2-placeholder"
+    ]
+   },
+   "pass": true
+  },
+  {
+   "check": "materials_reimport_match",
+   "detail": {
+    "glb": [
+     "fx_water_sm_surface-placeholder",
+     "fx_waterfall_sm_lod0-placeholder",
+     "fx_waterfall_sm_lod1-placeholder",
+     "fx_waterfall_sm_lod2-placeholder"
+    ],
+    "reimport": [
+     "fx_water_sm_surface-placeholder",
+     "fx_waterfall_sm_lod0-placeholder",
+     "fx_waterfall_sm_lod1-placeholder",
+     "fx_waterfall_sm_lod2-placeholder"
+    ]
+   },
+   "pass": true
+  },
+  {
+   "check": "double_sided_policy",
+   "detail": "every material matches its policy decision",
+   "pass": true
+  },
+  {
+   "check": "double_sided_only_on_cards",
+   "detail": "no opaque material is double-sided by rule",
+   "pass": true
+  },
+  {
+   "check": "double_sided_reimport",
+   "detail": "re-imported backface culling matches doubleSided",
+   "pass": true
+  },
+  {
+   "check": "vertex_attributes_within_limit",
+   "detail": "<= 8 per primitive",
+   "pass": true
+  },
+  {
+   "check": "attributes_babylon_readable",
+   "detail": "all attributes are read by Babylon",
+   "pass": true
+  },
+  {
+   "check": "discouraged_attributes_absent",
+   "detail": "none",
+   "pass": true
+  },
+  {
+   "check": "color0_rgb",
+   "detail": "COLOR_0 is VEC3 or absent (GAP-3)",
+   "pass": true
+  },
+  {
+   "check": "tangents_policy",
+   "detail": {
+    "missing": [],
+    "tangents": false,
+    "unexpected": []
+   },
+   "pass": true
+  },
+  {
+   "check": "max_four_influences",
+   "detail": "no JOINTS_1/WEIGHTS_1 (official-docs S2)",
+   "pass": true
+  },
+  {
+   "check": "uv_layers_exported",
+   "detail": "every source UV layer is a TEXCOORD set",
+   "pass": true
+  },
+  {
+   "check": "color0_values_match_source",
+   "detail": [
+    {
+     "glb_mean": [
+      0.6051,
+      0.7103,
+      0.9067
+     ],
+     "material": "fx_waterfall_sm_lod0-placeholder",
+     "max_dev": 0.0,
+     "node": "fx_waterfall_sm_lod0",
+     "source_mean": [
+      0.6051,
+      0.7103,
+      0.9067
+     ]
+    },
+    {
+     "glb_mean": [
+      0.5758,
+      0.7984,
+      0.8839
+     ],
+     "material": "fx_waterfall_sm_lod1-placeholder",
+     "max_dev": 0.0,
+     "node": "fx_waterfall_sm_lod1",
+     "source_mean": [
+      0.5758,
+      0.7984,
+      0.8839
+     ]
+    },
+    {
+     "glb_mean": [
+      0.6087,
+      0.8156,
+      0.9007
+     ],
+     "material": "fx_waterfall_sm_lod2-placeholder",
+     "max_dev": 0.0001,
+     "node": "fx_waterfall_sm_lod2",
+     "source_mean": [
+      0.6087,
+      0.8155,
+      0.9007
+     ]
+    }
+   ],
+   "pass": true
+  },
+  {
+   "check": "reimport_uv_sets",
+   "detail": "<= 2 UV sets after re-import",
+   "pass": true
+  },
+  {
+   "check": "no_cameras_or_lights",
+   "detail": {
+    "cameras": 0,
+    "lights": 0
+   },
+   "pass": true
+  },
+  {
+   "check": "no_animation_or_skin",
+   "detail": {
+    "animations": 0,
+    "skins": 0
+   },
+   "pass": true
+  },
+  {
+   "check": "images_external",
+   "detail": "no embedded images",
+   "pass": true
+  },
+  {
+   "check": "image_files_exist",
+   "detail": "every image uri resolves to a file",
+   "pass": true
+  },
+  {
+   "check": "images_png_or_jpeg",
+   "detail": "PNG/JPEG intermediates for KTX2",
+   "pass": true
+  }
+ ],
+ "warnings": []
+}

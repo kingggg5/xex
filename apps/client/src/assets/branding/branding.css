@@ -1,0 +1,14 @@
+.login-brand-logo {
+	display: block;
+	width: min(220px, 70%);
+	max-height: 74px;
+	margin: 0 auto 2px;
+	object-fit: contain;
+}
+
+@media (max-height: 560px) {
+	.login-brand-logo {
+		width: min(176px, 60%);
+		max-height: 58px;
+	}
+}

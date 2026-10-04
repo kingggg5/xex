@@ -1,0 +1,17 @@
+// CPU-only decoded witness for the six r01 architecture components kept in r02.
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../..');
+const r01=path.join(root,'assets/models/reference-city/r5/arrival-hlod-r01');
+const r02=path.join(root,'assets/models/reference-city/r5/arrival-hlod-r02');
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+function parse(file){const bytes=fs.readFileSync(file);let doc,bin;for(let o=12;o<bytes.length;){const size=bytes.readUInt32LE(o),kind=bytes.readUInt32LE(o+4);if(kind===0x4e4f534a)doc=JSON.parse(bytes.subarray(o+8,o+8+size));if(kind===0x004e4942)bin=bytes.subarray(o+8,o+8+size);o+=8+size;}return{bytes,doc,bin};}
+function rows(g,id){const a=g.doc.accessors[id],v=g.doc.bufferViews[a.bufferView],sizes={SCALAR:1,VEC2:2,VEC3:3,VEC4:4},widths={5121:1,5122:2,5123:2,5125:4,5126:4},n=sizes[a.type],w=widths[a.componentType],stride=v.byteStride??n*w,start=(v.byteOffset??0)+(a.byteOffset??0);return Array.from({length:a.count},(_,i)=>Array.from({length:n},(_,j)=>{const p=start+i*stride+j*w;let x=a.componentType===5126?g.bin.readFloatLE(p):a.componentType===5125?g.bin.readUInt32LE(p):a.componentType===5123?g.bin.readUInt16LE(p):a.componentType===5122?g.bin.readInt16LE(p):g.bin.readUInt8(p);if(a.normalized)x=a.componentType===5122?Math.max(-1,x/32767):a.componentType===5123?x/65535:x/255;if(!Number.isFinite(x))throw Error('Nonfinite');return x;}));}
+function signatures(g,origin){const triangles=[];for(const node of g.doc.nodes){if(node.mesh===undefined||node.extras?.arrival_source_component!==origin)continue;if(node.matrix||node.translation||node.rotation||node.scale)throw Error('Expected baked identity transform');for(const p of g.doc.meshes[node.mesh].primitives){const attrs=Object.keys(p.attributes).sort(),values=attrs.map(a=>rows(g,p.attributes[a])),indices=rows(g,p.indices).flat();for(let t=0;t<indices.length;t+=3){const corners=indices.slice(t,t+3).map(i=>attrs.map((a,j)=>a+':'+values[j][i].map(x=>Math.round(x*10000)).join(',')).join('|')).sort();triangles.push(g.doc.materials[p.material].name+';'+corners.join(';'));}}}return triangles.sort();}
+const before=parse(path.join(r01,'architecture-only.glb')),after=parse(path.join(r02,'architecture-only.glb'));
+const kept=['m5-p0-c208','m5-p0-c244','m3-p0-c67','m3-p0-c68','m3-p0-c80','m4-p0-c86'];
+const witness=kept.map(id=>{const a=signatures(before,id),b=signatures(after,id);if(!a.length||JSON.stringify(a)!==JSON.stringify(b))throw Error('Retained decoded geometry/attributes differ: '+id);return{id,triangles:a.length,trianglePositionsNormalsColorUVMaterialMatchAt1e4:true};});
+const receipt={schema:'xexoria.arrival-r02-retention/1',status:'CPU_DECODED_RETAINED_COMPONENTS_PASS',positionNormalUVColorComparisonTolerance:.0001,r01ArchitectureSHA:hash(before.bytes),r02ArchitectureSHA:hash(after.bytes),witness,remaining:'Runtime quantization/import/native appearance remain separate; original baseline byte-prefix/index preservation is in validation-receipt.json.'};
+const output=path.join(r02,'retained-r01-components.json');if(fs.existsSync(output))throw Error('Create-only retention receipt exists');fs.writeFileSync(output,JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify({status:receipt.status,retainedComponents:witness.length,triangles:witness.reduce((n,c)=>n+c.triangles,0)}));

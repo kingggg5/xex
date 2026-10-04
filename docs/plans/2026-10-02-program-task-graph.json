@@ -1,0 +1,941 @@
+{
+  "schema": "xexoria-task-graph/1",
+  "project_id": "project-a6dcbc9c-dcdf-4efe-9428-b88a9b5694bf",
+  "run_id": "RUN-20260923-mmorpg-plan-v3",
+  "generated_at": "2026-10-02T15:55:00+07:00",
+  "generated_by": "Claude (supervisor, map/visual lane). Proposed as the .harness/TASK-GRAPH.json annex; the harness PM (Codex root) activates it.",
+  "goal": "Sunmeadow vertical slice: playable and reliable on a GTX 1050 desktop (p95 <= 16.7 ms at 1080p) and an iPhone 11 (p95 <= 33.3 ms), with PC-like detail on both.",
+  "limits": {
+    "max_parallel_agents_claude": 10,
+    "codex_workers": [
+      "root",
+      "server",
+      "vfx",
+      "ui"
+    ],
+    "gpu_or_browser_sessions_serialized": true,
+    "gpu_lock": "%USERPROFILE%\\AppData\\Local\\Temp\\claude\\C--Users------\\d53323d6-5c9d-470e-9b01-6096e3bd7896\\scratchpad\\gpu-measure.lock",
+    "one_blender_process": true,
+    "min_free_ram_gb_before_heavy_job": 1.5,
+    "shared_files_one_writer_per_hunk": [
+      "apps/client/src/main.ts",
+      "apps/client/src/scene.ts"
+    ]
+  },
+  "status_values": [
+    "done",
+    "running",
+    "queued",
+    "blocked",
+    "waiting_human"
+  ],
+  "jobs": [
+    {
+      "id": "C-L0",
+      "title": "Sunmeadow v2 layout + checks",
+      "owner": "claude",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "planning/levels/sunmeadow-v2-layout.json",
+        "planning/evidence/sunmeadow-v2-layout/checks.json"
+      ],
+      "gate": "render_layout_plan.py 66/66"
+    },
+    {
+      "id": "C-L1",
+      "title": "Monster spawn plan r3",
+      "owner": "claude",
+      "status": "done",
+      "depends_on": [
+        "C-L0"
+      ],
+      "out": [
+        "planning/levels/sunmeadow-v2-monsters.json"
+      ],
+      "gate": "check_monster_spawns.py 5268/5268"
+    },
+    {
+      "id": "C-B5",
+      "title": "Blockout pass 5 (arena keep-clear, prop moves, mushroom ring)",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [
+        "C-L0"
+      ],
+      "out": [
+        "assets/models/sunmeadow-v2/blockout/*",
+        "planning/evidence/sunmeadow-v2-blockout/pass5/"
+      ],
+      "gate": "re-import, collider-visual, walk, arena and sightline checks with numbers",
+      "result": "pass 5 verified 2026-10-02: 6/6 re-import, 0/362 collider flags, max 30,811 tris/cell, walk 0 hits, arena keep-clear pass (edge rule >= 11.5 m), monsters 5268/5268"
+    },
+    {
+      "id": "C-P0-FSR",
+      "title": "FSR1 render scaling + adaptive resolution",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "apps/client/src/render-scaling.ts",
+        "apps/client/src/render-scale-controller.mjs",
+        "docs/reviews/2026-10-02-render-scaling-fsr1.md"
+      ],
+      "gate": "npm test + check pass; A/B table both renderers; crops; per-tier table incl. iPhone 11",
+      "result": "code + tests (18/18), opt-in ?fsr=; GPU bench NOT run yet (next: C-P0-FSR-BENCH)"
+    },
+    {
+      "id": "C-P0-FPS",
+      "title": "Frame-rate policy (Auto/30/60/90/120/Max) + limiter",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "soft_depends_on": [
+        "C-P0-FSR"
+      ],
+      "out": [
+        "apps/client/src/frame-rate-policy.mjs",
+        "docs/reviews/2026-10-02-auto-fps-frame-pacing.md"
+      ],
+      "gate": "tests incl. 60/90/120/144 Hz, Low Power 30 Hz; root hunk proposal",
+      "result": "frame-rate-policy.mjs 45/45 tests; scene.ts hunk proposed for root (R-LOOP)"
+    },
+    {
+      "id": "C-P0-ENV",
+      "title": "Environment quick wins: opt-in glow, clouds out of shadows, freeze statics",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "apps/client/src/environment.ts",
+        "docs/reviews/2026-10-02-env-perf-quickwins.md"
+      ],
+      "gate": "before/after both renderers; VFX still glow; tests pass",
+      "result": "glow opt-in + clouds out of shadows + static freeze; WebGL2 spawn p95 55.6->9.7 ms, WebGPU 15.6->10.8 ms; glow draws 93->19; 429 tests, check 0; doc env-perf-quickwins"
+    },
+    {
+      "id": "C-P0-DOC",
+      "title": "Apply recheck C1-C17, P10 performance/mobile block, inbox A12 + A18-A21",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": [],
+      "out": [
+        "docs/plans/2026-10-02-visual-detail-master-plan.md",
+        "docs/reviews/2026-10-02-claude-to-codex-inbox.md"
+      ],
+      "gate": "every correction accounted for"
+    },
+    {
+      "id": "C-R-MOB",
+      "title": "Research: PC-level detail on mobile",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "docs/reviews/2026-10-02-mobile-pc-detail-research.md"
+      ],
+      "gate": "technique table + iPhone 11 tier",
+      "result": "docs/reviews/2026-10-02-mobile-pc-detail-research.md"
+    },
+    {
+      "id": "C-R-IOS",
+      "title": "Research: iPhone 11 Safari target + device test plan",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "docs/reviews/2026-10-02-iphone11-safari-target.md"
+      ],
+      "gate": "verified profile + owner test steps",
+      "result": "docs/reviews/2026-10-02-iphone11-safari-target.md; inbox A28 (perf overlay), A29 (iOS fixes); iPhone 11 = iOS 27 / Safari 27; WebGL2 until A12"
+    },
+    {
+      "id": "C-R-LOAD",
+      "title": "Research + measure: fast load, compression, vcache, workers",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "docs/reviews/2026-10-02-fastload-research.md"
+      ],
+      "gate": "current bytes/requests + top 15 actions",
+      "result": "docs/reviews/2026-10-02-fastload-research.md; inbox A22-A27, C7"
+    },
+    {
+      "id": "C-R-NAT",
+      "title": "Owner native docs transfer (fastload, LZ4, vcache, enkiTS, more)",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "out": [
+        "docs/reviews/2026-10-02-native-docs-transfer.md"
+      ],
+      "gate": "adopt/skip verdicts with owners",
+      "result": "docs/reviews/2026-10-02-native-docs-transfer.md: 82 techniques, top 10 actions"
+    },
+    {
+      "id": "C-P0-EXP",
+      "title": "Blender glTF export helper (explicit options, EXT_meshopt, quantization, vcache reorder, KTX2, receipts)",
+      "owner": "claude",
+      "status": "done",
+      "depends_on": [
+        "C-R-NAT"
+      ],
+      "out": [
+        "assets/blender/tools/export_helper.py",
+        "apps/client/scripts/gltf-postprocess.mjs",
+        "tools/asset-budgets.json",
+        "docs/reviews/2026-10-02-export-helper.md"
+      ],
+      "gate": "re-import validation + receipt; size and decode time before/after",
+      "soft_depends_on": [
+        "C-R-LOAD"
+      ],
+      "note": "finishing doc/tests (continuation agent); proof: trees 12.2 MB -> 1.58 MB on the wire, cell 1487 -> 443 KiB",
+      "result": "docs/reviews/2026-10-02-export-helper.md; trees 12,170.8 -> 1,577.6 KiB on the wire, cell 1,487 -> 443 KiB; 448/448 tests; gaps: bake hook, per-tier textures, in-engine load"
+    },
+    {
+      "id": "C-P0-CAP",
+      "title": "Capture harness: locked views x times x renderers + metrics",
+      "owner": "claude",
+      "status": "running",
+      "depends_on": [
+        "C-P0-FSR"
+      ],
+      "out": [
+        "apps/client/src/lookdev/*",
+        "tools/capture/*"
+      ],
+      "gate": "one command produces labelled sheets + metrics JSON",
+      "note": "superseded by C-CAPTURE (same scope + responsive audit)"
+    },
+    {
+      "id": "C-P0-LIGHT",
+      "title": "Light pass 0-1 (rig, PBR lit materials, IBL rotation, contrast)",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-ENV",
+        "V-B4"
+      ],
+      "out": [
+        "apps/client/src/environment.ts"
+      ],
+      "gate": "day/night captures both renderers; no clipping; B4 merged atomically"
+    },
+    {
+      "id": "R-A12",
+      "title": "WebGPU features/limits + self-hosted KTX2 transcoders (ship together)",
+      "owner": "codex-root",
+      "status": "done",
+      "depends_on": [
+        "C-P0-FSR"
+      ],
+      "out": [
+        "apps/client/src/scene.ts",
+        "apps/client/src/asset-codecs.ts",
+        "apps/client/src/ktx2decoder.worker.ts"
+      ],
+      "gate": "VRAM before/after; no CDN requests; both renderers",
+      "result": "verified by Claude (code review) 18:40; runtime VRAM proof pending"
+    },
+    {
+      "id": "R-LOOP",
+      "title": "Render-loop frame limiter hunk (from C-P0-FPS proposal)",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-FPS"
+      ],
+      "out": [
+        "apps/client/src/main.ts or scene.ts"
+      ],
+      "gate": "even pacing at 120 Hz for 60/40 caps; sim/network tick unaffected"
+    },
+    {
+      "id": "R-A18-21",
+      "title": "Phone engine options, cheap picking, pools/AssetContainers, animation LOD/VAT",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-DOC"
+      ],
+      "out": [],
+      "gate": "measured CPU deltas"
+    },
+    {
+      "id": "U-FPS",
+      "title": "Settings: FPS Auto/30/60/90/120/Max (shows detected Hz), Thai labels",
+      "owner": "codex-ui",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-FPS",
+        "R-LOOP"
+      ],
+      "out": [
+        "apps/client/src/ui/**"
+      ],
+      "gate": "setting persists; Auto respects Low Power 30"
+    },
+    {
+      "id": "R-PERF",
+      "title": "In-game perf overlay ?perf=1 (fps, p95, renderer, DPR, render size, memory)",
+      "owner": "codex-root+ui",
+      "status": "queued",
+      "depends_on": [
+        "C-R-IOS"
+      ],
+      "out": [],
+      "gate": "readable on iPhone 11; off by default",
+      "inbox": "A28",
+      "priority": "P0"
+    },
+    {
+      "id": "O-IPH",
+      "title": "Owner runs the iPhone 11 device test plan",
+      "owner": "owner",
+      "status": "waiting_human",
+      "depends_on": [
+        "R-PERF",
+        "C-R-IOS"
+      ],
+      "human_edge": true,
+      "out": [
+        "device report"
+      ],
+      "gate": "p95 <= 33.3 ms at minutes 15-20 (thermal); no reload/context loss in 20 min; resume after app switch; playable in Low Power Mode"
+    },
+    {
+      "id": "R-A1A2",
+      "title": "Local-only hit feedback; hit-stop never pauses movement",
+      "owner": "codex-root",
+      "status": "running",
+      "depends_on": [],
+      "gate": "regression tests"
+    },
+    {
+      "id": "R-A4",
+      "title": "Snapshot cap 64 enforced in content validation",
+      "owner": "codex-server",
+      "status": "running",
+      "depends_on": [],
+      "note": "server worker, parallel to root A1+A2/A3 (agreed 08:45Z)"
+    },
+    {
+      "id": "R-A3",
+      "title": "Dynamic monster views from snapshot ids; name atlas limit",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "R-A1A2"
+      ]
+    },
+    {
+      "id": "R-A5",
+      "title": "Respawn at home; collider resets",
+      "owner": "codex-server",
+      "status": "queued",
+      "depends_on": [
+        "R-A4"
+      ]
+    },
+    {
+      "id": "R-A6",
+      "title": "Party EXP split via shared reward resolver",
+      "owner": "codex-server",
+      "status": "queued",
+      "depends_on": [
+        "R-A5"
+      ]
+    },
+    {
+      "id": "R-A7",
+      "title": "Protocol: crit/miss bits, heal/exp notices, level/rank, u32 HP (DTO first)",
+      "owner": "codex-root+server",
+      "status": "queued",
+      "depends_on": [
+        "R-A3",
+        "R-A6"
+      ]
+    },
+    {
+      "id": "R-A8",
+      "title": "Tagging, crit/miss rules, MVP contribution rewards",
+      "owner": "codex-server",
+      "status": "queued",
+      "depends_on": [
+        "R-A7"
+      ]
+    },
+    {
+      "id": "R-A16",
+      "title": "Core-loop reliability: input clearing, idempotent mutations, reconnect snapshot, reason codes",
+      "owner": "codex-root+server",
+      "status": "queued",
+      "depends_on": [],
+      "gate": "deep review §10.1 tests"
+    },
+    {
+      "id": "R-A9",
+      "title": "Spawn migration step 0 + moved-prop content migration",
+      "owner": "codex-server",
+      "status": "queued",
+      "depends_on": [
+        "C-B5",
+        "R-A4"
+      ]
+    },
+    {
+      "id": "R-A10",
+      "title": "Seam check Z=-64 + c7/c8 bounds; verify exported walk/colliders",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "C-B5"
+      ]
+    },
+    {
+      "id": "R-A17",
+      "title": "Encounter model + RewardReceipt (Galehorn)",
+      "owner": "codex-server",
+      "status": "queued",
+      "depends_on": [
+        "R-A8",
+        "R-A16"
+      ]
+    },
+    {
+      "id": "V-B1-3",
+      "title": "VFX bar, damage numbers, hit feedback/telegraphs",
+      "owner": "codex-vfx",
+      "status": "running",
+      "depends_on": [
+        "R-A7"
+      ]
+    },
+    {
+      "id": "V-B4",
+      "title": "world-weather sampleAt; remove light/fog/post writes",
+      "owner": "codex-vfx",
+      "status": "queued",
+      "depends_on": [],
+      "merge_with": "C-P0-LIGHT"
+    },
+    {
+      "id": "V-B5",
+      "title": "Celestial + painted cloud layers",
+      "owner": "codex-vfx",
+      "status": "queued",
+      "depends_on": [
+        "F-F5"
+      ]
+    },
+    {
+      "id": "U-C1C2",
+      "title": "DOM nameplates/HP + target frame",
+      "owner": "codex-ui",
+      "status": "running",
+      "depends_on": [
+        "R-A3"
+      ]
+    },
+    {
+      "id": "U-C4C5",
+      "title": "Death UI + load/transaction states",
+      "owner": "codex-ui",
+      "status": "queued",
+      "depends_on": [
+        "R-A16"
+      ]
+    },
+    {
+      "id": "C-P1-FORM",
+      "title": "Forms pass: bluff/cliff sculpt, stone circle + altar, bridge, camp kit",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-B5",
+        "C-P0-EXP"
+      ],
+      "gate": "silhouettes at 13 m; budgets"
+    },
+    {
+      "id": "C-P1-TERR",
+      "title": "Terrain splat (terrain-surface.ts) + Blender-baked control maps",
+      "owner": "claude",
+      "status": "done",
+      "depends_on": [
+        "C-B5"
+      ],
+      "soft_depends_on": [
+        "C-P0-LIGHT",
+        "F-F4"
+      ],
+      "gate": "terrain spec gates; <= 4 draws/cell; <= +0.8 ms p95",
+      "note": "continuation agent after rate-limit cut-off",
+      "result": "P1 system done (docs/reviews/2026-10-02-terrain-p1-report.md); misses: GPU +2.29/+1.88 ms vs +0.8 budget, UASTC normal error, grass value range; integration diff ready (opt-in ?terrain=splat)"
+    },
+    {
+      "id": "C-P1-TREE",
+      "title": "Trees in Babylon: shared atlas + KTX2, impostor v3, TEXCOORD_1 wind, captures",
+      "owner": "claude",
+      "status": "running",
+      "depends_on": [
+        "C-P0-ENV",
+        "C-P0-EXP"
+      ],
+      "soft_depends_on": [
+        "F-F3"
+      ],
+      "gate": "tree doc §4.4 gate; both renderers day/night"
+    },
+    {
+      "id": "C-P1-GRASS",
+      "title": "Grass field per grass spec",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P1-TERR"
+      ]
+    },
+    {
+      "id": "C-P1-WATER",
+      "title": "Natural water per water spec (+ recheck corrections)",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P1-TERR"
+      ]
+    },
+    {
+      "id": "C-P1-SKY",
+      "title": "Sky, fog, clouds pass 2",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-LIGHT",
+        "V-B5"
+      ]
+    },
+    {
+      "id": "C-P1-ROCK",
+      "title": "Rock detail plugin (MountainRIver rules, desktop) + Blender bake (mobile)",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P1-FORM"
+      ]
+    },
+    {
+      "id": "F-F1",
+      "title": "froggy: Reddit-first deep research (mobile detail, Safari, fast load, auto fps)",
+      "owner": "froggy",
+      "status": "done",
+      "human_edge": true,
+      "depends_on": [],
+      "out": [
+        "Downloads/Xexoria-Game/sources/froggy/research-20261002/"
+      ],
+      "result": "Downloads/Xexoria-Game/sources/froggy/research-20261002/ (103 sources, 37 Reddit) - reviewed PASS"
+    },
+    {
+      "id": "F-F2",
+      "title": "froggy: Sunmeadow monster concept pack (Mossling first, Galehorn boss)",
+      "owner": "froggy",
+      "status": "running",
+      "human_edge": true,
+      "depends_on": [],
+      "note": "sent 18:45 with the look-target image"
+    },
+    {
+      "id": "F-F3",
+      "title": "froggy: foliage atlas v2 + bark (value range 0.60)",
+      "owner": "froggy",
+      "status": "waiting_human",
+      "human_edge": true,
+      "depends_on": []
+    },
+    {
+      "id": "F-F4",
+      "title": "froggy: hand-painted terrain tileables",
+      "owner": "froggy",
+      "status": "waiting_human",
+      "human_edge": true,
+      "depends_on": []
+    },
+    {
+      "id": "F-F5",
+      "title": "froggy: painted cloud layers noon/dusk",
+      "owner": "froggy",
+      "status": "waiting_human",
+      "human_edge": true,
+      "depends_on": []
+    },
+    {
+      "id": "O-TRIPO",
+      "title": "Owner: Tripo login and credit stage 1 (600)",
+      "owner": "owner",
+      "status": "done",
+      "human_edge": true,
+      "depends_on": [],
+      "result": "owner logged in to Tripo Studio in Edge (2026-10-02 evening)"
+    },
+    {
+      "id": "C-M1",
+      "title": "Monster sample S1 Mossling: Tripo -> Blender -> paint -> XS1 rig -> clips -> LODs",
+      "owner": "claude",
+      "status": "blocked",
+      "blocked_by": "F-F2 concept (froggy working)",
+      "depends_on": [
+        "F-F2",
+        "O-TRIPO",
+        "C-P0-EXP"
+      ]
+    },
+    {
+      "id": "C-H2",
+      "title": "Hero 02 pilot repair, then hero 01",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "O-TRIPO",
+        "C-P0-EXP",
+        "C-H-DR"
+      ],
+      "note": "Tripo job card docs/plans/2026-10-02-tripo-job-card.md: heroes 01/04/06 ready (~435 credits)"
+    },
+    {
+      "id": "G-SLICE",
+      "title": "Gate: Sunmeadow slice accepted (desktop + iPhone 11)",
+      "owner": "owner",
+      "status": "queued",
+      "human_edge": true,
+      "depends_on": [
+        "C-P1-TREE",
+        "C-P1-GRASS",
+        "C-P1-WATER",
+        "C-P1-SKY",
+        "C-P1-ROCK",
+        "R-A8",
+        "R-A16",
+        "U-C1C2",
+        "U-C4C5",
+        "V-B1-3",
+        "O-IPH",
+        "C-P0-CAP",
+        "R-RENDERER",
+        "R-WARMUP",
+        "R-A22",
+        "C-CITYMERGE",
+        "R-A29"
+      ],
+      "gate": "master plan phase 1 gate + deep review §10.1 + device run"
+    },
+    {
+      "id": "R-FALLBACK",
+      "title": "Loud fallbacks: log WebGPU init failure reason, RGBA texture fallback, CDN decoder use; captures record backend + adapter",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "R-A12"
+      ],
+      "gate": "0 unexpected fallbacks and 0 requests to cdn.babylonjs.com on the release route",
+      "source": "native-docs-transfer #2",
+      "inbox": "inbox A26"
+    },
+    {
+      "id": "R-RENDERER",
+      "title": "Default renderer per device class by measurement (WebGL2 on mobile until WebGPU wins 5 matched runs)",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "R-A12",
+        "C-P0-FSR"
+      ],
+      "gate": "chosen iPhone 11 renderer wins 5 matched runs; no tab reload in 30 min",
+      "source": "native-docs-transfer #3; community §2.14"
+    },
+    {
+      "id": "R-BROTLI",
+      "title": "Serve .glb/.json with brotli/gzip (vercel headers); never recompress KTX2",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [],
+      "gate": "response headers br/gzip; city ~62 MB, cell ~0.43 MB, bundle ~0.4 MB",
+      "source": "native-docs-transfer #4",
+      "inbox": "inbox A24"
+    },
+    {
+      "id": "R-BOOT",
+      "title": "Boot path: parallel fetches, fast 16-bit bundle hash (76-105 ms -> 3-4 ms), per-asset timeouts, load summary",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [],
+      "gate": "hash <= 5 ms identical value; per-asset timing summary",
+      "source": "native-docs-transfer #5",
+      "inbox": "inbox A23"
+    },
+    {
+      "id": "R-WARMUP",
+      "title": "Pipeline warm-up gate (WebGPUCacheRenderPipeline counters, createRenderPipelineAsync); FastLoad-style per-frame reveal budget",
+      "owner": "codex-root+vfx+claude",
+      "status": "queued",
+      "depends_on": [
+        "R-A12"
+      ],
+      "gate": "0 new pipelines/shader links after loading on the scripted first-use route; no frame > 100 ms on iPhone 11 during reveal",
+      "source": "native-docs-transfer #6-7",
+      "inbox": "inbox A25"
+    },
+    {
+      "id": "R-LIFECYCLE",
+      "title": "Lifecycle and context-loss test set (50 background/rotate/resize cycles, forced loss) on iPhone 11 + desktop",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "R-PERF"
+      ],
+      "gate": "0 unrecovered losses; memory/frame within 5 % of baseline",
+      "source": "native-docs-transfer #9"
+    },
+    {
+      "id": "R-NET",
+      "title": "Packet-loss tests 0/1/2/5 % + server metrics (oldest queue age, bytes per connection); decide unreliable channel / interest management",
+      "owner": "codex-server",
+      "status": "queued",
+      "depends_on": [
+        "R-A7"
+      ],
+      "gate": "snapshot-delay percentiles recorded; decision written",
+      "source": "native-docs-transfer #10",
+      "inbox": "inbox A27"
+    },
+    {
+      "id": "C-BUDGET",
+      "title": "Asset budgets in build manifests + case-exact path checks; city split into sectors for mobile",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-EXP"
+      ],
+      "gate": "build fails on budget breach; city meets mobile budget",
+      "source": "native-docs-transfer #8"
+    },
+    {
+      "id": "R-A22",
+      "title": "Release CPU copies: doNotHandleContextLost + reload, cleanCachedTextureBuffer, clearCachedData",
+      "owner": "codex-root+claude",
+      "status": "queued",
+      "depends_on": [
+        "R-A16"
+      ],
+      "inbox": "A22",
+      "gate": "iPhone 11 city <= 500 MiB steady / 700 MiB peak (provisional)"
+    },
+    {
+      "id": "U-C7",
+      "title": "Login images WebP/AVIF, logo 1080 px, remove unreferenced UI build files",
+      "owner": "codex-ui",
+      "status": "queued",
+      "depends_on": [],
+      "inbox": "C7",
+      "gate": "login <= 1.5 MB on the wire"
+    },
+    {
+      "id": "C-CITYMERGE",
+      "title": "Build-time city join per material per cell, quantized (no client merge)",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-EXP"
+      ],
+      "gate": "GPU geometry 92 -> 56 MiB; no gate stall"
+    },
+    {
+      "id": "C-DEADBUILD",
+      "title": "Remove DEV-only ?url city candidate imports (environment.ts 43-45)",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-ENV"
+      ],
+      "gate": "build no longer emits the candidates"
+    },
+    {
+      "id": "O-KTX",
+      "title": "Owner approval: install KTX-Software 4.4.2 (toktx) for KTX2 encoding",
+      "owner": "owner",
+      "status": "done",
+      "human_edge": true,
+      "depends_on": [],
+      "result": "not needed: KTX-Software 4.4.2 portable already in .harness/.cache/toolchains/ktx-4.4.2"
+    },
+    {
+      "id": "C-BOOTKTX2",
+      "title": "Boot PNGs -> KTX2; city texture budget",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-EXP"
+      ],
+      "gate": "boot download 8.93 MB -> 2-4 MB"
+    },
+    {
+      "id": "C-CITYSTREAM",
+      "title": "City streaming in cells with eviction",
+      "owner": "claude+codex-root",
+      "status": "queued",
+      "depends_on": [
+        "C-CITYMERGE"
+      ],
+      "gate": "city meets the mobile memory budget while walking"
+    },
+    {
+      "id": "R-A29",
+      "title": "iOS fixes: Screen Wake Lock, audio unlock events, no HTML media during play, text-size-adjust, backdrop-filter A/B",
+      "owner": "codex-root+ui",
+      "status": "queued",
+      "depends_on": [],
+      "inbox": "A29",
+      "gate": "20-min iPhone 11 session: no screen lock, no media fps drop"
+    },
+    {
+      "id": "C-P0-FSR-BENCH",
+      "title": "FSR1 GPU bench: 4 lock-guarded desktop sessions (WebGPU/WebGL2 x spawn/Sunmeadow), then capped + mobile plans",
+      "owner": "claude-agent",
+      "status": "queued",
+      "depends_on": [
+        "C-P0-FSR"
+      ],
+      "gate": "ship only if GPU p95 -15 % and beats bilinear on image metrics"
+    },
+    {
+      "id": "C-TIERS",
+      "title": "Device-tier plan (Low/Medium/High/Ultra/Epic, 7 classes, auto-detect)",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "result": "docs/plans/2026-10-02-device-tiers-plan.md"
+    },
+    {
+      "id": "C-QA",
+      "title": "Turnaround QA tool + Tripo credit guard",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "result": "tools/art/turnaround_qa.py (20 tests); heroes 01/04/06 PASS, 02/03/05 REGEN; docs/reviews/2026-10-02-tripo-credit-guard.md"
+    },
+    {
+      "id": "C-H-DR",
+      "title": "Design review heroes 01/04/06 -> Tripo eligible",
+      "owner": "claude",
+      "status": "done",
+      "depends_on": [
+        "C-QA"
+      ],
+      "result": "eligible_for_tripo=true; prep sets in planning/evidence/turnaround-qa-20261002/hero-0{1,4,6}/tripo-prep/"
+    },
+    {
+      "id": "F-HREGEN",
+      "title": "froggy: regenerate hero 02/03/05 turnarounds per regen_notes.md",
+      "owner": "froggy",
+      "status": "running",
+      "depends_on": [
+        "C-QA"
+      ],
+      "human_edge": false,
+      "note": "round 2 sent with F8"
+    },
+    {
+      "id": "C-CAPTURE",
+      "title": "Capture/compare harness + responsive device audit + perf ledger",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": [],
+      "out": [
+        "tools/capture/*",
+        "planning/perf-ledger.jsonl"
+      ]
+    },
+    {
+      "id": "C-RUST",
+      "title": "Rust/WASM opportunities + engine-choice mapping (tech.txt)",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": []
+    },
+    {
+      "id": "C-REUSE",
+      "title": "Repos (procedural-pixel-creatures, benilla) + Oriverse reuse review",
+      "owner": "claude-agent",
+      "status": "done",
+      "depends_on": [],
+      "result": "docs/reviews/2026-10-02-repos-oriverse-reuse.md: 40 items; benilla tooling ADOPT, pixel-creatures STUDY, Oriverse study-only (no licence)"
+    },
+    {
+      "id": "F-F8",
+      "title": "froggy: Galehorn key art x3 + Windstone arena key art x3 (16:9) + hero 03/05 regen round 2",
+      "owner": "froggy",
+      "status": "running",
+      "depends_on": []
+    },
+    {
+      "id": "C-LINT",
+      "title": "Blender placement lint pack (floating/sinking/unparented/z-fight/no-ground) -> export_helper.preflight",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": [],
+      "note": "inside map-dressing agent"
+    },
+    {
+      "id": "C-MAPDRESS",
+      "title": "City dressing pass: audit, declutter duplicates, de-float, detail clusters, r6 candidate",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": [],
+      "gate": "0 float/sink flags; <= 900k tris; before/after captures; root traversal verify"
+    },
+    {
+      "id": "R-TRIPO",
+      "title": "Codex side task: Tripo heroes 01/04/06 (job card, credit guard, 600 cap)",
+      "owner": "codex-root",
+      "status": "queued",
+      "depends_on": [
+        "C-H-DR"
+      ]
+    },
+    {
+      "id": "C-PRODUCER",
+      "title": "Asset production board + froggy drafts + Tripo cards (planning/review only)",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": []
+    },
+    {
+      "id": "C-TERR-COST",
+      "title": "Terrain GPU cost to <= +0.8 ms (grad sampling, top-2 layers, packing)",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": [
+        "C-P1-TERR"
+      ]
+    },
+    {
+      "id": "C-TERR-INT",
+      "title": "Apply terrain integration diff to environment.ts (after trees integration lands)",
+      "owner": "claude",
+      "status": "queued",
+      "depends_on": [
+        "C-P1-TERR",
+        "C-P1-TREE"
+      ]
+    },
+    {
+      "id": "C-RIME",
+      "title": "Rimecrest Wilds (snow) layout v1 + monsters + boss arena",
+      "owner": "claude-agent",
+      "status": "running",
+      "depends_on": []
+    }
+  ]
+}

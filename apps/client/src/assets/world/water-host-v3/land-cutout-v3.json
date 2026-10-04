@@ -1,0 +1,19 @@
+{
+  "schema": "xexoria.water-host-mask/1",
+  "derivedSha256": "5c925b68bb61f7b5b40a5362cc8d5531899772a8d8e9c719db79caaff644db46",
+  "deckContractSha256": "aa852d40aa0cce01ec6688c6ae6a5ea8cdfa4bf4d98be4557798d0e332b22c59",
+  "channels": "R=base water/banks,G=Y0 decks,B=blueprint P0 water",
+  "maskSha256": "f9df815a8a9362fc70661e504b3f997a49fbe6365132dcc67f29f2b78417d1a6",
+  "boundsXZ": [
+    -76,
+    -108,
+    52,
+    24
+  ],
+  "size": 512,
+  "cutTexels": 18422,
+  "fileBytes": 2877,
+  "gpuRgba8Bytes": 1048576,
+  "offlineGenerationMs": 2037.0972000000002,
+  "physicalHazardsAdmitted": false
+}

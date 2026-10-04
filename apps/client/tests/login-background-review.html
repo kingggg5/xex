@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login background lifecycle review</title>
+<link rel="stylesheet" href="/src/login-theme.css">
+<style>html,body{margin:0;height:100%;}#login-screen{position:fixed;}#review{position:fixed;z-index:100;left:12px;top:12px;max-width:580px;background:#071321;color:#fff;padding:12px;font:14px/1.5 system-ui;}pre{white-space:pre-wrap;}button{padding:12px;}</style>
+</head><body><section id="login-screen" class="login-screen"><div class="login-shell"></div></section>
+<div id="review"><button id="run">Run graphics recovery and cleanup check</button><pre id="result">Ready. This isolated harness never calls auth or opens the game.</pre></div>
+<script type="module">
+import {mountLoginBackground} from '/src/login-background.ts';
+const screen=document.getElementById('login-screen'),result=document.getElementById('result');
+const stop=mountLoginBackground(screen);
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const until=async condition=>{const deadline=performance.now()+4500;while(!condition() && performance.now()<deadline) await wait(50);return condition();};
+document.getElementById('run').addEventListener('click',async event=>{
+  event.target.disabled=true;
+  const checks={};
+  try{
+    const stage=screen.querySelector('.login-backdrop'),toggle=screen.querySelector('.login-motion-toggle');
+    if(stage.dataset.motion==='paused') toggle.click();
+    await until(()=>Number(stage.dataset.time)>0);
+    checks.visibility=document.visibilityState;
+    checks.renderer=stage.dataset.renderer;
+    if(checks.renderer!=='webgl2') throw new Error('WebGL2 unavailable: fallback is active');
+    const start=Number(stage.dataset.time);
+    checks.animationTimeAdvances=await until(()=>Number(stage.dataset.time)>start);
+    toggle.click(); const paused=stage.dataset.time; await wait(180);
+    checks.pauseFreezesClock=stage.dataset.time===paused && stage.dataset.motion==='paused';
+    toggle.click(); screen.hidden=true; await wait(180);
+    checks.hiddenStopsWork=stage.dataset.motion==='paused';
+    screen.hidden=false; checks.showResumes=await until(()=>stage.dataset.motion==='running');
+    const canvas=stage.querySelector('.login-portal-canvas'),gl=canvas.getContext('webgl2');
+    checks.buffer=[canvas.width,canvas.height];
+    const sample=()=>new Promise(resolve=>requestAnimationFrame(()=>{
+      const pixels=new Uint8Array(canvas.width*canvas.height*4); gl.readPixels(0,0,canvas.width,canvas.height,gl.RGBA,gl.UNSIGNED_BYTE,pixels);
+      let checksum=0,lit=0; for(let i=0;i<pixels.length;i+=16){checksum=(checksum*31+pixels[i]+pixels[i+3])>>>0;if(pixels[i+3])lit++;}
+      resolve({checksum,lit});
+    }));
+    checks.sampleA=await sample(); await until(()=>Number(stage.dataset.time)>start+.2);
+    // A non-preserved WebGL drawing buffer can be cleared on a skipped 30 Hz frame.
+    for(let i=0;i<90 && !checks.sampleA.lit;i++) checks.sampleA=await sample();
+    checks.sampleB=await sample();
+    for(let i=0;i<90 && (!checks.sampleB.lit || checks.sampleB.checksum===checks.sampleA.checksum);i++) checks.sampleB=await sample();
+    checks.shaderPixelsChange=checks.sampleA.lit>0 && checks.sampleA.checksum!==checks.sampleB.checksum;
+    const extension=gl.getExtension('WEBGL_lose_context');
+    if(!extension) throw new Error('Context recovery extension unavailable');
+    extension.loseContext(); await wait(200); checks.lossHandled=stage.dataset.renderer==='context-lost';
+    extension.restoreContext(); await wait(650); checks.resourcesRebuilt=stage.dataset.renderer==='webgl2';
+    checks.recoveredPixels=(await sample()).lit>0;
+    stop(); await wait(150);
+    checks.cleanup=!screen.querySelector('canvas') && !screen.querySelector('.login-motion-toggle');
+    checks.pass=Object.entries(checks).filter(([key])=>!['renderer','buffer','sampleA','sampleB','visibility'].includes(key)).every(([,value])=>value===true);
+    result.textContent=JSON.stringify(checks,null,2); result.dataset.status=checks.pass?'pass':'fail';
+  }catch(error){result.textContent=JSON.stringify({...checks,error:String(error)},null,2); result.dataset.status='fail';stop();}
+},{once:true});
+</script></body></html>

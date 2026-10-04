@@ -1,0 +1,118 @@
+{
+  "enemies": [
+    {
+      "id": "puddlekin",
+      "kind": 1,
+      "name_key": "enemy_puddlekin",
+      "hp": 90,
+      "speed": 3.0,
+      "aggro": 8.0,
+      "leash": 16.0,
+      "respawn_s": 15,
+      "exp": 9,
+      "splash_radius": 2.5,
+      "splash_damage": 18,
+      "splash_windup_ms": 900,
+      "splash_active_ms": 50,
+      "splash_recovery_ms": 700,
+      "splash_cooldown_ms": 3000,
+      "drops": [
+        {
+          "item": "trail_potion",
+          "chance_pct": 20,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "level": 2,
+      "rank": "normal"
+    },
+    {
+      "id": "mossling",
+      "kind": 2,
+      "name_key": "enemy_mossling",
+      "hp": 45,
+      "speed": 2.4,
+      "aggro": 6,
+      "leash": 14,
+      "respawn_s": 10,
+      "exp": 5,
+      "splash_radius": 1.8,
+      "splash_damage": 10,
+      "splash_windup_ms": 900,
+      "splash_active_ms": 250,
+      "splash_recovery_ms": 600,
+      "splash_cooldown_ms": 2200,
+      "drops": [
+        {
+          "item": "dew_bead",
+          "chance_pct": 60,
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "level": 1,
+      "rank": "normal"
+    },
+    {
+      "id": "thistle_boar",
+      "kind": 3,
+      "name_key": "enemy_thistle_boar",
+      "hp": 140,
+      "speed": 3.6,
+      "aggro": 10,
+      "leash": 20,
+      "respawn_s": 20,
+      "exp": 14,
+      "splash_radius": 3.0,
+      "splash_damage": 24,
+      "splash_windup_ms": 1100,
+      "splash_active_ms": 300,
+      "splash_recovery_ms": 800,
+      "splash_cooldown_ms": 3000,
+      "drops": [
+        {
+          "item": "meadow_box",
+          "chance_pct": 8,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "item": "dew_bead",
+          "chance_pct": 40,
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "level": 3,
+      "rank": "normal"
+    },
+    {
+      "id": "glade_wisp",
+      "kind": 4,
+      "name_key": "enemy_glade_wisp",
+      "hp": 70,
+      "speed": 2.0,
+      "aggro": 7,
+      "leash": 18,
+      "respawn_s": 12,
+      "exp": 10,
+      "splash_radius": 2.2,
+      "splash_damage": 14,
+      "splash_windup_ms": 1000,
+      "splash_active_ms": 250,
+      "splash_recovery_ms": 700,
+      "splash_cooldown_ms": 2600,
+      "drops": [
+        {
+          "item": "trail_potion",
+          "chance_pct": 30,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "level": 2,
+      "rank": "normal"
+    }
+  ]
+}

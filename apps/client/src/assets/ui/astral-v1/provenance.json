@@ -1,0 +1,47 @@
+{
+  "id": "xexoria-astral-ui-v1",
+  "created": "2026-10-01",
+  "material": "Carved slate, aged bronze/gold corners, dark blue glass, sapphire interactables",
+  "frame": {
+    "file": "panel-frame.svg",
+    "width": 192,
+    "height": 192,
+    "slice": 32,
+    "origin": "Original hand-authored SVG",
+    "raster_texture_count": 0
+  },
+  "fonts": {
+    "body": "Noto Sans Thai variable 400–700, Thai + Latin subsets",
+    "display": "Existing Marcellus (login branding)",
+    "source": "https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400..700&display=swap",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "NotoSansThai-OFL.txt"
+  },
+  "files": [
+    {
+      "name": "font-source.css",
+      "bytes": 1325,
+      "sha256": "cbc1401ef1b3ff0e00dc66c9cb5e64af1297bd50cee05d3641f4b3458cd49c68"
+    },
+    {
+      "name": "noto-sans-thai-latin-variable.woff2",
+      "bytes": 30748,
+      "sha256": "1a66f268c8d76575807979309cbbac3aff7b61919f59ea19fdc821d92fb407f3"
+    },
+    {
+      "name": "noto-sans-thai-variable.woff2",
+      "bytes": 26924,
+      "sha256": "1f5a173641bbcb3ca4fb0a986858b6b07f8cd5dd2ed61236b40548c7a3c7292f"
+    },
+    {
+      "name": "NotoSansThai-OFL.txt",
+      "bytes": 4380,
+      "sha256": "2e98fd23a52d253db8612cd5942c8f2ff4111b21d2367050fdca91d8ccc374a0"
+    },
+    {
+      "name": "panel-frame.svg",
+      "bytes": 1569,
+      "sha256": "b4d38d25218e28454876cfd4ce4c3c4c88d65d2ba75c09b330d9fd5d83aadf0f"
+    }
+  ]
+}

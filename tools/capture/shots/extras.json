@@ -1,0 +1,181 @@
+{
+	"schema": "xexoria-capture-shots/1",
+	"name": "extras",
+	"notes": "Optional sets on top of the baseline: dawn/dusk, FSR 1, a low tier, a phone-class viewport, LOD review distances, weather, and the offline-preview spawn (follow camera, not deterministic). Party and dense-combat scenes need the game server and are not listed.",
+	"scenes": {
+		"city": {
+			"label": "City (lookdev city review)",
+			"kind": "lookdev",
+			"query": {
+				"lookdev": "1",
+				"set": "city"
+			}
+		},
+		"sunmeadow": {
+			"label": "Sunmeadow (lookdev terrain review)",
+			"kind": "lookdev",
+			"query": {
+				"lookdev": "1",
+				"set": "terrain"
+			}
+		},
+		"spawn": {
+			"label": "Offline-preview spawn (follow camera; monsters roam, not deterministic)",
+			"kind": "page",
+			"query": {},
+			"deterministic": false
+		}
+	},
+	"times": {
+		"dawn": 6,
+		"noon": 12,
+		"dusk": 18,
+		"night": 0
+	},
+	"defaults": {
+		"viewport": {
+			"width": 1920,
+			"height": 1080,
+			"dpr": 1
+		},
+		"weather": "clear",
+		"warmupFrames": 60,
+		"sampleFrames": 450,
+		"frameCap": "uncapped",
+		"clock": "virtual",
+		"shotMethod": "canvas",
+		"views": [
+			"player",
+			"side",
+			"close",
+			"elevated"
+		],
+		"stableFrames": 30,
+		"temporal": {
+			"frames": 24,
+			"scale": 0.5,
+			"step": 4
+		}
+	},
+	"groups": [
+		{
+			"name": "dawn-dusk",
+			"scene": [
+				"city",
+				"sunmeadow"
+			],
+			"time": [
+				"dawn",
+				"dusk"
+			],
+			"renderer": [
+				"webgpu",
+				"webgl2"
+			]
+		},
+		{
+			"name": "fsr",
+			"scene": [
+				"city",
+				"sunmeadow"
+			],
+			"time": "noon",
+			"renderer": [
+				"webgpu",
+				"webgl2"
+			],
+			"fsr": [
+				"1.5",
+				"2"
+			],
+			"views": [
+				"player",
+				"elevated"
+			]
+		},
+		{
+			"name": "tier-low",
+			"scene": [
+				"city",
+				"sunmeadow"
+			],
+			"time": "noon",
+			"renderer": "webgl2",
+			"tier": [
+				"low",
+				"medium"
+			],
+			"views": [
+				"player",
+				"elevated"
+			]
+		},
+		{
+			"name": "phone-landscape",
+			"scene": [
+				"city",
+				"sunmeadow"
+			],
+			"time": "noon",
+			"renderer": [
+				"webgl2",
+				"webgpu"
+			],
+			"viewport": [
+				{
+					"name": "iphone11-land",
+					"width": 896,
+					"height": 414,
+					"dpr": 2,
+					"mobile": true,
+					"touch": true,
+					"userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"
+				}
+			],
+			"views": [
+				"player",
+				"elevated"
+			]
+		},
+		{
+			"name": "lod-review",
+			"scene": [
+				"city",
+				"sunmeadow"
+			],
+			"time": "noon",
+			"renderer": "webgpu",
+			"lodDistance": [
+				40,
+				120
+			],
+			"views": [
+				"player"
+			]
+		},
+		{
+			"name": "weather",
+			"scene": "sunmeadow",
+			"time": "noon",
+			"renderer": "webgpu",
+			"weather": [
+				"cloudy",
+				"rain",
+				"fog"
+			],
+			"views": [
+				"player",
+				"elevated"
+			]
+		},
+		{
+			"name": "spawn",
+			"scene": "spawn",
+			"time": "noon",
+			"renderer": [
+				"webgpu",
+				"webgl2"
+			]
+		}
+	]
+}

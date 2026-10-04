@@ -1,0 +1,79 @@
+{
+	"schema": "xexoria-capture-shots/1",
+	"name": "baseline",
+	"notes": "Master plan §1 proof set: four locked lookdev views (player 13 m, side, close, elevated) for the city and Sunmeadow, noon and night, WebGPU and WebGL2, 1920x1080 at DPR 1, game Auto tier (desktop High). Lookdev scenes need no game server.",
+	"scenes": {
+		"city": {
+			"label": "City (lookdev city review: detailed city, fountain plaza z≈176)",
+			"kind": "lookdev",
+			"query": {
+				"lookdev": "1",
+				"set": "city"
+			}
+		},
+		"sunmeadow": {
+			"label": "Sunmeadow (lookdev terrain review: meadow cells around z≈-90)",
+			"kind": "lookdev",
+			"query": {
+				"lookdev": "1",
+				"set": "terrain"
+			}
+		},
+		"spawn": {
+			"label": "Offline-preview spawn (follow camera; monsters roam, not deterministic)",
+			"kind": "page",
+			"query": {},
+			"deterministic": false
+		}
+	},
+	"times": {
+		"dawn": 6,
+		"noon": 12,
+		"dusk": 18,
+		"night": 0
+	},
+	"defaults": {
+		"viewport": {
+			"width": 1920,
+			"height": 1080,
+			"dpr": 1
+		},
+		"weather": "clear",
+		"tier": null,
+		"fsr": null,
+		"warmupFrames": 60,
+		"sampleFrames": 450,
+		"frameCap": "uncapped",
+		"clock": "virtual",
+		"shotMethod": "canvas",
+		"views": [
+			"player",
+			"side",
+			"close",
+			"elevated"
+		],
+		"stableFrames": 30,
+		"temporal": {
+			"frames": 24,
+			"scale": 0.5,
+			"step": 4
+		}
+	},
+	"groups": [
+		{
+			"name": "locked-views",
+			"scene": [
+				"city",
+				"sunmeadow"
+			],
+			"time": [
+				"noon",
+				"night"
+			],
+			"renderer": [
+				"webgpu",
+				"webgl2"
+			]
+		}
+	]
+}

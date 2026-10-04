@@ -1,0 +1,114 @@
+{
+  "schema": "xexoria.chat-filter-admission/1",
+  "date": "2026-10-02 Asia/Bangkok",
+  "status": "INTEGRATED_SOURCE_VERIFIED_NOT_LIVE_DEPLOYED",
+  "archive_sha256": "da7ec355f7667cd11f7c370c0bfa56a6c847eb010bcb41f3d168e13734c88fb8",
+  "upstream_roster_sha256": "6743636fb034c9effc963392b12f6ee53aa5ff94a92f4cf64a1cbdb08793cc93",
+  "source_mirror": "%USERPROFILE%\\Downloads\\Xexoria-Game\\agent-output\\20261002-chat-filter\\source\\chat_filter",
+  "source_mirror_byte_identity": true,
+  "license": "MIT supplied notice retained",
+  "dependencies_exact": {
+    "aho-corasick": "1.1.5",
+    "unicode-normalization": "0.1.25",
+    "unicode-segmentation": "1.13.3"
+  },
+  "working_patches": [
+    {
+      "file": "Cargo.toml",
+      "original_sha256": "3e587be74808484680e81cc52b9d58b78ee18c13c366b4444b98f6b1bdc63d95",
+      "working_sha256": "cf24dd697f3afe11b90474d879410dc41d1a95bd3da5753d63e78bd92526cf32"
+    },
+    {
+      "file": "README.md",
+      "original_sha256": "c3db271f60838a6f6fe2a411fa8c52febcdb0ba0418ea3a5510e1cc22cd2323c",
+      "working_sha256": "de1716fc9d421243297fcb1f170c8deb303339b51ce572b2a8150979097e7508"
+    },
+    {
+      "file": "src/lib.rs",
+      "original_sha256": "272273771781cf89f784f30c1170c7795c908c60a32c7c09fd9a86bb69e35fd4",
+      "working_sha256": "b5899eec3594658b260ec2a7416fa4e1b061dea4e67ca4aecc44cd28cf65eaa0"
+    },
+    {
+      "file": "tests/regression.rs",
+      "original_sha256": "c2e1458cc6a7093d394942b4bbf32cabab0cd63888722f02d99bb37b22fe2ecc",
+      "working_sha256": "5e5b8b794e078b5c6c6151863a16c47ba2d4c0a00fa815d841f6d6ef6b020199"
+    }
+  ],
+  "host_sources_sha256": {
+    "apps/server/Cargo.toml": "19f0f1d60cb7f349b3effeddaaecc53673c87d8ddf67b38d3d8bb67cc2210e11",
+    "apps/server/Cargo.lock": "3422848974759850d3138bdc4a10e45608e7d41a7f2c5a8f5c9a11194887468d",
+    "apps/server/src/chat_moderation.rs": "356d8dfcf49690bbd5e3b58fbd196d9025bbf9fce09b8eea4af8dcfdadf059cf",
+    "apps/server/src/chat_moderation_routes_tests.rs": "1f9337b03844bd79d159a2f422e00c0c9675df2aa7c906b674436755e12189c1",
+    "apps/server/src/lib.rs": "272c9192aa29a374e46c2fb6eabbc9decb0f453331ad2a9e471fdbbecf83d09e",
+    "apps/server/src/room.rs": "7e53fe728676c6ed1b0fe30f0f683b48d92043271d9365f9824d3d445fa9948c",
+    "apps/server/src/social.rs": "89cd331c7a6cdd7e332317e4ae44fa055500314d7c977850d877334099c5c622",
+    "apps/server/src/main.rs": "7d00ddfdbd46dcbaf6ff4f45d4f30d2d198baec740f796a13a09b5f7eb8256cb",
+    "apps/client/src/main.ts": "d39bd58b5434db841f0c80e6efcf071f6c9c17df261c7d360b8c6ba79604ace9",
+    "apps/client/src/chat-moderation-copy.mjs": "2ad0e4ab626201b587b85314b37ca1c714a24e0e6dc7dfac091ebdbdbf920788",
+    "apps/client/src/chat-moderation-copy.d.mts": "dc9812676adb05a00eb816f3bd86e862fe0b40f28a2970731504a3a7b946041e",
+    "apps/client/tests/chat-moderation-copy.test.mjs": "8cf2e6eb93a8deb4abc805eda7c5f2502fc664e1f371fffb8a165661be23f808"
+  },
+  "source_hash_scope": "aggregate shared working files; not authorship of every existing hunk",
+  "routes": [
+    "room",
+    "cross-instance group",
+    "megaphone"
+  ],
+  "quota_identity": "full server-resolved principal retained in epoch-checked live connection through queued dispatch; standalone RoomHandle uses authenticated session",
+  "policy": {
+    "seed_rules": 11,
+    "english_literal": "mask when prescribed",
+    "thai_or_heuristic_or_incomplete": "withhold",
+    "bans": false,
+    "review_queue": false,
+    "input_bytes": 512,
+    "normalized_bytes": 2048,
+    "candidate_limit": 256,
+    "finding_limit": 32,
+    "global_burst": 6,
+    "global_refill_per_second": 2,
+    "global_keys": 1024,
+    "channel_keys": 3072,
+    "repeat_seconds": 5,
+    "recent_fingerprints": 16,
+    "idle_ttl_seconds": 60,
+    "prune_budget": 8
+  },
+  "verification": {
+    "toolchain": "rustc/cargo1.96 Windows",
+    "package_tests": 36,
+    "server_library_pass": 208,
+    "server_binary_pass": 7,
+    "server_database_ignored": 7,
+    "route_regressions_included": 9,
+    "client_tests": 302,
+    "typescript": "PASS",
+    "svelte_errors": 0,
+    "svelte_warnings": 0,
+    "cargo_all_targets_check": "PASS",
+    "original_archive_and_mirror": "BYTE_IDENTICAL",
+    "benchmark_rerun": false,
+    "no_existing_server_restart": true,
+    "no_external_messages_or_raw_chat_upload": true
+  },
+  "log_files": [
+    "chat-route-tests-final.log",
+    "chat-route-tests.log",
+    "client-check-final.log",
+    "client-check.log",
+    "client-moderation-tests.log",
+    "client-tests-final.log",
+    "package-test.log",
+    "room-chat-regression.log",
+    "server-check-final.log",
+    "server-tests-final.log",
+    "server-tests.log"
+  ],
+  "limitations": [
+    "11 illustrative rules, not a complete profanity dictionary",
+    "Existing scalar/byte caps remain separate from grapheme-safe masking",
+    "Process-local quota, not distributed",
+    "No live deployment or database-dependent qualification",
+    "Upstream Report Debug includes original text; host must not log reports"
+  ]
+}

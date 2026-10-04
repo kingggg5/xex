@@ -1,0 +1,301 @@
+{
+  "schema": "xexoria.semantic-prop-candidate-manifest/1",
+  "status": "SOURCE_REVIEW_AND_STATIC_PASS_NATIVE_UNVERIFIED",
+  "assets": [
+    {
+      "id": "sm_blueprint_signpost",
+      "family": "craft",
+      "file": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod0.glb",
+      "lods": [
+        "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod0.glb",
+        "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod1.glb",
+        "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod2.glb"
+      ],
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.075
+        ],
+        "max": [
+          0.8,
+          2.2,
+          0.193
+        ]
+      },
+      "pivot": [
+        0,
+        0,
+        0
+      ],
+      "collider": {
+        "file": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_collider.glb",
+        "type": "pole box",
+        "min": [
+          -0.1,
+          0,
+          -0.1
+        ],
+        "max": [
+          0.1,
+          2.2,
+          0.1
+        ],
+        "admission": "UNVERIFIED_ROOT_OWNS_PLACEMENT"
+      },
+      "shadow_proxy": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_shadow_proxy.glb",
+      "material_slots": [
+        "sm_craft_timber"
+      ],
+      "atlas_family": "sm_craft",
+      "authoring_texel_density_px_m": 360,
+      "units": "metres",
+      "front": "Blender -Y / glTF +Z; root aligns world-authored glTF",
+      "labels": "No baked text; root data/HTML labels later",
+      "anchor_reference": "planning/evidence/blueprint-p1-20261003/st8-root-anchors.json",
+      "expected_instances": 4,
+      "license": "Owner-authored original procedural sign and existing owner craft maps",
+      "source": "assets/blender/props/blueprint_signpost_v1/sources/sm_blueprint_signpost_r01.blend",
+      "status": "SOURCE_REVIEW_AND_STATIC_PASS_NATIVE_UNVERIFIED"
+    }
+  ],
+  "files": {
+    "lod0": {
+      "path": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod0.glb",
+      "sha256": "f3f89f38e44d4ac1b4f50cfc53d31edc68fe6332b9f7f3b9bb392710d422baaa",
+      "bytes": 15232,
+      "metrics": {
+        "triangles": 348,
+        "draw_calls": 1,
+        "materials": 1,
+        "texture_mib": 3.083,
+        "glb_kib": 14.875,
+        "transfer_kib": 291.321,
+        "vertex_attributes": 4,
+        "vertex_mib": 0.017
+      },
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "KHR_mesh_quantization",
+        "KHR_texture_basisu"
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 6,
+        "infos": 9,
+        "hints": 0,
+        "truncated": false,
+        "messages": [
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/0/mimeType)",
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/1/mimeType)",
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/2/mimeType)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/0)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/1)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/2)"
+        ]
+      },
+      "source_reimport": "PASS"
+    },
+    "lod1": {
+      "path": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod1.glb",
+      "sha256": "48f5ecb2be820d6f6c9c868ee514650c8815129c68eb0c6f96c00dde200ad59f",
+      "bytes": 5724,
+      "metrics": {
+        "triangles": 92,
+        "draw_calls": 1,
+        "materials": 1,
+        "texture_mib": 3.083,
+        "glb_kib": 5.59,
+        "transfer_kib": 282.036,
+        "vertex_attributes": 4,
+        "vertex_mib": 0.004
+      },
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "KHR_mesh_quantization",
+        "KHR_texture_basisu"
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 6,
+        "infos": 9,
+        "hints": 0,
+        "truncated": false,
+        "messages": [
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/0/mimeType)",
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/1/mimeType)",
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/2/mimeType)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/0)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/1)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/2)"
+        ]
+      },
+      "source_reimport": "PASS"
+    },
+    "lod2": {
+      "path": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_lod2.glb",
+      "sha256": "82f7276126fa04c9fbdd4200b736607cdffb7097d41d545af5cf70a13d60a84c",
+      "bytes": 5124,
+      "metrics": {
+        "triangles": 68,
+        "draw_calls": 1,
+        "materials": 1,
+        "texture_mib": 3.083,
+        "glb_kib": 5.004,
+        "transfer_kib": 281.45,
+        "vertex_attributes": 4,
+        "vertex_mib": 0.003
+      },
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "KHR_mesh_quantization",
+        "KHR_texture_basisu"
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 6,
+        "infos": 9,
+        "hints": 0,
+        "truncated": false,
+        "messages": [
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/0/mimeType)",
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/1/mimeType)",
+          "WARNING VALUE_NOT_IN_LIST: Invalid value 'image/ktx2'. Valid values are ('image/jpeg', 'image/png'). (/images/2/mimeType)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/0)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/1)",
+          "WARNING IMAGE_UNRECOGNIZED_FORMAT: Image format not recognized. (/images/2)"
+        ]
+      },
+      "source_reimport": "PASS"
+    },
+    "collider": {
+      "path": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_collider.glb",
+      "sha256": "b9b2317792c9bebc4d9bf23ca4ad0e84e4ea0ac990da10defcbf9d2f16575baf",
+      "bytes": 2180,
+      "metrics": {
+        "triangles": 12,
+        "draw_calls": 1,
+        "materials": 0,
+        "texture_mib": 0,
+        "glb_kib": 2.129,
+        "transfer_kib": 2.129,
+        "vertex_attributes": 2,
+        "vertex_mib": 0
+      },
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "KHR_mesh_quantization"
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 2,
+        "hints": 0,
+        "truncated": false,
+        "messages": []
+      },
+      "source_reimport": "PASS"
+    },
+    "shadow_proxy": {
+      "path": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/sm_blueprint_signpost_shadow_proxy.glb",
+      "sha256": "c38012e06707c828bd8e8f47baa527259f5339507efffe88b49b7078256ea119",
+      "bytes": 2844,
+      "metrics": {
+        "triangles": 60,
+        "draw_calls": 1,
+        "materials": 0,
+        "texture_mib": 0,
+        "glb_kib": 2.777,
+        "transfer_kib": 2.777,
+        "vertex_attributes": 2,
+        "vertex_mib": 0.002
+      },
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "KHR_mesh_quantization"
+      ],
+      "validator": {
+        "errors": 0,
+        "warnings": 0,
+        "infos": 2,
+        "hints": 0,
+        "truncated": false,
+        "messages": []
+      },
+      "source_reimport": "PASS"
+    }
+  },
+  "textures": [
+    {
+      "name": "sm_craft_normal",
+      "slots": [
+        "normalTexture"
+      ],
+      "mode": "UASTC",
+      "cache": "hit",
+      "source_bytes": 14694,
+      "source_sha256": "8c14888a21a29eb1e5326044948b44f9df42a32174e88801c987da9605f435c1",
+      "file": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/textures/sm_craft_normal-28059756f3f8.ktx2",
+      "bytes": 18668,
+      "sha256": "28059756f3f8163265873aa79665b8120abea92317768dd2c3f9f457277f83e7",
+      "codec": "UASTC",
+      "width": 512,
+      "height": 512,
+      "levels": 10,
+      "alpha": false,
+      "srgb": false,
+      "supercompression": "zstd",
+      "gpu_bytes": 349552,
+      "gpu_target": "ASTC 4x4 / BC7 (8 bpp)",
+      "rgba8_fallback_bytes": 1398100
+    },
+    {
+      "name": "sm_craft_orm",
+      "slots": [
+        "occlusionTexture",
+        "metallicRoughnessTexture"
+      ],
+      "mode": "UASTC",
+      "cache": "hit",
+      "source_bytes": 15899,
+      "source_sha256": "82b8e1f13c25a3c632aa069943534cc267dd885ff07e345568e5f5b5e207bb8b",
+      "file": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/textures/sm_craft_orm-d5c3b9bab922.ktx2",
+      "bytes": 27402,
+      "sha256": "d5c3b9bab9228d70f474c7e8ae48362cac5b74051f5632ee5b832728319e8e42",
+      "codec": "UASTC",
+      "width": 256,
+      "height": 256,
+      "levels": 9,
+      "alpha": false,
+      "srgb": false,
+      "supercompression": "zstd",
+      "gpu_bytes": 87408,
+      "gpu_target": "ASTC 4x4 / BC7 (8 bpp)",
+      "rgba8_fallback_bytes": 349524
+    },
+    {
+      "name": "sm_craft_albedo",
+      "slots": [
+        "baseColorTexture"
+      ],
+      "mode": "ETC1S",
+      "cache": "hit",
+      "source_bytes": 806383,
+      "source_sha256": "8ce4f9b1d517825e50f4e9790e773210a8be2201941a6e1f6797ccc6c9844ebb",
+      "file": "assets/models/props/blueprint-signpost-v1-candidate/r01/runtime/textures/sm_craft_albedo-e6100562aa86.ktx2",
+      "bytes": 237011,
+      "sha256": "e6100562aa86819d4d5f92d86571b273e11dd67b949976cc954dcda92fa24076",
+      "codec": "ETC1S",
+      "width": 2048,
+      "height": 2048,
+      "levels": 12,
+      "alpha": false,
+      "srgb": true,
+      "supercompression": "BasisLZ",
+      "gpu_bytes": 2796216,
+      "gpu_target": "ETC2 RGB / BC1 (4 bpp)",
+      "rgba8_fallback_bytes": 22369620
+    }
+  ],
+  "do_not_promote": "Root owns native import, terrain/physical admission and overlay placement; no default promotion"
+}

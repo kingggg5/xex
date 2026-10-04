@@ -1,0 +1,3602 @@
+{
+  "schema": "xexoria.level-layout.v1",
+  "region": "rimecrest_snow",
+  "display_name": {
+    "en": "Rimecrest Wilds",
+    "th": "แดนหิมะไรม์เครสต์"
+  },
+  "version": "v1-claude-20261002",
+  "status": "DESIGN — Claude level design; source of truth for the Blender blockout. Not live content.",
+  "units": "metres",
+  "axes": "Babylon XZ: +x east, +z north. Blender export maps (x, y, z) -> Babylon (-x, z, -y).",
+  "base": "planning/levels/rimecrest-v1-base.json (minimal xexoria.level-base.v1: colliding props with radii, POIs and quest objects)",
+  "renamed": "was 'Frostvale' (frostvale_snow) until 2026-10-02 20:50; renamed to avoid closeness to another game's 'Frostveil Pass'",
+  "invariants": {
+    "surface_y": 0,
+    "traversal": "planar XZ moveCapsule on Y=0; relief is visual only and sits outside walkable space",
+    "player_radius_m": 0.35,
+    "player_height_m": 1.8,
+    "walk_speed_m_s": 4.5,
+    "art_cell_m": 64,
+    "zone_half_extent_m": 160,
+    "camera": "ArcRotate radius 13 m, beta 1.18 rad, FOV 1.02 rad, target 1.65 m",
+    "no_invisible_walls": "every collider sits on a visible blocker: water edge, pressure-ridge slabs, rock, cliff toe, ruin wall, trunk, basalt rim or the barred gate",
+    "frozen_lake": "decision: the shore-fast ice shelf (and the hidden causeway + isle) is walkable ground at Y=0; the thin ice and the steaming open lead are a no-go water hazard bounded by pressure-ridge slabs. Why: a calm, telegraph-readable ice field for lv1 that reads as solid; the visible slab line and dark water make the boundary obvious with no invisible wall; no shortcut across the lake skips the loop or its reveals; the open lead (kept open by the warm Steamrun) foreshadows the boss heat; no new server movement features"
+  },
+  "bounds_xz": {
+    "stage": [
+      -64,
+      64,
+      -64,
+      128
+    ],
+    "walkable_hint": [
+      -58,
+      58,
+      -56,
+      123
+    ]
+  },
+  "plan_options": {
+    "draw_warps": true,
+    "draw_arenas": true,
+    "draw_sightlines": true,
+    "min_main_path_width_m": 4.0,
+    "check_paths_in_walkable": true,
+    "check_warps_vs_arenas": true
+  },
+  "prop_path_margin_m": 0.5,
+  "hazards": [
+    {
+      "id": "glassmere_open_water",
+      "kind": "water",
+      "polygon_xz": [
+        [
+          -22.0,
+          3.0
+        ],
+        [
+          -12,
+          1.8
+        ],
+        [
+          -4,
+          2.2
+        ],
+        [
+          2.2,
+          6.0
+        ],
+        [
+          3.6,
+          14
+        ],
+        [
+          4.4,
+          30
+        ],
+        [
+          3.8,
+          46
+        ],
+        [
+          2.3,
+          57.5
+        ],
+        [
+          -2.2,
+          65.5
+        ],
+        [
+          -10,
+          68.8
+        ],
+        [
+          -17,
+          68.4
+        ],
+        [
+          -22.0,
+          67.2
+        ],
+        [
+          -22.0,
+          47.0
+        ],
+        [
+          -10.5,
+          47.0
+        ],
+        [
+          -9.79,
+          47.76
+        ],
+        [
+          -8.95,
+          48.36
+        ],
+        [
+          -7.99,
+          48.77
+        ],
+        [
+          -6.97,
+          48.98
+        ],
+        [
+          -5.93,
+          48.97
+        ],
+        [
+          -4.92,
+          48.74
+        ],
+        [
+          -3.97,
+          48.31
+        ],
+        [
+          -3.14,
+          47.7
+        ],
+        [
+          -2.44,
+          46.92
+        ],
+        [
+          -1.93,
+          46.02
+        ],
+        [
+          -1.61,
+          45.03
+        ],
+        [
+          -1.5,
+          44.0
+        ],
+        [
+          -1.61,
+          42.97
+        ],
+        [
+          -1.93,
+          41.98
+        ],
+        [
+          -2.44,
+          41.08
+        ],
+        [
+          -3.14,
+          40.3
+        ],
+        [
+          -3.97,
+          39.69
+        ],
+        [
+          -4.92,
+          39.26
+        ],
+        [
+          -5.93,
+          39.03
+        ],
+        [
+          -6.97,
+          39.02
+        ],
+        [
+          -7.99,
+          39.23
+        ],
+        [
+          -8.95,
+          39.64
+        ],
+        [
+          -9.79,
+          40.24
+        ],
+        [
+          -10.5,
+          41.0
+        ],
+        [
+          -22.0,
+          41.0
+        ]
+      ],
+      "source": "layout decision 2026-10-02: thin ice and the open lead are no-go water; the pressure ridge is the visible collider on the shelf side, the water edge elsewhere (banks with boulders and frozen reeds)"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "glassmere_ice_shelf",
+      "surface": "shore-fast ice, walkable at Y=0",
+      "polygon_xz": [
+        [
+          -32.5,
+          3.4
+        ],
+        [
+          -22.0,
+          3.4
+        ],
+        [
+          -22.0,
+          67.0
+        ],
+        [
+          -29,
+          67.2
+        ],
+        [
+          -33,
+          60
+        ],
+        [
+          -33.5,
+          40
+        ],
+        [
+          -33,
+          20
+        ]
+      ],
+      "plan_rgba": [
+        205,
+        228,
+        240,
+        170
+      ],
+      "look": "snow-dusted white-blue ice with skate scratches and drift tongues; never glossy; telegraphs read on it (mid value 0.70-0.78)"
+    },
+    {
+      "id": "cairn_isle_ice",
+      "surface": "causeway and isle, walkable at Y=0",
+      "polygon_xz": [
+        [
+          -22.0,
+          41.0
+        ],
+        [
+          -10.6,
+          41.0
+        ],
+        [
+          -9.57,
+          40.06
+        ],
+        [
+          -8.45,
+          39.39
+        ],
+        [
+          -7.18,
+          39.05
+        ],
+        [
+          -5.87,
+          39.04
+        ],
+        [
+          -4.61,
+          39.37
+        ],
+        [
+          -3.47,
+          40.02
+        ],
+        [
+          -2.54,
+          40.95
+        ],
+        [
+          -1.88,
+          42.08
+        ],
+        [
+          -1.54,
+          43.35
+        ],
+        [
+          -1.54,
+          44.65
+        ],
+        [
+          -1.88,
+          45.92
+        ],
+        [
+          -2.54,
+          47.05
+        ],
+        [
+          -3.47,
+          47.98
+        ],
+        [
+          -4.61,
+          48.63
+        ],
+        [
+          -5.87,
+          48.96
+        ],
+        [
+          -7.18,
+          48.95
+        ],
+        [
+          -8.45,
+          48.61
+        ],
+        [
+          -9.57,
+          47.94
+        ],
+        [
+          -10.6,
+          47.0
+        ],
+        [
+          -22.0,
+          47.0
+        ]
+      ],
+      "plan_rgba": [
+        205,
+        228,
+        240,
+        170
+      ]
+    },
+    {
+      "id": "sunscald_floor",
+      "surface": "bare wet basalt flagstones with a carved sun-ray inlay; snow-free (geothermal)",
+      "polygon_xz": [
+        [
+          57.0,
+          -34.0
+        ],
+        [
+          56.88,
+          -31.8
+        ],
+        [
+          56.54,
+          -29.63
+        ],
+        [
+          55.97,
+          -27.51
+        ],
+        [
+          55.18,
+          -25.46
+        ],
+        [
+          54.19,
+          -23.5
+        ],
+        [
+          52.99,
+          -21.66
+        ],
+        [
+          51.61,
+          -19.95
+        ],
+        [
+          50.05,
+          -18.39
+        ],
+        [
+          48.34,
+          -17.01
+        ],
+        [
+          46.5,
+          -15.81
+        ],
+        [
+          44.54,
+          -14.82
+        ],
+        [
+          42.49,
+          -14.03
+        ],
+        [
+          40.37,
+          -13.46
+        ],
+        [
+          38.2,
+          -13.12
+        ],
+        [
+          36.0,
+          -13.0
+        ],
+        [
+          33.8,
+          -13.12
+        ],
+        [
+          31.63,
+          -13.46
+        ],
+        [
+          29.51,
+          -14.03
+        ],
+        [
+          27.46,
+          -14.82
+        ],
+        [
+          25.5,
+          -15.81
+        ],
+        [
+          23.66,
+          -17.01
+        ],
+        [
+          21.95,
+          -18.39
+        ],
+        [
+          20.39,
+          -19.95
+        ],
+        [
+          19.01,
+          -21.66
+        ],
+        [
+          17.81,
+          -23.5
+        ],
+        [
+          16.82,
+          -25.46
+        ],
+        [
+          16.03,
+          -27.51
+        ],
+        [
+          15.46,
+          -29.63
+        ],
+        [
+          15.12,
+          -31.8
+        ],
+        [
+          15.0,
+          -34.0
+        ],
+        [
+          15.12,
+          -36.2
+        ],
+        [
+          15.46,
+          -38.37
+        ],
+        [
+          16.03,
+          -40.49
+        ],
+        [
+          16.82,
+          -42.54
+        ],
+        [
+          17.81,
+          -44.5
+        ],
+        [
+          19.01,
+          -46.34
+        ],
+        [
+          20.39,
+          -48.05
+        ],
+        [
+          21.95,
+          -49.61
+        ],
+        [
+          23.66,
+          -50.99
+        ],
+        [
+          25.5,
+          -52.19
+        ],
+        [
+          27.46,
+          -53.18
+        ],
+        [
+          29.51,
+          -53.97
+        ],
+        [
+          31.63,
+          -54.54
+        ],
+        [
+          33.8,
+          -54.88
+        ],
+        [
+          36.0,
+          -55.0
+        ],
+        [
+          38.2,
+          -54.88
+        ],
+        [
+          40.37,
+          -54.54
+        ],
+        [
+          42.49,
+          -53.97
+        ],
+        [
+          44.54,
+          -53.18
+        ],
+        [
+          46.5,
+          -52.19
+        ],
+        [
+          48.34,
+          -50.99
+        ],
+        [
+          50.05,
+          -49.61
+        ],
+        [
+          51.61,
+          -48.05
+        ],
+        [
+          52.99,
+          -46.34
+        ],
+        [
+          54.19,
+          -44.5
+        ],
+        [
+          55.18,
+          -42.54
+        ],
+        [
+          55.97,
+          -40.49
+        ],
+        [
+          56.54,
+          -38.37
+        ],
+        [
+          56.88,
+          -36.2
+        ]
+      ],
+      "plan_rgba": [
+        120,
+        110,
+        105,
+        70
+      ],
+      "look": "dark wet basalt (value 0.25-0.35) so the gold boss and red boss rings read; cream travertine and warm moss only outside the arena"
+    }
+  ],
+  "anchors": {
+    "windstone_arrival": [
+      -42.0,
+      -44.0
+    ],
+    "camp_hearth": [
+      -24.0,
+      -25.0
+    ],
+    "camp_regroup": [
+      -24,
+      -12
+    ],
+    "stillfall_reveal": [
+      -35.4,
+      64.5
+    ],
+    "ne_junction": [
+      32,
+      74
+    ],
+    "rimeheart_mouth": [
+      2.0,
+      106.0
+    ],
+    "sunscald_centre": [
+      36.0,
+      -34.0
+    ],
+    "emberpass_gate": [
+      56.0,
+      76.0
+    ],
+    "steamrun_bridge": [
+      2.0,
+      0.0
+    ]
+  },
+  "clearings": [
+    {
+      "id": "glassmere_shore",
+      "bounds_xz": [
+        -44,
+        -23,
+        4,
+        54
+      ],
+      "role": "zone 1 hunting field: snowy shore + the walkable ice shelf (lv1 ticks and raptors)"
+    },
+    {
+      "id": "stillfall_cove",
+      "bounds_xz": [
+        -58,
+        -40,
+        72,
+        88
+      ],
+      "role": "raptor den under the frozen waterfall"
+    },
+    {
+      "id": "rimepine_wood",
+      "bounds_xz": [
+        -32,
+        40,
+        85,
+        105
+      ],
+      "role": "zone 2: pine wood on the ridge terrace (wraiths; raptors at the west seam)"
+    },
+    {
+      "id": "rimeheart_grotto",
+      "bounds_xz": [
+        -13,
+        16,
+        107,
+        122
+      ],
+      "role": "elite pocket (Rimeheart Warden + 2 golems)"
+    },
+    {
+      "id": "rimehold_court",
+      "bounds_xz": [
+        17,
+        53,
+        13,
+        61
+      ],
+      "role": "zone 3: temple court and colonnade (golems; wraiths at night)"
+    },
+    {
+      "id": "sunscald_arena",
+      "center_xz": [
+        36.0,
+        -34.0
+      ],
+      "radius_m": 12.0,
+      "bounds_xz": [
+        24.0,
+        48.0,
+        -46.0,
+        -22.0
+      ],
+      "role": "Solar Scorpion arena (r 12, keep-clear 13)"
+    }
+  ],
+  "paths": [
+    {
+      "id": "arrival_road",
+      "class": "main",
+      "width_m": 4.4,
+      "surface": "packed snow over flagstones, cloth-ribbon marker poles",
+      "note": "dais exit -> camp plaza",
+      "points": [
+        [
+          -40.28,
+          -42.19
+        ],
+        [
+          -35.5,
+          -37.5
+        ],
+        [
+          -30.6,
+          -31.6
+        ],
+        [
+          -27.6,
+          -28.4
+        ]
+      ],
+      "plan_rgb": [
+        200,
+        170,
+        125
+      ]
+    },
+    {
+      "id": "lakeshore_road",
+      "class": "main",
+      "width_m": 4.2,
+      "surface": "packed snow trail, darker than the snowfield",
+      "note": "camp -> west shore -> rounds Cairn Point (Stillfall reveal) -> cove",
+      "points": [
+        [
+          -27.6,
+          -21.6
+        ],
+        [
+          -33,
+          -14
+        ],
+        [
+          -41,
+          -5
+        ],
+        [
+          -47.5,
+          5
+        ],
+        [
+          -51,
+          17
+        ],
+        [
+          -51.5,
+          31
+        ],
+        [
+          -50.2,
+          43
+        ],
+        [
+          -45.5,
+          51.5
+        ],
+        [
+          -39.0,
+          57.5
+        ],
+        [
+          -35.4,
+          64.5
+        ],
+        [
+          -35.8,
+          71.5
+        ],
+        [
+          -31.5,
+          77.0
+        ],
+        [
+          -26,
+          78.6
+        ]
+      ],
+      "plan_rgb": [
+        190,
+        155,
+        110
+      ]
+    },
+    {
+      "id": "ridge_road",
+      "class": "main",
+      "width_m": 4.2,
+      "surface": "packed snow under pines",
+      "note": "cove -> along the lake's north shore -> NE junction",
+      "points": [
+        [
+          -26,
+          78.6
+        ],
+        [
+          -14,
+          78.6
+        ],
+        [
+          0,
+          78.2
+        ],
+        [
+          14,
+          78.0
+        ],
+        [
+          24,
+          76.6
+        ],
+        [
+          32,
+          74.0
+        ]
+      ],
+      "plan_rgb": [
+        190,
+        155,
+        110
+      ]
+    },
+    {
+      "id": "return_road",
+      "class": "main",
+      "width_m": 4.2,
+      "surface": "packed snow; timber bridge over the Steamrun",
+      "note": "NE junction -> east shore (past the Rimehold west gate) -> Steamrun Bridge -> camp: closes the loop",
+      "points": [
+        [
+          32,
+          74.0
+        ],
+        [
+          20.5,
+          70.5
+        ],
+        [
+          11.5,
+          63.5
+        ],
+        [
+          10.2,
+          50
+        ],
+        [
+          10,
+          34
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          -8,
+          -10
+        ],
+        [
+          -13.5,
+          -15
+        ],
+        [
+          -20.4,
+          -21.6
+        ]
+      ],
+      "plan_rgb": [
+        175,
+        145,
+        105
+      ]
+    },
+    {
+      "id": "emberpass_road",
+      "class": "main",
+      "width_m": 4.2,
+      "surface": "old paved road under snow",
+      "note": "NE junction -> Emberpass gate (closed, Lv 20)",
+      "points": [
+        [
+          32,
+          74.0
+        ],
+        [
+          41,
+          76.8
+        ],
+        [
+          49,
+          77.0
+        ],
+        [
+          52.4,
+          76.4
+        ]
+      ],
+      "plan_rgb": [
+        175,
+        145,
+        105
+      ]
+    },
+    {
+      "id": "rimehold_way",
+      "class": "spur",
+      "width_m": 4.0,
+      "road_safe": false,
+      "surface": "processional flagstones",
+      "note": "the danger route: return road -> west gate -> court -> south gate -> Sunscald Pass -> arena rim; golems guard it",
+      "points": [
+        [
+          10,
+          40
+        ],
+        [
+          17.5,
+          40
+        ],
+        [
+          27,
+          36.5
+        ],
+        [
+          34,
+          27
+        ],
+        [
+          36.5,
+          13.5
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          36.4,
+          -10
+        ],
+        [
+          36,
+          -20.5
+        ]
+      ],
+      "plan_rgb": [
+        165,
+        130,
+        120
+      ]
+    },
+    {
+      "id": "cave_spur",
+      "class": "spur",
+      "width_m": 3.0,
+      "road_safe": false,
+      "surface": "trampled snow with bones",
+      "note": "ridge road -> Rimeheart Mouth -> grotto (elite pocket)",
+      "points": [
+        [
+          2,
+          78.2
+        ],
+        [
+          2.4,
+          88
+        ],
+        [
+          2,
+          98
+        ],
+        [
+          2,
+          104.5
+        ],
+        [
+          2,
+          109
+        ]
+      ],
+      "plan_rgb": [
+        165,
+        130,
+        120
+      ]
+    },
+    {
+      "id": "hidden_causeway",
+      "class": "hidden",
+      "width_m": 2.6,
+      "road_safe": false,
+      "surface": "packed snow on thick ice between slab lines",
+      "note": "starts behind a fallen slab on the shelf; dead end at Cairn Isle (hidden reward)",
+      "points": [
+        [
+          -25.5,
+          44.0
+        ],
+        [
+          -19,
+          44.0
+        ],
+        [
+          -14,
+          44.0
+        ],
+        [
+          -11.2,
+          44.0
+        ]
+      ],
+      "plan_rgb": [
+        150,
+        170,
+        190
+      ]
+    }
+  ],
+  "water": [
+    {
+      "id": "glassmere",
+      "kind": "lake",
+      "outline_xz": [
+        [
+          -32,
+          3
+        ],
+        [
+          -20,
+          1.5
+        ],
+        [
+          -8,
+          1.5
+        ],
+        [
+          -2.5,
+          4.5
+        ],
+        [
+          3.5,
+          12
+        ],
+        [
+          4.5,
+          28
+        ],
+        [
+          4.0,
+          46
+        ],
+        [
+          2.5,
+          58
+        ],
+        [
+          -2,
+          66
+        ],
+        [
+          -10,
+          69.5
+        ],
+        [
+          -20,
+          69
+        ],
+        [
+          -29,
+          67.5
+        ],
+        [
+          -33,
+          60
+        ],
+        [
+          -33.5,
+          40
+        ],
+        [
+          -33,
+          20
+        ]
+      ],
+      "surface_y": -0.35,
+      "bed_y": -2.5,
+      "note": "frozen lake. Walkable: the shore-fast ice shelf (surfaces.glassmere_ice_shelf, Y=0) and the causeway/isle. Not walkable: hazards.glassmere_open_water (thin ice + the steaming open lead kept open by the warm Steamrun)"
+    },
+    {
+      "id": "steamrun",
+      "kind": "stream",
+      "points": [
+        [
+          24.69,
+          -22.69
+        ],
+        [
+          19.5,
+          -17.5
+        ],
+        [
+          13,
+          -11
+        ],
+        [
+          6.5,
+          -4.5
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -3.2,
+          5.2
+        ]
+      ],
+      "width_m": [
+        3.0,
+        4.0
+      ],
+      "surface_y": -0.35,
+      "bed_y": -0.9,
+      "warm": true,
+      "flow": "from the steamrun_spring hot pool in the basin, out through the NW breach of the rim, under the bridge, into Glassmere's SE corner",
+      "note": "never freezes; steam wisps; banks drop within 1.2 m"
+    },
+    {
+      "id": "steamrun_spring",
+      "kind": "pool",
+      "hot": true,
+      "center_xz": [
+        24.69,
+        -22.69
+      ],
+      "radius_m": 2.2,
+      "surface_y": -0.35,
+      "bed_y": -1.4
+    },
+    {
+      "id": "sunscald_pool_east",
+      "kind": "pool",
+      "hot": true,
+      "center_xz": [
+        53.0,
+        -34.0
+      ],
+      "radius_m": 2.6,
+      "surface_y": -0.35,
+      "bed_y": -1.6
+    },
+    {
+      "id": "sunscald_pool_southeast",
+      "kind": "pool",
+      "hot": true,
+      "center_xz": [
+        48.64,
+        -44.61
+      ],
+      "radius_m": 2.2,
+      "surface_y": -0.35,
+      "bed_y": -1.4
+    },
+    {
+      "id": "sunscald_pool_south",
+      "kind": "pool",
+      "hot": true,
+      "center_xz": [
+        34.56,
+        -50.44
+      ],
+      "radius_m": 2.4,
+      "surface_y": -0.35,
+      "bed_y": -1.5
+    },
+    {
+      "id": "sunscald_pool_southwest",
+      "kind": "pool",
+      "hot": true,
+      "center_xz": [
+        22.14,
+        -42.0
+      ],
+      "radius_m": 2.0,
+      "surface_y": -0.35,
+      "bed_y": -1.3
+    },
+    {
+      "id": "herders_soak",
+      "kind": "pool",
+      "hot": true,
+      "center_xz": [
+        19.5,
+        -1.5
+      ],
+      "radius_m": 2.0,
+      "surface_y": -0.35,
+      "bed_y": -1.0,
+      "note": "a warm soaking pool by the Steamrun where the herders rest: steam, stone benches, sit emotes; a quiet social spot on the return road"
+    },
+    {
+      "id": "stillfall",
+      "kind": "waterfall",
+      "frozen": true,
+      "top_xz": [
+        -48,
+        97
+      ],
+      "top_y": 12,
+      "bottom_y": 0,
+      "width_m": 12.0,
+      "note": "frozen waterfall: a wide 12 m curtain of blue-white columns in three frozen tiers under the 18-26 m cove cliff (the cliff runs out of frame, the curtain stays in it: the frame top is about 12 m at 46 m); translucent at thin edges, cold core #2F7FA6; never glows"
+    },
+    {
+      "id": "grotto_falls",
+      "kind": "waterfall",
+      "frozen": true,
+      "top_xz": [
+        2,
+        123
+      ],
+      "top_y": 10,
+      "bottom_y": 0,
+      "width_m": 6.0,
+      "note": "frozen cascade on the grotto back wall, framed by the 9.5 m mouth arch from the ridge: the pocket reveal"
+    }
+  ],
+  "bridges": [
+    {
+      "id": "steamrun_bridge",
+      "center_xz": [
+        2.0,
+        0.0
+      ],
+      "along_xz": [
+        -0.7071,
+        -0.7071
+      ],
+      "length_m": 8.0,
+      "deck_width_m": 4.6,
+      "deck_y": 0,
+      "spans": "steamrun",
+      "style": "timber deck on basalt abutments, yak-wool rope rails; steam rises through the planks",
+      "colliders": "rails only; deck is walkable"
+    }
+  ],
+  "relief": [
+    {
+      "id": "south_hills",
+      "kind": "rolling_hills",
+      "polyline_xz": [
+        [
+          -64,
+          -57
+        ],
+        [
+          -30,
+          -58.5
+        ],
+        [
+          0,
+          -57
+        ],
+        [
+          30,
+          -58.5
+        ],
+        [
+          62,
+          -57.5
+        ]
+      ],
+      "height_m": [
+        5,
+        9
+      ],
+      "note": "snowy south frame with pines; visual only beyond the walkable hint"
+    },
+    {
+      "id": "west_hills",
+      "kind": "rolling_hills",
+      "polyline_xz": [
+        [
+          -60,
+          -52
+        ],
+        [
+          -60.5,
+          -20
+        ],
+        [
+          -59.5,
+          10
+        ],
+        [
+          -60,
+          40
+        ],
+        [
+          -62,
+          52
+        ]
+      ],
+      "height_m": [
+        6,
+        12
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 1.0,
+      "collider": "hill toe line; visible slope start"
+    },
+    {
+      "id": "hearthfell",
+      "kind": "snow_knoll",
+      "polygon_xz": [
+        [
+          -9,
+          -52
+        ],
+        [
+          10,
+          -52.5
+        ],
+        [
+          14.4,
+          -40
+        ],
+        [
+          15.2,
+          -27.5
+        ],
+        [
+          9,
+          -17.5
+        ],
+        [
+          -6,
+          -20
+        ],
+        [
+          -11,
+          -30
+        ],
+        [
+          -12,
+          -44
+        ]
+      ],
+      "height_m": 9,
+      "path_clearance_m": 1.0,
+      "plan_rgba": [
+        190,
+        200,
+        205,
+        210
+      ],
+      "note": "pine-topped knoll east of the camp: shelters the camp and hides the Sunscald steam from the arrival and the camp; its east toe merges into the basin's west rim so no squeeze passage opens between them; collider = footprint"
+    },
+    {
+      "id": "cairn_point",
+      "kind": "headland",
+      "polygon_xz": [
+        [
+          -62,
+          52
+        ],
+        [
+          -52,
+          53
+        ],
+        [
+          -46.5,
+          55.5
+        ],
+        [
+          -43.0,
+          59.0
+        ],
+        [
+          -42.5,
+          63.0
+        ],
+        [
+          -45.0,
+          67.0
+        ],
+        [
+          -52,
+          69
+        ],
+        [
+          -62,
+          70
+        ]
+      ],
+      "height_m": 12,
+      "path_clearance_m": 1.0,
+      "plan_rgba": [
+        160,
+        150,
+        140,
+        215
+      ],
+      "note": "rocky headland: hides the Stillfall cove from the south until the road rounds its tip (reveal); a cairn stands on the tip"
+    },
+    {
+      "id": "cove_cliffs",
+      "kind": "ridge_cliff",
+      "polyline_xz": [
+        [
+          -62,
+          70
+        ],
+        [
+          -61,
+          80
+        ],
+        [
+          -57,
+          88
+        ],
+        [
+          -53,
+          94
+        ],
+        [
+          -48,
+          97.5
+        ],
+        [
+          -43,
+          96.5
+        ],
+        [
+          -37,
+          93
+        ],
+        [
+          -33,
+          99
+        ],
+        [
+          -30,
+          106
+        ]
+      ],
+      "height_m": [
+        18,
+        26
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 1.2,
+      "note": "blue-grey granite cliffs with snow ledges; the Stillfall freezes down their face"
+    },
+    {
+      "id": "stillfall_ice_cone",
+      "kind": "ice_cone",
+      "polygon_xz": [
+        [
+          -52.5,
+          94.5
+        ],
+        [
+          -51.5,
+          90.5
+        ],
+        [
+          -47.5,
+          89.0
+        ],
+        [
+          -43.5,
+          90.5
+        ],
+        [
+          -43.0,
+          94.5
+        ],
+        [
+          -47.5,
+          96.8
+        ]
+      ],
+      "height_m": 5,
+      "path_clearance_m": 1.0,
+      "plan_rgba": [
+        190,
+        225,
+        245,
+        230
+      ],
+      "note": "faceted ice cone at the foot of the frozen fall; collider = footprint"
+    },
+    {
+      "id": "rimepine_cliffs_west",
+      "kind": "ridge_cliff",
+      "polyline_xz": [
+        [
+          -30,
+          106
+        ],
+        [
+          -20,
+          108
+        ],
+        [
+          -9,
+          107
+        ],
+        [
+          -5.5,
+          106.3
+        ]
+      ],
+      "height_m": [
+        16,
+        24
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 1.2
+    },
+    {
+      "id": "rimepine_cliffs_east",
+      "kind": "ridge_cliff",
+      "polyline_xz": [
+        [
+          9.5,
+          106.3
+        ],
+        [
+          13,
+          107.5
+        ],
+        [
+          22,
+          108.5
+        ],
+        [
+          32,
+          106.5
+        ],
+        [
+          40,
+          100
+        ],
+        [
+          46,
+          92
+        ],
+        [
+          52,
+          86.5
+        ],
+        [
+          59,
+          84.2
+        ]
+      ],
+      "height_m": [
+        16,
+        24
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 1.2
+    },
+    {
+      "id": "grotto_walls",
+      "kind": "ice_wall",
+      "polyline_xz": [
+        [
+          -5.5,
+          106.3
+        ],
+        [
+          -11,
+          108.5
+        ],
+        [
+          -14.5,
+          113.5
+        ],
+        [
+          -12.5,
+          119.5
+        ],
+        [
+          -5,
+          123
+        ],
+        [
+          5,
+          123.5
+        ],
+        [
+          13.5,
+          121
+        ],
+        [
+          17.5,
+          115
+        ],
+        [
+          16,
+          109
+        ],
+        [
+          9.5,
+          106.3
+        ]
+      ],
+      "height_m": [
+        12,
+        18
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 1.0,
+      "camera_rule": "roofless grotto; for the first 12 m from the floor edge the walls lean back at <= 30 deg up to 7 m (camera-safe apron), then rise vertical; the 13 m boom (camera 6.6 m high, 12 m behind) stays clear except within 0.6 m of the wall; camera collision (D1) handles the rest. The blockout measures boom clearance at 1 m steps"
+    },
+    {
+      "id": "east_mountains_south",
+      "kind": "mountain_wall",
+      "polyline_xz": [
+        [
+          61,
+          -58
+        ],
+        [
+          61.5,
+          -20
+        ],
+        [
+          60.5,
+          20
+        ],
+        [
+          61,
+          50
+        ],
+        [
+          60,
+          68
+        ]
+      ],
+      "height_m": [
+        22,
+        34
+      ]
+    },
+    {
+      "id": "east_mountains_north",
+      "kind": "mountain_wall",
+      "polyline_xz": [
+        [
+          60,
+          84.5
+        ],
+        [
+          61.5,
+          100
+        ],
+        [
+          60,
+          124
+        ]
+      ],
+      "height_m": [
+        22,
+        34
+      ]
+    },
+    {
+      "id": "emberpass_walls_south",
+      "kind": "mountain_wall",
+      "polyline_xz": [
+        [
+          57,
+          71.2
+        ],
+        [
+          60,
+          68
+        ]
+      ],
+      "height_m": 9,
+      "plan_width_m": 2
+    },
+    {
+      "id": "emberpass_walls_north",
+      "kind": "mountain_wall",
+      "polyline_xz": [
+        [
+          57,
+          80.8
+        ],
+        [
+          60,
+          84.5
+        ]
+      ],
+      "height_m": 9,
+      "plan_width_m": 2
+    },
+    {
+      "id": "emberpass_gate_bar",
+      "kind": "ruin_wall",
+      "polyline_xz": [
+        [
+          56,
+          72.6
+        ],
+        [
+          56,
+          79.4
+        ]
+      ],
+      "height_m": 3.5,
+      "plan_width_m": 0.8,
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.4,
+      "note": "barred timber-and-iron gate between the posts: a collider while locked (Lv 20); removed when the warp unlocks"
+    },
+    {
+      "id": "glassmere_pressure_ridge",
+      "kind": "pressure_ridge",
+      "polyline_xz": [
+        [
+          -22.0,
+          3.2
+        ],
+        [
+          -21.7,
+          13
+        ],
+        [
+          -22.2,
+          24
+        ],
+        [
+          -21.8,
+          34
+        ],
+        [
+          -22.0,
+          41.0
+        ],
+        [
+          -10.5,
+          41.0
+        ],
+        [
+          -9.76,
+          40.21
+        ],
+        [
+          -8.87,
+          39.6
+        ],
+        [
+          -7.86,
+          39.19
+        ],
+        [
+          -6.79,
+          39.01
+        ],
+        [
+          -5.71,
+          39.06
+        ],
+        [
+          -4.66,
+          39.35
+        ],
+        [
+          -3.7,
+          39.85
+        ],
+        [
+          -2.88,
+          40.55
+        ],
+        [
+          -2.22,
+          41.42
+        ],
+        [
+          -1.76,
+          42.4
+        ],
+        [
+          -1.53,
+          43.46
+        ],
+        [
+          -1.53,
+          44.54
+        ],
+        [
+          -1.76,
+          45.6
+        ],
+        [
+          -2.22,
+          46.58
+        ],
+        [
+          -2.88,
+          47.45
+        ],
+        [
+          -3.7,
+          48.15
+        ],
+        [
+          -4.66,
+          48.65
+        ],
+        [
+          -5.71,
+          48.94
+        ],
+        [
+          -6.79,
+          48.99
+        ],
+        [
+          -7.86,
+          48.81
+        ],
+        [
+          -8.87,
+          48.4
+        ],
+        [
+          -9.76,
+          47.79
+        ],
+        [
+          -10.5,
+          47.0
+        ],
+        [
+          -22.0,
+          47.0
+        ],
+        [
+          -21.8,
+          54
+        ],
+        [
+          -22.2,
+          61
+        ],
+        [
+          -22.0,
+          67.0
+        ]
+      ],
+      "height_m": [
+        0.8,
+        1.6
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.6,
+      "plan_width_m": 1.2,
+      "note": "tilted ice slabs piled where the shore-fast shelf meets thin ice; the visible collider of the walkable shelf; it lines the hidden causeway and rings Cairn Isle"
+    },
+    {
+      "id": "sunscald_rim_northeast",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          56.67,
+          -26.48
+        ],
+        [
+          55.7,
+          -24.2
+        ],
+        [
+          54.47,
+          -22.05
+        ],
+        [
+          53.02,
+          -20.06
+        ],
+        [
+          51.34,
+          -18.23
+        ],
+        [
+          49.48,
+          -16.61
+        ],
+        [
+          47.44,
+          -15.21
+        ],
+        [
+          45.26,
+          -14.04
+        ],
+        [
+          42.96,
+          -13.13
+        ],
+        [
+          40.57,
+          -12.48
+        ]
+      ],
+      "height_m": [
+        6,
+        8
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8
+    },
+    {
+      "id": "sunscald_rim_northwest",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          31.43,
+          -12.48
+        ],
+        [
+          28.84,
+          -13.2
+        ],
+        [
+          26.36,
+          -14.23
+        ],
+        [
+          24.02,
+          -15.55
+        ],
+        [
+          21.86,
+          -17.15
+        ]
+      ],
+      "height_m": [
+        5,
+        7
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8,
+      "note": "low on purpose: the steam reads from the ridge across the lake. The Steamrun leaves through a 10 deg cleft (130-140 deg) narrower than the stream itself, so the stream is never a back door into the arena"
+    },
+    {
+      "id": "sunscald_rim_west",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          19.15,
+          -19.86
+        ],
+        [
+          17.7,
+          -21.79
+        ],
+        [
+          16.47,
+          -23.87
+        ],
+        [
+          15.48,
+          -26.06
+        ],
+        [
+          14.74,
+          -28.36
+        ],
+        [
+          14.25,
+          -30.72
+        ],
+        [
+          14.02,
+          -33.12
+        ],
+        [
+          14.05,
+          -35.53
+        ],
+        [
+          14.35,
+          -37.93
+        ],
+        [
+          14.91,
+          -40.27
+        ],
+        [
+          15.73,
+          -42.55
+        ],
+        [
+          16.79,
+          -44.71
+        ],
+        [
+          18.07,
+          -46.75
+        ],
+        [
+          19.58,
+          -48.64
+        ],
+        [
+          21.28,
+          -50.35
+        ]
+      ],
+      "height_m": [
+        14,
+        16
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8,
+      "note": "tall on purpose: hides the steam from the arrival and the camp"
+    },
+    {
+      "id": "sunscald_rim_south",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          21.28,
+          -50.35
+        ],
+        [
+          23.07,
+          -51.8
+        ],
+        [
+          25.0,
+          -53.05
+        ],
+        [
+          27.05,
+          -54.1
+        ],
+        [
+          29.2,
+          -54.92
+        ],
+        [
+          31.43,
+          -55.52
+        ],
+        [
+          33.7,
+          -55.88
+        ],
+        [
+          36.0,
+          -56.0
+        ],
+        [
+          38.3,
+          -55.88
+        ],
+        [
+          40.57,
+          -55.52
+        ],
+        [
+          42.8,
+          -54.92
+        ],
+        [
+          44.95,
+          -54.1
+        ],
+        [
+          47.0,
+          -53.05
+        ],
+        [
+          48.93,
+          -51.8
+        ],
+        [
+          50.72,
+          -50.35
+        ]
+      ],
+      "height_m": [
+        11,
+        13
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8
+    },
+    {
+      "id": "sunscald_rim_east",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          50.72,
+          -50.35
+        ],
+        [
+          52.4,
+          -48.67
+        ],
+        [
+          53.88,
+          -46.82
+        ],
+        [
+          55.16,
+          -44.82
+        ],
+        [
+          56.21,
+          -42.69
+        ],
+        [
+          57.03,
+          -40.47
+        ],
+        [
+          57.6,
+          -38.16
+        ],
+        [
+          57.93,
+          -35.81
+        ],
+        [
+          57.99,
+          -33.44
+        ],
+        [
+          57.8,
+          -31.08
+        ],
+        [
+          57.36,
+          -28.75
+        ],
+        [
+          56.67,
+          -26.48
+        ]
+      ],
+      "height_m": [
+        11,
+        14
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8
+    },
+    {
+      "id": "sunscald_pass_west",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          31.43,
+          -12.48
+        ],
+        [
+          31.2,
+          -2
+        ],
+        [
+          32,
+          11.2
+        ]
+      ],
+      "height_m": [
+        5,
+        7
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8
+    },
+    {
+      "id": "sunscald_pass_east",
+      "kind": "basalt_rim",
+      "polyline_xz": [
+        [
+          40.57,
+          -12.48
+        ],
+        [
+          41.6,
+          -2
+        ],
+        [
+          41,
+          11.2
+        ]
+      ],
+      "height_m": [
+        5,
+        7
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.8
+    },
+    {
+      "id": "rimehold_wall_southwest",
+      "kind": "ruin_wall",
+      "polyline_xz": [
+        [
+          31.2,
+          12
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          34.8
+        ]
+      ],
+      "height_m": [
+        3,
+        5
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.6
+    },
+    {
+      "id": "rimehold_wall_northwest",
+      "kind": "ruin_wall",
+      "polyline_xz": [
+        [
+          16,
+          45.2
+        ],
+        [
+          16,
+          62
+        ],
+        [
+          31,
+          62
+        ]
+      ],
+      "height_m": [
+        3,
+        6
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.6
+    },
+    {
+      "id": "rimehold_wall_east",
+      "kind": "ruin_wall",
+      "polyline_xz": [
+        [
+          37,
+          62
+        ],
+        [
+          54,
+          62
+        ],
+        [
+          54,
+          12
+        ],
+        [
+          41.8,
+          12
+        ]
+      ],
+      "height_m": [
+        3,
+        6
+      ],
+      "path_clearance_m": 1.0,
+      "toe_half_width_m": 0.6,
+      "note": "broken in places (gaps < 0.7 m are filled with rubble so nobody squeezes through)"
+    },
+    {
+      "id": "rimehold_east_scree",
+      "kind": "scree_slope",
+      "polygon_xz": [
+        [
+          54.6,
+          11.4
+        ],
+        [
+          60.5,
+          11.4
+        ],
+        [
+          61,
+          50
+        ],
+        [
+          60,
+          66
+        ],
+        [
+          54.6,
+          62.6
+        ]
+      ],
+      "height_m": 10,
+      "path_clearance_m": 1.0,
+      "plan_rgba": [
+        150,
+        150,
+        160,
+        200
+      ],
+      "note": "snow-covered scree against the east mountains, flush with the ruin's east wall: no dead-end strip behind the ruin"
+    },
+    {
+      "id": "sunscald_outer_slope_ne",
+      "kind": "basalt_slope",
+      "polygon_xz": [
+        [
+          41.6,
+          11.4
+        ],
+        [
+          60.5,
+          11.4
+        ],
+        [
+          61,
+          -20
+        ],
+        [
+          56.67,
+          -26.48
+        ],
+        [
+          52.09,
+          -19.0
+        ],
+        [
+          46.67,
+          -14.76
+        ],
+        [
+          41.32,
+          -12.65
+        ],
+        [
+          42.2,
+          -2.0
+        ]
+      ],
+      "height_m": 8,
+      "path_clearance_m": 1.0,
+      "plan_rgba": [
+        95,
+        85,
+        88,
+        200
+      ],
+      "note": "outer slope of the basin rim between the Sunscald Pass and the east mountains (no walkable pocket south of the ruin)"
+    },
+    {
+      "id": "stream_banks",
+      "kind": "bank",
+      "note": "Steamrun banks drop Y 0 -> -0.35 within 1.2 m of the water edge; warm wet stones, no snow, moss"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "windstone_arrival",
+      "kind": "portal_platform",
+      "center_xz": [
+        -42.0,
+        -44.0
+      ],
+      "radius_m": 2.5,
+      "ring_stone_radius_m": 4.0,
+      "ring_stone_angles_deg": [
+        106.55,
+        226.55,
+        346.55
+      ],
+      "note": "5 m carved dais (two 0.15 m steps, F11) with a rune ring; 3 snow-capped ring stones (props rimecrest_ring_stone_1-3) leave a 5.5 m gap toward the camp; sheltered hollow of boulders and pines; no spawns or aggro within 25 m (rules R6 apron)",
+      "spawn": {
+        "id": "windstone_arrival",
+        "point_xz": [
+          -42.0,
+          -44.0
+        ],
+        "jitter_r_m": 1.5,
+        "facing_deg_from_north": 40.18,
+        "facing_note": "camera faces NE: the camp smoke 26 m ahead, the Rimehold tower 118 m beyond it (the lure)"
+      },
+      "warp": {
+        "id": "windstone_return",
+        "type": "portal_ring",
+        "center_xz": [
+          -42.0,
+          -44.0
+        ],
+        "trigger_radius_m": 1.8,
+        "id_note": "matches the brief and Sunmeadow's warp_windstone_portal.return reference ('rimecrest_snow windstone_return')",
+        "activation": "interact (E / tap the rune focus) within 1.8 m of the dais centre; never walk-in, because arrivals land on the dais",
+        "destination": {
+          "map": "sunmeadow",
+          "spawn": "windstone_circle",
+          "xz": [
+            2,
+            -72
+          ]
+        },
+        "fallback": "while Galehorn is announced or engaged, the return lands at Sunmeadow (0,-50) on the southbound trail, outside the 11 m arena (the normal landing (2,-72) is inside it); Codex root implements the check server-side",
+        "unlock": {
+          "rule": "always on in Rimecrest: reaching it already required the first Galehorn defeat"
+        },
+        "discovery": "first arrival adds 'Rimecrest Windstone' to the city portal dais list (discover-to-unlock)",
+        "states": [
+          "active (soft cyan glyph ring, never white)"
+        ],
+        "layout_check": "trigger r 1.8 at the dais centre; the dais (r 2.5) is flush and walkable; ring stones at r 4.0"
+      }
+    },
+    {
+      "id": "hearthhorn_camp",
+      "kind": "camp",
+      "bounds_xz": [
+        -34,
+        -14,
+        -34,
+        -16
+      ],
+      "contents": [
+        "hearth [-24,-25]",
+        "herder tent [-32.5,-25.5]",
+        "vendor stall [-17.5,-28.5]",
+        "quest board [-25.5,-17]",
+        "drying rack [-15.5,-25.5]",
+        "pack baskets [-34,-29.5]",
+        "woodpile [-15.5,-31]",
+        "wind-streamer poles",
+        "signpost [-24,-18.6]"
+      ],
+      "npc": {
+        "id": "npc_mirun",
+        "name": {
+          "en": "Mirun, Ruun's apprentice",
+          "th": "มีรุน ศิษย์ของรูน"
+        },
+        "position_xz": [
+          -22.4,
+          -26.6
+        ],
+        "model": "bovine-shaman rig v1 (same mesh and rig as the city elder Ruun), palette swap: ash-brown mane and beard tips, teal/cream/saffron robes instead of Ruun's red/blue, snow-dust material on shoulders and hood",
+        "role": "camp NPC: questline 'The Sun Beneath the Ice', daily bounties at the board, lore of the Rime-wardens",
+        "owner_decision": "2026-10-02 (relayed by Claude main 20:50): both; the elder Ruun stays in the city, his apprentice runs the Rimecrest camp",
+        "interaction_m": 3.0
+      },
+      "note": "the hub: warm firelight and smoke = safe; vendor (potions, yak-butter tea, repairs), quest board, respawn at camp_regroup"
+    },
+    {
+      "id": "hearth_signpost",
+      "kind": "signpost",
+      "position_xz": [
+        -24.0,
+        -18.6
+      ],
+      "note": "Thai/English: Glassmere Shore Lv 12-14 (west) / Rimehold Lv 18-20 (north-east); prop rimecrest_signpost_hearth"
+    },
+    {
+      "id": "stillfall",
+      "kind": "frozen_waterfall",
+      "position_xz": [
+        -47.5,
+        93.5
+      ],
+      "height_m": 12,
+      "width_m": 12,
+      "note": "zone 1 landmark: a wide 12 m frozen curtain under the cove cliff, behind Cairn Point; revealed when the road rounds the headland tip"
+    },
+    {
+      "id": "cairn_isle",
+      "kind": "hidden_reward",
+      "center_xz": [
+        -6.5,
+        44.0
+      ],
+      "radius_m": 4.4,
+      "contents": [
+        "rime-warden cairn (4 m)",
+        "hidden chest (one-time per character)",
+        "lore stone"
+      ],
+      "route": "hidden_causeway: a 2.6 m packed-snow causeway between pressure-ridge slabs, starting behind a fallen slab at the shelf (−25.5, 44)",
+      "note": "visible from the shelf, the way there is the secret; from the isle every landmark is in view (the overlook)"
+    },
+    {
+      "id": "rimeheart_mouth",
+      "kind": "ice_cave_mouth",
+      "position_xz": [
+        2.0,
+        106.0
+      ],
+      "arch_underside_m": 9.5,
+      "opening_m": 11.0,
+      "note": "zone 2 landmark: a huge blue ice arch in the ridge cliff with a bone cairn (elite warning); leads to the Rimeheart Grotto"
+    },
+    {
+      "id": "rimeheart_grotto",
+      "kind": "ice_cave_pocket",
+      "bounds_xz": [
+        -13,
+        16,
+        107,
+        122
+      ],
+      "note": "short optional pocket: roofless glacier grotto with the Grotto Falls; elite Rimeheart Warden + 2 golems; camera-safe walls (relief grotto_walls)"
+    },
+    {
+      "id": "rimehold_tower",
+      "kind": "lure_tower",
+      "position_xz": [
+        34.0,
+        46.0
+      ],
+      "height_m": 21,
+      "note": "zone 3 landmark and the map's lure: a slim rime-warden bell tower, bronze bell under a frost-crystal finial that glints; prop rimecrest_rimehold_tower"
+    },
+    {
+      "id": "rimehold_ruin",
+      "kind": "ruin",
+      "bounds_xz": [
+        16,
+        54,
+        12,
+        62
+      ],
+      "note": "frost-temple ruin: broken walls (west and south gates, a north gap), colonnade, three cold ward braziers; built to keep the Solar Scorpion asleep"
+    },
+    {
+      "id": "sunscald_basin",
+      "kind": "boss_arena",
+      "center_xz": [
+        36.0,
+        -34.0
+      ],
+      "radius_m": 12.0,
+      "boss_arena_radius_m": 12.0,
+      "arena_keep_clear_m": 13.0,
+      "arena_keep_clear_basis": "collider_edge",
+      "arena_rule": "no colliding prop, pool, stream or hazard within 13 m of the centre (arena 12 m + 1 m), measured at collider edges; ground cover inside 12 m is low only (<= 0.35 m: warm moss patches, mineral crust; no glow); the sun-ray inlay is flush; steam inside the arena stays below 20 % opacity under 2 m so telegraphs read",
+      "boss": "Solar Scorpion (4.2 m tall, 3.85 x 3.58 m footprint, body radius 2.4 m): a large six-legged quadruped needs the full 24 m floor",
+      "entry": "one entry from the north (Sunscald Pass, from the Rimehold south gate); the exit portal is the second way out, after the fight",
+      "lore": "a sun-forged guardian sleeps under the basin; its solar core never cooled, so hot springs and geysers melt a round hollow in the snow",
+      "warp": {
+        "id": "warp_sunscald_exit",
+        "type": "sun_disc_portal",
+        "center_xz": [
+          43.5,
+          -21.01
+        ],
+        "trigger_radius_m": 1.8,
+        "activation": "interact; active only after the fight: from the Solar Scorpion's death until its next 60 s announcement (at most 15 min); dark and inert while the boss is alive, announced or engaged",
+        "destination": {
+          "map": "rimecrest_snow",
+          "spawn": "hearthhorn_camp",
+          "xz": [
+            -24,
+            -21.4
+          ]
+        },
+        "layout_check": "trigger edge 13.2 m from the arena centre (outside the 12 m arena and the 13 m keep-clear)",
+        "note": "saves the walk back through the Rimehold ruin"
+      }
+    },
+    {
+      "id": "herders_soak",
+      "kind": "rest_spot",
+      "position_xz": [
+        19.5,
+        -1.5
+      ],
+      "note": "warm pool + two stone benches 11 m east of the return road; snow-free mossy banks; no monsters (the Steamrun keeps it warm)"
+    },
+    {
+      "id": "sunscald_dais",
+      "kind": "boss_spawn_dais",
+      "position_xz": [
+        36.0,
+        -34.0
+      ],
+      "radius_m": 3.0,
+      "note": "flush carved sun-dais over the central vent; the boss rises here in a burst of steam; no collider"
+    },
+    {
+      "id": "emberpass_gate",
+      "kind": "warp_gate",
+      "position_xz": [
+        56.0,
+        76.0
+      ],
+      "note": "future exit toward the lava region: a barred timber gate between basalt posts in the east mountains; warm glow beyond",
+      "warp": {
+        "id": "warp_rimecrest_emberpass",
+        "type": "walk_through_gate",
+        "center_xz": [
+          56.0,
+          76.0
+        ],
+        "trigger_radius_m": 3.0,
+        "destination": {
+          "map": "lava_region (working name Ashveil Caldera; map id TBD)",
+          "spawn": "rimecrest_gate_in"
+        },
+        "unlock": {
+          "level": 20,
+          "quest": "The Sun Beneath the Ice (Mirun's chain)",
+          "locked_look": "barred gate, sign 'Road closed: Lv 20' (Thai/English)"
+        },
+        "return": "lava_region rimecrest_gate_out -> rimecrest_snow emberpass_gate_in (50,76.9)",
+        "activation": "walk-through when unlocked; the bar (relief emberpass_gate_bar) is a collider while locked"
+      }
+    }
+  ],
+  "vegetation_zones": [
+    {
+      "id": "hollow_pines",
+      "kind": "snow_pine_stand",
+      "polygon_xz": [
+        [
+          -62,
+          -56
+        ],
+        [
+          -31,
+          -57
+        ],
+        [
+          -34,
+          -51.5
+        ],
+        [
+          -44,
+          -55.5
+        ],
+        [
+          -53,
+          -50.5
+        ],
+        [
+          -56.5,
+          -40
+        ],
+        [
+          -57,
+          -28
+        ],
+        [
+          -62,
+          -24
+        ]
+      ],
+      "density": "dense: clusters of 4-7 pines and frost shrubs behind the boulders; open to the NE (the camp and the lure)",
+      "mix": {
+        "pine_L": 0.35,
+        "pine_M": 0.45,
+        "frost_shrub": 0.2
+      }
+    },
+    {
+      "id": "hearthfell_pines",
+      "kind": "snow_pine_stand",
+      "polygon_xz": [
+        [
+          -8,
+          -50
+        ],
+        [
+          9,
+          -50.5
+        ],
+        [
+          11.5,
+          -40
+        ],
+        [
+          10,
+          -28
+        ],
+        [
+          3.5,
+          -22
+        ],
+        [
+          -5,
+          -23
+        ],
+        [
+          -9.5,
+          -31
+        ],
+        [
+          -10.5,
+          -43
+        ]
+      ],
+      "density": "crown of 8-12 pines on the knoll (visual, on relief); keeps the lure corridor clear",
+      "mix": {
+        "pine_L": 0.5,
+        "pine_M": 0.5
+      }
+    },
+    {
+      "id": "west_shore_pines",
+      "kind": "snow_pine_stand",
+      "polygon_xz": [
+        [
+          -63,
+          -24
+        ],
+        [
+          -56.5,
+          -24
+        ],
+        [
+          -55.5,
+          10
+        ],
+        [
+          -56,
+          48
+        ],
+        [
+          -63,
+          50
+        ]
+      ],
+      "density": "clusters of 3-5 on the hill toe, gaps every 10-15 m",
+      "mix": {
+        "pine_L": 0.4,
+        "pine_M": 0.4,
+        "snag": 0.2
+      }
+    },
+    {
+      "id": "cove_pines",
+      "kind": "snow_pine_stand",
+      "polygon_xz": [
+        [
+          -62,
+          71
+        ],
+        [
+          -56,
+          71
+        ],
+        [
+          -55,
+          84
+        ],
+        [
+          -60,
+          86
+        ]
+      ],
+      "density": "3-4 pines under the cove cliffs",
+      "mix": {
+        "pine_M": 0.7,
+        "snag": 0.3
+      }
+    },
+    {
+      "id": "rimepine_wood",
+      "kind": "snow_pine_stand",
+      "polygon_xz": [
+        [
+          -29,
+          90
+        ],
+        [
+          39,
+          90
+        ],
+        [
+          39,
+          99
+        ],
+        [
+          30,
+          105
+        ],
+        [
+          -28,
+          105
+        ]
+      ],
+      "density": "clusters of 3-5 with 5-8 m gaps, never rows; snow-laden boughs; the wraith statues stand in the gaps",
+      "mix": {
+        "pine_L": 0.45,
+        "pine_M": 0.35,
+        "frost_shrub": 0.2
+      },
+      "keep_clear": [
+        {
+          "id": "cave_spur",
+          "rule": "1.5 m either side of the cave spur"
+        },
+        {
+          "id": "monster homes",
+          "rule": "body + 1.0 m (monsters file scatter_keep_clear)"
+        }
+      ]
+    },
+    {
+      "id": "east_shore_reeds",
+      "kind": "frozen_reeds",
+      "polygon_xz": [
+        [
+          4.0,
+          8
+        ],
+        [
+          6.5,
+          8
+        ],
+        [
+          7.0,
+          60
+        ],
+        [
+          3.0,
+          60
+        ]
+      ],
+      "density": "frozen reed tufts and snow-capped stones on the bank (<= 1.2 m)",
+      "mix": {
+        "reed": 0.7,
+        "stone_s": 0.3
+      }
+    },
+    {
+      "id": "south_shore_reeds",
+      "kind": "frozen_reeds",
+      "polygon_xz": [
+        [
+          -30,
+          -1
+        ],
+        [
+          -6,
+          -1
+        ],
+        [
+          -6,
+          1.2
+        ],
+        [
+          -30,
+          2.6
+        ]
+      ],
+      "density": "sparse reeds on the south bank",
+      "mix": {
+        "reed": 1.0
+      }
+    },
+    {
+      "id": "temple_frost_shrubs",
+      "kind": "frost_shrubs",
+      "polygon_xz": [
+        [
+          17,
+          13
+        ],
+        [
+          53,
+          13
+        ],
+        [
+          53,
+          61
+        ],
+        [
+          17,
+          61
+        ]
+      ],
+      "density": "sparse, only against walls and column bases (<= 1.0 m)",
+      "mix": {
+        "frost_shrub": 1.0
+      }
+    },
+    {
+      "id": "basin_moss",
+      "kind": "hot_spring_moss",
+      "ring": {
+        "center_xz": [
+          36.0,
+          -34.0
+        ],
+        "r_inner_m": 13.5,
+        "r_outer_m": 21.0
+      },
+      "note": "warm green moss and mineral crust around the hot pools, never inside the 13 m keep-clear; inside the arena only flat moss decals (<= 0.05 m)"
+    },
+    {
+      "id": "ridge_top_pines",
+      "kind": "accent",
+      "note": "pines and snow cornices on the cliff tops (visual only, impostors beyond 48 m)"
+    },
+    {
+      "id": "lure_corridor",
+      "kind": "keep_clear",
+      "polygon_xz": [
+        [
+          -46.58,
+          -40.13
+        ],
+        [
+          29.42,
+          49.87
+        ],
+        [
+          38.58,
+          42.13
+        ],
+        [
+          -37.42,
+          -47.87
+        ]
+      ],
+      "note": "no vegetation or prop taller than 6.0 m inside this 12 m corridor from the arrival dais to the Rimehold tower (the lure)"
+    }
+  ],
+  "rock_clusters": [
+    {
+      "id": "hollow_boulders",
+      "around": "windstone_arrival",
+      "count": [
+        6,
+        9
+      ],
+      "size_m": [
+        1.2,
+        2.6
+      ],
+      "note": "6 hero boulders are base props; snow caps by normal.y"
+    },
+    {
+      "id": "shore_stones",
+      "along": "glassmere west shore",
+      "count": [
+        10,
+        14
+      ],
+      "size_m": [
+        0.4,
+        1.8
+      ],
+      "note": "half-buried, snow rims on top (never black cut-outs)"
+    },
+    {
+      "id": "cove_ice_blocks",
+      "zone": "stillfall_cove",
+      "count": [
+        5,
+        8
+      ],
+      "size_m": [
+        0.8,
+        2.4
+      ],
+      "note": "faceted glacier ice, cold core #2F7FA6"
+    },
+    {
+      "id": "ridge_talus",
+      "along": "rimepine_cliffs_west/east",
+      "count": [
+        12,
+        18
+      ],
+      "size_m": [
+        1.0,
+        3.5
+      ]
+    },
+    {
+      "id": "temple_rubble",
+      "zone": "rimehold_ruin",
+      "count": [
+        10,
+        16
+      ],
+      "size_m": [
+        0.4,
+        1.4
+      ],
+      "note": "cut sandstone blocks with frost; < 0.7 m wall gaps are rubble-filled"
+    },
+    {
+      "id": "basin_basalt",
+      "zone": "sunscald_basin outside 13 m",
+      "count": [
+        8,
+        12
+      ],
+      "size_m": [
+        0.8,
+        3.0
+      ],
+      "note": "4 hero columns are base props"
+    },
+    {
+      "id": "pressure_ridge_slabs",
+      "along": "glassmere_pressure_ridge",
+      "count": [
+        40,
+        60
+      ],
+      "size_m": [
+        0.8,
+        1.8
+      ],
+      "note": "4 slab variants, thin-instanced"
+    }
+  ],
+  "sightlines": [
+    {
+      "id": "lure_tower_from_arrival",
+      "from": "windstone_arrival dais (spawn, facing NE)",
+      "to": "rimehold_tower",
+      "from_xz": [
+        -42.0,
+        -44.0
+      ],
+      "to_xz": [
+        34.0,
+        46.0
+      ],
+      "intent": "the lure: the tower rises beyond the camp smoke across the frozen lake; the ruin itself stays small",
+      "analytic": {
+        "player_xz": [
+          -42.0,
+          -44.0
+        ],
+        "target_xz": [
+          34.0,
+          46.0
+        ],
+        "target_height_m": 21.0,
+        "distance_m": 117.8,
+        "camera_distance_m": 129.8,
+        "frame_top_at_target_m": 22.2,
+        "hidden_below_m": 4.6,
+        "worst_occluder": "rimehold_wall_southwest",
+        "visible_span_m": [
+          4.6,
+          21.0
+        ],
+        "visible_m": 16.4,
+        "top_in_frame": true,
+        "vegetation_hides_below_m": null,
+        "vegetation_zone": null
+      },
+      "keep": "lure_corridor (no vegetation or prop over 6 m)"
+    },
+    {
+      "id": "lure_tower_from_camp",
+      "from": "camp hearth",
+      "to": "rimehold_tower",
+      "from_xz": [
+        -24.0,
+        -25.0
+      ],
+      "to_xz": [
+        34.0,
+        46.0
+      ],
+      "intent": "second read of the lure from the hub",
+      "analytic": {
+        "player_xz": [
+          -24.0,
+          -25.0
+        ],
+        "target_xz": [
+          34.0,
+          46.0
+        ],
+        "target_height_m": 21.0,
+        "distance_m": 91.7,
+        "camera_distance_m": 103.7,
+        "frame_top_at_target_m": 19.0,
+        "hidden_below_m": 4.5,
+        "worst_occluder": "rimehold_wall_southwest",
+        "visible_span_m": [
+          4.5,
+          19.0
+        ],
+        "visible_m": 14.5,
+        "top_in_frame": false,
+        "vegetation_hides_below_m": null,
+        "vegetation_zone": null
+      }
+    },
+    {
+      "id": "steam_from_ridge",
+      "from": "ridge_road (-4,78.2)",
+      "to": "sunscald_basin steam (geyser plumes 24 m)",
+      "from_xz": [
+        -4.0,
+        78.2
+      ],
+      "to_xz": [
+        36.0,
+        -34.0
+      ],
+      "intent": "the boss home revealed: steam rising beyond the ruin, across the lake; the low NW rim and the Steamrun breach let it read",
+      "analytic": {
+        "player_xz": [
+          -4.0,
+          78.2
+        ],
+        "target_xz": [
+          36.0,
+          -34.0
+        ],
+        "target_height_m": 24.0,
+        "distance_m": 119.1,
+        "camera_distance_m": 131.1,
+        "frame_top_at_target_m": 22.3,
+        "hidden_below_m": 7.1,
+        "worst_occluder": "sunscald_rim_northwest",
+        "visible_span_m": [
+          7.1,
+          22.3
+        ],
+        "visible_m": 15.2,
+        "top_in_frame": false,
+        "vegetation_hides_below_m": null,
+        "vegetation_zone": null
+      }
+    },
+    {
+      "id": "steam_hidden_from_arrival",
+      "from": "windstone_arrival",
+      "to": "sunscald_basin constant steam (12 m)",
+      "from_xz": [
+        -42.0,
+        -44.0
+      ],
+      "to_xz": [
+        36.0,
+        -34.0
+      ],
+      "intent": "kept hidden: the tall west rim and the Hearthfell knoll hide the basin; only the tops of geyser bursts may flicker above the rim",
+      "analytic": {
+        "player_xz": [
+          -42.0,
+          -44.0
+        ],
+        "target_xz": [
+          36.0,
+          -34.0
+        ],
+        "target_height_m": 12.0,
+        "distance_m": 78.6,
+        "camera_distance_m": 90.7,
+        "frame_top_at_target_m": 17.5,
+        "hidden_below_m": 16.6,
+        "worst_occluder": "sunscald_rim_west",
+        "visible_span_m": [
+          16.6,
+          16.6
+        ],
+        "visible_m": 0.0,
+        "top_in_frame": true,
+        "vegetation_hides_below_m": 15.6,
+        "vegetation_zone": "hearthfell_pines"
+      }
+    },
+    {
+      "id": "steam_hidden_from_camp",
+      "from": "camp hearth",
+      "to": "sunscald_basin constant steam (12 m)",
+      "from_xz": [
+        -24.0,
+        -25.0
+      ],
+      "to_xz": [
+        36.0,
+        -34.0
+      ],
+      "intent": "the camp feels safe: no boss steam in view",
+      "analytic": {
+        "player_xz": [
+          -24.0,
+          -25.0
+        ],
+        "target_xz": [
+          36.0,
+          -34.0
+        ],
+        "target_height_m": 12.0,
+        "distance_m": 60.7,
+        "camera_distance_m": 72.7,
+        "frame_top_at_target_m": 15.3,
+        "hidden_below_m": 17.6,
+        "worst_occluder": "sunscald_rim_west",
+        "visible_span_m": [
+          17.6,
+          17.6
+        ],
+        "visible_m": 0.0,
+        "top_in_frame": true,
+        "vegetation_hides_below_m": 17.6,
+        "vegetation_zone": "hearthfell_pines"
+      }
+    },
+    {
+      "id": "stillfall_hidden_on_approach",
+      "from": "lakeshore_road (-51.5,31)",
+      "to": "stillfall",
+      "from_xz": [
+        -51.5,
+        31.0
+      ],
+      "to_xz": [
+        -47.5,
+        93.5
+      ],
+      "intent": "Cairn Point hides the frozen waterfall on the way north",
+      "analytic": {
+        "player_xz": [
+          -51.5,
+          31.0
+        ],
+        "target_xz": [
+          -47.5,
+          93.5
+        ],
+        "target_height_m": 12.0,
+        "distance_m": 62.6,
+        "camera_distance_m": 74.6,
+        "frame_top_at_target_m": 15.5,
+        "hidden_below_m": 18.1,
+        "worst_occluder": "cairn_point",
+        "visible_span_m": [
+          18.1,
+          18.1
+        ],
+        "visible_m": 0.0,
+        "top_in_frame": true,
+        "vegetation_hides_below_m": null,
+        "vegetation_zone": null
+      }
+    },
+    {
+      "id": "stillfall_reveal",
+      "from": "lakeshore_road at the headland tip (-35.4,64.5)",
+      "to": "stillfall",
+      "from_xz": [
+        -35.4,
+        64.5
+      ],
+      "to_xz": [
+        -47.5,
+        93.5
+      ],
+      "intent": "reveal moment 1: the wide frozen curtain opens up in the cove",
+      "analytic": {
+        "player_xz": [
+          -35.4,
+          64.5
+        ],
+        "target_xz": [
+          -47.5,
+          93.5
+        ],
+        "target_height_m": 12.0,
+        "distance_m": 31.4,
+        "camera_distance_m": 43.4,
+        "frame_top_at_target_m": 11.8,
+        "hidden_below_m": 5.0,
+        "worst_occluder": "stillfall_ice_cone",
+        "visible_span_m": [
+          5.0,
+          11.8
+        ],
+        "visible_m": 6.8,
+        "top_in_frame": false,
+        "vegetation_hides_below_m": null,
+        "vegetation_zone": null
+      }
+    },
+    {
+      "id": "grotto_falls_reveal",
+      "from": "cave_spur before the mouth (2,98)",
+      "to": "grotto_falls",
+      "from_xz": [
+        2.0,
+        98.0
+      ],
+      "to_xz": [
+        2.0,
+        122.0
+      ],
+      "intent": "reveal moment 2: the frozen cascade framed by the ice arch",
+      "analytic": {
+        "player_xz": [
+          2.0,
+          98.0
+        ],
+        "target_xz": [
+          2.0,
+          122.0
+        ],
+        "target_height_m": 10.0,
+        "distance_m": 24.0,
+        "camera_distance_m": 36.0,
+        "frame_top_at_target_m": 10.9,
+        "hidden_below_m": 0.0,
+        "worst_occluder": null,
+        "visible_span_m": [
+          0.0,
+          10.0
+        ],
+        "visible_m": 10.0,
+        "top_in_frame": true,
+        "vegetation_hides_below_m": null,
+        "vegetation_zone": null
+      }
+    },
+    {
+      "id": "overlook_from_cairn_isle",
+      "from": "cairn_isle",
+      "to": "every landmark",
+      "from_xz": [
+        -6.5,
+        44.0
+      ],
+      "intent": "the hidden reward: a 360 deg view of the tower, the Stillfall, the cave mouth, the boss steam and the camp",
+      "analytic": {
+        "rimehold_tower": {
+          "distance_m": 40.5,
+          "visible_span_m": [
+            5.7,
+            12.9
+          ],
+          "visible_m": 7.2,
+          "worst_occluder": "rimehold_wall_northwest",
+          "vegetation_zone": null
+        },
+        "stillfall": {
+          "distance_m": 64.3,
+          "visible_span_m": [
+            5.0,
+            12.0
+          ],
+          "visible_m": 7.0,
+          "worst_occluder": "stillfall_ice_cone",
+          "vegetation_zone": null
+        },
+        "rimeheart_mouth": {
+          "distance_m": 62.6,
+          "visible_span_m": [
+            0.0,
+            11.0
+          ],
+          "visible_m": 11.0,
+          "worst_occluder": "rimecrest_isle_cairn",
+          "vegetation_zone": "rimepine_wood"
+        },
+        "sunscald_steam": {
+          "distance_m": 88.8,
+          "visible_span_m": [
+            7.1,
+            18.7
+          ],
+          "visible_m": 11.6,
+          "worst_occluder": "sunscald_rim_northwest",
+          "vegetation_zone": null
+        },
+        "camp_smoke": {
+          "distance_m": 71.2,
+          "visible_span_m": [
+            0.5,
+            10.0
+          ],
+          "visible_m": 9.5,
+          "worst_occluder": "rimecrest_camp_hearth",
+          "vegetation_zone": null
+        }
+      }
+    }
+  ],
+  "route": {
+    "loop_order": [
+      "windstone_arrival",
+      "hearthhorn_camp",
+      "glassmere_shore (lv1)",
+      "Cairn Point reveal",
+      "stillfall_cove",
+      "rimepine_wood (lv2)",
+      "NE junction",
+      "rimehold_court (lv3)",
+      "sunscald_basin (boss, spur)",
+      "return_road",
+      "steamrun_bridge",
+      "hearthhorn_camp"
+    ],
+    "path_lengths_m": {
+      "arrival_road": 18.8,
+      "lakeshore_road": 118.0,
+      "ridge_road": 58.5,
+      "return_road": 120.8,
+      "emberpass_road": 20.9,
+      "rimehold_way": 77.2,
+      "cave_spur": 30.8,
+      "hidden_causeway": 14.3
+    },
+    "loop_length_m": 297.3,
+    "loop_walk_s": 66,
+    "spurs_m": {
+      "rimeheart grotto": 30.8,
+      "cairn isle": 14.3,
+      "rimehold_way to the arena rim": 77.2,
+      "emberpass": 20.9
+    },
+    "note": "camp -> lakeshore -> ridge -> NE junction -> return road -> camp; the boss basin is a dead-end spur through the ruin (the exit portal saves the walk back)"
+  },
+  "lighting": {
+    "noon": "low winter sun from the SSE at about 24 deg elevation, warm key (#F6C95F tint), blue-violet sky fill, ACES; snow never above 235/255 (#E8EEF2), snow shadows #9FB3D1 / #7E8FB8; the basin floor reads dark and wet so the gold boss pops",
+    "dusk": "rose-gold key, long blue shadows across the ice shelf, camp fire and ward braziers (once relit) on",
+    "night": "cool moon key, warm camp light, basin steam lit amber from below (VFX, capped), wraith chest ice and eyes cyan (emissive capped below bloom), frozen falls catch moonlight; never pitch dark (darkest large areas >= 0.15 luma)",
+    "fog": "light blue aerial haze from 100 m; the lure tower keeps >= 0.15 luma contrast against the sky at 116 m",
+    "weather": "snowfall uses the shared client weather slot (15 %, rendered as rain in Sunmeadow): light flakes, visibility >= 80 m; tick rows bloom"
+  },
+  "budgets_per_64m_cell": {
+    "triangles_lod0_excluding_vegetation": 120000,
+    "draw_calls": 40,
+    "tiers": "C0 <= 120k tris / 40 draws, C1 <= 60k / 24, C2 <= 40k / 16 (device-tier plan 6.4); phones run the Medium preset (C1 in their own cell)",
+    "vegetation": "thin instances + impostors (snow variant of the sunmeadow-trees-v4 pines); reeds and moss as thin-instanced clumps",
+    "textures": "shared atlases: snow/ice terrain layers, rock trim, rime-warden ruin trim, camp trim; <= 4 MiB unique per cell",
+    "monsters_in_view": "worst case measured on a 2 m grid of walkable points (weather rows included): 11 by day / 13 at night within 25 m, 15 / 17 within 40 m; Sunmeadow v2 (reviewed) measures 11-12 / 20; mobile-mid draws 8 at full detail, the rest at LOD1; the elite fight adds at most 1 golem",
+    "vfx": "each effect <= 10 draws, <= 250 particles (VFX bar); at most 2 geyser bursts at once; steam plumes are camera-facing cards",
+    "kits": {
+      "snow_rock": "5 painted rocks + 2 cliff modules, snow cap by normal.y (Sunmeadow rock kit variants)",
+      "snow_pine": "3 pine sizes + a dead snag, snow-laden boughs (snow variant of sunmeadow-trees-v4)",
+      "ice": "4 pressure-ridge slabs, 3 ice blocks, 1 ice-wall module; unique: Stillfall, Grotto Falls, mouth arch",
+      "ruin": "rime-warden kit: 3 wall segments, 2 columns, broken column, brazier, gate post; unique: the bell tower",
+      "basin": "3 basalt columns, 3 travertine terraces, 2 hot-pool rims, geyser cone; unique: the sun-disc and the sun-dais",
+      "camp": "Sunmeadow camp kit (tent, rack, baskets, crates) with felt/hide + snow materials; new: vendor stall, quest board",
+      "warp": "windstone dais + ring stones (F11/F09 masters, snow material), sun-disc portal frame, Emberpass gate (Blender)"
+    }
+  },
+  "cells": [
+    {
+      "id": "rimecrest_c0_r0",
+      "bounds_xz": [
+        -64,
+        0,
+        -64,
+        0
+      ],
+      "contents": "arrival hollow (dais, 3 ring stones, 6 boulders), Hearthhorn camp, west Hearthfell, south hills",
+      "estimate_lod0_tris": 72000,
+      "estimate_draws": 22,
+      "note": "hero: dais + ring stones; camp kit atlas; NPC Mirun counts as a character"
+    },
+    {
+      "id": "rimecrest_c1_r0",
+      "bounds_xz": [
+        0,
+        64,
+        -64,
+        0
+      ],
+      "contents": "Sunscald basin (rims, 5 hot pools, 3 geysers, 4 basalt columns, sun-disc, sun-dais, exit portal), east Hearthfell, Steamrun bridge",
+      "estimate_lod0_tris": 98000,
+      "estimate_draws": 30,
+      "note": "the boss cell: Solar Scorpion LOD0 22k is a character budget, not cell geometry"
+    },
+    {
+      "id": "rimecrest_c0_r1",
+      "bounds_xz": [
+        -64,
+        0,
+        0,
+        64
+      ],
+      "contents": "Glassmere west half, ice shelf + pressure ridge, causeway + Cairn Isle, shore field, west hills, Cairn Point south",
+      "estimate_lod0_tris": 64000,
+      "estimate_draws": 20,
+      "note": "lake surface = 1 water draw; slabs thin-instanced"
+    },
+    {
+      "id": "rimecrest_c1_r1",
+      "bounds_xz": [
+        0,
+        64,
+        0,
+        64
+      ],
+      "contents": "Glassmere east edge, return road, Rimehold ruin (walls, columns, braziers, bell tower), Sunscald Pass",
+      "estimate_lod0_tris": 104000,
+      "estimate_draws": 32,
+      "note": "hero: the bell tower (<= 9k); ruin kit atlas"
+    },
+    {
+      "id": "rimecrest_c0_r2",
+      "bounds_xz": [
+        -64,
+        0,
+        64,
+        128
+      ],
+      "contents": "Stillfall cove (frozen fall, ice cone, cliffs), Cairn Point north, ridge wood west, grotto west half",
+      "estimate_lod0_tris": 90000,
+      "estimate_draws": 26,
+      "note": "hero: the Stillfall (<= 8k)"
+    },
+    {
+      "id": "rimecrest_c1_r2",
+      "bounds_xz": [
+        0,
+        64,
+        64,
+        128
+      ],
+      "contents": "ridge wood east, Rimeheart Mouth + grotto east half + Grotto Falls, NE junction, Emberpass gate",
+      "estimate_lod0_tris": 96000,
+      "estimate_draws": 28,
+      "note": "hero: the mouth arch (<= 6k)"
+    }
+  ],
+  "warp_network": {
+    "region": "rimecrest_snow",
+    "arrivals": [
+      {
+        "from": "sunmeadow warp_windstone_portal (interact, r 1.8, after the first Galehorn defeat)",
+        "spawn": "windstone_arrival"
+      },
+      {
+        "from": "lava_region rimecrest_gate_out (future)",
+        "spawn": "emberpass_gate_in"
+      }
+    ],
+    "exits": [
+      {
+        "warp": "windstone_return",
+        "to": "sunmeadow windstone_circle (2,-72); fallback (0,-50) while Galehorn is announced or engaged"
+      },
+      {
+        "warp": "warp_sunscald_exit",
+        "to": "rimecrest_snow hearthhorn_camp (local, after the boss fight only)"
+      },
+      {
+        "warp": "warp_rimecrest_emberpass",
+        "to": "lava region (Lv 20 + quest), closed for now"
+      }
+    ],
+    "hub": "the city portal dais lists 'Rimecrest Windstone' once the character has arrived here (discover-to-unlock); the local exit portal is never on the hub list",
+    "rules": [
+      "server-authoritative zone transfer with a request id (inbox A16)",
+      "warp triggers never inside combat arenas or on spawn homes (checked by plan_options.check_warps_vs_arenas and the monster safe points)",
+      "every destination has a return warp",
+      "trigger radius visible as a ground ring when unlocked",
+      "Rimecrest is its own world/zone instance: its rows never share Sunmeadow's 64-monster snapshot"
+    ]
+  }
+}

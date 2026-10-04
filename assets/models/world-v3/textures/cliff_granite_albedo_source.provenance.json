@@ -1,0 +1,52 @@
+{
+  "asset": "assets/models/world-v3/textures/cliff_granite_albedo_source.png",
+  "purpose": "Original granite cliff-rock albedo source texture for Blender-authored map-edge mountains; no runtime integration or resampling.",
+  "generator": {
+    "tool": "Built-in Codex ImageGen",
+    "mode": "generate",
+    "generation_count": 1,
+    "paid_provider_or_tripo_calls": false,
+    "generated_output": "%USERPROFILE%/.codex/generated_images/01a0f1f6-77ca-7f92-ac64-81894e016e02/exec-b097b005-7555-4861-84a3-9345d198ffe5.png"
+  },
+  "prompt": "One square flat seamless-tiling PBR albedo/base-color material texture: naturally weathered cool gray granite cliff rock for a lush painterly fantasy woodland MMORPG. Broad irregular stone masses with thin mineral veins, hairline fractures, subtly chipped surfaces, tiny coarse grains and restrained warm taupe mineral inclusions. Mostly neutral medium-gray with quiet sage weathering, no paving blocks, mortar, brick walls, tiles or regular grid, no giant black cavities. Material scan fills frame, all surfaces opaque, diffuse neutral illumination with no cast shadows, directional lighting, glossy highlights, vegetation, scene, object outline, text, labels, panels or border. Preserve medium-scale readable fracture shapes and fine pores; opposite edges should visually join when tiled. One albedo texture only; no normal-map/roughness collage.",
+  "file": {
+    "format": "PNG",
+    "dimensions_px": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "alpha": false,
+    "bytes": 3805510,
+    "sha256": "2419052968c0126c8689dcb88c7694bdf82544a384dac3a60a55dfac2ced0e48"
+  },
+  "inspection": {
+    "visual": "Cool medium-gray rock masses with fine grains, irregular cracks and subtle warm mineral inclusions. No scene, border, text, panels, vegetation or obvious directional cast shadow.",
+    "seam_measurement": "Opposite-edge channel absolute RGB differences compared with ordinary one-pixel neighbor differences along the same axes, range 0-255.",
+    "left_right_seam": {
+      "mean_abs_rgb_delta": 26.329,
+      "median_abs_channel_delta": 21,
+      "p95_abs_channel_delta": 69,
+      "max_abs_channel_delta": 113
+    },
+    "ordinary_horizontal_neighbors": {
+      "mean_abs_rgb_delta": 18.14,
+      "median_abs_channel_delta": 14,
+      "p95_abs_channel_delta": 48,
+      "max_abs_channel_delta": 138
+    },
+    "top_bottom_seam": {
+      "mean_abs_rgb_delta": 24.509,
+      "median_abs_channel_delta": 20,
+      "p95_abs_channel_delta": 61,
+      "max_abs_channel_delta": 115
+    },
+    "ordinary_vertical_neighbors": {
+      "mean_abs_rgb_delta": 18.738,
+      "median_abs_channel_delta": 15,
+      "p95_abs_channel_delta": 49,
+      "max_abs_channel_delta": 140
+    },
+    "assessment": "The opposite-edge differences are materially above ordinary adjacent-pixel differences on both axes. Do not treat or label this source as seamless/approved; a tile seam may be visible. No 2x2 tiled derivative was created."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "xexoria.blueprint-local/1",
+  "assets": [
+    {
+      "id": "blueprint_hunter_stakes",
+      "family": "craft",
+      "recipe": "blueprint.pointed_stake_fence/1",
+      "seed": 202610031410,
+      "status": "PROJECT_AUTHORED",
+      "licence": "Project authored",
+      "bounds": {
+        "min": [
+          -1.25,
+          0,
+          -0.155
+        ],
+        "max": [
+          1.25,
+          1.5,
+          0.155
+        ]
+      },
+      "textures": {
+        "atlas": "sm_craft"
+      },
+      "lods": [
+        {
+          "file": "assets/models/blueprint-p0-fence/runtime/blueprint_hunter_stakes_lod0.glb",
+          "tris": 392,
+          "sha256": "5d08633f4d8d40c6fd8386154787fcc3e489b9e0f8d9f1fdbedd34ae732b098e"
+        },
+        {
+          "file": "assets/models/blueprint-p0-fence/runtime/blueprint_hunter_stakes_lod1.glb",
+          "tris": 264,
+          "sha256": "ecb65ccf3e6ac4970424991894761bdbb6096ef15b91a9af015323b46ffe9c96"
+        },
+        {
+          "file": "assets/models/blueprint-p0-fence/runtime/blueprint_hunter_stakes_lod2.glb",
+          "tris": 200,
+          "sha256": "1183038b2bc4da13d8a5211ecf9a414382c85db5dab5823b7446b256ca9237ba"
+        }
+      ],
+      "collider": {
+        "id": "blueprint_hunter_stakes",
+        "shape": "box",
+        "center": [
+          0,
+          0.75,
+          0
+        ],
+        "size": [
+          2.5,
+          1.5,
+          0.31
+        ],
+        "admission": "UNVERIFIED root required"
+      },
+      "shadowProxy": {
+        "type": "lod2",
+        "file": "assets/models/blueprint-p0-fence/runtime/blueprint_hunter_stakes_lod2.glb"
+      },
+      "provenance": "Eight pointed closed timber stakes and two rear rails, canonical unchanged craft atlas, zero provider credits"
+    }
+  ]
+}

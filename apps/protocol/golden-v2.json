@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "fixtures": [
+    {
+      "name": "join_fresh",
+      "direction": "client_to_server",
+      "hex": "31a702010900000000000000000000"
+    },
+    {
+      "name": "join_resume",
+      "direction": "client_to_server",
+      "hex": "31a702010900010807060504030201"
+    },
+    {
+      "name": "input_full_axes",
+      "direction": "client_to_server",
+      "hex": "31a702020c000100000002000000ff7f0180"
+    },
+    {
+      "name": "action_arc_slash",
+      "direction": "client_to_server",
+      "hex": "31a702030900010000000300000002"
+    },
+    {
+      "name": "welcome_basic",
+      "direction": "server_to_client",
+      "hex": "31a702812000020000000100000008070605040302012a000000000000000000c03f000010c0"
+    },
+    {
+      "name": "snapshot_one_player",
+      "direction": "server_to_client",
+      "hex": "31a702821d002a0000000000000001000000020000000000c03f000010c05000640001"
+    },
+    {
+      "name": "snapshot_player_monster_event_u64",
+      "direction": "server_to_client",
+      "hex": "31a702824b002a0000000000000001010100020000000000c03f000010c05000640001650000000100006040000080405a005a000101000000000020000200000065000000011c00000000604000008040"
+    },
+    {
+      "name": "error_room_full",
+      "direction": "server_to_client",
+      "hex": "31a7028302000300"
+    }
+  ]
+}

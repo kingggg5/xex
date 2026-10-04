@@ -1,0 +1,992 @@
+{
+  "schema": "aetherfield.city-layout/1",
+  "revision": "r5",
+  "working_title": "Aetherhold (placeholder name)",
+  "reference": {
+    "path": "docs/ui/city-layout-target-20260928.png",
+    "use": "Composition, layout and style target only. Positions were measured on a metric grid laid over the TOP VIEW panel (0.28 m per pixel at 3x). Reference pixels are never embedded in assets."
+  },
+  "units": "meters",
+  "axes": "Blender Z-up. Origin = fountain centre at plaza level. +Y = north (towards the Magic Castle), +X = east (towards the market). The Town Gate is on the south edge. glTF export converts to Y-up (Blender Y becomes glTF -Z).",
+  "facing_rule": "Each building's front door faces the point given in face_toward, or the angle facing_deg (counter-clockwise from +X / east; 90 = north, 270 = south).",
+  "island": {
+    "shape": "rounded rectangle with irregular cliff noise",
+    "x_min": -120,
+    "x_max": 120,
+    "y_min": -160,
+    "y_max": 128,
+    "corner_radius": 38,
+    "edge_noise_m": 4.0,
+    "underside_depth_m": 75,
+    "underside_style": "Hanging rock mass: layered warm-brown strata, broken ledges, grass and roots spilling over the lip, stalactite spurs. Small satellite rocks float nearby."
+  },
+  "levels": {
+    "plaza": 0.0,
+    "south_terrace": 0.0,
+    "canal_water_surface": -1.0,
+    "castle_terrace": 9.0,
+    "wizard_terrace": 6.0,
+    "windmill_hill": 8.0,
+    "blacksmith_yard": 0.3,
+    "guild_street": 0.0,
+    "gate_forecourt": -0.5
+  },
+  "plaza": {
+    "center": [
+      0,
+      0
+    ],
+    "radius": 42,
+    "paving": "Radial flagstone rings (light warm stone) with darker blue-grey accent bands every ~8 m and eight radial seams aligned with the avenues.",
+    "planter_ring_radius": 17.5,
+    "planter_count": 12,
+    "lamp_ring_radius": 24,
+    "lamp_count": 12,
+    "bench_ring_radius": 30,
+    "avenues": [
+      {
+        "id": "north_stairs",
+        "to": [
+          0,
+          44
+        ],
+        "width": 14
+      },
+      {
+        "id": "south_canal",
+        "to": [
+          0,
+          -48
+        ],
+        "width": 12
+      },
+      {
+        "id": "northwest_wizard",
+        "to": [
+          -48,
+          58
+        ],
+        "width": 9
+      },
+      {
+        "id": "northeast_windmill",
+        "to": [
+          44,
+          50
+        ],
+        "width": 8
+      },
+      {
+        "id": "west_smithy",
+        "to": [
+          -58,
+          -10
+        ],
+        "width": 10
+      },
+      {
+        "id": "southwest_guild",
+        "to": [
+          -62,
+          -52
+        ],
+        "width": 9
+      },
+      {
+        "id": "southeast_potion",
+        "to": [
+          70,
+          -54
+        ],
+        "width": 9
+      },
+      {
+        "id": "east_market",
+        "to": [
+          50,
+          -20
+        ],
+        "width": 10
+      }
+    ]
+  },
+  "fountain": {
+    "center": [
+      0,
+      0
+    ],
+    "plinth_radius": 14.0,
+    "basin_radius": 11.5,
+    "tier2_radius": 6.0,
+    "tier2_height": 2.4,
+    "tier3_radius": 3.0,
+    "tier3_height": 4.6,
+    "statue": "Original winged guardian (robed figure, arms raised, two layered stone wings) on a pedestal at +6 m; total statue height about 7.5 m.",
+    "crystal_height": 17.0,
+    "crystal_size": 3.2
+  },
+  "portal": {
+    "center": [
+      40,
+      10
+    ],
+    "dais_radius": 8.5,
+    "rune_radius": 6.5,
+    "style": "Raised stone dais with concentric glowing blue rune rings, three short stone pylons with floating shards, a vertical light column (runtime VFX)."
+  },
+  "water": {
+    "canal": {
+      "path": [
+        [
+          0,
+          -46
+        ],
+        [
+          0,
+          -74
+        ],
+        [
+          0,
+          -112
+        ],
+        [
+          0,
+          -148
+        ]
+      ],
+      "width": 12,
+      "note": "Central canal from a small pool at the plaza's south edge to the Town Gate, crossed by the Canal Bridge and the Ring Bridge; passes under the gate and pours off the island edge."
+    },
+    "pools": [
+      {
+        "id": "gate_pool_west",
+        "center": [
+          -48,
+          -128
+        ],
+        "size": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "gate_pool_east",
+        "center": [
+          49,
+          -128
+        ],
+        "size": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "ne_garden_upper",
+        "center": [
+          72,
+          92
+        ],
+        "size": [
+          22,
+          16
+        ]
+      },
+      {
+        "id": "ne_garden_mid",
+        "center": [
+          64,
+          66
+        ],
+        "size": [
+          20,
+          16
+        ]
+      },
+      {
+        "id": "ne_garden_low",
+        "center": [
+          56,
+          40
+        ],
+        "size": [
+          18,
+          14
+        ]
+      },
+      {
+        "id": "nw_castle_pool",
+        "center": [
+          -44,
+          104
+        ],
+        "size": [
+          18,
+          12
+        ],
+        "level": 9.0
+      },
+      {
+        "id": "ne_castle_pool",
+        "center": [
+          44,
+          104
+        ],
+        "size": [
+          18,
+          12
+        ],
+        "level": 9.0
+      }
+    ],
+    "waterfalls": [
+      {
+        "id": "gate_fall_west",
+        "lip": [
+          -48,
+          -160
+        ],
+        "width": 12,
+        "drop": 60
+      },
+      {
+        "id": "gate_fall_east",
+        "lip": [
+          49,
+          -160
+        ],
+        "width": 12,
+        "drop": 60
+      },
+      {
+        "id": "gate_fall_centre",
+        "lip": [
+          0,
+          -160
+        ],
+        "width": 8,
+        "drop": 55
+      },
+      {
+        "id": "ne_cascade_1",
+        "lip": [
+          68,
+          80
+        ],
+        "width": 6,
+        "drop": 2.5
+      },
+      {
+        "id": "ne_cascade_2",
+        "lip": [
+          60,
+          53
+        ],
+        "width": 6,
+        "drop": 2.5
+      }
+    ],
+    "pool_level_rule": "Ground pools take the terrain height at their centre (terrain.Heights); castle pools are raised basins on the castle terrace."
+  },
+  "landmarks": [
+    {
+      "id": "magic_castle",
+      "kind": "castle",
+      "center": [
+        0,
+        96
+      ],
+      "level": "castle_terrace",
+      "footprint": [
+        64,
+        36
+      ],
+      "facing_deg": 270,
+      "height_to_main_spire_tip": 72,
+      "notes": "Grand gothic front with a purple-glowing portal door (8 m) at (0, 78); central keep + tallest spire; eight or more slender blue-slate spires with gold finials; side wings with round towers to x = +/-40; banners on every tower; ivy on lower walls."
+    },
+    {
+      "id": "grand_stairs",
+      "kind": "stairs",
+      "from": [
+        0,
+        42
+      ],
+      "to": [
+        0,
+        78
+      ],
+      "width": 16,
+      "rise": 9.0,
+      "notes": "Three flights with two landings; carved balustrades; lamp pylons and banners at each landing."
+    },
+    {
+      "id": "north_arcades",
+      "kind": "arcade",
+      "spans": [
+        [
+          [
+            -72,
+            118
+          ],
+          [
+            -22,
+            118
+          ]
+        ],
+        [
+          [
+            22,
+            118
+          ],
+          [
+            72,
+            118
+          ]
+        ]
+      ],
+      "level": "castle_terrace",
+      "notes": "Stone arcades/aqueduct along the north rim with pools behind them."
+    },
+    {
+      "id": "wizard_tower",
+      "kind": "wizard_tower",
+      "center": [
+        -65,
+        88
+      ],
+      "level": "wizard_terrace",
+      "base_radius": 8.0,
+      "height": 62,
+      "spire_tip": 78,
+      "rings": [
+        {
+          "height": 22,
+          "radius": 13
+        },
+        {
+          "height": 40,
+          "radius": 11
+        }
+      ],
+      "notes": "Slender pale-stone tower, purple-glowing lancet windows, buttressed base with a small gatehouse, blue spire, two slowly rotating rune rings (runtime animation)."
+    },
+    {
+      "id": "windmill",
+      "kind": "windmill",
+      "center": [
+        94,
+        108
+      ],
+      "level": "windmill_hill",
+      "base_radius": 6.0,
+      "height": 17,
+      "sail_radius": 12,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "White-plaster tower with a stone base, wooden cap, four lattice sails (runtime rotation), a small shed and fenced garden."
+    },
+    {
+      "id": "blacksmith",
+      "kind": "blacksmith",
+      "center": [
+        -72,
+        -18
+      ],
+      "level": "blacksmith_yard",
+      "footprint": [
+        26,
+        20
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Timber-and-stone forge hall; open workshop front with blue/cream striped awning; roaring forge (emissive + runtime fire/embers); big stone chimney (runtime smoke); anvils, weapon racks, barrels of swords, quench trough, coal pile."
+    },
+    {
+      "id": "armory_house",
+      "kind": "house_large",
+      "center": [
+        -30,
+        54
+      ],
+      "level": "plaza",
+      "footprint": [
+        16,
+        12
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        30
+      ],
+      "notes": "Blue-roofed armour shop near the NW stairs; small red/white market canopy in front."
+    },
+    {
+      "id": "guild_hall",
+      "kind": "guild_hall",
+      "center": [
+        -90,
+        -56
+      ],
+      "level": "guild_street",
+      "footprint": [
+        30,
+        22
+      ],
+      "stories": 3,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Largest civic timber hall: cross gables, dormers, corner turret, balcony, guild banners, lanterns."
+    },
+    {
+      "id": "tavern",
+      "kind": "tavern",
+      "center": [
+        -58,
+        -88
+      ],
+      "level": "guild_street",
+      "footprint": [
+        20,
+        16
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        -40
+      ],
+      "notes": "Cosy two-and-a-half-storey inn: cream awning, hanging sign, outdoor tables and barrels, warm windows."
+    },
+    {
+      "id": "market",
+      "kind": "market_square",
+      "center": [
+        66,
+        -22
+      ],
+      "level": "plaza",
+      "stall_rows": [
+        [
+          [
+            50,
+            -8
+          ],
+          [
+            84,
+            -8
+          ]
+        ],
+        [
+          [
+            50,
+            -34
+          ],
+          [
+            84,
+            -34
+          ]
+        ]
+      ],
+      "stalls_per_row": 4,
+      "featured_cart_stall": {
+        "slot": "1-1",
+        "scale": 2.0,
+        "source": "assets/third-party/quaternius-fantasy-props-megakit/standard/stall-cart/glTF/Stall_Cart_Empty.gltf",
+        "license": "CC0 1.0 Universal"
+      },
+      "notes": "Striped canopies (red/white, blue/white, cream, green); crates of produce, pottery, fabrics, potions; carts, barrels, sacks."
+    },
+    {
+      "id": "potion_shop",
+      "kind": "potion_shop",
+      "center": [
+        98,
+        -62
+      ],
+      "level": "plaza",
+      "footprint": [
+        16,
+        14
+      ],
+      "stories": 2,
+      "face_toward": [
+        40,
+        -30
+      ],
+      "notes": "Green-roofed alchemist's shop; cauldron chimney with green glow and smoke (runtime); herb racks, bottles, a small greenhouse."
+    },
+    {
+      "id": "nw_residential_rows",
+      "kind": "house_small_group",
+      "centers": [
+        [-108, 68],
+        [-94, 48],
+        [-110, 26],
+        [-84, 12],
+        [-50, 30],
+        [-46, 48]
+      ],
+      "level": "plaza",
+      "footprint": [
+        11,
+        9
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Six varied original rowhouses fill the northwest residential lanes without overlapping the observatory or castle approach."
+    },
+    {
+      "id": "west_residential_rows",
+      "kind": "house_small_group",
+      "centers": [
+        [-112, -8],
+        [-104, -28],
+        [-114, -48],
+        [-70, -42],
+        [-50, -56],
+        [-42, -72]
+      ],
+      "level": "plaza",
+      "footprint": [
+        11,
+        9
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Six small homes close the empty west loop while leaving the smithy, guild hall and tavern yards readable."
+    },
+    {
+      "id": "east_residential_rows",
+      "kind": "house_small_group",
+      "centers": [
+        [108, 20],
+        [110, 0],
+        [106, -28],
+        [114, -50],
+        [78, -116],
+        [108, -120]
+      ],
+      "level": "plaza",
+      "footprint": [
+        11,
+        9
+      ],
+      "stories": 2,
+      "face_toward": [
+        0,
+        0
+      ],
+      "notes": "Six southeast and east-lane homes make the potion shop and cottage approach read as a lived-in district."
+    },
+    {
+      "id": "se_cottages",
+      "kind": "house_small_group",
+      "centers": [
+        [
+          72,
+          -98
+        ],
+        [
+          96,
+          -104
+        ]
+      ],
+      "level": "south_terrace",
+      "footprint": [
+        12,
+        10
+      ],
+      "face_toward": [
+        0,
+        -60
+      ]
+    },
+    {
+      "id": "sw_well_gazebo",
+      "kind": "gazebo",
+      "center": [
+        -28,
+        -58
+      ],
+      "level": "plaza",
+      "footprint": [
+        7,
+        7
+      ]
+    },
+    {
+      "id": "canal_bridge",
+      "kind": "bridge_arched",
+      "center": [
+        0,
+        -74
+      ],
+      "span_axis": "x",
+      "length": 20,
+      "width": 10,
+      "notes": "Stone arch bridge with balustrades and lamp pylons; the bridge seen in the hero view."
+    },
+    {
+      "id": "ring_bridge",
+      "kind": "bridge_arched",
+      "center": [
+        0,
+        -112
+      ],
+      "span_axis": "x",
+      "length": 18,
+      "width": 8
+    },
+    {
+      "id": "town_gate",
+      "kind": "gate",
+      "center": [
+        0,
+        -152
+      ],
+      "level": "gate_forecourt",
+      "facing_deg": 270,
+      "width": 30,
+      "notes": "Front balustrade wall along the south edge with square pillars, lantern caps and hanging blue banners; central arch over the canal outflow; gate pillars with crystals."
+    }
+  ],
+  "paths": [
+    {
+      "id": "south_ring_road",
+      "points": [
+        [
+          -100,
+          -84
+        ],
+        [
+          -60,
+          -104
+        ],
+        [
+          0,
+          -112
+        ],
+        [
+          60,
+          -104
+        ],
+        [
+          100,
+          -84
+        ]
+      ],
+      "width": 8
+    },
+    {
+      "id": "gate_avenue",
+      "points": [
+        [
+          0,
+          -112
+        ],
+        [
+          0,
+          -150
+        ]
+      ],
+      "width": 10,
+      "note": "Two lanes either side of the canal"
+    },
+    {
+      "id": "west_loop",
+      "points": [
+        [
+          -58,
+          -10
+        ],
+        [
+          -96,
+          -20
+        ],
+        [
+          -104,
+          -60
+        ],
+        [
+          -100,
+          -84
+        ]
+      ],
+      "width": 7
+    },
+    {
+      "id": "east_loop",
+      "points": [
+        [
+          50,
+          -20
+        ],
+        [
+          100,
+          -30
+        ],
+        [
+          108,
+          -60
+        ],
+        [
+          100,
+          -84
+        ]
+      ],
+      "width": 7
+    },
+    {
+      "id": "wizard_path",
+      "points": [
+        [
+          -48,
+          58
+        ],
+        [
+          -60,
+          74
+        ],
+        [
+          -65,
+          80
+        ]
+      ],
+      "width": 6
+    },
+    {
+      "id": "windmill_path",
+      "points": [
+        [
+          44,
+          50
+        ],
+        [
+          80,
+          88
+        ],
+        [
+          90,
+          100
+        ]
+      ],
+      "width": 5
+    }
+  ],
+  "vegetation": {
+    "perimeter_belt": {
+      "inset_m": [
+        3,
+        16
+      ],
+      "spacing_m": 7.5,
+      "mix": {
+        "pine": 0.45,
+        "round_oak": 0.4,
+        "blossom": 0.08,
+        "autumn": 0.07
+      }
+    },
+    "groves": [
+      {
+        "center": [
+          -40,
+          80
+        ],
+        "radius": 12,
+        "count": 8
+      },
+      {
+        "center": [
+          36,
+          80
+        ],
+        "radius": 10,
+        "count": 6
+      },
+      {
+        "center": [
+          -100,
+          20
+        ],
+        "radius": 14,
+        "count": 10
+      },
+      {
+        "center": [
+          106,
+          20
+        ],
+        "radius": 12,
+        "count": 8
+      },
+      {
+        "center": [
+          -30,
+          -120
+        ],
+        "radius": 10,
+        "count": 6
+      },
+      {
+        "center": [
+          30,
+          -120
+        ],
+        "radius": 10,
+        "count": 6
+      }
+    ],
+    "flower_beds": "Along avenue edges, inside the plaza planter ring, at building fronts and around pools."
+  },
+  "runtime_contract": {
+    "animated_nodes": [
+      "anim_windmill_sails",
+      "anim_wizard_ring_*",
+      "anim_crystal_*",
+      "anim_portal_disc",
+      "anim_banner_*"
+    ],
+    "fx_meshes": [
+      "fx_water_*",
+      "fx_waterfall_*",
+      "fx_portal_beam",
+      "fx_window_glow_*"
+    ],
+    "emitters": [
+      "emit_smoke_*",
+      "emit_fire_*",
+      "emit_embers_*",
+      "emit_spray_*",
+      "emit_sparkle_*",
+      "emit_mist_*"
+    ],
+    "lights": [
+      "light_lamp_*",
+      "light_forge",
+      "light_portal",
+      "light_castle_door"
+    ],
+    "rule": "Objects with these prefixes are exported as separate named nodes (never merged) so the client can animate, scroll or spawn effects on them. Everything else is merged by material."
+  },
+  "review_cameras": {
+    "hero_front": {
+      "note": "Matches the main hero image: elevated three-quarter view from the south, looking north across the plaza to the castle.",
+      "location": [
+        26,
+        -236,
+        196
+      ],
+      "target": [
+        0,
+        -8,
+        4
+      ],
+      "lens_mm": 35
+    },
+    "front": {
+      "location": [
+        0,
+        -330,
+        150
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "back": {
+      "location": [
+        0,
+        330,
+        170
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "left": {
+      "location": [
+        -330,
+        0,
+        170
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "right": {
+      "location": [
+        330,
+        0,
+        170
+      ],
+      "target": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 50
+    },
+    "top": {
+      "location": [
+        0,
+        -16,
+        420
+      ],
+      "target": [
+        0,
+        -16,
+        0
+      ],
+      "lens_mm": 45,
+      "note": "Orthographic top map, ortho_scale 310"
+    },
+    "plaza_street": {
+      "location": [
+        -6,
+        -40,
+        3.2
+      ],
+      "target": [
+        0,
+        20,
+        8
+      ],
+      "lens_mm": 28
+    },
+    "arrival_gate": {
+      "location": [
+        0,
+        -190,
+        14
+      ],
+      "target": [
+        0,
+        -60,
+        8
+      ],
+      "lens_mm": 32
+    }
+  }
+}

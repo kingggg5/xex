@@ -1,0 +1,460 @@
+{
+  "schema": "xexoria.texture-forge/1",
+  "generator": "assets/blender/city_r5/forge/forge_textures_r6.py",
+  "blender": "5.2.2 LTS",
+  "license": "Original procedural work for Xexoria; no third-party pixels.",
+  "contract": "<name>_albedo.png sRGB, <name>_normal.png OpenGL +Y, <name>_orm.png AO/roughness/metal",
+  "status": "CANDIDATE \u2014 not promoted; review in Blender and native Babylon before replacing textures/",
+  "materials": [
+    {
+      "name": "cliff_rock",
+      "tile_m": 9.0,
+      "generator": "strata",
+      "objects": 205,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 53.7,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/cliff_rock_albedo.png",
+          "bytes": 1075269,
+          "sha256": "2e7358c744c605f8490be78e831832b044f515cc13714c92e4962e0396468d11",
+          "seam_score": 3.109
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/cliff_rock_normal.png",
+          "bytes": 2231644,
+          "sha256": "1842df09fe8d10e44ec1b2378ce5b575fa8899a1534df17454be84367c484d02",
+          "seam_score": 1.833
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/cliff_rock_orm.png",
+          "bytes": 1005008,
+          "sha256": "936ffd2eab143c1d6facefe32bd7ed3a7f744992422ab006dccee1cbe88ca027",
+          "seam_score": 3.081
+        }
+      }
+    },
+    {
+      "name": "cobble_path",
+      "tile_m": 2.6,
+      "generator": "cobbles",
+      "objects": 282,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 26.6,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/cobble_path_albedo.png",
+          "bytes": 1111324,
+          "sha256": "f5eb1b1542f0d7fc02e7365855cc094b72dfedcbf97a9222fc4ab88e924715d1",
+          "seam_score": 1.318
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/cobble_path_normal.png",
+          "bytes": 2115289,
+          "sha256": "9a54f7d601b1eca9ec1854ee394c0979145920b1ba1b39460815752dc497e18d",
+          "seam_score": 1.129
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/cobble_path_orm.png",
+          "bytes": 1008256,
+          "sha256": "b3e927f919f3be5fdf1eb4763dba95e1cb2a1486782a37c6b21e8e30ac68f1e8",
+          "seam_score": 1.271
+        }
+      }
+    },
+    {
+      "name": "grass_ground",
+      "tile_m": 6.0,
+      "generator": "grass",
+      "objects": 2,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 153.3,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/grass_ground_albedo.png",
+          "bytes": 2129776,
+          "sha256": "1907da7d4dddf6e18b5ee32a7cadb5c0e96c87c75120708d61ba039fa563c8e6",
+          "seam_score": 1.024
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/grass_ground_normal.png",
+          "bytes": 2604321,
+          "sha256": "87500ba4cd9b3be19f8116bf91632753fee6ca100d4df1997b1643e06f28c5eb",
+          "seam_score": 0.957
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/grass_ground_orm.png",
+          "bytes": 1833096,
+          "sha256": "3e4d49ece84ad289f3867147f502e581e76030f76b2e3a7ec89ff2fb4f7d3591",
+          "seam_score": 1.032
+        }
+      }
+    },
+    {
+      "name": "paver_surface",
+      "tile_m": 2.0,
+      "generator": "masonry",
+      "objects": 184,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 21.0,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/paver_surface_albedo.png",
+          "bytes": 970339,
+          "sha256": "9043107b98be98d220327adb8268df9272cb8029d7b818dea40eacd1aa188831",
+          "seam_score": 0.361
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/paver_surface_normal.png",
+          "bytes": 2008514,
+          "sha256": "2080db4035f04c18d9035477e822d8ad797cae9bc1e117e71282bb2a0df0b676",
+          "seam_score": 0.775
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/paver_surface_orm.png",
+          "bytes": 825562,
+          "sha256": "804c2828bb1662d4cabd1cb83cb66698d81136fa6bca7f78bee46920ee350d7c",
+          "seam_score": 0.452
+        }
+      }
+    },
+    {
+      "name": "plaster_cream",
+      "tile_m": 3.0,
+      "generator": "plaster",
+      "objects": 51,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 18.6,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/plaster_cream_albedo.png",
+          "bytes": 964924,
+          "sha256": "a1a24040d29fc9235f0dee368c95b9c58a1bd3545362f709c9dcb09c08fdcc1a",
+          "seam_score": 1.016
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/plaster_cream_normal.png",
+          "bytes": 1788884,
+          "sha256": "6452cdb0cb798783bea613191daf9340c8d91ab06c746d058b0ab391e3e8ad58",
+          "seam_score": 1.271
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/plaster_cream_orm.png",
+          "bytes": 462591,
+          "sha256": "d84098a9614712266ffa06034a8bf013971fbc045ca8084bbfb9053ef639d307",
+          "seam_score": 1.394
+        }
+      }
+    },
+    {
+      "name": "plaza_flagstone",
+      "tile_m": 4.0,
+      "generator": "masonry",
+      "objects": 109,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 19.5,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/plaza_flagstone_albedo.png",
+          "bytes": 1000651,
+          "sha256": "1a876b6905cc0fd961fd77835d5048685997377588d569daa0625eda161c3ad7",
+          "seam_score": 0.686
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/plaza_flagstone_normal.png",
+          "bytes": 2026859,
+          "sha256": "362b777e0705ef7af2a065ffb35e72362d134575ab92f3ece2837003728a069a",
+          "seam_score": 0.917
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/plaza_flagstone_orm.png",
+          "bytes": 797761,
+          "sha256": "585dc6bc1d4e4c8af8bd3200268fddfc86cabfa50cd5a0b1450ec6f592f0cc96",
+          "seam_score": 1.044
+        }
+      }
+    },
+    {
+      "name": "roof_shingle_green",
+      "tile_m": 2.2,
+      "generator": "roof",
+      "objects": 355,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 24.3,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_shingle_green_albedo.png",
+          "bytes": 952433,
+          "sha256": "eb17c89ea820c885c24955814e988963277e4256c1bbc5736bc15e2f480d3fbf",
+          "seam_score": 0.674
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_shingle_green_normal.png",
+          "bytes": 2132220,
+          "sha256": "979082bee91903cf052a9c960d08fa3769b495a529e240b5771a4e1830362528",
+          "seam_score": 0.839
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_shingle_green_orm.png",
+          "bytes": 1007576,
+          "sha256": "198c042aa106b4ab13f423e9f39ede5b4da31ea54c8edb3a381fb87ae8cf4ff4",
+          "seam_score": 0.822
+        }
+      }
+    },
+    {
+      "name": "roof_slate_blue",
+      "tile_m": 2.2,
+      "generator": "roof",
+      "objects": 274,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 19.4,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_slate_blue_albedo.png",
+          "bytes": 951564,
+          "sha256": "d65f21fd2414510917f8a9898421825061d1cedcfa3c46559cbfcc7f38a33e6c",
+          "seam_score": 1.069
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_slate_blue_normal.png",
+          "bytes": 2111516,
+          "sha256": "f289a862060cae9128477456b7af791e17fb457b568cf9607a58077a9ecc35e0",
+          "seam_score": 1.047
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_slate_blue_orm.png",
+          "bytes": 898774,
+          "sha256": "105af205fe0bfd573b13801c151a28545e57f2fff3c753d9d667b037f60edd3a",
+          "seam_score": 1.341
+        }
+      }
+    },
+    {
+      "name": "roof_slate_navy",
+      "tile_m": 2.2,
+      "generator": "roof",
+      "objects": 278,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 19.5,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_slate_navy_albedo.png",
+          "bytes": 864225,
+          "sha256": "e1d8735a16776f0ef552701c56b45ae9a0d355cf5749ab4e139a57f16e6aa269",
+          "seam_score": 0.74
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_slate_navy_normal.png",
+          "bytes": 2110839,
+          "sha256": "69e2a833cfe6765f7986a71f7e443df871d74efbde00b40353a7c31cbcad82ef",
+          "seam_score": 0.934
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_slate_navy_orm.png",
+          "bytes": 901204,
+          "sha256": "ca870ccb94b6731ac37a26b317d47e37058893dde7945a9c9c528375d5355533",
+          "seam_score": 1.311
+        }
+      }
+    },
+    {
+      "name": "roof_tile_red",
+      "tile_m": 2.2,
+      "generator": "roof",
+      "objects": 400,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 91.3,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_tile_red_albedo.png",
+          "bytes": 996650,
+          "sha256": "8ca092d436cd86fa1b8d047b4101f2874786b84d8e104afa86d51e62fc718d99",
+          "seam_score": 1.149
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_tile_red_normal.png",
+          "bytes": 2142741,
+          "sha256": "3d9bab1dec1460fda5074c83128f738e1c4827488d7ce471b141e7cc2da1a1cd",
+          "seam_score": 1.08
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/roof_tile_red_orm.png",
+          "bytes": 1023573,
+          "sha256": "289a32690598b0f34f0188853f5db360f219fde57e6a18a5ce7b1e2d735aefaf",
+          "seam_score": 1.365
+        }
+      }
+    },
+    {
+      "name": "stone_accent_bluegrey",
+      "tile_m": 2.0,
+      "generator": "masonry",
+      "objects": 114,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 37.9,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_accent_bluegrey_albedo.png",
+          "bytes": 912795,
+          "sha256": "4d45849d86b99ae848de2f00183c0cb26ced9eec16bec1d6e68f04d8f0f8f11b",
+          "seam_score": 0.558
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_accent_bluegrey_normal.png",
+          "bytes": 2064297,
+          "sha256": "32cd8f11532291271e36b14a070d649734e8c8890eeeff1b50d5e0918e3e1c1b",
+          "seam_score": 0.81
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_accent_bluegrey_orm.png",
+          "bytes": 844823,
+          "sha256": "3daadab3164dff17c0ed4adda6720b2ad20b715c45be376b260ecbc5e96d0499",
+          "seam_score": 0.511
+        }
+      }
+    },
+    {
+      "name": "stone_foundation",
+      "tile_m": 2.4,
+      "generator": "masonry",
+      "objects": 91,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 48.2,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_foundation_albedo.png",
+          "bytes": 876097,
+          "sha256": "bded7905db36688cc7076e6bc118ebfb3ee4ccb4a238bf2555f6a6623b9a523b",
+          "seam_score": 0.614
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_foundation_normal.png",
+          "bytes": 2117931,
+          "sha256": "b3f005a62d42d7e1d33a82ba0bb1ebf2aa738f819147fdd1fef55a273fdb543b",
+          "seam_score": 0.877
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_foundation_orm.png",
+          "bytes": 722576,
+          "sha256": "851f28d15036b6550b0aad6f534764c5e476f2245b1e84eb994a2f235965bb9d",
+          "seam_score": 0.599
+        }
+      }
+    },
+    {
+      "name": "stone_trim_carved",
+      "tile_m": 1.6,
+      "generator": "masonry",
+      "objects": 76,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 32.3,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_trim_carved_albedo.png",
+          "bytes": 995299,
+          "sha256": "09b9458751c598798c12536272524b255b51e76a6ca6dee24692334f6f1815e6",
+          "seam_score": 0.639
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_trim_carved_normal.png",
+          "bytes": 1983950,
+          "sha256": "95d8ff764d1919af1674330d31e149d1bbad2c209473b648ed709e26b39874a2",
+          "seam_score": 0.934
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_trim_carved_orm.png",
+          "bytes": 780281,
+          "sha256": "5b275a183a09bff0194d9bc1804a31b980c858e86de4d706f9b38392bf7c1fde",
+          "seam_score": 0.703
+        }
+      }
+    },
+    {
+      "name": "stone_wall_warm",
+      "tile_m": 2.4,
+      "generator": "masonry",
+      "objects": 123,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 39.4,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_wall_warm_albedo.png",
+          "bytes": 987994,
+          "sha256": "ba22b9972f308fb421be5f101607e8da5dae2df0978c8566163d4058d64ebef2",
+          "seam_score": 0.608
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_wall_warm_normal.png",
+          "bytes": 2062552,
+          "sha256": "1f509874c600f2596d4570f88d1eb6c665111bdceed13aee0cd1043a0efc5110",
+          "seam_score": 0.863
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/stone_wall_warm_orm.png",
+          "bytes": 809958,
+          "sha256": "d7f99a164783f95f93e3dc1a54613d9ad85d8ef67485377963e14a51deb6f227",
+          "seam_score": 0.595
+        }
+      }
+    },
+    {
+      "name": "timber_dark",
+      "tile_m": 2.0,
+      "generator": "planks",
+      "objects": 733,
+      "render_px": 1024,
+      "final_px": 1024,
+      "seconds": 55.8,
+      "device": "GPU",
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/timber_dark_albedo.png",
+          "bytes": 790258,
+          "sha256": "b96b51e37c2d021742fbb3a2f15b413d7c14666bc587d5629808507fa714ab06",
+          "seam_score": 1.069
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/timber_dark_normal.png",
+          "bytes": 2023920,
+          "sha256": "689b6e4546a5a5add32d94d78c2a80f2e5c6e788f55edcdb318500dc8ec69576",
+          "seam_score": 0.906
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures-forge-r6/timber_dark_orm.png",
+          "bytes": 812694,
+          "sha256": "c941f7a76f96ae2f384117295d1951ff8eaa8434ff6c2a47cb90e98adb8565c9",
+          "seam_score": 0.61
+        }
+      }
+    }
+  ]
+}

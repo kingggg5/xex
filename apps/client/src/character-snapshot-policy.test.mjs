@@ -1,0 +1,5 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {characterSnapshotDecision as decide} from './character-snapshot-policy.mjs';
+const old={character_id:'same',rev:4,hp:100,sp:30,max_hp:100,max_sp:30,stats:{int:4},exp:12,gold:8,item_instances:[{instance_id:'exact-copy',refine:2}]};
+test('same-revision confirmed mana/health updates and resync are distinct from allocation',()=>{assert.equal(decide(old,{...old,sp:22}),'resources');assert.equal(decide(old,{...old,hp:80}),'resources');assert.equal(decide(old,{...old}),'duplicate');});
+test('same-revision stats/equipment/currency/EXP cannot overwrite authoritative confirmed fields',()=>{for(const patch of [{stats:{int:5}},{item_instances:[]},{gold:100},{exp:100},{max_sp:50}])assert.equal(decide(old,{...old,...patch}),'conflict');});
+test('stale revisions reject, confirmed newer versions advance, and identity changes establish a new baseline',()=>{assert.equal(decide(old,{...old,rev:3,sp:30}),'stale');assert.equal(decide(old,{...old,rev:5,stats:{int:5}}),'advance');assert.equal(decide(old,{...old,character_id:'new',rev:1}),'advance');assert.equal(decide(old,{...old,rev:NaN}),'invalid');});

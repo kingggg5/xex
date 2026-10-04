@@ -1,0 +1,15 @@
+{
+  "license_id": "LicenseRef-Tripo-Paid-User-Terms",
+  "review_date": "2026-10-01",
+  "provider_terms": "https://www.tripo3d.ai/terms",
+  "provider_clause": "5.2.2 Paid Users",
+  "provider_help": "https://www.tripo3d.ai/help/privacy-policy/how-to-use-tripo-models-commercially",
+  "account_tier_observed": "Max",
+  "evidence": "Signed-in Tripo account menu displayed Max during this asset work. No account identifier or credentials retained.",
+  "input_provenance": "Four character reference PNGs and one staff PNG supplied by the user for this original mage asset.",
+  "source_model_ids": [
+    "cfdd51e7-2f16-440e-a529-cec9efc3017c",
+    "24cd0fd7-ecf1-4674-a6ee-eb10ad772b6d"
+  ],
+  "record_scope": "Local game-project asset storage under the user request. No public publication or deployed build."
+}

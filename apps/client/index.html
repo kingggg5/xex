@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="theme-color" content="#17232b" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="Xexoria" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="manifest" href="/manifest.webmanifest" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/app-icons/apple-touch-icon180.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/app-icons/xexoria-192.png" />
+		<meta name="description" content="Xexoria is an original browser action-RPG prototype." />
+		<title>Xexoria — Verdant Frontier</title>
+		<link rel="stylesheet" href="/src/assets/branding/branding.css" />
+		<link rel="stylesheet" href="/src/login-theme.css" />
+	</head>
+	<body>
+		<main id="game" aria-label="Xexoria browser game prototype">
+			<canvas id="game-canvas" tabindex="0" aria-label="Third-person game world"></canvas>
+			<section id="renderer-recovery" class="renderer-recovery panel" hidden role="status" aria-live="polite">
+				<p id="renderer-recovery-status">Restoring graphics…</p>
+				<button id="renderer-reload" type="button" hidden>Reload and reconnect</button>
+			</section>
+			<div id="world-vignette" aria-hidden="true"></div>
+			<div id="hud">
+				<section class="chat panel" aria-label="Local chat"></section>
+				<div id="modal-backdrop" class="modal-backdrop" hidden></div>
+			</div>
+			<section id="login-screen" class="login-screen" hidden aria-labelledby="login-title">
+                <div class="login-shell">
+                    <nav class="login-site-header" aria-label="Welcome navigation">
+                        <a href="/" class="login-home-link" aria-current="page"><span id="login-nav-home">HOME</span></a>
+                        <a href="/login-preview.html"><span id="login-nav-preview">PREVIEW</span></a>
+                        <a role="link" aria-disabled="true" tabindex="-1" data-social-url="" title="Community"><span id="login-nav-community">COMMUNITY</span></a>
+                        <a class="login-social-link" role="link" aria-disabled="true" tabindex="-1" data-social-url="" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.2 22v-8.2H17l.4-3.2h-3.2v-2c0-.9.3-1.5 1.6-1.5h1.7V4.2a22 22 0 00-2.5-.2c-2.5 0-4.2 1.5-4.2 4.3v2.4H8v3.2h2.8V22z"/></svg><span>FACEBOOK</span></a>
+                        <a class="login-social-link" role="link" aria-disabled="true" tabindex="-1" data-social-url="" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 3h3a5.5 5.5 0 004.2 4.7v3a8.4 8.4 0 01-4.2-1.3v7a6.3 6.3 0 11-6.3-6.3v3a3.3 3.3 0 103.3 3.3z"/></svg><span>TIKTOK</span></a>
+                        <label class="login-language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 6.5h14M5 17.5h14"/></svg><span class="login-sr-only">Language</span><select id="login-language" aria-label="Language"><option value="en">EN</option><option value="th">TH</option></select></label>
+                    </nav>
+                    <img class="login-brand-logo" src="/src/assets/branding/login-v1/xexoria-logo.png" alt="XEXORIA — A WORLD BEYOND" width="2172" height="724" decoding="async" />
+                    <aside class="login-story-aside" aria-hidden="true"><p id="login-story">YOUR<br/>STORY<br/>BEGINS<br/>BEYOND</p><small id="login-motto">EXPLORE<br/>FIGHT<br/>BELONG</small></aside>
+                    <aside id="login-sky-motto" class="login-sky-aside" aria-hidden="true">DIFFERENT<br/>PATHS<br/>THE SAME SKY</aside>
+                    <div class="login-card" role="group" aria-label="Sign-in methods" tabindex="0">
+                        <h2 id="login-title">Welcome back, traveler</h2>
+                        <p id="login-copy">The next chapter awaits.</p>
+                        <p id="login-error" class="login-error" role="alert" hidden></p>
+                        <div class="login-buttons">
+                            <button id="login-google" class="login-button google" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2.1H12v4h5.4a4.6 4.6 0 01-2 3v2.6h3.2c1.9-1.8 3-4.3 3-7.5z"/><path fill="#34A853" d="M12 22c2.7 0 5-1 6.6-2.4l-3.2-2.6c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.2H3v2.7A10 10 0 0012 22z"/><path fill="#FBBC05" d="M6.4 13.8a6 6 0 010-3.6V7.5H3a10 10 0 000 9l3.4-2.7z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 003 7.5l3.4 2.7C7.2 7.8 9.4 6 12 6z"/></svg><span class="login-action-label">Continue with Google</span><span class="login-provider-short" aria-hidden="true">Google</span></button>
+                            <button id="login-discord" class="login-button discord" type="button" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.7 5.2A18 18 0 0015.3 4l-.6 1.2a17 17 0 00-5.4 0L8.7 4a18 18 0 00-4.4 1.2C1.5 9.3.7 13.3 1.1 17.2a18 18 0 005.5 2.8l1.1-1.9-1.6-.8.4-.3a13.8 13.8 0 0011 0l.4.3-1.6.8 1.1 1.9a18 18 0 005.5-2.8c.5-4.5-.8-8.5-3.2-12zM8.4 14.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2zm7.2 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2z"/></svg><span class="login-action-label">Continue with Discord</span><span class="login-provider-short" aria-hidden="true">Discord</span></button>
+                            <button id="login-guest" class="login-button guest" type="button" aria-label="Play as Guest" aria-describedby="login-guest-caption"><span class="login-action-label">LOG IN</span></button>
+                            <span id="login-guest-caption" class="login-guest-caption">GUEST</span>
+                        </div>
+                        <p id="login-unconfigured" class="login-unconfigured" hidden></p>
+                        <p id="login-note" class="login-note">Guest progress is stored for this session only and resets when the room restarts.</p>
+                    </div>
+                    <footer class="login-site-footer"><span id="login-browser-label">PLAY IN YOUR BROWSER</span><span>XEXORIA · A WORLD BEYOND</span></footer>
+                </div>
+            </section>
+			<div id="fatal-error" hidden role="alert"></div>
+		</main>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
+</html>

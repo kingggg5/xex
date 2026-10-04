@@ -1,0 +1,21 @@
+{
+  "max_floor": 100,
+  "enemy": "puddlekin",
+  "box_item": "meadow_box",
+  "per_floor": {
+    "hp_mult_base": 1.0,
+    "hp_mult_per_floor": 0.12,
+    "count_base": 3,
+    "count_per_floor": 0.08,
+    "exp_mult_per_floor": 0.1,
+    "reward_gold_base": 5,
+    "reward_gold_per_floor": 1.2
+  },
+  "box_every_floors": 10,
+  "final_reward": {
+    "gold": 500,
+    "coin": 100,
+    "boxes": 5
+  },
+  "instances_cap": 32
+}

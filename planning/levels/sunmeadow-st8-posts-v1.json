@@ -1,0 +1,146 @@
+{
+ "schema": "xexoria.semantic-dressing-overlay/1",
+ "id": "st8-four-posts-v1",
+ "source_sha256": "0dbd745e3bc8e93ccdc582e4700ad4a697c9f5e47f6f2ba378248fc6afe547ab",
+ "wave_gates": [
+  "P1",
+  "P2"
+ ],
+ "entries": [
+  {
+   "id": "semantic_ST8_primary_trail_sign",
+   "blueprint_id": "ST8",
+   "blueprint_wave": "P1",
+   "asset_id": "sm_blueprint_signpost",
+   "class": "blueprint",
+   "variant": 1,
+   "x": -10,
+   "y": 0,
+   "z": -22,
+   "yaw": 0.1974,
+   "scale": 1,
+   "target_height": 2.2,
+   "footprint_r": 0.35,
+   "collider": "none",
+   "cell": "-1,-1",
+   "landmark": true,
+   "shadow": true,
+   "rule": "st8_root_approved_anchors",
+   "mask": "explicit",
+   "visual_base_y": 0,
+   "anchor_at_pivot": true,
+   "standin": false,
+   "destination_xz": [
+    0,
+    -24
+   ],
+   "source_anchor_id": "ST8_primary_trail_sign"
+  },
+  {
+   "id": "semantic_ST8_falls_junction",
+   "blueprint_id": "ST8",
+   "blueprint_wave": "P1",
+   "asset_id": "sm_blueprint_signpost",
+   "class": "blueprint",
+   "variant": 1,
+   "x": -6.5,
+   "y": 0,
+   "z": -51.2,
+   "yaw": 2.46685,
+   "scale": 1,
+   "target_height": 2.2,
+   "footprint_r": 0.35,
+   "collider": "none",
+   "cell": "-1,-1",
+   "landmark": true,
+   "shadow": true,
+   "rule": "st8_root_approved_anchors",
+   "mask": "explicit",
+   "visual_base_y": 0,
+   "anchor_at_pivot": true,
+   "standin": false,
+   "destination_xz": [
+    -10,
+    -54
+   ],
+   "source_anchor_id": "ST8_falls_junction"
+  },
+  {
+   "id": "semantic_ST8_glade_north",
+   "blueprint_id": "ST8",
+   "blueprint_wave": "P1",
+   "asset_id": "sm_blueprint_signpost",
+   "class": "blueprint",
+   "variant": 1,
+   "x": -2.4,
+   "y": 0,
+   "z": -55.3,
+   "yaw": 1.38402,
+   "scale": 1,
+   "target_height": 2.2,
+   "footprint_r": 0.35,
+   "collider": "none",
+   "cell": "-1,-1",
+   "landmark": true,
+   "shadow": true,
+   "rule": "st8_root_approved_anchors",
+   "mask": "explicit",
+   "visual_base_y": 0,
+   "anchor_at_pivot": true,
+   "standin": false,
+   "destination_xz": [
+    0,
+    -68
+   ],
+   "source_anchor_id": "ST8_glade_north"
+  },
+  {
+   "id": "semantic_ST8_south_road",
+   "blueprint_id": "ST8",
+   "blueprint_wave": "P1",
+   "asset_id": "sm_blueprint_signpost",
+   "class": "blueprint",
+   "variant": 1,
+   "x": 3.8,
+   "y": 0,
+   "z": -99,
+   "yaw": 2.65711,
+   "scale": 1,
+   "target_height": 2.2,
+   "footprint_r": 0.35,
+   "collider": "none",
+   "cell": "0,-2",
+   "landmark": true,
+   "shadow": true,
+   "rule": "st8_root_approved_anchors",
+   "mask": "explicit",
+   "visual_base_y": 0,
+   "anchor_at_pivot": true,
+   "standin": false,
+   "destination_xz": [
+    0,
+    -101
+   ],
+   "source_anchor_id": "ST8_south_road"
+  }
+ ],
+ "replaces_visual_entries": [
+  "bp1_ST8_000"
+ ],
+ "replace_reason": "Oldwellwayshrinestand-in occupies exactprimarypoleanchor; omit fromoverlay runtime only, frozenP1/P2JSON unchanged",
+ "item_patch": {
+  "id": "ST8",
+  "status": "ARROW_BODIES_READY_LABELS_MISSING",
+  "assets": [
+   "sm_blueprint_signpost"
+  ],
+  "remaining_components": [
+   "Readablefourdestinationlabels/text missing",
+   "Two distinctwayshrinesandcandles unbuilt"
+  ],
+  "declared_standins": []
+ },
+ "physical_admission": "UNVERIFIED_ROOT",
+ "native_admission": "UNVERIFIED",
+ "no_new_actor_or_terrain": true
+}

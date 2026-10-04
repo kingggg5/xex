@@ -1,0 +1,153 @@
+@import url("./assets/branding/login-v1/fonts/fonts-v2.css");
+/* This surface is scoped to authentication; game HUD and world styles are unchanged. */
+#login-screen.login-screen {
+	position: absolute;
+	inset: 0;
+	z-index: 30;
+	display: block;
+	overflow: auto;
+	overscroll-behavior: contain;
+	color: #f3e9d5;
+	background: #101426 url("./assets/branding/login-portal-v1/astral-gate.webp") center center / cover no-repeat;
+	font-family: "Cormorant Garamond", "Trirong", Georgia, serif;
+	font-synthesis: none;
+}
+#login-screen[hidden] { display: none; }
+#login-screen::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(4,13,29,.62), rgba(4,13,29,.12) 110px, transparent 26%, transparent 75%, rgba(3,10,21,.74)); }
+.login-shell { position: relative; width: 100%; min-height: 100%; padding: 24px 22px 22px; display: flex; align-items: center; flex-direction: column; justify-content: center; }
+.login-site-header { position: absolute; top: 20px; left: 44px; right: 44px; display: flex; justify-content: flex-end; gap: 20px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid rgba(220,205,171,.23); font-family: "Marcellus", "Trirong", serif; font-weight: 500; font-size: 14px; letter-spacing: .055em; color: #fff4dd; text-shadow: 0 1px 2px rgba(2,5,18,.9), 0 0 8px rgba(2,5,18,.45); }
+.login-site-header a { color: inherit; text-decoration: none; padding: 10px; }
+.login-site-header a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.login-site-header a[aria-disabled="true"] { opacity: .65; cursor: default; }
+.login-social-link { display: flex; align-items: center; gap: 8px; }
+.login-social-link svg { width: 17px; height: 17px; }
+.login-language { display: flex; gap: 8px; align-items: center; }
+.login-language svg { width: 18px; height: 18px; }
+#login-screen .login-brand-logo { display: block; width: min(540px, 58vw); height: auto; max-height: none; margin: 16px auto -6px; aspect-ratio: 3; object-fit: contain; filter: drop-shadow(0 10px 12px rgba(3,15,35,.75)); }
+#login-screen .login-card { position: relative; flex: 0 0 auto; display: grid; gap: 10px; width: min(470px, calc(100vw - 24px)); max-height: none; padding: 82px 48px 75px; margin: 0 auto; overflow: visible; text-align: center; background: url("./assets/branding/login-v1/ornate-panel-detail-v2.png") center / 100% 100% no-repeat; border: none; border-radius: 0; box-shadow: none; }
+#login-screen .login-card h2 { margin: 0; font-family: "Marcellus", "Trirong", serif; font-size: 23px; line-height: 1.35; font-weight: 600; letter-spacing: .025em; text-transform: uppercase; color: #f5eddd; text-shadow: 0 2px 6px #152c5d; }
+#login-screen #login-copy { margin: -3px 0 6px; color: #dbe4f2; font-size: 20px; line-height: 1.3; }
+#login-screen .login-buttons { display: grid; grid-template-columns: 1fr; gap: 6px; margin: 8px -8px 2px; }
+#login-screen .login-button { position: relative; width: 100%; min-height: 80px; height: auto; padding: 22px 58px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 0; background-image: url("./assets/branding/login-v1/empty-button-atlas.png"); background-repeat: no-repeat; background-size: 400% 343%; color: #f8efdf; font: 600 22px/1.25 "Cormorant Garamond", "Trirong", serif; cursor: pointer; transition: filter 140ms ease-out, transform 140ms ease-out; }
+#login-screen .login-button.google { background-position: .32% 64.4%; background-size: 387.36% 343%; }
+#login-screen .login-button.discord { background-position: 34.22% 64.4%; }
+#login-screen .login-button.guest { background-position: 50% 0; background-size: 219.3% 216.1%; min-height: 114px; margin: 0; width: 100%; padding: 22px 34px 14px; font-family: "Marcellus", "Trirong", serif; font-size: 29px; font-weight: 400; letter-spacing: .055em; text-shadow: 0 2px 8px #062374; }
+.login-guest-caption { display: block; margin: -2px 0 6px; color: #dce6f9; font: 500 12px/1.4 "Marcellus", serif; letter-spacing: .22em; }
+#login-screen .login-button svg { position: absolute; left: 51px; width: 25px; height: 25px; }
+#login-screen .login-button.discord svg { color: #efecff; }
+#login-screen .login-button.guest svg { color: #f0d599; }
+#login-screen .login-button:hover:enabled { filter: brightness(1.18); transform: translateY(-1px); }
+#login-screen .login-button:active:enabled { transform: translateY(1px); }
+#login-screen .login-button:disabled { opacity: .72; cursor: not-allowed; }
+#login-screen :is(button,a,input):focus-visible { outline: 2px solid #edf4ff; outline-offset: 4px; }
+#login-screen .login-error { color: #ffbdac; font-size: 12px; line-height: 1.45; }
+#login-screen .login-unconfigured { margin: 0; color: #ebce92; font-size: 11px; line-height: 1.5; }
+#login-screen .login-note { margin: 0; color: #c5d4e9; font-size: 14px; line-height: 1.4; }
+#login-screen .login-channel { margin: 0; }
+#login-screen .login-channel-toggle { min-height: 32px; padding: 4px 10px; border: 0; border-radius: 0; background: transparent; color: #e9d5ab; font: 12px Georgia, "Times New Roman", Tahoma, serif; cursor: pointer; }
+#login-screen .login-channel-body { max-height: 160px; overflow: auto; padding: 4px; background: rgba(5,14,30,.8); }
+.login-story-aside { position: absolute; left: 7.5%; top: 38%; width: 140px; font-family: "Marcellus", serif; font-size: 15px; line-height: 1.55; letter-spacing: .1em; text-transform: uppercase; text-shadow: 0 2px 5px #102644; }
+.login-story-aside p { margin: 0 0 18px; white-space: pre-line; }
+.login-story-aside small { white-space: pre-line; display: block; padding-top: 13px; border-top: 1px solid #dae4fa; font-size: 10px; }
+.login-sky-aside { white-space: pre-line; position: absolute; right: 7%; top: 22%; width: 150px; font-family: "Marcellus", serif; font-size: 14px; line-height: 1.55; letter-spacing: .1em; text-align: center; text-transform: uppercase; color: #213e6b; }
+.login-site-footer { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%; max-width: 1380px; margin-top: auto; padding-top: 20px; font-family: "Marcellus", "Trirong", serif; font-size: 11px; line-height: 1.4; letter-spacing: .1em; color: #efe7d3; text-shadow: 0 1px 2px rgba(2,5,18,.92); }
+.login-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 1100px) { .login-story-aside, .login-sky-aside { display: none; } }
+@media (max-width: 600px) {
+	.login-shell { padding: 54px 8px 18px; justify-content: flex-start; }
+	.login-site-header { top: 9px; left: 12px; right: 12px; justify-content: center; gap: 9px; font-size: 10px; padding-bottom: 8px; }
+	.login-site-header a { padding: 8px 0; }
+	.login-language { display: flex; }
+	.login-social-link span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+	#login-screen .login-brand-logo { width: min(420px, 94vw); margin: 0 auto -3px; }
+	#login-screen .login-card { width: min(420px, calc(100vw - 12px)); padding: 78px 34px 64px; gap: 9px; }
+	#login-screen .login-card h2 { font-size: 18px; }
+	#login-screen .login-buttons { gap: 7px; margin: 4px -5px; }
+	#login-screen .login-button { padding-left: 48px; padding-right: 48px; min-height: 82px; font-size: 20px; }
+	#login-screen .login-button svg { left: 31px; width: 22px; height: 22px; }
+	#login-screen .login-button.guest { min-height: 102px; padding-left: 30px; padding-right: 30px; font-size: 25px; }
+	#login-screen #login-copy { font-size: 17px; }
+	#login-screen .login-note { font-size: 13px; }
+	.login-site-footer { padding: 16px 12px 0; font-size: 9px; letter-spacing: .04em; }
+}
+@media (max-height: 620px) and (min-width: 480px) and (orientation: landscape) {
+    .login-shell { min-height: 100%; padding: 54px max(18px, env(safe-area-inset-right)) 12px max(18px, env(safe-area-inset-left)); display: grid; grid-template-columns: minmax(112px, 1fr) minmax(280px, 440px); grid-template-rows: 1fr; gap: 8px; align-items: center; }
+    .login-site-header { display: flex; left: max(18px, env(safe-area-inset-left)); right: max(18px, env(safe-area-inset-right)); top: 7px; width: auto; justify-content: flex-end; gap: 12px; padding-bottom: 0; border: 0; font-size: 11px; }
+    .login-site-header a { padding: 4px 0; }
+    .login-language { display: flex; }
+    .login-social-link span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    #login-screen .login-brand-logo { grid-column: 1; grid-row: 1; width: min(310px, 100%); margin: 0 auto; }
+    #login-screen .login-card { grid-column: 2; grid-row: 1; width: 100%; max-height: calc(100dvh - 66px); align-content: start; overflow-y: auto; overflow-x: hidden; padding: 2px 8px 8px; gap: 5px; background: none; border: solid transparent; border-width: 40px 28px 32px; border-image: url("./assets/branding/login-v1/ornate-panel-detail-v2.png") 200 120 160 120 fill / 40px 28px 32px stretch; scrollbar-width: thin; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
+    #login-screen .login-card h2 { font-size: 17px; }
+    #login-screen #login-copy { display: none; }
+    #login-screen .login-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; margin: 3px -2px 0; }
+    #login-screen .login-button:not(.guest) { min-height: 60px; padding: 31px 8px 8px; font-size: 18px; }
+    #login-screen .login-button:not(.guest) .login-action-label { display: none; }
+    #login-screen .login-button:not(.guest) .login-provider-short { display: block; width: 100%; text-align: center; }
+    #login-screen .login-button svg { left: 50%; top: 13px; transform: translateX(-50%); width: 18px; height: 18px; }
+    #login-screen .login-button.guest { grid-column: 1 / -1; min-height: 78px; padding: 14px 20px 10px; font-size: 24px; }
+    .login-guest-caption { grid-column: 1 / -1; font-size: 10px; margin: -3px 0 0; }
+    #login-screen .login-note { font-size: 11px; line-height: 1.35; }
+    .login-site-footer { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { #login-screen .login-button { transition: none; } }
+
+.login-home-link[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 9px; }
+.login-language select { min-height: 38px; width: 58px; padding: 5px 4px; border: 0; border-radius: 0; background: transparent; color: #fff4dd; font: 14px "Marcellus", serif; cursor: pointer; }
+.login-language select option { color: #f4ead6; background: #111e35; }
+#login-screen .login-button .login-action-label { display: block; width: 100%; text-align: center; }
+#login-screen[lang="th"] .login-button:not(.guest) { font-family: "Trirong", serif; font-size: 16px; font-weight: 500; }
+@media (max-width: 600px) { .login-site-header { gap: 8px; } .login-language { gap: 2px; } .login-language svg { width: 14px; height: 14px; } .login-language select { width: 45px; font-size: 12px; } #login-screen[lang="th"] .login-button:not(.guest) { font-size: 14px; } }
+
+.login-provider-short { display: none; }
+
+@media (max-height: 350px) and (min-width: 480px) and (orientation: landscape) {
+    #login-screen .login-card h2 { font-size: 15px; }
+    #login-screen .login-button:not(.guest) { min-height: 52px; padding: 27px 8px 6px; }
+    #login-screen .login-button.guest { min-height: 68px; padding: 11px 20px 8px; font-size: 22px; }
+    #login-screen .login-button svg { top: 10px; }
+}
+.login-language select { min-height: 44px; }
+
+#login-screen .login-card:focus-visible { outline: 2px solid #dceaff; outline-offset: 2px; }
+
+/* The arch is the frame; the original DOM controls sit inside its quiet centre. */
+.login-backdrop { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+  background: #101426 url("./assets/branding/login-portal-v1/astral-gate.webp") center / cover no-repeat; }
+/* Both layers only add light (portal energy, flames, embers), so they screen over the painting. */
+.login-backdrop canvas { display: block; position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; }
+#login-screen::before { z-index: 1; background: linear-gradient(180deg,rgba(3,7,20,.45),transparent 22%,transparent 78%,rgba(3,7,20,.64)); }
+#login-screen .login-shell { z-index: 2; padding-top: 60px; padding-bottom: 24px; }
+#login-screen .login-brand-logo { width: min(430px,58vw); margin: 0 auto 14px; }
+#login-screen .login-card { width: min(430px,calc(100vw - 24px)); padding: 28px 32px 30px;
+  background: radial-gradient(ellipse,rgba(5,10,29,.88),rgba(5,10,29,.67) 58%,rgba(5,10,29,0) 75%);
+  border: 0; border-image: none; }
+/* 1x screens: thin display serifs need sturdier weights and tight shadows (not 4px smears) to stay crisp. */
+#login-screen .login-card h2 { font-weight: 400; font-size: 22px; color: #fff2d4;
+  text-shadow: 0 1px 2px rgba(2,5,18,.92), 0 0 12px rgba(2,5,18,.5); text-wrap: balance; }
+#login-screen #login-copy { color: #eee5db; font-size: 20px; font-weight: 600; text-shadow: 0 1px 2px rgba(2,5,18,.92), 0 0 10px rgba(2,5,18,.55); }
+#login-screen .login-note { font-family: "Trirong",Georgia,serif; color: #e4e9f5;
+  font-size: 12px; font-weight: 500; line-height: 1.65; text-shadow: 0 1px 1px rgba(2,5,18,.95), 0 0 6px rgba(2,5,18,.6); }
+#login-screen .login-sky-aside { color: #f4e8d2; text-shadow: 0 2px 5px #06091b; }
+.login-motion-toggle { position: fixed; bottom: max(20px,env(safe-area-inset-bottom)); right: 26px;
+  min-height: 44px; padding: 9px 14px; color: #fff0d7; background: rgba(5,10,29,.86);
+  border: 1px solid rgba(218,189,129,.55); font: 400 13px/1.5 "Marcellus","Trirong",serif; cursor: pointer; }
+.login-motion-toggle:hover:enabled { background: #172346; }
+.login-motion-toggle:disabled { color: #ddd7d0; cursor: default; }
+#login-screen .login-site-footer { padding-right: 170px; }
+@media (max-width: 600px) {
+  #login-screen .login-shell { padding: 60px 8px 78px; }
+  #login-screen .login-brand-logo { width: min(390px,90vw); margin: 2px auto 8px; }
+  #login-screen .login-card { padding: 24px 24px 28px; }
+  #login-screen .login-card h2 { font-size: 19px; }
+  #login-screen .login-site-footer { padding: 24px 12px 0; }
+  .login-motion-toggle { right: 12px; bottom: max(12px,env(safe-area-inset-bottom)); }
+}
+@media (max-height: 620px) and (min-width: 480px) and (orientation: landscape) {
+  #login-screen .login-shell { padding-top: 48px; padding-bottom: 12px; }
+  #login-screen .login-brand-logo { width: min(310px,100%); margin: 0 auto; }
+  #login-screen .login-card { padding: 10px 16px 12px; max-height: calc(100dvh - 66px);
+    background: rgba(5,10,29,.84); border: 1px solid rgba(218,189,129,.38); }
+  #login-screen .login-card h2 { font-size: 17px; }
+  .login-motion-toggle { left: 18px; right: auto; bottom: max(12px,env(safe-area-inset-bottom)); }
+}

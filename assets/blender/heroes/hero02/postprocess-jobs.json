@@ -1,0 +1,42 @@
+[
+  {
+    "input": "assets/models/heroes/hero02/helper/hero02_witch_lod0.glb",
+    "output": "assets/models/heroes/hero02/runtime/hero02_witch_lod0.glb",
+    "class": "hero_lod0",
+    "textureOut": "assets/models/heroes/hero02/runtime/textures",
+    "report": "planning/evidence/hero02-witch-20261002/reports/postprocess_hero02_witch_lod0.json",
+    "reviewOut": "planning/evidence/hero02-witch-20261002/reimport/hero02_witch_lod0"
+  },
+  {
+    "input": "assets/models/heroes/hero02/helper/hero02_witch_lod1.glb",
+    "output": "assets/models/heroes/hero02/runtime/hero02_witch_lod1.glb",
+    "class": "hero_lod1",
+    "textureOut": "assets/models/heroes/hero02/runtime/textures",
+    "report": "planning/evidence/hero02-witch-20261002/reports/postprocess_hero02_witch_lod1.json",
+    "reviewOut": "planning/evidence/hero02-witch-20261002/reimport/hero02_witch_lod1"
+  },
+  {
+    "input": "assets/models/heroes/hero02/helper/hero02_witch_lod2.glb",
+    "output": "assets/models/heroes/hero02/runtime/hero02_witch_lod2.glb",
+    "class": "hero_lod2",
+    "textureOut": "assets/models/heroes/hero02/runtime/textures",
+    "report": "planning/evidence/hero02-witch-20261002/reports/postprocess_hero02_witch_lod2.json",
+    "reviewOut": "planning/evidence/hero02-witch-20261002/reimport/hero02_witch_lod2"
+  },
+  {
+    "input": "assets/models/heroes/hero02/helper/hero02_staff_lod0.glb",
+    "output": "assets/models/heroes/hero02/runtime/hero02_staff_lod0.glb",
+    "class": "prop",
+    "textureOut": "assets/models/heroes/hero02/runtime/textures",
+    "report": "planning/evidence/hero02-witch-20261002/reports/postprocess_hero02_staff_lod0.json",
+    "reviewOut": "planning/evidence/hero02-witch-20261002/reimport/hero02_staff_lod0"
+  },
+  {
+    "input": "assets/models/heroes/hero02/helper/hero02_staff_lod1.glb",
+    "output": "assets/models/heroes/hero02/runtime/hero02_staff_lod1.glb",
+    "class": "prop_lod1",
+    "textureOut": "assets/models/heroes/hero02/runtime/textures",
+    "report": "planning/evidence/hero02-witch-20261002/reports/postprocess_hero02_staff_lod1.json",
+    "reviewOut": "planning/evidence/hero02-witch-20261002/reimport/hero02_staff_lod1"
+  }
+]

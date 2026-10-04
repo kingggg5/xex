@@ -1,0 +1,24 @@
+[package]
+name = "aetherfield-server"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+xexoria-chat-filter = { path = "vendor/xexoria-chat-filter" }
+axum = { version = "0.8.9", features = ["ws"] }
+chrono = { version = "0.4", features = ["serde"] }
+futures-util = "0.3"
+getrandom = "0.3.4"
+# D-13 login: OAuth code exchange and identity fetch. rustls keeps the TLS
+# stack portable; the client is https-only and used only for provider calls.
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+sha2 = "0.10"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# V5-12/13 durable state (plan v5 §17: PostgreSQL decided). Runtime query API
+# (not compile-time macros) so builds never need a live database; migrations
+# are embedded at compile time via `sqlx::migrate!` and applied at startup.
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls-ring", "postgres", "json", "uuid", "chrono", "migrate", "macros"] }
+tokio = { version = "1.53.1", features = ["macros", "rt-multi-thread", "net", "time", "sync", "signal"] }
+uuid = { version = "1", features = ["v4", "v7", "serde"] }

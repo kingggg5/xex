@@ -1,0 +1,1042 @@
+{
+ "schema": "xexoria.map-blueprint/1",
+ "region": "sunmeadow",
+ "version": "blueprint-v1",
+ "date": "2026-10-03",
+ "classification": "PLAN",
+ "base_layout": "planning/levels/sunmeadow-v2-layout.json (v3-features)",
+ "owner_request": "make a main-map blueprint of what gets added where so the map is full and playable; the map is too empty",
+ "rules": [
+  "arena keep-clear 12 m around (0,-68) for solid props",
+  "warps unchanged",
+  "solid props >= 0.5 m off every walk line",
+  "physical support stays Y=0 (T1 v1 is a visual hill ringed by rocks; a walkable top needs the server terrain-height request)",
+  "trees and palms only from CC0 kits / approved generators (llm.txt rule 4)",
+  "principles only from the owner's AAA refs (no copied art/UI/names)"
+ ],
+ "items": [
+  {
+   "id": "R1",
+   "cat": "rock",
+   "th": "สวนหินมุมซ้ายบน (ริมบึงบัว)",
+   "en": "NW rock garden by Lotus Mere",
+   "xz": [
+    -41,
+    17
+   ],
+   "r": 5,
+   "spec": "1 boulder 3 m + 4 medium + 6 small, moss caps, ferns between",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P0"
+  },
+  {
+   "id": "R2",
+   "cat": "rock",
+   "th": "หินใหญ่ตีนหน้าผาตะวันตก",
+   "en": "West cliff-foot boulders",
+   "xz": [
+    -49,
+    -14
+   ],
+   "r": 4,
+   "spec": "3 boulders 2-4 m leaning on the cliff, scree fan",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P0"
+  },
+  {
+   "id": "R3",
+   "cat": "rock",
+   "th": "หินเรียงตีนหน้าผา (ช่วงกลาง)",
+   "en": "Cliff-foot scree line",
+   "xz": [
+    -50,
+    -34
+   ],
+   "r": 4,
+   "spec": "boulder every 6-8 m along the cliff foot z -24..-46, mossy, fallen slabs",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P1"
+  },
+  {
+   "id": "R4",
+   "cat": "rock",
+   "th": "เสาหินกลางทะเลที่อ่าว (มุมซ้ายล่าง)",
+   "en": "Cove sea stacks (SW corner)",
+   "xz": [
+    -60,
+    -90
+   ],
+   "r": 5,
+   "spec": "2 sea stacks 4-6 m in the shallows (-60,-90) and (-55,-97), shore rocks + foam",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P0"
+  },
+  {
+   "id": "R5",
+   "cat": "rock",
+   "th": "หินสามพี่น้อง (แลนด์มาร์กกลางทุ่ง)",
+   "en": "Three Sisters standing boulders",
+   "xz": [
+    19.38,
+    -19.89
+   ],
+   "r": 3.5,
+   "spec": "three upright boulders 2.5 / 3.2 / 4 m, lichen, flower ring; reads from spawn",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P0"
+  },
+  {
+   "id": "R6",
+   "cat": "rock",
+   "th": "โขดหินยอดเนิน",
+   "en": "Knoll crown outcrop",
+   "xz": [
+    36,
+    -97
+   ],
+   "r": 4,
+   "spec": "layered outcrop 4-5 m on the knoll top, strata + moss on ledges",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P0"
+  },
+  {
+   "id": "R7",
+   "cat": "rock",
+   "th": "โขดหินเนินตะวันออก",
+   "en": "East-hill outcrops",
+   "xz": [
+    40,
+    -34
+   ],
+   "r": 3.5,
+   "spec": "2 outcrops (40,-34) and (41,-54), half-buried in the hill",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P1"
+  },
+  {
+   "id": "R8",
+   "cat": "rock",
+   "th": "หินชายป่าใต้",
+   "en": "South forest-edge rocks",
+   "xz": [
+    -24,
+    -99
+   ],
+   "r": 3.5,
+   "spec": "2 clusters (-24,-99) and (22,-100) framing the south road",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P1"
+  },
+  {
+   "id": "S1",
+   "cat": "statue",
+   "th": "รูปปั้นผู้พิทักษ์ปีก (ซ้าย) หน้าประตูเมือง",
+   "en": "Winged guardian statue W (city exit)",
+   "xz": [
+    -15,
+    18
+   ],
+   "r": 2,
+   "spec": "5.5-6 m on a 1.2 m plinth, faces south; original Xexoria design (F25)",
+   "solid": true,
+   "lane": "froggy F25 -> Tripo (owner ceiling) / Blender stand-in",
+   "pr": "P0"
+  },
+  {
+   "id": "S2",
+   "cat": "statue",
+   "th": "รูปปั้นผู้พิทักษ์ปีก (ขวา) หน้าประตูเมือง",
+   "en": "Winged guardian statue E (city exit)",
+   "xz": [
+    15,
+    18
+   ],
+   "r": 2,
+   "spec": "mirror pair of S1",
+   "solid": true,
+   "lane": "froggy F25 -> Tripo / Blender stand-in",
+   "pr": "P0"
+  },
+  {
+   "id": "S3",
+   "cat": "statue",
+   "th": "รูปปั้นผู้รักษาสายลม หน้าลานบอส",
+   "en": "Windkeeper statue at the arena approach",
+   "xz": [
+    7,
+    -53
+   ],
+   "r": 1.8,
+   "spec": "4 m weathered stone figure holding a horn, faces north toward arriving players; 16 m from the arena centre",
+   "solid": true,
+   "lane": "Codex props-stone (Blender) ",
+   "pr": "P1"
+  },
+  {
+   "id": "S4",
+   "cat": "statue",
+   "th": "รูปปั้นหญิงสาวที่ศาลบึงบัว",
+   "en": "Lotus shrine maiden",
+   "xz": [
+    -51,
+    7
+   ],
+   "r": 1.2,
+   "spec": "2.4 m mossy statue with an offering bowl beside the shrine",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P1"
+  },
+  {
+   "id": "S5",
+   "cat": "statue",
+   "th": "หัวรูปปั้นยักษ์จมดิน (จุดค้นพบ)",
+   "en": "Fallen giant statue head (discovery)",
+   "xz": [
+    -26,
+    -31
+   ],
+   "r": 3,
+   "spec": "3 m tall stone head half-buried, flowers in the cracks, photo spot",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P1"
+  },
+  {
+   "id": "S6",
+   "cat": "statue",
+   "th": "รูปปั้นยามคู่ที่ประตูใต้",
+   "en": "South-gate sentinel pair",
+   "xz": [
+    -6,
+    -96
+   ],
+   "r": 1.5,
+   "spec": "pair at (-6,-96) and (6,-96), 3.5 m, braziers at their feet",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P2"
+  },
+  {
+   "id": "F1",
+   "cat": "fence",
+   "th": "รั้วทุ่งเลี้ยงแกะ (บ้านไร่)",
+   "en": "Croft sheep pasture fence",
+   "line": [
+    [
+     33.63,
+     -23.08
+    ],
+    [
+     43.63,
+     -23.08
+    ],
+    [
+     43.63,
+     -34.08
+    ],
+    [
+     33.63,
+     -34.08
+    ],
+    [
+     33.63,
+     -27.08
+    ]
+   ],
+   "spec": "split-rail, gate gap at the west side, 6 sheep inside",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "F2",
+   "cat": "fence",
+   "th": "รั้วแปลงผัก/ข้าวสาลี",
+   "en": "Crop field fence",
+   "line": [
+    [
+     18,
+     2
+    ],
+    [
+     26,
+     2
+    ],
+    [
+     26,
+     8
+    ],
+    [
+     18,
+     8
+    ],
+    [
+     18,
+     3
+    ]
+   ],
+   "spec": "low wattle fence around a wheat/vegetable plot with a scarecrow",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "F3",
+   "cat": "fence",
+   "th": "รั้วไม้ข้างทางหลัก (มีช่องว่าง)",
+   "en": "Main-trail rail fence with gaps",
+   "line": [
+    [
+     -5,
+     -8
+    ],
+    [
+     -6,
+     -16
+    ],
+    [
+     -7,
+     -21
+    ]
+   ],
+   "spec": "1 side only, broken segments, guides the eye down the trail",
+   "solid": false,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "F4",
+   "cat": "fence",
+   "th": "รั้วพังที่ปลักหมู",
+   "en": "Broken fence at the boar wallow",
+   "line": [
+    [
+     26.68,
+     -67.88
+    ],
+    [
+     30.68,
+     -61.88
+    ],
+    [
+     34.68,
+     -59.88
+    ]
+   ],
+   "spec": "smashed rails, tusk marks; tells the elite pack story",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "F5",
+   "cat": "fence",
+   "th": "รั้วไม้แหลมรอบค่ายนายพราน",
+   "en": "Hunter camp stake fence",
+   "line": [
+    [
+     16.62,
+     -5.37
+    ],
+    [
+     22.62,
+     -4.37
+    ],
+    [
+     28.62,
+     -6.37
+    ],
+    [
+     29.62,
+     -12.37
+    ],
+    [
+     27.62,
+     -17.37
+    ]
+   ],
+   "spec": "low stakes, opening west toward the trail",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "F6",
+   "cat": "fence",
+   "th": "รั้วสองข้างถนนใต้",
+   "en": "South road fences",
+   "line": [
+    [
+     6,
+     -84
+    ],
+    [
+     6,
+     -93
+    ]
+   ],
+   "spec": "both sides of the south road: (-6,-84)->(-6,-93) and (6,-84)->(6,-93)",
+   "solid": false,
+   "lane": "Codex props-craft",
+   "pr": "P2"
+  },
+  {
+   "id": "T1",
+   "cat": "terrain",
+   "th": "เนินอรุณ (เนินดินมุมขวาล่าง)",
+   "en": "Sunrise Knoll (SE raised ground)",
+   "poly": [
+    [
+     18,
+     -84
+    ],
+    [
+     43,
+     -80
+    ],
+    [
+     46,
+     -104
+    ],
+    [
+     12,
+     -104
+    ],
+    [
+     12,
+     -92
+    ]
+   ],
+   "height": "3-6 m visual rise, 1:4 slopes",
+   "spec": "grass + dry ochre top, rock ring R6, watchtower ruin ST4, spring P3. Server support is Y=0 today: v1 = visual hill ringed by rocks (walk around); v2 walkable top needs the server terrain-height request (Codex)",
+   "solid": true,
+   "lane": "Claude terrain + Codex server request",
+   "pr": "P0"
+  },
+  {
+   "id": "T2",
+   "cat": "terrain",
+   "th": "ลูกคลื่นพื้นดินทุ่งตะวันตก/ตะวันออก",
+   "en": "Meadow swells",
+   "poly": [
+    [
+     -36,
+     -10
+    ],
+    [
+     -20,
+     -6
+    ],
+    [
+     -14,
+     -22
+    ],
+    [
+     -30,
+     -26
+    ]
+   ],
+   "height": "<= 0.6 m visual",
+   "spec": "soft visual undulation breaks the flat carpet; same treatment east (20..40, -40..-58)",
+   "solid": false,
+   "lane": "Claude terrain",
+   "pr": "P1"
+  },
+  {
+   "id": "T3",
+   "cat": "terrain",
+   "th": "เนินทรายหลังชายหาด",
+   "en": "Dune ridge behind the beach",
+   "poly": [
+    [
+     -38,
+     -70
+    ],
+    [
+     -32,
+     -72
+    ],
+    [
+     -32,
+     -88
+    ],
+    [
+     -38,
+     -90
+    ]
+   ],
+   "height": "1-1.5 m",
+   "spec": "dune grass, driftwood, palms on the crest",
+   "solid": false,
+   "lane": "Claude terrain",
+   "pr": "P1"
+  },
+  {
+   "id": "P1",
+   "cat": "water",
+   "th": "ปลักโคลนหมูป่า",
+   "en": "Boar wallow mud pools",
+   "xz": [
+    33,
+    -78
+   ],
+   "r": 6,
+   "spec": "3 muddy puddles, hoof prints, splash VFX; elite clearing flavour",
+   "solid": false,
+   "lane": "Codex water",
+   "pr": "P0"
+  },
+  {
+   "id": "P2",
+   "cat": "water",
+   "th": "สระน้ำพุกลางทุ่ง",
+   "en": "Meadow spring pond",
+   "xz": [
+    22,
+    -56
+   ],
+   "r": 4,
+   "spec": "7 x 4 m pond, reeds, 5 stepping stones, dragonflies",
+   "solid": false,
+   "lane": "Codex water",
+   "pr": "P0"
+  },
+  {
+   "id": "P3",
+   "cat": "water",
+   "th": "น้ำซับตีนเนิน",
+   "en": "Knoll spring + trickle",
+   "xz": [
+    24,
+    -91
+   ],
+   "r": 3,
+   "spec": "4 m pool fed by a trickle off the knoll rocks",
+   "solid": false,
+   "lane": "Codex water",
+   "pr": "P1"
+  },
+  {
+   "id": "P4",
+   "cat": "water",
+   "th": "แอ่งน้ำฝนบนทาง",
+   "en": "Rain puddles on the trail",
+   "xz": [
+    -14,
+    -27
+   ],
+   "r": 4,
+   "spec": "appear only in rain (storm weather), reflect the sky",
+   "solid": false,
+   "lane": "Codex water + VFX",
+   "pr": "P2"
+  },
+  {
+   "id": "PL1",
+   "cat": "palm",
+   "th": "ดงมะพร้าวชายหาดอ่าว",
+   "en": "Cove coconut palms",
+   "xz": [
+    -37,
+    -80
+   ],
+   "r": 8,
+   "spec": "8 palms leaning 5-15 deg toward the water + 2 at the pier landing; coconuts, shadow on sand. Source: CC0 kit (Kenney Nature Kit / Quaternius Ultimate Nature, pre-QAL) restyled by the trees lane; never home-made",
+   "solid": true,
+   "lane": "Claude trees lane (CC0 download)",
+   "pr": "P0"
+  },
+  {
+   "id": "C1",
+   "cat": "cart",
+   "th": "เกวียนพัง (มีอยู่แล้ว)",
+   "en": "Broken cart (existing)",
+   "xz": [
+    13,
+    -73
+   ],
+   "r": 1.8,
+   "spec": "keep",
+   "solid": true,
+   "lane": "existing",
+   "pr": "-"
+  },
+  {
+   "id": "C2",
+   "cat": "cart",
+   "th": "เกวียนพ่อค้าหน้าประตูเมือง",
+   "en": "Merchant cart at the city exit",
+   "xz": [
+    21,
+    9
+   ],
+   "r": 1.8,
+   "spec": "cart + crates + sacks beside the signpost; the gate market's supply",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "C3",
+   "cat": "cart",
+   "th": "เกวียนฟางบ้านไร่",
+   "en": "Croft hay cart",
+   "xz": [
+    35.9,
+    -2.78
+   ],
+   "r": 1.8,
+   "spec": "hay load, pitchfork",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "C4",
+   "cat": "cart",
+   "th": "เกวียนนายพราน (หนังสัตว์)",
+   "en": "Hunter's game cart",
+   "xz": [
+    20,
+    -14
+   ],
+   "r": 1.8,
+   "spec": "pelts, antlers, a caged bird",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "C5",
+   "cat": "cart",
+   "th": "เกวียนคว่ำใกล้ประตูใต้",
+   "en": "Overturned cart near the south gate",
+   "xz": [
+    11,
+    -89
+   ],
+   "r": 2,
+   "spec": "spilled crates and apples: an ambush story beat",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "ST1",
+   "cat": "structure",
+   "th": "กังหันลมบ้านไร่ (แลนด์มาร์กขวาบน)",
+   "en": "Croft windmill (NE skyline)",
+   "xz": [
+    43,
+    18
+   ],
+   "r": 4,
+   "spec": "10-12 m windmill, turning sails; visible from spawn",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "ST2",
+   "cat": "structure",
+   "th": "ตลาดหน้าประตูเมือง 3 แผง",
+   "en": "Gate market (3 stalls)",
+   "xz": [
+    -17,
+    9
+   ],
+   "r": 5,
+   "spec": "3 varied stalls (F26 kit), awnings sapphire/cream + terracotta/cream, fruit crates, never in a row",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "ST3",
+   "cat": "structure",
+   "th": "เต็นท์และราวตากหนังค่ายนายพราน",
+   "en": "Hunter camp tents + racks",
+   "xz": [
+    25.94,
+    -9.76
+   ],
+   "r": 4,
+   "spec": "2 canvas tents, drying racks, campfire, weapon rack",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P0"
+  },
+  {
+   "id": "ST4",
+   "cat": "structure",
+   "th": "หอสังเกตการณ์ร้างบนเนิน",
+   "en": "Ruined watchtower on the knoll",
+   "xz": [
+    31,
+    -95
+   ],
+   "r": 3,
+   "spec": "8 m broken stone tower, banner remnant, watch-fire; visible from the arena",
+   "solid": true,
+   "lane": "Codex props-stone",
+   "pr": "P0"
+  },
+  {
+   "id": "ST5",
+   "cat": "structure",
+   "th": "ซุ้มประตูหินโบราณคร่อมทาง",
+   "en": "Ancient arch over the trail",
+   "xz": [
+    -1,
+    -30
+   ],
+   "r": 3,
+   "spec": "arch spans the 4 m trail (legs outside the path), ivy; frames the bluff/grotto view",
+   "solid": false,
+   "spans_path": true,
+   "lane": "Codex props-stone",
+   "pr": "P1"
+  },
+  {
+   "id": "ST6",
+   "cat": "structure",
+   "th": "รังผึ้งบ้านไร่ 3 รัง",
+   "en": "Croft beehives",
+   "xz": [
+    45,
+    -6
+   ],
+   "r": 2,
+   "spec": "3 skep hives on a bench + bees (wildlife)",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "ST7",
+   "cat": "structure",
+   "th": "กระท่อมชาวประมง + เรือ",
+   "en": "Cove fishing hut + skiffs",
+   "xz": [
+    -36,
+    -92
+   ],
+   "r": 3.5,
+   "spec": "small stilt hut, nets, 2 skiffs (F27) at the pier",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "ST8",
+   "cat": "structure",
+   "th": "ป้ายบอกทาง + ศาลเล็กตามแยก",
+   "en": "Signposts + wayshrines at junctions",
+   "xz": [
+    -10,
+    -22
+   ],
+   "r": 1,
+   "spec": "4 signposts (trail_start, falls junction, glade north, south road) + 2 wayshrines with candles",
+   "solid": false,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "L1",
+   "cat": "light",
+   "th": "โคมไฟตามทางหลัก ทุก ~20 m",
+   "en": "Trail lanterns every ~20 m",
+   "xz": [
+    3,
+    -20
+   ],
+   "r": 1,
+   "spec": "post lanterns 2.5 m beside the main trail and croft lane; warm pools at night",
+   "solid": false,
+   "lane": "Codex props-craft + Claude look-grade",
+   "pr": "P0"
+  },
+  {
+   "id": "L2",
+   "cat": "light",
+   "th": "กระถางไฟหน้าลานบอส",
+   "en": "Arena approach braziers",
+   "xz": [
+    -3.75,
+    -54.0
+   ],
+   "r": 1,
+   "spec": "pair at (-4,-54) and (4,-54), 14.6 m from the arena centre",
+   "solid": true,
+   "lane": "Codex props-craft",
+   "pr": "P1"
+  },
+  {
+   "id": "L3",
+   "cat": "light",
+   "th": "คบเพลิงชายหาด",
+   "en": "Beach torches",
+   "xz": [
+    -42,
+    -84
+   ],
+   "r": 1,
+   "spec": "3 tiki torches along the beach",
+   "solid": false,
+   "lane": "Codex props-craft",
+   "pr": "P2"
+  },
+  {
+   "id": "N1",
+   "cat": "monster",
+   "th": "จุดมอนสเตอร์ใหม่: ลาดเนินอรุณ Lv 7-8",
+   "en": "New spawn: Knoll slopes Lv 7-8",
+   "xz": [
+    24,
+    -98
+   ],
+   "r": 7,
+   "spec": "thistle boars + one Mossling Elder, after the oak wallow; outside every calm zone",
+   "solid": false,
+   "lane": "Claude layout + Codex server spawns",
+   "pr": "P1"
+  }
+ ],
+ "grass": [
+  {
+   "id": "G1",
+   "th": "หญ้าเป็นกอ 3 ระดับความสูง (ทั้งแมพ)",
+   "en": "Clumped tufts, 3 heights (whole map)",
+   "spec": "no single-triangle cards: 5-12 blade clumps, dark roots, 3 hue families; look target §5 #5"
+  },
+  {
+   "id": "G2",
+   "th": "ทุ่งดอกไม้ป่า: ทุ่งเหนือ วงลานหิน ลาดเนิน สวนบ้านไร่",
+   "en": "Wildflower meadows",
+   "spec": "north hunt meadow (daisies, buttercups), glade ring (white/yellow), knoll slopes (red/orange poppies), croft garden (lavender)"
+  },
+  {
+   "id": "G3",
+   "th": "หญ้าแห้งสีทองบนเนินและเนินตะวันออก",
+   "en": "Dry ochre grass on the knoll + east hills",
+   "spec": "#b59a4e highlights, shorter"
+  },
+  {
+   "id": "G4",
+   "th": "หญ้าเขียวเข้มชุ่มน้ำริมลำธาร/บึง/อ่าว",
+   "en": "Lush dark grass by water",
+   "spec": "taller, reeds mixed in"
+  },
+  {
+   "id": "G5",
+   "th": "หญ้าสั้นถูกเหยียบในลานต่อสู้และค่าย",
+   "en": "Short trampled grass in clearings",
+   "spec": "keeps combat readable"
+  }
+ ],
+ "lighting": {
+  "noon": "ท้องฟ้าไล่สี #a5cbfb (บน) -> #aed3f0 (ขอบฟ้า); แดดอุ่น; เงาอมฟ้า; หมอกไกลสีฟ้าอ่อน",
+  "golden_hour": "ฟ้าส้มทอง-ชมพู แสงเฉียงยาว, เงายาว, ลำแสงลอดต้นไม้ (Codex sun shafts)",
+  "violet_dusk": "ฟ้าม่วง-น้ำเงินแบบภาพ R07, หมอกม่วงอ่อน, โคมเริ่มติด",
+  "night": "ฟ้าน้ำเงินเข้ม เห็นดาว/ดวงจันทร์ ambient ฟ้าอมเขียว แสงโคมอุ่นเป็นวง หิ่งห้อย (Codex)",
+  "storm": "ม่วงเข้ม-ดำ-เทา-ขาว ฝน + ฟ้าผ่า (Codex) ไม่มีแสงอาทิตย์ แอ่งน้ำฝน P4",
+  "targets": "docs/reviews/2026-10-03-reference-look-target-v2.md §3 + §5 #1 #2 #7 (Claude look-grade v2, ?look=v2)"
+ },
+ "skyline": [
+  "N: city walls + castle (existing) + guardian statues S1/S2 in front",
+  "W: the sea beyond the cove with 2 distant islands; sea stacks R4",
+  "S: forested mountains behind the south forest wall (impostor silhouettes, aerial perspective)",
+  "E: rolling hills, the windmill ST1 and distant peaks"
+ ],
+ "existing_monster_zones": [
+  {
+   "id": "hunt_meadow_west",
+   "level_band": [
+    1,
+    2
+   ],
+   "clearing": "windmark_hunt"
+  },
+  {
+   "id": "hunt_meadow_east",
+   "level_band": [
+    1,
+    2
+   ],
+   "clearing": "windmark_hunt"
+  },
+  {
+   "id": "falls_meadow",
+   "level_band": [
+    3,
+    4
+   ],
+   "clearing": "route"
+  },
+  {
+   "id": "bridgewater_banks",
+   "level_band": [
+    4,
+    6
+   ],
+   "clearing": "route"
+  },
+  {
+   "id": "glade_southwest",
+   "level_band": [
+    3,
+    5
+   ],
+   "clearing": "windstone_glade"
+  },
+  {
+   "id": "glade_pine",
+   "level_band": [
+    3,
+    5
+   ],
+   "clearing": "windstone_glade"
+  },
+  {
+   "id": "glade_east",
+   "level_band": [
+    4,
+    5
+   ],
+   "clearing": "windstone_glade"
+  },
+  {
+   "id": "windstone_circle",
+   "level_band": [
+    9,
+    11
+   ],
+   "clearing": "windstone_glade"
+  },
+  {
+   "id": "oak_wallow",
+   "level_band": [
+    6,
+    7
+   ],
+   "clearing": "oak_wallow"
+  },
+  {
+   "id": "oak_roots",
+   "level_band": [
+    1,
+    2
+   ],
+   "clearing": "east_return_path"
+  }
+ ],
+ "boss": {
+  "id": "galehorn",
+  "at": [
+   0,
+   -68
+  ],
+  "level_band": [
+   9,
+   11
+  ],
+  "arena_keep_clear_m": 12.0
+ },
+ "checks": {
+  "placement": {
+   "R1": [],
+   "R2": [],
+   "R3": [],
+   "R4": [],
+   "R5": [],
+   "R6": [],
+   "R7": [],
+   "R8": [],
+   "S1": [],
+   "S2": [],
+   "S3": [],
+   "S4": [],
+   "S5": [],
+   "S6": [],
+   "F1": [],
+   "F2": [],
+   "F4": [],
+   "F5": [],
+   "PL1": [],
+   "C1": [],
+   "C2": [],
+   "C3": [],
+   "C4": [],
+   "C5": [],
+   "ST1": [],
+   "ST2": [],
+   "ST3": [],
+   "ST4": [],
+   "ST6": [],
+   "ST7": [],
+   "L2": []
+  },
+  "monsters": [],
+  "auto_nudged": [
+   [
+    "R5",
+    [
+     2.38,
+     4.11
+    ]
+   ],
+   [
+    "F1",
+    [
+     0.63,
+     -1.08
+    ]
+   ],
+   [
+    "F4",
+    [
+     3.68,
+     2.12
+    ]
+   ],
+   [
+    "F5",
+    [
+     -2.38,
+     -1.37
+    ]
+   ],
+   [
+    "C3",
+    [
+     2.9,
+     -0.78
+    ]
+   ],
+   [
+    "ST3",
+    [
+     -0.06,
+     0.24
+    ]
+   ],
+   [
+    "L2",
+    [
+     0.25,
+     0.0
+    ]
+   ]
+  ]
+ }
+}

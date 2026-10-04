@@ -1,0 +1,2230 @@
+{
+  "schema": "xexoria.grass-atlas/1",
+  "name": "grass_atlas_v1",
+  "size": [
+    2048,
+    1024
+  ],
+  "unit_px": 256,
+  "grid": [
+    8,
+    4
+  ],
+  "gutter_px": 8,
+  "color_space": "sRGB",
+  "alpha": "straight, edge-bled",
+  "alpha_test": 0.5,
+  "uv": "image row 0 at the top; load with invertY = false; u = x / 2048, v = y / 1024",
+  "files": {
+    "full": "grass_atlas_v1_albedo.png",
+    "half": "grass_atlas_v1_1024_albedo.png",
+    "dir": "apps/client/src/assets/world/grass"
+  },
+  "half_atlas": "cell-wise 2x2 box (alpha averaged, RGB alpha-weighted in linear light), alpha x mip_scales[0], edge-bled",
+  "mip_coverage": "alpha_mip = min(1, alpha * (1 + mip_coverage_k * lod)); per-cell mip_scales are exact for lod 1..5",
+  "mip_coverage_k": 0.058,
+  "cells": [
+    {
+      "id": "B0",
+      "name": "lush_fan_a",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        0,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        128.0,
+        504.0
+      ],
+      "content_px": [
+        8,
+        8,
+        248,
+        504
+      ],
+      "coverage_mip0": 0.189634,
+      "mip_scales": [
+        1.33018,
+        1.10285,
+        1.20746,
+        1.05851,
+        1.369
+      ],
+      "mip_coverage_k": 0.05886,
+      "mean_linear_rgb": [
+        0.12477,
+        0.2181,
+        0.04577
+      ],
+      "root_linear_rgb": [
+        0.01643,
+        0.03858,
+        0.01289
+      ],
+      "tip_linear_rgb": [
+        0.27624,
+        0.41925,
+        0.09162
+      ],
+      "bbox_px": [
+        13,
+        66,
+        243,
+        504
+      ],
+      "blade_count": 8,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        -19.6,
+        19.3
+      ],
+      "length_frac_range": [
+        0.575,
+        0.889
+      ],
+      "base_width_px_range": [
+        18.2,
+        25.9
+      ],
+      "root_x_offset_px": [
+        -21.2,
+        22.6
+      ],
+      "blade_kinds": {
+        "normal": 6,
+        "curl": 2,
+        "fold": 0,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2c4a28",
+        "mid": "#4e7a34",
+        "tip": "#9cbc58",
+        "tip_front": "#a9c25e",
+        "edge": "#c4d27a"
+      }
+    },
+    {
+      "id": "B1",
+      "name": "lush_fan_b",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        256,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        384.0,
+        504.0
+      ],
+      "content_px": [
+        264,
+        8,
+        504,
+        504
+      ],
+      "coverage_mip0": 0.163281,
+      "mip_scales": [
+        1.29684,
+        1.14178,
+        1.05754,
+        1.19604,
+        1.40059
+      ],
+      "mip_coverage_k": 0.06437,
+      "mean_linear_rgb": [
+        0.11126,
+        0.20641,
+        0.04198
+      ],
+      "root_linear_rgb": [
+        0.02063,
+        0.05424,
+        0.01545
+      ],
+      "tip_linear_rgb": [
+        0.24223,
+        0.36627,
+        0.07915
+      ],
+      "bbox_px": [
+        271,
+        64,
+        500,
+        504
+      ],
+      "blade_count": 6,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        -19.4,
+        36.9
+      ],
+      "length_frac_range": [
+        0.54,
+        0.89
+      ],
+      "base_width_px_range": [
+        15.0,
+        25.7
+      ],
+      "root_x_offset_px": [
+        -19.0,
+        17.1
+      ],
+      "blade_kinds": {
+        "normal": 5,
+        "curl": 0,
+        "fold": 1,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2c4a28",
+        "mid": "#4e7a34",
+        "tip": "#9cbc58",
+        "tip_front": "#a9c25e",
+        "edge": "#c4d27a"
+      }
+    },
+    {
+      "id": "B2",
+      "name": "lush_tall",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        512,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        640.0,
+        504.0
+      ],
+      "content_px": [
+        520,
+        8,
+        760,
+        504
+      ],
+      "coverage_mip0": 0.174387,
+      "mip_scales": [
+        1.33018,
+        1.1413,
+        1.10238,
+        1.11741,
+        1.35059
+      ],
+      "mip_coverage_k": 0.05714,
+      "mean_linear_rgb": [
+        0.121,
+        0.22166,
+        0.04659
+      ],
+      "root_linear_rgb": [
+        0.01805,
+        0.04837,
+        0.01571
+      ],
+      "tip_linear_rgb": [
+        0.26631,
+        0.4104,
+        0.08569
+      ],
+      "bbox_px": [
+        529,
+        36,
+        756,
+        504
+      ],
+      "blade_count": 6,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        -14.6,
+        18.2
+      ],
+      "length_frac_range": [
+        0.71,
+        0.946
+      ],
+      "base_width_px_range": [
+        16.2,
+        22.4
+      ],
+      "root_x_offset_px": [
+        -20.2,
+        18.5
+      ],
+      "blade_kinds": {
+        "normal": 6,
+        "curl": 0,
+        "fold": 0,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2c4a28",
+        "mid": "#4e7a34",
+        "tip": "#9cbc58",
+        "tip_front": "#a9c25e",
+        "edge": "#c4d27a"
+      }
+    },
+    {
+      "id": "B3",
+      "name": "combed",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        768,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        896.0,
+        504.0
+      ],
+      "content_px": [
+        776,
+        8,
+        1016,
+        504
+      ],
+      "coverage_mip0": 0.156653,
+      "mip_scales": [
+        1.1435,
+        1.1033,
+        1.08756,
+        1.16609,
+        1.29684
+      ],
+      "mip_coverage_k": 0.05021,
+      "mean_linear_rgb": [
+        0.10692,
+        0.19607,
+        0.04071
+      ],
+      "root_linear_rgb": [
+        0.01886,
+        0.05032,
+        0.01442
+      ],
+      "tip_linear_rgb": [
+        0.2005,
+        0.32793,
+        0.06888
+      ],
+      "bbox_px": [
+        864,
+        99,
+        1012,
+        504
+      ],
+      "blade_count": 8,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        11.6,
+        28.6
+      ],
+      "length_frac_range": [
+        0.518,
+        0.842
+      ],
+      "base_width_px_range": [
+        16.3,
+        20.0
+      ],
+      "root_x_offset_px": [
+        -23.5,
+        -2.4
+      ],
+      "blade_kinds": {
+        "normal": 8,
+        "curl": 0,
+        "fold": 0,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2c4a28",
+        "mid": "#4e7a34",
+        "tip": "#9cbc58",
+        "tip_front": "#a9c25e",
+        "edge": "#c4d27a"
+      }
+    },
+    {
+      "id": "B4",
+      "name": "wispy_seed",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        1024,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        1152.0,
+        504.0
+      ],
+      "content_px": [
+        1032,
+        8,
+        1272,
+        504
+      ],
+      "coverage_mip0": 0.113903,
+      "mip_scales": [
+        1.33018,
+        1.1033,
+        1.34654,
+        1.56999,
+        1.70011
+      ],
+      "mip_coverage_k": 0.13376,
+      "mean_linear_rgb": [
+        0.16511,
+        0.2216,
+        0.05775
+      ],
+      "root_linear_rgb": [
+        0.02042,
+        0.04709,
+        0.01444
+      ],
+      "tip_linear_rgb": [
+        0.41135,
+        0.38451,
+        0.12564
+      ],
+      "bbox_px": [
+        1038,
+        42,
+        1267,
+        504
+      ],
+      "blade_count": 6,
+      "stalk_count": 2,
+      "chord_deg_range": [
+        -16.6,
+        17.1
+      ],
+      "length_frac_range": [
+        0.667,
+        0.909
+      ],
+      "base_width_px_range": [
+        7.8,
+        10.6
+      ],
+      "root_x_offset_px": [
+        -18.2,
+        13.2
+      ],
+      "blade_kinds": {
+        "normal": 6,
+        "curl": 0,
+        "fold": 0,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2c4a28",
+        "mid": "#4e7a34",
+        "tip": "#9cbc58",
+        "tip_front": "#a9c25e",
+        "edge": "#c4d27a"
+      }
+    },
+    {
+      "id": "B5",
+      "name": "dry_broken",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        1280,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        1408.0,
+        504.0
+      ],
+      "content_px": [
+        1288,
+        8,
+        1528,
+        504
+      ],
+      "coverage_mip0": 0.176756,
+      "mip_scales": [
+        1.1435,
+        1.04427,
+        1.14222,
+        1.16372,
+        1.13515
+      ],
+      "mip_coverage_k": 0.03617,
+      "mean_linear_rgb": [
+        0.19567,
+        0.21011,
+        0.05682
+      ],
+      "root_linear_rgb": [
+        0.03579,
+        0.05603,
+        0.01669
+      ],
+      "tip_linear_rgb": [
+        0.31627,
+        0.28689,
+        0.08537
+      ],
+      "bbox_px": [
+        1290,
+        78,
+        1524,
+        504
+      ],
+      "blade_count": 8,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        -57.4,
+        29.6
+      ],
+      "length_frac_range": [
+        0.358,
+        0.866
+      ],
+      "base_width_px_range": [
+        15.4,
+        21.5
+      ],
+      "root_x_offset_px": [
+        -14.3,
+        18.2
+      ],
+      "blade_kinds": {
+        "normal": 5,
+        "curl": 0,
+        "fold": 0,
+        "bent": 2,
+        "snapped": 1
+      },
+      "palette": {
+        "root": "#3a4a26",
+        "mid": "#7a8a40",
+        "tip": "#c2b062",
+        "tip_front": "#c9b86a",
+        "tip_straw": "#b9a95a",
+        "edge": "#d6c98a"
+      }
+    },
+    {
+      "id": "B6",
+      "name": "sedge",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        1536,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        1664.0,
+        504.0
+      ],
+      "content_px": [
+        1544,
+        8,
+        1784,
+        504
+      ],
+      "coverage_mip0": 0.129192,
+      "mip_scales": [
+        1.33018,
+        1.14222,
+        1.125,
+        1.2622,
+        1.79471
+      ],
+      "mip_coverage_k": 0.10931,
+      "mean_linear_rgb": [
+        0.09921,
+        0.1843,
+        0.09976
+      ],
+      "root_linear_rgb": [
+        0.01664,
+        0.0481,
+        0.03248
+      ],
+      "tip_linear_rgb": [
+        0.2567,
+        0.38131,
+        0.19311
+      ],
+      "bbox_px": [
+        1577,
+        36,
+        1764,
+        504
+      ],
+      "blade_count": 6,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        -13.8,
+        14.5
+      ],
+      "length_frac_range": [
+        0.612,
+        0.946
+      ],
+      "base_width_px_range": [
+        10.5,
+        13.9
+      ],
+      "root_x_offset_px": [
+        -15.0,
+        15.9
+      ],
+      "blade_kinds": {
+        "normal": 6,
+        "curl": 0,
+        "fold": 0,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2e5444",
+        "mid": "#4f7a5c",
+        "tip": "#8fae7a",
+        "tip_front": "#9ab880",
+        "edge": "#b7cc9c"
+      }
+    },
+    {
+      "id": "B7",
+      "name": "fine_dense",
+      "kind": "bundle",
+      "view": "side",
+      "rect_px": [
+        1792,
+        0,
+        256,
+        512
+      ],
+      "anchor_px": [
+        1920.0,
+        504.0
+      ],
+      "content_px": [
+        1800,
+        8,
+        2040,
+        504
+      ],
+      "coverage_mip0": 0.184493,
+      "mip_scales": [
+        1.1435,
+        1.14178,
+        1.15282,
+        1.26679,
+        1.21196
+      ],
+      "mip_coverage_k": 0.05477,
+      "mean_linear_rgb": [
+        0.13087,
+        0.22664,
+        0.05074
+      ],
+      "root_linear_rgb": [
+        0.01935,
+        0.04935,
+        0.01479
+      ],
+      "tip_linear_rgb": [
+        0.29598,
+        0.42663,
+        0.09918
+      ],
+      "bbox_px": [
+        1804,
+        112,
+        2037,
+        504
+      ],
+      "blade_count": 16,
+      "stalk_count": 0,
+      "chord_deg_range": [
+        -24.0,
+        22.5
+      ],
+      "length_frac_range": [
+        0.458,
+        0.794
+      ],
+      "base_width_px_range": [
+        8.3,
+        11.7
+      ],
+      "root_x_offset_px": [
+        -25.3,
+        22.7
+      ],
+      "blade_kinds": {
+        "normal": 16,
+        "curl": 0,
+        "fold": 0,
+        "bent": 0,
+        "snapped": 0
+      },
+      "palette": {
+        "root": "#2c4a28",
+        "mid": "#4e7a34",
+        "tip": "#9cbc58",
+        "tip_front": "#a9c25e",
+        "edge": "#c4d27a"
+      }
+    },
+    {
+      "id": "F0",
+      "name": "yellow_buttercup",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        128.0,
+        640.0
+      ],
+      "content_px": [
+        16,
+        528,
+        240,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.647738,
+      "mip_scales": [
+        1.1435,
+        1.03198,
+        1.18509,
+        1.0,
+        0.9628
+      ],
+      "mip_coverage_k": 0.01049,
+      "mean_linear_rgb": [
+        0.68237,
+        0.47186,
+        0.04742
+      ],
+      "bbox_px": [
+        38,
+        543,
+        226,
+        732
+      ],
+      "radius_px": 99.8,
+      "palette": {
+        "petal": "#e8c23a",
+        "shade": "#b38a2a",
+        "highlight": "#f6e488",
+        "centre": "#a9ae3c",
+        "stamen": "#f0cc42"
+      }
+    },
+    {
+      "id": "F1",
+      "name": "white_daisy",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        384.0,
+        640.0
+      ],
+      "content_px": [
+        272,
+        528,
+        496,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.502283,
+      "mip_scales": [
+        1.0,
+        0.99975,
+        0.96226,
+        1.00952,
+        1.0
+      ],
+      "mip_coverage_k": -0.00138,
+      "mean_linear_rgb": [
+        0.66329,
+        0.60769,
+        0.48271
+      ],
+      "bbox_px": [
+        292,
+        549,
+        478,
+        728
+      ],
+      "radius_px": 97.1,
+      "palette": {
+        "petal": "#ece8d8",
+        "shade": "#b8b6a6",
+        "disc": "#e2b23a",
+        "ring": "#b8862a"
+      }
+    },
+    {
+      "id": "F2",
+      "name": "orange_poppy",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        640.0,
+        640.0
+      ],
+      "content_px": [
+        528,
+        528,
+        752,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.737953,
+      "mip_scales": [
+        1.1435,
+        1.16372,
+        1.07567,
+        1.19903,
+        0.9561
+      ],
+      "mip_coverage_k": 0.02317,
+      "mean_linear_rgb": [
+        0.65384,
+        0.15554,
+        0.02382
+      ],
+      "bbox_px": [
+        543,
+        539,
+        739,
+        741
+      ],
+      "radius_px": 99.0,
+      "palette": {
+        "petal": "#e8742a",
+        "rim": "#f29a4a",
+        "base": "#c4561e",
+        "centre": "#3a2a1a"
+      }
+    },
+    {
+      "id": "F3",
+      "name": "red_poppy",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        896.0,
+        640.0
+      ],
+      "content_px": [
+        784,
+        528,
+        1008,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.725043,
+      "mip_scales": [
+        1.0,
+        0.98923,
+        1.04042,
+        1.03223,
+        1.0
+      ],
+      "mip_coverage_k": 0.00416,
+      "mean_linear_rgb": [
+        0.62085,
+        0.07207,
+        0.0824
+      ],
+      "bbox_px": [
+        800,
+        538,
+        989,
+        744
+      ],
+      "radius_px": 100.9,
+      "palette": {
+        "petal": "#d94a51",
+        "rim": "#ec7b78",
+        "base": "#9f2938",
+        "centre": "#3a2a1a"
+      }
+    },
+    {
+      "id": "F4",
+      "name": "blue_cornflower",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        1024,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1152.0,
+        640.0
+      ],
+      "content_px": [
+        1040,
+        528,
+        1264,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.413513,
+      "mip_scales": [
+        1.1435,
+        1.10285,
+        1.02384,
+        0.94986,
+        1.0
+      ],
+      "mip_coverage_k": 0.004,
+      "mean_linear_rgb": [
+        0.09038,
+        0.1784,
+        0.49848
+      ],
+      "bbox_px": [
+        1065,
+        549,
+        1240,
+        735
+      ],
+      "radius_px": 95.9,
+      "palette": {
+        "petal": "#638ad8",
+        "shade": "#354d96",
+        "disc": "#3a356b",
+        "ring": "#635489"
+      }
+    },
+    {
+      "id": "F5",
+      "name": "white_yarrow",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        1280,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1408.0,
+        640.0
+      ],
+      "content_px": [
+        1296,
+        528,
+        1520,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.279218,
+      "mip_scales": [
+        1.29684,
+        1.10238,
+        1.01573,
+        1.16372,
+        1.06826
+      ],
+      "mip_coverage_k": 0.02809,
+      "mean_linear_rgb": [
+        0.5019,
+        0.51543,
+        0.39429
+      ],
+      "bbox_px": [
+        1331,
+        551,
+        1492,
+        721
+      ],
+      "radius_px": 89.6,
+      "palette": {
+        "floret": "#f0eee2",
+        "shade": "#b2b8a0",
+        "under": "#6e7c58",
+        "centre": "#d8cfa0"
+      }
+    },
+    {
+      "id": "F6",
+      "name": "pink_clover_head",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        1536,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1664.0,
+        640.0
+      ],
+      "content_px": [
+        1552,
+        528,
+        1776,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.326722,
+      "mip_scales": [
+        1.14226,
+        1.10285,
+        0.98444,
+        0.86331,
+        1.47436
+      ],
+      "mip_coverage_k": 0.03866,
+      "mean_linear_rgb": [
+        0.48272,
+        0.15757,
+        0.25995
+      ],
+      "bbox_px": [
+        1593,
+        571,
+        1733,
+        709
+      ],
+      "radius_px": 70.0,
+      "palette": {
+        "base": "#a24c74",
+        "mid": "#d77a9f",
+        "tip": "#eaa6c0",
+        "under": "#8a3c62"
+      }
+    },
+    {
+      "id": "F7",
+      "name": "lavender_sprigs",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        1792,
+        512,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1920.0,
+        640.0
+      ],
+      "content_px": [
+        1808,
+        528,
+        2032,
+        752
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.228771,
+      "mip_scales": [
+        1.14033,
+        1.03187,
+        0.97689,
+        0.93708,
+        1.0
+      ],
+      "mip_coverage_k": -0.00213,
+      "mean_linear_rgb": [
+        0.24846,
+        0.15282,
+        0.41782
+      ],
+      "bbox_px": [
+        1854,
+        580,
+        1986,
+        696
+      ],
+      "radius_px": 105.0,
+      "palette": {
+        "petal": "#a987d2",
+        "shade": "#624d8a",
+        "tip": "#d0b7e5"
+      }
+    },
+    {
+      "id": "G0",
+      "name": "clover_leaf_a",
+      "kind": "leaf",
+      "view": "top",
+      "rect_px": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        128.0,
+        896.0
+      ],
+      "content_px": [
+        16,
+        784,
+        240,
+        1008
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.142614,
+      "mip_scales": [
+        1.1435,
+        1.1033,
+        1.0,
+        1.0,
+        1.29684
+      ],
+      "mip_coverage_k": 0.03335,
+      "mean_linear_rgb": [
+        0.08071,
+        0.23416,
+        0.0455
+      ],
+      "bbox_px": [
+        79,
+        847,
+        179,
+        937
+      ],
+      "radius_px": 54.0,
+      "palette": {
+        "leaf": "#4f8a3a",
+        "chevron": "#8fbf6a",
+        "rim": "#2f5a26",
+        "midrib": "#79a85a"
+      }
+    },
+    {
+      "id": "G1",
+      "name": "clover_leaf_b",
+      "kind": "leaf",
+      "view": "top",
+      "rect_px": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        384.0,
+        896.0
+      ],
+      "content_px": [
+        272,
+        784,
+        496,
+        1008
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.151567,
+      "mip_scales": [
+        1.1435,
+        1.0,
+        0.96958,
+        1.05137,
+        1.18442
+      ],
+      "mip_coverage_k": 0.02145,
+      "mean_linear_rgb": [
+        0.05178,
+        0.18346,
+        0.03246
+      ],
+      "bbox_px": [
+        336,
+        843,
+        432,
+        947
+      ],
+      "radius_px": 55.9,
+      "palette": {
+        "leaf": "#3f7a32",
+        "chevron": "#86b462",
+        "rim": "#28501f",
+        "midrib": "#6a9a4e"
+      }
+    },
+    {
+      "id": "G2",
+      "name": "round_leaf",
+      "kind": "leaf",
+      "view": "top",
+      "rect_px": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        640.0,
+        896.0
+      ],
+      "content_px": [
+        528,
+        784,
+        752,
+        1008
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.336588,
+      "mip_scales": [
+        1.1435,
+        1.10285,
+        1.10238,
+        1.07087,
+        1.0
+      ],
+      "mip_coverage_k": 0.01709,
+      "mean_linear_rgb": [
+        0.10451,
+        0.2466,
+        0.04531
+      ],
+      "bbox_px": [
+        590,
+        792,
+        682,
+        1000
+      ],
+      "palette": {
+        "leaf": "#5a8a3c",
+        "vein": "#8db866",
+        "rim": "#3a6228"
+      }
+    },
+    {
+      "id": "G3",
+      "name": "stems_a",
+      "kind": "stems",
+      "view": "side",
+      "rect_px": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        896.0,
+        1016.0
+      ],
+      "content_px": [
+        776,
+        776,
+        1016,
+        1016
+      ],
+      "coverage_mip0": 0.091615,
+      "mip_scales": [
+        1.1435,
+        1.03134,
+        1.10308,
+        1.42576,
+        1.22848
+      ],
+      "mip_coverage_k": 0.06111,
+      "mean_linear_rgb": [
+        0.12161,
+        0.23091,
+        0.04485
+      ],
+      "bbox_px": [
+        845,
+        776,
+        949,
+        1016
+      ],
+      "tips_px": [
+        [
+          846.7,
+          818.8
+        ],
+        [
+          879.9,
+          850.2
+        ],
+        [
+          902.3,
+          780.3
+        ],
+        [
+          911.9,
+          813.0
+        ],
+        [
+          947.0,
+          776.1
+        ]
+      ],
+      "palette": {
+        "root": "#3e5e2a",
+        "top": "#7aa048",
+        "leaf": "#4a6e30",
+        "leaf_tip": "#7aa048"
+      }
+    },
+    {
+      "id": "G4",
+      "name": "stems_b",
+      "kind": "stems",
+      "view": "side",
+      "rect_px": [
+        1024,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1152.0,
+        1016.0
+      ],
+      "content_px": [
+        1032,
+        776,
+        1272,
+        1016
+      ],
+      "coverage_mip0": 0.066146,
+      "mip_scales": [
+        1.1435,
+        1.14178,
+        1.15303,
+        1.35802,
+        1.36253
+      ],
+      "mip_coverage_k": 0.07511,
+      "mean_linear_rgb": [
+        0.13718,
+        0.25633,
+        0.05035
+      ],
+      "bbox_px": [
+        1108,
+        813,
+        1202,
+        1016
+      ],
+      "tips_px": [
+        [
+          1140.0,
+          823.6
+        ],
+        [
+          1175.8,
+          815.5
+        ]
+      ],
+      "palette": {
+        "root": "#3e5e2a",
+        "top": "#7aa048",
+        "leaf": "#4a6e30",
+        "leaf_tip": "#7aa048"
+      }
+    },
+    {
+      "id": "G5",
+      "name": "leafy_base",
+      "kind": "leaf",
+      "view": "side",
+      "rect_px": [
+        1280,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1408.0,
+        1016.0
+      ],
+      "content_px": [
+        1288,
+        776,
+        1528,
+        1016
+      ],
+      "coverage_mip0": 0.147865,
+      "mip_scales": [
+        1.14226,
+        0.96958,
+        0.99234,
+        1.11741,
+        0.99704
+      ],
+      "mip_coverage_k": 0.00933,
+      "mean_linear_rgb": [
+        0.11445,
+        0.22783,
+        0.04602
+      ],
+      "bbox_px": [
+        1334,
+        889,
+        1491,
+        1016
+      ],
+      "palette": {
+        "root": "#36582a",
+        "mid": "#5a8a3a",
+        "tip": "#86ae52",
+        "midrib": "#9cbc6a"
+      }
+    },
+    {
+      "id": "G6",
+      "name": "clover_flower_white",
+      "kind": "head",
+      "view": "top",
+      "rect_px": [
+        1536,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1664.0,
+        896.0
+      ],
+      "content_px": [
+        1552,
+        784,
+        1776,
+        1008
+      ],
+      "content_radius_px": 112.0,
+      "coverage_mip0": 0.233362,
+      "mip_scales": [
+        1.33018,
+        1.0,
+        1.15287,
+        1.23058,
+        0.8817
+      ],
+      "mip_coverage_k": 0.02036,
+      "mean_linear_rgb": [
+        0.55857,
+        0.53794,
+        0.45854
+      ],
+      "bbox_px": [
+        1608,
+        836,
+        1725,
+        955
+      ],
+      "radius_px": 60.0,
+      "palette": {
+        "base": "#b9b498",
+        "mid": "#e4e0d2",
+        "tip": "#f2efe6",
+        "under": "#9ea486"
+      }
+    },
+    {
+      "id": "G7",
+      "name": "reserved",
+      "kind": "reserved",
+      "view": "none",
+      "rect_px": [
+        1792,
+        768,
+        256,
+        256
+      ],
+      "anchor_px": [
+        1920.0,
+        896.0
+      ],
+      "content_px": [
+        1800,
+        776,
+        2040,
+        1016
+      ],
+      "coverage_mip0": 0.0,
+      "mip_scales": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mip_coverage_k": 0.0,
+      "note": "fully transparent; RGB is a constant fill (mean bundle colour) as there is no opaque source",
+      "palette": {}
+    }
+  ],
+  "generator": {
+    "script": "assets/blender/grass/forge/paint_grass_atlas.py",
+    "sha256": "6fb4f13c59efcba105f1ed1e0a40bfc782b3a9f58f46c0de681086d34f280bd5",
+    "seed": 20261002,
+    "params": {
+      "supersampling": 2,
+      "clamp_srgb8": [
+        26,
+        240
+      ],
+      "light_top_down_xy": [
+        -0.6,
+        -0.8
+      ],
+      "palettes": {
+        "lush": {
+          "root": "#2c4a28",
+          "mid": "#4e7a34",
+          "tip": "#9cbc58",
+          "tip_front": "#a9c25e",
+          "edge": "#c4d27a"
+        },
+        "dry": {
+          "root": "#3a4a26",
+          "mid": "#7a8a40",
+          "tip": "#c2b062",
+          "tip_front": "#c9b86a",
+          "tip_straw": "#b9a95a",
+          "edge": "#d6c98a"
+        },
+        "sedge": {
+          "root": "#2e5444",
+          "mid": "#4f7a5c",
+          "tip": "#8fae7a",
+          "tip_front": "#9ab880",
+          "edge": "#b7cc9c"
+        },
+        "oat": {
+          "head": "#cbb873",
+          "shade": "#9e8a4e",
+          "light": "#dccb8c",
+          "stalk_root": "#4f6a32",
+          "stalk_top": "#a9a062"
+        }
+      },
+      "blade": {
+        "taper_power": 0.85,
+        "belly_t": 0.15,
+        "belly_sigma": 0.1,
+        "belly_amount": [
+          0.06,
+          0.16
+        ],
+        "root_pinch": 0.1,
+        "s_curve_prob": 0.3,
+        "s_curve_deg": [
+          6.0,
+          15.0
+        ],
+        "ctrl_k": [
+          0.3,
+          0.42
+        ],
+        "hue_jitter_deg": 6.0,
+        "value_jitter": 0.08,
+        "sat_jitter": 0.06,
+        "mid_t": 0.4,
+        "root_ease": 1.0,
+        "tip_ease": 0.7,
+        "streak_amount": 0.035,
+        "fit_margin_px": 2.0
+      },
+      "depth": {
+        "back_fraction": 0.4,
+        "back_value": 0.78,
+        "back_hue_deg": 6.0,
+        "front_fraction": 0.25,
+        "front_value": 1.06,
+        "front_tip_hue_deg": -5.0,
+        "length_weight": 0.45
+      },
+      "form": {
+        "lit_half": 1.08,
+        "shade_half": 0.9,
+        "fold_softness": 0.2,
+        "rib_lift": 0.05,
+        "rib_width": 0.16,
+        "edge_highlight_px": 1.25,
+        "edge_t": [
+          0.35,
+          0.9
+        ],
+        "edge_strength": 0.8,
+        "fold_underside_value": 0.86,
+        "fold_underside_hue_deg": 4.0
+      },
+      "occlusion": {
+        "contact_sigma_px": 4.0,
+        "contact_offset_px": 3.0,
+        "contact_factor": 0.85,
+        "root_fraction": 0.14,
+        "root_factor": 0.72,
+        "head_sigma_px": 2.5,
+        "head_offset_px": [
+          1.5,
+          2.5
+        ],
+        "head_factor": 0.85
+      },
+      "macro": {
+        "sigma_px": 22.0,
+        "value": 0.04,
+        "warmth": 0.03,
+        "top_light": 0.06
+      },
+      "cells": {
+        "B0": {
+          "palette": "lush",
+          "count": [
+            7,
+            9
+          ],
+          "base_width_px": [
+            16,
+            26
+          ],
+          "length_frac": [
+            0.55,
+            0.95
+          ],
+          "spread_deg": 40.0,
+          "droop_deg": [
+            10.0,
+            34.0
+          ],
+          "curl_tips": 2,
+          "curl_deg": [
+            80.0,
+            115.0
+          ]
+        },
+        "B1": {
+          "palette": "lush",
+          "count": [
+            6,
+            8
+          ],
+          "base_width_px": [
+            15,
+            26
+          ],
+          "length_frac": [
+            0.52,
+            0.92
+          ],
+          "spread_deg": 36.0,
+          "droop_deg": [
+            6.0,
+            30.0
+          ],
+          "s_curve_prob": 0.45,
+          "folds": 1,
+          "fold_t": [
+            0.64,
+            0.78
+          ],
+          "fold_deg": [
+            120.0,
+            150.0
+          ],
+          "fold_len": [
+            0.85,
+            1.0
+          ]
+        },
+        "B2": {
+          "palette": "lush",
+          "count": [
+            6,
+            8
+          ],
+          "base_width_px": [
+            16,
+            24
+          ],
+          "length_frac": [
+            0.7,
+            1.0
+          ],
+          "spread_deg": 25.0,
+          "droop_deg": [
+            4.0,
+            20.0
+          ]
+        },
+        "B3": {
+          "palette": "lush",
+          "count": [
+            7,
+            9
+          ],
+          "base_width_px": [
+            14,
+            22
+          ],
+          "length_frac": [
+            0.5,
+            0.9
+          ],
+          "lean_deg": [
+            10.0,
+            35.0
+          ],
+          "droop_deg": [
+            8.0,
+            26.0
+          ]
+        },
+        "B4": {
+          "palette": "lush",
+          "count": [
+            5,
+            7
+          ],
+          "base_width_px": [
+            7,
+            11
+          ],
+          "length_frac": [
+            0.65,
+            0.95
+          ],
+          "spread_deg": 30.0,
+          "droop_deg": [
+            6.0,
+            28.0
+          ],
+          "stalks": [
+            2,
+            3
+          ],
+          "stalk_width_px": [
+            3.0,
+            4.0
+          ],
+          "stalk_length_frac": [
+            0.82,
+            0.97
+          ],
+          "spikelets": [
+            5,
+            8
+          ],
+          "spikelet_len_px": [
+            13.0,
+            20.0
+          ],
+          "spikelet_width_px": [
+            5.0,
+            7.0
+          ],
+          "pedicel_px": [
+            4.0,
+            9.0
+          ],
+          "seed_zone": 0.2
+        },
+        "B5": {
+          "palette": "dry",
+          "count": [
+            6,
+            8
+          ],
+          "base_width_px": [
+            14,
+            22
+          ],
+          "length_frac": [
+            0.5,
+            0.9
+          ],
+          "spread_deg": 36.0,
+          "droop_deg": [
+            6.0,
+            28.0
+          ],
+          "broken_frac": 0.4,
+          "break_t": [
+            0.52,
+            0.8
+          ],
+          "bend_deg": [
+            110.0,
+            160.0
+          ],
+          "cut_slope": [
+            -0.9,
+            0.9
+          ]
+        },
+        "B6": {
+          "palette": "sedge",
+          "count": [
+            6,
+            8
+          ],
+          "base_width_px": [
+            10,
+            14
+          ],
+          "length_frac": [
+            0.6,
+            0.95
+          ],
+          "spread_deg": 18.0,
+          "droop_deg": [
+            0.0,
+            7.0
+          ],
+          "s_curve_prob": 0.0,
+          "lit_half": 1.11,
+          "shade_half": 0.86,
+          "rib_lift": 0.07
+        },
+        "B7": {
+          "palette": "lush",
+          "count": [
+            12,
+            16
+          ],
+          "base_width_px": [
+            8,
+            12
+          ],
+          "length_frac": [
+            0.4,
+            0.8
+          ],
+          "spread_deg": 34.0,
+          "droop_deg": [
+            6.0,
+            32.0
+          ]
+        },
+        "F0": {
+          "petals": 5,
+          "petal": "#e8c23a",
+          "shade": "#b38a2a",
+          "highlight": "#f6e488",
+          "rim": "#f2d660",
+          "petal_len_px": [
+            94.0,
+            100.0
+          ],
+          "petal_halfwidth_px": [
+            40.0,
+            46.0
+          ],
+          "centre": "#a9ae3c",
+          "centre_light": "#cfc957",
+          "stamen": "#f0cc42",
+          "stamen_shade": "#b5952c",
+          "centre_r_px": 17.0,
+          "stamens": [
+            14,
+            18
+          ]
+        },
+        "F1": {
+          "petals": [
+            16,
+            22
+          ],
+          "petal": "#ece8d8",
+          "shade": "#b8b6a6",
+          "petal_len_px": [
+            82.0,
+            100.0
+          ],
+          "petal_halfwidth_px": [
+            6.5,
+            8.5
+          ],
+          "disc": "#e2b23a",
+          "ring": "#b8862a",
+          "disc_light": "#f0c858",
+          "disc_dark": "#c08a28",
+          "disc_r_px": [
+            24.0,
+            27.0
+          ],
+          "back_value": 0.86
+        },
+        "F2": {
+          "petals": [
+            4,
+            5
+          ],
+          "petal": "#e8742a",
+          "rim": "#f29a4a",
+          "base": "#c4561e",
+          "outer_len_px": [
+            96.0,
+            101.0
+          ],
+          "outer_halfwidth_px": [
+            56.0,
+            63.0
+          ],
+          "inner_len_px": [
+            86.0,
+            94.0
+          ],
+          "inner_halfwidth_px": [
+            50.0,
+            56.0
+          ],
+          "centre": "#3a2a1a",
+          "centre_light": "#5a4a2e",
+          "stamen": "#2e2216",
+          "stamen_tip": "#6a5a38",
+          "centre_r_px": 15.0
+        },
+        "F3": {
+          "petals": [
+            4,
+            5
+          ],
+          "petal": "#d94a51",
+          "rim": "#ec7b78",
+          "base": "#9f2938",
+          "outer_len_px": [
+            96.0,
+            101.0
+          ],
+          "outer_halfwidth_px": [
+            56.0,
+            63.0
+          ],
+          "inner_len_px": [
+            86.0,
+            94.0
+          ],
+          "inner_halfwidth_px": [
+            50.0,
+            56.0
+          ],
+          "centre": "#3a2a1a",
+          "centre_light": "#5a4a2e",
+          "stamen": "#2e2216",
+          "stamen_tip": "#6a5a38",
+          "centre_r_px": 15.0
+        },
+        "F4": {
+          "petals": [
+            24,
+            30
+          ],
+          "petal": "#638ad8",
+          "shade": "#354d96",
+          "petal_len_px": [
+            74.0,
+            96.0
+          ],
+          "petal_halfwidth_px": [
+            5.0,
+            7.0
+          ],
+          "disc": "#3a356b",
+          "ring": "#635489",
+          "disc_light": "#897cb2",
+          "disc_dark": "#29264f",
+          "disc_r_px": [
+            14.0,
+            17.0
+          ],
+          "back_value": 0.86
+        },
+        "F5": {
+          "subclusters": [
+            5,
+            8
+          ],
+          "florets_total": [
+            30,
+            60
+          ],
+          "floret_r_px": [
+            6.0,
+            10.0
+          ],
+          "floret": "#f0eee2",
+          "shade": "#b2b8a0",
+          "centre": "#d8cfa0",
+          "under": "#6e7c58",
+          "under_light": "#8a9a70",
+          "subcluster_r_px": [
+            24.0,
+            32.0
+          ],
+          "cluster_r_px": 100.0
+        },
+        "F6": {
+          "radius_px": 70.0,
+          "base": "#a24c74",
+          "mid": "#d77a9f",
+          "tip": "#eaa6c0",
+          "under": "#8a3c62",
+          "rings": [
+            [
+              0.42,
+              0.58,
+              26,
+              4.4
+            ],
+            [
+              0.3,
+              0.5,
+              20,
+              4.2
+            ],
+            [
+              0.18,
+              0.4,
+              13,
+              4.0
+            ],
+            [
+              0.05,
+              0.28,
+              7,
+              3.6
+            ]
+          ]
+        },
+        "F7": {
+          "petal": "#a987d2",
+          "shade": "#624d8a",
+          "tip": "#d0b7e5",
+          "spikes": 3,
+          "florets_per_spike": 8
+        },
+        "G0": {
+          "leaflets": 3,
+          "leaf": "#4f8a3a",
+          "chevron": "#8fbf6a",
+          "rim": "#2f5a26",
+          "midrib": "#79a85a",
+          "leaflet_len_px": [
+            48.0,
+            56.0
+          ],
+          "half_angle_deg": 58.0,
+          "chevron_strength": 0.75,
+          "notch": [
+            0.14,
+            0.2
+          ],
+          "value_var": 0.08
+        },
+        "G1": {
+          "leaflets": 4,
+          "leaf": "#3f7a32",
+          "chevron": "#86b462",
+          "rim": "#28501f",
+          "midrib": "#6a9a4e",
+          "leaflet_len_px": [
+            48.0,
+            56.0
+          ],
+          "half_angle_deg": 44.0,
+          "chevron_strength": 0.38,
+          "notch": [
+            0.12,
+            0.18
+          ],
+          "value_var": 0.08
+        },
+        "G2": {
+          "leaf": "#5a8a3c",
+          "vein": "#8db866",
+          "groove": "#40682c",
+          "rim": "#3a6228",
+          "length_px": 208.0,
+          "halfwidth_px": 45.0,
+          "veins": 5
+        },
+        "G3": {
+          "stems": [
+            3,
+            5
+          ],
+          "height_px": [
+            160.0,
+            240.0
+          ],
+          "width_px": [
+            4.0,
+            6.0
+          ],
+          "root": "#3e5e2a",
+          "top": "#7aa048",
+          "leaves_per_stem": [
+            1,
+            2
+          ],
+          "leaf_len_px": [
+            26.0,
+            44.0
+          ],
+          "leaf_width_px": [
+            8.0,
+            12.0
+          ],
+          "leaf_attach_t": [
+            0.25,
+            0.7
+          ],
+          "spread_deg": 20.0
+        },
+        "G4": {
+          "stems": [
+            2,
+            3
+          ],
+          "height_px": [
+            160.0,
+            240.0
+          ],
+          "width_px": [
+            4.0,
+            6.0
+          ],
+          "root": "#3e5e2a",
+          "top": "#7aa048",
+          "base_leaves": [
+            2,
+            4
+          ],
+          "leaf_len_px": [
+            60.0,
+            100.0
+          ],
+          "leaf_width_px": [
+            8.0,
+            12.0
+          ],
+          "leaf_attach_t": [
+            0.03,
+            0.22
+          ],
+          "spread_deg": 16.0
+        },
+        "G5": {
+          "leaves": [
+            6,
+            9
+          ],
+          "leaf_len_px": [
+            60.0,
+            130.0
+          ],
+          "leaf_width_px": [
+            22.0,
+            34.0
+          ],
+          "spread_deg": 74.0,
+          "root": "#36582a",
+          "mid": "#5a8a3a",
+          "tip": "#86ae52",
+          "midrib": "#9cbc6a",
+          "edge": "#b4cc78"
+        },
+        "G6": {
+          "radius_px": 60.0,
+          "base": "#b9b498",
+          "mid": "#e4e0d2",
+          "tip": "#f2efe6",
+          "under": "#9ea486",
+          "pink": "#d8b4ae",
+          "rings": [
+            [
+              0.42,
+              0.58,
+              22,
+              4.2
+            ],
+            [
+              0.3,
+              0.5,
+              17,
+              4.0
+            ],
+            [
+              0.18,
+              0.4,
+              11,
+              3.8
+            ],
+            [
+              0.05,
+              0.28,
+              6,
+              3.4
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "outputs": {
+    "grass_atlas_v1_albedo.png": {
+      "sha256": "5bc324c835e8e1cd6da241a49265d79f1896806fcc9b780139e6b770478862cd",
+      "bytes": 975082
+    },
+    "grass_atlas_v1_1024_albedo.png": {
+      "sha256": "5b5be9b333215683ac6964edb44faed3ab2fcdc460eaeaa27e2b3c346f0f88f9",
+      "bytes": 389826
+    }
+  },
+  "licence": "Project-owned procedural output; no third-party pixels",
+  "provenance": "Generated from the seed by the script; no source images"
+}

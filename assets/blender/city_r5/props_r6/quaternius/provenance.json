@@ -1,0 +1,403 @@
+{
+  "schema": "xexoria.vendored-cc0-props/1",
+  "source_archive": "%USERPROFILE%\\Downloads\\Xexoria-Game\\kits\\Fantasy Props MegaKit[Standard].zip",
+  "source_archive_sha256": "8b6f7e806d222e585478f0e1bdc6b271bbc7bc6f84dd6af8ca703a7c64f0cb1e",
+  "source_url": "https://quaternius.com/packs/fantasypropsmegakit.html",
+  "licence": "CC0 1.0 Universal",
+  "licence_text": "assets/third-party/quaternius-fantasy-props-megakit/License_Standard.txt",
+  "textures": "reuses the nine byte-identical trim-sheet PNGs vendored with the featured stall cart",
+  "props": [
+    {
+      "prop": "Bench",
+      "gltf_sha256": "ddc4819c6469f1e7a7c99ec50d60ea64d2437bc8115054cfcc11670fb58c2ac1",
+      "buffers": [
+        {
+          "file": "Bench.bin",
+          "sha256": "08d6976112645dc1f6a554019e2fc965d0bceba7a01c4f6013615ac46520b418",
+          "bytes": 19304
+        }
+      ],
+      "triangles": 404,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Barrel",
+      "gltf_sha256": "7d81195064131323579141c506f116ce635a4f95d5f9704cce71d19c76433c3f",
+      "buffers": [
+        {
+          "file": "Barrel.bin",
+          "sha256": "d8f963e2975b6bbd4b631b5cd7ade2d5dfc76dfb9f8387e2d398935f5405cf20",
+          "bytes": 57144
+        }
+      ],
+      "triangles": 824,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Barrel_Holder",
+      "gltf_sha256": "60ad2c1af4f80639a022fbad55fd8bf6fa1274c0fb97aaae0dcd75766e2f1c50",
+      "buffers": [
+        {
+          "file": "Barrel_Holder.bin",
+          "sha256": "a4aa5eb66d4261565dea3389f73005b6c5cac1f6b226d090cecbc5791d5a418a",
+          "bytes": 161816
+        }
+      ],
+      "triangles": 2676,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Bag",
+      "gltf_sha256": "be5e90d64d53cba3482748093cd05b32f4f22c843fabc8183b68e6cbbe7c0663",
+      "buffers": [
+        {
+          "file": "Bag.bin",
+          "sha256": "6bf8ad99d0048264aa37157a92f394ab32aeeb5270dab2f3f76282b1eda4e012",
+          "bytes": 27188
+        }
+      ],
+      "triangles": 858,
+      "materials": [
+        "MI_Trim_Cloth",
+        "MI_Trim_Furniture"
+      ]
+    },
+    {
+      "prop": "Banner_1_Cloth",
+      "gltf_sha256": "abdffb3b7b756aa350d135c66d1dd8a5d321e5ac49e9946f97f223f40fdf24bd",
+      "buffers": [
+        {
+          "file": "Banner_1_Cloth.bin",
+          "sha256": "30cc64edb6898f378dbcc573acbff6ab7731f448025b13ff884541348fce5ea5",
+          "bytes": 6636
+        }
+      ],
+      "triangles": 138,
+      "materials": [
+        "MI_Trim_Metal",
+        "MI_Banner"
+      ]
+    },
+    {
+      "prop": "Banner_2_Cloth",
+      "gltf_sha256": "5329141dfca0a43d670b54daa75d039dacbdcbe2d428d2d88bd35e8549eccaba",
+      "buffers": [
+        {
+          "file": "Banner_2_Cloth.bin",
+          "sha256": "258fa990f109353326ff14f71581fa71f3a2bd5aaa3b62c0cddf05d0b55d3dc0",
+          "bytes": 4940
+        }
+      ],
+      "triangles": 119,
+      "materials": [
+        "MI_Trim_Metal",
+        "MI_Banner"
+      ]
+    },
+    {
+      "prop": "Bucket_Wooden_1",
+      "gltf_sha256": "85fdb42ee7d54f51d6ae2908021a79a9a82e85a355d43905a923080c6d76089b",
+      "buffers": [
+        {
+          "file": "Bucket_Wooden_1.bin",
+          "sha256": "be608473cd78557d466be9b9e2f6ff15f1edf1e4f5fcdd27be75d494f52578f2",
+          "bytes": 32544
+        }
+      ],
+      "triangles": 976,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Cauldron",
+      "gltf_sha256": "d0f54f521837686fe16f882f706f15fde7d4485bcbb73c0ca1529eb2279f4b28",
+      "buffers": [
+        {
+          "file": "Cauldron.bin",
+          "sha256": "63fd1b9d8d44a12fcb421f74a4f3d806f023b4aa1be9391a7c313a996a8f7f4b",
+          "bytes": 62712
+        }
+      ],
+      "triangles": 2020,
+      "materials": [
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Chest_Wood",
+      "gltf_sha256": "0db50c78681f3955e628d1698b3bf750fdf5d4757c9d35300709b2ad24b527eb",
+      "buffers": [
+        {
+          "file": "Chest_Wood.bin",
+          "sha256": "e4aea6f99587b8ad9ac08fac82013c55111a748c2e3febedbc4de3e301253901",
+          "bytes": 184356
+        }
+      ],
+      "triangles": 2546,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Crate_Wooden",
+      "gltf_sha256": "ecbbb1922e0d3b964df6bba66eb2b7f9075b0d79737deb61449befd62e560fac",
+      "buffers": [
+        {
+          "file": "Crate_Wooden.bin",
+          "sha256": "7ae016386790e5998fbdf1656a5dc53a3f1374c3525b22798d84397a36ae937b",
+          "bytes": 66496
+        }
+      ],
+      "triangles": 1576,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "FarmCrate_Empty",
+      "gltf_sha256": "94751cc9d7a9d9829679f161496d08f773df170431039c3eb0bc43d374f02ad5",
+      "buffers": [
+        {
+          "file": "FarmCrate_Empty.bin",
+          "sha256": "9c380c8ff9314aa5ca94deaf816527be4aae60802c8bba42d30978f1685b520d",
+          "bytes": 54704
+        }
+      ],
+      "triangles": 1928,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Lantern_Wall",
+      "gltf_sha256": "28c1bc9c7f2d43207db79be9a6f965c77d5199c7ab46890165d6fc3c970b4707",
+      "buffers": [
+        {
+          "file": "Lantern_Wall.bin",
+          "sha256": "fe9f3816130587308b73bb8b4b28031b71fe9405a111f115463022709fa04b2e",
+          "bytes": 120036
+        }
+      ],
+      "triangles": 2822,
+      "materials": [
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Pot_1",
+      "gltf_sha256": "4ad62dd46ddce55a0a65f1edf8eb2b3837c9fd0298c4fb5b2da315476843dc81",
+      "buffers": [
+        {
+          "file": "Pot_1.bin",
+          "sha256": "eebe6918dbdc743501bdcb2d9f576a52028eb3451bdcf95d92674b97918cafc9",
+          "bytes": 37160
+        }
+      ],
+      "triangles": 1068,
+      "materials": [
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Rope_2",
+      "gltf_sha256": "46051110cc68731141a1984bef9da2d359debb1234c8249985b3f482a3551bf4",
+      "buffers": [
+        {
+          "file": "Rope_2.bin",
+          "sha256": "412afce0c7a43f3b8d87ade3298ef4d76b2124937ec8bc1809fe471a6b7b56cb",
+          "bytes": 34904
+        }
+      ],
+      "triangles": 1460,
+      "materials": [
+        "MI_Trim_Furniture"
+      ]
+    },
+    {
+      "prop": "Stall_Empty",
+      "gltf_sha256": "55f408be0c0383ce3b5180da7ee2982202c6c27edc2045953b6c181ef08b04b5",
+      "buffers": [
+        {
+          "file": "Stall_Empty.bin",
+          "sha256": "9ddececa6f5e0922ee32b064c400abea4dd068be2bfc78891017fca334158826",
+          "bytes": 88176
+        }
+      ],
+      "triangles": 1496,
+      "materials": [
+        "MI_Trim_Metal",
+        "MI_Trim_Furniture",
+        "MI_Banner"
+      ]
+    },
+    {
+      "prop": "Stool",
+      "gltf_sha256": "bccea9e43202cfd11283dde5550caee2dc41c7b30853c62abe350643c367bbaf",
+      "buffers": [
+        {
+          "file": "Stool.bin",
+          "sha256": "6ca3a6bc9b415409d842a338a74c174d0efe4d4972bf8a924fda87c8bda40191",
+          "bytes": 11472
+        }
+      ],
+      "triangles": 152,
+      "materials": [
+        "MI_Trim_Furniture"
+      ]
+    },
+    {
+      "prop": "Table_Large",
+      "gltf_sha256": "447976223c7b15a5ca92b2e0208a8e0e0e17ca1a81849ea19b7ea7a8aa9cb3db",
+      "buffers": [
+        {
+          "file": "Table_Large.bin",
+          "sha256": "af7bfe0cbf0532e01543e4fd5d6d710df70106a7d938c4d74a50c8911ee9bf35",
+          "bytes": 56396
+        }
+      ],
+      "triangles": 986,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Torch_Metal",
+      "gltf_sha256": "db5d662fe6447493f057cd6c23aa8c9fb805441bcba0b6df6e68c820fb69f263",
+      "buffers": [
+        {
+          "file": "Torch_Metal.bin",
+          "sha256": "522de8798b4c2e0db9ba640d69a5c6e506b558f22b98e95c0cfc95ba2d7b79e7",
+          "bytes": 39100
+        }
+      ],
+      "triangles": 970,
+      "materials": [
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "WeaponStand",
+      "gltf_sha256": "af0d918fcb55a45ebe20d9087a24d0b34db688f51834b2ee270e0c0259e6239e",
+      "buffers": [
+        {
+          "file": "WeaponStand.bin",
+          "sha256": "ac76bb8f6a511179842ecf0610ceabd96486e9cc5ca8dfa7639118f9796e4441",
+          "bytes": 76312
+        }
+      ],
+      "triangles": 2084,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Workbench",
+      "gltf_sha256": "930ae951c9f1bf473d53186777d3bb19f4be25950f1134d2bda9286b02475427",
+      "buffers": [
+        {
+          "file": "Workbench.bin",
+          "sha256": "d26f2a0ba01b4a8db8d6820d1bd0d281297fea30e48c9952484167d18a637b39",
+          "bytes": 63408
+        }
+      ],
+      "triangles": 1368,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Anvil",
+      "gltf_sha256": "163b6471f8ca5190cbeae2efbcee8954cfed20484f5d8cf69eb999f7cde0042c",
+      "buffers": [
+        {
+          "file": "Anvil.bin",
+          "sha256": "d52a9ab436577e8ee8ca00b2929b15595a60b0294c6275a39ecfe1f27408bfcf",
+          "bytes": 24020
+        }
+      ],
+      "triangles": 750,
+      "materials": [
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Shelf_Simple",
+      "gltf_sha256": "228574066ae53974fb2d4e47e50f0fec35969ff5057ac240b717a1ec63d33fac",
+      "buffers": [
+        {
+          "file": "Shelf_Simple.bin",
+          "sha256": "0064b2a3fc0f3252c55587ec582a49e085b2aa05dca2aa33e9e6a313f88139c6",
+          "bytes": 22016
+        }
+      ],
+      "triangles": 480,
+      "materials": [
+        "MI_Trim_Furniture"
+      ]
+    },
+    {
+      "prop": "Chair_1",
+      "gltf_sha256": "fadbd3353a8b3c5d1315c7aba9e18cc4a50395bdeabf13853d8fdd024cae700a",
+      "buffers": [
+        {
+          "file": "Chair_1.bin",
+          "sha256": "dc16da2a14704460a4050ef08782bb46b56b911eb161965b3f2676a1b24c201d",
+          "bytes": 28096
+        }
+      ],
+      "triangles": 496,
+      "materials": [
+        "MI_Trim_Furniture",
+        "MI_Trim_Metal"
+      ]
+    },
+    {
+      "prop": "Mug",
+      "gltf_sha256": "a4e257de6391e5e9b4e0532bea86157409215ec8c235d3da4696ba76d7d174bd",
+      "buffers": [
+        {
+          "file": "Mug.bin",
+          "sha256": "bbf61011611387a248b9107b13f40a9cddb31e605f677b2102b236147bf31691",
+          "bytes": 12488
+        }
+      ],
+      "triangles": 268,
+      "materials": [
+        "MI_Trim_Metal",
+        "MI_Trim_Furniture"
+      ]
+    },
+    {
+      "prop": "Bucket_Metal",
+      "gltf_sha256": "0b680d05a60dd669e4be4ba8bc94d4ddf79cab2fe40d64cb3c0ae02cfeee625b",
+      "buffers": [
+        {
+          "file": "Bucket_Metal.bin",
+          "sha256": "21ed9b3699a07707180d980c9b9e16a8f19924268e199e7ba17b8b5c06c4f35f",
+          "bytes": 18824
+        }
+      ],
+      "triangles": 540,
+      "materials": [
+        "MI_Trim_Metal"
+      ]
+    }
+  ]
+}

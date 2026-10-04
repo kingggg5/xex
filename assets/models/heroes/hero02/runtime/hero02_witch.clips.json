@@ -1,0 +1,912 @@
+{
+  "schema": "xexoria.xs1-clips/1",
+  "skeleton": "XS1",
+  "skeleton_revision": "xs1-r0-hero02 (Tier P: clips baked on hero 02)",
+  "fps": 30,
+  "time_unit": "ms",
+  "hero": "hero02_witch",
+  "authority": "presentation only; the server owns damage, movement and cast success",
+  "clips": {
+    "base.idle": {
+      "loop": true,
+      "frames": 76,
+      "duration_ms": 2500,
+      "layer": "full",
+      "ability": null,
+      "contract": null,
+      "events": [],
+      "release_frame": null,
+      "release_ms": null,
+      "blend_in_ms": 150,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "ual1",
+        "ual_clip": "Idle_Loop",
+        "source_frames": [
+          0.0,
+          75.0
+        ],
+        "samples": 76,
+        "licence": "CC0-1.0",
+        "edits": "right arm on the staff (IK), fingers grip/relaxed, grounded, secondary chains"
+      },
+      "notes": null,
+      "qa": {
+        "hips_xy_drift_m": 0.0
+      }
+    },
+    "base.walk": {
+      "loop": true,
+      "frames": 33,
+      "duration_ms": 1067,
+      "layer": "full",
+      "ability": null,
+      "contract": null,
+      "events": [
+        {
+          "id": "foot_l",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "foot_r",
+          "frame": 16,
+          "t_ms": 533
+        }
+      ],
+      "release_frame": null,
+      "release_ms": null,
+      "blend_in_ms": 120,
+      "blend_out_ms": 150,
+      "implied_speed_mps": 1.611,
+      "source": {
+        "kind": "ual1",
+        "ual_clip": "Walk_Loop",
+        "blend_jog_weight": 0.0,
+        "samples": 33,
+        "speed_by_weight_and_frames": {
+          "0.0x33": 1.611,
+          "0.0x34": 1.586,
+          "0.0x35": 1.523,
+          "0.0x36": 1.485,
+          "0.0x37": 1.448,
+          "0.0x38": 1.425,
+          "0.0x39": 1.403,
+          "0.0x40": 1.337,
+          "0.0x41": 1.287,
+          "0.08x33": 1.873,
+          "0.08x34": 1.918,
+          "0.08x35": 1.812,
+          "0.08x36": 1.827,
+          "0.08x37": 1.74,
+          "0.08x38": 1.706,
+          "0.08x39": 1.674,
+          "0.08x40": 1.623,
+          "0.08x41": 1.547,
+          "0.15x33": 2.16,
+          "0.15x34": 2.158,
+          "0.15x35": 2.091,
+          "0.15x36": 2.046,
+          "0.15x37": 1.907,
+          "0.15x38": 1.853,
+          "0.15x39": 1.913,
+          "0.15x40": 1.873,
+          "0.15x41": 1.739,
+          "0.22x33": 2.611,
+          "0.22x34": 2.413,
+          "0.22x35": 2.339,
+          "0.22x36": 2.387,
+          "0.22x37": 2.204,
+          "0.22x38": 2.141,
+          "0.22x39": 2.155,
+          "0.22x40": 2.104,
+          "0.22x41": 1.979
+        },
+        "licence": "CC0-1.0",
+        "edits": "phase-aligned to the left heel strike, cycle and stride fitted to 1.60 m/s, staff hold"
+      },
+      "notes": "implied speed 1.61 m/s; controller speedRatio = v / 1.61",
+      "qa": {
+        "hips_xy_drift_m": 0.0
+      }
+    },
+    "base.run": {
+      "loop": true,
+      "frames": 24,
+      "duration_ms": 767,
+      "layer": "full",
+      "ability": null,
+      "contract": null,
+      "events": [
+        {
+          "id": "foot_l",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "foot_r",
+          "frame": 11,
+          "t_ms": 367
+        }
+      ],
+      "release_frame": null,
+      "release_ms": null,
+      "blend_in_ms": 150,
+      "blend_out_ms": 150,
+      "implied_speed_mps": 4.486,
+      "source": {
+        "kind": "ual1",
+        "ual_clip": "Jog_Fwd_Loop + Walk_Loop",
+        "blend_jog_weight": 0.35,
+        "samples": 24,
+        "speed_by_weight_and_frames": {
+          "0.65x19": 8.011,
+          "0.65x20": 7.717,
+          "0.65x21": 7.229,
+          "0.65x22": 6.871,
+          "0.65x23": 6.598,
+          "0.65x24": 6.32,
+          "0.65x25": 6.019,
+          "0.65x26": 5.771,
+          "0.55x19": 7.575,
+          "0.55x20": 7.073,
+          "0.55x21": 6.926,
+          "0.55x22": 6.208,
+          "0.55x23": 6.015,
+          "0.55x24": 5.711,
+          "0.55x25": 5.483,
+          "0.55x26": 5.232,
+          "0.45x19": 6.473,
+          "0.45x20": 6.079,
+          "0.45x21": 5.854,
+          "0.45x22": 5.744,
+          "0.45x23": 5.417,
+          "0.45x24": 5.103,
+          "0.45x25": 5.059,
+          "0.45x26": 4.692,
+          "0.35x19": 5.659,
+          "0.35x20": 5.352,
+          "0.35x21": 5.078,
+          "0.35x22": 4.829,
+          "0.35x23": 4.62,
+          "0.35x24": 4.486,
+          "0.35x25": 4.239,
+          "0.35x26": 4.043
+        },
+        "licence": "CC0-1.0",
+        "edits": "phase-aligned blend (jog 0.35), cycle 23 frames chosen for 4.5 m/s, staff carried forward-diagonal"
+      },
+      "notes": "implied speed 4.49 m/s; replaces Tripo run.001 (hips 1.1 m forward)",
+      "qa": {
+        "hips_xy_drift_m": 0.0
+      }
+    },
+    "base.hit_light": {
+      "loop": false,
+      "frames": 11,
+      "duration_ms": 333,
+      "layer": "upper (additive-capable)",
+      "ability": null,
+      "contract": null,
+      "events": [
+        {
+          "id": "body_impact",
+          "frame": 0,
+          "t_ms": 0
+        }
+      ],
+      "release_frame": null,
+      "release_ms": null,
+      "blend_in_ms": 30,
+      "blend_out_ms": 120,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "ual1",
+        "ual_clip": "Hit_Chest",
+        "source_frames": [
+          0.0,
+          10.0
+        ],
+        "samples": 11,
+        "licence": "CC0-1.0",
+        "edits": "staff hold at 85 %"
+      },
+      "notes": null,
+      "qa": {
+        "hips_xy_drift_m": 0.0
+      }
+    },
+    "base.death": {
+      "loop": false,
+      "frames": 72,
+      "duration_ms": 2367,
+      "layer": "full",
+      "ability": null,
+      "contract": null,
+      "events": [
+        {
+          "id": "body_impact",
+          "frame": 29,
+          "t_ms": 967
+        }
+      ],
+      "release_frame": null,
+      "release_ms": null,
+      "blend_in_ms": 100,
+      "blend_out_ms": 0,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "ual1",
+        "ual_clip": "Death01",
+        "source_frames": [
+          0.0,
+          71.25
+        ],
+        "samples": 72,
+        "licence": "CC0-1.0",
+        "edits": "grounded on the evaluated LOD0 mesh from the body impact on"
+      },
+      "notes": "ends grounded (lowest vertex 0.010 m above the floor); staff stays in the right hand",
+      "qa": {
+        "hips_xy_drift_m": 0.0
+      }
+    },
+    "caster.attack_1": {
+      "loop": false,
+      "frames": 13,
+      "duration_ms": 400,
+      "layer": "full standing; upper body while moving",
+      "ability": "attack",
+      "contract": {
+        "windup_ms": 100,
+        "active_ms": 67,
+        "recovery_ms": 233
+      },
+      "events": [
+        {
+          "id": "swing_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "trail_on",
+          "frame": 1,
+          "t_ms": 33
+        },
+        {
+          "id": "release",
+          "frame": 3,
+          "t_ms": 100
+        },
+        {
+          "id": "trail_off",
+          "frame": 5,
+          "t_ms": 167
+        },
+        {
+          "id": "link_open",
+          "frame": 12,
+          "t_ms": 400
+        }
+      ],
+      "release_frame": 3,
+      "release_ms": 100,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored",
+        "tool": "h02_clips.py prop-driven keys"
+      },
+      "notes": "basic attack 1 of 2",
+      "qa": {
+        "hips_xy_drift_m": 0.04
+      }
+    },
+    "caster.attack_2": {
+      "loop": false,
+      "frames": 13,
+      "duration_ms": 400,
+      "layer": "full standing; upper body while moving",
+      "ability": "attack",
+      "contract": {
+        "windup_ms": 100,
+        "active_ms": 67,
+        "recovery_ms": 233
+      },
+      "events": [
+        {
+          "id": "swing_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "trail_on",
+          "frame": 1,
+          "t_ms": 33
+        },
+        {
+          "id": "release",
+          "frame": 3,
+          "t_ms": 100
+        },
+        {
+          "id": "trail_off",
+          "frame": 5,
+          "t_ms": 167
+        },
+        {
+          "id": "link_open",
+          "frame": 12,
+          "t_ms": 400
+        }
+      ],
+      "release_frame": 3,
+      "release_ms": 100,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "basic attack 2 of 2 (combo link 400-650 ms)",
+      "qa": {
+        "hips_xy_drift_m": 0.02
+      }
+    },
+    "mage.skill_nova": {
+      "loop": false,
+      "frames": 19,
+      "duration_ms": 600,
+      "layer": "full standing; upper body while moving",
+      "ability": "mage_skill_2",
+      "contract": {
+        "windup_ms": 200,
+        "active_ms": 100,
+        "recovery_ms": 300
+      },
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "plant",
+          "frame": 4,
+          "t_ms": 133
+        },
+        {
+          "id": "hit",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "release",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "recover",
+          "frame": 9,
+          "t_ms": 300
+        }
+      ],
+      "release_frame": 6,
+      "release_ms": 200,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "VFX xs_bladeward_nova: telegraph 0-150 ms, ground flash at release",
+      "qa": {
+        "hips_xy_drift_m": 0.03
+      }
+    },
+    "mage.skill_gale": {
+      "loop": false,
+      "frames": 15,
+      "duration_ms": 467,
+      "layer": "full standing; upper body while moving",
+      "ability": "mage_skill_1",
+      "contract": {
+        "windup_ms": 200,
+        "active_ms": 67,
+        "recovery_ms": 200
+      },
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "release",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "recover",
+          "frame": 8,
+          "t_ms": 267
+        }
+      ],
+      "release_frame": 6,
+      "release_ms": 200,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "VFX xs_gale_palm: charge swirl at fx_hand_L from 0 ms, projectile leaves owner-relative staff fx_head at release",
+      "qa": {
+        "hips_xy_drift_m": 0.05
+      }
+    },
+    "mage.skill_rift": {
+      "loop": false,
+      "frames": 28,
+      "duration_ms": 900,
+      "layer": "full standing; upper body while moving",
+      "ability": "mage_skill_3",
+      "contract": {
+        "cast_ms": 600
+      },
+      "events": [
+        {
+          "id": "rune",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "charge_start",
+          "frame": 10,
+          "t_ms": 333
+        },
+        {
+          "id": "release",
+          "frame": 18,
+          "t_ms": 600
+        },
+        {
+          "id": "slam",
+          "frame": 18,
+          "t_ms": 600
+        },
+        {
+          "id": "recover",
+          "frame": 21,
+          "t_ms": 700
+        },
+        {
+          "id": "pulse",
+          "frame": 27,
+          "t_ms": 900
+        }
+      ],
+      "release_frame": 18,
+      "release_ms": 600,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "VFX xs_void_rift: rune circle from 0 ms at the target, abyss opens at release; ticks from 900 ms are VFX/server",
+      "qa": {
+        "hips_xy_drift_m": 0.06
+      }
+    },
+    "mage.skill_bolt": {
+      "loop": false,
+      "frames": 26,
+      "duration_ms": 833,
+      "layer": "full standing; upper body while moving",
+      "ability": "mage_skill_4",
+      "contract": {
+        "windup_ms": 467,
+        "active_ms": 67,
+        "recovery_ms": 300
+      },
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "aim",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "release",
+          "frame": 14,
+          "t_ms": 467
+        },
+        {
+          "id": "recover",
+          "frame": 16,
+          "t_ms": 533
+        }
+      ],
+      "release_frame": 14,
+      "release_ms": 467,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "Star Lance: piercing lane; release from owner-relative staff fx_head",
+      "qa": {
+        "hips_xy_drift_m": 0.04
+      }
+    },
+    "mage.skill_ward": {
+      "loop": false,
+      "frames": 21,
+      "duration_ms": 667,
+      "layer": "full standing; upper body while moving",
+      "ability": "mage_skill_5",
+      "contract": {
+        "windup_ms": 300,
+        "active_ms": 67,
+        "recovery_ms": 300
+      },
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "release",
+          "frame": 9,
+          "t_ms": 300
+        },
+        {
+          "id": "recover",
+          "frame": 11,
+          "t_ms": 367
+        }
+      ],
+      "release_frame": 9,
+      "release_ms": 300,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "Moonveil Ward: presentation clip for target ally barrier; server remains authoritative",
+      "qa": {
+        "hips_xy_drift_m": 0.02
+      }
+    },
+    "mage.skill_starfall": {
+      "loop": false,
+      "frames": 40,
+      "duration_ms": 1300,
+      "layer": "full standing; upper body while moving",
+      "ability": "mage_skill_6",
+      "contract": {
+        "windup_ms": 900,
+        "active_ms": 100,
+        "recovery_ms": 300
+      },
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "peak",
+          "frame": 24,
+          "t_ms": 800
+        },
+        {
+          "id": "release",
+          "frame": 27,
+          "t_ms": 900
+        },
+        {
+          "id": "recover",
+          "frame": 30,
+          "t_ms": 1000
+        }
+      ],
+      "release_frame": 27,
+      "release_ms": 900,
+      "blend_in_ms": 50,
+      "blend_out_ms": 150,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": "Celestial Orrery: ultimate release f27 from the canonical hero-skills design",
+      "qa": {
+        "hips_xy_drift_m": 0.05
+      }
+    },
+    "base.dodge": {
+      "loop": false,
+      "frames": 13,
+      "duration_ms": 400,
+      "layer": "full",
+      "ability": "dodge",
+      "contract": {
+        "dash_ms": 280,
+        "recovery_ms": 120
+      },
+      "events": [
+        {
+          "id": "whoosh",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "foot_l",
+          "frame": 7,
+          "t_ms": 233
+        }
+      ],
+      "release_frame": null,
+      "release_ms": null,
+      "blend_in_ms": 50,
+      "blend_out_ms": 100,
+      "implied_speed_mps": null,
+      "source": {
+        "kind": "authored"
+      },
+      "notes": null,
+      "qa": {
+        "hips_xy_drift_m": 0.14
+      }
+    }
+  },
+  "skills": {
+    "slot_1": {
+      "skill_id": "h02_hoarfrost_gale",
+      "clip": "mage.skill_gale",
+      "release_frame": 6,
+      "release_ms": 200,
+      "duration_ms": 467,
+      "vfx": "xs_gale_palm@frost",
+      "vfx_anchor": "weapon.fx_head (owner-relative)",
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "release",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "recover",
+          "frame": 8,
+          "t_ms": 267
+        }
+      ],
+      "note": "A crescent-moon hex rides a frost gale; it blasts the first enemy and everything within 2.2 m back 1.5 m and Chills them.",
+      "windup_ms": 200,
+      "active_ms": 67,
+      "recovery_ms": 200
+    },
+    "slot_2": {
+      "skill_id": "h02_rimeshard_nova",
+      "clip": "mage.skill_nova",
+      "release_frame": 6,
+      "release_ms": 200,
+      "duration_ms": 600,
+      "vfx": "xs_bladeward_nova@crystal",
+      "vfx_anchor": "weapon.fx_head (owner-relative)",
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "plant",
+          "frame": 4,
+          "t_ms": 133
+        },
+        {
+          "id": "hit",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "release",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "recover",
+          "frame": 9,
+          "t_ms": 300
+        }
+      ],
+      "note": "Twelve hexagonal ice crystals erupt in a ring around her and knock nearby enemies up: her get-off-me button.",
+      "windup_ms": 200,
+      "active_ms": 100,
+      "recovery_ms": 300
+    },
+    "slot_3": {
+      "skill_id": "h02_starless_hollow",
+      "clip": "mage.skill_rift",
+      "release_frame": 18,
+      "release_ms": 600,
+      "duration_ms": 900,
+      "vfx": "xs_void_rift",
+      "vfx_anchor": "weapon.fx_head (owner-relative)",
+      "events": [
+        {
+          "id": "rune",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "charge_start",
+          "frame": 10,
+          "t_ms": 333
+        },
+        {
+          "id": "release",
+          "frame": 18,
+          "t_ms": 600
+        },
+        {
+          "id": "slam",
+          "frame": 18,
+          "t_ms": 600
+        },
+        {
+          "id": "recover",
+          "frame": 21,
+          "t_ms": 700
+        },
+        {
+          "id": "pulse",
+          "frame": 27,
+          "t_ms": 900
+        }
+      ],
+      "note": "She tears a starless hole in the ground: a 4.5 m gravity well that drags enemies in for six beats and then implodes.",
+      "windup_ms": 600,
+      "active_ms": 100,
+      "recovery_ms": 200
+    },
+    "slot_4": {
+      "skill_id": "h02_star_lance",
+      "clip": "mage.skill_bolt",
+      "release_frame": 14,
+      "release_ms": 467,
+      "duration_ms": 833,
+      "vfx": "xs_h02_star_lance",
+      "vfx_anchor": "weapon.fx_head (owner-relative)",
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "aim",
+          "frame": 6,
+          "t_ms": 200
+        },
+        {
+          "id": "release",
+          "frame": 14,
+          "t_ms": 467
+        },
+        {
+          "id": "recover",
+          "frame": 16,
+          "t_ms": 533
+        }
+      ],
+      "note": "A heptagram opens before the staff and fires a faceted sapphire lance that pierces three enemies in a 16 m line.",
+      "windup_ms": 467,
+      "active_ms": 67,
+      "recovery_ms": 300
+    },
+    "slot_5": {
+      "skill_id": "h02_moonveil_ward",
+      "clip": "mage.skill_ward",
+      "release_frame": 9,
+      "release_ms": 300,
+      "duration_ms": 667,
+      "vfx": "xs_h02_moonveil_ward",
+      "vfx_anchor": "weapon.fx_head (owner-relative)",
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "release",
+          "frame": 9,
+          "t_ms": 300
+        },
+        {
+          "id": "recover",
+          "frame": 11,
+          "t_ms": 367
+        }
+      ],
+      "note": "A faceted moon-crystal dome shields one ally (or herself) for 40 damage over 5 s; when it breaks or ends it pulses frost 3 m.",
+      "windup_ms": 300,
+      "active_ms": 67,
+      "recovery_ms": 300
+    },
+    "slot_6": {
+      "skill_id": "h02_celestial_orrery",
+      "clip": "mage.skill_starfall",
+      "release_frame": 27,
+      "release_ms": 900,
+      "duration_ms": 1300,
+      "vfx": "xs_h02_celestial_orrery",
+      "vfx_anchor": "weapon.fx_head (owner-relative)",
+      "events": [
+        {
+          "id": "charge_start",
+          "frame": 0,
+          "t_ms": 0
+        },
+        {
+          "id": "peak",
+          "frame": 24,
+          "t_ms": 800
+        },
+        {
+          "id": "release",
+          "frame": 27,
+          "t_ms": 900
+        },
+        {
+          "id": "recover",
+          "frame": 30,
+          "t_ms": 1000
+        }
+      ],
+      "note": "She conjures a sky orrery over a 7 m field: three gold rings and seven crystal moons orbit and sweep beams that Chill and Anchor, then collapse into a star-nova.",
+      "windup_ms": 900,
+      "active_ms": 100,
+      "recovery_ms": 300
+    }
+  },
+  "basic_attack": {
+    "combo": [
+      "caster.attack_1",
+      "caster.attack_2"
+    ],
+    "release_ms": 100,
+    "contract": {
+      "windup_ms": 100,
+      "active_ms": 67,
+      "recovery_ms": 233,
+      "next_link_ms": [
+        400,
+        650
+      ]
+    },
+    "trail": {
+      "from": "staff fx_base",
+      "to": "staff fx_tip",
+      "on_event": "trail_on",
+      "off_event": "trail_off"
+    }
+  }
+}

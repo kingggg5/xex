@@ -1,0 +1,3811 @@
+{
+  "schema": "xexoria.monster-placement.v1",
+  "region": "rimecrest_snow",
+  "version": "v1-claude-20261002-monsters",
+  "status": "DESIGN PROPOSAL - Claude map lane. Not live content. Nothing here edits content/source, server or client files; Codex root integrates after owner approval.",
+  "units": "metres, milliseconds",
+  "axes": "Babylon XZ: +x east, +z north (same as planning/levels/rimecrest-v1-layout.json)",
+  "sources": {
+    "layout": "planning/levels/rimecrest-v1-layout.json",
+    "base": "planning/levels/rimecrest-v1-base.json",
+    "owner_art": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1, lv2, lv3; sources\\boss (Solar Scorpion); sources\\boss\\bovine-shaman (NPC)",
+    "asset_review": "planning/evidence/asset-review-20261002/ (snow-lv1-bone-tick, snow-lv1-bone-raptor, snow-lv2-bone-wraith, snow-lv3-rime-golem, snow-lv3-rime-cleaver, boss-solar-scorpion)",
+    "pattern": "planning/levels/sunmeadow-v2-monsters.json (server facts, S1-S8 extensions, telegraph language)",
+    "decisions": "docs/reviews/2026-10-02-monster-combat-decisions.md (tags, MVP, boss cadence 45 + 0-15 min, runes, 64 cap)",
+    "check_script": "tools/levels/check_monster_spawns.py (generalised: level base + checker_profile)"
+  },
+  "server_facts_as_found": "as recorded in planning/levels/sunmeadow-v2-monsters.json server_facts_as_found (one splash skill, circle leash, 50 ms grid, 64 monsters per snapshot without AOI, u16 HP, no monster collision, no server clock). Rimecrest also needs the zone transfer (A35) before any row can deploy.",
+  "clock": {
+    "source": "same client clock as Sunmeadow (45 real minutes per game day)",
+    "phases_by_daylight": {
+      "day": ">= 0.50",
+      "twilight": "0.15 .. 0.50",
+      "night": "< 0.15"
+    },
+    "boss_gate_daylight_at_least": 0.5,
+    "precipitation_phase": "snow (the shared weather slot; Sunmeadow calls it rain)"
+  },
+  "rules": {
+    "R1_bridge_clear_m": 3.0,
+    "R2_path_centre_min_m": 2.0,
+    "R2b_path_edge_margin_m": 1.5,
+    "R4_land_water_edge_min_m": 2.5,
+    "R4_amphibious_water_edge_m": [
+      1.3,
+      4.0
+    ],
+    "R5_bluff_margin_m": 1.5,
+    "R5_camp_margin_m": 3.0,
+    "R5_prop_gap_m": 0.3,
+    "R5_circle_regular_min_m": 14.5,
+    "R5_boss_ring_margin_m": 0.5,
+    "R6_gate_apron_xz": [
+      -67.0,
+      -17.0,
+      -69.0,
+      -19.0
+    ],
+    "R6_windmark_passive_min_m": 5.0,
+    "R6_windmark_aggressive_extra_m": 2.0,
+    "R6_safe_points": {
+      "hearth": [
+        [
+          -24.0,
+          -25.0
+        ],
+        9.0
+      ],
+      "regroup": [
+        [
+          -24,
+          -12
+        ],
+        4.0
+      ],
+      "arrival": [
+        [
+          -42.0,
+          -44.0
+        ],
+        6.0
+      ],
+      "isle": [
+        [
+          -6.5,
+          44.0
+        ],
+        5.0
+      ],
+      "basin_exit": [
+        [
+          43.5,
+          -21.01
+        ],
+        2.5
+      ],
+      "emberpass_gate": [
+        [
+          56.0,
+          76.0
+        ],
+        5.0
+      ]
+    },
+    "R7_road_safe_margin_m": 0.0,
+    "R8_patrol_sample_m": 0.5,
+    "R9_leash_hazard_margin_m": 1.0,
+    "R9_ring_clear_m": 2.0,
+    "R9_first_clearing_sanctuary_paths": [
+      "lakeshore_road",
+      "arrival_road"
+    ],
+    "R10_wire_cap": 64,
+    "R10_row_target_max": 48,
+    "chase_reach_extra_m": 2.5,
+    "notes": [
+      "Same rule set as Sunmeadow v2 (R1-R10); region-specific values only. R5_bluff_margin_m applies to every relief collider in the layout (rectangle and polygon footprints and the toe lines marked path_clearance_m: cliffs, basalt rims, ruin walls, the pressure ridge, the barred gate).",
+      "R6 apron = the arrival hollow: a 50 x 50 m box centred on the windstone_arrival dais. No homes, no leash polygons and no aggro disc inside it (the producer brief: no spawns or aggro within 25 m of the arrival).",
+      "R6 quest objects (checker_profile.quest_object_pois): the three fishing holes (lv1), wind runes (lv2) and ward braziers (lv3). An aggressive monster keeps its aggro disc 2 m short of each, so a player can always reach the object after pulling.",
+      "R7 (edge-based): every road_safe road (arrival, lakeshore, ridge, return, emberpass) is never inside an aggro disc. The rimehold_way, the cave spur and the hidden causeway are road_safe false: the danger routes into the ruin, the grotto and the isle (H2 still applies).",
+      "R5 boss: the Solar Scorpion's home and patrol stay on the layout sunscald_dais (r 3) and its body (r 2.4) stays 0.5 m inside the 12 m arena. Regular homes stay 14.5 m from the arena centre and every regular leash polygon 2 m outside the arena (R9_ring_clear_m).",
+      "R9 sanctuary: the lv1 zones (clearing glassmere_shore) keep their leash polygons 1 m off the lakeshore and arrival road surfaces.",
+      "R10: 38 rows in one world (Rimecrest is its own zone instance), well under the 64-monster snapshot cap until AOI (A32 lands in week 3)."
+    ]
+  },
+  "telegraph_language": {
+    "base": "as Sunmeadow v2 (docs/reviews/2026-10-01-vfx-brief-for-codex.md): dark outer rim, bright band, soft inner glow; shape + timer + sound + body cue, never colour alone",
+    "tiers": {
+      "regular": {
+        "band": "#F2B13A",
+        "rim": "#3A2412",
+        "glow": "#FFE6A8"
+      },
+      "elite": {
+        "band": "#E8662A",
+        "rim": "#2E120A",
+        "glow": "#FFC08A",
+        "extra": "double rim with teeth"
+      },
+      "boss": {
+        "band": "#D93A3A",
+        "rim": "#260808",
+        "glow": "#FF9A8A",
+        "extra": "carved sun-ray edge + amber motes"
+      }
+    },
+    "snow_notes": [
+      "on snow and ice (value 0.70-0.85) the dark outer rim carries the read; the ice shelf stays below 0.8 luma",
+      "the arena floor is dark wet basalt (0.25-0.35): the crimson band and the bright glow read; the dark rim is lifted by a 1 px glow",
+      "steam inside the arena stays under 20 % opacity below 2 m; decals draw above the steam cards"
+    ],
+    "shapes": [
+      "circle_at_locked_target (current server)",
+      "circle_self (S3)",
+      "cone (S3)",
+      "lane (S3)",
+      "ring_donut (S3)"
+    ]
+  },
+  "roster": [
+    {
+      "id": "rimeshell_tick",
+      "kind": 8,
+      "status": "new",
+      "tier": "regular",
+      "name": {
+        "en": "Rimeshell Tick",
+        "th": "เห็บเปลือกเยือกแข็ง"
+      },
+      "name_key": "enemy_rimeshell_tick",
+      "role": "lv1 swarm pest of the shore and the ice shelf: teaches reading small fast telegraphs and peeling a pair apart. Idle ticks sit under snow mounds with only the antennae showing (readable ambush) and burst out at 5 m. Snowfall hatches extra ticks from the drifts.",
+      "level": 12,
+      "level_band": [
+        12,
+        13
+      ],
+      "stats": {
+        "hp": {
+          "proposed": 420,
+          "range": [
+            380,
+            460
+          ]
+        },
+        "atk": {
+          "proposed": 60,
+          "range": [
+            55,
+            66
+          ]
+        },
+        "def": {
+          "proposed": 4,
+          "range": [
+            3,
+            5
+          ]
+        },
+        "speed_m_s": 3.4,
+        "exp": 14
+      },
+      "ro_tags": {
+        "race": "Insect",
+        "element": "Water",
+        "element_level": 1,
+        "size": "Small"
+      },
+      "aggro": {
+        "mode": "aggressive (ambush from a snow mound)",
+        "radius_m": 5.0,
+        "alert_pause_ms": 300,
+        "assist": {
+          "radius_m": 5.0,
+          "links": [
+            "rimeshell_tick"
+          ]
+        },
+        "looter": false,
+        "night": "burrowed deeper: aggro x0.8 (4 m) until a pack-mate is hit"
+      },
+      "tuning": {
+        "step0": {
+          "aggro": 5.0,
+          "leash": 5.0,
+          "respawn_s": 18,
+          "why": "small field between the road and the pressure ridge: the circle leash equals the aggro so the chase never reaches the slabs"
+        },
+        "step1": {
+          "mode": "aggressive+assist",
+          "leash": "zone polygon",
+          "respawn_s": 18
+        }
+      },
+      "body_radius_m": 0.6,
+      "skills": [
+        {
+          "id": "rime_nip",
+          "name": "Rime Nip",
+          "server_support": "current splash",
+          "shape": "circle_at_locked_target",
+          "radius_m": 1.8,
+          "damage": 60,
+          "windup_ms": 700,
+          "active_ms": 150,
+          "fade_ms": 300,
+          "recovery_ms": 600,
+          "cooldown_ms": 2400,
+          "trigger": "target within 2.5 m",
+          "telegraph": "regular amber circle at the locked point",
+          "body_cue": "front legs rear up, mandibles splay, the ice body pulses brighter",
+          "audio_cue": "dry clicking, then a crack of ice",
+          "counterplay": "step out of the circle; its legs splay for 600 ms"
+        },
+        {
+          "id": "shell_burst",
+          "name": "Shell Burst",
+          "server_support": "S3",
+          "shape": "circle_self",
+          "radius_m": 2.5,
+          "damage": 40,
+          "windup_ms": 900,
+          "active_ms": 200,
+          "fade_ms": 400,
+          "recovery_ms": 900,
+          "cooldown_ms": 12000,
+          "trigger": "HP <= 40 % and a player within 2.5 m",
+          "telegraph": "regular amber circle on itself",
+          "body_cue": "the bone lattice flexes and frost smoke seeps from the holes",
+          "audio_cue": "rising crackle",
+          "counterplay": "back off 2.5 m or guard"
+        }
+      ],
+      "hit_reaction": "Shell rings, it skids back half a metre; frost flakes puff from the lattice. Recovery: legs splayed flat for 600 ms.",
+      "death": "Legs fold under, the ice body cracks into blue shards that melt into the snow; the empty bone shell stays 1.5 s, then fades.",
+      "drops": [
+        {
+          "item": "rime_shard",
+          "chance_pct": 45,
+          "min": 1,
+          "max": 2,
+          "status": "proposed"
+        },
+        {
+          "item": "frostbone_splinter",
+          "chance_pct": 25,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 10,
+          "min": 1,
+          "max": 1,
+          "status": "existing"
+        },
+        {
+          "item": "rimecrest_box",
+          "chance_pct": 3,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        }
+      ],
+      "rune_drop": {
+        "item": "rimecrest_rune",
+        "rate": "0.2 % (normal), soft pity +0.02 %/kill (decision 10); outside the drop table"
+      },
+      "clips": [
+        {
+          "name": "burrow_idle",
+          "ms": 3000,
+          "loop": true,
+          "note": "only antennae above a snow mound"
+        },
+        {
+          "name": "emerge",
+          "ms": 600,
+          "note": "burst from the mound"
+        },
+        {
+          "name": "idle",
+          "ms": 2400,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 600,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 400,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 300
+        },
+        {
+          "name": "windup",
+          "ms": 700
+        },
+        {
+          "name": "active",
+          "ms": 150
+        },
+        {
+          "name": "recovery",
+          "ms": 600
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 900
+        },
+        {
+          "name": "skill2_active",
+          "ms": 200
+        },
+        {
+          "name": "hit",
+          "ms": 200
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 1200
+        }
+      ],
+      "budget": {
+        "tris": [
+          6500,
+          2500,
+          1000
+        ],
+        "texture_px": 1024,
+        "bones_max": 45
+      },
+      "concept": {
+        "height_m": 1.0,
+        "length_m": 1.6,
+        "width_with_legs_m": 2.0,
+        "silhouette": "A round domed tick: a lattice shell of bone ribs over a glassy blue ice body, eight hooked legs, two long segmented antennae swept back.",
+        "shape_language": "Dome + spikes: a round body with a spiny crest and thin hooked legs.",
+        "read_at_13m": "A pale bone dome glowing ice-blue between the ribs, skittering on eight black-tipped legs.",
+        "features": [
+          "bone-rib lattice shell (holes painted as closed dark recesses)",
+          "blue cracked-ice body under the lattice",
+          "skull-like head with glowing cyan eyes and fangs",
+          "dark spines along the back ridge",
+          "black hooked claws"
+        ],
+        "palette": [
+          {
+            "name": "bone",
+            "hex": "#D5CFC5",
+            "src": "sampled from the owner front view"
+          },
+          {
+            "name": "bone shade",
+            "hex": "#A09488",
+            "src": "sampled"
+          },
+          {
+            "name": "ice body",
+            "hex": "#6591A3",
+            "src": "sampled (median cyan)"
+          },
+          {
+            "name": "ice glow",
+            "hex": "#8EBECE",
+            "src": "sampled (bright cyan), emissive capped"
+          },
+          {
+            "name": "joints and claws",
+            "hex": "#212020",
+            "src": "sampled"
+          }
+        ],
+        "snow_read": "bone highlights (~0.8 luma) merge with snow: add a darker occlusion band along the shell's lower edge; check greyscale at 13 m on snow (asset review)",
+        "originality": "Owner design (KEEP). Bone + frost glow echoes an undead construct read; keep it a creature, no runes or armour plates."
+      },
+      "source_images": [
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_51_28.png",
+          "view": "front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_51_37.png",
+          "view": "left"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_51_41.png",
+          "view": "back"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_51_46.png",
+          "view": "right"
+        }
+      ],
+      "pipeline": {
+        "stage_a": "KEEP (owner)",
+        "four_view": "REGEN: froggy draft F13 (thin legs/antennae, mirror IoU 0.717/0.838, 1254 px canvas)",
+        "route": "Tripo P2.0 multi-view after QA + design PASS (card 09, 135 credits planned)"
+      },
+      "plan_icon": {
+        "letter": "T",
+        "rgb": [
+          142,
+          190,
+          206
+        ],
+        "dark": false,
+        "mode": "aggressive ambush + assist (5 m)"
+      }
+    },
+    {
+      "id": "icerib_raptor",
+      "kind": 9,
+      "status": "new",
+      "tier": "regular",
+      "name": {
+        "en": "Icerib Raptor",
+        "th": "แร็พเตอร์ซี่โครงน้ำแข็ง"
+      },
+      "name_key": "enemy_icerib_raptor",
+      "role": "lv1 pack hunter of the reeds and the Stillfall cove: teaches pulling one of three and dodging a pounce. Fast (4.2 m/s, near the player's 4.5), so it punishes running in a straight line; its tail lash punishes standing behind it.",
+      "level": 13,
+      "level_band": [
+        13,
+        14
+      ],
+      "stats": {
+        "hp": {
+          "proposed": 560,
+          "range": [
+            500,
+            620
+          ]
+        },
+        "atk": {
+          "proposed": 70,
+          "range": [
+            64,
+            76
+          ]
+        },
+        "def": {
+          "proposed": 5,
+          "range": [
+            4,
+            6
+          ]
+        },
+        "speed_m_s": 4.2,
+        "exp": 17
+      },
+      "ro_tags": {
+        "race": "Brute",
+        "element": "Water",
+        "element_level": 1,
+        "size": "Medium"
+      },
+      "aggro": {
+        "mode": "aggressive pack",
+        "radius_m": 7.0,
+        "alert_pause_ms": 400,
+        "assist": {
+          "radius_m": 8.0,
+          "links": [
+            "icerib_raptor"
+          ]
+        },
+        "looter": false,
+        "night": "hunts in the open: patrols lengthen by 30 % (same aggro)"
+      },
+      "tuning": {
+        "step0": {
+          "aggro": 7.0,
+          "leash": 7.0,
+          "respawn_s": 22,
+          "why": "compact zones: leash = aggro keeps the step-0 chase off the cove cliffs and the ice cone"
+        },
+        "step1": {
+          "mode": "aggressive+assist",
+          "leash": "zone polygon",
+          "respawn_s": 22
+        }
+      },
+      "body_radius_m": 0.9,
+      "skills": [
+        {
+          "id": "ice_pounce",
+          "name": "Ice Pounce",
+          "server_support": "current splash (S3 adds a 6 m trigger and a lane)",
+          "shape": "circle_at_locked_target",
+          "radius_m": 2.4,
+          "damage": 70,
+          "windup_ms": 900,
+          "active_ms": 250,
+          "fade_ms": 350,
+          "recovery_ms": 800,
+          "cooldown_ms": 3200,
+          "trigger": "target within 2.5 m (S3: 2.5-6 m)",
+          "telegraph": "regular amber circle at the locked point plus a cosmetic lane arrow",
+          "body_cue": "crouches, the ice ribcage flares, the tail goes rigid",
+          "audio_cue": "hiss and claw scrape, a thump on landing",
+          "counterplay": "sidestep; it skids and shakes its head for 800 ms"
+        },
+        {
+          "id": "tail_lash",
+          "name": "Tail Lash",
+          "server_support": "S3",
+          "shape": "circle_self",
+          "radius_m": 3.0,
+          "damage": 55,
+          "windup_ms": 800,
+          "active_ms": 200,
+          "fade_ms": 350,
+          "recovery_ms": 700,
+          "cooldown_ms": 8000,
+          "trigger": "a player behind it within 3 m",
+          "telegraph": "regular amber circle on itself with a tail-arc highlight",
+          "body_cue": "tail lifts and coils to one side",
+          "audio_cue": "whip crack",
+          "counterplay": "never stand behind a raptor; step out to the side"
+        }
+      ],
+      "hit_reaction": "Head snaps sideways, bone plates rattle, a half-step back. Recovery after the pounce: skids on the snow, clearly off balance.",
+      "death": "Collapses forward, the ice ribs dim and crack, the bones slump into a heap that snow drifts over; fades after 1.5 s.",
+      "drops": [
+        {
+          "item": "frostbone_splinter",
+          "chance_pct": 40,
+          "min": 1,
+          "max": 2,
+          "status": "proposed"
+        },
+        {
+          "item": "rime_shard",
+          "chance_pct": 30,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 12,
+          "min": 1,
+          "max": 1,
+          "status": "existing"
+        },
+        {
+          "item": "rimecrest_box",
+          "chance_pct": 4,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        }
+      ],
+      "rune_drop": {
+        "item": "rimecrest_rune",
+        "rate": "0.2 % (normal) with soft pity"
+      },
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 800
+        },
+        {
+          "name": "idle",
+          "ms": 2400,
+          "loop": true,
+          "note": "sniffing the snow"
+        },
+        {
+          "name": "move",
+          "ms": 700,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 450,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 400
+        },
+        {
+          "name": "windup",
+          "ms": 900
+        },
+        {
+          "name": "active",
+          "ms": 250
+        },
+        {
+          "name": "recovery",
+          "ms": 800
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 800
+        },
+        {
+          "name": "skill2_active",
+          "ms": 200
+        },
+        {
+          "name": "hit",
+          "ms": 200
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 1200
+        }
+      ],
+      "budget": {
+        "tris": [
+          7000,
+          2500,
+          1000
+        ],
+        "texture_px": 1024,
+        "bones_max": 55,
+        "note": "+ tail chain"
+      },
+      "concept": {
+        "height_m": 1.7,
+        "length_m": 3.4,
+        "silhouette": "A skeletal four-legged raptor-drake: bone plates over dark sinew, a horned skull, a spiked spine and a long whip tail.",
+        "shape_language": "Wedge + saw: heavy horned head and shoulders, a serrated spine line tapering into the tail.",
+        "read_at_13m": "A dark bony quadruped with a glowing blue ribcage and a long spiked tail.",
+        "features": [
+          "horned dragon-like skull with cyan eyes",
+          "glowing ice core behind the ribs (closed core, not see-through)",
+          "bone plates on the shoulders, hips and legs",
+          "spiked dorsal ridge into a whip tail",
+          "four clawed feet"
+        ],
+        "palette": [
+          {
+            "name": "bone",
+            "hex": "#CFBAA5",
+            "src": "sampled from the owner front view"
+          },
+          {
+            "name": "sinew",
+            "hex": "#292624",
+            "src": "sampled"
+          },
+          {
+            "name": "plate shade",
+            "hex": "#6B5B4E",
+            "src": "sampled"
+          },
+          {
+            "name": "ice core",
+            "hex": "#559BAC",
+            "src": "sampled (median cyan)"
+          },
+          {
+            "name": "ice glow",
+            "hex": "#74CBDD",
+            "src": "sampled (bright cyan), emissive capped"
+          }
+        ],
+        "originality": "Owner design (KEEP); a creature, not an undead dragon mount; no riders, no armour."
+      },
+      "source_images": [
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_51_56.png",
+          "view": "front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_52_02.png",
+          "view": "left"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_52_09.png",
+          "view": "back"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv1\\ChatGPT Image 30 ก.ย. 2569 21_52_12.png",
+          "view": "right"
+        }
+      ],
+      "pipeline": {
+        "stage_a": "KEEP (owner)",
+        "four_view": "REGEN: froggy draft F14 (heights differ 17.3 %, FB IoU 0.405, LR IoU 0.649)",
+        "route": "Tripo P2.0 multi-view after QA + design PASS (card 10, 135 credits planned)"
+      },
+      "plan_icon": {
+        "letter": "R",
+        "rgb": [
+          116,
+          203,
+          221
+        ],
+        "dark": false,
+        "mode": "aggressive pack + assist (7 m)"
+      }
+    },
+    {
+      "id": "shardveil_wraith",
+      "kind": 10,
+      "status": "new",
+      "tier": "regular",
+      "name": {
+        "en": "Shardveil Wraith",
+        "th": "วิญญาณม่านเกล็ดน้ำแข็ง"
+      },
+      "name_key": "enemy_shardveil_wraith",
+      "role": "lv2 sentinel of the Rimepine wood: by day it stands frozen like a statue among the pines (passive until struck; you choose your fights); at night it wakes and glides along the wood (aggressive 8 m). Teaches lanes and the donut ring: hug it or leave.",
+      "level": 16,
+      "level_band": [
+        15,
+        17
+      ],
+      "stats": {
+        "hp": {
+          "proposed": 760,
+          "range": [
+            700,
+            840
+          ]
+        },
+        "atk": {
+          "proposed": 84,
+          "range": [
+            78,
+            90
+          ]
+        },
+        "def": {
+          "proposed": 6,
+          "range": [
+            5,
+            8
+          ]
+        },
+        "speed_m_s": 3.2,
+        "exp": 22
+      },
+      "ro_tags": {
+        "race": "Undead",
+        "element": "Water",
+        "element_level": 2,
+        "size": "Medium"
+      },
+      "aggro": {
+        "mode": "day passive / night aggressive",
+        "day_passive_night_aggressive": true,
+        "night_radius_m": 8.0,
+        "assist": {
+          "radius_m": 6.0,
+          "links": [
+            "shardveil_wraith"
+          ]
+        },
+        "looter": false,
+        "day": "dormant sentinel: rimed over, eyes dim, no aggro; wakes when damaged",
+        "night": "awake: eyes and chest ice bright cyan, aggressive 8 m, rows 32-35 patrol"
+      },
+      "tuning": {
+        "step0": {
+          "aggro": 3.0,
+          "leash": 5.0,
+          "respawn_s": 25,
+          "why": "interim pseudo-passive 3 m until S2 passive and S4 clock land (same rule as Sunmeadow owner decision 2)"
+        },
+        "step1": {
+          "mode": "day passive / night aggressive 8 m + assist",
+          "leash": "zone polygon",
+          "respawn_s": 25
+        }
+      },
+      "body_radius_m": 0.6,
+      "skills": [
+        {
+          "id": "frost_lance",
+          "name": "Frost Lance",
+          "server_support": "current splash (S3: lane 1.6 x 8 m)",
+          "shape": "lane + circle_at_locked_target",
+          "radius_m": 2.2,
+          "lane_width_m": 1.6,
+          "lane_max_m": 8.0,
+          "damage": 84,
+          "windup_ms": 1000,
+          "active_ms": 250,
+          "fade_ms": 400,
+          "recovery_ms": 900,
+          "cooldown_ms": 3600,
+          "trigger": "target within 2.5 m (S3: 2.5-8 m)",
+          "telegraph": "regular amber lane to the locked point, end circle",
+          "body_cue": "raises the beaked head, chest ice flares, one arm points",
+          "audio_cue": "glassy whine, a snap",
+          "counterplay": "step out of the lane"
+        },
+        {
+          "id": "shard_veil",
+          "name": "Shard Veil",
+          "server_support": "S3",
+          "shape": "ring_donut",
+          "inner_safe_m": 2.0,
+          "outer_m": 5.0,
+          "damage": 64,
+          "windup_ms": 1300,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 1100,
+          "cooldown_ms": 11000,
+          "trigger": "2+ players within 5 m, or HP <= 50 %",
+          "telegraph": "regular amber donut: safe inside 2 m and outside 5 m",
+          "body_cue": "the shard skirt lifts and starts to spin",
+          "audio_cue": "chiming ice, rising",
+          "counterplay": "hug it inside 2 m or leave past 5 m"
+        }
+      ],
+      "hit_reaction": "Shards chip off the skirt, the helm jerks; by day the first hit cracks the rime off (wake-up clip).",
+      "death": "Kneels, the chest ice goes dark, the bone armour stands empty for a moment, then collapses into a heap of shards and snow.",
+      "drops": [
+        {
+          "item": "rime_shard",
+          "chance_pct": 50,
+          "min": 1,
+          "max": 2,
+          "status": "proposed"
+        },
+        {
+          "item": "frostbone_splinter",
+          "chance_pct": 30,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 15,
+          "min": 1,
+          "max": 1,
+          "status": "existing"
+        },
+        {
+          "item": "rimecrest_box",
+          "chance_pct": 5,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        }
+      ],
+      "rune_drop": {
+        "item": "rimecrest_rune",
+        "rate": "0.2 % (normal) with soft pity"
+      },
+      "clips": [
+        {
+          "name": "dormant_idle",
+          "ms": 4000,
+          "loop": true,
+          "note": "statue pose, rime on"
+        },
+        {
+          "name": "wake",
+          "ms": 1200,
+          "note": "rime cracks off"
+        },
+        {
+          "name": "idle",
+          "ms": 3000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 1000,
+          "loop": true,
+          "note": "glide"
+        },
+        {
+          "name": "run",
+          "ms": 600,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 400
+        },
+        {
+          "name": "windup",
+          "ms": 1000
+        },
+        {
+          "name": "active",
+          "ms": 250
+        },
+        {
+          "name": "recovery",
+          "ms": 900
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 1300
+        },
+        {
+          "name": "skill2_active",
+          "ms": 300
+        },
+        {
+          "name": "hit",
+          "ms": 250
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 1400
+        }
+      ],
+      "budget": {
+        "tris": [
+          7000,
+          2500,
+          1000
+        ],
+        "texture_px": 1024,
+        "bones_max": 60,
+        "note": "+ skirt shard chain (rigid shards)"
+      },
+      "concept": {
+        "height_m": 2.6,
+        "silhouette": "A tall, slender bone-armoured humanoid with a beaked helm, a glowing ice ribcage and a long skirt of ice shards.",
+        "shape_language": "Vertical blade: tall narrow body, pointed helm, a jagged hem.",
+        "read_at_13m": "A tall pale figure with a blue-lit chest and a jagged icy skirt; by day dusted white like a statue.",
+        "features": [
+          "beaked bird-skull helm",
+          "segmented bone armour over black sinew",
+          "glowing cyan ice heart in an open ribcage",
+          "skirt of large blue-grey ice shards (fewer, bigger shards for 3D)",
+          "long clawed hands"
+        ],
+        "palette": [
+          {
+            "name": "bone armour",
+            "hex": "#BCB7AF",
+            "src": "sampled from the owner front view"
+          },
+          {
+            "name": "armour shade",
+            "hex": "#94877A",
+            "src": "sampled"
+          },
+          {
+            "name": "sinew",
+            "hex": "#2C2B2A",
+            "src": "sampled"
+          },
+          {
+            "name": "ice heart",
+            "hex": "#5F8C9D",
+            "src": "sampled (median cyan)"
+          },
+          {
+            "name": "ice glow",
+            "hex": "#8FC3D0",
+            "src": "sampled (bright cyan), emissive capped"
+          }
+        ],
+        "originality": "Owner design (KEEP); slender proportions read thin at 13 m, so the albedo pass darkens the sinew for contrast on snow."
+      },
+      "source_images": [
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv2\\ChatGPT Image 30 ก.ย. 2569 21_46_31.png",
+          "view": "front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv2\\ChatGPT Image 30 ก.ย. 2569 21_46_40.png",
+          "view": "left"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv2\\ChatGPT Image 30 ก.ย. 2569 21_50_53.png",
+          "view": "back"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv2\\ChatGPT Image 30 ก.ย. 2569 21_51_01.png",
+          "view": "right"
+        }
+      ],
+      "pipeline": {
+        "stage_a": "KEEP (owner)",
+        "four_view": "REGEN: froggy draft F15 (LR width 21.6 %, LR IoU 0.790; A-pose)",
+        "route": "Tripo P2.0 multi-view after QA + design PASS (card 11, 135 credits planned)"
+      },
+      "plan_icon": {
+        "letter": "W",
+        "rgb": [
+          143,
+          195,
+          208
+        ],
+        "dark": false,
+        "mode": "day statue / night aggressive 8 m"
+      }
+    },
+    {
+      "id": "rimehold_golem",
+      "kind": 11,
+      "status": "new",
+      "tier": "regular",
+      "name": {
+        "en": "Rimehold Golem",
+        "th": "โกเลมผู้เฝ้าไรม์โฮลด์"
+      },
+      "name_key": "enemy_rimehold_golem",
+      "role": "lv3 temple guardian of rime-stone: slow (2.4 m/s) and heavy, with the biggest regular telegraphs in the game so far. Teaches reading a long windup and punishing the 1.1 s recovery before the Solar Scorpion. Golems near a cold ward brazier assist each other (ward-bound).",
+      "level": 18,
+      "level_band": [
+        18,
+        20
+      ],
+      "stats": {
+        "hp": {
+          "proposed": 1300,
+          "range": [
+            1200,
+            1450
+          ]
+        },
+        "atk": {
+          "proposed": 110,
+          "range": [
+            100,
+            120
+          ]
+        },
+        "def": {
+          "proposed": 10,
+          "range": [
+            8,
+            12
+          ]
+        },
+        "speed_m_s": 2.4,
+        "exp": 28
+      },
+      "ro_tags": {
+        "race": "Formless",
+        "element": "Earth",
+        "element_level": 2,
+        "size": "Large"
+      },
+      "aggro": {
+        "mode": "aggressive sentinel",
+        "radius_m": 6.0,
+        "alert_pause_ms": 600,
+        "assist": {
+          "radius_m": 7.0,
+          "links": [
+            "rimehold_golem"
+          ]
+        },
+        "looter": false,
+        "night": "unchanged (stone does not sleep); wraiths join the court at night"
+      },
+      "tuning": {
+        "step0": {
+          "aggro": 5.0,
+          "leash": 5.0,
+          "respawn_s": 30,
+          "why": "slow sentinels: aggro 5 = leash 5 keeps the step-0 chase (7.5 m) inside the court walls; step 1 restores 6 m"
+        },
+        "step1": {
+          "mode": "aggressive+assist",
+          "leash": "zone polygon",
+          "respawn_s": 30
+        }
+      },
+      "body_radius_m": 1.3,
+      "skills": [
+        {
+          "id": "rime_fist",
+          "name": "Rime Fist",
+          "server_support": "current splash",
+          "shape": "circle_at_locked_target",
+          "radius_m": 3.0,
+          "damage": 110,
+          "windup_ms": 1400,
+          "active_ms": 300,
+          "fade_ms": 450,
+          "recovery_ms": 1100,
+          "cooldown_ms": 4200,
+          "trigger": "target within 2.5 m",
+          "telegraph": "regular amber circle at the locked point",
+          "body_cue": "both fists rise overhead, the ice heart brightens",
+          "audio_cue": "grinding stone, a deep thud",
+          "counterplay": "step out; it is stuck for 1.1 s (punish window)"
+        },
+        {
+          "id": "ward_quake",
+          "name": "Ward Quake",
+          "server_support": "S3",
+          "shape": "circle_self",
+          "radius_m": 4.5,
+          "damage": 80,
+          "windup_ms": 1600,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 1200,
+          "cooldown_ms": 12000,
+          "trigger": "HP <= 60 % and a player within 4.5 m",
+          "telegraph": "regular amber circle on itself, frost cracks spreading",
+          "body_cue": "stamps twice, shoulders hunch",
+          "audio_cue": "two booms and cracking ice",
+          "counterplay": "leave the ring; guard halves it"
+        }
+      ],
+      "hit_reaction": "Additive only: rime chips fly, the head turns; heavy hits make it rock back 0.2 m. No flinch interrupts.",
+      "death": "The ice heart gutters out, the golem kneels and freezes into a rime-covered stone (stays 5 s), then crumbles into snow and stone.",
+      "drops": [
+        {
+          "item": "rime_shard",
+          "chance_pct": 60,
+          "min": 2,
+          "max": 3,
+          "status": "proposed"
+        },
+        {
+          "item": "golem_heartstone",
+          "chance_pct": 6,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "rimecrest_box",
+          "chance_pct": 6,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        }
+      ],
+      "rune_drop": {
+        "item": "rimecrest_rune",
+        "rate": "0.2 % (normal) with soft pity"
+      },
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 1500,
+          "note": "rises out of the rime"
+        },
+        {
+          "name": "idle",
+          "ms": 4000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 1400,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 900,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 600
+        },
+        {
+          "name": "windup",
+          "ms": 1400
+        },
+        {
+          "name": "active",
+          "ms": 300
+        },
+        {
+          "name": "recovery",
+          "ms": 1100
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 1600
+        },
+        {
+          "name": "skill2_active",
+          "ms": 300
+        },
+        {
+          "name": "hit_additive",
+          "ms": 300
+        },
+        {
+          "name": "stagger",
+          "ms": 600
+        },
+        {
+          "name": "death",
+          "ms": 2000
+        }
+      ],
+      "budget": {
+        "tris": [
+          10000,
+          4000,
+          1500
+        ],
+        "texture_px": 2048,
+        "bones_max": 50,
+        "note": "large regular; the elite Rimeheart Warden reuses this mesh"
+      },
+      "concept": {
+        "height_m": 3.2,
+        "silhouette": "A massive rime-stone golem: a dragon-skull pauldron on the right shoulder, a rough rock pauldron on the left, a bone ribcage over a glowing ice heart, a spiked crown helm, a shard skirt and clawed stone hands and feet.",
+        "shape_language": "Heavy block + asymmetric shoulders: a dark stone mass with one pale skull shoulder.",
+        "read_at_13m": "A dark slate giant with one bone-white skull shoulder and a cyan heart: reads clearly on snow.",
+        "features": [
+          "slate scale-stone hide",
+          "dragon-skull pauldron (right) and rock pauldron (left), declared asymmetric",
+          "bone ribcage over a cyan ice heart",
+          "bronze-banded belt and straps (painted, not modelled)",
+          "shard skirt; hands open and empty"
+        ],
+        "palette": [
+          {
+            "name": "rime-stone",
+            "hex": "#393B3B",
+            "src": "sampled from the owner front view"
+          },
+          {
+            "name": "stone light",
+            "hex": "#595B5D",
+            "src": "sampled"
+          },
+          {
+            "name": "bone pauldron",
+            "hex": "#B0ADA4",
+            "src": "sampled"
+          },
+          {
+            "name": "ice heart",
+            "hex": "#609DAF",
+            "src": "sampled (median cyan)"
+          },
+          {
+            "name": "ice glow",
+            "hex": "#8ADBE8",
+            "src": "sampled (bright cyan), emissive capped"
+          }
+        ],
+        "originality": "Owner design (KEEP). The spiked crown + skull pauldron recall a famous lich-king look; zero-cost option with the owner's OK: a rounded rime brow instead of crown spikes (F16 round)."
+      },
+      "source_images": [
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_45_59.png",
+          "view": "front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_46_05.png",
+          "view": "left (3/4)"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_46_08.png",
+          "view": "back"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_46_12.png",
+          "view": "right (3/4)"
+        }
+      ],
+      "pipeline": {
+        "stage_a": "KEEP (owner)",
+        "four_view": "REGEN: froggy draft F16 (side views are 3/4; LR width 12.8 %, FB IoU 0.876; QA with --asymmetric)",
+        "route": "Tripo P2.0 multi-view after QA + design PASS (card 12, 145 credits planned)"
+      },
+      "plan_icon": {
+        "letter": "G",
+        "rgb": [
+          89,
+          91,
+          93
+        ],
+        "dark": true,
+        "mode": "aggressive sentinel + assist (6 m)"
+      }
+    },
+    {
+      "id": "rimeheart_warden",
+      "kind": 12,
+      "status": "new",
+      "tier": "elite",
+      "name": {
+        "en": "Rimeheart Warden",
+        "th": "ผู้คุมหัวใจเยือกแข็ง"
+      },
+      "name_key": "enemy_rimeheart_warden",
+      "role": "Optional elite of the Rimeheart Grotto (the ice-cave pocket): the first golem the Rime-wardens carved, now wielding the Rime Cleaver. A group check for L18-20 before the boss; the pocket's two golems are its escort.",
+      "level": 20,
+      "level_band": [
+        19,
+        21
+      ],
+      "stats": {
+        "hp": {
+          "proposed": 9000,
+          "range": [
+            8000,
+            10500
+          ]
+        },
+        "atk": {
+          "proposed": 140,
+          "range": [
+            130,
+            150
+          ],
+          "note": "Rimeheart Pulse 120"
+        },
+        "def": {
+          "proposed": 12,
+          "range": [
+            10,
+            14
+          ]
+        },
+        "speed_m_s": 2.8,
+        "exp": 650
+      },
+      "ro_tags": {
+        "race": "Formless",
+        "element": "Water",
+        "element_level": 3,
+        "size": "Large",
+        "elite": true
+      },
+      "aggro": {
+        "mode": "aggressive pack leader (grotto only)",
+        "radius_m": 9.0,
+        "alert_pause_ms": 800,
+        "assist": {
+          "radius_m": 10.0,
+          "links": [
+            "rimehold_golem"
+          ]
+        },
+        "looter": false,
+        "night": "unchanged"
+      },
+      "tuning": {
+        "step0": {
+          "deploy": false,
+          "why": "needs S2 assist, S3 donut and S5 elite rules"
+        },
+        "step2": {
+          "leash": "zone polygon (the grotto floor)",
+          "respawn_s": 720,
+          "respawn_window_s": [
+            600,
+            900
+          ],
+          "reset": "evade + full heal if no tagging party member is inside the grotto for 10 s",
+          "stagger_cap_ms": 600
+        }
+      },
+      "body_radius_m": 1.6,
+      "skills": [
+        {
+          "id": "cleaver_drop",
+          "name": "Cleaver Drop",
+          "server_support": "current splash as fallback; S3 lane",
+          "shape": "lane + circle_at_locked_target",
+          "radius_m": 3.5,
+          "lane_width_m": 2.4,
+          "lane_max_m": 8.0,
+          "damage": 140,
+          "windup_ms": 1500,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 1200,
+          "cooldown_ms": 5000,
+          "trigger": "target within 2.5 m (S3: 2.5-8 m)",
+          "telegraph": "elite vermilion lane with a double rim to the locked point, end circle",
+          "body_cue": "lifts the Rime Cleaver two-handed over its head, the sun-wheel boss flashes",
+          "audio_cue": "stone grinding, a howl of wind, a crash",
+          "counterplay": "leave the lane; the cleaver sticks in the ice for 1.2 s (punish)"
+        },
+        {
+          "id": "rimeheart_pulse",
+          "name": "Rimeheart Pulse",
+          "server_support": "S3",
+          "shape": "ring_donut",
+          "inner_safe_m": 3.0,
+          "outer_m": 8.0,
+          "damage": 120,
+          "windup_ms": 1800,
+          "active_ms": 400,
+          "fade_ms": 500,
+          "recovery_ms": 1200,
+          "cooldown_ms": 14000,
+          "trigger": "HP <= 70 %, then every 14 s",
+          "telegraph": "elite vermilion donut with teeth: safe inside 3 m and outside 8 m",
+          "body_cue": "the ice heart swells and frost runes ring the floor",
+          "audio_cue": "a deep heartbeat, then a shatter",
+          "counterplay": "hug it inside 3 m or run past 8 m"
+        }
+      ],
+      "phase_behaviour": "At 40 % HP it tears a third Rimehold Golem out of the grotto wall (S5 phase trigger, max 1 add).",
+      "hit_reaction": "Additive only: rime chips, crown sparks; heavy hits rock it 0.2 m. No flinch interrupts.",
+      "death": "Drives the cleaver into the ice, kneels, the heart cracks and goes dark; it stays as a frozen statue 20 s, then crumbles; the cleaver shatters into loot sparkles.",
+      "drops": [
+        {
+          "item": "golem_heartstone",
+          "chance_pct": 100,
+          "min": 1,
+          "max": 2,
+          "status": "proposed"
+        },
+        {
+          "item": "rime_shard",
+          "chance_pct": 100,
+          "min": 4,
+          "max": 6,
+          "status": "proposed"
+        },
+        {
+          "item": "rimecrest_box",
+          "chance_pct": 50,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "rimeguard_axe",
+          "chance_pct": 8,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 100,
+          "min": 2,
+          "max": 2,
+          "status": "existing"
+        }
+      ],
+      "rune_drop": {
+        "item": "rimecrest_rune",
+        "rate": "1 % (elite) with soft pity"
+      },
+      "loot_rule": "first-damage party tag (decision 5); personal rolls for the tagging party",
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 2000,
+          "note": "tears free of the grotto wall"
+        },
+        {
+          "name": "idle",
+          "ms": 4000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 1300,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 800,
+          "loop": true
+        },
+        {
+          "name": "provoked",
+          "ms": 1200,
+          "note": "crown flare + roar"
+        },
+        {
+          "name": "windup",
+          "ms": 1500
+        },
+        {
+          "name": "active",
+          "ms": 300
+        },
+        {
+          "name": "recovery",
+          "ms": 1200
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 1800
+        },
+        {
+          "name": "skill2_active",
+          "ms": 400
+        },
+        {
+          "name": "special_tear_golem",
+          "ms": 2000
+        },
+        {
+          "name": "hit_additive",
+          "ms": 300
+        },
+        {
+          "name": "stagger",
+          "ms": 600
+        },
+        {
+          "name": "death",
+          "ms": 2500
+        }
+      ],
+      "budget": {
+        "tris": [
+          12500,
+          5200,
+          1900
+        ],
+        "texture_px": 2048,
+        "bones_max": 55,
+        "note": "Rimehold Golem mesh scaled 1.25 + the Rime Cleaver (<= 2.5k / 1.2k / 400, Blender build) + a brighter crown/heart material variant"
+      },
+      "concept": {
+        "height_m": 4.0,
+        "silhouette": "The Rimehold Golem, 1.25x larger, crowned with rime spikes, carrying the stone-and-ice Rime Cleaver with a bronze sun-wheel boss.",
+        "shape_language": "The golem block plus one huge cleaver silhouette.",
+        "read_at_13m": "A bigger, brighter golem with a giant pale-edged cleaver: obviously the dangerous one.",
+        "features": [
+          "the golem mesh at 1.25x",
+          "Rime Cleaver: slate blade with a frosted edge, bronze fittings, sun-wheel boss (owner weapon views)",
+          "brighter cyan heart and crown glow (emissive capped)",
+          "frost aura decal at its feet (VFX)"
+        ],
+        "palette": [
+          {
+            "name": "rime-stone",
+            "hex": "#393B3B",
+            "src": "golem, sampled"
+          },
+          {
+            "name": "cleaver blade",
+            "hex": "#3E4145",
+            "src": "sampled from the cleaver front view"
+          },
+          {
+            "name": "frost edge",
+            "hex": "#BCC6D4",
+            "src": "sampled"
+          },
+          {
+            "name": "bronze fittings",
+            "hex": "#936C50",
+            "src": "sampled"
+          },
+          {
+            "name": "heart glow",
+            "hex": "#8ADBE8",
+            "src": "golem, sampled; emissive capped"
+          }
+        ],
+        "originality": "Variant of an owner design, as Sunmeadow's Turfback Matriarch is a variant of the boar (monster decisions 19)."
+      },
+      "source_images": [
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_45_59.png",
+          "view": "golem front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_46_08.png",
+          "view": "golem back"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_46_22.png",
+          "view": "Rime Cleaver front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\snow\\lv3\\ChatGPT Image 30 ก.ย. 2569 21_46_26.png",
+          "view": "Rime Cleaver edge"
+        }
+      ],
+      "pipeline": {
+        "stage_a": "KEEP (owner: golem and cleaver)",
+        "four_view": "golem: F16; cleaver: QA PASS single image, Blender build (0 credits)",
+        "route": "golem Tripo job + Blender scale/material variant + Blender cleaver"
+      },
+      "plan_icon": {
+        "letter": "E",
+        "rgb": [
+          232,
+          102,
+          42
+        ],
+        "dark": true,
+        "mode": "elite: grotto pack leader (9 m)"
+      }
+    },
+    {
+      "id": "solar_scorpion",
+      "kind": 13,
+      "status": "new",
+      "tier": "boss",
+      "name": {
+        "en": "Solar Scorpion, Sentinel of the Buried Sun",
+        "th": "แมงป่องสุริยะ ผู้พิทักษ์ตะวันใต้ธารน้ำแข็ง"
+      },
+      "name_key": "enemy_solar_scorpion",
+      "role": "Rimecrest field boss (MVP). A sun-forged guardian sleeping under the Sunscald basin: its solar core never cooled, so hot springs and geysers melt the snow around it. The Rime-wardens raised their temple to keep it asleep; the wards are failing. It rises on the sun-dais when the sun is high. Capstone for L20-23 groups of 3-6; Galehorn's counterpart (Galehorn wakes at dusk, the Scorpion at noon).",
+      "level": 22,
+      "level_band": [
+        21,
+        23
+      ],
+      "stats": {
+        "hp": {
+          "proposed": 60000,
+          "range": [
+            52000,
+            65535
+          ],
+          "cap": 65535,
+          "note": "u16 on the wire today; re-tune to about 90,000 after the u32 widening (decision 12)"
+        },
+        "atk": {
+          "proposed": 160,
+          "range": [
+            145,
+            175
+          ],
+          "note": "Tail Sweep 130, Sunflare 120"
+        },
+        "def": {
+          "proposed": 14,
+          "range": [
+            12,
+            16
+          ]
+        },
+        "speed_m_s": 3.4,
+        "exp": 6000,
+        "exp_rule": "split by contribution; MVP +25 % of base EXP (decision 7)"
+      },
+      "ro_tags": {
+        "race": "Insect",
+        "element": "Fire",
+        "element_level": 3,
+        "size": "Large",
+        "boss_protocol": true,
+        "mvp": true
+      },
+      "aggro": {
+        "mode": "passive until provoked, then aggressive to every player inside the arena",
+        "assist": null,
+        "looter": false,
+        "spawn_gate": "daylight >= 0.5 (day) and the respawn window elapsed",
+        "announce": "zone message 60 s before: 'The ice groans over Sunscald... the buried sun is waking.' (Thai/English) + every geyser bursts at once and the steam turns gold; on spawn the nest is named; on defeat the zone hears the MVP name",
+        "tombstone": "at the dais after death: MVP name + the respawn window (decision 7)"
+      },
+      "tuning": {
+        "step0": {
+          "deploy": false,
+          "why": "needs S2 passive/provoked, S3 cone/lane/donut, S4 daylight gate and S5 boss rules"
+        },
+        "step2": {
+          "leash": "arena circle r 12 m around the sunscald_basin centre (36,-34) (layout boss_arena_radius_m)",
+          "respawn_s": 3000,
+          "respawn_window_s": [
+            2700,
+            3600
+          ],
+          "cadence": "45 min after death + random 0-15 min (decision 11)",
+          "reset": "evade + full heal if no contributor is inside the arena for 10 s; contribution persists 120 s across reconnects; a reset clears contribution (A17)",
+          "stagger_cap_ms": 400
+        }
+      },
+      "body_radius_m": 2.4,
+      "footprint_m": [
+        3.85,
+        3.58
+      ],
+      "skills": [
+        {
+          "id": "solar_slam",
+          "name": "Solar Slam",
+          "server_support": "current splash as fallback; S3 boss ring",
+          "shape": "circle_at_locked_target",
+          "radius_m": 4.5,
+          "damage": 160,
+          "windup_ms": 1500,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 1200,
+          "cooldown_ms": 6000,
+          "trigger": "target within 2.5 m (S3: any target within 9 m)",
+          "telegraph": "boss crimson ring with a carved sun-ray edge at the locked point",
+          "body_cue": "rears on its four hind legs, the halo blazes, both arms rise, then the forelegs slam",
+          "audio_cue": "rising solar hum, a ringing boom",
+          "counterplay": "leave the ring; its forelegs stay planted for 1.2 s (punish window, x1.5)"
+        },
+        {
+          "id": "tail_sweep",
+          "name": "Tail Sweep",
+          "server_support": "S3",
+          "shape": "cone",
+          "angle_deg": 120,
+          "length_m": 7.0,
+          "knockback_m": 3.0,
+          "damage": 130,
+          "windup_ms": 1200,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 1000,
+          "cooldown_ms": 9000,
+          "trigger": "2+ players in the front arc within 7 m",
+          "telegraph": "boss crimson cone, 120 deg, 7 m, with amber motes flowing outward",
+          "body_cue": "the tail coils high over the back, the amber orb flares",
+          "audio_cue": "a rising whine, then a whoosh",
+          "counterplay": "get behind or beside it; guard halves the knockback"
+        },
+        {
+          "id": "sunflare_lance",
+          "name": "Sunflare Lance",
+          "server_support": "S3 (phase 2, HP <= 60 %)",
+          "shape": "lane",
+          "lane_width_m": 2.5,
+          "lane_max_m": 14.0,
+          "damage": 120,
+          "windup_ms": 1600,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 800,
+          "cooldown_ms": 12000,
+          "trigger": "the farthest player in the arena",
+          "telegraph": "boss crimson lane 2.5 x 14 m from the tail orb",
+          "body_cue": "the tail orb draws light from the halo, the tail aims",
+          "audio_cue": "a building chord",
+          "counterplay": "leave the lane; ranged players spread"
+        }
+      ],
+      "phase_behaviour": "Phase 2 at 60 % HP: Sunflare Lance joins the rotation and the three geysers erupt in turn every 20 s (VFX only, outside the arena). Phase 3 at 30 % HP, 'Zenith': enrage (the Enrage clip); cooldowns x0.75 and a Solar Corona donut (safe inside 4 m and outside 10 m) every 20 s.",
+      "hit_reaction": "Additive only: plates ring, cloth snaps, the halo flickers; heavy hits rock the torso 0.2 m. No flinch interrupts.",
+      "death": "The halo dims to bronze, the six legs fold, it settles onto the dais and the core's glow sinks into the vent; the basin steam turns white again; the sun-disc exit portal lights. Body stays 30 s, then the loot sparkles rise with the steam.",
+      "drops": [
+        {
+          "item": "sunscald_ember",
+          "chance_pct": 100,
+          "min": 1,
+          "max": 2,
+          "status": "proposed"
+        },
+        {
+          "item": "rimecrest_box",
+          "chance_pct": 100,
+          "min": 2,
+          "max": 2,
+          "status": "proposed"
+        },
+        {
+          "item": "golem_heartstone",
+          "chance_pct": 50,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        },
+        {
+          "item": "ember_root",
+          "chance_pct": 60,
+          "min": 1,
+          "max": 2,
+          "status": "existing"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 100,
+          "min": 3,
+          "max": 3,
+          "status": "existing"
+        },
+        {
+          "item": "rimeguard_mantle",
+          "chance_pct": 10,
+          "min": 1,
+          "max": 1,
+          "status": "proposed"
+        }
+      ],
+      "rune_drop": {
+        "item": "rimecrest_rune",
+        "rate": "5 % in the MVP chest with pity (decision 10)"
+      },
+      "loot_rule": "S5: every contributor (>= 3 % damage or >= 10 s tanking/healing) gets 1 personal roll; the MVP gets +1 roll and the mvp_chest (existing item) and +25 % base EXP; tie-break: damage, then earliest first hit (decision 7)",
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 3000,
+          "note": "rises from the central vent in a burst of gold steam (new)"
+        },
+        {
+          "name": "idle",
+          "ms": 3000,
+          "loop": true,
+          "note": "owner clip Idle"
+        },
+        {
+          "name": "move",
+          "ms": 1200,
+          "loop": true,
+          "note": "owner clip Walk, re-keyed to 3.4 m/s (Stage C)"
+        },
+        {
+          "name": "run",
+          "ms": 800,
+          "loop": true,
+          "note": "new"
+        },
+        {
+          "name": "provoked",
+          "ms": 1200,
+          "note": "new: rears + halo flare"
+        },
+        {
+          "name": "windup",
+          "ms": 1500,
+          "note": "SolarSlam split (owner clip 2.0 s, impact at 1.04 s; re-time)"
+        },
+        {
+          "name": "active",
+          "ms": 300
+        },
+        {
+          "name": "recovery",
+          "ms": 1200
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 1200,
+          "note": "TailSweep split (owner clip 1.8 s)"
+        },
+        {
+          "name": "skill2_active",
+          "ms": 300
+        },
+        {
+          "name": "skill2_recovery",
+          "ms": 1000
+        },
+        {
+          "name": "skill3_windup",
+          "ms": 1600,
+          "note": "new: Sunflare"
+        },
+        {
+          "name": "skill3_active",
+          "ms": 300
+        },
+        {
+          "name": "enrage",
+          "ms": 2000,
+          "note": "owner clip Enrage"
+        },
+        {
+          "name": "hit_additive",
+          "ms": 600,
+          "note": "owner clip HitReact as additive"
+        },
+        {
+          "name": "stagger",
+          "ms": 400
+        },
+        {
+          "name": "death",
+          "ms": 2400,
+          "note": "owner clip Death (first clip in the file)"
+        }
+      ],
+      "budget": {
+        "tris": [
+          22000,
+          8000,
+          3000
+        ],
+        "texture_px": 2048,
+        "bones_max": 64,
+        "note": "today 51,376 / 25,687 / 11,302 tris and 57 bones (46 deform): Stage C decimates to the boss budget (planning/assets/stage-c)"
+      },
+      "arena": {
+        "layout_landmark": "sunscald_basin",
+        "radius_m": 12,
+        "keep_clear_m": 13,
+        "why_this_size": "a 3.85 x 3.58 m six-legged body (r 2.4) turning in place needs >= 5 m around it; Tail Sweep (7 m cone) and Solar Slam (4.5 m ring) plus a 3-6 player ring of melee and ranged fit inside 24 m with 2 m to spare; 12 m keeps the boom and the 4.2 m body in frame from the rim"
+      },
+      "concept": {
+        "height_m": 4.2,
+        "length_m": 3.6,
+        "width_m": 3.85,
+        "silhouette": "A falcon-headed, gold-armoured scorpion-centaur: a humanoid torso with open arms on a six-legged armoured body, a segmented tail arching over the back to an amber orb, a sun-disc halo with an amber orb above the head.",
+        "shape_language": "A sun disc over a wide six-legged base; the tail arc closes the silhouette.",
+        "read_at_13m": "A bright gold six-legged giant with a halo and a glowing tail orb: the warmest thing in a cold land.",
+        "features": [
+          "falcon head with a gold-and-turquoise headdress",
+          "sun-disc halo with an amber orb",
+          "segmented gold tail with turquoise inlay, amber orb tip",
+          "red cloth tabard and tassels",
+          "six articulated gold legs"
+        ],
+        "palette": [
+          {
+            "name": "gold",
+            "hex": "#B57F47",
+            "src": "sampled from the owner front view"
+          },
+          {
+            "name": "gold highlight",
+            "hex": "#CD9C5F",
+            "src": "sampled"
+          },
+          {
+            "name": "dark bronze",
+            "hex": "#311E10",
+            "src": "sampled"
+          },
+          {
+            "name": "cloth red",
+            "hex": "#6E201A",
+            "src": "sampled"
+          },
+          {
+            "name": "turquoise",
+            "hex": "#518483",
+            "src": "sampled"
+          },
+          {
+            "name": "amber orb",
+            "hex": "#C37C3B",
+            "src": "sampled; emissive capped below bloom clipping"
+          }
+        ],
+        "snow_read": "gold against cold blue snow is the region's strongest figure-ground contrast; the arena floor is dark wet basalt so the gold and the crimson rings both read (not sandstone, which would match the gold)",
+        "originality": "Owner design and model (KEEP, Stage A/B done); no redesign or recolour; optional rime dusting on leg tips is an owner call."
+      },
+      "source_images": [
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\boss\\ChatGPT Image 30 ก.ย. 2569 21_10_21.png",
+          "view": "front"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\boss\\ChatGPT Image 30 ก.ย. 2569 21_10_40.png",
+          "view": "left"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\boss\\ChatGPT Image 30 ก.ย. 2569 21_10_46.png",
+          "view": "back"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\boss\\ChatGPT Image 30 ก.ย. 2569 21_10_49.png",
+          "view": "right"
+        },
+        {
+          "file": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\boss\\tripo-p2-output\\ (Tripo P2.0 model, PBR maps, runtime-rig-v1: 57 bones, 7 clips)",
+          "view": "built model"
+        }
+      ],
+      "pipeline": {
+        "stage_a": "KEEP (owner)",
+        "four_view": "not needed: built in Tripo by the owner (retro QA REGEN, record only)",
+        "route": "Stage C list planning/assets/stage-c/solar-scorpion-*-boss.md (0 credits)"
+      },
+      "plan_icon": {
+        "letter": "S",
+        "rgb": [
+          217,
+          58,
+          58
+        ],
+        "dark": true,
+        "mode": "boss: passive until provoked"
+      }
+    }
+  ],
+  "proposed_items": [
+    {
+      "id": "rime_shard",
+      "type": "material",
+      "name_key": "item_rime_shard",
+      "desc_key": "item_rime_shard_desc",
+      "stack": 99,
+      "status": "proposed",
+      "use": "the region's common material: bounty turn-ins and crafting"
+    },
+    {
+      "id": "frostbone_splinter",
+      "type": "material",
+      "name_key": "item_frostbone_splinter",
+      "desc_key": "item_frostbone_splinter_desc",
+      "stack": 99,
+      "status": "proposed",
+      "use": "bone-construct material (ticks, raptors, wraiths)"
+    },
+    {
+      "id": "golem_heartstone",
+      "type": "material",
+      "name_key": "item_golem_heartstone",
+      "desc_key": "item_golem_heartstone_desc",
+      "stack": 99,
+      "status": "proposed",
+      "use": "rare golem core: upgrades; elite guaranteed"
+    },
+    {
+      "id": "sunscald_ember",
+      "type": "material",
+      "name_key": "item_sunscald_ember",
+      "desc_key": "item_sunscald_ember_desc",
+      "stack": 99,
+      "status": "proposed",
+      "use": "boss material: top-tier upgrades; the Emberpass questline"
+    },
+    {
+      "id": "rimecrest_box",
+      "type": "box",
+      "name_key": "item_rimecrest_box",
+      "desc_key": "item_rimecrest_box_desc",
+      "stack": 99,
+      "status": "proposed",
+      "use": "regional loot box (like meadow_box)"
+    },
+    {
+      "id": "rimecrest_rune",
+      "type": "material",
+      "name_key": "item_rimecrest_rune",
+      "desc_key": "item_rimecrest_rune_desc",
+      "stack": 99,
+      "status": "proposed",
+      "use": "rune drop per the rune system (decision 10), not in drop tables"
+    },
+    {
+      "id": "yakbutter_tea",
+      "type": "consumable",
+      "name_key": "item_yakbutter_tea",
+      "desc_key": "item_yakbutter_tea_desc",
+      "stack": 99,
+      "heal": 120,
+      "status": "proposed",
+      "use": "vendor heal (Mirun's camp stall)"
+    },
+    {
+      "id": "rimeguard_axe",
+      "type": "weapon",
+      "name_key": "item_rimeguard_axe",
+      "desc_key": "item_rimeguard_axe_desc",
+      "stack": 1,
+      "equip_slot": "weapon",
+      "atk": 20,
+      "equip_level_min": 15,
+      "status": "proposed",
+      "use": "elite drop"
+    },
+    {
+      "id": "rimeguard_mantle",
+      "type": "armor",
+      "name_key": "item_rimeguard_mantle",
+      "desc_key": "item_rimeguard_mantle_desc",
+      "stack": 1,
+      "equip_slot": "armor",
+      "def": 14,
+      "hp": 60,
+      "equip_level_min": 18,
+      "status": "proposed",
+      "use": "boss drop"
+    }
+  ],
+  "zones": [
+    {
+      "id": "glassmere_south",
+      "clearing": "glassmere_shore",
+      "level_band": [
+        12,
+        13
+      ],
+      "tone": "first fights: tick pairs on the south shore",
+      "habitat": "The snowy south end of the shore and the shelf's south tip: ticks bury themselves in the drifts; snowfall hatches more.",
+      "spawn_polygon_xz": [
+        [
+          -40.5,
+          4.0
+        ],
+        [
+          -30.0,
+          3.8
+        ],
+        [
+          -29.5,
+          12.0
+        ],
+        [
+          -35.0,
+          21.0
+        ],
+        [
+          -40.5,
+          21.0
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -41.5,
+          2.6
+        ],
+        [
+          -28.6,
+          2.6
+        ],
+        [
+          -28.0,
+          12.6
+        ],
+        [
+          -34.6,
+          22.6
+        ],
+        [
+          -41.5,
+          22.6
+        ]
+      ],
+      "leash_policy": "stays 1 m off the lakeshore and arrival road surfaces (newbie-of-the-region sanctuary, R9)",
+      "rows": [
+        0,
+        1,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "glassmere_shelf",
+      "clearing": "glassmere_shore",
+      "level_band": [
+        12,
+        13
+      ],
+      "tone": "ticks skittering on the walkable ice shelf",
+      "habitat": "The shore-fast ice shelf by the fishing holes and the frozen rowboat; the pressure ridge and thin ice beyond are no-go.",
+      "spawn_polygon_xz": [
+        [
+          -37.5,
+          22.5
+        ],
+        [
+          -26.5,
+          22.0
+        ],
+        [
+          -26.5,
+          41.5
+        ],
+        [
+          -31.0,
+          42.5
+        ],
+        [
+          -38.0,
+          34.0
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -38.6,
+          21.4
+        ],
+        [
+          -24.4,
+          20.9
+        ],
+        [
+          -24.4,
+          42.2
+        ],
+        [
+          -31.0,
+          43.6
+        ],
+        [
+          -39.0,
+          34.5
+        ]
+      ],
+      "leash_policy": ">= 1 m from the pressure-ridge toe and >= 2.4 m from thin ice; may cross the hidden causeway start (not a sanctuary road)",
+      "rows": [
+        2,
+        3,
+        4,
+        31
+      ]
+    },
+    {
+      "id": "glassmere_reeds",
+      "clearing": "glassmere_shore",
+      "level_band": [
+        13,
+        14
+      ],
+      "tone": "a raptor pack prowling the frozen reeds",
+      "habitat": "Reed beds and boulders at the north end of the shore field, under Cairn Point.",
+      "spawn_polygon_xz": [
+        [
+          -41.5,
+          34.0
+        ],
+        [
+          -31.5,
+          36.0
+        ],
+        [
+          -31.0,
+          46.0
+        ],
+        [
+          -36.0,
+          48.5
+        ],
+        [
+          -41.0,
+          45.5
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -42.5,
+          33.0
+        ],
+        [
+          -30.5,
+          35.0
+        ],
+        [
+          -30.0,
+          46.8
+        ],
+        [
+          -36.0,
+          49.8
+        ],
+        [
+          -42.0,
+          46.5
+        ]
+      ],
+      "leash_policy": "stays 1 m off the lakeshore road surface (R9 sanctuary)",
+      "rows": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "stillfall_cove",
+      "clearing": "stillfall_cove",
+      "level_band": [
+        13,
+        14
+      ],
+      "tone": "raptor den under the frozen waterfall",
+      "habitat": "The cove floor between the cliffs, the ice cone and the headland: bones of old kills on the snow.",
+      "spawn_polygon_xz": [
+        [
+          -55.0,
+          75.0
+        ],
+        [
+          -44.5,
+          74.0
+        ],
+        [
+          -40.5,
+          79.0
+        ],
+        [
+          -43.0,
+          84.5
+        ],
+        [
+          -49.0,
+          86.8
+        ],
+        [
+          -54.5,
+          85.5
+        ]
+      ],
+      "leash_policy": "inside the cove only; never the ice cone or the cliffs",
+      "leash_polygon_xz": [
+        [
+          -56.0,
+          74.0
+        ],
+        [
+          -44.0,
+          72.8
+        ],
+        [
+          -39.2,
+          79.0
+        ],
+        [
+          -42.0,
+          85.2
+        ],
+        [
+          -48.5,
+          88.0
+        ],
+        [
+          -54.5,
+          86.4
+        ]
+      ],
+      "rows": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "rimepine_west",
+      "clearing": "rimepine_wood",
+      "level_band": [
+        15,
+        16
+      ],
+      "tone": "statues among the pines by day, a haunted wood at night",
+      "habitat": "The west half of the ridge wood: wraiths stand in the gaps between pine clusters; two raptors hunt the seam with the cove.",
+      "spawn_polygon_xz": [
+        [
+          -33.0,
+          88.0
+        ],
+        [
+          -4.5,
+          88.0
+        ],
+        [
+          -3.5,
+          97.5
+        ],
+        [
+          -14.0,
+          99.0
+        ],
+        [
+          -24.0,
+          98.0
+        ],
+        [
+          -31.5,
+          94.6
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -34.0,
+          87.2
+        ],
+        [
+          -3.6,
+          87.2
+        ],
+        [
+          -3.0,
+          98.5
+        ],
+        [
+          -14.0,
+          100.5
+        ],
+        [
+          -25.0,
+          99.5
+        ],
+        [
+          -31.4,
+          95.4
+        ]
+      ],
+      "leash_policy": "the wood only; >= 1 m from the cove cliffs and the ridge cliffs",
+      "rows": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        32
+      ]
+    },
+    {
+      "id": "rimepine_east",
+      "clearing": "rimepine_wood",
+      "level_band": [
+        16,
+        17
+      ],
+      "tone": "the deeper wood toward the cave mouth",
+      "habitat": "The east half of the wood up to the Rimeheart Mouth; the bone cairn warns of the grotto.",
+      "spawn_polygon_xz": [
+        [
+          5.0,
+          88.0
+        ],
+        [
+          31.0,
+          87.5
+        ],
+        [
+          33.5,
+          93.0
+        ],
+        [
+          27.0,
+          100.0
+        ],
+        [
+          12.0,
+          103.0
+        ],
+        [
+          5.0,
+          103.0
+        ]
+      ],
+      "leash_policy": "the wood only; never through the mouth into the grotto",
+      "leash_polygon_xz": [
+        [
+          4.5,
+          87.0
+        ],
+        [
+          32.0,
+          86.5
+        ],
+        [
+          35.5,
+          91.0
+        ],
+        [
+          29.5,
+          101.5
+        ],
+        [
+          12.5,
+          104.0
+        ],
+        [
+          4.5,
+          104.0
+        ]
+      ],
+      "rows": [
+        16,
+        17,
+        18,
+        19,
+        33
+      ]
+    },
+    {
+      "id": "rimeheart_grotto",
+      "clearing": "rimeheart_grotto",
+      "level_band": [
+        18,
+        20
+      ],
+      "tone": "optional elite pocket",
+      "habitat": "The roofless glacier grotto behind the ice arch: two golems flank the Rimeheart Warden under the Grotto Falls.",
+      "spawn_polygon_xz": [
+        [
+          -8.4,
+          111.4
+        ],
+        [
+          12.6,
+          111.4
+        ],
+        [
+          13.2,
+          116.2
+        ],
+        [
+          6.0,
+          119.4
+        ],
+        [
+          -2.0,
+          119.4
+        ],
+        [
+          -9.2,
+          116.4
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -3.0,
+          108.8
+        ],
+        [
+          -9.0,
+          110.6
+        ],
+        [
+          -11.2,
+          113.8
+        ],
+        [
+          -9.8,
+          118.0
+        ],
+        [
+          -4.4,
+          120.4
+        ],
+        [
+          4.8,
+          120.8
+        ],
+        [
+          11.8,
+          118.8
+        ],
+        [
+          14.6,
+          114.8
+        ],
+        [
+          13.6,
+          111.0
+        ],
+        [
+          8.2,
+          108.8
+        ]
+      ],
+      "leash_policy": "the grotto floor only; the mouth is the edge (nothing follows a player onto the ridge)",
+      "rows": [
+        27,
+        28,
+        36
+      ]
+    },
+    {
+      "id": "rimehold_south",
+      "clearing": "rimehold_court",
+      "level_band": [
+        18,
+        19
+      ],
+      "tone": "golems flank the processional way to Sunscald",
+      "habitat": "The south court between the west gate and the Sunscald gate; the third cold brazier.",
+      "spawn_polygon_xz": [
+        [
+          19.0,
+          14.5
+        ],
+        [
+          51.5,
+          14.5
+        ],
+        [
+          51.5,
+          35.5
+        ],
+        [
+          20.0,
+          35.5
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          18.0,
+          13.8
+        ],
+        [
+          52.0,
+          13.8
+        ],
+        [
+          52.0,
+          36.5
+        ],
+        [
+          18.2,
+          36.5
+        ]
+      ],
+      "leash_policy": "inside the ruin walls (>= 1 m from the wall toes); may follow onto the processional way (road_safe false)",
+      "rows": [
+        20,
+        21,
+        22,
+        34
+      ]
+    },
+    {
+      "id": "rimehold_north",
+      "clearing": "rimehold_court",
+      "level_band": [
+        19,
+        20
+      ],
+      "tone": "the colonnade and the bell tower",
+      "habitat": "The north court under the tower: two cold braziers, a broken colonnade.",
+      "spawn_polygon_xz": [
+        [
+          19.0,
+          38.0
+        ],
+        [
+          51.5,
+          38.0
+        ],
+        [
+          51.5,
+          59.5
+        ],
+        [
+          19.0,
+          59.5
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          18.2,
+          37.4
+        ],
+        [
+          52.0,
+          37.4
+        ],
+        [
+          52.0,
+          60.2
+        ],
+        [
+          18.2,
+          60.2
+        ]
+      ],
+      "leash_policy": "inside the ruin walls; the tower base is a prop, not a leash hazard",
+      "rows": [
+        23,
+        24,
+        25,
+        26,
+        35
+      ]
+    },
+    {
+      "id": "sunscald_arena",
+      "clearing": "sunscald_arena",
+      "level_band": [
+        21,
+        23
+      ],
+      "tone": "boss arena (event)",
+      "habitat": "The sun-dais over the central vent in the snow-free Sunscald basin.",
+      "spawn_polygon_xz": "circle",
+      "spawn_circle": {
+        "center_xz": [
+          36.0,
+          -34.0
+        ],
+        "radius_m": 3.0,
+        "note": "= layout sunscald_dais (flush, no collider)"
+      },
+      "leash_circle": {
+        "center_xz": [
+          36.0,
+          -34.0
+        ],
+        "radius_m": 12.0,
+        "note": "= layout sunscald_basin centre + boss_arena_radius_m"
+      },
+      "leash_policy": "arena; the boss is passive until provoked",
+      "rows": [
+        37
+      ]
+    }
+  ],
+  "safe_areas": [
+    {
+      "id": "arrival_apron",
+      "rect_xz": [
+        -67.0,
+        -17.0,
+        -69.0,
+        -19.0
+      ],
+      "why": "arrival hollow: no spawns, no aggro within 25 m of the dais"
+    },
+    {
+      "id": "hearthhorn_camp",
+      "rect_xz": [
+        -34,
+        -14,
+        -34,
+        -16
+      ],
+      "margin_m": 3.0,
+      "why": "NPC hub (Mirun, board, vendor)"
+    },
+    {
+      "id": "hearth",
+      "circle": [
+        [
+          -24.0,
+          -25.0
+        ],
+        9.0
+      ],
+      "why": "campfire plaza"
+    },
+    {
+      "id": "regroup",
+      "circle": [
+        [
+          -24,
+          -12
+        ],
+        4.0
+      ],
+      "why": "respawn point after death"
+    },
+    {
+      "id": "cairn_isle",
+      "circle": [
+        [
+          -6.5,
+          44.0
+        ],
+        5.0
+      ],
+      "why": "hidden reward"
+    },
+    {
+      "id": "basin_exit",
+      "circle": [
+        [
+          43.5,
+          -21.01
+        ],
+        2.5
+      ],
+      "why": "post-fight exit portal (outside the arena)"
+    },
+    {
+      "id": "emberpass_gate",
+      "circle": [
+        [
+          56.0,
+          76.0
+        ],
+        5.0
+      ],
+      "why": "future warp gate"
+    }
+  ],
+  "spawn_rows": [
+    {
+      "row": 0,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_south",
+      "home_xz": [
+        -38.0,
+        8.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "pair with row 1 (assist 5 m)"
+    },
+    {
+      "row": 1,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_south",
+      "home_xz": [
+        -34.5,
+        6.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 2,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_shelf",
+      "home_xz": [
+        -30.5,
+        24.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "on the shelf, 7.9 m from the pressure-ridge toe (step-0 chase stays off the slabs)"
+    },
+    {
+      "row": 3,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_shelf",
+      "home_xz": [
+        -34.0,
+        27.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "pair with row 2"
+    },
+    {
+      "row": 4,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_shelf",
+      "home_xz": [
+        -30.5,
+        39.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "near the hidden causeway start without blocking it (H2 4.5 m)"
+    },
+    {
+      "row": 5,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_reeds",
+      "home_xz": [
+        -38.5,
+        37.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "pack of three (assist 8 m)"
+    },
+    {
+      "row": 6,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_reeds",
+      "home_xz": [
+        -35.0,
+        40.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "patrol": {
+        "type": "loop",
+        "points": [
+          [
+            -35.0,
+            40.5
+          ],
+          [
+            -33.5,
+            45.0
+          ],
+          [
+            -36.5,
+            46.5
+          ],
+          [
+            -39.0,
+            43.5
+          ]
+        ],
+        "pause_s": [
+          2,
+          4
+        ],
+        "speed_mult": 0.5,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 7,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glassmere_reeds",
+      "home_xz": [
+        -38.5,
+        42.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 8,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "stillfall_cove",
+      "home_xz": [
+        -48.5,
+        79.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "den pack under the frozen waterfall"
+    },
+    {
+      "row": 9,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "stillfall_cove",
+      "home_xz": [
+        -42.0,
+        79.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "den sentry at the cove mouth, 10 m off the road"
+    },
+    {
+      "row": 10,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "stillfall_cove",
+      "home_xz": [
+        -45.0,
+        77.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 11,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_west",
+      "home_xz": [
+        -17.0,
+        95.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "statue by day, wakes at night"
+    },
+    {
+      "row": 12,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_west",
+      "home_xz": [
+        -11.5,
+        91.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 13,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_west",
+      "home_xz": [
+        -22.5,
+        90.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 14,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_west",
+      "home_xz": [
+        -26.0,
+        88.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "a lv1 hunter pair wandering up into the lv2 wood (assist pair with row 15)"
+    },
+    {
+      "row": 15,
+      "enemy": "icerib_raptor",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_west",
+      "home_xz": [
+        -20.0,
+        88.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 16,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_east",
+      "home_xz": [
+        12.5,
+        92.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 17,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_east",
+      "home_xz": [
+        20.0,
+        96.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 18,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_east",
+      "home_xz": [
+        26.5,
+        90.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 19,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimepine_east",
+      "home_xz": [
+        14.0,
+        96.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "watches the cave mouth from 10 m"
+    },
+    {
+      "row": 20,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_south",
+      "home_xz": [
+        25.5,
+        20.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "7.9 m from the south wall toe (step-0 chase stays inside the court)"
+    },
+    {
+      "row": 21,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_south",
+      "home_xz": [
+        44.5,
+        27.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "guards ward brazier 3 at 9.5 m (quest object rule: aggro + 2)"
+    },
+    {
+      "row": 22,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_south",
+      "home_xz": [
+        26.0,
+        30.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "flanks the processional way (road_safe false)"
+    },
+    {
+      "row": 23,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_north",
+      "home_xz": [
+        25.5,
+        43.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "inside the west gate; 8.1 m from ward brazier 1"
+    },
+    {
+      "row": 24,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_north",
+      "home_xz": [
+        31.5,
+        53.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "pair with row 25 under the tower (assist 7 m)"
+    },
+    {
+      "row": 25,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_north",
+      "home_xz": [
+        38.5,
+        53.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 26,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "rimehold_north",
+      "home_xz": [
+        45.5,
+        40.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 27,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "rimeheart_grotto",
+      "home_xz": [
+        -6.0,
+        114.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "grotto escort (the elite joins at step 2); zone polygon leash only",
+      "needs": "S1"
+    },
+    {
+      "row": 28,
+      "enemy": "rimehold_golem",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "rimeheart_grotto",
+      "home_xz": [
+        10.0,
+        113.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "needs": "S1"
+    },
+    {
+      "row": 29,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "glassmere_south",
+      "home_xz": [
+        -31.0,
+        9.0
+      ],
+      "phases": [
+        "snow"
+      ],
+      "reason": "snowfall bloom",
+      "needs": "S4"
+    },
+    {
+      "row": 30,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "glassmere_south",
+      "home_xz": [
+        -36.5,
+        17.5
+      ],
+      "phases": [
+        "snow"
+      ],
+      "reason": "snowfall bloom",
+      "needs": "S4"
+    },
+    {
+      "row": 31,
+      "enemy": "rimeshell_tick",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "glassmere_shelf",
+      "home_xz": [
+        -36.0,
+        32.0
+      ],
+      "phases": [
+        "snow"
+      ],
+      "reason": "snowfall bloom",
+      "needs": "S4"
+    },
+    {
+      "row": 32,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "rimepine_west",
+      "home_xz": [
+        -6.0,
+        92.0
+      ],
+      "phases": [
+        "night"
+      ],
+      "reason": "night patrol of the west wood",
+      "needs": "S1 S4",
+      "patrol": {
+        "type": "loop",
+        "points": [
+          [
+            -6.0,
+            92.0
+          ],
+          [
+            -14.0,
+            94.5
+          ],
+          [
+            -20.0,
+            92.5
+          ],
+          [
+            -9.0,
+            90.0
+          ]
+        ],
+        "pause_s": [
+          2,
+          4
+        ],
+        "speed_mult": 0.5,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 33,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "rimepine_east",
+      "home_xz": [
+        18.5,
+        89.5
+      ],
+      "phases": [
+        "night"
+      ],
+      "reason": "night patrol of the east wood",
+      "needs": "S1 S4",
+      "patrol": {
+        "type": "pingpong",
+        "points": [
+          [
+            18.5,
+            89.5
+          ],
+          [
+            24.0,
+            97.0
+          ]
+        ],
+        "pause_s": [
+          3,
+          5
+        ],
+        "speed_mult": 0.5,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 34,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "rimehold_south",
+      "home_xz": [
+        40.0,
+        33.0
+      ],
+      "phases": [
+        "night"
+      ],
+      "reason": "temple ghost at night",
+      "needs": "S4"
+    },
+    {
+      "row": 35,
+      "enemy": "shardveil_wraith",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "rimehold_north",
+      "home_xz": [
+        30.0,
+        40.0
+      ],
+      "phases": [
+        "night"
+      ],
+      "reason": "temple ghost at night",
+      "needs": "S4"
+    },
+    {
+      "row": 36,
+      "enemy": "rimeheart_warden",
+      "status": "new",
+      "deploy_step": 2,
+      "zone": "rimeheart_grotto",
+      "home_xz": [
+        2.0,
+        116.0
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "elite leader under the Grotto Falls",
+      "needs": "S1 S2 S3 S5",
+      "patrol": {
+        "type": "pingpong",
+        "points": [
+          [
+            0.5,
+            115.5
+          ],
+          [
+            3.5,
+            115.5
+          ]
+        ],
+        "pause_s": [
+          5,
+          8
+        ],
+        "speed_mult": 0.4,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 37,
+      "enemy": "solar_scorpion",
+      "status": "new",
+      "deploy_step": 2,
+      "zone": "sunscald_arena",
+      "home_xz": [
+        36.0,
+        -34.0
+      ],
+      "phases": [
+        "day"
+      ],
+      "reason": "boss on the sun-dais at the arena centre; paces +-1 m",
+      "needs": "S2 S3 S4 S5",
+      "wake": "natural spawn only (daylight >= 0.5); no offering item (the Gale Seed rule belongs to Sunmeadow)",
+      "patrol": {
+        "type": "pingpong",
+        "points": [
+          [
+            35.0,
+            -34.0
+          ],
+          [
+            37.0,
+            -34.0
+          ]
+        ],
+        "pause_s": [
+          6,
+          10
+        ],
+        "speed_mult": 0.3,
+        "needs": "S1"
+      }
+    }
+  ],
+  "scatter_keep_clear": {
+    "rule": "Blender scatter (trees, rocks, props) keeps body_radius + 1.0 m clear around every home and 1.2 m either side of every patrol segment.",
+    "explicit": [
+      {
+        "zone": "sunscald_arena",
+        "center_xz": [
+          36.0,
+          -34.0
+        ],
+        "radius_m": 13.0,
+        "note": "keep-clear: low ground cover only"
+      },
+      {
+        "zone": "rimeheart_grotto",
+        "center_xz": [
+          2.0,
+          116.0
+        ],
+        "radius_m": 5.0,
+        "note": "elite pacing floor"
+      }
+    ]
+  },
+  "server_extensions": [
+    {
+      "id": "S1-S8",
+      "what": "as defined in planning/levels/sunmeadow-v2-monsters.json server_extensions (zones, aggro modes, second skills and shapes, server clock and weather, elite and boss rules, dynamic respawn, level/def, monster collision)",
+      "priority": "same as Sunmeadow"
+    },
+    {
+      "id": "S9",
+      "name": "Zone transfer + warps",
+      "what": "A35 warp network: server-authoritative transfer (request id, inbox A16), interact portals, walk-through gates, discover-to-unlock hub list, arrival jitter; Rimecrest as its own zone instance",
+      "priority": "must (before any Rimecrest row deploys)"
+    },
+    {
+      "id": "S10",
+      "name": "Daylight-gated boss + post-fight portal",
+      "what": "S5 boss rules with a daylight >= 0.5 gate (S4 clock) and a portal state driven by the boss lifecycle (dead -> active until the next announcement)",
+      "priority": "should (step 2)"
+    },
+    {
+      "id": "S11",
+      "name": "Day statues",
+      "what": "S2 passive mode with a dormant pose flag per row for the Shardveil Wraith by day (client plays dormant_idle)",
+      "priority": "could"
+    }
+  ],
+  "migration": {
+    "rule": "Rimecrest is new: monster ids = 101 + row index inside the Rimecrest zone instance; rows are appended in deploy-step order.",
+    "step0_content_only": {
+      "needs": "S9 zone transfer + a new zones.json zone for rimecrest_snow",
+      "rows": "0-26 (27)",
+      "content": [
+        "zones.json: new zone rimecrest_snow with monster_spawns rows 0-26, POIs, props and colliders from the base",
+        "enemies.json: rimeshell_tick (8), icerib_raptor (9), shardveil_wraith (10), rimehold_golem (11) with step0 tuning",
+        "items.json: the proposed items (economy review first)",
+        "dialogue en/th: enemy names, Mirun, the board, signs"
+      ]
+    },
+    "step1_server_s1_s2_s4": {
+      "adds_rows": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "rows_total": 36,
+      "switches": [
+        "zone leash polygons (the grotto golems need them)",
+        "wraith day statue / night aggro",
+        "snowfall and night rows",
+        "patrols"
+      ]
+    },
+    "step2_server_s3_s5": {
+      "adds_rows": [
+        36,
+        37
+      ],
+      "rows_total": 38,
+      "adds_enemies": [
+        "rimeheart_warden (12)",
+        "solar_scorpion (13)"
+      ]
+    },
+    "client": "per-kind visuals replace the shared slime (art lane); nameplate tier frames for elite/boss (UI thread)"
+  },
+  "owner_decisions": {
+    "date": "2026-10-02",
+    "decisions": [
+      {
+        "id": 1,
+        "decision": "Map renamed Frostvale -> rimecrest_snow, display 'Rimecrest Wilds' (relayed 20:50)."
+      },
+      {
+        "id": 2,
+        "decision": "The bovine shaman model is used twice: the elder Ruun stays in the city; his apprentice (same model, palette swap) runs the Rimecrest camp (relayed 20:50). Working name 'Mirun'."
+      },
+      {
+        "id": 3,
+        "decision": "Snow monsters KEEP (designs unchanged), 4-view sets regenerated before Tripo (19:50)."
+      },
+      {
+        "id": 4,
+        "decision": "The Solar Scorpion is the snow-map boss (19:50)."
+      }
+    ]
+  },
+  "open_questions": [
+    "Apprentice name 'Mirun' is a working name; owner to confirm or rename (Thai: มีรุน).",
+    "Golem crown spikes vs a rounded rime brow (originality, asset review): owner call before F16.",
+    "Proposed item ids and stats need the economy review before content.",
+    "Stat curve above L12 (player HP, ATK) is assumed (ATK 45 + 3/level); re-tune damage after SYS-04 derived stats."
+  ],
+  "checker_profile": {
+    "arena_landmark": "sunscald_basin",
+    "boss_spawn_landmark": "sunscald_dais",
+    "boss_zone": "sunscald_arena",
+    "quest_object_pois": [
+      "fishing_hole_1",
+      "fishing_hole_2",
+      "fishing_hole_3",
+      "wind_rune_1",
+      "wind_rune_2",
+      "wind_rune_3",
+      "ward_brazier_1",
+      "ward_brazier_2",
+      "ward_brazier_3"
+    ],
+    "sanctuary_clearings": [
+      "glassmere_shore"
+    ],
+    "water_hazard_kinds": [
+      "water"
+    ],
+    "labels": {
+      "relief": "relief",
+      "apron": "arrival apron",
+      "apron_key": "arrival_apron",
+      "ring_exclusion": "boss-arena exclusion",
+      "ring": "arena",
+      "ring_key": "boss_arena",
+      "boss_spawn": "sun-dais"
+    },
+    "plan": {
+      "title": "PLAN + MONSTERS - rimecrest_snow v1 spawn proposal (Babylon XZ m, north up, 1 grid = 8 m) - DESIGN, not live",
+      "band_colors": {
+        "12": [
+          70,
+          170,
+          120
+        ],
+        "13": [
+          70,
+          170,
+          120
+        ],
+        "15": [
+          225,
+          170,
+          40
+        ],
+        "16": [
+          225,
+          150,
+          40
+        ],
+        "18": [
+          220,
+          90,
+          40
+        ],
+        "19": [
+          220,
+          90,
+          40
+        ],
+        "21": [
+          200,
+          40,
+          60
+        ]
+      },
+      "label_at": {
+        "glassmere_south": [
+          -41.0,
+          1.8
+        ],
+        "glassmere_shelf": [
+          -38.5,
+          19.5
+        ],
+        "glassmere_reeds": [
+          -41.5,
+          51.5
+        ],
+        "stillfall_cove": [
+          -56.0,
+          72.0
+        ],
+        "rimepine_west": [
+          -34.0,
+          86.0
+        ],
+        "rimepine_east": [
+          5.0,
+          86.0
+        ],
+        "rimeheart_grotto": [
+          -11.0,
+          124.0
+        ],
+        "rimehold_south": [
+          18.5,
+          12.5
+        ],
+        "rimehold_north": [
+          18.5,
+          63.5
+        ]
+      },
+      "arena_label": "  (Solar Scorpion arena)",
+      "arena_label_offset": [
+        -12.0,
+        1.0
+      ],
+      "apron_label": "arrival apron: no spawns, no aggro (25 m)",
+      "safe_label": {
+        "text": "safe: camp / regroup / arrival / isle / exit portal",
+        "at": [
+          -33.0,
+          -6.0
+        ]
+      },
+      "legend_markers": [
+        [
+          "filled zone",
+          "spawn polygon (homes, patrols)"
+        ],
+        [
+          "dashed zone",
+          "leash polygon = S1 chase limit"
+        ],
+        [
+          "red dashed ring",
+          "aggro of aggressive monsters (step 1, max of day/night)"
+        ],
+        [
+          "dark line + arrow",
+          "patrol (S1)"
+        ],
+        [
+          "dark-blue disc",
+          "night-only row"
+        ],
+        [
+          "diamond",
+          "snowfall-only row (S4)"
+        ],
+        [
+          "crimson ring",
+          "Solar Scorpion arena r 12 m, sun-dais r 3 m"
+        ],
+        [
+          "green",
+          "safe: arrival apron, camp, hearth, regroup, isle, exit portal, gate"
+        ],
+        [
+          "cyan diamond",
+          "quest objects: fishing holes, wind runes, ward braziers"
+        ]
+      ],
+      "zones_header": "Zones (day rows / night / snowfall extra, per 100 m2)",
+      "step_labels": [
+        "step 0, content only (after S9)",
+        "step 1, S1 S2 S4",
+        "step 2, S3 S5"
+      ],
+      "step_notes": [
+        "ticks, raptors, wraiths, golems",
+        "snowfall ticks, night wraiths, zones",
+        "Rimeheart Warden elite, Solar Scorpion boss"
+      ]
+    }
+  }
+}

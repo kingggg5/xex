@@ -1,0 +1,769 @@
+{
+  "schema": "xexoria.impostor-atlas/2",
+  "name": "sunmeadow_trees",
+  "generator": "assets/blender/tools/impostor_baker.py",
+  "blender": "5.2.2 LTS",
+  "frame_px": 256,
+  "page_px": 2048,
+  "grid": {
+    "azimuth": 8,
+    "elevation": 4,
+    "el_min_deg": 0.0,
+    "el_max_deg": 45.0,
+    "az0_angle_rad": -0.0,
+    "az_sign": -1,
+    "convention": "frame dir = unit vector from the asset towards the camera in asset-local Babylon axes; azimuth angle = atan2(dir.x, dir.z); frame az index i has angle az0 + az_sign * i * 2pi/azimuth; elevation row j has asin(dir.y) = el_min + j * (el_max - el_min) / (elevation - 1)"
+  },
+  "passes": {
+    "albedo": "sRGB-encoded straight alpha, edge-bled (KTX2 stored as UNORM: sample without hardware sRGB decode)",
+    "normal": "object-space normal in Babylon axes * 0.5 + 0.5 (half resolution), A = coverage"
+  },
+  "shading": {
+    "model": "standard",
+    "emissive": [
+      0.09,
+      0.12,
+      0.06
+    ],
+    "link_emissive_with_diffuse": true,
+    "specular": [
+      0,
+      0,
+      0
+    ],
+    "alpha_cutoff": 0.35,
+    "note": "Matches the in-game leaf-card StandardMaterial (environment.ts createLeafCardMaterial); world-weather dims emissive at night for materials named *foliage*.",
+    "albedo_scale": 1.0566,
+    "view_light_slope": -0.2981,
+    "calibration": "Calibrated 2026-10-02 in tests/impostor-review.html (WebGL2, game day sun (-0.55,-0.82,0.35), fixed winding, bled leaves, tree A, 30 m, eye 6.6 m, 8 azimuths): least-squares fit real/uncompensated-card = 1.0566 - 0.2981 * dot(V, L), max error 4.5 %, V = asset->camera, L = towards the sun. Cause: baked texels average several leaf normals (biased towards the bake camera); real leaves average clamped Lambert per leaf."
+  },
+  "uv": "v = 0 is the top row of the image (load PNG with invertY = false; KTX2 has no flip)",
+  "frames": [
+    {
+      "az": 0,
+      "el": 0,
+      "dir": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 1,
+      "el": 0,
+      "dir": [
+        -0.707107,
+        0.0,
+        0.707107
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 2,
+      "el": 0,
+      "dir": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 0,
+      "dir": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 4,
+      "el": 0,
+      "dir": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "right": [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 5,
+      "el": 0,
+      "dir": [
+        0.707107,
+        0.0,
+        -0.707107
+      ],
+      "right": [
+        0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 6,
+      "el": 0,
+      "dir": [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 0,
+      "dir": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 0,
+      "el": 1,
+      "dir": [
+        -0.0,
+        0.258819,
+        0.965926
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        0.965926,
+        -0.258819
+      ]
+    },
+    {
+      "az": 1,
+      "el": 1,
+      "dir": [
+        -0.683013,
+        0.258819,
+        0.683013
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.183013,
+        0.965926,
+        -0.183013
+      ]
+    },
+    {
+      "az": 2,
+      "el": 1,
+      "dir": [
+        -0.965926,
+        0.258819,
+        0.0
+      ],
+      "right": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.258819,
+        0.965926,
+        0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 1,
+      "dir": [
+        -0.683013,
+        0.258819,
+        -0.683013
+      ],
+      "right": [
+        0.707107,
+        -0.0,
+        -0.707107
+      ],
+      "up": [
+        0.183013,
+        0.965926,
+        0.183013
+      ]
+    },
+    {
+      "az": 4,
+      "el": 1,
+      "dir": [
+        -0.0,
+        0.258819,
+        -0.965926
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        -0.0,
+        0.965926,
+        0.258819
+      ]
+    },
+    {
+      "az": 5,
+      "el": 1,
+      "dir": [
+        0.683013,
+        0.258819,
+        -0.683013
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "up": [
+        -0.183013,
+        0.965926,
+        0.183013
+      ]
+    },
+    {
+      "az": 6,
+      "el": 1,
+      "dir": [
+        0.965926,
+        0.258819,
+        -0.0
+      ],
+      "right": [
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "up": [
+        -0.258819,
+        0.965926,
+        0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 1,
+      "dir": [
+        0.683013,
+        0.258819,
+        0.683013
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.183013,
+        0.965926,
+        -0.183013
+      ]
+    },
+    {
+      "az": 0,
+      "el": 2,
+      "dir": [
+        -0.0,
+        0.5,
+        0.866025
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        0.866025,
+        -0.5
+      ]
+    },
+    {
+      "az": 1,
+      "el": 2,
+      "dir": [
+        -0.612372,
+        0.5,
+        0.612372
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.353553,
+        0.866025,
+        -0.353553
+      ]
+    },
+    {
+      "az": 2,
+      "el": 2,
+      "dir": [
+        -0.866025,
+        0.5,
+        0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.5,
+        0.866025,
+        0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 2,
+      "dir": [
+        -0.612372,
+        0.5,
+        -0.612372
+      ],
+      "right": [
+        0.707107,
+        -0.0,
+        -0.707107
+      ],
+      "up": [
+        0.353553,
+        0.866025,
+        0.353553
+      ]
+    },
+    {
+      "az": 4,
+      "el": 2,
+      "dir": [
+        -0.0,
+        0.5,
+        -0.866025
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        -0.0,
+        0.866025,
+        0.5
+      ]
+    },
+    {
+      "az": 5,
+      "el": 2,
+      "dir": [
+        0.612372,
+        0.5,
+        -0.612372
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "up": [
+        -0.353553,
+        0.866025,
+        0.353553
+      ]
+    },
+    {
+      "az": 6,
+      "el": 2,
+      "dir": [
+        0.866025,
+        0.5,
+        -0.0
+      ],
+      "right": [
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "up": [
+        -0.5,
+        0.866025,
+        0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 2,
+      "dir": [
+        0.612372,
+        0.5,
+        0.612372
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.353553,
+        0.866025,
+        -0.353553
+      ]
+    },
+    {
+      "az": 0,
+      "el": 3,
+      "dir": [
+        -0.0,
+        0.707107,
+        0.707107
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        0.707107,
+        -0.707107
+      ]
+    },
+    {
+      "az": 1,
+      "el": 3,
+      "dir": [
+        -0.5,
+        0.707107,
+        0.5
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.5,
+        0.707107,
+        -0.5
+      ]
+    },
+    {
+      "az": 2,
+      "el": 3,
+      "dir": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.707107,
+        0.707107,
+        -0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 3,
+      "dir": [
+        -0.5,
+        0.707107,
+        -0.5
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.5,
+        0.707107,
+        0.5
+      ]
+    },
+    {
+      "az": 4,
+      "el": 3,
+      "dir": [
+        -0.0,
+        0.707107,
+        -0.707107
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        -0.0,
+        0.707107,
+        0.707107
+      ]
+    },
+    {
+      "az": 5,
+      "el": 3,
+      "dir": [
+        0.5,
+        0.707107,
+        -0.5
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "up": [
+        -0.5,
+        0.707107,
+        0.5
+      ]
+    },
+    {
+      "az": 6,
+      "el": 3,
+      "dir": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "right": [
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "up": [
+        -0.707107,
+        0.707107,
+        -0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 3,
+      "dir": [
+        0.5,
+        0.707107,
+        0.5
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.5,
+        0.707107,
+        -0.5
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "cols": 8,
+      "rows": 8,
+      "width_px": 2048,
+      "height_px": 2048,
+      "albedo": "sunmeadow_trees_albedo_0.png",
+      "albedo_sha256": "9066dfac0cf4d04cbe4c599ba8d371803b9f05fe5cd7916c44bf04de799b316b",
+      "albedo_ktx2": "sunmeadow_trees_albedo_0.ktx2",
+      "albedo_ktx2_sha256": "22065d423ad6077d20cf64b957e3fde59bb5dd3f5de23e2dba364d52189180da",
+      "normal": "sunmeadow_trees_normal_0.png",
+      "normal_sha256": "afe704c036b5a28a80b49ae3fef0c17d611aa1941d714e5e60659e2f70a08cbb",
+      "normal_width_px": 1024,
+      "normal_height_px": 1024,
+      "normal_ktx2": "sunmeadow_trees_normal_0.ktx2",
+      "normal_ktx2_sha256": "9eaccb4da4a5ff64caa9bc3a0acf33a0108474d18ece18e4a26f5143cf18a9ed"
+    },
+    {
+      "cols": 8,
+      "rows": 4,
+      "width_px": 2048,
+      "height_px": 1024,
+      "albedo": "sunmeadow_trees_albedo_1.png",
+      "albedo_sha256": "bbd8ea882d35da9ccd3786c1d8783cf2213395bc97e6ef804b105de51c894aa1",
+      "albedo_ktx2": "sunmeadow_trees_albedo_1.ktx2",
+      "albedo_ktx2_sha256": "aa0730547d73f84c1354474166090c9f38b0ace59c178396c29a0eed45e57a8e",
+      "normal": "sunmeadow_trees_normal_1.png",
+      "normal_sha256": "7ed49dec5c52f9c960f162fe87b5c7f2907a54dcede23893db8994b6321bb368",
+      "normal_width_px": 1024,
+      "normal_height_px": 512,
+      "normal_ktx2": "sunmeadow_trees_normal_1.ktx2",
+      "normal_ktx2_sha256": "1645c2f6c89d4a2d3a48bc1a8ae636e3997bdc99a76501f0e75056c4fe67617f"
+    }
+  ],
+  "objects": [
+    {
+      "id": "meadow_tree_A",
+      "source": "assets/models/impostors/sunmeadow-nature-v1/source/env_meadow_tree_v2.plain.glb",
+      "source_sha256": "08195016a5e31fb56688687101f07b180f3e63344abd4dbb6d5c7d15978f80bb",
+      "source_triangles": 1950,
+      "page": 0,
+      "col": 0,
+      "row": 0,
+      "card_size_m": 9.5933,
+      "height_m": 7.0,
+      "horizontal_radius_m": 3.0226,
+      "center_from_pivot": [
+        -0.0,
+        3.500009,
+        -0.0
+      ],
+      "center_from_origin": [
+        0.087217,
+        3.500009,
+        0.011228
+      ],
+      "pivot_from_origin": [
+        0.087217,
+        0.0,
+        0.011228
+      ]
+    },
+    {
+      "id": "meadow_tree_B",
+      "source": "assets/models/impostors/sunmeadow-nature-v1/source/env_meadow_tree_v2.plain.glb",
+      "source_sha256": "08195016a5e31fb56688687101f07b180f3e63344abd4dbb6d5c7d15978f80bb",
+      "source_triangles": 1950,
+      "page": 0,
+      "col": 0,
+      "row": 4,
+      "card_size_m": 7.4231,
+      "height_m": 5.6,
+      "horizontal_radius_m": 2.247,
+      "center_from_pivot": [
+        -0.0,
+        2.799986,
+        -0.0
+      ],
+      "center_from_origin": [
+        0.089472,
+        2.799986,
+        -0.070418
+      ],
+      "pivot_from_origin": [
+        0.089472,
+        0.0,
+        -0.070418
+      ]
+    },
+    {
+      "id": "meadow_tree_C",
+      "source": "assets/models/impostors/sunmeadow-nature-v1/source/env_meadow_tree_v2.plain.glb",
+      "source_sha256": "08195016a5e31fb56688687101f07b180f3e63344abd4dbb6d5c7d15978f80bb",
+      "source_triangles": 1950,
+      "page": 1,
+      "col": 0,
+      "row": 0,
+      "card_size_m": 12.082,
+      "height_m": 8.6,
+      "horizontal_radius_m": 3.9147,
+      "center_from_pivot": [
+        -0.0,
+        4.299997,
+        -0.0
+      ],
+      "center_from_origin": [
+        -0.08627,
+        4.299997,
+        0.056762
+      ],
+      "pivot_from_origin": [
+        -0.08627,
+        0.0,
+        0.056762
+      ]
+    }
+  ],
+  "status": "CANDIDATE: verify in Babylon (tests/impostor-review.html) before replacing meshes"
+}

@@ -1,0 +1,45 @@
+{
+  "abilities": [
+    {
+      "id": "attack",
+      "cooldown_ms": 400,
+      "range": 3.0,
+      "damage": 25,
+      "targets": 1,
+      "arc_deg": 90,
+      "windup_ms": 100,
+      "active_ms": 60,
+      "recovery_ms": 200
+    },
+    {
+      "id": "arc_slash",
+      "cooldown_ms": 5000,
+      "range": 4.0,
+      "damage": 45,
+      "targets": 3,
+      "arc_deg": 120,
+      "windup_ms": 250,
+      "active_ms": 100,
+      "recovery_ms": 350
+    },
+    {
+      "id": "dodge",
+      "cooldown_ms": 900,
+      "duration_ms": 280,
+      "speed_mult": 2.2
+    },
+    {
+      "id": "guard",
+      "cooldown_ms": 6000,
+      "reduction_pct": 70,
+      "perfect_ms": 300,
+      "max_hold_ms": 1500
+    },
+    {
+      "id": "potion",
+      "cooldown_ms": 10000,
+      "heal": 40,
+      "carry": 3
+    }
+  ]
+}

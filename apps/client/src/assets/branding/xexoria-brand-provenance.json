@@ -1,0 +1,45 @@
+{
+  "brand": "Xexoria",
+  "wordmark_pixels": "XEXORIA",
+  "tagline_pixels": "A WORLD BEYOND",
+  "source": {
+    "kind": "user-provided clipboard PNG",
+    "path": "%USERPROFILE%\\AppData\\Local\\Temp\\codex-clipboard-d1864753-5bac-4b8c-bed8-ee4f1331f142.png",
+    "sha256": "bf7a83cb96a53270ca910128d393c1eb630a039913f1c61da0a3a2659cc2c652"
+  },
+  "asset": {
+    "path": "apps/client/src/assets/branding/xexoria_logo.png",
+    "format": "PNG",
+    "dimensions_px": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "alpha_nontransparent_bbox": [
+      17,
+      0,
+      2168,
+      724
+    ],
+    "bytes": 1694064,
+    "sha256": "bf7a83cb96a53270ca910128d393c1eb630a039913f1c61da0a3a2659cc2c652",
+    "pixel_modified": false
+  },
+  "integration": {
+    "html": "apps/client/index.html",
+    "stylesheet": "apps/client/src/assets/branding/branding.css",
+    "logo_surface": "login/auth card only; not added to gameplay HUD",
+    "alt": "XEXORIA — A WORLD BEYOND",
+    "internal_protocol_storage_identifiers_changed": false,
+    "source_hashes": {
+      "index_html_sha256": "739e300c26d1181a3599d8cd511de5a14141788bb6a32ed4ca1d24ba2dca8841",
+      "branding_css_sha256": "a4c23ed71e44fb0d78e184f9dee9941bcf0026a6fe42b8b8ea68d5b9242f82f1"
+    }
+  },
+  "notes": "Wordmark and tagline are displayed only from the supplied PNG; accessible alt describes the exact logo content. No lettering was regenerated or replaced with HTML text."
+}

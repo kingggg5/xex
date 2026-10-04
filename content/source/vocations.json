@@ -1,0 +1,29 @@
+{
+  "vocations": [
+    {
+      "id": "trailblade",
+      "name_key": "vocation_trailblade",
+      "hp": 100,
+      "speed": 4.5,
+      "stats": {
+        "str": 10,
+        "agi": 8,
+        "vit": 6,
+        "int": 4,
+        "dex": 8,
+        "luk": 4,
+        "max_base_level": 99,
+        "max_job_level": 50,
+        "base_exp": {
+          "base": 100,
+          "per_level": 20
+        },
+        "job_exp": {
+          "base": 80,
+          "per_level": 16
+        },
+        "stat_growth_levels": 10
+      }
+    }
+  ]
+}

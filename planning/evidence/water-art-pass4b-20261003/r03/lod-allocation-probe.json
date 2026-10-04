@@ -1,0 +1,127 @@
+{
+  "schema": "xexoria.r03-cell-lod-allocation/1",
+  "capturedBuild": "e4a74a15e5097e2c",
+  "cell": "-1,-1",
+  "entryCounts": {
+    "source": 618,
+    "overlay": 87,
+    "resolved": 693,
+    "landmarks": 31,
+    "allocated": 724,
+    "cell": 282,
+    "matchNative": true
+  },
+  "sourceLodTriangles": [
+    100202,
+    52776,
+    25694
+  ],
+  "fixedReserve": 168,
+  "crossfadeAndReserveTriangles": [
+    153146,
+    78638,
+    25862
+  ],
+  "hardcodedDressingCap": 40000,
+  "selected": {
+    "minimumLod": 2,
+    "triangles": 25862,
+    "lod0Triangles": 100370
+  },
+  "globalMaximum": 35062,
+  "nativeGlobalMaximum": 35062,
+  "contributors": [
+    {
+      "id": "sm_medium_03",
+      "count": 48,
+      "tris": [
+        32928,
+        16416,
+        6528
+      ]
+    },
+    {
+      "id": "sm_reeds_01",
+      "count": 43,
+      "tris": [
+        7052,
+        4300,
+        1763
+      ]
+    },
+    {
+      "id": "sm_medium_01",
+      "count": 10,
+      "tris": [
+        6160,
+        3080,
+        1220
+      ]
+    },
+    {
+      "id": "cc0_kenney_bush",
+      "count": 12,
+      "tris": [
+        6000,
+        6000,
+        6000
+      ]
+    },
+    {
+      "id": "sm_small_01",
+      "count": 20,
+      "tris": [
+        5880,
+        2920,
+        1160
+      ]
+    },
+    {
+      "id": "sm_medium_02",
+      "count": 8,
+      "tris": [
+        5488,
+        2736,
+        1088
+      ]
+    },
+    {
+      "id": "sm_grotto_organic_r03",
+      "count": 1,
+      "tris": [
+        5460,
+        1920,
+        578
+      ]
+    },
+    {
+      "id": "sm_reeds_02",
+      "count": 50,
+      "tris": [
+        5300,
+        3000,
+        2050
+      ]
+    },
+    {
+      "id": "sm_small_03",
+      "count": 12,
+      "tris": [
+        3528,
+        1752,
+        696
+      ]
+    },
+    {
+      "id": "cc0_qn_mushroom_common",
+      "count": 3,
+      "tris": [
+        2640,
+        792,
+        369
+      ]
+    }
+  ],
+  "sourceSha256": "23eb1aba3d29f4a07648c83d0c2da4f7d6270f130bec0865b9f45603bd2454f1",
+  "limits": "Count reconstruction uses captured grounding-pending IDs and current immutable source datasets/registry; allocation occurs before distance/density filtering. Layout120k overall allowance is distinct from the40k dressing suballocation. No policy change."
+}

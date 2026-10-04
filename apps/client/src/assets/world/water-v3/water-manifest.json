@@ -1,0 +1,424 @@
+{
+  "schema": "xexoria.water-bodies.v1",
+  "region": "sunmeadow",
+  "recipe": "sunmeadow-water-v3/1",
+  "seed": 20261002,
+  "layout_sha256": "d263582c15fabe8efbbac8e2ed55c1929e3b14c8b9d043309fb1003cc627314d",
+  "axes": "canonical Babylon world x,y,z metres; exporter Blender=(x,-z,y); alignWorldAuthoredGlb",
+  "bodies": [
+    "bluff_falls",
+    "falls_pool",
+    "sunmeadow_stream",
+    "grotto_moon_pool",
+    "lotus_mere_pond",
+    "brightwater_cove_lake",
+    "blueprint_P1a",
+    "blueprint_P1b",
+    "blueprint_P1c",
+    "blueprint_P2"
+  ],
+  "anchors": {
+    "anchor_sm_falls_mouth": {
+      "position": [
+        -6.9,
+        7.6,
+        -38.0
+      ],
+      "dir": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "width": 1.6
+    },
+    "anchor_sm_falls_lip": {
+      "position": [
+        -7.42,
+        7.45,
+        -38.0
+      ]
+    },
+    "anchor_sm_falls_landing": {
+      "position": [
+        -9.3116,
+        -0.35,
+        -38.0
+      ],
+      "normal": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius": 1.1
+    },
+    "anchor_sm_pool_basin": {
+      "position": [
+        -9.6,
+        -0.35,
+        -38.0
+      ],
+      "radius": 2.6
+    },
+    "anchor_sm_pool_outlet": {
+      "position": [
+        -10.1908,
+        -0.35,
+        -40.532
+      ],
+      "dir": [
+        -0.2272,
+        0.0,
+        -0.9738
+      ],
+      "width": 3.0
+    },
+    "emit_mist_sm_bluff_falls": {
+      "position": [
+        -9.3116,
+        -0.1,
+        -38.0
+      ]
+    },
+    "emit_spray_sm_bluff_falls": {
+      "position": [
+        -9.3116,
+        -0.3,
+        -38.0
+      ],
+      "radius": 1.1
+    },
+    "emit_spray_sm_bluff_falls_lip": {
+      "position": [
+        -7.42,
+        7.4,
+        -38.0
+      ],
+      "dir": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "anchor_sm_stream_exit_lip": {
+      "position": [
+        -60.6794,
+        -0.35,
+        -58.8811
+      ]
+    },
+    "anchor_sm_stream_exit_landing": {
+      "position": [
+        -61.213,
+        -0.85,
+        -59.0143
+      ]
+    },
+    "emit_spray_sm_stream_exit": {
+      "position": [
+        -61.213,
+        -0.8,
+        -59.0143
+      ]
+    }
+  },
+  "atlas": {
+    "width": 1024,
+    "height": 128,
+    "islands": {
+      "stream": {
+        "rect_px": [
+          4,
+          4,
+          929,
+          60
+        ],
+        "s_range": [
+          -0.5,
+          73.82
+        ],
+        "u_range": [
+          -2.4,
+          2.4
+        ]
+      },
+      "pool": {
+        "rect_px": [
+          941,
+          4,
+          69,
+          69
+        ],
+        "v_range": [
+          -5.5,
+          0.019999999999999574
+        ],
+        "u_range": [
+          -2.7600000000000002,
+          2.7599999999999993
+        ],
+        "frame": "straight outlet frame: U = (p-O).N0, V = (p-O).T0"
+      },
+      "grotto_moon_pool": {
+        "rect_px": [
+          12,
+          82,
+          64,
+          40
+        ],
+        "bounds_xz": [
+          6.1000000000000005,
+          -43.0,
+          8.700000000000001,
+          -40.400000000000006
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      },
+      "lotus_mere_pond": {
+        "rect_px": [
+          84,
+          82,
+          256,
+          40
+        ],
+        "bounds_xz": [
+          -53.95,
+          -4.4,
+          -38.6,
+          11.3
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      },
+      "brightwater_cove_lake": {
+        "rect_px": [
+          348,
+          82,
+          512,
+          40
+        ],
+        "bounds_xz": [
+          -64.0,
+          -93.2,
+          -47.6,
+          -67.0
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      },
+      "blueprint_P1a": {
+        "rect_px": [
+          868,
+          82,
+          32,
+          40
+        ],
+        "bounds_xz": [
+          31.4,
+          -78.85,
+          34.6,
+          -77.15
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      },
+      "blueprint_P1b": {
+        "rect_px": [
+          904,
+          82,
+          32,
+          40
+        ],
+        "bounds_xz": [
+          29.6,
+          -77.85,
+          32.0,
+          -76.35
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      },
+      "blueprint_P1c": {
+        "rect_px": [
+          940,
+          82,
+          32,
+          40
+        ],
+        "bounds_xz": [
+          33.75,
+          -79.7,
+          36.45,
+          -78.3
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      },
+      "blueprint_P2": {
+        "rect_px": [
+          976,
+          82,
+          40,
+          40
+        ],
+        "bounds_xz": [
+          18.5,
+          -58.0,
+          25.5,
+          -54.0
+        ],
+        "depth_method": "analytical shoreline distance; no dynamic depth"
+      }
+    }
+  },
+  "meshes": {
+    "surface": {
+      "name": "fx_water_sm_surface",
+      "vertices": 831,
+      "triangles": 1245,
+      "attributes": [
+        "position",
+        "normal",
+        "uv0",
+        "indices",
+        "uv1"
+      ]
+    },
+    "falls0": {
+      "name": "fx_waterfall_sm_lod0",
+      "vertices": 973,
+      "triangles": 1380,
+      "attributes": [
+        "position",
+        "normal",
+        "uv0",
+        "indices",
+        "color"
+      ]
+    },
+    "falls1": {
+      "name": "fx_waterfall_sm_lod1",
+      "vertices": 705,
+      "triangles": 1016,
+      "attributes": [
+        "position",
+        "normal",
+        "uv0",
+        "indices",
+        "color"
+      ]
+    },
+    "falls2": {
+      "name": "fx_waterfall_sm_lod2",
+      "vertices": 366,
+      "triangles": 476,
+      "attributes": [
+        "position",
+        "normal",
+        "uv0",
+        "indices",
+        "color"
+      ]
+    }
+  },
+  "geometry_sha256": "d8b93ec56b9b75d3ec5ccb08a0cb9fc4114b55a5bdc52f5313b8cd9b990cb1c9",
+  "files": {
+    "bank_strip_albedo_256x512.png": {
+      "sha256": "238b878c8703083bdfdade4b6a505f414091666c9151c6aa7fb919a60c35c092",
+      "bytes": 197732
+    },
+    "bank_strip_normal_256x512.png": {
+      "sha256": "36a4b579d53c7beee43c4bf2d815ef2abffbcb68120ca98afef6b91b61e7c9d0",
+      "bytes": 201619
+    },
+    "river_stone_albedo_512.png": {
+      "sha256": "7bad2829075517ddf04f93a4e9eb91c0e6eff8cb08ed3e023b908be05253a441",
+      "bytes": 213353
+    },
+    "river_stone_normal_512.png": {
+      "sha256": "2f1d70230b979e5c0daf354f1af0d75b3fe352fc5013bcb284e3280c7f91a575",
+      "bytes": 190769
+    },
+    "stream_bed_albedo_512.png": {
+      "sha256": "ca87d8e078a9b0a723fe9342ab872178bc6259a31081b1b0df63ab000e6406bf",
+      "bytes": 294094
+    },
+    "stream_bed_normal_512.png": {
+      "sha256": "60b2cb61853d37aa42716cdf7b4d391f94ea189d227df7ab21391ac8660279ca",
+      "bytes": 264027
+    },
+    "stream_bed_orm_512.png": {
+      "sha256": "81fec9f454470a473baf677735346864b7bc624b0f1c221e21f76db4571022db",
+      "bytes": 168652
+    },
+    "textures-report.json": {
+      "sha256": "e87ec7606b4ef08449071a9aeaf3be9a568b3eb11558cbc2f2023731a50586d7",
+      "bytes": 4106
+    },
+    "water_flow.bin": {
+      "sha256": "e286e9203371c37e07c5eaaef6dc9e793bb83192c8381bc528b5ee9949c1818d",
+      "bytes": 524288
+    },
+    "water_flow_low.bin": {
+      "sha256": "312d055d147a029ca375803e39f6a2d200698541b504a8015df1bf03802edf88",
+      "bytes": 131072
+    },
+    "water_foam_noise_128.png": {
+      "sha256": "d728c86ca7499f9decd51b5b3831d09921c6b4343083d008070dc9534c61ee91",
+      "bytes": 41583
+    },
+    "water_foam_noise_256.png": {
+      "sha256": "d09283796d106c02e294fe207a9072b38be962ac7a3666fa45ce1d990aa727f0",
+      "bytes": 144106
+    },
+    "water_masks.bin": {
+      "sha256": "8f0dad5413a629869818f847e51a56b807a64425e410ae1fff8fa51eb975b999",
+      "bytes": 524288
+    },
+    "water_masks_low.bin": {
+      "sha256": "be8179133655aa262cc9ae3c6e72fe958002addcd05623a3e83e45dca88f2c9f",
+      "bytes": 131072
+    },
+    "water_ripple_normal_256.png": {
+      "sha256": "7937a28ba6bfc4d9c6ccea65d4249d9f71f564e5e0b3bdc172d2313e200a90de",
+      "bytes": 115041
+    },
+    "water_ripple_normal_512.png": {
+      "sha256": "2851b9c5f7edbd53b6181872ba54424fe14eb22796778d7f02116f0ab2ec645d",
+      "bytes": 362820
+    },
+    "water_swell_normal_256.png": {
+      "sha256": "d4aee800567f2c5055e25e15ec6ddb1e83ac9f51d36cdfec185fc0c700538c0c",
+      "bytes": 33769
+    },
+    "waterfall_streaks_128x512.png": {
+      "sha256": "06ea139bfe578de4ed387f3ba0c422e04b45f277e8c6eae79e0d595b3f2dcf17",
+      "bytes": 116078
+    },
+    "waterfall_streaks_64x256.png": {
+      "sha256": "a52785fe9629a64d3f086c12fb1ad5b19570eb73ebf43b87fe0b94aa050d1fe6",
+      "bytes": 36299
+    }
+  },
+  "maps": "analytical depth/contact/flow; bridge sky mask is authored approximation, canopy raycast UNVERIFIED",
+  "support": {
+    "bed_triangles": 4765,
+    "bank_triangles": 1938,
+    "draws": 2,
+    "glb": "env_sunmeadow_water_banks_v3.glb",
+    "physical_support_y": 0,
+    "host_cut_required": true,
+    "sha256": "6cea1e4e5114505f9f56386406eeea061c65c0592740dcf1ed858e9cce73a182",
+    "runtime_sha256": "897ba86954e62ba6d09fc4286b451212eea56f43fb9acc5ba3b7154c7f5447d6",
+    "runtime_glb": "env_sunmeadow_water_banks_v3.runtime.glb"
+  },
+  "lake_atlas_density": "shared spare rows, coarser lakes preserve the 3.3 MiB original budget; shoreline analytical smooth width 0.65m",
+  "provenance": "project-authored procedural, no third-party assets",
+  "glb": "env_sunmeadow_water_v3.glb",
+  "blueprint": {
+    "source_sha256": "0baf981b84f41ce2a9416856b40c03448b17eb96e89f680619e1ab7de69e9d16",
+    "bodies": [
+      "blueprint_P1a",
+      "blueprint_P1b",
+      "blueprint_P1c",
+      "blueprint_P2"
+    ],
+    "original_surface_triangles": 1203,
+    "physics_admission": "UNVERIFIED"
+  },
+  "glb_sha256": "0fd5f9359a656678a436de474030ccbc41dfad84fc09b5e8f12f70fbcefe1bda"
+}

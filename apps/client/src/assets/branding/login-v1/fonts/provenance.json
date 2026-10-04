@@ -1,0 +1,38 @@
+{
+  "source": "Google Fonts official CSS2 and google/fonts repository",
+  "delivery": "Self-hosted WOFF2 with font-display:swap",
+  "files": [
+    {
+      "family": "Cinzel",
+      "subset": "latin",
+      "file": "cinzel-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/cinzel/v26/8vIJ7ww63mVu7gt79mT7.woff2",
+      "bytes": 25904,
+      "sha256": "09941fb1c169c38fd414536b37690057fc01b3117a5c63dd6571186540c8f370"
+    },
+    {
+      "family": "Cormorant Garamond",
+      "subset": "latin",
+      "file": "cormorant-garamond-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2",
+      "bytes": 37640,
+      "sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+    },
+    {
+      "family": "Noto Serif Thai",
+      "subset": "thai",
+      "file": "noto-serif-thai-thai.woff2",
+      "url": "https://fonts.gstatic.com/s/notoserifthai/v28/k3kHo80MPvpLmixYH7euCxWpSMu3-gcWGj0hHAKGvUQleOfz-UhI.woff2",
+      "bytes": 32728,
+      "sha256": "9f3427e0d6a6ed4d5d1aa4cec9d0633771f46648bcfd39f9f0f4889a446141bb"
+    },
+    {
+      "family": "Noto Serif Thai",
+      "subset": "latin",
+      "file": "noto-serif-thai-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/notoserifthai/v28/k3kHo80MPvpLmixYH7euCxWpSMu3-gcWGj0hHAKGvUQlePPz-Q.woff2",
+      "bytes": 36164,
+      "sha256": "2d9bafd2b21e96ef27c165012ed36a050dd7f32738fcb32066c5ed528e32fe14"
+    }
+  ]
+}

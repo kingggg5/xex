@@ -1,0 +1,17 @@
+// Compare packed runtime triangles, including colour/UV, independently of index offsets.
+import fs from 'node:fs';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../../..');
+const r01=path.join(root,'assets/models/reference-city/r5/arrival-hlod-r01');
+const r02=path.join(root,'assets/models/reference-city/r5/arrival-hlod-r02');
+function parse(file){const bytes=fs.readFileSync(file);let doc,bin;for(let o=12;o<bytes.length;){const n=bytes.readUInt32LE(o),kind=bytes.readUInt32LE(o+4);if(kind===0x4e4f534a)doc=JSON.parse(bytes.subarray(o+8,o+8+n));if(kind===0x004e4942)bin=bytes.subarray(o+8,o+8+n);o+=8+n;}return{doc,bin,sha256:createHash('sha256').update(bytes).digest('hex')};}
+function triangleBag(g){const bag=new Map();let count=0;for(const node of g.doc.nodes){if(node.mesh===undefined)continue;for(const p of g.doc.meshes[node.mesh].primitives){const keys=Object.keys(p.attributes).sort();const fields=keys.map(key=>{const a=g.doc.accessors[p.attributes[key]],v=g.doc.bufferViews[a.bufferView],width={5121:1,5122:2,5123:2,5125:4,5126:4}[a.componentType],components={VEC2:2,VEC3:3,VEC4:4}[a.type];return{key,width:width*components,stride:v.byteStride??width*components,offset:(v.byteOffset??0)+(a.byteOffset??0)};});const a=g.doc.accessors[p.indices],v=g.doc.bufferViews[a.bufferView],offset=(v.byteOffset??0)+(a.byteOffset??0);if(a.componentType!==5123)throw Error('Expected uint16 runtime indices');const prefix=JSON.stringify({material:g.doc.materials[p.material],translation:node.translation,scale:node.scale,rotation:node.rotation,matrix:node.matrix});for(let t=0;t<a.count;t+=3){const vertices=[0,1,2].map(c=>{const index=g.bin.readUInt16LE(offset+(t+c)*2);return fields.map(f=>f.key+':'+g.bin.subarray(f.offset+index*f.stride,f.offset+index*f.stride+f.width).toString('hex')).join('|');}).sort();const key=prefix+';'+vertices.join(';');bag.set(key,(bag.get(key)??0)+1);count++;}}}return{bag,count};}
+const original=parse(path.join(r01,'arrival-hlod-r01-runtime.glb'));
+const final=parse(path.join(r02,'arrival-hlod-r02-runtime-final.glb'));
+const a=triangleBag(original),b=triangleBag(final);
+let matching=0;for(const[key,n]of a.bag)matching+=Math.min(n,b.bag.get(key)??0);
+if(a.count!==22864||b.count!==23468||matching!==22256)throw Error('Runtime retention mismatch: '+JSON.stringify({old:a.count,new:b.count,matching}));
+const receipt={schema:'xexoria.arrival-r02-runtime-retention/1',status:'PACKED_RUNTIME_RETENTION_PASS',r01SHA:original.sha256,r02FinalSHA:final.sha256,r01Triangles:a.count,r02Triangles:b.count,exactRetainedPackedTriangles:matching,retiredR01Triangles:608,newGateTriangles:1212,retirement:'Two r01 wing forms268 each + two original tower bodies36 each. All remaining22,256 triangles match exact packed POSITION/NORMAL/COLOR_0/TEXCOORD_0 bytes and material/node transforms, independent of vertex-index relocation.',r01SixOtherFormsRetained:true,preliminaryAttributeRoundtrip:'Blender import/export changed a small amount of COLOR_0 on retained forms. Final CPU batch reads those six components directly from immutable r01 architecture, rather than the roundtrip copy.'};
+const output=path.join(r02,'runtime-r01-retention.json');if(fs.existsSync(output))throw Error('Create-only receipt exists');fs.writeFileSync(output,JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));

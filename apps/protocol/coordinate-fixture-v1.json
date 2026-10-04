@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "units": "m",
+  "handedness": "left",
+  "axes": {
+    "right": "+x",
+    "up": "+y",
+    "forward": "+z"
+  },
+  "tolerance_m": 0.001,
+  "unit_cube": {
+    "center": [0.5, 0.5, 0.5],
+    "dimensions": [1.0, 1.0, 1.0]
+  },
+  "player_capsule": {
+    "feet": [2.0, 0.0, 0.0],
+    "radius": 0.35,
+    "height": 1.8,
+    "axis": "+y"
+  },
+  "doorway": {
+    "floor_center": [6.0, 0.0, 0.0],
+    "clear_width": 1.5,
+    "clear_height": 2.2,
+    "wall_thickness": 0.3
+  },
+  "ramp": {
+    "lower_origin": [10.0, 0.0, 0.0],
+    "width": 2.0,
+    "run": 3.0,
+    "rise": 1.0
+  }
+}

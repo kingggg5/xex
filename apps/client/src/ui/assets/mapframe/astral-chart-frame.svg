@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+ <defs><linearGradient id="metal" x1="0" y1="0" x2="0" y2="256" gradientUnits="userSpaceOnUse"><stop stop-color="#f0d7a0"/><stop offset=".22" stop-color="#b39258"/><stop offset=".55" stop-color="#665134"/><stop offset="1" stop-color="#d4b274"/></linearGradient></defs>
+ <rect x="3" y="3" width="250" height="250" rx="15" stroke="#091422" stroke-width="6"/><rect x="4" y="4" width="248" height="248" rx="14" stroke="url(#metal)" stroke-width="3"/><rect x="9" y="9" width="238" height="238" rx="9" stroke="#e6cc924d"/>
+ <g stroke="url(#metal)" stroke-width="1.5" fill="#132436">
+  <path d="M7 35c14 0 21-7 28-28L24 9c-1 11-4 14-15 15Zm7-20c11 1 16 6 15 14-8 1-13-4-15-14Z"/>
+  <path d="M249 35c-14 0-21-7-28-28l11 2c1 11 4 14 15 15Zm-7-20c-11 1-16 6-15 14 8 1 13-4 15-14Z"/>
+  <path d="M7 221c14 0 21 7 28 28l-11-2c-1-11-4-14-15-15Zm7 20c11-1 16-6 15-14-8-1-13 4-15 14Z"/>
+  <path d="M249 221c-14 0-21 7-28 28l11-2c1-11 4-14 15-15Zm-7 20c-11-1-16-6-15-14 8-1 13 4 15 14Z"/>
+ </g>
+ <path d="m128 1 7 6-7 7-7-7Z" fill="#152a3b" stroke="url(#metal)"/><path d="m128 4 3 3-3 3-3-3Z" fill="#99d2dc"/>
+</svg>

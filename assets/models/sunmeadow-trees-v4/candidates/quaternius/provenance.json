@@ -1,0 +1,967 @@
+{
+ "asset": "Quaternius Stylized Nature MegaKit — Standard (free) edition",
+ "author": "Quaternius (quaternius.com)",
+ "pack_release": "July 2024 (pack page); archive entries dated 2024-07-30",
+ "route": "Route A, trees v4 (docs/reviews/2026-10-02-trees-free-assets-decision.md section 5)",
+ "status": "CANDIDATE SOURCE ONLY - not integrated into the game runtime, not committed",
+ "source": {
+  "pack_page": "https://quaternius.com/packs/stylizednaturemegakit.html",
+  "download_page": "https://quaternius.itch.io/stylized-nature-megakit",
+  "download_flow": "itch.io: Download Now -> 'No thanks, just take me to the downloads' -> 'Stylized Nature MegaKit[Standard].zip' (itch upload id 11055123, listed 99 MB); served from the itch.io storage mirror (signed URL not recorded)",
+  "download_tool": "Playwright MCP browser, saved directly with download.saveAs() into the kit folder",
+  "downloaded_ict": "2026-10-02T11:31:36+07:00",
+  "approval": "Owner approved free CC0 downloads (2026-10-01 10:40 and 2026-10-02; decision doc section 7)"
+ },
+ "licence": {
+  "spdx": "CC0-1.0",
+  "verdict": "CC0 1.0 Universal, stated by the archive's own licence file, the pack page and the itch.io listing",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "in_archive": {
+   "file": "License_Standard.txt",
+   "bytes": 852,
+   "archive_date": "2024-07-30 17:35:40",
+   "text": "This is the standard FREE version of the Stylized Nature MegaKit, which only contains \r\na portion of the models (68/116). You can buy the PRO version which has all the models,\r\nor the SOURCE version which has all the models and also includes Unity(URP), Unreal Engine and Godot projects\r\nwith the stylized shader already set up.\r\n\r\nYou can get the other versions from the website https://quaternius.com\r\n\r\n-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n-------------------------------------------------------\r\nJoin the Discord Server:\r\nhttps://discord.gg/vJqnRUYRfT\r\n"
+  },
+  "pack_page_statement": {
+   "url": "https://quaternius.com/packs/stylizednaturemegakit.html",
+   "quote": [
+    "License CC0 (link: https://creativecommons.org/publicdomain/zero/1.0/)",
+    "Free to use in personal, educational and commercial projects. (CC0 License)"
+   ],
+   "fetched_ict": "2026-10-02T11:28+07:00"
+  },
+  "itch_page_statement": {
+   "url": "https://quaternius.itch.io/stylized-nature-megakit",
+   "quote": [
+    "Free to use in personal, educational and commercial projects. (CC0 License)",
+    "Asset license: Creative Commons Zero v1.0 Universal"
+   ],
+   "listing_updated": "16 September 2026 @ 08:17 UTC",
+   "fetched_ict": "2026-10-02T11:29+07:00"
+  },
+  "discrepancy_to_report": {
+   "url": "https://quaternius.com/license.html",
+   "quote": [
+    "Quaternius Asset License (QAL) v1.0",
+    "Last updated: 8/28/2026",
+    "You can use these assets, free of charge, in personal, educational, and commercial games and other projects, with no credit required. You just can't resell or redistribute the assets themselves as assets.",
+    "7. Changes to This License: We may publish updated versions of this License for future Asset releases. Changes will not apply retroactively to Assets you've already obtained under an earlier version"
+   ],
+   "assessment": "The site-wide licence page now shows a newer custom licence (QAL v1.0, 2026-08-28) that is not CC0. This archive (2024-07-30) ships CC0 text, and the pack page and the itch listing (updated 2026-09-16) still state CC0 1.0 for this pack on the download date; a CC0 dedication cannot be withdrawn for copies obtained under it. Even under QAL, use inside the game is allowed without credit. Prudent rule either way: keep the raw kit outside the repo (Downloads\\Xexoria-Game\\kits) and ship only derived, game-ready assets; never republish the kit files as an asset pack.",
+   "fetched_ict": "2026-10-02T11:28+07:00"
+  },
+  "page_snapshots": {
+   "folder": "planning/evidence/sunmeadow-trees-v4/route-a/licence-snapshots/",
+   "files": {
+    "itch-stylized-nature-megakit-20261002.html": {
+     "bytes": 31100,
+     "sha256": "56a4dc03ebe52546a7bf6789dca2e65980982efd68a4caa80ae1d8199205a8dc"
+    },
+    "quaternius-license-page-20261002.html": {
+     "bytes": 10301,
+     "sha256": "d1b56be5228d372b049b45cc7447a823da7989a6cf7036f60cfac2284c8fcb0d"
+    },
+    "quaternius-pack-page-20261002.html": {
+     "bytes": 19899,
+     "sha256": "5ea514ac8547a0d9c35e74441ea4dc290652af2d01c4fb423fa7bf1728a85eb3"
+    }
+   }
+  },
+  "rule": "llm.txt rule 11: a local folder is not evidence of CC0; the statements above are the evidence"
+ },
+ "archive": {
+  "name": "Stylized Nature MegaKit[Standard].zip",
+  "path": "%USERPROFILE%/Downloads/Xexoria-Game/kits/quaternius-stylized-nature-megakit/Stylized Nature MegaKit[Standard].zip",
+  "bytes": 104088529,
+  "sha256": "298f6732b872e4cf7b30e6e7abf9641c7f6dc6b326df37ac089533ed7e3d58c9",
+  "immutable": "never modified; all work uses the extracted copy or in-memory imports",
+  "entries": 459,
+  "files": 454,
+  "uncompressed_bytes": 122116746,
+  "crc_test": "zipfile.testzip() = None (all entries OK)"
+ },
+ "extracted_copy": {
+  "path": "%USERPROFILE%/Downloads/Xexoria-Game/kits/quaternius-stylized-nature-megakit/extracted",
+  "files": 454,
+  "bytes": 122116746,
+  "size_mismatches_vs_archive": []
+ },
+ "file_list_summary": {
+  "by_top_folder": {
+   "FBX": {
+    "files": 68,
+    "bytes": 8512688,
+    "extensions": {
+     "fbx": 68
+    }
+   },
+   "FBX (Unity)": {
+    "files": 68,
+    "bytes": 8667648,
+    "extensions": {
+     "fbx": 68
+    }
+   },
+   "glTF": {
+    "files": 157,
+    "bytes": 49788641,
+    "extensions": {
+     "bin": 68,
+     "gltf": 68,
+     "ini": 1,
+     "png": 20
+    }
+   },
+   "(root)": {
+    "files": 5,
+    "bytes": 2516718,
+    "extensions": {
+     "jpg": 4,
+     "txt": 1
+    }
+   },
+   "OBJ": {
+    "files": 136,
+    "bytes": 13678580,
+    "extensions": {
+     "mtl": 68,
+     "obj": 68
+    }
+   },
+   "Textures": {
+    "files": 20,
+    "bytes": 38952471,
+    "extensions": {
+     "png": 20
+    }
+   }
+  },
+  "formats": "glTF 2.0 (.gltf + .bin + PNG), FBX, FBX (Unity), OBJ/MTL; shared PNG textures",
+  "gltf_models": 68,
+  "gltf_model_families": {
+   "Bush_Common": [
+    "Bush_Common"
+   ],
+   "Bush_Common_Flowers": [
+    "Bush_Common_Flowers"
+   ],
+   "Clover": [
+    "Clover_1",
+    "Clover_2"
+   ],
+   "CommonTree": [
+    "CommonTree_1",
+    "CommonTree_2",
+    "CommonTree_3",
+    "CommonTree_4",
+    "CommonTree_5"
+   ],
+   "DeadTree": [
+    "DeadTree_1",
+    "DeadTree_2",
+    "DeadTree_3",
+    "DeadTree_4",
+    "DeadTree_5"
+   ],
+   "Fern": [
+    "Fern_1"
+   ],
+   "Flower_3_Group": [
+    "Flower_3_Group"
+   ],
+   "Flower_3_Single": [
+    "Flower_3_Single"
+   ],
+   "Flower_4_Group": [
+    "Flower_4_Group"
+   ],
+   "Flower_4_Single": [
+    "Flower_4_Single"
+   ],
+   "Grass_Common_Short": [
+    "Grass_Common_Short"
+   ],
+   "Grass_Common_Tall": [
+    "Grass_Common_Tall"
+   ],
+   "Grass_Wispy_Short": [
+    "Grass_Wispy_Short"
+   ],
+   "Grass_Wispy_Tall": [
+    "Grass_Wispy_Tall"
+   ],
+   "Mushroom_Common": [
+    "Mushroom_Common"
+   ],
+   "Mushroom_Laetiporus": [
+    "Mushroom_Laetiporus"
+   ],
+   "Pebble_Round": [
+    "Pebble_Round_1",
+    "Pebble_Round_2",
+    "Pebble_Round_3",
+    "Pebble_Round_4",
+    "Pebble_Round_5"
+   ],
+   "Pebble_Square": [
+    "Pebble_Square_1",
+    "Pebble_Square_2",
+    "Pebble_Square_3",
+    "Pebble_Square_4",
+    "Pebble_Square_5",
+    "Pebble_Square_6"
+   ],
+   "Petal": [
+    "Petal_1",
+    "Petal_2",
+    "Petal_3",
+    "Petal_4",
+    "Petal_5"
+   ],
+   "Pine": [
+    "Pine_1",
+    "Pine_2",
+    "Pine_3",
+    "Pine_4",
+    "Pine_5"
+   ],
+   "Plant": [
+    "Plant_1",
+    "Plant_7"
+   ],
+   "Plant_1_Big": [
+    "Plant_1_Big"
+   ],
+   "Plant_7_Big": [
+    "Plant_7_Big"
+   ],
+   "RockPath_Round_Small": [
+    "RockPath_Round_Small_1",
+    "RockPath_Round_Small_2",
+    "RockPath_Round_Small_3"
+   ],
+   "RockPath_Round_Thin": [
+    "RockPath_Round_Thin"
+   ],
+   "RockPath_Round_Wide": [
+    "RockPath_Round_Wide"
+   ],
+   "RockPath_Square_Small": [
+    "RockPath_Square_Small_1",
+    "RockPath_Square_Small_2",
+    "RockPath_Square_Small_3"
+   ],
+   "RockPath_Square_Thin": [
+    "RockPath_Square_Thin"
+   ],
+   "RockPath_Square_Wide": [
+    "RockPath_Square_Wide"
+   ],
+   "Rock_Medium": [
+    "Rock_Medium_1",
+    "Rock_Medium_2",
+    "Rock_Medium_3"
+   ],
+   "TwistedTree": [
+    "TwistedTree_1",
+    "TwistedTree_2",
+    "TwistedTree_3",
+    "TwistedTree_4",
+    "TwistedTree_5"
+   ]
+  },
+  "tree_like_models_in_standard": {
+   "Bush_Common": [
+    "Bush_Common"
+   ],
+   "Bush_Common_Flowers": [
+    "Bush_Common_Flowers"
+   ],
+   "CommonTree": [
+    "CommonTree_1",
+    "CommonTree_2",
+    "CommonTree_3",
+    "CommonTree_4",
+    "CommonTree_5"
+   ],
+   "DeadTree": [
+    "DeadTree_1",
+    "DeadTree_2",
+    "DeadTree_3",
+    "DeadTree_4",
+    "DeadTree_5"
+   ],
+   "Pine": [
+    "Pine_1",
+    "Pine_2",
+    "Pine_3",
+    "Pine_4",
+    "Pine_5"
+   ],
+   "TwistedTree": [
+    "TwistedTree_1",
+    "TwistedTree_2",
+    "TwistedTree_3",
+    "TwistedTree_4",
+    "TwistedTree_5"
+   ]
+  },
+  "not_in_standard_edition": "Pro/Source-only models listed in glTF/desktop.ini (Birch, CherryBlossom, GiantPine, TallThick, Bush_Large_Flowers, Bush_Long_*, more plants, flowers and rocks), the .blend sources and the stylized leaf/grass shaders",
+  "notes": [
+   "glTF/desktop.ini is a Windows Explorer file shipped by the author (localized names, includes Pro names)",
+   "Leaves_GiantPine_C.png is shipped but used only by Pro GiantPine models"
+  ]
+ },
+ "gltf_folder_sha256": {
+  "Bark_DeadTree.png": {
+   "bytes": 4228870,
+   "sha256": "8f055724c35f8e8c5685a505775b3b9ebfc6b4745308ef35ce1cfe6fd976153f"
+  },
+  "Bark_DeadTree_Normal.png": {
+   "bytes": 5728199,
+   "sha256": "692da2f58909263f074cb17b36defd09f56bf89ab7efda567a9a3e59261747b3"
+  },
+  "Bark_NormalTree.png": {
+   "bytes": 3894788,
+   "sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+  },
+  "Bark_NormalTree_Normal.png": {
+   "bytes": 4384496,
+   "sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+  },
+  "Bark_TwistedTree.png": {
+   "bytes": 4630805,
+   "sha256": "01608a96c42954eb725b32824530b51e67a2f3d85432d21a8d8adff958d2084a"
+  },
+  "Bark_TwistedTree_Normal.png": {
+   "bytes": 5728199,
+   "sha256": "692da2f58909263f074cb17b36defd09f56bf89ab7efda567a9a3e59261747b3"
+  },
+  "Bush_Common.bin": {
+   "bytes": 91800,
+   "sha256": "a5e1a773c8ba78fd9c05a8b342131eba4879302a8fddd2c5186cab9ee1ef4966"
+  },
+  "Bush_Common.gltf": {
+   "bytes": 2101,
+   "sha256": "77811fca92610cb254713d3d49d5029ab6cf13050c3afb61aa942786a7b2ca90"
+  },
+  "Bush_Common_Flowers.bin": {
+   "bytes": 128928,
+   "sha256": "15f56a013afe0eecaded0eb97fd8f323305af11e1f0f7bb9b68472ec4cdc20d5"
+  },
+  "Bush_Common_Flowers.gltf": {
+   "bytes": 3654,
+   "sha256": "08768c680e3abeafd25858c9d3f369bcb7eed014661d3b6825a397f2a6a3deea"
+  },
+  "Clover_1.bin": {
+   "bytes": 12956,
+   "sha256": "788fabaffc3f8f2825ad88399bd4725d8bc397225d93d00926c3223fdee9516b"
+  },
+  "Clover_1.gltf": {
+   "bytes": 2074,
+   "sha256": "05fe48cdf1f3db879371a6ba0d843fcd407667b7680def5716c9f286efe0306b"
+  },
+  "Clover_2.bin": {
+   "bytes": 21012,
+   "sha256": "eeabca833167f3e20d6f157b3e7885e0ade908b1f1d61909812076ad52d44047"
+  },
+  "Clover_2.gltf": {
+   "bytes": 2077,
+   "sha256": "8ef8e861209c9b86e3d8f7a9c6d5653e5e0051a9a86cf22cb57849c63cc9cf10"
+  },
+  "CommonTree_1.bin": {
+   "bytes": 491576,
+   "sha256": "9dd689e84e1aa2f5b08db8def591254d582783c73737af54ba0d89b3e549c3ae"
+  },
+  "CommonTree_1.gltf": {
+   "bytes": 3869,
+   "sha256": "b51cdea6545edb51d102dd6c27caafe62aa75e3c328ac8f9039f4e7bfd690bfa"
+  },
+  "CommonTree_2.bin": {
+   "bytes": 423024,
+   "sha256": "a273d69de31a675a9d7e3eb3c43f804aef2d1b031692111b9e76eb3b0b686d0c"
+  },
+  "CommonTree_2.gltf": {
+   "bytes": 3866,
+   "sha256": "67160975f0ac991b4a2ffb2add4ab4037b5e9c1bef9f66dac5235fcf0ba9bd52"
+  },
+  "CommonTree_3.bin": {
+   "bytes": 296984,
+   "sha256": "24541f46fd9553e2389aba15575f2697009226e82118ed76868284114fd12b49"
+  },
+  "CommonTree_3.gltf": {
+   "bytes": 3864,
+   "sha256": "17c6537aa8042bb7255fbb501bf7aeb2b6db87c16766f794f9c37be3ce70c976"
+  },
+  "CommonTree_4.bin": {
+   "bytes": 307596,
+   "sha256": "4fa52cc5bb9aa42d5ce1eee6cffca0f0a7f25dd07fe4431e371548e89bc30233"
+  },
+  "CommonTree_4.gltf": {
+   "bytes": 3865,
+   "sha256": "ddf0e8837705702871d3f03de8cf7aeed61ad4bf8ee92052b6f95bdd771297b6"
+  },
+  "CommonTree_5.bin": {
+   "bytes": 252996,
+   "sha256": "0e617612d50e6bb2ca3c64338383f8938ce9e04d55b548ff11cec7a7b7d8f072"
+  },
+  "CommonTree_5.gltf": {
+   "bytes": 3860,
+   "sha256": "fb7061f2bf9fe850870b056431f8f66cd8fdeb443c90695c5efbcf1fe6876d53"
+  },
+  "DeadTree_1.bin": {
+   "bytes": 422744,
+   "sha256": "d623cfc5199a732cc988175fad149e8afcb84516df01a8dc1e378844019f408c"
+  },
+  "DeadTree_1.gltf": {
+   "bytes": 2206,
+   "sha256": "b7ca9e90cbd8e8e3b3b17fd9c8fd57184ebf4986ff433ee3f2212f37f3114469"
+  },
+  "DeadTree_2.bin": {
+   "bytes": 453824,
+   "sha256": "de7861981fa7ff6faafc30a705e49b45c315a718747e0ae08dc5acb34eedea10"
+  },
+  "DeadTree_2.gltf": {
+   "bytes": 2213,
+   "sha256": "5cbff9f1277e905eaf8e40d9028fa80b0d6b635aa0677076ffa81fcf377ffabf"
+  },
+  "DeadTree_3.bin": {
+   "bytes": 415740,
+   "sha256": "5c3b29bf37c700f5ca545b315f6423d966562d7af01116fdd2d8f94a6173959e"
+  },
+  "DeadTree_3.gltf": {
+   "bytes": 2211,
+   "sha256": "aa74a47c69259f217388d7b3e2871d76c0385449fc1efd92299c2e55417fdffc"
+  },
+  "DeadTree_4.bin": {
+   "bytes": 401556,
+   "sha256": "6195e8027400bf7d20297f78224b5e7cfaf1e558864446691a9b2a9aa992c6ab"
+  },
+  "DeadTree_4.gltf": {
+   "bytes": 2211,
+   "sha256": "cc238a6b0b4b0a1b7f2c66464afd0122b4a4af0320b95a3acb1d83e4afbfd288"
+  },
+  "DeadTree_5.bin": {
+   "bytes": 393840,
+   "sha256": "1723668be1f3da485ad31415d71ea9c8aa6e9b5962b628d68f3551c509dceda4"
+  },
+  "DeadTree_5.gltf": {
+   "bytes": 2211,
+   "sha256": "8502cb23774f8771b047053bef8a4a25fbcb30340a160c4b00c0af6ba614284f"
+  },
+  "Fern_1.bin": {
+   "bytes": 11448,
+   "sha256": "5e92b87a27f81a69fe15347a533df3c77d567b48298dceeef43168ccb7c22853"
+  },
+  "Fern_1.gltf": {
+   "bytes": 2058,
+   "sha256": "d41915cffe9dbbde1ae88be381eb9c60f7caa2274511436cc78fe4de627468ab"
+  },
+  "Flower_3_Group.bin": {
+   "bytes": 27772,
+   "sha256": "5ab387dd3d6fe181df3af4eeac4df85533e4c27e77545ae39a61e0c2aaaab248"
+  },
+  "Flower_3_Group.gltf": {
+   "bytes": 3629,
+   "sha256": "4df1612371982c543f930d6b213967372e0d459622d7eff7fc2ed1ddbfaa3b6c"
+  },
+  "Flower_3_Single.bin": {
+   "bytes": 10792,
+   "sha256": "88416b839c0d208040a1bd5b52984f7e927232356dfe9e8faec48838defac654"
+  },
+  "Flower_3_Single.gltf": {
+   "bytes": 3632,
+   "sha256": "26c33edf26f0913947977109fefa2367095a854541a731dfecfd64263b7db2bc"
+  },
+  "Flower_4_Group.bin": {
+   "bytes": 62220,
+   "sha256": "3ac30b4c9eaa5078a17c061aa29e2e9618cc9eb58cb6d5d2ab0c07fa0b851ae1"
+  },
+  "Flower_4_Group.gltf": {
+   "bytes": 3645,
+   "sha256": "69ead56b36b50f06a0cf18380797fce7434302e9b2da7bf68a85014b993c6134"
+  },
+  "Flower_4_Single.bin": {
+   "bytes": 23812,
+   "sha256": "d23048fb7cd3b9554036e7bb5e33f29212db70d5de34f87bc4551dec9495ba27"
+  },
+  "Flower_4_Single.gltf": {
+   "bytes": 3631,
+   "sha256": "271189ec424eea2821d758c5c605d9e7737c259d64f4eec4555de7cd9de5a517"
+  },
+  "Flowers.png": {
+   "bytes": 444609,
+   "sha256": "5c531f2329c241c625aafd6cb769de29f33b480ef2a16491c2489f3c68e62a6a"
+  },
+  "Grass.png": {
+   "bytes": 33605,
+   "sha256": "5d69048193b246a73c996b892607fb36c75d0c60afcb2dab8aa12de3c0b2d9bd"
+  },
+  "Grass_Common_Short.bin": {
+   "bytes": 7052,
+   "sha256": "7a0f0f7a9ac39cfa4b303bac03a6594f43e48d873b73553fa06a79e4df1271e9"
+  },
+  "Grass_Common_Short.gltf": {
+   "bytes": 2023,
+   "sha256": "6957b50622c9e26e7296c1b47ea8653bc0d957e0a547de444e2ed96f0075a21a"
+  },
+  "Grass_Common_Tall.bin": {
+   "bytes": 14076,
+   "sha256": "d7422b9360dd644f4095ac77a00dfa5d1f1078af71ebf18865a28ef031651379"
+  },
+  "Grass_Common_Tall.gltf": {
+   "bytes": 2025,
+   "sha256": "783466c838163bf7da44e10675ace3851b8c9fb83322387125df7a080b05cd70"
+  },
+  "Grass_Wispy_Short.bin": {
+   "bytes": 25324,
+   "sha256": "c38f46e5a66ed3917fd45104effb914228d43d3724f4659416e1533dcd71776d"
+  },
+  "Grass_Wispy_Short.gltf": {
+   "bytes": 2025,
+   "sha256": "3c1d3bdd332420e070abde72d73611d1f13acfbe027e26b2fb943f9bcbd6b1c5"
+  },
+  "Grass_Wispy_Tall.bin": {
+   "bytes": 29492,
+   "sha256": "a46e091f39958242a96722ea331efa8d7fb055c6e24d21aea6b0ac091a7b1b66"
+  },
+  "Grass_Wispy_Tall.gltf": {
+   "bytes": 2023,
+   "sha256": "a05e3ac05e43abbdb89c5b61134e367c7d33e285ff8d2a6e0a40180cb335af0b"
+  },
+  "Leaf_Pine.png": {
+   "bytes": 71747,
+   "sha256": "b1a6de1f0f2d1d68a68b3e70b38325c7f2293ab88e2b2c26d9d426407682b26b"
+  },
+  "Leaf_Pine_C.png": {
+   "bytes": 70055,
+   "sha256": "86f7ff7a214f5424de48d269568f36a15485e61c80677e426c7be9f45181eef9"
+  },
+  "Leaves.png": {
+   "bytes": 2586432,
+   "sha256": "23248cebe28a24e78add32db3c2ee2f4d7b9219e9d2467279722f0197a7b6bd5"
+  },
+  "Leaves_GiantPine_C.png": {
+   "bytes": 59613,
+   "sha256": "57f375e6a8ee339a415986033d54513186b0d82b9fa865070a2ef2afe61a0aa3"
+  },
+  "Leaves_NormalTree.png": {
+   "bytes": 158772,
+   "sha256": "171ad1c8fa6ddde351a3b3c9e2b1457d5c7a4a43ba4fd55a83801029db797151"
+  },
+  "Leaves_NormalTree_C.png": {
+   "bytes": 158796,
+   "sha256": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3"
+  },
+  "Leaves_TwistedTree.png": {
+   "bytes": 69611,
+   "sha256": "d548e707fa34a558f88f477fa98f7b4ad3afbd4ceb7ab954506be694edf0f2ba"
+  },
+  "Leaves_TwistedTree_C.png": {
+   "bytes": 70353,
+   "sha256": "0e459b56b14c0e81b1b7cf3d1e8c6f0bb71790eb6c46bb02a76a922d8df646ea"
+  },
+  "Mushroom_Common.bin": {
+   "bytes": 23040,
+   "sha256": "e4cee9f2570505a172990a2754d52ed5775a4d75857a832fffa1b573e38a4051"
+  },
+  "Mushroom_Common.gltf": {
+   "bytes": 1822,
+   "sha256": "2088b39d92f2f6331f45e59a048d02814dcd8b22767b024f4d220143bc8339f4"
+  },
+  "Mushroom_Laetiporus.bin": {
+   "bytes": 77088,
+   "sha256": "14f4835745947e7088bf706fbbbfde6b800f89bebf36122f40582fc8d45bb1ae"
+  },
+  "Mushroom_Laetiporus.gltf": {
+   "bytes": 1833,
+   "sha256": "88d264df9da6b0408ec276c36ae744ae79813046ba2938f03ed0837778f66fc9"
+  },
+  "Mushrooms.png": {
+   "bytes": 1208660,
+   "sha256": "e29eed2db831e44a29634fe25c62e9e31edf201e978a52912b9e5221ffd4a1f3"
+  },
+  "PathRocks_Diffuse.png": {
+   "bytes": 811732,
+   "sha256": "85a04abb2c136fee53b376daf3b7d7f96fdf3966de0258dff6fe2b24da792b23"
+  },
+  "Pebble_Round_1.bin": {
+   "bytes": 10160,
+   "sha256": "f3dacef3243ccaaad7df2beb5c72574a38fb3eae45357e1b5e2b40200d51c375"
+  },
+  "Pebble_Round_1.gltf": {
+   "bytes": 1850,
+   "sha256": "9f6261c81134915e73cf35eb4e37076238fd1e79434515ac686d15cbd1f779ab"
+  },
+  "Pebble_Round_2.bin": {
+   "bytes": 7468,
+   "sha256": "1bfde4a0934efd627c559a93d7ec28614b029efc48ce92c86060a6284ea911a9"
+  },
+  "Pebble_Round_2.gltf": {
+   "bytes": 1848,
+   "sha256": "d840c072326701dd5b6c884871948b67cb38e7d10d28773c89ee2ae89da810eb"
+  },
+  "Pebble_Round_3.bin": {
+   "bytes": 8576,
+   "sha256": "a7367e78163d396ea032c77042eb5d6a04f68594bd9242c860e34406c5f6a8ca"
+  },
+  "Pebble_Round_3.gltf": {
+   "bytes": 1848,
+   "sha256": "d50c99d98abd4db9bc37a454a764b8c19256c889dc90f902ac3d923ca07fe9a3"
+  },
+  "Pebble_Round_4.bin": {
+   "bytes": 9268,
+   "sha256": "7b3ef03544c3db808e00c2adea7ecd7237f9faeb33b03e1a24133a9cf0206ab9"
+  },
+  "Pebble_Round_4.gltf": {
+   "bytes": 1841,
+   "sha256": "39be4f0e25d2c4d1a14747a885993989f9415d8eb6a724a8ecc1751c023357de"
+  },
+  "Pebble_Round_5.bin": {
+   "bytes": 8872,
+   "sha256": "47fb694cc6fb08cea0652b783512bc7702a3584e354bbd9e39effb8d77e31c6b"
+  },
+  "Pebble_Round_5.gltf": {
+   "bytes": 1846,
+   "sha256": "b035e434152a2e78200cf5d50886e63b6f1c1da0be566d7ed174d19ea079d64d"
+  },
+  "Pebble_Square_1.bin": {
+   "bytes": 7536,
+   "sha256": "dcb3711eff865af8317c9f05ff7280c3187e813350b0f438bd013d70ba08ac59"
+  },
+  "Pebble_Square_1.gltf": {
+   "bytes": 1850,
+   "sha256": "c8a4226bfc4f026a06774afbdefc860633eab2b3fe750f637cab89db9a6cfdef"
+  },
+  "Pebble_Square_2.bin": {
+   "bytes": 5652,
+   "sha256": "b0d17008f72e7bc7fb3f841b2701eedbca7289a16471bac4ed53da24e2c509d1"
+  },
+  "Pebble_Square_2.gltf": {
+   "bytes": 1847,
+   "sha256": "cf3d0970b924f59d56555a47407aa222afed7bf1f8957035d5b062866b7e251c"
+  },
+  "Pebble_Square_3.bin": {
+   "bytes": 3768,
+   "sha256": "fff619340f9b70141e2291c7b465de179f25992bdd8cc3f06872ff4bb41a2013"
+  },
+  "Pebble_Square_3.gltf": {
+   "bytes": 1847,
+   "sha256": "da6e5ed6fec5cf1d72b3d492b479dae88a40f9c1cf9a809e2c708019fbaa9d68"
+  },
+  "Pebble_Square_4.bin": {
+   "bytes": 3360,
+   "sha256": "94023e7e6bd8145d425c88ed53de281fc0dada77addafd4d4a48b09b15ad4936"
+  },
+  "Pebble_Square_4.gltf": {
+   "bytes": 1846,
+   "sha256": "b75355cd9e8c743b19c49c591ccd7ceb762483ab04bcf7e5cae520b834d0ce2a"
+  },
+  "Pebble_Square_5.bin": {
+   "bytes": 5424,
+   "sha256": "0e03ae9fd1967ccdb639edca1bc69a2d19bac4de6d4a21153a3ba625fdcd0749"
+  },
+  "Pebble_Square_5.gltf": {
+   "bytes": 1849,
+   "sha256": "09dc37cdbcf98cca2476e98803f0643bceb5916b76d2c27640920d80bf41a811"
+  },
+  "Pebble_Square_6.bin": {
+   "bytes": 4840,
+   "sha256": "887103acbb99c4c520665abea63d535de1b719bcbd6808878d46c2771d29d74e"
+  },
+  "Pebble_Square_6.gltf": {
+   "bytes": 1850,
+   "sha256": "b4d7d7ddc200c65eca70eec6858e906e462db092b41fd00bfb90eb4b7a328a70"
+  },
+  "Petal_1.bin": {
+   "bytes": 528,
+   "sha256": "4f7bc6298a1a7b45f0a511da41aa21e02038b50fe463d685c0a510c077d67b87"
+  },
+  "Petal_1.gltf": {
+   "bytes": 1845,
+   "sha256": "7ad38ef04b4f538a1b06f51edff848c1cebe21df23bfb642b172d98fec6ff7e5"
+  },
+  "Petal_2.bin": {
+   "bytes": 604,
+   "sha256": "1d47f9e12f3bc06fd4f1ed34498be021add35de323e0afc61b9d930a025ad736"
+  },
+  "Petal_2.gltf": {
+   "bytes": 1825,
+   "sha256": "7be9f20c9e42316f565ea9cd3c9bd04c086795f1523ee6079705426cd1b89438"
+  },
+  "Petal_3.bin": {
+   "bytes": 604,
+   "sha256": "bb90caa4abbcfe3a11b6c45abcb8fa12d4b447e97d2b9bad6968d85d483bcce4"
+  },
+  "Petal_3.gltf": {
+   "bytes": 1849,
+   "sha256": "bcfa1f87616e86c961329fbe04892da9b62b7cd0f4cfa0c474face34a48b4182"
+  },
+  "Petal_4.bin": {
+   "bytes": 980,
+   "sha256": "556e2966bc2344983d5459ae87ceaaef7068de2b1e3b4ff0d61f784b2c6cf9db"
+  },
+  "Petal_4.gltf": {
+   "bytes": 1848,
+   "sha256": "5b5074d1af7dc5b837f40313c0ff7d3af7b7e53c1b7ce63194fb31d0faade718"
+  },
+  "Petal_5.bin": {
+   "bytes": 604,
+   "sha256": "5f29cb382c7f1318f7ac6b601719b76b055dca9115cd5579ba2b46a7d113f04b"
+  },
+  "Petal_5.gltf": {
+   "bytes": 1844,
+   "sha256": "25f0afc73eebc4f735bdbaf13b76098b8c6dbf4cd3f97a6e81d7964f9d3073b6"
+  },
+  "Pine_1.bin": {
+   "bytes": 275492,
+   "sha256": "0cc0900d156359cab7028d87cd5d8897fbcb0479ddf1ddf524d5462c11e17af2"
+  },
+  "Pine_1.gltf": {
+   "bytes": 3832,
+   "sha256": "adc85a72e6f46f71317ca5f7630876bfb207f687427bc9e37cd97ec4af5f2cbc"
+  },
+  "Pine_2.bin": {
+   "bytes": 258336,
+   "sha256": "5ba81ed2b131243bf02f5fb18e278083205ce16b0f30c364ccbe9355e7637c60"
+  },
+  "Pine_2.gltf": {
+   "bytes": 3833,
+   "sha256": "57bd4732170b6c7e51bcf78fe5adaabf142f95a50378d8d3051d1f20a04d3c2f"
+  },
+  "Pine_3.bin": {
+   "bytes": 345288,
+   "sha256": "73edd69d7e789b12bfa32ab202c62d74ae98f0bba67975205211bf51906d8c82"
+  },
+  "Pine_3.gltf": {
+   "bytes": 3827,
+   "sha256": "54c72a4d614f053dd4b3d4404076a361de6085ec6a34560e42a76d7e79d89830"
+  },
+  "Pine_4.bin": {
+   "bytes": 254844,
+   "sha256": "0a04c88f619924d9d4df10281e994da9d8e429c1a19fae2086ed6f1ebd1ba88a"
+  },
+  "Pine_4.gltf": {
+   "bytes": 3831,
+   "sha256": "d8978cfd5a29a22446b9277f1789f44c3f953fb6e29adb625a8f61c3dd032952"
+  },
+  "Pine_5.bin": {
+   "bytes": 120996,
+   "sha256": "18982d7f6c430d1a42568d4ef62017398dedb1ddc60dfbab047f8cddea9cf797"
+  },
+  "Pine_5.gltf": {
+   "bytes": 3815,
+   "sha256": "bb060ce1420af32dc996241078d36e4c991577397474aa64f4c691362c482cfa"
+  },
+  "Plant_1.bin": {
+   "bytes": 5520,
+   "sha256": "cc36c3e6e3473e13ce93ddb7f5efbfa57db43106f1036a8b8ea00edeedfde322"
+  },
+  "Plant_1.gltf": {
+   "bytes": 2057,
+   "sha256": "11749feb4c196bc69eaba0c0ad938fab09e3fe33c02e0d0f86b329eacf633b55"
+  },
+  "Plant_1_Big.bin": {
+   "bytes": 16560,
+   "sha256": "aed5d27bb5a06e0e174d927e6c9850d8567f1b72820d2150323ca9374c3336bc"
+  },
+  "Plant_1_Big.gltf": {
+   "bytes": 2075,
+   "sha256": "8c22e28d1ad79f3967c0022265b1d09319a3d82cbf14238de0cc77b5fe7e370a"
+  },
+  "Plant_7.bin": {
+   "bytes": 2016,
+   "sha256": "7b2b78dade4459c7c8c683b6e8b860ed87e6e4f799e58c296c57d47964cedd61"
+  },
+  "Plant_7.gltf": {
+   "bytes": 1844,
+   "sha256": "04d5562bdfc4b0709f0030a65d1ddce90373c8e9a4dd3b15eb7acc28cd96b7a2"
+  },
+  "Plant_7_Big.bin": {
+   "bytes": 4704,
+   "sha256": "745e7dd5c8adde53b2305db4e7698a942a4f8e36f97a83ebd6eb05dde6633808"
+  },
+  "Plant_7_Big.gltf": {
+   "bytes": 1857,
+   "sha256": "279b54d91b66f303fdef76437c3a0b0ec5ba90d4fc9244e87f8b11ee7f304eb3"
+  },
+  "RockPath_Round_Small_1.bin": {
+   "bytes": 71140,
+   "sha256": "8a77235966e7df8eae421de3d14940ca7903951c3e85dcca6c136fbec31fa661"
+  },
+  "RockPath_Round_Small_1.gltf": {
+   "bytes": 1871,
+   "sha256": "9e2fc37aabceed94a2ece3dbffeae4477b87b46a220c3f3ff97503923902d4b9"
+  },
+  "RockPath_Round_Small_2.bin": {
+   "bytes": 79204,
+   "sha256": "481e1f00245eaaa02f164faaac484a6075c4ae6a3a550a2485c65320e4e6a2db"
+  },
+  "RockPath_Round_Small_2.gltf": {
+   "bytes": 1873,
+   "sha256": "154268202ef95a6d03126b2ad3fbc51b72c8929586e16a4edab1c811b8a6cff2"
+  },
+  "RockPath_Round_Small_3.bin": {
+   "bytes": 70844,
+   "sha256": "92385dd3b3f06ef96c018b130f32b9bff7c94929ef5648e3b1b18b903d297cc7"
+  },
+  "RockPath_Round_Small_3.gltf": {
+   "bytes": 1872,
+   "sha256": "d1715df53df496fd4dc26ba5ddeeaab796f7d9847571970a446e0aef319eae69"
+  },
+  "RockPath_Round_Thin.bin": {
+   "bytes": 159316,
+   "sha256": "3bacc605d7bd1a525252ada6fa2362236493b6468fba3fbad4ba8f8e9360de8f"
+  },
+  "RockPath_Round_Thin.gltf": {
+   "bytes": 1868,
+   "sha256": "afa02d5495b8ead8bf738f7142f299c336fbef80d98e2e591a2b775d65ab140e"
+  },
+  "RockPath_Round_Wide.bin": {
+   "bytes": 247688,
+   "sha256": "d88fa064e1c11fadf5c6a1cf15bc3e81a54174e12cc79285de9ec5bbe1f2cb88"
+  },
+  "RockPath_Round_Wide.gltf": {
+   "bytes": 1868,
+   "sha256": "47d4f9d79f2500a595822f9eb0e1a46c28c82ea17d8b2167733f15627210dedd"
+  },
+  "RockPath_Square_Small_1.bin": {
+   "bytes": 56956,
+   "sha256": "442fed6554c02423eb788e0e0b58bbb5b812978cf47d4424e6a107938f01ceab"
+  },
+  "RockPath_Square_Small_1.gltf": {
+   "bytes": 1874,
+   "sha256": "74571ca07d6795c9c7bb4289a7a3d0840ce9f656fff2789545af5fc24a1d4feb"
+  },
+  "RockPath_Square_Small_2.bin": {
+   "bytes": 40636,
+   "sha256": "d73391a812afae83241489d690a74c1903785386f7e13d116a9b14772b5fe17b"
+  },
+  "RockPath_Square_Small_2.gltf": {
+   "bytes": 1873,
+   "sha256": "a5b392f56c41e51b36c8ba9a01ec40f70b5093009733b97992c9efda480f0a83"
+  },
+  "RockPath_Square_Small_3.bin": {
+   "bytes": 41040,
+   "sha256": "c3f0c080f1e7b980506df70994700e4471d3568ed9614646ebf50dec6956727f"
+  },
+  "RockPath_Square_Small_3.gltf": {
+   "bytes": 1873,
+   "sha256": "fca8b33b1be66284d80b6098fa7af6d440359dd403a45dde268e926385c9e4ac"
+  },
+  "RockPath_Square_Thin.bin": {
+   "bytes": 130024,
+   "sha256": "66d2bc07c49198d75e366a4f1d5aed103dea92716ca0966767d55dfc857932f3"
+  },
+  "RockPath_Square_Thin.gltf": {
+   "bytes": 1871,
+   "sha256": "6295fba5e2bf9cbd3762a7aeba6459f49b42092aa30e7ecb63a5749627302f73"
+  },
+  "RockPath_Square_Wide.bin": {
+   "bytes": 164320,
+   "sha256": "8be8dde582b42e2c58438ede663a4f2432bccb2bae5af6df2018961644879e57"
+  },
+  "RockPath_Square_Wide.gltf": {
+   "bytes": 1872,
+   "sha256": "f3ab0c835b516c08ef6e42d7fc435fa08efb8fd14a03245ce97e900020ad5c8f"
+  },
+  "Rock_Medium_1.bin": {
+   "bytes": 13284,
+   "sha256": "ea79527d4c2b3bdb7a28bf589bf0c1fd96d192a4d0738636753911dd58681e99"
+  },
+  "Rock_Medium_1.gltf": {
+   "bytes": 1831,
+   "sha256": "5d1ab1fa03218f4a908728ed0eabe6486344a7e4f510b0d3d6f837fd1d011bd8"
+  },
+  "Rock_Medium_2.bin": {
+   "bytes": 9432,
+   "sha256": "76b60bf8349f71abdb0ed462b3223d93c2dcabdfb5754bc132e18b021cc6c805"
+  },
+  "Rock_Medium_2.gltf": {
+   "bytes": 1825,
+   "sha256": "fac2d05a05f2d0d2098de59c09b58f42cc875c9caca4fd4c4bd57f3d36e7b12e"
+  },
+  "Rock_Medium_3.bin": {
+   "bytes": 20124,
+   "sha256": "63f94bce2d3fb3fe25b2d6c843a828b1bec76855dbaac93fcf5d43582309caad"
+  },
+  "Rock_Medium_3.gltf": {
+   "bytes": 1832,
+   "sha256": "9a575b911372cf91693aa3a56aea8137ec2251c2b99fb34a31272ee64503047f"
+  },
+  "Rocks_Desert_Diffuse.png": {
+   "bytes": 2095731,
+   "sha256": "209a27345707385a00de9ce6ab548ea238994f0a0721ed765aa4cdd25b7306fc"
+  },
+  "Rocks_Diffuse.png": {
+   "bytes": 2517398,
+   "sha256": "b813696df6081f469a127092eb0ce45cc39d56f3ccc0699152bfcd3804810b48"
+  },
+  "TwistedTree_1.bin": {
+   "bytes": 732456,
+   "sha256": "58e4c16c16e0a71051af76a37be0641ea8f7089652687f957383d3c4bd24723b"
+  },
+  "TwistedTree_1.gltf": {
+   "bytes": 3819,
+   "sha256": "8544b084e1fadfbec981e964ce27463f50c39c460513e0d3442160880c5908a7"
+  },
+  "TwistedTree_2.bin": {
+   "bytes": 698340,
+   "sha256": "968895bfe950e40a2a0ba82c5a7f67571a5959629ec03ad23076990280386d69"
+  },
+  "TwistedTree_2.gltf": {
+   "bytes": 3815,
+   "sha256": "7d57307e4ba817e807d84cf8020693ed31a82297593cca32e1780cfcdc6397c2"
+  },
+  "TwistedTree_3.bin": {
+   "bytes": 771176,
+   "sha256": "04ad394055b72a3d3717d8e3617ae733ea155580330d94d7387238928755eaca"
+  },
+  "TwistedTree_3.gltf": {
+   "bytes": 3817,
+   "sha256": "c719e6f2f26bb5f4a32f92194b71f432e2444870cb0f3b41989e05c7ad3b9ecd"
+  },
+  "TwistedTree_4.bin": {
+   "bytes": 757248,
+   "sha256": "4a256031f3a8da2e80dab0b92a0a3d7c7d43a2cc9c19f8fe9aec1f651d2eb6ef"
+  },
+  "TwistedTree_4.gltf": {
+   "bytes": 3817,
+   "sha256": "9d39f221d991b50b2ac92089ff7db573717d4eaf756218d30b93c5e961093884"
+  },
+  "TwistedTree_5.bin": {
+   "bytes": 811680,
+   "sha256": "687fe8183da031a2c6b66668081bf1bc8e5c408b49f165a2b13b45742280e07b"
+  },
+  "TwistedTree_5.gltf": {
+   "bytes": 3822,
+   "sha256": "c193b23d5dc52e7b9c9d5ddda2bc0b89cd1cbbd4b8f1c08fae3216424bd1e982"
+  },
+  "desktop.ini": {
+   "bytes": 4145,
+   "sha256": "f190926d4f718d099c55611fe7257a8a0ac9356e1043b067319a850d1077d84e"
+  }
+ },
+ "root_files_sha256": {
+  "License_Standard.txt": {
+   "bytes": 852,
+   "sha256": "120710e542c3ebaf83856c4eb55b4a1e680593b39302eba7fdc5d942dfe78c58"
+  },
+  "Preview_1.jpg": {
+   "bytes": 598487,
+   "sha256": "e9bbf4408c8bc8fc39ed43988cbf2a369a4cccc5a827141d55d37f24613fe13d"
+  },
+  "Preview_2.jpg": {
+   "bytes": 679539,
+   "sha256": "c5aa736558b19d9c7b8b035bba9b9ee44a79826c17402667a361e59627918357"
+  },
+  "Preview_3.jpg": {
+   "bytes": 440967,
+   "sha256": "a58e5b07f4d22ecdb3618c3c876537d9227dcab48b7401debb2d0b6b1be04c9a"
+  },
+  "Preview_4.jpg": {
+   "bytes": 796873,
+   "sha256": "21df065e6b9fd52a5d040ded6aa48fc18db5d028481c3a62b60210317e6f73cd"
+  }
+ }
+}

@@ -1,0 +1,3876 @@
+{
+  "schema": "xexoria.monster-placement.v1",
+  "region": "sunmeadow",
+  "version": "v2-claude-20261002-monsters-r2",
+  "revision": "r3 (2026-10-02): matched the blockout-review layout (windstone_circle centre (0,-68) r 8.12 with stone_angles_deg and arena r 11; windstone_altar (-4,-70) is a flush walkable platform r 2.5 whose central block r 0.8 is the only collider; boar_trail added with road_safe false; broken_cart moved to (13,-73)). Row 22 and Galehorn (row 34) moved; zones glade_southwest, glade_east and windstone_circle updated. r2 (2026-10-02): matched the layout update (city_canal_water_0 hazard, gate_road from the west exit ramp + gate_road_east, signpost (15,11), windstone_circle centre (0,-66) with the windstone_altar (-3.5,-68.5), oak_wallow clearing). Rows 0, 2, 4, 29 and 34 moved; zones hunt_meadow_west, hunt_meadow_east, glade_east, windstone_circle and oak_wallow updated; owner decisions recorded in owner_decisions.",
+  "status": "DESIGN PROPOSAL - Claude map lane. Not live content. Nothing here edits content/source, server or client files; Codex root integrates after owner approval.",
+  "units": "metres, milliseconds",
+  "axes": "Babylon XZ: +x east, +z north (same as planning/levels/sunmeadow-v2-layout.json)",
+  "sources": {
+    "layout": "planning/levels/sunmeadow-v2-layout.json",
+    "compact_candidate": "planning/sunmeadow-compact-v1.json",
+    "enemies": "content/source/enemies.json",
+    "zones_live": "content/source/zones.json (zone 1 monster_spawns, pois, city_traversal)",
+    "items": "content/source/items.json",
+    "clock": "apps/client/src/world-environment-state.mjs sampleEnvironment()",
+    "server_ai": "apps/server/src/world.rs update_monsters(); validation apps/server/src/content.rs",
+    "art_budgets": "docs/reviews/2026-10-01-froggy-full-game-art-plan.md section 2; docs/delivery-and-asset-playbook.md 5.4",
+    "check_script": "tools/levels/check_monster_spawns.py"
+  },
+  "server_facts_as_found": {
+    "aggro": "Every monster is proximity-aggressive: IDLE acquires the nearest live player within `aggro` m. No passive, assist or looter modes exist.",
+    "chase_drop": "APPROACH drops the target when it is farther than aggro x 1.5 m.",
+    "leash": "Circle around the spawn home; beyond `leash` m the monster resets to IDLE with full HP. Validation requires leash >= aggro.",
+    "skill": "One 'splash' per enemy: when the target is within 2.5 m (hard-coded) and the cooldown is 0, WINDUP locks the target point; ACTIVE moves the monster onto that point and damages every player within splash_radius. The hit lands on the first ACTIVE tick; splash_active_ms only sizes validation and presentation.",
+    "timing_grid_ms": 50,
+    "timing_rule": "windup >= 100, active > 0, recovery > 0, cooldown >= windup + active, all multiples of 50",
+    "punish_window": "Player hits on a monster in RECOVERY or STAGGER deal x1.5. Perfect guard staggers the monster for 20 ticks (1000 ms) and opens a x2 counter.",
+    "monster_collision": "None: monsters move in straight lines through water, rock and trunks.",
+    "ids": "Monster id = 101 + spawn row index. Appending rows keeps existing ids stable.",
+    "wire_cap": "MAX_MONSTERS = 64 per snapshot (apps/server/src/wire.rs), no AOI yet; HP and max_hp are u16 on the wire (<= 65535).",
+    "respawn_cap_s": 3600,
+    "stats_missing": "No level, defence, race, element or size fields on enemies. Player hits ignore monster defence (there is none); monster hits subtract player DEF (minimum 1).",
+    "clock": "No day/night or weather on the server. The client clock is deterministic from room elapsed time.",
+    "client_visuals": "Every monster kind renders as the shared pink slime (actors.ts createSlime) until per-kind art lands.",
+    "tests_pinning_counts": [
+      "apps/server/src/content.rs ~2405: content.spawns.len() == 13",
+      "apps/server/src/world.rs ~5559: world.monsters.len() == 13 and kinds in [1,2,3,4]"
+    ],
+    "player_baseline_L1": {
+      "hp": 160,
+      "atk": 45,
+      "def": 3,
+      "walk_m_s": 4.5,
+      "attack_cooldown_ms": 400,
+      "attack_range_m": 3.0,
+      "arc_range_m": 4.0,
+      "dodge_ms": 280
+    }
+  },
+  "clock": {
+    "source": "sampleEnvironment(elapsedMs): hours = (13.5 + elapsed/2700000*24) % 24; daylight = smoothstep(-0.14, 0.32, sin((hours-6)/24*2pi)); weather slot 300000 ms; rain when slot hash in [0.80, 0.95) (15 %)",
+    "day_length_real_min": 45,
+    "phases_by_daylight": {
+      "day": ">= 0.50",
+      "twilight": "0.15 .. 0.50",
+      "night": "< 0.15",
+      "hysteresis": 0.05
+    },
+    "boss_gate_daylight_below": 0.35,
+    "server_requirement": "S4: port sampleEnvironment to Rust so spawn phases use the same clock the client renders."
+  },
+  "rules": {
+    "R1_bridge_clear_m": 3.0,
+    "R2_path_centre_min_m": 2.0,
+    "R2b_path_edge_margin_m": 1.5,
+    "R4_land_water_edge_min_m": 2.5,
+    "R4_amphibious_water_edge_m": [
+      1.3,
+      4.0
+    ],
+    "R5_bluff_margin_m": 1.5,
+    "R5_camp_margin_m": 3.0,
+    "R5_prop_gap_m": 0.3,
+    "R5_circle_regular_min_m": 11.5,
+    "R5_boss_ring_margin_m": 0.0,
+    "R6_gate_apron_xz": [
+      -16.3,
+      16.3,
+      8.0,
+      24.0
+    ],
+    "R6_windmark_passive_min_m": 5.0,
+    "R6_windmark_aggressive_extra_m": 2.0,
+    "R6_safe_points": {
+      "sella": [
+        [
+          2,
+          -14
+        ],
+        6.0
+      ],
+      "regroup": [
+        [
+          0,
+          -20
+        ],
+        5.0
+      ],
+      "entry": [
+        [
+          0,
+          -24
+        ],
+        4.0
+      ]
+    },
+    "R7_road_safe_margin_m": 0.0,
+    "R8_patrol_sample_m": 0.5,
+    "R9_leash_hazard_margin_m": 1.0,
+    "R9_first_clearing_sanctuary_paths": [
+      "gate_road",
+      "gate_road_east",
+      "camp_spur"
+    ],
+    "R10_wire_cap": 64,
+    "R10_row_target_max": 48,
+    "chase_reach_extra_m": 2.5,
+    "notes": [
+      "R2 is the owner rule (2 m from a path centre). R2b is the stricter design rule: homes and patrols stay 1.5 m off the path edge.",
+      "R7 (edge-based): every aggressive (and night-aggressive) home and patrol sample sits at least path half-width + aggro from every path centreline, so the aggro disc never overlaps a path surface: a player on a path is never aggroed. R7s applies the same test to pseudo-passive types with their step-0 interim radius (3.0 m, owner decision 2).",
+      "R6 gate apron = the city arrival ramps and canal outflow from content/source/zones.json city_traversal (layout hazard city_canal_water_0 x +-6.4 z 16..60, ramps x +-6.8..13.3 z 8..24). No homes there. Both gate roads start on this apron at the exit ramps (-10,15) and (10,15).",
+      "R5 boss: Galehorn's home and every patrol sample sit on the layout windstone_altar (within its radius_m of its centre), and its body stays inside the windstone_circle ring (distance to the circle centre + body_radius + R5_boss_ring_margin_m <= radius_m). The arena is the layout boss_arena_radius_m around the circle centre. Circle, altar and arena are read from the layout, never copied.",
+      "R9 first-clearing leash polygons stay 1 m off the surface of every R9_first_clearing_sanctuary_paths path (both gate roads and the camp spur): a provoked monster gives up at the road (newbie sanctuary)."
+    ]
+  },
+  "telegraph_language": {
+    "base": "Ground decal per docs/reviews/2026-10-01-vfx-brief-for-codex.md: dark outer rim, bright band, soft inner glow; radial fill shows windup progress; thin pulse ring speeds up in the last 300 ms. Shape + timer + sound + body cue, never colour alone.",
+    "tiers": {
+      "regular": {
+        "band": "#F2B13A",
+        "rim": "#3A2412",
+        "glow": "#FFE6A8"
+      },
+      "elite": {
+        "band": "#E8662A",
+        "rim": "#2E120A",
+        "glow": "#FFC08A",
+        "extra": "double rim"
+      },
+      "boss": {
+        "band": "#D93A3A",
+        "rim": "#260808",
+        "glow": "#FF9A8A",
+        "extra": "carved rune ring + #72D5DE wind motes"
+      }
+    },
+    "shapes": [
+      "circle_at_locked_target (current server)",
+      "circle_self (S3)",
+      "cone (S3)",
+      "lane (S3)",
+      "ring_donut (S3)"
+    ],
+    "fade_ms_meaning": "Decal dissipation after impact (VFX only). Monster vulnerability is recovery_ms."
+  },
+  "roster": [
+    {
+      "id": "puddlekin",
+      "kind": 1,
+      "status": "existing-refined",
+      "tier": "regular",
+      "name": {
+        "en": "Puddlekin",
+        "th": "พุดเดิลคิน"
+      },
+      "name_key": "enemy_puddlekin",
+      "role": "Starter quest target (three_windmarks hunt) and the P1 'read the telegraph' teacher. Rain-born water slime of the flower meadow.",
+      "level": 2,
+      "level_band": [
+        1,
+        3
+      ],
+      "stats": {
+        "hp": {
+          "current": 90,
+          "proposed": 90,
+          "range": [
+            80,
+            100
+          ]
+        },
+        "atk": {
+          "current": 18,
+          "proposed": 18,
+          "range": [
+            16,
+            20
+          ],
+          "note": "= splash_damage"
+        },
+        "def": {
+          "current": null,
+          "proposed": 0,
+          "range": [
+            0,
+            1
+          ],
+          "note": "needs S7"
+        },
+        "speed_m_s": 3.0,
+        "exp": 9
+      },
+      "ro_tags": {
+        "race": "Formless",
+        "element": "Water",
+        "element_level": 1,
+        "size": "Small"
+      },
+      "aggro": {
+        "mode": "passive",
+        "assist": null,
+        "looter": false,
+        "day": "passive",
+        "night": "passive",
+        "rain": "passive; +4 rain rows"
+      },
+      "tuning": {
+        "current": {
+          "aggro": 8.0,
+          "leash": 16.0,
+          "respawn_s": 15
+        },
+        "step0": {
+          "aggro": 3.0,
+          "leash": 6.0,
+          "respawn_s": 15,
+          "why": "pseudo-passive on today's server: 3 m <= attack range, so it only fights a player who engages it"
+        },
+        "step1": {
+          "mode": "passive",
+          "leash": "zone polygon",
+          "respawn_s": 15
+        }
+      },
+      "body_radius_m": 0.6,
+      "skills": [
+        {
+          "id": "splash_hop",
+          "name": "Splash Hop",
+          "server_support": "current splash",
+          "shape": "circle_at_locked_target",
+          "radius_m": 2.5,
+          "damage": 18,
+          "windup_ms": 900,
+          "active_ms": 50,
+          "fade_ms": 300,
+          "recovery_ms": 700,
+          "cooldown_ms": 3000,
+          "trigger": "target within 2.5 m",
+          "telegraph": "regular amber circle at the locked point, fills over 900 ms",
+          "body_cue": "squashes flat 0-600 ms, leaps in a 300 ms arc, lands on the impact frame",
+          "audio_cue": "existing rising harmonic glint (audio.ts) then watery bass thump",
+          "counterplay": "dodge through the landing or perfect-guard; punish the 700 ms splat for x1.5"
+        }
+      ],
+      "hit_reaction": "Jiggle squash 0.85/1.15 for 120 ms, droplet spray from the hit side, the dew-bead heart flickers. Recovery reads as a flattened puddle with dizzy eyes (the x1.5 window).",
+      "death": "Bursts into a ring of droplets (300 ms), leaves a puddle decal that evaporates over 1.5 s; the dew bead pops out as the loot sparkle.",
+      "drops": [
+        {
+          "item": "trail_potion",
+          "chance_pct": 20,
+          "min": 1,
+          "max": 1,
+          "status": "existing"
+        },
+        {
+          "item": "dew_bead",
+          "chance_pct": 50,
+          "min": 1,
+          "max": 1,
+          "status": "accepted",
+          "why": "item_dew_bead_desc says 'Puddlekin leave them behind' but the current table never drops it"
+        }
+      ],
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 800
+        },
+        {
+          "name": "idle",
+          "ms": 2000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 600,
+          "loop": true
+        },
+        {
+          "name": "windup",
+          "ms": 900
+        },
+        {
+          "name": "active",
+          "ms": 50
+        },
+        {
+          "name": "recovery",
+          "ms": 700
+        },
+        {
+          "name": "hit",
+          "ms": 200
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 600
+        },
+        {
+          "name": "special_rain_bloom",
+          "ms": 1200,
+          "note": "rain-row spawn variant"
+        }
+      ],
+      "budget": {
+        "tris": [
+          3500,
+          1500,
+          600
+        ],
+        "texture_px": 1024,
+        "bones_max": 30
+      },
+      "concept": {
+        "height_m": 0.9,
+        "width_m": 1.2,
+        "silhouette": "Squat teardrop of clear meadow water: round heavy base, pinched tip that curls over like a drop about to fall.",
+        "shape_language": "Circle + curl. Soft, heavy at the bottom, one sharp accent (the tip curl).",
+        "read_at_13m": "A blue teardrop with a bright bead inside and a yellow petal cap.",
+        "features": [
+          "dew-bead heart floating inside, offset high",
+          "two glossy dark eyes, small mouth, no blush, no tongue",
+          "yellow-and-white petal cap stuck to the crown from rolling through flowers",
+          "painted caustic streaks, no emissive (water never glows)"
+        ],
+        "palette": [
+          {
+            "name": "body",
+            "hex": "#7FC4D8",
+            "src": "client water"
+          },
+          {
+            "name": "body deep",
+            "hex": "#3E86A8",
+            "src": "new accent"
+          },
+          {
+            "name": "rim highlight",
+            "hex": "#E8FBFF",
+            "src": "client water specular"
+          },
+          {
+            "name": "dew bead",
+            "hex": "#F2FBFF",
+            "src": "client slime glint"
+          },
+          {
+            "name": "petal cap",
+            "hex": "#F6C95F",
+            "src": "client flowerGold"
+          },
+          {
+            "name": "petal white",
+            "hex": "#FFF6DC",
+            "src": "client flowerWhite"
+          },
+          {
+            "name": "leaf",
+            "hex": "#5B8143",
+            "src": "client stem"
+          },
+          {
+            "name": "eyes",
+            "hex": "#26212E",
+            "src": "client eye"
+          }
+        ],
+        "originality": "Not a pink jelly with a smile (avoid Poring). Blue water drop, petal cap, visible bead."
+      }
+    },
+    {
+      "id": "mossling",
+      "kind": 2,
+      "status": "existing-refined",
+      "tier": "regular",
+      "name": {
+        "en": "Mossling",
+        "th": "มอสสลิง"
+      },
+      "name_key": "enemy_mossling",
+      "role": "First kill and gentle pack intro. Lives where shade keeps moss wet: grove edges, old trees, the glade's pine side. Froggy sample S1.",
+      "level": 1,
+      "level_band": [
+        1,
+        2
+      ],
+      "stats": {
+        "hp": {
+          "current": 45,
+          "proposed": 45,
+          "range": [
+            40,
+            50
+          ]
+        },
+        "atk": {
+          "current": 10,
+          "proposed": 10,
+          "range": [
+            8,
+            12
+          ]
+        },
+        "def": {
+          "current": null,
+          "proposed": 0,
+          "range": [
+            0,
+            2
+          ]
+        },
+        "speed_m_s": 2.4,
+        "exp": 5
+      },
+      "ro_tags": {
+        "race": "Plant",
+        "element": "Earth",
+        "element_level": 1,
+        "size": "Small"
+      },
+      "aggro": {
+        "mode": "passive",
+        "assist": {
+          "radius_m": 6.0,
+          "links": [
+            "mossling"
+          ]
+        },
+        "looter": false,
+        "day": "passive",
+        "night": "passive; curls into a stone pose, glade mosslings get faint glowing moss tips"
+      },
+      "tuning": {
+        "current": {
+          "aggro": 6.0,
+          "leash": 14.0,
+          "respawn_s": 10
+        },
+        "step0": {
+          "aggro": 3.0,
+          "leash": 6.0,
+          "respawn_s": 10
+        },
+        "step1": {
+          "mode": "passive+assist",
+          "leash": "zone polygon",
+          "respawn_s": 10
+        }
+      },
+      "body_radius_m": 0.4,
+      "skills": [
+        {
+          "id": "root_stomp",
+          "name": "Root Stomp",
+          "server_support": "current splash",
+          "shape": "circle_at_locked_target",
+          "radius_m": 1.8,
+          "damage": 10,
+          "windup_ms": 900,
+          "active_ms": 250,
+          "fade_ms": 300,
+          "recovery_ms": 600,
+          "cooldown_ms": 2200,
+          "trigger": "target within 2.5 m",
+          "telegraph": "small regular circle",
+          "body_cue": "fern crest uncurls straight up, body rocks back on its root feet",
+          "audio_cue": "wooden creak then soft thud",
+          "counterplay": "step out; punish while it lies tipped over"
+        },
+        {
+          "id": "spore_puff",
+          "name": "Spore Puff",
+          "server_support": "S3",
+          "shape": "circle_self",
+          "radius_m": 2.2,
+          "damage": 6,
+          "windup_ms": 700,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 800,
+          "cooldown_ms": 7000,
+          "trigger": "HP <= 50 % and a player within 2.5 m",
+          "telegraph": "regular circle centred on itself",
+          "body_cue": "moss swells like a sponge",
+          "audio_cue": "puff + rustle",
+          "counterplay": "back off 2.5 m"
+        }
+      ],
+      "hit_reaction": "Moss fluffs out with leaf flecks, body rocks back; in recovery it lies tipped on its back, root feet wiggling.",
+      "death": "Moss collapses flat, the stone body rolls a quarter turn and settles, crest wilts, spore puff (500 ms); sinks into the ground over 1.2 s.",
+      "drops": [
+        {
+          "item": "dew_bead",
+          "chance_pct": 60,
+          "min": 1,
+          "max": 2,
+          "status": "existing"
+        }
+      ],
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 900
+        },
+        {
+          "name": "idle",
+          "ms": 2400,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 700,
+          "loop": true
+        },
+        {
+          "name": "windup",
+          "ms": 900
+        },
+        {
+          "name": "active",
+          "ms": 250
+        },
+        {
+          "name": "recovery",
+          "ms": 600
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 700
+        },
+        {
+          "name": "skill2_active",
+          "ms": 300
+        },
+        {
+          "name": "hit",
+          "ms": 200
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 900
+        },
+        {
+          "name": "special_assist_call",
+          "ms": 300
+        },
+        {
+          "name": "night_curl_idle",
+          "ms": 3000,
+          "loop": true
+        }
+      ],
+      "budget": {
+        "tris": [
+          4000,
+          1600,
+          650
+        ],
+        "texture_px": 1024,
+        "bones_max": 30
+      },
+      "concept": {
+        "height_m": 0.75,
+        "height_with_crest_m": 0.95,
+        "silhouette": "A mossy river-stone dome on two stubby root feet, topped by one fern frond that curls like a question mark.",
+        "shape_language": "Dome + spiral. Rounded, grounded, one curl.",
+        "read_at_13m": "A green mossy dome with a curled fern on top.",
+        "features": [
+          "moss fringe hanging over two amber eyes",
+          "grey stone shows through worn moss on the brow",
+          "root-tangle feet",
+          "one tiny white flower in the moss"
+        ],
+        "palette": [
+          {
+            "name": "moss",
+            "hex": "#6F9C4B",
+            "src": "client moss"
+          },
+          {
+            "name": "moss light",
+            "hex": "#8FBB6F",
+            "src": "client moss specular"
+          },
+          {
+            "name": "moss shadow",
+            "hex": "#2F6B3E",
+            "src": "trees canopy shadow"
+          },
+          {
+            "name": "stone",
+            "hex": "#98937F",
+            "src": "client standing-stone"
+          },
+          {
+            "name": "fern",
+            "hex": "#7DAB52",
+            "src": "client leavesLight"
+          },
+          {
+            "name": "root feet",
+            "hex": "#6B4A32",
+            "src": "dark timber / bark"
+          },
+          {
+            "name": "eyes",
+            "hex": "#F6C95F",
+            "src": "client flowerGold"
+          },
+          {
+            "name": "night moss tips",
+            "hex": "#B5D65A",
+            "src": "trees canopy highlight, emissive <= 0.2 at night"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thistle_boar",
+      "kind": 3,
+      "status": "existing-refined",
+      "tier": "regular",
+      "name": {
+        "en": "Thistle Boar",
+        "th": "หมูป่าหนาม"
+      },
+      "name_key": "enemy_thistle_boar",
+      "role": "First aggressive bruiser: teaches reading a charge, dodging, and pulling one from a pack. Roots for acorns and spilled grain on the way to the glade.",
+      "level": 4,
+      "level_band": [
+        3,
+        5
+      ],
+      "stats": {
+        "hp": {
+          "current": 140,
+          "proposed": 140,
+          "range": [
+            130,
+            160
+          ]
+        },
+        "atk": {
+          "current": 24,
+          "proposed": 24,
+          "range": [
+            22,
+            28
+          ]
+        },
+        "def": {
+          "current": null,
+          "proposed": 1,
+          "range": [
+            0,
+            3
+          ]
+        },
+        "speed_m_s": 3.6,
+        "exp": 14
+      },
+      "ro_tags": {
+        "race": "Brute",
+        "element": "Earth",
+        "element_level": 1,
+        "size": "Medium"
+      },
+      "aggro": {
+        "mode": "aggressive",
+        "radius_m": 8.0,
+        "alert_pause_ms": 400,
+        "assist": {
+          "radius_m": 7.0,
+          "links": [
+            "thistle_boar",
+            "turfback_matriarch"
+          ]
+        },
+        "looter": false,
+        "night": "beds down when idle: aggro x0.5 (4 m) until damaged or a pack-mate is hit"
+      },
+      "tuning": {
+        "current": {
+          "aggro": 10.0,
+          "leash": 20.0,
+          "respawn_s": 20
+        },
+        "step0": {
+          "aggro": 8.0,
+          "leash": 11.0,
+          "respawn_s": 20,
+          "why": "10 m aggro cannot keep the trail and windmarks safe in a 36 m glade; 20 m leash crosses the stream"
+        },
+        "step1": {
+          "mode": "aggressive+assist",
+          "leash": "zone polygon",
+          "respawn_s": 20
+        }
+      },
+      "body_radius_m": 0.7,
+      "skills": [
+        {
+          "id": "tusk_rush",
+          "name": "Tusk Rush",
+          "server_support": "current splash (S3 adds a 7 m trigger and lane damage)",
+          "shape": "circle_at_locked_target",
+          "radius_m": 3.0,
+          "damage": 24,
+          "windup_ms": 1100,
+          "active_ms": 300,
+          "fade_ms": 350,
+          "recovery_ms": 800,
+          "cooldown_ms": 3000,
+          "trigger": "target within 2.5 m (S3: 2.5-7 m)",
+          "telegraph": "regular circle at the locked point plus a cosmetic lane arrow from the boar",
+          "body_cue": "head drops, front hoof scrapes twice, crest bristles",
+          "audio_cue": "snort, hoof scrape, squeal on release",
+          "counterplay": "sidestep out of the circle; its tusks stick in the ground for 800 ms"
+        },
+        {
+          "id": "thistle_shake",
+          "name": "Thistle Shake",
+          "server_support": "S3",
+          "shape": "circle_self",
+          "radius_m": 2.5,
+          "damage": 12,
+          "windup_ms": 800,
+          "active_ms": 200,
+          "fade_ms": 400,
+          "recovery_ms": 700,
+          "cooldown_ms": 9000,
+          "trigger": "HP <= 50 % and a player within 2.5 m",
+          "telegraph": "regular circle on itself",
+          "body_cue": "whole crest vibrates, burrs lift",
+          "audio_cue": "dry rattle",
+          "counterplay": "step back, or guard"
+        }
+      ],
+      "hit_reaction": "Head jerks away from the hit, burrs fly, half-step back. Recovery: skids and its tusks dig into the turf (800 ms), clearly stuck.",
+      "death": "Collapses on its side, one leg kick, thistle heads shed as purple puffs; fades after 1.5 s.",
+      "drops": [
+        {
+          "item": "meadow_box",
+          "chance_pct": 8,
+          "min": 1,
+          "max": 1,
+          "status": "existing"
+        },
+        {
+          "item": "dew_bead",
+          "chance_pct": 40,
+          "min": 1,
+          "max": 2,
+          "status": "existing"
+        },
+        {
+          "item": "ember_root",
+          "chance_pct": 4,
+          "min": 1,
+          "max": 1,
+          "status": "accepted",
+          "why": "boars dig roots; existing consumable id"
+        }
+      ],
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 800
+        },
+        {
+          "name": "idle",
+          "ms": 2400,
+          "loop": true,
+          "note": "rooting"
+        },
+        {
+          "name": "move",
+          "ms": 800,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 500,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 400
+        },
+        {
+          "name": "windup",
+          "ms": 1100
+        },
+        {
+          "name": "active",
+          "ms": 300
+        },
+        {
+          "name": "recovery",
+          "ms": 800
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 800
+        },
+        {
+          "name": "skill2_active",
+          "ms": 200
+        },
+        {
+          "name": "hit",
+          "ms": 200
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 1200
+        },
+        {
+          "name": "night_sleep_idle",
+          "ms": 3000,
+          "loop": true
+        }
+      ],
+      "budget": {
+        "tris": [
+          6500,
+          2500,
+          1000
+        ],
+        "texture_px": 1024,
+        "bones_max": 45
+      },
+      "concept": {
+        "height_m": 1.1,
+        "height_with_crest_m": 1.4,
+        "length_m": 1.9,
+        "silhouette": "Front-heavy wedge: big head and shoulders, small hips, a spiky crest of purple thistle heads along the spine, two oversized upcurved tusks.",
+        "shape_language": "Wedge + spikes. Heavy front, sharp top line.",
+        "read_at_13m": "A brown wedge with a purple spiky mane and white tusks.",
+        "features": [
+          "thistle heads with green bracts woven into coarse dark bristles",
+          "tusks curve up past the snout",
+          "short legs, small hooves",
+          "burrs stuck on the flanks"
+        ],
+        "palette": [
+          {
+            "name": "hide",
+            "hex": "#7A5A3C",
+            "src": "new, between client leather and woodLight"
+          },
+          {
+            "name": "belly",
+            "hex": "#A98960",
+            "src": "client path specular"
+          },
+          {
+            "name": "bristles",
+            "hex": "#43322D",
+            "src": "client hair"
+          },
+          {
+            "name": "thistle",
+            "hex": "#8E5BB0",
+            "src": "new accent"
+          },
+          {
+            "name": "thistle tips",
+            "hex": "#C9A0DC",
+            "src": "new accent"
+          },
+          {
+            "name": "bracts",
+            "hex": "#5B8143",
+            "src": "client stem"
+          },
+          {
+            "name": "tusks",
+            "hex": "#EAE3CD",
+            "src": "client ivory cloth (light plaster)"
+          },
+          {
+            "name": "hooves",
+            "hex": "#26212E",
+            "src": "client eye"
+          }
+        ],
+        "originality": "Four-legged animal, not a humanoid boar-man; no bramble armour, no tribal gear."
+      }
+    },
+    {
+      "id": "glade_wisp",
+      "kind": 4,
+      "status": "existing-refined",
+      "tier": "regular",
+      "name": {
+        "en": "Glade Wisp",
+        "th": "วิสป์แห่งเรณู"
+      },
+      "name_key": "enemy_glade_wisp",
+      "role": "First caster/floater: teaches stepping out of a circle that appears under you. By day a passive pollen spirit over the flowers; at night it gathers at the glade and the ancient pine, bright and aggressive.",
+      "level": 3,
+      "level_band": [
+        2,
+        5
+      ],
+      "stats": {
+        "hp": {
+          "current": 70,
+          "proposed": 70,
+          "range": [
+            60,
+            80
+          ]
+        },
+        "atk": {
+          "current": 14,
+          "proposed": 14,
+          "range": [
+            12,
+            16
+          ]
+        },
+        "def": {
+          "current": null,
+          "proposed": 0,
+          "range": [
+            0,
+            0
+          ]
+        },
+        "speed_m_s": 2.0,
+        "exp": 10
+      },
+      "ro_tags": {
+        "race": "Formless",
+        "element": "Wind",
+        "element_level": 1,
+        "size": "Small"
+      },
+      "aggro": {
+        "mode": "day passive / night aggressive",
+        "night_radius_m": 7.0,
+        "assist": null,
+        "looter": false,
+        "day": "passive, dim gold, drifts over flowers",
+        "night": "aggressive 7 m, bright mint-cyan, Seed Volley enabled; rows 8 and 9 move to night homes in the glade"
+      },
+      "tuning": {
+        "current": {
+          "aggro": 7.0,
+          "leash": 18.0,
+          "respawn_s": 12
+        },
+        "step0": {
+          "aggro": 3.0,
+          "leash": 6.5,
+          "respawn_s": 12,
+          "why": "no server clock yet, so it stays at the day (passive) behaviour; 3 m interim passive radius (owner decision 2, was 3.5)"
+        },
+        "step1": {
+          "mode": "phase-dependent",
+          "night_aggro": 7.0,
+          "leash": "zone polygon",
+          "respawn_s": 12
+        }
+      },
+      "body_radius_m": 0.35,
+      "skills": [
+        {
+          "id": "pollen_flare",
+          "name": "Pollen Flare",
+          "server_support": "current splash",
+          "shape": "circle_at_locked_target",
+          "radius_m": 2.2,
+          "damage": 14,
+          "windup_ms": 1000,
+          "active_ms": 250,
+          "fade_ms": 400,
+          "recovery_ms": 700,
+          "cooldown_ms": 2600,
+          "trigger": "target within 2.5 m",
+          "telegraph": "regular circle of drifting motes contracting onto the locked point",
+          "body_cue": "fluff flares out, core brightens, wisp dissolves into motes that stream to the point and re-form (blink)",
+          "audio_cue": "breathy chime rising, soft pop",
+          "counterplay": "walk out of the circle; hit it while it hangs low and dim"
+        },
+        {
+          "id": "seed_volley",
+          "name": "Seed Volley",
+          "server_support": "S3 (night only)",
+          "shape": "circle_at_locked_target",
+          "radius_m": 1.5,
+          "damage": 8,
+          "windup_ms": 800,
+          "active_ms": 150,
+          "fade_ms": 300,
+          "recovery_ms": 500,
+          "cooldown_ms": 6000,
+          "trigger": "target 3-8 m away",
+          "telegraph": "small circle with three seed ticks",
+          "body_cue": "tails coil back like a drawn bow",
+          "audio_cue": "three quick flicks",
+          "counterplay": "keep moving; close the distance"
+        }
+      ],
+      "hit_reaction": "Seeds scatter from the hit side, core flickers dim (150 ms), knocked back 0.3 m. Recovery: sinks to 0.6 m height, dim and slowly spinning (700 ms).",
+      "death": "Fluff explodes into seeds that drift up and away on the wind (1.5 s); the core winks out with a soft pop; at night a short-lived glow mote remains.",
+      "drops": [
+        {
+          "item": "trail_potion",
+          "chance_pct": 30,
+          "min": 1,
+          "max": 1,
+          "status": "existing"
+        },
+        {
+          "item": "gale_plume",
+          "chance_pct": 3,
+          "min": 1,
+          "max": 1,
+          "status": "accepted",
+          "why": "wind/pollen link; existing consumable id"
+        }
+      ],
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 900
+        },
+        {
+          "name": "idle",
+          "ms": 2000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 1200,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 300,
+          "note": "night only"
+        },
+        {
+          "name": "windup",
+          "ms": 1000
+        },
+        {
+          "name": "active",
+          "ms": 250
+        },
+        {
+          "name": "recovery",
+          "ms": 700
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 800
+        },
+        {
+          "name": "skill2_active",
+          "ms": 150
+        },
+        {
+          "name": "hit",
+          "ms": 150
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 1500
+        },
+        {
+          "name": "special_dusk_depart",
+          "ms": 1200,
+          "note": "rises and fades when it moves to its night home"
+        }
+      ],
+      "budget": {
+        "tris": [
+          3000,
+          1200,
+          500
+        ],
+        "texture_px": 512,
+        "bones_max": 20
+      },
+      "concept": {
+        "height_m": 0.6,
+        "float_core_height_m": 1.45,
+        "top_m": 1.8,
+        "silhouette": "A floating dandelion clock: a radial sphere of seed spokes around a lantern-like core, with two ribbon tails trailing down.",
+        "shape_language": "Radial starburst + two falling curves.",
+        "read_at_13m": "A glowing dandelion clock hovering at head height with two ribbon tails.",
+        "features": [
+          "seed spokes with tiny parachute tips",
+          "soft lantern core visible through the fluff",
+          "two pollen ribbon tails",
+          "day: warm gold; night: mint-cyan glow, emissive capped below white"
+        ],
+        "palette": [
+          {
+            "name": "day core",
+            "hex": "#F6C95F",
+            "src": "client flowerGold"
+          },
+          {
+            "name": "fluff",
+            "hex": "#FFF6DC",
+            "src": "client flowerWhite"
+          },
+          {
+            "name": "day tails",
+            "hex": "#C0AD55",
+            "src": "client leavesGold"
+          },
+          {
+            "name": "night core",
+            "hex": "#8FF0D8",
+            "src": "new accent"
+          },
+          {
+            "name": "night edge",
+            "hex": "#72D5DE",
+            "src": "client windmark cyan"
+          },
+          {
+            "name": "night deep",
+            "hex": "#1D95A9",
+            "src": "client windmark emissive"
+          }
+        ],
+        "originality": "Seed-puff body, not a flame orb or a teal will-o'-wisp flame (avoid the Night Elf wisp)."
+      }
+    },
+    {
+      "id": "brookclaw",
+      "kind": 5,
+      "status": "new",
+      "tier": "regular",
+      "name": {
+        "en": "Brookclaw",
+        "th": "ก้ามหินลำธาร"
+      },
+      "name_key": "enemy_brookclaw",
+      "role": "Stream-bank ambusher west of the bridge. Rests as a mossy bank stone among the stream_stones, unfolds and lunges. Looter: hoards shiny drops and gives them back on death.",
+      "level": 5,
+      "level_band": [
+        4,
+        6
+      ],
+      "stats": {
+        "hp": {
+          "current": null,
+          "proposed": 160,
+          "range": [
+            150,
+            180
+          ]
+        },
+        "atk": {
+          "current": null,
+          "proposed": 26,
+          "range": [
+            24,
+            30
+          ]
+        },
+        "def": {
+          "current": null,
+          "proposed": 3,
+          "range": [
+            2,
+            4
+          ]
+        },
+        "speed_m_s": 2.8,
+        "exp": 18
+      },
+      "ro_tags": {
+        "race": "Fish",
+        "element": "Water",
+        "element_level": 2,
+        "size": "Medium"
+      },
+      "aggro": {
+        "mode": "aggressive (ambush)",
+        "radius_m": 5.0,
+        "night_radius_m": 7.0,
+        "alert_pause_ms": 450,
+        "assist": null,
+        "looter": {
+          "pickup_radius_m": 4.0,
+          "rule": "only drops whose owner is > 12 m away or that lay > 20 s; on death they re-drop with their original owner"
+        },
+        "amphibious": true,
+        "night": "nocturnal: aggro 7 m, eyes glow faint amber"
+      },
+      "tuning": {
+        "step0": {
+          "aggro": 5.0,
+          "leash": 8.0,
+          "respawn_s": 25
+        },
+        "step1": {
+          "mode": "aggressive+looter",
+          "leash": "zone polygon (land only)",
+          "respawn_s": 25
+        }
+      },
+      "body_radius_m": 0.7,
+      "skills": [
+        {
+          "id": "crusher_lunge",
+          "name": "Crusher Lunge",
+          "server_support": "current splash",
+          "shape": "circle_at_locked_target",
+          "radius_m": 2.0,
+          "damage": 26,
+          "windup_ms": 1000,
+          "active_ms": 200,
+          "fade_ms": 300,
+          "recovery_ms": 900,
+          "cooldown_ms": 3500,
+          "trigger": "target within 2.5 m",
+          "telegraph": "regular circle",
+          "body_cue": "crusher claw opens wide and rears back; legs splay",
+          "audio_cue": "click-click ticks, wet slam",
+          "counterplay": "dodge sideways; the claw stays pinned in the mud for 900 ms"
+        },
+        {
+          "id": "mud_spit",
+          "name": "Mud Spit",
+          "server_support": "S3",
+          "shape": "circle_at_locked_target",
+          "radius_m": 1.6,
+          "damage": 14,
+          "windup_ms": 900,
+          "active_ms": 150,
+          "fade_ms": 600,
+          "recovery_ms": 600,
+          "cooldown_ms": 7000,
+          "trigger": "target 3-9 m away (anti-kite)",
+          "telegraph": "small circle, brown splat decal lingers 600 ms",
+          "body_cue": "mouthparts gather, shell tilts up",
+          "audio_cue": "gurgle then spit",
+          "counterplay": "keep moving or close in"
+        }
+      ],
+      "hit_reaction": "Stone flecks chip off the shell, claw flinches up into a guard pose. Recovery: crusher claw pinned in the mud (900 ms).",
+      "death": "Flips onto its back, legs curl, claw falls open; any looted drops spill out with sparkles.",
+      "drops": [
+        {
+          "item": "dew_bead",
+          "chance_pct": 55,
+          "min": 1,
+          "max": 2,
+          "status": "accepted"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 25,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        },
+        {
+          "item": "meadow_box",
+          "chance_pct": 5,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        }
+      ],
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 900,
+          "note": "climbs out of the stream onto the bank"
+        },
+        {
+          "name": "idle_disguised",
+          "ms": 3000,
+          "loop": true
+        },
+        {
+          "name": "idle",
+          "ms": 2000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 700,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 450,
+          "note": "stone unfolds, claw rises"
+        },
+        {
+          "name": "windup",
+          "ms": 1000
+        },
+        {
+          "name": "active",
+          "ms": 200
+        },
+        {
+          "name": "recovery",
+          "ms": 900
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 900
+        },
+        {
+          "name": "skill2_active",
+          "ms": 150
+        },
+        {
+          "name": "loot_pickup",
+          "ms": 400
+        },
+        {
+          "name": "hit",
+          "ms": 200
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 1000
+        }
+      ],
+      "budget": {
+        "tris": [
+          6500,
+          2500,
+          1000
+        ],
+        "texture_px": 1024,
+        "bones_max": 45
+      },
+      "concept": {
+        "height_m": 0.8,
+        "claw_raised_m": 1.3,
+        "length_m": 1.5,
+        "crusher_claw_m": 0.7,
+        "silhouette": "A low, water-rounded mossy stone with one huge crusher claw and one small picker claw; asymmetric.",
+        "shape_language": "Dome + one oversized hook. Asymmetry is the identity.",
+        "read_at_13m": "A mossy stone with one giant blue claw.",
+        "features": [
+          "carapace = river stone with moss cap, reed tufts and a snail shell stuck on",
+          "stalked amber lantern eyes",
+          "three pairs of short walking legs",
+          "crayfish tail tucked under the stone"
+        ],
+        "palette": [
+          {
+            "name": "shell stone",
+            "hex": "#98937F",
+            "src": "client standing-stone"
+          },
+          {
+            "name": "moss",
+            "hex": "#6F9C4B",
+            "src": "client moss"
+          },
+          {
+            "name": "claw",
+            "hex": "#3F6398",
+            "src": "client roof (blue slate)"
+          },
+          {
+            "name": "claw tips",
+            "hex": "#D5DFE3",
+            "src": "client armorLight"
+          },
+          {
+            "name": "underside",
+            "hex": "#C98F5A",
+            "src": "new accent"
+          },
+          {
+            "name": "eyes",
+            "hex": "#F6C95F",
+            "src": "client flowerGold"
+          },
+          {
+            "name": "reeds",
+            "hex": "#7DAB52",
+            "src": "client leavesLight"
+          }
+        ],
+        "originality": "A crayfish whose shell is a bank stone; not a lobster-man, not a crab enemy from another game."
+      }
+    },
+    {
+      "id": "turfback_matriarch",
+      "kind": 6,
+      "status": "new",
+      "tier": "elite",
+      "name": {
+        "en": "Turfback Matriarch",
+        "th": "แม่หมูป่าหลังทุ่ง"
+      },
+      "name_key": "enemy_turfback_matriarch",
+      "role": "Field elite (mini-boss) of the Oak Wallow in the east oak grove. Leads three thistle boars; teaches pack pulls, a long charge lane and add pressure. Off the return path, optional.",
+      "level": 7,
+      "level_band": [
+        6,
+        8
+      ],
+      "stats": {
+        "hp": {
+          "current": null,
+          "proposed": 3600,
+          "range": [
+            3000,
+            4200
+          ]
+        },
+        "atk": {
+          "current": null,
+          "proposed": 44,
+          "range": [
+            38,
+            50
+          ]
+        },
+        "def": {
+          "current": null,
+          "proposed": 4,
+          "range": [
+            3,
+            6
+          ]
+        },
+        "speed_m_s": 3.2,
+        "exp": 160
+      },
+      "ro_tags": {
+        "race": "Brute",
+        "element": "Earth",
+        "element_level": 2,
+        "size": "Large"
+      },
+      "aggro": {
+        "mode": "aggressive (pack leader)",
+        "radius_m": 9.0,
+        "alert_pause_ms": 600,
+        "assist": {
+          "radius_m": 10.0,
+          "links": [
+            "thistle_boar"
+          ],
+          "leader": true
+        },
+        "looter": false
+      },
+      "tuning": {
+        "step0": {
+          "deploy": false,
+          "why": "needs S1 polygon leash, S2 assist, S3 second skill and S5 elite rules to be fair"
+        },
+        "step2": {
+          "aggro": 9.0,
+          "leash": "zone polygon",
+          "respawn_s": 360,
+          "respawn_window_s": [
+            300,
+            420
+          ]
+        }
+      },
+      "body_radius_m": 1.3,
+      "skills": [
+        {
+          "id": "turf_charge",
+          "name": "Turf Charge",
+          "server_support": "current splash as fallback; S3 lane",
+          "shape": "lane + circle_at_locked_target",
+          "radius_m": 3.5,
+          "lane_width_m": 2.5,
+          "lane_max_m": 9.0,
+          "damage": 44,
+          "windup_ms": 1300,
+          "active_ms": 300,
+          "fade_ms": 400,
+          "recovery_ms": 1100,
+          "cooldown_ms": 4500,
+          "trigger": "S3: target 3-9 m away",
+          "telegraph": "elite double-rim lane from her to the locked point, end circle",
+          "body_cue": "rears, flowers on her back shake loose, front hooves drum",
+          "audio_cue": "deep grunt x2, ground rumble",
+          "counterplay": "leave the lane; she skids and her tusk catches a root for 1100 ms"
+        },
+        {
+          "id": "turfquake",
+          "name": "Turfquake",
+          "server_support": "S3",
+          "shape": "circle_self",
+          "radius_m": 4.5,
+          "damage": 30,
+          "windup_ms": 1500,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 900,
+          "cooldown_ms": 12000,
+          "trigger": "at 66 % and 33 % HP, then when 2+ players are within 4.5 m",
+          "telegraph": "elite double-rim circle on herself; the rim cracks like lifting sod",
+          "body_cue": "she rears onto her hind legs, the turf hump heaves and the sapling whips",
+          "audio_cue": "deep double thud, clods raining",
+          "counterplay": "spread out beyond 4.5 m"
+        }
+      ],
+      "phase_behaviour": "Rally Squeal at 50 % HP: if fewer than 2 pack boars are alive, 2 thistle boars burst from the brush at the wallow edge (adds count toward her contribution, not a loot loop).",
+      "hit_reaction": "Additive only (no flinch on normal hits): turf clods and petals spray, sapling sways. Recovery: tusk stuck in a root.",
+      "death": "Long kneeling collapse, the sapling on her back tilts; leaves a turf mound decal for 3 s; petals drift.",
+      "drops": [
+        {
+          "item": "meadow_box",
+          "chance_pct": 60,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        },
+        {
+          "item": "ember_root",
+          "chance_pct": 35,
+          "min": 1,
+          "max": 2,
+          "status": "accepted"
+        },
+        {
+          "item": "dew_bead",
+          "chance_pct": 100,
+          "min": 2,
+          "max": 4,
+          "status": "accepted"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 40,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        },
+        {
+          "item": "frontier_vest",
+          "chance_pct": 4,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        }
+      ],
+      "loot_rule": "S5: personal rolls for every contributor (damage, healing or tanking >= 10 % or >= 8 s in combat); kill credit is not 'last hit'.",
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 1200
+        },
+        {
+          "name": "idle",
+          "ms": 3000,
+          "loop": true,
+          "note": "wallowing"
+        },
+        {
+          "name": "move",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 500,
+          "loop": true
+        },
+        {
+          "name": "alert",
+          "ms": 600,
+          "note": "rear + squeal"
+        },
+        {
+          "name": "windup",
+          "ms": 1300
+        },
+        {
+          "name": "active",
+          "ms": 300
+        },
+        {
+          "name": "recovery",
+          "ms": 1100
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 1500
+        },
+        {
+          "name": "skill2_active",
+          "ms": 300
+        },
+        {
+          "name": "special_rally_squeal",
+          "ms": 900
+        },
+        {
+          "name": "hit_additive",
+          "ms": 250
+        },
+        {
+          "name": "stagger",
+          "ms": 1000,
+          "loop": true
+        },
+        {
+          "name": "death",
+          "ms": 2000
+        }
+      ],
+      "budget": {
+        "tris": [
+          11000,
+          4500,
+          1800
+        ],
+        "texture_px": 2048,
+        "bones_max": 55
+      },
+      "concept": {
+        "height_m": 1.8,
+        "height_with_sapling_m": 3.0,
+        "length_m": 3.0,
+        "silhouette": "A huge old sow whose back is a living hillock of meadow turf with wildflowers, thistles and one young birch sapling growing from the hump.",
+        "shape_language": "Wedge carrying a dome. Heavy, slow, ancient.",
+        "read_at_13m": "A giant boar with a grassy hill and a small tree on its back.",
+        "features": [
+          "one chipped tusk, one huge intact tusk",
+          "notched ear",
+          "mud-caked legs to the knee",
+          "a bird's nest in the sapling",
+          "thistle crown echoes the regular boars"
+        ],
+        "palette": [
+          {
+            "name": "hide",
+            "hex": "#5E4632",
+            "src": "new, darker boar"
+          },
+          {
+            "name": "mud",
+            "hex": "#6E5840",
+            "src": "client path-edge"
+          },
+          {
+            "name": "turf",
+            "hex": "#5F9245",
+            "src": "client grass"
+          },
+          {
+            "name": "turf light",
+            "hex": "#82B054",
+            "src": "client grassLight"
+          },
+          {
+            "name": "flowers",
+            "hex": "#E2879F",
+            "src": "client flowerPink"
+          },
+          {
+            "name": "flowers white",
+            "hex": "#FFF6DC",
+            "src": "client flowerWhite"
+          },
+          {
+            "name": "sapling bark",
+            "hex": "#9A7350",
+            "src": "trees bark highlight"
+          },
+          {
+            "name": "sapling leaves",
+            "hex": "#B5D65A",
+            "src": "trees canopy highlight"
+          },
+          {
+            "name": "tusks",
+            "hex": "#EAE3CD",
+            "src": "client ivory cloth"
+          },
+          {
+            "name": "thistle",
+            "hex": "#8E5BB0",
+            "src": "thistle boar accent"
+          }
+        ],
+        "originality": "Meadow-turf back (the field itself), not brambles or armour; avoids any boar-tribe look."
+      }
+    },
+    {
+      "id": "galehorn",
+      "kind": 7,
+      "status": "new",
+      "tier": "boss",
+      "name": {
+        "en": "Galehorn, Warden of the Windstone",
+        "th": "เขาวายุ ผู้พิทักษ์ศิลาวายุ"
+      },
+      "name_key": "enemy_galehorn",
+      "role": "Sunmeadow field boss (MVP-like). Rises from the dormant portal ring at the Windstone circle at dusk or night when its window opens. Capstone for L8-10 groups of 3-6; a spectacle seen from the trail. The Old Oak shrine carries its carving as lore.",
+      "level": 10,
+      "level_band": [
+        9,
+        11
+      ],
+      "stats": {
+        "hp": {
+          "current": null,
+          "proposed": 40000,
+          "range": [
+            32000,
+            52000
+          ],
+          "cap": 65535,
+          "note": "u16 on the wire"
+        },
+        "atk": {
+          "current": null,
+          "proposed": 70,
+          "range": [
+            60,
+            80
+          ],
+          "note": "Horn Gale 90"
+        },
+        "def": {
+          "current": null,
+          "proposed": 8,
+          "range": [
+            6,
+            10
+          ]
+        },
+        "speed_m_s": 3.0,
+        "exp": 1800,
+        "exp_rule": "split by contribution; top contributor +10 % (S5)"
+      },
+      "ro_tags": {
+        "race": "Brute",
+        "element": "Wind",
+        "element_level": 2,
+        "size": "Large",
+        "boss_protocol": true,
+        "mvp": true
+      },
+      "aggro": {
+        "mode": "passive until provoked, then aggressive to every player inside the arena",
+        "assist": null,
+        "looter": false,
+        "spawn_gate": "daylight < 0.35 (dusk/night) and the respawn window elapsed",
+        "announce": "zone message 60 s before: 'The Windstone hums... the gale is rising.' + portal ring VFX brightens",
+        "wake_by_offering": {
+          "item": "gale_seed",
+          "where": "interact with the layout windstone_altar (-4,-70)",
+          "owner_decision": 3,
+          "allowed_only_when": [
+            "the character has never woken Galehorn with a seed (once per character)",
+            "Galehorn is not alive",
+            "at least 30 min (1800 s) have passed since Galehorn's last death"
+          ],
+          "effect": "consumes one gale_seed, plays the same 60 s announcement, then Galehorn rises on the altar; the natural 40-60 min window restarts from its next death",
+          "refused": "if any condition fails the offering is refused and the seed is kept",
+          "time_of_day": "not gated: the daylight gate applies to the natural spawn only (the decision lists no daylight condition)"
+        }
+      },
+      "tuning": {
+        "step0": {
+          "deploy": false,
+          "why": "proximity aggro would kill new players on the trail; needs S2 passive/provoked, S3 cone and lane, S5 boss rules"
+        },
+        "step2": {
+          "leash": "arena circle r 11 m around the windstone_circle centre (0,-68) (layout boss_arena_radius_m)",
+          "respawn_s": 3000,
+          "respawn_window_s": [
+            2400,
+            3600
+          ],
+          "reset": "evade + full heal if no contributor is inside the arena for 10 s; contribution persists 120 s across reconnects",
+          "stagger_cap_ms": 400
+        }
+      },
+      "body_radius_m": 2.0,
+      "skills": [
+        {
+          "id": "galestorm_charge",
+          "name": "Galestorm Charge",
+          "server_support": "current splash as fallback; S3 lane",
+          "shape": "lane + circle_at_locked_target",
+          "radius_m": 4.0,
+          "lane_width_m": 3.0,
+          "lane_max_m": 12.0,
+          "damage": 70,
+          "windup_ms": 1500,
+          "active_ms": 300,
+          "fade_ms": 500,
+          "recovery_ms": 1200,
+          "cooldown_ms": 5000,
+          "trigger": "S3: target 4-12 m away",
+          "telegraph": "boss crimson lane with rune edge to the locked point, end circle",
+          "body_cue": "lowers both horns, streamers stream forward, hind hooves dig",
+          "audio_cue": "rising wind howl, horn groan, thunderous impact",
+          "counterplay": "leave the lane; it skids and shakes its head, dazed for 1200 ms"
+        },
+        {
+          "id": "horn_gale",
+          "name": "Horn Gale",
+          "server_support": "S3",
+          "shape": "cone",
+          "angle_deg": 120,
+          "length_m": 9.0,
+          "damage": 90,
+          "knockback_m": 4.0,
+          "windup_ms": 1800,
+          "active_ms": 400,
+          "fade_ms": 500,
+          "recovery_ms": 1000,
+          "cooldown_ms": 9000,
+          "trigger": "2+ players in front within 9 m",
+          "telegraph": "boss crimson cone with streamer motes flowing outward",
+          "body_cue": "horn grooves light cyan from base to tip, chest swells",
+          "audio_cue": "deep inhale, gust blast",
+          "counterplay": "get behind it or to the side; guard halves the knockback",
+          "enrage_variant": {
+            "at_hp_pct": 20,
+            "name": "Eye of the Gale",
+            "shape": "ring_donut",
+            "inner_safe_m": 3.0,
+            "outer_m": 9.0,
+            "damage": 90,
+            "note": "same timings; all cooldowns x0.75 while enraged"
+          }
+        }
+      ],
+      "phase_behaviour": "Phase 2 at 50 % HP, 'Windstone Call': the six stones' grooves light; every 20 s two night glade wisps emerge from the portal ring (max 4 alive). Phase 3 at 20 % HP: enrage (see Horn Gale).",
+      "hit_reaction": "Additive only: fleece ripples, streamers snap; heavy hits make it lower its horns for 250 ms. No flinch interrupts.",
+      "death": "Rears, the horn grooves flare and fade, it kneels and settles into a mossy stone ram statue (stays 30 s), then dissolves upward into petals and streamers; the streamers drift down as loot sparkles.",
+      "drops": [
+        {
+          "item": "meadow_box",
+          "chance_pct": 100,
+          "min": 2,
+          "max": 2,
+          "status": "accepted"
+        },
+        {
+          "item": "gale_plume",
+          "chance_pct": 60,
+          "min": 1,
+          "max": 3,
+          "status": "accepted"
+        },
+        {
+          "item": "ember_root",
+          "chance_pct": 40,
+          "min": 1,
+          "max": 2,
+          "status": "accepted"
+        },
+        {
+          "item": "trail_potion",
+          "chance_pct": 100,
+          "min": 2,
+          "max": 2,
+          "status": "accepted"
+        },
+        {
+          "item": "dew_bead",
+          "chance_pct": 100,
+          "min": 3,
+          "max": 6,
+          "status": "accepted"
+        },
+        {
+          "item": "frontier_blade",
+          "chance_pct": 10,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        },
+        {
+          "item": "frontier_vest",
+          "chance_pct": 10,
+          "min": 1,
+          "max": 1,
+          "status": "accepted"
+        }
+      ],
+      "loot_rule": "S5: personal rolls for every contributor; no last-hit stealing; one reward per character per spawn.",
+      "clips": [
+        {
+          "name": "spawn",
+          "ms": 3000,
+          "note": "rises from the portal ring in a gale"
+        },
+        {
+          "name": "idle",
+          "ms": 4000,
+          "loop": true
+        },
+        {
+          "name": "move",
+          "ms": 1400,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "ms": 600,
+          "loop": true
+        },
+        {
+          "name": "provoked",
+          "ms": 1200,
+          "note": "rear + bellow"
+        },
+        {
+          "name": "windup",
+          "ms": 1500,
+          "note": "Galestorm Charge"
+        },
+        {
+          "name": "active",
+          "ms": 300
+        },
+        {
+          "name": "recovery",
+          "ms": 1200,
+          "note": "dazed skid"
+        },
+        {
+          "name": "skill2_windup",
+          "ms": 1800,
+          "note": "Horn Gale"
+        },
+        {
+          "name": "skill2_active",
+          "ms": 400
+        },
+        {
+          "name": "skill2_recovery",
+          "ms": 1000
+        },
+        {
+          "name": "special_windstone_call",
+          "ms": 2000
+        },
+        {
+          "name": "enrage",
+          "ms": 1500
+        },
+        {
+          "name": "hit_additive",
+          "ms": 300
+        },
+        {
+          "name": "stagger",
+          "ms": 400
+        },
+        {
+          "name": "death",
+          "ms": 3000,
+          "note": "kneel into a statue"
+        },
+        {
+          "name": "statue_dissolve",
+          "ms": 2000
+        }
+      ],
+      "budget": {
+        "tris": [
+          22000,
+          8000,
+          3000
+        ],
+        "texture_px": 2048,
+        "bones_max": 70,
+        "note": "+ streamer chain bones; phase-change horn glow as a separate mesh per the boss rule"
+      },
+      "concept": {
+        "height_m": 2.8,
+        "height_with_horns_m": 3.9,
+        "length_m": 4.4,
+        "horn_spiral_diameter_m": 1.4,
+        "silhouette": "A colossal woolly ram-like beast carrying two huge spiral horns of carved sandstone, each wound with long faded cloth streamers.",
+        "shape_language": "Two big spirals on a woolly block: circles on a rectangle, streamers as long flowing lines.",
+        "read_at_13m": "Two giant stone spiral horns trailing blue cloth streamers on a cream woolly giant.",
+        "features": [
+          "horn grooves carved like the windmarks, faint cyan glow",
+          "fleece knotted with moss, dandelion fluff and small wildflowers",
+          "grass beard",
+          "legs turn into stacked river stones below the knee",
+          "a dormant portal-ring motif repeated as a medallion of braided wool on the chest"
+        ],
+        "palette": [
+          {
+            "name": "fleece",
+            "hex": "#EAE3CD",
+            "src": "client ivory cloth (light plaster)"
+          },
+          {
+            "name": "fleece shade",
+            "hex": "#B8AE93",
+            "src": "new"
+          },
+          {
+            "name": "horns",
+            "hex": "#C1BCA4",
+            "src": "client limestone highlight (warm stone)"
+          },
+          {
+            "name": "horn grooves",
+            "hex": "#72D5DE",
+            "src": "client windmark cyan, emissive capped"
+          },
+          {
+            "name": "groove deep",
+            "hex": "#1D95A9",
+            "src": "client windmark emissive"
+          },
+          {
+            "name": "streamers",
+            "hex": "#4F7BB0",
+            "src": "client banner blue"
+          },
+          {
+            "name": "streamer cream",
+            "hex": "#FFF6DC",
+            "src": "client flowerWhite"
+          },
+          {
+            "name": "stone legs",
+            "hex": "#98937F",
+            "src": "client standing-stone"
+          },
+          {
+            "name": "moss",
+            "hex": "#6F9C4B",
+            "src": "client moss"
+          }
+        ],
+        "originality": "Original Xexoria wind beast; not a mount ram, no armour, no runic plate."
+      }
+    }
+  ],
+  "zones": [
+    {
+      "id": "hunt_meadow_west",
+      "clearing": "windmark_hunt",
+      "level_band": [
+        1,
+        2
+      ],
+      "tone": "newbie-safe, passive only",
+      "habitat": "West half of the flower meadow by the grove edge: mosslings in the grove shade, puddlekin where dew pools, a day wisp over the flowers.",
+      "spawn_polygon_xz": [
+        [
+          -15,
+          6.5
+        ],
+        [
+          -11.5,
+          6.5
+        ],
+        [
+          -5.9,
+          -1.1
+        ],
+        [
+          -3.7,
+          -7
+        ],
+        [
+          -6,
+          -9
+        ],
+        [
+          -15,
+          -9
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -16,
+          7.5
+        ],
+        [
+          -11.4,
+          7.5
+        ],
+        [
+          -5.2,
+          -0.8
+        ],
+        [
+          -2.6,
+          -8
+        ],
+        [
+          -6,
+          -10.5
+        ],
+        [
+          -16,
+          -10.5
+        ]
+      ],
+      "leash_policy": "excludes the gate road corridor (the road now runs diagonally from the west exit ramp to Sella; leash edge >= 3.6 m from its centreline): a provoked monster gives up at the road (newbie sanctuary)",
+      "rows": [
+        0,
+        3,
+        4,
+        8,
+        13,
+        29
+      ]
+    },
+    {
+      "id": "hunt_meadow_east",
+      "clearing": "windmark_hunt",
+      "level_band": [
+        1,
+        2
+      ],
+      "tone": "newbie-safe, passive only",
+      "habitat": "East half of the flower meadow between windmark 2 and the camp spur.",
+      "spawn_polygon_xz": [
+        [
+          10.9,
+          6.5
+        ],
+        [
+          16,
+          6.5
+        ],
+        [
+          16,
+          -4.6
+        ],
+        [
+          12,
+          -4.6
+        ],
+        [
+          6.5,
+          -3.6
+        ],
+        [
+          5.2,
+          -1.0
+        ],
+        [
+          5.6,
+          1.2
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          10.9,
+          7.5
+        ],
+        [
+          17,
+          7.5
+        ],
+        [
+          17.5,
+          -3.0
+        ],
+        [
+          16,
+          -5.5
+        ],
+        [
+          12,
+          -5.4
+        ],
+        [
+          6.5,
+          -4.2
+        ],
+        [
+          4.4,
+          0
+        ],
+        [
+          4.5,
+          1.1
+        ]
+      ],
+      "leash_policy": "excludes the gate road, gate_road_east and camp spur corridors (edges >= 1.25 m off each road surface) and stays 3 m off the camp",
+      "rows": [
+        1,
+        2,
+        5,
+        9,
+        30
+      ]
+    },
+    {
+      "id": "falls_meadow",
+      "clearing": "route",
+      "level_band": [
+        3,
+        4
+      ],
+      "tone": "first aggressive monsters, singles",
+      "habitat": "Open meadow west of the trail's bend, between the west grove and the stream: boars root for grubs; rain puddles here spawn puddlekin.",
+      "spawn_polygon_xz": [
+        [
+          -44,
+          -24
+        ],
+        [
+          -23,
+          -24
+        ],
+        [
+          -22,
+          -32
+        ],
+        [
+          -23,
+          -44.5
+        ],
+        [
+          -44,
+          -44.5
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -45,
+          -23
+        ],
+        [
+          -15.5,
+          -23
+        ],
+        [
+          -16.5,
+          -34
+        ],
+        [
+          -16.5,
+          -42
+        ],
+        [
+          -20,
+          -45.8
+        ],
+        [
+          -45,
+          -45.8
+        ]
+      ],
+      "leash_policy": "may follow onto the trail; never the pool, bridge or bank",
+      "rows": [
+        6,
+        7,
+        14,
+        31,
+        32
+      ]
+    },
+    {
+      "id": "bridgewater_banks",
+      "clearing": "route",
+      "level_band": [
+        4,
+        6
+      ],
+      "tone": "ambush along the bank, solitary",
+      "habitat": "North bank of the stream west of the bridge, among the mossy stream_stones the Brookclaws imitate.",
+      "spawn_polygon_xz": [
+        [
+          -43,
+          -46.5
+        ],
+        [
+          -23,
+          -45.8
+        ],
+        [
+          -22.5,
+          -49.3
+        ],
+        [
+          -30,
+          -50.3
+        ],
+        [
+          -43,
+          -50.3
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -44,
+          -44.5
+        ],
+        [
+          -21.5,
+          -44.5
+        ],
+        [
+          -20.5,
+          -49.0
+        ],
+        [
+          -30,
+          -50.4
+        ],
+        [
+          -44,
+          -50.6
+        ]
+      ],
+      "leash_policy": "land only (bank top); the bridge stays 3 m clear",
+      "rows": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "glade_southwest",
+      "clearing": "windstone_glade",
+      "level_band": [
+        3,
+        5
+      ],
+      "tone": "calm by day, wisps turn aggressive at night",
+      "habitat": "Pine-shaded south-west of the glade: mosslings under the pines, pollen wisps; at night row 9 joins from the meadow.",
+      "spawn_polygon_xz": [
+        [
+          -18,
+          -75
+        ],
+        [
+          -8.5,
+          -75.5
+        ],
+        [
+          -4,
+          -79
+        ],
+        [
+          -4,
+          -90
+        ],
+        [
+          -18,
+          -90
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          -19.5,
+          -73.5
+        ],
+        [
+          -9.06,
+          -73.5
+        ],
+        [
+          -7.78,
+          -75.2
+        ],
+        [
+          -6.19,
+          -76.61
+        ],
+        [
+          -4.35,
+          -77.67
+        ],
+        [
+          -2.33,
+          -78.34
+        ],
+        [
+          -0.22,
+          -78.6
+        ],
+        [
+          1.9,
+          -78.43
+        ],
+        [
+          1.9,
+          -91
+        ],
+        [
+          -19.5,
+          -91
+        ]
+      ],
+      "leash_policy": "may follow onto the trail; the north-east edge is an arc 10.6 m around the layout circle centre (0,-68), so the leash stays >= 2 m outside the stone ring (r 8.12)",
+      "rows": [
+        10,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "glade_pine",
+      "clearing": "windstone_glade",
+      "level_band": [
+        3,
+        5
+      ],
+      "tone": "night light show around the lure tree",
+      "habitat": "Around the Ancient Pine at the glade's south edge: by night wisps circle it, matching the lure-tree sightline.",
+      "spawn_polygon_xz": [
+        [
+          7.5,
+          -83
+        ],
+        [
+          15,
+          -83
+        ],
+        [
+          15.5,
+          -96
+        ],
+        [
+          7.5,
+          -96
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          1.9,
+          -79
+        ],
+        [
+          16.5,
+          -79
+        ],
+        [
+          17,
+          -97.5
+        ],
+        [
+          1.9,
+          -97.5
+        ]
+      ],
+      "leash_policy": "may follow onto the trail; never past the south gate posts",
+      "rows": [
+        12,
+        28
+      ]
+    },
+    {
+      "id": "glade_east",
+      "clearing": "windstone_glade",
+      "level_band": [
+        4,
+        5
+      ],
+      "tone": "boar family: a linked pack of three",
+      "habitat": "Under the glade's east oaks by the broken cart: spilled grain and acorns draw a boar family.",
+      "spawn_polygon_xz": [
+        [
+          11.5,
+          -66
+        ],
+        [
+          17,
+          -64.5
+        ],
+        [
+          18,
+          -82
+        ],
+        [
+          10,
+          -82
+        ],
+        [
+          10,
+          -75.5
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          9.0,
+          -61.5
+        ],
+        [
+          17,
+          -61.5
+        ],
+        [
+          19.5,
+          -66
+        ],
+        [
+          19.5,
+          -84
+        ],
+        [
+          6,
+          -84
+        ],
+        [
+          4.98,
+          -77.36
+        ],
+        [
+          6.81,
+          -76.12
+        ],
+        [
+          8.35,
+          -74.53
+        ],
+        [
+          9.53,
+          -72.65
+        ],
+        [
+          10.29,
+          -70.56
+        ],
+        [
+          10.59,
+          -68.37
+        ],
+        [
+          10.44,
+          -66.16
+        ],
+        [
+          9.83,
+          -64.03
+        ],
+        [
+          8.79,
+          -62.07
+        ]
+      ],
+      "leash_policy": "may follow toward the trail; the west edge is an arc 10.6 m around the layout circle centre (0,-68), so the leash stays >= 2 m outside the stone ring (r 8.12)",
+      "rows": [
+        11,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "windstone_circle",
+      "clearing": "windstone_glade",
+      "level_band": [
+        9,
+        11
+      ],
+      "tone": "boss arena (event)",
+      "habitat": "The ruined stone circle and altar; Galehorn rises from the dormant portal ring.",
+      "spawn_polygon_xz": "circle",
+      "spawn_circle": {
+        "center_xz": [
+          -4,
+          -70
+        ],
+        "radius_m": 2.5,
+        "note": "= layout windstone_altar platform (flush and walkable; only the central altar block r 0.8 collides). Galehorn spawns and paces on the platform beside the block"
+      },
+      "leash_circle": {
+        "center_xz": [
+          0,
+          -68
+        ],
+        "radius_m": 11.0,
+        "note": "= layout windstone_circle centre + boss_arena_radius_m"
+      },
+      "leash_policy": "arena; the trail runs through it as the processional way, so the boss is passive until provoked",
+      "rows": [
+        34
+      ]
+    },
+    {
+      "id": "oak_wallow",
+      "clearing": "oak_wallow",
+      "level_band": [
+        6,
+        7
+      ],
+      "tone": "elite pack, optional",
+      "habitat": "A muddy wallow clearing in the south of the east oak grove, far from the return path.",
+      "spawn_polygon_xz": [
+        [
+          25,
+          -68
+        ],
+        [
+          40,
+          -68
+        ],
+        [
+          41,
+          -87
+        ],
+        [
+          25,
+          -88
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          23.5,
+          -66
+        ],
+        [
+          42,
+          -66
+        ],
+        [
+          42.5,
+          -89
+        ],
+        [
+          23.5,
+          -90
+        ]
+      ],
+      "leash_policy": "inside the grove clearing only",
+      "layout_dependency": "met: the layout has clearing oak_wallow (r 10 m at (32,-77.5)) and the same circle as an east_oak_grove keep_clear; every home and patrol keeps its whole body inside it (checker H3)",
+      "rows": [
+        25,
+        26,
+        27,
+        33
+      ]
+    },
+    {
+      "id": "oak_roots",
+      "clearing": "east_return_path",
+      "level_band": [
+        1,
+        2
+      ],
+      "tone": "harmless life at the discovery",
+      "habitat": "East side of the Old Sunmeadow Oak's roots: two mosslings tend the old tree's moss. The shrine and chest side (west, toward the path) stays empty.",
+      "spawn_polygon_xz": [
+        [
+          33.5,
+          -39.5
+        ],
+        [
+          38.5,
+          -39.5
+        ],
+        [
+          38.5,
+          -50.5
+        ],
+        [
+          33,
+          -50.5
+        ]
+      ],
+      "leash_polygon_xz": [
+        [
+          31,
+          -38
+        ],
+        [
+          40,
+          -38
+        ],
+        [
+          40,
+          -52
+        ],
+        [
+          31,
+          -52
+        ]
+      ],
+      "leash_policy": "passive; stays off the return path",
+      "layout_dependency": "east_oak_grove scatter keeps r 2 m clear around each home",
+      "rows": [
+        23,
+        24
+      ]
+    }
+  ],
+  "safe_areas": [
+    {
+      "id": "gate_apron",
+      "rect_xz": [
+        -16.3,
+        16.3,
+        8.0,
+        24.0
+      ],
+      "why": "city arrival ramps and canal outflow; spawn-free porch"
+    },
+    {
+      "id": "sella_crossroads",
+      "circle": [
+        [
+          2,
+          -14
+        ],
+        6.0
+      ],
+      "why": "quest giver"
+    },
+    {
+      "id": "regroup",
+      "circle": [
+        [
+          0,
+          -20
+        ],
+        5.0
+      ],
+      "why": "respawn point after death"
+    },
+    {
+      "id": "entry",
+      "circle": [
+        [
+          0,
+          -24
+        ],
+        4.0
+      ],
+      "why": "trail start"
+    },
+    {
+      "id": "hunter_camp",
+      "rect_xz": [
+        19,
+        31,
+        -16,
+        -3
+      ],
+      "margin_m": 3.0,
+      "why": "lived-in camp"
+    },
+    {
+      "id": "bluff_falls_pool",
+      "note": "pool and bluff are hazards, not spawn ground"
+    }
+  ],
+  "spawn_rows": [
+    {
+      "row": 0,
+      "enemy": "puddlekin",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_west",
+      "home_xz": [
+        -14.5,
+        6.4
+      ],
+      "compact_v1_xz": [
+        -8,
+        6
+      ],
+      "live_xz": [
+        15,
+        -1.5
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 1.8 m from the new gate road centre (the road now starts at the west exit ramp); moved to the meadow's north-west corner, 7.0 m from the road",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 1,
+      "enemy": "puddlekin",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_east",
+      "home_xz": [
+        14.5,
+        4.5
+      ],
+      "compact_v1_xz": [
+        0,
+        9
+      ],
+      "live_xz": [
+        -8,
+        8
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is on the gate apron (no-spawn porch), between the two gate roads",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 2,
+      "enemy": "puddlekin",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_east",
+      "home_xz": [
+        12.0,
+        5.9
+      ],
+      "compact_v1_xz": [
+        8,
+        5
+      ],
+      "live_xz": [
+        10,
+        13
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 3.0 m from windmark 2 and 2.8 m from the new gate_road_east centre; the first v2 home (11, 6.4) was nudged 1.1 m east so the 3 m interim aggro stays off gate_road_east (R7s)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 3,
+      "enemy": "mossling",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_west",
+      "home_xz": [
+        -13.5,
+        -1
+      ],
+      "compact_v1_xz": [
+        -9,
+        -3
+      ],
+      "live_xz": [
+        -13,
+        3
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 3.2 m from windmark 1",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 4,
+      "enemy": "mossling",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_west",
+      "home_xz": [
+        -7.0,
+        -1.6
+      ],
+      "compact_v1_xz": [
+        -3,
+        0
+      ],
+      "live_xz": [
+        -8,
+        14
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 1.3 m from the new gate road centre (on the road); the first v2 home (-6.5, -0.5) was nudged 1.2 m south so the 3 m interim aggro stays off the road (R7s); 6.5 m from row 3, so the mossling pair stays unlinked (assist 6 m)",
+      "phases": [
+        "day",
+        "night"
+      ],
+      "proposed_home_xz_v3": [
+        -14.5,
+        -3.5
+      ],
+      "proposed_home_reason_v3": "C4: step0 aggro 3 m disc came 1.24 m from spawn slot (-3,-3); proposal 8.6 m clear; windmark_1 5.15 m (H6 >= 5), row 3 2.7 m (H13 >= 2.5), inside hunt_meadow_west"
+    },
+    {
+      "row": 5,
+      "enemy": "mossling",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_east",
+      "home_xz": [
+        14.3,
+        -3.2
+      ],
+      "compact_v1_xz": [
+        9,
+        -5
+      ],
+      "live_xz": [
+        12,
+        -10
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 1.0 m off the camp spur edge (R2b)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 6,
+      "enemy": "thistle_boar",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "falls_meadow",
+      "home_xz": [
+        -28,
+        -30
+      ],
+      "compact_v1_xz": [
+        -7,
+        13
+      ],
+      "live_xz": [
+        13,
+        6
+      ],
+      "migration": "rezone",
+      "reason": "aggressive boar 11 m from the city gate and 3.2 m from windmark 3; the first clearing becomes passive-only and boars start the ramp",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 7,
+      "enemy": "thistle_boar",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "falls_meadow",
+      "home_xz": [
+        -38,
+        -27
+      ],
+      "compact_v1_xz": [
+        7,
+        13
+      ],
+      "live_xz": [
+        20,
+        -18
+      ],
+      "migration": "rezone",
+      "reason": "aggressive boar beside the gate road and the east arrival ramp",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 8,
+      "enemy": "glade_wisp",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_west",
+      "home_xz": [
+        -13,
+        4
+      ],
+      "night_home_xz": [
+        12,
+        -84.5
+      ],
+      "night_zone": "glade_pine",
+      "compact_v1_xz": [
+        0,
+        17
+      ],
+      "live_xz": [
+        -15,
+        -2
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is inside the city canal (layout hazard city_canal_water_0) on the gate apron",
+      "phases": [
+        "day",
+        "night"
+      ],
+      "phase_homes": "S4: day in the meadow, night at the Ancient Pine"
+    },
+    {
+      "row": 9,
+      "enemy": "glade_wisp",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_east",
+      "home_xz": [
+        11.2,
+        -2.4
+      ],
+      "night_home_xz": [
+        -9.5,
+        -88.5
+      ],
+      "night_zone": "glade_southwest",
+      "compact_v1_xz": [
+        11,
+        0
+      ],
+      "live_xz": [
+        -20,
+        -12
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 3.6 m from windmark 2",
+      "phases": [
+        "day",
+        "night"
+      ],
+      "phase_homes": "S4: day in the meadow, night in the glade",
+      "proposed_home_xz_v3": [
+        13.0,
+        -0.6
+      ],
+      "proposed_home_reason_v3": "C4: night (step1) aggro 7 m disc came 1.22 m from spawn slot (3,-3); proposal 3.28 m clear; windmark_2 5.6 m; rows 5/30 2.9/2.8 m; croft calm margin 19.8 m"
+    },
+    {
+      "row": 10,
+      "enemy": "mossling",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "glade_southwest",
+      "home_xz": [
+        -14,
+        -77
+      ],
+      "compact_v1_xz": [
+        -7,
+        -60
+      ],
+      "live_xz": [
+        14,
+        -88
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is inside the boss arena (9.2 m from the circle centre), 1.3 m off the trail edge and 1.7 m from the Windstone",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 11,
+      "enemy": "thistle_boar",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "glade_east",
+      "home_xz": [
+        15.5,
+        -71
+      ],
+      "compact_v1_xz": [
+        8,
+        -66
+      ],
+      "live_xz": [
+        -16,
+        -121
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 4.6 m from the trail centre; an 8 m aggro disc covers the trail (R7)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 12,
+      "enemy": "glade_wisp",
+      "status": "existing",
+      "deploy_step": 0,
+      "zone": "glade_pine",
+      "home_xz": [
+        10.5,
+        -91
+      ],
+      "compact_v1_xz": [
+        0,
+        -73
+      ],
+      "live_xz": [
+        25,
+        -110
+      ],
+      "migration": "move",
+      "reason": "compact v1 home is 1.2 m off the trail edge (R2b) and night aggro would cover the trail",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 13,
+      "enemy": "puddlekin",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "hunt_meadow_west",
+      "home_xz": [
+        -10.5,
+        1.5
+      ],
+      "reason": "fourth quest target so 3-4 questers can share",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 14,
+      "enemy": "thistle_boar",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "falls_meadow",
+      "home_xz": [
+        -35,
+        -35
+      ],
+      "reason": "rooting sentry",
+      "phases": [
+        "day",
+        "night"
+      ],
+      "patrol": {
+        "type": "loop",
+        "points": [
+          [
+            -35,
+            -35
+          ],
+          [
+            -39.5,
+            -30.5
+          ],
+          [
+            -33,
+            -27.5
+          ],
+          [
+            -28,
+            -33.5
+          ]
+        ],
+        "pause_s": [
+          2,
+          4
+        ],
+        "speed_mult": 0.5,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 15,
+      "enemy": "brookclaw",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "bridgewater_banks",
+      "home_xz": [
+        -27,
+        -48.5
+      ],
+      "reason": "nearest bank stone to the bridge (8.8 m off the deck; the 7 m night aggro disc still clears the trail surface)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 16,
+      "enemy": "brookclaw",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "bridgewater_banks",
+      "home_xz": [
+        -31.5,
+        -48.7
+      ],
+      "reason": "bank walker",
+      "phases": [
+        "day",
+        "night"
+      ],
+      "patrol": {
+        "type": "pingpong",
+        "points": [
+          [
+            -31.5,
+            -48.7
+          ],
+          [
+            -35,
+            -48.7
+          ]
+        ],
+        "pause_s": [
+          3,
+          5
+        ],
+        "speed_mult": 0.4,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 17,
+      "enemy": "brookclaw",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "bridgewater_banks",
+      "home_xz": [
+        -38.5,
+        -48.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 18,
+      "enemy": "brookclaw",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "bridgewater_banks",
+      "home_xz": [
+        -42.5,
+        -48.9
+      ],
+      "reason": "by the cliff gap where the stream leaves",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 19,
+      "enemy": "mossling",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glade_southwest",
+      "home_xz": [
+        -9,
+        -80
+      ],
+      "reason": "pairs with row 10 (assist 6 m)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 20,
+      "enemy": "glade_wisp",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glade_southwest",
+      "home_xz": [
+        -15.5,
+        -83
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "patrol": {
+        "type": "loop",
+        "points": [
+          [
+            -15.5,
+            -83
+          ],
+          [
+            -13.5,
+            -78
+          ],
+          [
+            -9.5,
+            -78.3
+          ],
+          [
+            -9.5,
+            -85
+          ]
+        ],
+        "pause_s": [
+          1,
+          2
+        ],
+        "speed_mult": 0.6,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 21,
+      "enemy": "thistle_boar",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glade_east",
+      "home_xz": [
+        16.5,
+        -77
+      ],
+      "reason": "boar family (linked with rows 11 and 22)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 22,
+      "enemy": "thistle_boar",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "glade_east",
+      "home_xz": [
+        12.3,
+        -80.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ],
+      "reason": "moved 0.8 m east (r3): the southbound trail now bends to (3,-76), and the 8 m aggro disc must stay off it (R7)",
+      "patrol": {
+        "type": "loop",
+        "points": [
+          [
+            12.3,
+            -80.5
+          ],
+          [
+            14,
+            -75.5
+          ],
+          [
+            17,
+            -79.5
+          ],
+          [
+            14.5,
+            -81.8
+          ]
+        ],
+        "pause_s": [
+          2,
+          4
+        ],
+        "speed_mult": 0.5,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 23,
+      "enemy": "mossling",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "oak_roots",
+      "home_xz": [
+        35.5,
+        -41.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 24,
+      "enemy": "mossling",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "oak_roots",
+      "home_xz": [
+        35,
+        -47.5
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 25,
+      "enemy": "thistle_boar",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "oak_wallow",
+      "home_xz": [
+        27,
+        -74
+      ],
+      "reason": "wallow pack (her escort from step 2)",
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 26,
+      "enemy": "thistle_boar",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "oak_wallow",
+      "home_xz": [
+        36,
+        -79
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 27,
+      "enemy": "thistle_boar",
+      "status": "new",
+      "deploy_step": 0,
+      "zone": "oak_wallow",
+      "home_xz": [
+        31,
+        -83
+      ],
+      "phases": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "row": 28,
+      "enemy": "glade_wisp",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "glade_pine",
+      "home_xz": [
+        10,
+        -95
+      ],
+      "reason": "night-only wisp around the Ancient Pine",
+      "phases": [
+        "night"
+      ],
+      "needs": "S4"
+    },
+    {
+      "row": 29,
+      "enemy": "puddlekin",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "hunt_meadow_west",
+      "home_xz": [
+        -4.9,
+        -7.3
+      ],
+      "reason": "rain bloom; nudged 0.8 m from (-4.6, -6.6) so the 3 m interim aggro stays off the new gate road (R7s)",
+      "phases": [
+        "rain"
+      ],
+      "needs": "S4",
+      "proposed_home_xz_v3": [
+        -14.5,
+        -8.3
+      ],
+      "proposed_home_reason_v3": "C4: rain puddlekin disc overlapped spawn slot (-3,-7.5) (-1.09 m); proposal 8.5 m clear; windmark_1 5.05 m; mere_spur 6.4 m"
+    },
+    {
+      "row": 30,
+      "enemy": "puddlekin",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "hunt_meadow_east",
+      "home_xz": [
+        15.3,
+        1.0
+      ],
+      "reason": "rain bloom",
+      "phases": [
+        "rain"
+      ],
+      "needs": "S4"
+    },
+    {
+      "row": 31,
+      "enemy": "puddlekin",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "falls_meadow",
+      "home_xz": [
+        -31,
+        -42
+      ],
+      "reason": "rain bloom near the stream",
+      "phases": [
+        "rain"
+      ],
+      "needs": "S4"
+    },
+    {
+      "row": 32,
+      "enemy": "puddlekin",
+      "status": "new",
+      "deploy_step": 1,
+      "zone": "falls_meadow",
+      "home_xz": [
+        -41,
+        -38
+      ],
+      "reason": "rain bloom",
+      "phases": [
+        "rain"
+      ],
+      "needs": "S4"
+    },
+    {
+      "row": 33,
+      "enemy": "turfback_matriarch",
+      "status": "new",
+      "deploy_step": 2,
+      "zone": "oak_wallow",
+      "home_xz": [
+        32,
+        -77
+      ],
+      "reason": "elite leader",
+      "phases": [
+        "day",
+        "night"
+      ],
+      "needs": "S1 S2 S3 S5",
+      "patrol": {
+        "type": "loop",
+        "points": [
+          [
+            28.5,
+            -71.5
+          ],
+          [
+            37,
+            -71.5
+          ],
+          [
+            38.5,
+            -81.5
+          ],
+          [
+            29.5,
+            -85.5
+          ]
+        ],
+        "pause_s": [
+          4,
+          6
+        ],
+        "speed_mult": 0.4,
+        "needs": "S1"
+      }
+    },
+    {
+      "row": 34,
+      "enemy": "galehorn",
+      "status": "new",
+      "deploy_step": 2,
+      "zone": "windstone_circle",
+      "home_xz": [
+        -1.99,
+        -68.99
+      ],
+      "reason": "boss on the flush layout windstone_altar platform (-4,-70) r 2.5, 2.25 m from its centre toward the circle centre (the central altar block r 0.8 is the only collider, 1.45 m from the home); paces +-1 m tangential so every patrol point stays on the platform (<= 2.46 m from its centre) and its body inside the stones",
+      "phases": [
+        "twilight",
+        "night"
+      ],
+      "needs": "S2 S3 S4 S5",
+      "wake": "or any phase by a Gale Seed offering (owner decision 3, see galehorn.aggro.wake_by_offering)",
+      "patrol": {
+        "type": "pingpong",
+        "points": [
+          [
+            -2.44,
+            -68.1
+          ],
+          [
+            -1.54,
+            -69.88
+          ]
+        ],
+        "pause_s": [
+          6,
+          10
+        ],
+        "speed_mult": 0.3,
+        "needs": "S1"
+      }
+    }
+  ],
+  "scatter_keep_clear": {
+    "rule": "Blender scatter (trees, rocks, props) keeps body_radius + 1.0 m clear around every home and 1.2 m either side of every patrol segment.",
+    "explicit": [
+      {
+        "zone": "oak_wallow",
+        "center_xz": [
+          32,
+          -77.5
+        ],
+        "radius_m": 10.0,
+        "note": "wallow clearing with mud decal; now in the layout (clearing oak_wallow + east_oak_grove keep_clear)"
+      },
+      {
+        "zone": "oak_roots",
+        "center_xz": [
+          35.5,
+          -41.5
+        ],
+        "radius_m": 2.0
+      },
+      {
+        "zone": "oak_roots",
+        "center_xz": [
+          35,
+          -47.5
+        ],
+        "radius_m": 2.0
+      },
+      {
+        "zone": "windstone_circle",
+        "center_xz": [
+          -4,
+          -70
+        ],
+        "radius_m": 2.5,
+        "note": "altar platform = layout windstone_altar (flush, walkable)"
+      }
+    ]
+  },
+  "server_extensions": [
+    {
+      "id": "S1",
+      "name": "Spawn zones",
+      "what": "Row field `zone`; zones carry spawn and leash polygons. Leash = leaving the polygon -> evade home at 1.5x speed with full heal; targets are acquired only inside the polygon; 3 s re-aggro immunity after evade. Respawn at a random valid point within 2 m of home. Optional patrol polylines (loop or ping-pong, pause, speed multiplier).",
+      "why": "the owner's 'leash stays inside each zone' rule; today's circles cross water and the bluff",
+      "priority": "must"
+    },
+    {
+      "id": "S2",
+      "name": "Aggro modes",
+      "what": "passive (only after damage), aggressive (radius), assist (same-link monsters within radius join when one is damaged), looter (picks up stale/unwatched drops, re-drops them to the original owner on death), alert pause before the first approach, sleeping state at night (aggro x0.5).",
+      "why": "newbie-safe first clearing without the 3 m pseudo-passive workaround",
+      "priority": "must"
+    },
+    {
+      "id": "S3",
+      "name": "Second skill and shapes",
+      "what": "Optional second skill per enemy with its own timings and trigger range (today fixed at 2.5 m); shapes circle_self, cone, lane, ring_donut; knockback.",
+      "why": "skill 2 for every monster; boss and elite telegraph variety",
+      "priority": "should"
+    },
+    {
+      "id": "S4",
+      "name": "Server clock and weather",
+      "what": "Port sampleEnvironment to Rust; rows gain `phases` (day/twilight/night/rain) and optional `night_home`; at a phase change idle monsters fade out and reappear at their phase home.",
+      "why": "day/night and rain variants agree with what players see",
+      "priority": "should"
+    },
+    {
+      "id": "S5",
+      "name": "Elite and boss rules",
+      "what": "Respawn windows with jitter and a daylight gate; 60 s zone announcement; contribution-based personal loot and EXP split; arena reset after 10 s with no contributor inside; contribution survives 120 s reconnects; stagger cap; phase triggers by HP. Gale Seed offering at the windstone_altar (owner decision 3): wakes Galehorn once per character, only while it is not alive and at least 30 min after its last death; consumes the seed (refused offerings keep it); per-character 'woke Galehorn' flag stored server-side.",
+      "why": "fair MVP-like events without last-hit stealing (catalog SYS-09); the three_windmarks reward (gale_seed) gets a purpose",
+      "priority": "should"
+    },
+    {
+      "id": "S6",
+      "name": "Dynamic respawn",
+      "what": "respawn_s x max(0.5, 1 - 0.125 x (players_in_zone - 1)).",
+      "why": "busy evenings without empty clearings",
+      "priority": "could"
+    },
+    {
+      "id": "S7",
+      "name": "Level and defence",
+      "what": "Enemy fields `level` and `def` (flat, like player DEF); race/element/size stored and shown on the nameplate; no modifiers until SYS-04.",
+      "why": "RO-style identity and future card/element systems",
+      "priority": "could"
+    },
+    {
+      "id": "S8",
+      "name": "Monster collision",
+      "what": "Monsters move with the planar capsule against static colliders and trunks; stuck for 1 s -> evade.",
+      "why": "no visible clipping through trunks and rocks during chases",
+      "priority": "could"
+    }
+  ],
+  "migration": {
+    "rule": "Rows 0-12 keep their index and enemy id (monster ids 101-113 unchanged); only x/z change. New rows are appended in deploy-step order so earlier ids never shift.",
+    "step0_content_only": {
+      "server_code": "none",
+      "content": [
+        "zones.json zone 1 monster_spawns: rows 0-12 to home_xz; append rows 13-27",
+        "enemies.json: tuning.step0 aggro/leash for the four existing enemies; add brookclaw (kind 5)",
+        "enemies.json drops: puddlekin + dew_bead 50 %; thistle_boar + ember_root 4 %; glade_wisp + gale_plume 3 %",
+        "dialogue en/th: enemy_brookclaw"
+      ],
+      "tests_to_update": [
+        "content.rs spawns.len() 13 -> 28",
+        "world.rs monsters.len() 13 -> 28 and kinds [1..=5]"
+      ],
+      "smokes_to_rerun": [
+        "tools/quest-route-smoke.mjs (puddlekin now engages at 3 m)",
+        "tools/netcode-bot.mjs dodge trials (bot must stand within 3 m)",
+        "tools/southbound-cell-smoke.mjs"
+      ],
+      "rows_total": 28
+    },
+    "step1_server_s1_s2_s4": {
+      "adds_rows": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "rows_total": 33,
+      "switches": [
+        "passive/assist modes",
+        "zone leash polygons",
+        "patrols",
+        "phase homes for rows 8 and 9",
+        "rain and night rows"
+      ]
+    },
+    "step2_server_s3_s5": {
+      "adds_rows": [
+        33,
+        34
+      ],
+      "rows_total": 35,
+      "adds_enemies": [
+        "turfback_matriarch (kind 6)",
+        "galehorn (kind 7)"
+      ]
+    },
+    "client": "per-kind monster visuals replace the shared pink slime (art lane); nameplate tier frames for elite/boss (UI thread)"
+  },
+  "owner_decisions": {
+    "date": "2026-10-02",
+    "note": "The owner said 'do best choice'; these are the recorded choices.",
+    "decisions": [
+      {
+        "id": 1,
+        "decision": "The first clearing (hunt_meadow_west / hunt_meadow_east) is passive-only: puddlekin, mosslings and day wisps; boar rows 6 and 7 live in the falls meadow."
+      },
+      {
+        "id": 2,
+        "decision": "Interim passive = a 3 m aggro radius (puddlekin, mossling and glade_wisp step0 aggro 3.0) until server passive mode (S2) lands.",
+        "consequence": "glade_wisp step0 aggro 3.5 -> 3.0; R7s uses 3.0 m for all three"
+      },
+      {
+        "id": 3,
+        "decision": "A Gale Seed offered at the altar wakes Galehorn: once per character, only when the boss is not alive and at least 30 min have passed since its last death. The seed is consumed.",
+        "data": "roster galehorn.aggro.wake_by_offering; S5"
+      },
+      {
+        "id": 4,
+        "decision": "The proposed drop chances are accepted (drop status 'accepted'), tunable after an economy review."
+      }
+    ]
+  },
+  "open_questions": [
+    "Owner idea, future system: a hunters' bounty board at the camp for elite and boss kills.",
+    "Layout: the 4 ring stones other than the gate stones (+-6.4,-63) have no positions yet; once placed, add them to the prop clearance check (Galehorn's patrol keeps its body 0.65 m inside the ring)."
+  ],
+  "live_sync_v3": {
+    "date": "2026-10-03",
+    "source": "content/source/zones.json zone 1 monster_spawns (read-only)",
+    "changes": [
+      {
+        "row": 0,
+        "enemy": "puddlekin",
+        "from": [
+          3.5,
+          4
+        ],
+        "to": [
+          15,
+          -1.5
+        ]
+      },
+      {
+        "row": 3,
+        "enemy": "mossling",
+        "from": [
+          -14,
+          8
+        ],
+        "to": [
+          -13,
+          3
+        ]
+      },
+      {
+        "row": 6,
+        "enemy": "thistle_boar",
+        "from": [
+          18,
+          14
+        ],
+        "to": [
+          13,
+          6
+        ]
+      },
+      {
+        "row": 8,
+        "enemy": "glade_wisp",
+        "from": [
+          0,
+          20
+        ],
+        "to": [
+          -15,
+          -2
+        ]
+      }
+    ],
+    "note": "live_xz mirrors what is live (A33 + the Claude follow-up wisp (-15,-2) / boar (13,6) and root's puddlekin row 0 (15,-1.5)); intended == live for rows 0-12, so there is no open live mismatch. proposed_home_xz_v3 = design-home proposals from tools/levels/check_features.py C4 (spawn slots), for Claude main / root to adopt"
+  }
+}

@@ -3,9 +3,11 @@
 import argparse, json, shutil, subprocess, sys
 from pathlib import Path
 
-def plan(root, dirs):
+DEFAULT_PROJECT_DIRS=('.', 'apps/client', 'apps/server', 'client', 'frontend', 'server', 'backend')
+
+def plan(root, dirs=None):
     commands=[]; problems=[]; found=False; seen=set()
-    for name in dirs:
+    for name in DEFAULT_PROJECT_DIRS if dirs is None else dirs:
         p=(root/name).resolve()
         if not p.is_relative_to(root):
             problems.append('Project directory escapes repository: '+name); continue
@@ -42,7 +44,7 @@ def plan(root, dirs):
 def main():
     a=argparse.ArgumentParser(); a.add_argument('--install',action='store_true'); a.add_argument('--project-dir',action='append')
     args=a.parse_args(); root=Path.cwd().resolve()
-    commands,problems=plan(root,args.project_dir or ['.','client','frontend','server','backend'])
+    commands,problems=plan(root,args.project_dir)
     for tool in ['node','npm','pnpm','cargo','rustc','blender']:
         print(tool+': '+('available' if shutil.which(tool) else 'missing'))
     for p,c in commands:

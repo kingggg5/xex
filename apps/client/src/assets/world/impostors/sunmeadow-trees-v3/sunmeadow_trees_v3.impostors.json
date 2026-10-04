@@ -1,0 +1,839 @@
+{
+  "schema": "xexoria.impostor-atlas/2",
+  "name": "sunmeadow_trees_v3",
+  "generator": "assets/blender/tools/impostor_baker.py",
+  "blender": "5.2.2 LTS",
+  "frame_px": 192,
+  "page_px": 2048,
+  "grid": {
+    "azimuth": 8,
+    "elevation": 4,
+    "el_min_deg": 0.0,
+    "el_max_deg": 45.0,
+    "az0_angle_rad": -0.0,
+    "az_sign": -1,
+    "convention": "frame dir = unit vector from the asset towards the camera in asset-local Babylon axes; azimuth angle = atan2(dir.x, dir.z); frame az index i has angle az0 + az_sign * i * 2pi/azimuth; elevation row j has asin(dir.y) = el_min + j * (el_max - el_min) / (elevation - 1)"
+  },
+  "passes": {
+    "albedo": "sRGB-encoded straight alpha, edge-bled (KTX2 stored as UNORM: sample without hardware sRGB decode)",
+    "normal": "object-space normal in Babylon axes * 0.5 + 0.5 (half resolution), A = coverage"
+  },
+  "shading": {
+    "model": "standard",
+    "emissive": [
+      0.26,
+      0.34,
+      0.36
+    ],
+    "link_emissive_with_diffuse": true,
+    "specular": [
+      0,
+      0,
+      0
+    ],
+    "alpha_cutoff": 0.45,
+    "note": "Matches the sunmeadow-trees-v4 runtime StandardMaterials in environment.ts (tree kit, C-P1-TREE): foliage alpha-test 0.45, emissive fill linked with diffuse; world-weather dims emissive at night for materials named *foliage*.",
+    "albedo_scale": 1.4276,
+    "view_light_slope": 0.0,
+    "calibration": "2026-10-02 C-P1-TREE pass 2: albedo_scale = tree albedo gain 1.22 x measured LOD1/card luma ratio 1.170 (forced ?treeLod=lod1 vs impostor, WebGL2 noon, trees at 90-142 m; planning/evidence/trees-in-babylon-20261002/impostor-calibration/calibration-pass2.json). emissive = TREE_FOLIAGE_FILL. Slope 0: the V.L dependence was not resolved by these views."
+  },
+  "uv": "v = 0 is the top row of the image (load PNG with invertY = false; KTX2 has no flip)",
+  "frames": [
+    {
+      "az": 0,
+      "el": 0,
+      "dir": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 1,
+      "el": 0,
+      "dir": [
+        -0.707107,
+        0.0,
+        0.707107
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 2,
+      "el": 0,
+      "dir": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 0,
+      "dir": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 4,
+      "el": 0,
+      "dir": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "right": [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 5,
+      "el": 0,
+      "dir": [
+        0.707107,
+        0.0,
+        -0.707107
+      ],
+      "right": [
+        0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 6,
+      "el": 0,
+      "dir": [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 0,
+      "dir": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "az": 0,
+      "el": 1,
+      "dir": [
+        -0.0,
+        0.258819,
+        0.965926
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        0.965926,
+        -0.258819
+      ]
+    },
+    {
+      "az": 1,
+      "el": 1,
+      "dir": [
+        -0.683013,
+        0.258819,
+        0.683013
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.183013,
+        0.965926,
+        -0.183013
+      ]
+    },
+    {
+      "az": 2,
+      "el": 1,
+      "dir": [
+        -0.965926,
+        0.258819,
+        0.0
+      ],
+      "right": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.258819,
+        0.965926,
+        0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 1,
+      "dir": [
+        -0.683013,
+        0.258819,
+        -0.683013
+      ],
+      "right": [
+        0.707107,
+        -0.0,
+        -0.707107
+      ],
+      "up": [
+        0.183013,
+        0.965926,
+        0.183013
+      ]
+    },
+    {
+      "az": 4,
+      "el": 1,
+      "dir": [
+        -0.0,
+        0.258819,
+        -0.965926
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        -0.0,
+        0.965926,
+        0.258819
+      ]
+    },
+    {
+      "az": 5,
+      "el": 1,
+      "dir": [
+        0.683013,
+        0.258819,
+        -0.683013
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "up": [
+        -0.183013,
+        0.965926,
+        0.183013
+      ]
+    },
+    {
+      "az": 6,
+      "el": 1,
+      "dir": [
+        0.965926,
+        0.258819,
+        -0.0
+      ],
+      "right": [
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "up": [
+        -0.258819,
+        0.965926,
+        0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 1,
+      "dir": [
+        0.683013,
+        0.258819,
+        0.683013
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.183013,
+        0.965926,
+        -0.183013
+      ]
+    },
+    {
+      "az": 0,
+      "el": 2,
+      "dir": [
+        -0.0,
+        0.5,
+        0.866025
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        0.866025,
+        -0.5
+      ]
+    },
+    {
+      "az": 1,
+      "el": 2,
+      "dir": [
+        -0.612372,
+        0.5,
+        0.612372
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.353553,
+        0.866025,
+        -0.353553
+      ]
+    },
+    {
+      "az": 2,
+      "el": 2,
+      "dir": [
+        -0.866025,
+        0.5,
+        0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.5,
+        0.866025,
+        0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 2,
+      "dir": [
+        -0.612372,
+        0.5,
+        -0.612372
+      ],
+      "right": [
+        0.707107,
+        -0.0,
+        -0.707107
+      ],
+      "up": [
+        0.353553,
+        0.866025,
+        0.353553
+      ]
+    },
+    {
+      "az": 4,
+      "el": 2,
+      "dir": [
+        -0.0,
+        0.5,
+        -0.866025
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        -0.0,
+        0.866025,
+        0.5
+      ]
+    },
+    {
+      "az": 5,
+      "el": 2,
+      "dir": [
+        0.612372,
+        0.5,
+        -0.612372
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "up": [
+        -0.353553,
+        0.866025,
+        0.353553
+      ]
+    },
+    {
+      "az": 6,
+      "el": 2,
+      "dir": [
+        0.866025,
+        0.5,
+        -0.0
+      ],
+      "right": [
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "up": [
+        -0.5,
+        0.866025,
+        0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 2,
+      "dir": [
+        0.612372,
+        0.5,
+        0.612372
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.353553,
+        0.866025,
+        -0.353553
+      ]
+    },
+    {
+      "az": 0,
+      "el": 3,
+      "dir": [
+        -0.0,
+        0.707107,
+        0.707107
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        -0.0
+      ],
+      "up": [
+        -0.0,
+        0.707107,
+        -0.707107
+      ]
+    },
+    {
+      "az": 1,
+      "el": 3,
+      "dir": [
+        -0.5,
+        0.707107,
+        0.5
+      ],
+      "right": [
+        -0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.5,
+        0.707107,
+        -0.5
+      ]
+    },
+    {
+      "az": 2,
+      "el": 3,
+      "dir": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "right": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.707107,
+        0.707107,
+        -0.0
+      ]
+    },
+    {
+      "az": 3,
+      "el": 3,
+      "dir": [
+        -0.5,
+        0.707107,
+        -0.5
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        -0.707107
+      ],
+      "up": [
+        0.5,
+        0.707107,
+        0.5
+      ]
+    },
+    {
+      "az": 4,
+      "el": 3,
+      "dir": [
+        -0.0,
+        0.707107,
+        -0.707107
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        -0.0,
+        0.707107,
+        0.707107
+      ]
+    },
+    {
+      "az": 5,
+      "el": 3,
+      "dir": [
+        0.5,
+        0.707107,
+        -0.5
+      ],
+      "right": [
+        0.707107,
+        0.0,
+        0.707107
+      ],
+      "up": [
+        -0.5,
+        0.707107,
+        0.5
+      ]
+    },
+    {
+      "az": 6,
+      "el": 3,
+      "dir": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "right": [
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "up": [
+        -0.707107,
+        0.707107,
+        -0.0
+      ]
+    },
+    {
+      "az": 7,
+      "el": 3,
+      "dir": [
+        0.5,
+        0.707107,
+        0.5
+      ],
+      "right": [
+        -0.707107,
+        -0.0,
+        0.707107
+      ],
+      "up": [
+        -0.5,
+        0.707107,
+        -0.5
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "cols": 8,
+      "rows": 8,
+      "width_px": 1536,
+      "height_px": 1536,
+      "albedo": "sunmeadow_trees_v3_albedo_0.png",
+      "albedo_sha256": "60c7490922e3fdd9ce9b58ee4654efc640360ae6554b42364e02161b56f947a2",
+      "albedo_ktx2": "sunmeadow_trees_v3_albedo_0.ktx2",
+      "albedo_ktx2_sha256": "55a9d27dbea8b314953dab4834fec13516848d35af0aa14345895c3059cf9639",
+      "normal": "sunmeadow_trees_v3_normal_0.png",
+      "normal_sha256": "d9d3bf0dad7d0135417380832324a5c944696fa7a5e0dfec6ec9f24ce5e7f75e",
+      "normal_width_px": 768,
+      "normal_height_px": 768,
+      "normal_ktx2": "sunmeadow_trees_v3_normal_0.ktx2",
+      "normal_ktx2_sha256": "dcd203978ca0de52364344c1a4ec2b1b2d400f9367220d558e08a6af023505b6"
+    },
+    {
+      "cols": 8,
+      "rows": 8,
+      "width_px": 1536,
+      "height_px": 1536,
+      "albedo": "sunmeadow_trees_v3_albedo_1.png",
+      "albedo_sha256": "369912768cfc5bf30813081accd8a8359ceafb05088a2e61b5ec5d5894fb9c41",
+      "albedo_ktx2": "sunmeadow_trees_v3_albedo_1.ktx2",
+      "albedo_ktx2_sha256": "df90010e07f441af9d69c006d49789d8c7f885c25f4febbadf36d4bf9cf4eeff",
+      "normal": "sunmeadow_trees_v3_normal_1.png",
+      "normal_sha256": "395d239221af25b0be1b75560ecaf5aee5a40ad44045a09c8e9bfda08b8a1d63",
+      "normal_width_px": 768,
+      "normal_height_px": 768,
+      "normal_ktx2": "sunmeadow_trees_v3_normal_1.ktx2",
+      "normal_ktx2_sha256": "9a5467d859de00ce6b6ea9abd145721e38fdcc4830ca2c38bd8dd50a275fc44a"
+    },
+    {
+      "cols": 8,
+      "rows": 4,
+      "width_px": 1536,
+      "height_px": 768,
+      "albedo": "sunmeadow_trees_v3_albedo_2.png",
+      "albedo_sha256": "d3ee1293d67acb6b1213c9c9514789dc08907e73bccef73333fc7bcd9486e54f",
+      "albedo_ktx2": "sunmeadow_trees_v3_albedo_2.ktx2",
+      "albedo_ktx2_sha256": "18b2f38fb894435fb2d8986ef89792c414812ae99783abe29be5f666514c5127",
+      "normal": "sunmeadow_trees_v3_normal_2.png",
+      "normal_sha256": "f938c5f195a23898c715a3ebdf7b795c824c681bbfb70a3fef830d254f480b80",
+      "normal_width_px": 768,
+      "normal_height_px": 384,
+      "normal_ktx2": "sunmeadow_trees_v3_normal_2.ktx2",
+      "normal_ktx2_sha256": "74926194504555d51986814d656d0029813dbb9d5baa156f00317a1c54823be4"
+    }
+  ],
+  "objects": [
+    {
+      "id": "qn_broadleaf_s",
+      "source": "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_s_lod0.glb",
+      "source_sha256": "9df49f5df3f1d73049e44376770ed8a902838f8f8c2f896f796fad0f9a229504",
+      "source_triangles": 4885,
+      "page": 0,
+      "col": 0,
+      "row": 0,
+      "card_size_m": 8.4356,
+      "height_m": 5.6721,
+      "horizontal_radius_m": 2.8994,
+      "center_from_pivot": [
+        -0.0,
+        2.836033,
+        -0.0
+      ],
+      "center_from_origin": [
+        -0.207239,
+        2.663967,
+        0.421163
+      ],
+      "pivot_from_origin": [
+        -0.207239,
+        -0.172066,
+        0.421163
+      ]
+    },
+    {
+      "id": "qn_broadleaf_m",
+      "source": "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_m_lod0.glb",
+      "source_sha256": "6f4046eb0db3da8e8c0c677732d22f0b73c906a32532f369dac124dee57eebd2",
+      "source_triangles": 4662,
+      "page": 0,
+      "col": 0,
+      "row": 4,
+      "card_size_m": 11.1086,
+      "height_m": 7.7283,
+      "horizontal_radius_m": 3.6887,
+      "center_from_pivot": [
+        -0.0,
+        3.864152,
+        -0.0
+      ],
+      "center_from_origin": [
+        0.13878,
+        3.635848,
+        0.085469
+      ],
+      "pivot_from_origin": [
+        0.13878,
+        -0.228304,
+        0.085469
+      ]
+    },
+    {
+      "id": "qn_broadleaf_l",
+      "source": "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_broadleaf_l_lod0.glb",
+      "source_sha256": "56c4717419e3a516fa36a860b95bf516695d3b2c26eb8b853f350c5a5f37a64a",
+      "source_triangles": 5184,
+      "page": 1,
+      "col": 0,
+      "row": 0,
+      "card_size_m": 13.6927,
+      "height_m": 9.7026,
+      "horizontal_radius_m": 4.4585,
+      "center_from_pivot": [
+        -0.0,
+        4.851321,
+        -0.0
+      ],
+      "center_from_origin": [
+        -0.014943,
+        4.64868,
+        -0.03329
+      ],
+      "pivot_from_origin": [
+        -0.014943,
+        -0.202641,
+        -0.03329
+      ]
+    },
+    {
+      "id": "qn_conifer_m",
+      "source": "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_m_lod0.glb",
+      "source_sha256": "f0f585c19312d63b3a047712c944b7f4d5e43f7caef9fab9288605b5e54c5e48",
+      "source_triangles": 2779,
+      "page": 1,
+      "col": 0,
+      "row": 4,
+      "card_size_m": 10.4842,
+      "height_m": 8.2634,
+      "horizontal_radius_m": 2.9966,
+      "center_from_pivot": [
+        -0.0,
+        4.131685,
+        -0.0
+      ],
+      "center_from_origin": [
+        0.024382,
+        3.868315,
+        -0.248087
+      ],
+      "pivot_from_origin": [
+        0.024382,
+        -0.263371,
+        -0.248087
+      ]
+    },
+    {
+      "id": "qn_conifer_l",
+      "source": "assets/models/sunmeadow-trees-v4/candidates/quaternius-stylized/qn_conifer_l_lod0.glb",
+      "source_sha256": "a529c852afbcb07feb36e264183812fee2cddf22ef56a1c10003c7706ac3a43c",
+      "source_triangles": 3140,
+      "page": 2,
+      "col": 0,
+      "row": 0,
+      "card_size_m": 15.027,
+      "height_m": 12.2152,
+      "horizontal_radius_m": 4.1094,
+      "center_from_pivot": [
+        -0.0,
+        6.107614,
+        -0.0
+      ],
+      "center_from_origin": [
+        -0.161594,
+        5.892386,
+        -0.919098
+      ],
+      "pivot_from_origin": [
+        -0.161594,
+        -0.215228,
+        -0.919098
+      ]
+    }
+  ],
+  "status": "CANDIDATE: verify in Babylon (tests/impostor-review.html) before replacing meshes"
+}

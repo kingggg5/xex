@@ -1,0 +1,18 @@
+{
+  "quests": [
+    {
+      "id": "three_windmarks",
+      "name_key": "quest_three_windmarks",
+      "giver": "sella",
+      "requires": [],
+      "objectives": [
+        { "id": "windmark", "kind": "activate", "count": 3, "distinct": true },
+        { "id": "hunt", "kind": "defeat", "target": "puddlekin", "count": 3 }
+      ],
+      "reward": {
+        "exp": 90,
+        "items": [{ "def": "gale_seed", "count": 1 }]
+      }
+    }
+  ]
+}

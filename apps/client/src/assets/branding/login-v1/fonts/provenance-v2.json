@@ -1,0 +1,78 @@
+{
+  "source": "Official Google Fonts CSS2 and google/fonts OFL licenses",
+  "delivery": "Self-hosted WOFF2",
+  "files": [
+    {
+      "family": "Cormorant Garamond",
+      "subset": "latin",
+      "weight": "400 600",
+      "file": "cormorant-garamond-latin-400-600.woff2",
+      "url": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2",
+      "bytes": 37640,
+      "sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+    },
+    {
+      "family": "Marcellus",
+      "subset": "latin",
+      "weight": "400",
+      "file": "marcellus-latin-400.woff2",
+      "url": "https://fonts.gstatic.com/s/marcellus/v14/wEO_EBrOk8hQLDvIAF81VvoK.woff2",
+      "bytes": 14552,
+      "sha256": "8a539799d12e3a144273288055490f57e1eee84da7a9145f085bc522e80719c3"
+    },
+    {
+      "family": "Trirong",
+      "subset": "thai",
+      "weight": "400",
+      "file": "trirong-thai-400.woff2",
+      "url": "https://fonts.gstatic.com/s/trirong/v17/7r3GqXNgp8wxdOdOn58o2JZg.woff2",
+      "bytes": 16252,
+      "sha256": "baa7513d6c4fe8c6cb9ef7410db3dc935b93d64e5e263ed3f2b646466cf78ba0"
+    },
+    {
+      "family": "Trirong",
+      "subset": "latin",
+      "weight": "400",
+      "file": "trirong-latin-400.woff2",
+      "url": "https://fonts.gstatic.com/s/trirong/v17/7r3GqXNgp8wxdOdOn4so2A.woff2",
+      "bytes": 20648,
+      "sha256": "89e55651347ace0e9bf44e5c74c58ed2d29d371adc23ebc5c1aa26494c120457"
+    },
+    {
+      "family": "Trirong",
+      "subset": "thai",
+      "weight": "500",
+      "file": "trirong-thai-500.woff2",
+      "url": "https://fonts.gstatic.com/s/trirong/v17/7r3DqXNgp8wxdOdOl3gLzb1B59H-.woff2",
+      "bytes": 15860,
+      "sha256": "eda53edcc4ce9ad99287f45d806a149a3ff008bcd94bc7a0006ce06a848f4a90"
+    },
+    {
+      "family": "Trirong",
+      "subset": "latin",
+      "weight": "500",
+      "file": "trirong-latin-500.woff2",
+      "url": "https://fonts.gstatic.com/s/trirong/v17/7r3DqXNgp8wxdOdOl3gLzalB5w.woff2",
+      "bytes": 20644,
+      "sha256": "211a695a1ff93e86a8a474fa225e32234a5e1ff3a7af3c3dd97a6fc29950c119"
+    },
+    {
+      "family": "Trirong",
+      "subset": "thai",
+      "weight": "600",
+      "file": "trirong-thai-600.woff2",
+      "url": "https://fonts.gstatic.com/s/trirong/v17/7r3DqXNgp8wxdOdOl1QMzb1B59H-.woff2",
+      "bytes": 16024,
+      "sha256": "1a272ad92672d1f6c5acb25862738a3763e853367e5e2dd642a87215ea1e83ea"
+    },
+    {
+      "family": "Trirong",
+      "subset": "latin",
+      "weight": "600",
+      "file": "trirong-latin-600.woff2",
+      "url": "https://fonts.gstatic.com/s/trirong/v17/7r3DqXNgp8wxdOdOl1QMzalB5w.woff2",
+      "bytes": 21084,
+      "sha256": "fa7522d3b068363f0753568f6cfca675389d147eaff9fbf29a98a59dcb4452a7"
+    }
+  ]
+}

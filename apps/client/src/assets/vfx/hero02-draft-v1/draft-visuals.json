@@ -1,0 +1,1248 @@
+{
+  "schema": "hero02-visual-draft-v1",
+  "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN",
+  "source": "planning/assets/hero-skills.json",
+  "source_sha256": "4aee3c13ac9b301ec5af0b94d3be6de6ae91f3bb61d140218484eb88c292aee3",
+  "kit": [
+    {
+      "id": "vfx_spectral_blade",
+      "file": "vfx_spectral_blade.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_funnel",
+      "file": "vfx_funnel.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_cone_burst",
+      "file": "vfx_cone_burst.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_ring_wall",
+      "file": "vfx_ring_wall.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_rune_circle_outer",
+      "file": "vfx_rune_circle_outer.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_rune_circle_inner",
+      "file": "vfx_rune_circle_inner.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_rune_ring_blade",
+      "file": "vfx_rune_ring_blade.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_swirl_arms",
+      "file": "vfx_swirl_arms.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_shock_ring",
+      "file": "vfx_shock_ring.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_impact_star",
+      "file": "vfx_impact_star.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_ground_cracks",
+      "file": "vfx_ground_cracks.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_scorch",
+      "file": "vfx_scorch.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_streak",
+      "file": "vfx_streak.png",
+      "kind": "scroll"
+    },
+    {
+      "id": "vfx_palm_sigil",
+      "file": "vfx_palm_sigil.png",
+      "kind": "billboard"
+    },
+    {
+      "id": "vfx_noise_erosion",
+      "file": "vfx_noise_erosion.png",
+      "kind": "utility"
+    },
+    {
+      "id": "vfx_soft_disc",
+      "file": "vfx_soft_disc.png",
+      "kind": "utility"
+    },
+    {
+      "id": "vfx_fb_dust",
+      "file": "vfx_fb_dust.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_lightning",
+      "file": "vfx_fb_lightning.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_impact",
+      "file": "vfx_fb_impact.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_swirl",
+      "file": "vfx_fb_swirl.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_shards",
+      "file": "vfx_shards.png",
+      "kind": "sprites"
+    },
+    {
+      "id": "vfx_crescent_slash",
+      "file": "vfx_crescent_slash.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_crystal_shard",
+      "file": "vfx_crystal_shard.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_crystal_lance",
+      "file": "vfx_crystal_lance.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_hex_dome",
+      "file": "vfx_hex_dome.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_shield_sigil",
+      "file": "vfx_shield_sigil.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_orbit_ring",
+      "file": "vfx_orbit_ring.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_arrow",
+      "file": "vfx_arrow.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_feather_blade",
+      "file": "vfx_feather_blade.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_thorn_ring",
+      "file": "vfx_thorn_ring.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_diamond_knife",
+      "file": "vfx_diamond_knife.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_flask",
+      "file": "vfx_flask.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_forge_hammer",
+      "file": "vfx_forge_hammer.glb",
+      "kind": "mesh"
+    },
+    {
+      "id": "vfx_rune_compass",
+      "file": "vfx_rune_compass.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_rune_sunwheel",
+      "file": "vfx_rune_sunwheel.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_rune_diamond",
+      "file": "vfx_rune_diamond.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_gear_ring",
+      "file": "vfx_gear_ring.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_rune_leaf",
+      "file": "vfx_rune_leaf.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_ground_split",
+      "file": "vfx_ground_split.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_liquid_pool",
+      "file": "vfx_liquid_pool.png",
+      "kind": "decal"
+    },
+    {
+      "id": "vfx_hex_sigil",
+      "file": "vfx_hex_sigil.png",
+      "kind": "billboard"
+    },
+    {
+      "id": "vfx_fb_smoke",
+      "file": "vfx_fb_smoke.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_flame",
+      "file": "vfx_fb_flame.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_splash",
+      "file": "vfx_fb_splash.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_ripple",
+      "file": "vfx_fb_ripple.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_fb_cloud",
+      "file": "vfx_fb_cloud.png",
+      "kind": "flipbook"
+    },
+    {
+      "id": "vfx_motes",
+      "file": "vfx_motes.png",
+      "kind": "sprites"
+    },
+    {
+      "id": "vfx_ramps",
+      "file": "vfx_ramps.png",
+      "kind": "atlas"
+    },
+    {
+      "id": "vfx_sigil_atlas",
+      "file": "vfx_sigil_atlas.png",
+      "kind": "atlas"
+    },
+    {
+      "id": "prop_cog_sentry",
+      "file": "prop_cog_sentry.glb",
+      "kind": "prop"
+    },
+    {
+      "id": "prop_anvil_pylon",
+      "file": "prop_anvil_pylon.glb",
+      "kind": "prop"
+    }
+  ],
+  "kit_count": 51,
+  "skills": [
+    {
+      "id": "h02_hoarfrost_gale",
+      "name": {
+        "en": "Hoarfrost Gale",
+        "th": "ลมเหมันต์สะกด"
+      },
+      "slot": 1,
+      "palette": {
+        "core": "#F4F7FF",
+        "body": "#A9C8FF",
+        "edge": "#6A5CFF",
+        "accent": "#FFD36E"
+      },
+      "telegraph": {
+        "kind": "AREA_LANE",
+        "width_m": 1.5,
+        "length_m": 10,
+        "then": {
+          "kind": "AREA_CIRCLE",
+          "radius_m": 2.2,
+          "at": "the impact point",
+          "shown_ms": 200
+        }
+      },
+      "targeting": {
+        "mode": "skillshot, first enemy hit",
+        "range_m": 10,
+        "radius_m": 2.2
+      },
+      "timing": {
+        "windup_ms": 200,
+        "active_ms": 67,
+        "recovery_ms": 200,
+        "release_ms": 200,
+        "release_frame": 6,
+        "fps": 30,
+        "clip": "mage.skill_gale",
+        "clip_ms": 467,
+        "clip_frames": 14,
+        "events": [
+          {
+            "id": "charge_start",
+            "t_ms": 0
+          },
+          {
+            "id": "release",
+            "t_ms": 200
+          }
+        ]
+      },
+      "vfx": {
+        "preset": "xs_gale_palm@frost",
+        "reuses": "xs_gale_palm",
+        "budget_class": "heroic",
+        "peak_coverage_pct": 18,
+        "layers": [
+          {
+            "role": "anticipation",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "cast",
+              "end_ms": 200
+            },
+            "kit": [
+              "vfx_fb_swirl",
+              "vfx_streak",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "Two counter-rotating frost swirls on fx_head grow 0.4 → 1.0 m; 12 ice streaks converge; hoarfrost creeps up the staff."
+          },
+          {
+            "role": "core",
+            "t": {
+              "from": "cast",
+              "start_ms": 200,
+              "to": "hit",
+              "end_ms": 0
+            },
+            "kit": [
+              "vfx_hex_sigil",
+              "vfx_cone_burst"
+            ],
+            "min_tier": "low",
+            "desc": "vfx_hex_sigil billboard 1.6 m (a crescent moon cradling a snow crystal in a rune disc) wobbling ±6° at 9 Hz with a pale core; a frost release cone 200-320 ms. The broad crescent silhouette fixes the hand-off's 'tiny circular sigil' defect."
+          },
+          {
+            "role": "secondary",
+            "t": {
+              "from": "cast",
+              "start_ms": 200,
+              "to": "hit",
+              "end_ms": 250
+            },
+            "kit": [
+              "vfx_motes",
+              "vfx_streak"
+            ],
+            "min_tier": "medium",
+            "desc": "3 lilac → violet helix ribbons (TrailMesh; 2 on Medium), shed frost streaks at 60/s, gold glints.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "ground",
+            "t": {
+              "from": "hit",
+              "start_ms": 0,
+              "to": "hit",
+              "end_ms": 1400
+            },
+            "kit": [
+              "vfx_swirl_arms",
+              "vfx_ground_cracks"
+            ],
+            "min_tier": "low",
+            "desc": "A frost vortex decal r 0 → 2.6 m spinning 2.4 → 0.6 rad/s, a lilac frost-crack ring, and a dust ring under the caster at release."
+          },
+          {
+            "role": "after",
+            "t": {
+              "from": "hit",
+              "start_ms": 0,
+              "to": "hit",
+              "end_ms": 1200
+            },
+            "kit": [
+              "vfx_funnel",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "A 2.5 m frost funnel twists up while 24 ice-glitter bits spiral up and settle as rime.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "light",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "hit",
+              "end_ms": 300
+            },
+            "kit": [],
+            "min_tier": "high",
+            "desc": "#A9C8FF, range 7 m: charge 0 → 2, travel 2, impact 5 → 0."
+          }
+        ],
+        "readability": "Core alpha 0.85, rim 0.5; the funnel is thin and translucent, so pushed enemies stay visible."
+      },
+      "captureMs": [
+        80,
+        180,
+        260,
+        450,
+        660,
+        850,
+        1400,
+        2000
+      ],
+      "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN"
+    },
+    {
+      "id": "h02_rimeshard_nova",
+      "name": {
+        "en": "Rimeshard Nova",
+        "th": "วงผลึกเหมันต์"
+      },
+      "slot": 2,
+      "palette": {
+        "core": "#F4F7FF",
+        "body": "#A9C8FF",
+        "edge": "#6A5CFF",
+        "accent": "#FFD36E"
+      },
+      "telegraph": {
+        "kind": "AREA_CIRCLE",
+        "radius_m": 4,
+        "note": "radial wipe over the 150 ms cast"
+      },
+      "targeting": {
+        "mode": "self AoE",
+        "range_m": 0,
+        "radius_m": 4
+      },
+      "timing": {
+        "windup_ms": 200,
+        "active_ms": 100,
+        "recovery_ms": 300,
+        "release_ms": 200,
+        "release_frame": 6,
+        "fps": 30,
+        "clip": "mage.skill_nova",
+        "clip_ms": 600,
+        "clip_frames": 18,
+        "events": [
+          {
+            "id": "charge_start",
+            "t_ms": 0
+          },
+          {
+            "id": "plant",
+            "t_ms": 150
+          },
+          {
+            "id": "hit",
+            "t_ms": 200
+          }
+        ]
+      },
+      "vfx": {
+        "preset": "xs_bladeward_nova@crystal",
+        "reuses": "xs_bladeward_nova",
+        "budget_class": "heroic",
+        "peak_coverage_pct": 22,
+        "layers": [
+          {
+            "role": "anticipation",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "cast",
+              "end_ms": 150
+            },
+            "kit": [
+              "vfx_rune_ring_blade",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "The notched ring (crystal notches) draws clockwise at r 4.0 m; 16 frost motes spiral from the ring into the staff heel."
+          },
+          {
+            "role": "core",
+            "t": {
+              "from": "cast",
+              "start_ms": 150,
+              "to": "cast",
+              "end_ms": 1200
+            },
+            "kit": [
+              "vfx_crystal_shard"
+            ],
+            "min_tier": "low",
+            "desc": "12 hex crystals, 2.6 m tall (taller than the 2.1 m blades for Look v2), rise from -1.7 m with back-out over 110 ms at radii 2.9 / 3.5 m, staggered 8 ms clockwise, tilted out 10-22°; lilac fresnel rim, violet body; erode tip → base from 700 ms."
+          },
+          {
+            "role": "secondary",
+            "t": {
+              "from": "cast",
+              "start_ms": 150,
+              "to": "cast",
+              "end_ms": 900
+            },
+            "kit": [
+              "vfx_shards",
+              "vfx_fb_dust",
+              "vfx_fb_lightning"
+            ],
+            "min_tier": "medium",
+            "desc": "Ice shards thrown out under gravity, snow-dust puffs at 45 %, and 4-6 gold star-threads arcing between neighbouring crystals.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "ground",
+            "t": {
+              "from": "cast",
+              "start_ms": 150,
+              "to": "cast",
+              "end_ms": 2500
+            },
+            "kit": [
+              "vfx_impact_star",
+              "vfx_shock_ring",
+              "vfx_ring_wall",
+              "vfx_ground_cracks"
+            ],
+            "min_tier": "low",
+            "desc": "A 3.2 m ground flash, a shock ring and 0.6 m ring wall r 0.5 → 4.6 m, then a frost crack per crystal cooling lilac → indigo."
+          },
+          {
+            "role": "after",
+            "t": {
+              "from": "cast",
+              "start_ms": 260,
+              "to": "cast",
+              "end_ms": 1500
+            },
+            "kit": [
+              "vfx_fb_dust",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "Low frost mist at 12 % drifting outward; falling ice glitter."
+          },
+          {
+            "role": "light",
+            "t": {
+              "from": "cast",
+              "start_ms": 150,
+              "to": "cast",
+              "end_ms": 600
+            },
+            "kit": [],
+            "min_tier": "high",
+            "desc": "#A9C8FF, range 9 m, 0 → 6 → 0, peak at 190 ms."
+          }
+        ],
+        "readability": "Crystals stand on the 2.9-3.5 m perimeter; the witch and enemies inside stay visible."
+      },
+      "captureMs": [
+        50,
+        150,
+        210,
+        300,
+        450,
+        800,
+        1200,
+        1800
+      ],
+      "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN"
+    },
+    {
+      "id": "h02_starless_hollow",
+      "name": {
+        "en": "Starless Hollow",
+        "th": "หลุมดาราดับ"
+      },
+      "slot": 3,
+      "palette": {
+        "core": "#FFF0FF",
+        "body": "#B07CFF",
+        "edge": "#5A1FD1",
+        "accent": "#5FF2D8",
+        "abyss": "#12052B"
+      },
+      "telegraph": {
+        "kind": "AREA_CIRCLE",
+        "radius_m": 4.5,
+        "note": "the ring stays for the zone's life"
+      },
+      "targeting": {
+        "mode": "ground target within 12 m",
+        "range_m": 12,
+        "radius_m": 4.5
+      },
+      "timing": {
+        "windup_ms": 600,
+        "active_ms": 100,
+        "recovery_ms": 200,
+        "release_ms": 600,
+        "release_frame": 18,
+        "fps": 30,
+        "clip": "mage.skill_hollow",
+        "clip_ms": 900,
+        "clip_frames": 27,
+        "events": [
+          {
+            "id": "rune",
+            "t_ms": 0
+          },
+          {
+            "id": "slam",
+            "t_ms": 600
+          },
+          {
+            "id": "pulse",
+            "t_ms": 900
+          }
+        ],
+        "zone": "900-3050 ms; collapse burst at 3050 ms"
+      },
+      "vfx": {
+        "preset": "xs_void_rift",
+        "reuses": "xs_void_rift",
+        "budget_class": "heroic",
+        "peak_coverage_pct": 30,
+        "layers": [
+          {
+            "role": "anticipation",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "cast",
+              "end_ms": 600
+            },
+            "kit": [
+              "vfx_rune_circle_outer",
+              "vfx_rune_circle_inner",
+              "vfx_fb_lightning",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "The outer rune circle wipes in over 450 ms turning +10°/s; the inner heptagram (r 3.0 m) fades in turning -20°/s; 3 arcs crawl along the ring; rim motes rise 0.6 m."
+          },
+          {
+            "role": "core",
+            "t": {
+              "from": "cast",
+              "start_ms": 600,
+              "to": "cast",
+              "end_ms": 3050
+            },
+            "kit": [
+              "vfx_swirl_arms",
+              "vfx_funnel",
+              "vfx_ring_wall"
+            ],
+            "min_tier": "low",
+            "desc": "Abyss disc (alpha-blended, not additive) r 0 → 4.2 m with back-out, spin 1.2 → 2.0 rad/s; an inverted depth funnel below the ground; a broken teal rim pulsing (width ×1.4, brightness ×2 for 120 ms) on each tick. Hand-off upgrade #3: a darker visible centre and multi-scale painterly violet bands."
+          },
+          {
+            "role": "secondary",
+            "t": {
+              "from": "cast",
+              "start_ms": 900,
+              "to": "cast",
+              "end_ms": 2700
+            },
+            "kit": [
+              "vfx_motes",
+              "vfx_shock_ring",
+              "vfx_fb_impact"
+            ],
+            "min_tier": "medium",
+            "desc": "40 pull motes born at the rim spiral in and down; each tick sends an inward shock ring 4.5 → 1 m and a violet impact on every enemy.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "ground",
+            "t": {
+              "from": "cast",
+              "start_ms": 3050,
+              "to": "cast",
+              "end_ms": 4500
+            },
+            "kit": [
+              "vfx_fb_lightning",
+              "vfx_shock_ring",
+              "vfx_scorch"
+            ],
+            "min_tier": "low",
+            "desc": "Implosion at 3050 ms: 8 radial arcs, an outward shock ring r 0 → 5 m and debris, then an abyss-violet scorch."
+          },
+          {
+            "role": "after",
+            "t": {
+              "from": "cast",
+              "start_ms": 3050,
+              "to": "cast",
+              "end_ms": 4500
+            },
+            "kit": [
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "Embers and violet motes drift up while the scorch cools."
+          },
+          {
+            "role": "light",
+            "t": {
+              "from": "cast",
+              "start_ms": 600,
+              "to": "cast",
+              "end_ms": 3400
+            },
+            "kit": [],
+            "min_tier": "high",
+            "desc": "#B07CFF, range 10 m: opening 0 → 4, +2 on each tick, collapse flash 8 → 0."
+          }
+        ],
+        "readability": "The abyss is value-lifted to L* ≥ 25 under enemies and the violet light rims them; the broken teal rim never competes with the smooth amber band."
+      },
+      "captureMs": [
+        200,
+        550,
+        750,
+        1250,
+        1950,
+        2850,
+        3100,
+        3900
+      ],
+      "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN"
+    },
+    {
+      "id": "h02_star_lance",
+      "name": {
+        "en": "Sapphire Star Lance",
+        "th": "หอกดาราไพลิน"
+      },
+      "slot": 4,
+      "palette": {
+        "core": "#F2F8FF",
+        "body": "#4FA8FF",
+        "edge": "#6A4CFF",
+        "accent": "#FFD36E"
+      },
+      "telegraph": {
+        "kind": "AREA_LANE",
+        "width_m": 1.2,
+        "length_m": 16
+      },
+      "targeting": {
+        "mode": "aimed line, pierces up to 3",
+        "range_m": 16,
+        "radius_m": null
+      },
+      "timing": {
+        "windup_ms": 467,
+        "active_ms": 67,
+        "recovery_ms": 300,
+        "release_ms": 467,
+        "release_frame": 14,
+        "fps": 30,
+        "clip": "mage.skill_lance",
+        "clip_ms": 833,
+        "clip_frames": 25,
+        "events": [
+          {
+            "id": "charge_start",
+            "t_ms": 0
+          },
+          {
+            "id": "release",
+            "t_ms": 467
+          }
+        ]
+      },
+      "vfx": {
+        "preset": "xs_h02_star_lance",
+        "reuses": "prior art: hero02 package 'lance'",
+        "budget_class": "heroic",
+        "peak_coverage_pct": 16,
+        "layers": [
+          {
+            "role": "anticipation",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "cast",
+              "end_ms": 467
+            },
+            "kit": [
+              "vfx_rune_circle_inner",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "A vertical heptagram disc (1.4 m) unfolds in front of fx_head; 12 crystal motes converge; 3 gold four-point stars orbit the disc; sapphire light ramps 0 → 3."
+          },
+          {
+            "role": "core",
+            "t": {
+              "from": "cast",
+              "start_ms": 467,
+              "to": "cast",
+              "end_ms": 900
+            },
+            "kit": [
+              "vfx_crystal_lance"
+            ],
+            "min_tier": "low",
+            "desc": "A 2.6 m faceted sapphire spear with a star head and gold inlay, plus a 2-ribbon spiral (TrailMesh)."
+          },
+          {
+            "role": "secondary",
+            "t": {
+              "from": "cast",
+              "start_ms": 467,
+              "to": "cast",
+              "end_ms": 1100
+            },
+            "kit": [
+              "vfx_motes",
+              "vfx_ring_wall",
+              "vfx_fb_impact"
+            ],
+            "min_tier": "medium",
+            "desc": "Shed crystal glitter, 3 thin sonic rings stamped along the path, star sparks at each pierce.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "ground",
+            "t": {
+              "from": "cast",
+              "start_ms": 467,
+              "to": "cast",
+              "end_ms": 1700
+            },
+            "kit": [
+              "vfx_streak",
+              "vfx_impact_star"
+            ],
+            "min_tier": "low",
+            "desc": "A lilac frost streak along the lane and a star flash under each pierced enemy."
+          },
+          {
+            "role": "after",
+            "t": {
+              "from": "cast",
+              "start_ms": 700,
+              "to": "cast",
+              "end_ms": 2000
+            },
+            "kit": [
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "The heptagram erodes away; sapphire motes hang along the lane."
+          },
+          {
+            "role": "light",
+            "t": {
+              "from": "cast",
+              "start_ms": 300,
+              "to": "cast",
+              "end_ms": 700
+            },
+            "kit": [],
+            "min_tier": "high",
+            "desc": "#4FA8FF, range 8 m, travelling with the lance."
+          }
+        ]
+      },
+      "captureMs": [
+        150,
+        420,
+        500,
+        620,
+        720,
+        950,
+        1300,
+        1800
+      ],
+      "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN"
+    },
+    {
+      "id": "h02_moonveil_ward",
+      "name": {
+        "en": "Moonveil Ward",
+        "th": "ม่านจันทราพิทักษ์"
+      },
+      "slot": 5,
+      "palette": {
+        "core": "#F4F7FF",
+        "body": "#A9C8FF",
+        "edge": "#8A5CFF",
+        "accent": "#FFD36E"
+      },
+      "telegraph": {
+        "kind": "SAFE_BRACKET",
+        "then": {
+          "kind": "AREA_CIRCLE",
+          "radius_m": 3,
+          "at": "the ally when the pulse fires",
+          "shown_ms": 200
+        }
+      },
+      "targeting": {
+        "mode": "ally or self within 14 m",
+        "range_m": 14,
+        "radius_m": 3
+      },
+      "timing": {
+        "windup_ms": 300,
+        "active_ms": 67,
+        "recovery_ms": 300,
+        "release_ms": 300,
+        "release_frame": 9,
+        "fps": 30,
+        "clip": "mage.skill_ward",
+        "clip_ms": 667,
+        "clip_frames": 20,
+        "events": [
+          {
+            "id": "charge_start",
+            "t_ms": 0
+          },
+          {
+            "id": "release",
+            "t_ms": 300
+          }
+        ]
+      },
+      "vfx": {
+        "preset": "xs_h02_moonveil_ward",
+        "reuses": "prior art: hero02 package 'aegis'",
+        "budget_class": "heroic",
+        "peak_coverage_pct": 12,
+        "layers": [
+          {
+            "role": "anticipation",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "cast",
+              "end_ms": 300
+            },
+            "kit": [
+              "vfx_crystal_shard",
+              "vfx_sigil_atlas"
+            ],
+            "min_tier": "medium",
+            "desc": "Two crescent moons orbit in from 2 m and lock above the ally; the aegis star-plate glyph flickers on."
+          },
+          {
+            "role": "core",
+            "t": {
+              "from": "cast",
+              "start_ms": 300,
+              "to": "cast",
+              "end_ms": 5300
+            },
+            "kit": [
+              "vfx_hex_dome"
+            ],
+            "min_tier": "low",
+            "desc": "A geodesic hex-crystal dome r 1.2 m, alpha 0.35 body / 0.7 rim, scrolling star sparkle; each absorbed hit flashes the struck facet gold."
+          },
+          {
+            "role": "secondary",
+            "t": {
+              "from": "cast",
+              "start_ms": 300,
+              "to": "cast",
+              "end_ms": 5300
+            },
+            "kit": [
+              "vfx_crystal_shard",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "3 orbiting diamond crystals and gold four-point glints on the facets.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "ground",
+            "t": {
+              "from": "cast",
+              "start_ms": 300,
+              "to": "cast",
+              "end_ms": 5300
+            },
+            "kit": [
+              "vfx_rune_circle_inner"
+            ],
+            "min_tier": "low",
+            "desc": "A moon-phase heptagram r 1.2 m under the ally."
+          },
+          {
+            "role": "after",
+            "t": {
+              "from": "end",
+              "start_ms": 0,
+              "to": "end",
+              "end_ms": 1200
+            },
+            "kit": [
+              "vfx_shards",
+              "vfx_shock_ring",
+              "vfx_ground_cracks"
+            ],
+            "min_tier": "low",
+            "desc": "On break or expiry the dome shatters into hex shards, a frost pulse ring races to 3 m, and a rime decal spreads."
+          },
+          {
+            "role": "light",
+            "t": {
+              "from": "end",
+              "start_ms": 0,
+              "to": "end",
+              "end_ms": 300
+            },
+            "kit": [],
+            "min_tier": "high",
+            "desc": "#A9C8FF 0 → 3 → 0 at the break."
+          }
+        ],
+        "readability": "Dome alpha caps keep the ally's silhouette and HP plate visible; a refresh replaces the old dome, so there is never a double dome."
+      },
+      "captureMs": [
+        100,
+        280,
+        350,
+        600,
+        1200,
+        2000,
+        2300,
+        2900
+      ],
+      "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN"
+    },
+    {
+      "id": "h02_celestial_orrery",
+      "name": {
+        "en": "Celestial Orrery",
+        "th": "จักรดาราโคจร"
+      },
+      "slot": 6,
+      "palette": {
+        "core": "#FFF4FF",
+        "body": "#B07CFF",
+        "edge": "#5A1FD1",
+        "accent": "#FFD36E",
+        "rim": "#5FF2D8"
+      },
+      "telegraph": {
+        "kind": "HEAVY_CIRCLE",
+        "radius_m": 7
+      },
+      "targeting": {
+        "mode": "ground target within 14 m",
+        "range_m": 14,
+        "radius_m": 7
+      },
+      "timing": {
+        "windup_ms": 900,
+        "active_ms": 100,
+        "recovery_ms": 300,
+        "release_ms": 900,
+        "release_frame": 27,
+        "fps": 30,
+        "clip": "mage.skill_orrery",
+        "clip_ms": 1300,
+        "clip_frames": 39,
+        "events": [
+          {
+            "id": "charge_start",
+            "t_ms": 0
+          },
+          {
+            "id": "release",
+            "t_ms": 900
+          }
+        ],
+        "zone": "900-3300 ms autonomous orrery (she can act after 1300 ms); nova at 3300 ms"
+      },
+      "vfx": {
+        "preset": "xs_h02_celestial_orrery",
+        "reuses": "prior art: hero02 package 'orrery'",
+        "budget_class": "ultimate",
+        "peak_coverage_pct": 45,
+        "layers": [
+          {
+            "role": "anticipation",
+            "t": {
+              "from": "cast",
+              "start_ms": 0,
+              "to": "cast",
+              "end_ms": 900
+            },
+            "kit": [
+              "vfx_rune_circle_outer",
+              "vfx_rune_circle_inner",
+              "vfx_orbit_ring",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "The 7 m outer rune circle (gold-violet) and inner heptagram wipe in; 3 gold orbit rings assemble 4-6 m above the field; starfield motes rise from the ground."
+          },
+          {
+            "role": "core",
+            "t": {
+              "from": "cast",
+              "start_ms": 900,
+              "to": "cast",
+              "end_ms": 3300
+            },
+            "kit": [
+              "vfx_orbit_ring",
+              "vfx_crystal_shard"
+            ],
+            "min_tier": "low",
+            "desc": "7 crystal moons (0.6 m) ride the tilted, precessing rings, each casting a thin value-graded beam (0.3 m) that sweeps the ground. Low keeps the rings and 3 moons."
+          },
+          {
+            "role": "secondary",
+            "t": {
+              "from": "cast",
+              "start_ms": 900,
+              "to": "cast",
+              "end_ms": 3300
+            },
+            "kit": [
+              "vfx_fb_lightning",
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "Comet trails behind the moons (3 TrailMesh), violet arcs linking the rings, falling star glints.",
+            "medium_scale": 0.5
+          },
+          {
+            "role": "ground",
+            "t": {
+              "from": "cast",
+              "start_ms": 900,
+              "to": "cast",
+              "end_ms": 4800
+            },
+            "kit": [
+              "vfx_rune_circle_inner",
+              "vfx_impact_star",
+              "vfx_shock_ring",
+              "vfx_scorch"
+            ],
+            "min_tier": "low",
+            "desc": "Turning circles and beam scorch dots; at 3300 ms the star-nova: an 8 m star flash, a shock ring r 0 → 7.5 m and a violet-gold star scorch."
+          },
+          {
+            "role": "after",
+            "t": {
+              "from": "cast",
+              "start_ms": 3300,
+              "to": "cast",
+              "end_ms": 4800
+            },
+            "kit": [
+              "vfx_motes"
+            ],
+            "min_tier": "medium",
+            "desc": "The rings erode away; star motes fall slowly; teal rim motes."
+          },
+          {
+            "role": "light",
+            "t": {
+              "from": "cast",
+              "start_ms": 900,
+              "to": "cast",
+              "end_ms": 3600
+            },
+            "kit": [],
+            "min_tier": "high",
+            "desc": "#B07CFF range 12 m sustained at 3; a burst 9 → 0 at 3300 ms shifting to #FFD36E."
+          },
+          {
+            "role": "distortion",
+            "t": {
+              "from": "cast",
+              "start_ms": 3300,
+              "to": "cast",
+              "end_ms": 3500
+            },
+            "kit": [],
+            "min_tier": "epic",
+            "desc": "Radial heat-shimmer ring with the nova."
+          }
+        ],
+        "readability": "Rings and moons sit 4-6 m up, above every head; beams are thin; the toothed HEAVY band draws above every layer."
+      },
+      "captureMs": [
+        300,
+        800,
+        1200,
+        1900,
+        2600,
+        3300,
+        3800,
+        4500
+      ],
+      "status": "DESIGN_DRAFT_VISUAL_ONLY_D1_D8_OPEN"
+    }
+  ],
+  "prior_art": [
+    {
+      "id": "lance",
+      "source": "%USERPROFILE%\\Downloads\\hero\\02\\vfx-blender-samples\\lance\\lance_vfx.glb",
+      "runtime_file": "lance_source.glb",
+      "sha256": "6bac440f9d7308b21fda863c44ff18875ae59a1949eb880463d619ff55be5af6",
+      "source_duration_ms": 1650
+    },
+    {
+      "id": "aegis",
+      "source": "%USERPROFILE%\\Downloads\\hero\\02\\vfx-blender-samples\\aegis\\aegis_vfx.glb",
+      "runtime_file": "aegis_source.glb",
+      "sha256": "df1a64334ff53cb890006c0e577f2674f217710c0098afab7d55bedae8634669",
+      "source_duration_ms": 1850
+    },
+    {
+      "id": "orrery",
+      "source": "%USERPROFILE%\\Downloads\\hero\\02\\vfx-blender-samples\\orrery\\orrery_vfx.glb",
+      "runtime_file": "orrery_source.glb",
+      "sha256": "2750382dd6a9fe46c2c24eee3ddeeb46f5db9635d184a663d6fc83d58813fb64",
+      "source_duration_ms": 3250
+    }
+  ]
+}

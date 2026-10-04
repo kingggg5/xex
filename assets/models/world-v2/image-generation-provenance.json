@@ -1,0 +1,30 @@
+{
+  "schema": "aetherfield.original-image-provenance/1",
+  "provider": "OpenAI host-native ImageGen",
+  "calls": [
+    {
+      "call_id": "call_XSyKe6sS4MGh9hBfEKp9rYrT",
+      "tool": "exec",
+      "timestamp": "2026-09-30T03:44:14.766Z",
+      "prompt": "Create a square seamless tileable game terrain BASE COLOR ALBEDO texture, top down orthographic flat surface, exactly 1024 x 1024 if possible. Original high quality stylized natural temperate fantasy meadow for a beautiful 3D MMO. Dense short fine blades of fresh spring grass, layered olive sage emerald and warm light green, a little brown earth in tiny irregular gaps, clover leaf speckles and subtle dry straw threads. Elegant hand-painted realism, rich small surface detail but restrained broad contrast, evenly distributed botanical texture. Neutral diffuse lighting: no directional shadows, no highlights, no ambient occlusion baked at object scale, no perspective, no horizon, no terrain silhouette, no objects, no large flowers or large stones, no grid, no words. The full image must be one uniform material swatch, not a collage or material sheet. Seamless matching edges on all four sides. Avoid noisy neon lime and wide directional brush streaks. The result will be repeated on an actual 3D ground mesh, not used as a background illustration."
+    },
+    {
+      "call_id": "call_TYFMiREeSKccST4JFA9G21ib",
+      "tool": "exec",
+      "timestamp": "2026-09-30T03:55:55.545Z",
+      "prompt": "Generate one transparent-background game foliage texture card. A single dense natural leafy branch spray, broad oak-like small leaves overlapping into an organic irregular cluster, viewed flat from front. 15-25 individually visible leaves with pale fine veins, serrated edges, deep forest green shaded underside, sage olive green midtones and small sunlit lime-gold tips. A tiny brown twig mostly hidden. Beautiful stylized hand-painted realistic botanical artwork suitable for a premium fantasy 3D MMORPG tree canopy, crisp fine detail, soft natural shading but no cast shadow. The cluster fills most of a square image with transparent space around its ragged silhouette and a few internal gaps. No scenery, no text, no framing, no ground, no gray checkerboard, no background color, no glow, no leaf specimen sheet; a single branching foliage spray. Avoid cartoon rounded balls and neon colors. This image is used as an alpha-tested 3D tree foliage card, so preserve clean transparency."
+    },
+    {
+      "call_id": "call_Odo4oFCWNa37f9HPyfQCClJA",
+      "tool": "exec",
+      "timestamp": "2026-09-30T10:14:15.932Z",
+      "prompt": "Produce one exceptional 3D-model-ready reference image for an original premium fantasy MMO HERO TREE: a mature 9-meter oak with an asymmetric sweeping crown, thick twisting deeply furrowed trunk, two strong branching forks clearly visible, organically tapering secondary limbs, buttress roots visible at base, a few subtle patches of lichen and moss in bark crevices, and rich layered broadleaf foliage with individual small serrated leaves and varied olive, sage, deep emerald and warm sunlit leaf tips. Senior environment-artist quality: believable botanical structure, beautiful proportion, carefully sculpted bark fissures, clear negative spaces between primary limbs, coherent leaf masses, lush yet readable from an elevated game camera. Shape is grounded and balanced, reusable landmark tree, no pots, no ornaments, no ruins, no characters, no flowers hiding the roots. Show the complete freestanding tree in a slight front three-quarter view with the entire canopy and roots inside the frame, 8% margin, centered on a clean pale neutral gray studio background. Soft neutral studio illumination, subtle ground contact shadow only. No depth-of-field blur, no dramatic directional cast shadows, no wind blur, no text, no labels, no collage, no environment backdrop. It is a reference input for converting into a textured 3D mesh, so both the trunk and canopy volumes and fine surface details must be crisp and unambiguous. Original art; no recognizable existing game asset. Square composition, high detail."
+    }
+  ],
+  "sources": [
+    "textures/grass_meadow_v2_source.png",
+    "textures/leaf_canopy_v2_source.png",
+    "../hero-oak/v1/reference.png"
+  ],
+  "license_note": "Original generated sources; do not label as CC0 or as hand-painted PBR bakes."
+}

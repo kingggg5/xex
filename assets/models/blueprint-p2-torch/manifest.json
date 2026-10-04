@@ -1,0 +1,57 @@
+{
+  "schema": "xexoria.blueprint-local/1",
+  "assets": [
+    {
+      "id": "blueprint_tiki_torch",
+      "family": "craft",
+      "status": "PROJECT_AUTHORED",
+      "licence": "Project authored",
+      "recipe": "blueprint.tiki_timber_body/1",
+      "seed": 202610031856,
+      "bounds": {
+        "min": [
+          -0.178,
+          0,
+          -0.178
+        ],
+        "max": [
+          0.178,
+          2.2,
+          0.178
+        ]
+      },
+      "textures": {
+        "atlas": "sm_craft"
+      },
+      "lods": [
+        {
+          "file": "assets/models/blueprint-p2-torch/runtime/blueprint_tiki_torch_lod0.glb",
+          "tris": 248,
+          "sha256": "51cd05624dfc8c6db19a7b841d33e3c2080d6e104d092bf9a99f328700f651bc"
+        },
+        {
+          "file": "assets/models/blueprint-p2-torch/runtime/blueprint_tiki_torch_lod1.glb",
+          "tris": 160,
+          "sha256": "bc80b01e1bf1107208988c4c31cb7b78697ad1b0b54189316b19d21bd5883721"
+        },
+        {
+          "file": "assets/models/blueprint-p2-torch/runtime/blueprint_tiki_torch_lod2.glb",
+          "tris": 116,
+          "sha256": "2b9b2dd46ba8fc6f51b93e14155794c53171862915747c8db75caf8fa4a3aa8f"
+        }
+      ],
+      "collider": {
+        "shape": "none",
+        "note": "P2L3nonsolidvisualtorchbody"
+      },
+      "shadowProxy": {
+        "type": "lod2",
+        "file": "assets/models/blueprint-p2-torch/runtime/blueprint_tiki_torch_lod2.glb"
+      },
+      "missing": [
+        "flameVFX"
+      ],
+      "provenance": "Closedtimberpole andbaskethead/rings; UVmappedexistingwoodatlas; onecanonicalmaterial"
+    }
+  ]
+}

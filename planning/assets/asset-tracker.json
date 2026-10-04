@@ -1,0 +1,2496 @@
+{
+ "schema": "xexoria.asset-tracker/1",
+ "date": "2026-10-02",
+ "author": "C-PRODUCER (Claude sub-agent; planning and review only)",
+ "readable_view": "docs/plans/2026-10-02-asset-production-board.md",
+ "status_values": {
+  "A": [
+   "not_started",
+   "in_progress",
+   "PASS",
+   "KEEP",
+   "REGEN",
+   "DROP",
+   "n/a"
+  ],
+  "B": [
+   "not_started",
+   "in_progress",
+   "awaiting_review",
+   "PASS",
+   "REGEN",
+   "built",
+   "n/a"
+  ],
+  "C": [
+   "not_started",
+   "blocked",
+   "in_progress",
+   "done",
+   "n/a"
+  ]
+ },
+ "stage_meaning": {
+  "A": "16:9 reference, 3 variants, pick one (reference-gauntlet-loop doc)",
+  "B": "4-view set -> turnaround_qa.py -> design review -> Tripo (or the Blender/CC0 build)",
+  "C": "in-engine gauntlet loop"
+ },
+ "owner_decisions_applied": [
+  "2026-10-02 19:50 snow material KEEP (pipeline fixes only)",
+  "2026-10-02 19:50 Solar Scorpion = snow-map boss; Stage A/B done",
+  "2026-10-02 19:50 bovine shaman = map NPC",
+  "2026-10-02 20:05 warps: Windstone portal -> rimecrest_snow (first new map), south gate -> southreach_field"
+ ],
+ "counts": {
+  "rows": 73,
+  "by_stage": {
+   "A": {
+    "PASS": 18,
+    "in_progress": 6,
+    "not_started": 17,
+    "n/a": 11,
+    "KEEP": 11,
+    "REGEN": 4,
+    "DROP": 6
+   },
+   "B": {
+    "PASS": 4,
+    "built": 4,
+    "REGEN": 7,
+    "awaiting_review": 2,
+    "n/a": 41,
+    "in_progress": 1,
+    "not_started": 14
+   },
+   "C": {
+    "not_started": 62,
+    "in_progress": 4,
+    "blocked": 1,
+    "n/a": 6
+   }
+  },
+  "by_class": {
+   "hero": 6,
+   "hero prop": 13,
+   "monster": 14,
+   "boss": 9,
+   "prop": 11,
+   "region-map": 10,
+   "NPC": 1,
+   "UI": 9
+  }
+ },
+ "credit_ledger": {
+  "stage-1-600": {
+   "ceiling": 600,
+   "planned": 580,
+   "worst_case": 980,
+   "rule": "Run hero 01 geometry first and inspect; then Mossling; heroes 04/06 last. If any geometry retry happens (+100), stop before the third hero and move it to the hero pot, which opens once hero 01 passes review."
+  },
+  "hero-2500": {
+   "ceiling": "2,500 cumulative for all heroes (opens when hero 01 passes review)",
+   "planned_here": 695,
+   "worst_case": 1195,
+   "cumulative_with_stage_1_heroes": 1130
+  },
+  "proposed-sunmeadow-slice": {
+   "ceiling": "NONE APPROVED: owner decision needed",
+   "planned": 705,
+   "worst_case": 1205
+  },
+  "proposed-rimecrest": {
+   "ceiling": "NONE APPROVED: owner decision needed",
+   "planned": 550,
+   "worst_case": 950
+  },
+  "proposed-bosses": {
+   "ceiling": "NONE APPROVED: owner decision needed",
+   "planned": 435,
+   "worst_case": 735
+  },
+  "proposed-bosses-later": {
+   "ceiling": "later",
+   "planned": 425,
+   "worst_case": 725
+  },
+  "spent_before_stage_1": {
+   "credits": 310,
+   "items": "hero 02 pilot 175, Solar Scorpion 35, bovine shaman 100 (separate earlier approvals)"
+  },
+  "prices": "Studio: geometry 100, Smart UV 20, texture 2K 10 / 4K 20, PBR +5 (credit guard section 5.5, 2026-10-02); re-check before each ceiling decision"
+ },
+ "assets": [
+  {
+   "id": "hero-01-swordsman",
+   "name": "Hero 01 Swordsman (orc)",
+   "class": "hero",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "PASS",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "hero",
+   "budget": "12k / 6k / 2.5k tris, 2048 atlas",
+   "owner_next": "owner (Tripo run; R-TRIPO queued)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-01/tripo-prep/"
+   ],
+   "verdicts": {
+    "stage_b": "QA PASS + design PASS, eligible_for_tripo true"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "stage-1-600"
+   },
+   "next_action": "Run geometry first (100), Claude inspects, then Smart UV + 4K texture + PBR per the job card",
+   "priority": "P0",
+   "froggy_draft": null,
+   "tripo_card": "docs/plans/2026-10-02-tripo-job-card.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/turnaround-qa-20261002/hero-01/",
+   "notes": null
+  },
+  {
+   "id": "hero-02-mage",
+   "name": "Hero 02 Mage (pilot)",
+   "class": "hero",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "built",
+    "C": "in_progress"
+   },
+   "route": "built (Tripo pilot, earlier)",
+   "budget_class": "hero",
+   "budget": "12k / 6k / 2.5k tris, 2048 atlas",
+   "owner_next": "Claude (C-H2)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\hero02_mage_p20_smartuv_pbr_rig_animations_4k.glb",
+    "assets/characters/hero02-mage/"
+   ],
+   "verdicts": {
+    "stage_b": "built; its views are REGEN only if it is ever rebuilt"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 175,
+    "pot": "none"
+   },
+   "next_action": "C-H2 repairs: LOD 12k/6k/2.5k, staff to the right-hand socket, sleeve/waist fix, run.001 hip offset, add attack/dodge/death, crown-height scale",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Spent earlier per the hero02 ledger: 100 / 20 / 30 / 5 / 20."
+  },
+  {
+   "id": "hero-03-archer",
+   "name": "Hero 03 Archer (wolf-kin)",
+   "class": "hero",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "hero",
+   "budget": "12k / 6k / 2.5k tris, 2048 atlas",
+   "owner_next": "froggy (round 2 in flight)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-03/"
+   ],
+   "verdicts": {
+    "stage_b": "round 1 REGEN: arm gap 0 %"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "hero-2500"
+   },
+   "next_action": "Claude QA + design review on delivery (tail straight, quiver removed, arms 45 degrees)",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/14-hero-03-archer.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/turnaround-qa-20261002/hero-03/",
+   "notes": null
+  },
+  {
+   "id": "hero-04-acolyte",
+   "name": "Hero 04 Acolyte (bull-kin)",
+   "class": "hero",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "PASS",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "hero",
+   "budget": "12k / 6k / 2.5k tris, 2048 atlas",
+   "owner_next": "owner (Tripo run)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-04/tripo-prep/"
+   ],
+   "verdicts": {
+    "stage_b": "QA PASS + design PASS, eligible"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "stage-1-600"
+   },
+   "next_action": "Run after hero 01 geometry is inspected (see the stage-1 rule in the board)",
+   "priority": "P0",
+   "froggy_draft": null,
+   "tripo_card": "docs/plans/2026-10-02-tripo-job-card.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/turnaround-qa-20261002/hero-04/",
+   "notes": null
+  },
+  {
+   "id": "hero-05-thief",
+   "name": "Hero 05 Thief (rogue)",
+   "class": "hero",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "hero",
+   "budget": "12k / 6k / 2.5k tris, 2048 atlas",
+   "owner_next": "froggy (round 2 in flight)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-05/"
+   ],
+   "verdicts": {
+    "stage_b": "round 1 REGEN: front/back IoU 0.875"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "hero-2500"
+   },
+   "next_action": "Claude QA + design review on delivery (cape sides match front/back)",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/13-hero-05-thief.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/turnaround-qa-20261002/hero-05/",
+   "notes": null
+  },
+  {
+   "id": "hero-06-merchant",
+   "name": "Hero 06 Merchant/Blacksmith (tinker)",
+   "class": "hero",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "PASS",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "hero",
+   "budget": "12k / 6k / 2.5k tris, 2048 atlas",
+   "owner_next": "owner (Tripo run)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-06/tripo-prep/"
+   ],
+   "verdicts": {
+    "stage_b": "QA PASS + design PASS, eligible"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "stage-1-600"
+   },
+   "next_action": "Run after hero 01 geometry is inspected",
+   "priority": "P0",
+   "froggy_draft": null,
+   "tripo_card": "docs/plans/2026-10-02-tripo-job-card.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/turnaround-qa-20261002/hero-06/",
+   "notes": null
+  },
+  {
+   "id": "weapon-01-sword",
+   "name": "Hero 01 sword",
+   "class": "hero prop",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "awaiting_review",
+    "C": "not_started"
+   },
+   "route": "Tripo (single image)",
+   "budget_class": "weapon",
+   "budget": "2.5k / 1.2k / 400 tris, 1024",
+   "owner_next": "Claude (--prep + design review)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-01/weapon/"
+   ],
+   "verdicts": {
+    "stage_b": "QA PASS (single image); design review pending"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "hero-2500"
+   },
+   "next_action": "Run --prep with the design review; job after hero 01 passes review",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/04-hero-01-sword.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "weapon-02-staff",
+   "name": "Hero 02 staff",
+   "class": "hero prop",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "built",
+    "C": "in_progress"
+   },
+   "route": "built (Tripo, earlier)",
+   "budget_class": "weapon",
+   "budget": "2.5k / 1.2k / 400 tris, 1024",
+   "owner_next": "Claude (C-H2)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\hero02_staff_p20_smartuv_pbr_source_4k.glb"
+   ],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Attach to the right-hand socket in the C-H2 repairs",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "weapon-03-bow",
+   "name": "Hero 03 bow",
+   "class": "hero prop",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "weapon",
+   "budget": "2.5k / 1.2k / 400 tris, 1024",
+   "owner_next": "Claude",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-03/weapon/"
+   ],
+   "verdicts": {
+    "stage_b": "QA FAIL thin_parts 23 % + string hole: Blender route"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Blender build (limbs + string) after hero 03 passes",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "weapon-04-staff",
+   "name": "Hero 04 staff",
+   "class": "hero prop",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "weapon",
+   "budget": "2.5k / 1.2k / 400 tris, 1024",
+   "owner_next": "Claude",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-04/weapon/"
+   ],
+   "verdicts": {
+    "stage_b": "QA FAIL thin_parts 32 %: Blender route"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Blender build (shaft too thin for Tripo)",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "weapon-05-dagger",
+   "name": "Hero 05 dagger",
+   "class": "hero prop",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo (single image) or Blender",
+   "budget_class": "dagger",
+   "budget": "1.2k / 600 / 250 tris, 512",
+   "owner_next": "Claude (crop + QA)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-05/weapon/"
+   ],
+   "verdicts": {
+    "stage_b": "QA FAIL components (two daggers)"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "hero-2500"
+   },
+   "next_action": "Crop one dagger (framing only), re-run QA, decide Tripo vs Blender",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/15-hero-05-dagger.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "weapon-06-hammer",
+   "name": "Hero 06 hammer",
+   "class": "hero prop",
+   "region": "global",
+   "stage": {
+    "A": "PASS",
+    "B": "awaiting_review",
+    "C": "not_started"
+   },
+   "route": "Tripo (single image)",
+   "budget_class": "weapon",
+   "budget": "2.5k / 1.2k / 400 tris, 1024",
+   "owner_next": "Claude (--prep + design review)",
+   "files": [
+    "planning/evidence/turnaround-qa-20261002/hero-06/weapon/"
+   ],
+   "verdicts": {
+    "stage_b": "QA PASS (single image)"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "hero-2500"
+   },
+   "next_action": "Run --prep with the design review; job after hero 06 passes review",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/05-hero-06-hammer.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "mossling",
+   "name": "Mossling (S1 sample)",
+   "class": "monster",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "PASS",
+    "B": "in_progress",
+    "C": "blocked"
+   },
+   "route": "Tripo",
+   "budget_class": "regular",
+   "budget": "4k / 1.6k / 650 tris, 1024 (roster); Tripo source about 6.5k",
+   "owner_next": "froggy (F2/F6 4-view)",
+   "files": [],
+   "verdicts": {
+    "stage_a": "concept PASS with 2 optional notes (fiercer attack read, thicker sprout leaves); file not on disk"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "stage-1-600"
+   },
+   "next_action": "QA + design review on delivery; then card 01",
+   "priority": "P0",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/01-mossling.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Ask froggy to drop the passed concept into sources\\froggy\\monsters-20261002\\."
+  },
+  {
+   "id": "puddlekin",
+   "name": "Puddlekin",
+   "class": "monster",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "in_progress",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "regular",
+   "budget": "3.5k / 1.5k / 600 tris, 1024",
+   "owner_next": "froggy (F2)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Claude reviews the F2 concept; Blender build (deformation + water material)",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "thistle-boar",
+   "name": "Thistle Boar",
+   "class": "monster",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "in_progress",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "regular",
+   "budget": "6.5k / 2.5k / 1k tris, 1024",
+   "owner_next": "froggy (F2/F6)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "proposed-sunmeadow-slice"
+   },
+   "next_action": "QA + design review on delivery; card 06",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/06-thistle-boar.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "glade-wisp",
+   "name": "Glade Wisp",
+   "class": "monster",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "in_progress",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender + FX",
+   "budget_class": "regular",
+   "budget": "3k / 1.2k / 500 tris, 512",
+   "owner_next": "froggy (F2)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Claude reviews the F2 concept; Blender build + VFX lane",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "brookclaw",
+   "name": "Brookclaw",
+   "class": "monster",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "regular",
+   "budget": "6.5k / 2.5k / 1k tris, 1024",
+   "owner_next": "Claude (send roster section 9.5 as an F2 addendum)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "proposed-sunmeadow-slice"
+   },
+   "next_action": "Send the copy-paste prompt from the roster doc section 9.5; it is not part of F2",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/07-brookclaw.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "turfback-matriarch",
+   "name": "Turfback Matriarch (elite)",
+   "class": "monster",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "in_progress",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "elite",
+   "budget": "11k / 4.5k / 1.8k tris, 2048",
+   "owner_next": "froggy (F2/F6)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-sunmeadow-slice"
+   },
+   "next_action": "QA + design review on delivery; card 08",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/08-turfback-matriarch.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "galehorn",
+   "name": "Galehorn, Warden of the Windstone (field boss)",
+   "class": "boss",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "in_progress",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo body + Blender phase parts",
+   "budget_class": "boss",
+   "budget": "22k / 8k / 3k tris, 2048, <= 70 bones",
+   "owner_next": "froggy (F8 key art x3)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-sunmeadow-slice"
+   },
+   "next_action": "Claude picks an F8 variant, then sends the F6 block for the 4-view set; card 02",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/02-galehorn.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "windstone-ring-stone",
+   "name": "Windstone ring stone master (6 ring stones, 2 gate-stone restyles, 3 windmarks, warp arrival rings)",
+   "class": "hero prop",
+   "region": "sunmeadow (+ warp network)",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo (justified)",
+   "budget_class": "hero prop",
+   "budget": "3-6k / 50 % / 25 %, 1024 (2048 landmark)",
+   "owner_next": "Claude (send F09)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-sunmeadow-slice"
+   },
+   "next_action": "Send F09 Part 1; pick; F09 Part 2; QA --kind prop; card 03",
+   "priority": "P1",
+   "froggy_draft": "F09",
+   "tripo_card": "planning/assets/tripo-cards/03-windstone-ring-stone.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Only Tripo pick among the Sunmeadow props: large sculpted erosion + carved glyph, reused about 11 times; headless Blender noise rocks read as the removed egg rocks."
+  },
+  {
+   "id": "windstone-altar",
+   "name": "Windstone altar (flush platform r 2.5 m at (-4,-70) + collide block r 0.8)",
+   "class": "hero prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "hero prop",
+   "budget": "3-6k / 50 % / 25 %, 1024 (2048 landmark)",
+   "owner_next": "Claude (C-P1-FORM)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Blender: flush walkable platform matching the collider; carved block from the forge stone + groove height map; reuse the ring-stone material",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Flush geometry must match the collider exactly, so not Tripo. Galehorn's 2.0 m body circle overlaps the block by 0.55 m (accepted; re-check with the real model)."
+  },
+  {
+   "id": "windmarks",
+   "name": "Windmarks x3 (quest objects)",
+   "class": "hero prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "reuse ring-stone master + Blender streamers",
+   "budget_class": "hero prop",
+   "budget": "3-6k / 50 % / 25 %, 1024 (2048 landmark)",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Scale the ring-stone master to 0.35-0.45, add cloth streamers, keep the ring/crystal material-swap hooks (actors.ts)",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "windstone-shrine-steps",
+   "name": "Windstone shrine step slabs",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "CC0 kit",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "KEEP the shrine; replace the slab row with a worn dirt spur or 3-4 jittered Quaternius RockPath_Round_Small stones",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "broken-cart",
+   "name": "Broken cart wreck + spill",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender + CC0 kit",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Blender recipe from the Quaternius cart (tilted bed, one wheel off) at (13,-73); spill: Crate_Wooden x2 (one open), Bag, Barrel rolled 2 m",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Not Tripo: planks and spokes are hard-surface thin parts."
+  },
+  {
+   "id": "camp-kit",
+   "name": "Hunter camp kit (cart, crates, bags, barrel, weapon rack, dummy, torch, campfire ring, log seats, 2 haystacks, palisade)",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "CC0 kit + Blender recipes",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude (C-P1-FORM)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Quaternius pieces placed per prop audit section 3.5; recipes for campfire, log seats, haystacks (5 m from the fire) and palisade; about 21k triangles",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "camp-tent",
+   "name": "Hunter camp tent",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Recipe: A-frame 3 x 2.4 x 2.2 m, two poles, ridge, open flap facing the fire, 4 guy ropes and stakes; 600-1,200 triangles",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Not Tripo: ropes and poles are thin; cloth interiors get invented."
+  },
+  {
+   "id": "gate-signpost",
+   "name": "Gate signpost at (15,11)",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (reuse prop_wayfinder_sign_01)",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Reuse the wayfarer sign model; Thai/English text through decal/UI, never baked geometry",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "lookout-watchtower",
+   "name": "Lookout watchtower",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender + CC0 kit",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Recipe: 4 posts 6 m, platform, ladder, roof (2-3k) with Crate_Wooden and Torch_Metal; visual only at Y=0",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "painted-rock-clusters",
+   "name": "Painted rock clusters x6-9",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "CC0 kit",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Quaternius Rock_Medium anchor + 2-3 Pebble + Flower/Clover, asymmetric, outside spawn rows",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "glade-edge-dressing",
+   "name": "Glade edge dressing (mushroom rings, flowers, clover, bluff boulders, stream stones, pine understory)",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "CC0 kit",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Stylized Nature MegaKit pieces per prop audit section 3.6; mushrooms at 11.5-13 m from the arena centre",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "sella-wayfarer-kit",
+   "name": "Sella's wayfarer kit (lantern, wayfinder, banners, planters)",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "KEEP",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "existing models",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Move for v2: west banner to (-4.5,-21.0), lantern to (5.1,-14.3); make one planter part of a Sella cluster",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "warp-windstone-portal-ring",
+   "name": "Windstone portal ring warp_windstone_portal at (0,-68), trigger r 2.5 (dormant / awakening / active)",
+   "class": "hero prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender + VFX",
+   "budget_class": "hero prop",
+   "budget": "3-6k / 50 % / 25 %, 1024 (2048 landmark)",
+   "owner_next": "Claude (layout fix) + VFX lane",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Blender flush rune-ring inlay with an emissive channel driven per state; VFX swirl and unlock ground ring; F11 Part 2 gives the state sheet",
+   "priority": "P1",
+   "froggy_draft": "F11",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Layout flags for the map lane: the r 2.5 trigger overlaps the altar platform (r 2.5 at (-4,-70)) by 0.53 m and the southbound trail's west edge by about 1.4 m. Suggest trigger r 2.0 or a 1 m east offset; transfer still needs the confirm step. Not Tripo: flush ground geometry and state-driven materials."
+  },
+  {
+   "id": "warp-rimecrest-arrival-platform",
+   "name": "Rimecrest arrival/return platform (windstone_arrival / windstone_return)",
+   "class": "hero prop",
+   "region": "rimecrest_snow",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender + reuse of the ring-stone master",
+   "budget_class": "hero prop",
+   "budget": "3-6k / 50 % / 25 %, 1024 (2048 landmark)",
+   "owner_next": "Claude (send F11)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "F11 Part 1 picks the design; Blender modular dais (5 m, two 0.15 m steps) + 3 snow-capped ring stones (material variant)",
+   "priority": "P1",
+   "froggy_draft": "F11",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Same design as the Sunmeadow ring so the warp network reads as one system; no new Tripo job."
+  },
+  {
+   "id": "warp-sunmeadow-south-gate",
+   "name": "Sunmeadow south gate warp_sunmeadow_south at (0,-101), trigger r 3.0: barred and open states",
+   "class": "prop",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Timber double doors + lintel between the posts (+-6.4,-99), 2-4 palisade segments; barred: crossbeam, iron bands, sign 'Road closed: Lv 10' via decal/UI (Thai/English); open: doors swung (two meshes or node animation)",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": "Planks and iron straps are hard-surface: Blender kit."
+  },
+  {
+   "id": "warp-southreach-north-gate",
+   "name": "Southreach north gate (north_gate_in / north_gate_out)",
+   "class": "prop",
+   "region": "southreach_field",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender",
+   "budget_class": "prop",
+   "budget": "300-2k / 50 % / 20 % or culled, shared 1024 trim",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Mirror of the Sunmeadow gate from the far side + waystation (bench, notice board, lantern) per F17",
+   "priority": "P2",
+   "froggy_draft": "F17",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "warp-city-portal-dais",
+   "name": "City portal dais (warp hub) at city (40,10), r 8.5",
+   "class": "hero prop",
+   "region": "city",
+   "stage": {
+    "A": "KEEP",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "existing + Blender/VFX fix",
+   "budget_class": "hero prop",
+   "budget": "3-6k / 50 % / 25 %, 1024 (2048 landmark)",
+   "owner_next": "Claude + VFX lane + Codex UI",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Keep the dais, rings and pylons; replace the solid cyan light column (additive fresnel or fx_portal_beam); destination list of discovered warps in the UI",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "region-sunmeadow-v2",
+   "name": "Sunmeadow v2",
+   "class": "region-map",
+   "region": "sunmeadow",
+   "stage": {
+    "A": "in_progress",
+    "B": "n/a",
+    "C": "in_progress"
+   },
+   "route": "Blender (map lane)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "Claude (map lane) + froggy (F8 arena key art)",
+   "files": [
+    "planning/levels/sunmeadow-v2-layout.json",
+    "docs/levels/sunmeadow-v2-level-design.md"
+   ],
+   "verdicts": {
+    "stage_c": "layout 66/66 checks; blockout pass 5 done (6 cells, 362 colliders, max 30,811 tris per cell)"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "F8 arena key art becomes the Stage C scene reference; forms pass C-P1-FORM next",
+   "priority": "P0",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "region-rimecrest-snow",
+   "name": "Rimecrest (first new map; warp from the Windstone portal)",
+   "class": "region-map",
+   "region": "rimecrest_snow",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (map lane)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "Claude (send F10, F11, F12) + map lane (layout JSON)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\snow\\"
+   ],
+   "verdicts": {
+    "stage_a": "owner KEEP for the snow material; no map image exists on disk (18 PNGs are creature views)"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Send F10 (region) and F12 (boss arena); write the Rimecrest layout JSON from the brief in the board",
+   "priority": "P1",
+   "froggy_draft": "F10",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/region-rimecrest-snow/",
+   "notes": "Display-name check: 'Rimecrest' sounds close to Lumivara's 'Frostveil Pass'; consider another display name, keep the ID."
+  },
+  {
+   "id": "region-southreach-field",
+   "name": "Southreach Field (Lv 10, beyond the south gate)",
+   "class": "region-map",
+   "region": "southreach_field",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (map lane)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "Claude (send F17) + map lane",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Send F17; roster and boss design to follow (variants of Sunmeadow rigs proposed)",
+   "priority": "P2",
+   "froggy_draft": "F17",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "region-lava",
+   "name": "Lava region (working name Ashveil Caldera)",
+   "class": "region-map",
+   "region": "lava",
+   "stage": {
+    "A": "REGEN",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (map lane)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "Claude (send F18)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\lava\\ChatGPT Image 30 ก.ย. 2569 21_11_39.png"
+   ],
+   "verdicts": {
+    "stage_a": "REGEN: photoreal and too dark (luma 0.32 vs 0.50), God of War motifs, unplayable causeway"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Send F18 (lava key art regeneration)",
+   "priority": "P2",
+   "froggy_draft": "F18",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/region-lava-keyart-20260930/",
+   "notes": null
+  },
+  {
+   "id": "region-whisperwood",
+   "name": "Whisperwood (proposed forest region around the Hollow)",
+   "class": "region-map",
+   "region": "whisperwood (proposal)",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (map lane)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "owner (keep or drop)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Send F22 only after F10/F17/F18 are picked",
+   "priority": "P3",
+   "froggy_draft": "F22",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "region-cloudshoal-isles",
+   "name": "Cloudshoal Isles (proposed floating-isle region)",
+   "class": "region-map",
+   "region": "cloudshoal (proposal)",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (map lane)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "owner (keep or drop)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Send F23 only after F10/F17/F18 are picked; needs flat broad tops and railed bridges",
+   "priority": "P3",
+   "froggy_draft": "F23",
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "dungeon-sunken-temple",
+   "name": "Sunken Temple of Aurel (dungeon)",
+   "class": "region-map",
+   "region": "dungeon",
+   "stage": {
+    "A": "PASS",
+    "B": "n/a",
+    "C": "in_progress"
+   },
+   "route": "Blender kits (forge)",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "Claude",
+   "files": [
+    "docs/levels/sunken-temple-of-aurel.md",
+    "planning/evidence/sunken-temple-d2/"
+   ],
+   "verdicts": {
+    "stage_a": "froggy Pack A approved as 3D target (2026-10-01), file not on disk",
+    "stage_c": "D2 blockout done"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "D3 kit/materials after D1; ask froggy for the round-1 Pack A zip (approved, not on disk)",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "dungeon-whisperwood-hollow",
+   "name": "Whisperwood Hollow (dungeon)",
+   "class": "region-map",
+   "region": "dungeon",
+   "stage": {
+    "A": "PASS",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender kits",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "froggy (deliver Pack B zip)",
+   "files": [],
+   "verdicts": {
+    "stage_a": "Pack B approved 2026-10-01, not on disk"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Deliver the round-1 Pack B zip to sources\\froggy\\dungeons-20261001\\",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "dungeon-gloamcrystal-caverns",
+   "name": "Gloamcrystal Caverns (dungeon)",
+   "class": "region-map",
+   "region": "dungeon",
+   "stage": {
+    "A": "PASS",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender kits",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "froggy (deliver Pack C zip)",
+   "files": [],
+   "verdicts": {
+    "stage_a": "Pack C approved 2026-10-01, not on disk"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Deliver the round-1 Pack C zip",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "dungeon-halls-of-the-frost-jarl",
+   "name": "Halls of the Frost Jarl (dungeon, snow highlands)",
+   "class": "region-map",
+   "region": "dungeon",
+   "stage": {
+    "A": "PASS",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender kits",
+   "budget_class": "region",
+   "budget": "per 64 m cell C0 <= 120k tris (excl. vegetation) and 40 draws; C1 60k / 24; C2 40k / 16",
+   "owner_next": "froggy (deliver Pack D zip)",
+   "files": [],
+   "verdicts": {
+    "stage_a": "Pack D approved 2026-10-01 (two golems too similar; night values to lift), not on disk"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Deliver the round-1 Pack D zip; the entrance can sit on Rimecrest's skyline",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "boss-solar-scorpion",
+   "name": "Solar Scorpion (Rimecrest boss)",
+   "class": "boss",
+   "region": "rimecrest_snow",
+   "stage": {
+    "A": "KEEP",
+    "B": "built",
+    "C": "not_started"
+   },
+   "route": "built (Tripo, owner) + Blender Stage C",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "Claude (Stage C task list)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\boss\\tripo-p2-output\\",
+    "Downloads\\Xexoria-Game\\sources\\\\boss\\ChatGPT Image 30 ก.ย. 2569 21_10_21.png (+ 21_10_40, 21_10_46, 21_10_49)"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP (owner: snow-map boss, Stage A/B done)",
+    "stage_b": "built: 51,376 tris, Smart UV 73.1 %, 8K texture, PBR; retro QA of its views REGEN (record only)"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 35,
+    "pot": "none"
+   },
+   "next_action": "Needs the Rimecrest arena layout, the server boss row and the F12 arena art, then the Stage C task list",
+   "priority": "P1",
+   "froggy_draft": "F12",
+   "tripo_card": null,
+   "stage_c_plan": "planning/assets/stage-c/solar-scorpion-rimecrest-boss.md",
+   "evidence": "planning/evidence/asset-review-20261002/boss-solar-scorpion/",
+   "notes": "LOD0 is 2x the boss budget; re-LOD to 22-24k / 8k / 3k with bakes. 7,498 of the 7,677 files in tripo-p2-output are node_modules."
+  },
+  {
+   "id": "boss-guardian-of-aurel",
+   "name": "Guardian of Aurel (Sunken Temple boss)",
+   "class": "boss",
+   "region": "dungeon: sunken temple",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo body + Blender shield/phase parts",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "Claude (send F20; ask for the Pack A zip)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-bosses"
+   },
+   "next_action": "Send F20; pick; F6 4-view; card 16",
+   "priority": "P2",
+   "froggy_draft": "F20",
+   "tripo_card": "planning/assets/tripo-cards/16-guardian-of-aurel.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "boss-lava-emberwright",
+   "name": "The Emberwright (lava region boss)",
+   "class": "boss",
+   "region": "lava",
+   "stage": {
+    "A": "REGEN",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo body + Blender blade/phase parts",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "Claude (send F19 after F18)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\lava\\ChatGPT Image 30 ก.ย. 2569 22_29_22.png"
+   ],
+   "verdicts": {
+    "stage_a": "REGEN of the obsidian-golem direction: luma 0.20, 45 % near-black, four arms, tatters"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-bosses"
+   },
+   "next_action": "Send F19 after F18 is picked; card 17",
+   "priority": "P2",
+   "froggy_draft": "F19",
+   "tripo_card": "planning/assets/tripo-cards/17-lava-emberwright.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/lava-boss-obsidian-golem/",
+   "notes": null
+  },
+  {
+   "id": "boss-frost-jarl",
+   "name": "The Frost Jarl (Halls of the Frost Jarl boss)",
+   "class": "boss",
+   "region": "dungeon: frost jarl",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo body + Blender cleaver/phase parts",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "Claude (send F21; ask for the Pack D zip)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-bosses"
+   },
+   "next_action": "Send F21; pick; F6 4-view; card 18",
+   "priority": "P3",
+   "froggy_draft": "F21",
+   "tripo_card": "planning/assets/tripo-cards/18-frost-jarl.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "boss-whisperwood-treant",
+   "name": "Whisperwood treant matriarch",
+   "class": "boss",
+   "region": "dungeon: whisperwood hollow",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "froggy (Pack B zip first)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-bosses-later"
+   },
+   "next_action": "Review Pack B before any new prompt",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/99-backlog.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "boss-gloamcrystal-wyrm",
+   "name": "Gloamcrystal crystal wyrm",
+   "class": "boss",
+   "region": "dungeon: gloamcrystal caverns",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo + Blender crystals",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "froggy (Pack C zip first)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-bosses-later"
+   },
+   "next_action": "Review Pack C before any new prompt",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/99-backlog.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "boss-southreach",
+   "name": "Southreach field boss (TBD)",
+   "class": "boss",
+   "region": "southreach_field",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "TBD",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "owner + Claude (design)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "unplanned"
+   },
+   "next_action": "Design after F17 is picked (boss site: the beacon-ridge platform)",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "boss-cloudshoal",
+   "name": "Cloudshoal Isles boss (TBD)",
+   "class": "boss",
+   "region": "cloudshoal (proposal)",
+   "stage": {
+    "A": "not_started",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "TBD",
+   "budget_class": "boss",
+   "budget": "18-25k / 8k / 3k tris, 2048",
+   "owner_next": "owner",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "unplanned"
+   },
+   "next_action": "Only if the region is kept",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "snow-lv1-bone-tick",
+   "name": "Bone tick",
+   "class": "monster",
+   "region": "rimecrest_snow (lv1)",
+   "stage": {
+    "A": "KEEP",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "Claude (send F13)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\snow\\lv1\\21_51_28/37/41/46.png"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP (owner decision 2026-10-02 19:50)",
+    "stage_b": "QA REGEN: thin parts 2.6-6.1 %, LR IoU 0.717, FB IoU 0.838, 1254 px canvases"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "proposed-rimecrest"
+   },
+   "next_action": "Send F13 (F6 4-view, design unchanged); QA + design review; then the card",
+   "priority": "P1",
+   "froggy_draft": "F13",
+   "tripo_card": "planning/assets/tripo-cards/09-snow-bone-tick.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/snow-lv1-bone-tick/",
+   "notes": null
+  },
+  {
+   "id": "snow-lv1-bone-raptor",
+   "name": "Bone raptor",
+   "class": "monster",
+   "region": "rimecrest_snow (lv1)",
+   "stage": {
+    "A": "KEEP",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "Claude (send F14)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\snow\\lv1\\21_51_56 / 21_52_02 / 21_52_09 / 21_52_12.png"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP (owner decision 2026-10-02 19:50)",
+    "stage_b": "QA REGEN: heights differ 17.3 %, FB IoU 0.405, LR IoU 0.649"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "proposed-rimecrest"
+   },
+   "next_action": "Send F14 (F6 4-view, design unchanged); QA + design review; then the card",
+   "priority": "P1",
+   "froggy_draft": "F14",
+   "tripo_card": "planning/assets/tripo-cards/10-snow-bone-raptor.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/snow-lv1-bone-raptor/",
+   "notes": null
+  },
+  {
+   "id": "snow-lv2-bone-wraith",
+   "name": "Bone wraith",
+   "class": "monster",
+   "region": "rimecrest_snow (lv2)",
+   "stage": {
+    "A": "KEEP",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "Claude (send F15)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\snow\\lv2\\ (4 PNG)"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP (owner decision 2026-10-02 19:50)",
+    "stage_b": "QA REGEN: LR width 21.6 %, LR IoU 0.790"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "proposed-rimecrest"
+   },
+   "next_action": "Send F15 (F6 4-view, design unchanged); QA + design review; then the card",
+   "priority": "P1",
+   "froggy_draft": "F15",
+   "tripo_card": "planning/assets/tripo-cards/11-snow-bone-wraith.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/snow-lv2-bone-wraith/",
+   "notes": null
+  },
+  {
+   "id": "snow-lv3-rime-golem",
+   "name": "Rime golem (elite / large)",
+   "class": "monster",
+   "region": "rimecrest_snow (lv3)",
+   "stage": {
+    "A": "KEEP",
+    "B": "REGEN",
+    "C": "not_started"
+   },
+   "route": "Tripo",
+   "budget_class": "elite",
+   "budget": "8-12k / 4k / 1.5k tris, 2048 albedo",
+   "owner_next": "Claude (send F16)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\snow\\lv3\\21_45_59 / 21_46_05 / 21_46_08 / 21_46_12.png"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP (owner decision 2026-10-02 19:50)",
+    "stage_b": "QA REGEN: LR width 12.8 %, FB IoU 0.876; side views are 3/4 (design-review catch)"
+   },
+   "credits": {
+    "planned": 145,
+    "worst_case": 245,
+    "spent_earlier": 0,
+    "pot": "proposed-rimecrest"
+   },
+   "next_action": "Send F16 (F6 4-view, design unchanged); QA + design review; then the card",
+   "priority": "P1",
+   "froggy_draft": "F16",
+   "tripo_card": "planning/assets/tripo-cards/12-snow-rime-golem.md",
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/snow-lv3-rime-golem/",
+   "notes": null
+  },
+  {
+   "id": "snow-lv3-rime-cleaver",
+   "name": "Rime golem cleaver",
+   "class": "hero prop",
+   "region": "rimecrest_snow (lv3)",
+   "stage": {
+    "A": "KEEP",
+    "B": "PASS",
+    "C": "not_started"
+   },
+   "route": "Blender (recommended)",
+   "budget_class": "weapon",
+   "budget": "2.5k / 1.2k / 400 tris, 1024",
+   "owner_next": "Claude",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\snow\\lv3\\21_46_22 / 21_46_26.png"
+   ],
+   "verdicts": {
+    "stage_b": "QA PASS (single image)"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Blender build with the golem (hard-surface blade, monster weapon)",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/snow-lv3-rime-cleaver/",
+   "notes": null
+  },
+  {
+   "id": "lava-serpent-priestess",
+   "name": "Serpent priestess (lava monster candidate)",
+   "class": "monster",
+   "region": "lava",
+   "stage": {
+    "A": "REGEN",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "TBD (Tripo likely)",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "backlog",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\lava\\ChatGPT Image 30 ก.ย. 2569 23_06_24.png"
+   ],
+   "verdicts": {
+    "stage_a": "REGEN: luma 0.19, chains/tatters, pharaonic overlap with the Solar Scorpion"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "unplanned"
+   },
+   "next_action": "Re-brief with the lava roster after F18/F19",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/lava-boss-serpent-priestess/",
+   "notes": null
+  },
+  {
+   "id": "lava-halo-knight",
+   "name": "Halo knight (lava candidate)",
+   "class": "monster",
+   "region": "lava",
+   "stage": {
+    "A": "DROP",
+    "B": "n/a",
+    "C": "n/a"
+   },
+   "route": "none",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "none",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\lava\\ChatGPT Image 30 ก.ย. 2569 23_06_45.png"
+   ],
+   "verdicts": {
+    "stage_a": "DROP: FromSoftware look-alike, thin, dark, no lava identity"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "None",
+   "priority": "-",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/lava-boss-halo-knight/",
+   "notes": null
+  },
+  {
+   "id": "npc-bovine-shaman",
+   "name": "Bovine shaman (yak elder NPC; today registered as city elder Ruun)",
+   "class": "NPC",
+   "region": "rimecrest_snow (owner) / city (today)",
+   "stage": {
+    "A": "KEEP",
+    "B": "built",
+    "C": "not_started"
+   },
+   "route": "built (Tripo, earlier) + Blender Stage C",
+   "budget_class": "npc",
+   "budget": "8k / 4k / 1.5k tris, 1024",
+   "owner_next": "owner/Claude (placement), then Claude",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\boss\\bovine-shaman\\",
+    "assets/characters/bovine-shaman/rig-v1/"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP (owner: map NPC, not a boss)",
+    "stage_b": "built: 54,011 tris, base colour only"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 100,
+    "pot": "none"
+   },
+   "next_action": "Decide placement; then the NPC Stage C plan",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": "planning/assets/stage-c/bovine-shaman-npc.md",
+   "evidence": "planning/evidence/asset-review-20261002/npc-bovine-shaman-ruun/",
+   "notes": "NPC LOD0 is 6.75x the 8k budget; no normal map yet."
+  },
+  {
+   "id": "sunken-temple-statue-sentinel",
+   "name": "Statue sentinel (Sunken Temple colonnade)",
+   "class": "monster",
+   "region": "dungeon: sunken temple",
+   "stage": {
+    "A": "PASS",
+    "B": "not_started",
+    "C": "not_started"
+   },
+   "route": "Tripo (statue)",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "froggy (Pack A zip)",
+   "files": [],
+   "verdicts": {
+    "stage_a": "Pack A approved, not on disk"
+   },
+   "credits": {
+    "planned": 135,
+    "worst_case": 235,
+    "spent_earlier": 0,
+    "pot": "proposed-bosses-later"
+   },
+   "next_action": "Review Pack A's sentinel sheet before any new prompt",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": "planning/assets/tripo-cards/99-backlog.md",
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "sunken-temple-water-slime",
+   "name": "Water slime (Sunken Temple)",
+   "class": "monster",
+   "region": "dungeon: sunken temple",
+   "stage": {
+    "A": "n/a",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "Blender (Puddlekin variant)",
+   "budget_class": "regular",
+   "budget": "4-8k / 2.5k / 1k tris, 1024 albedo, 512 ORM",
+   "owner_next": "Claude",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Variant of the Puddlekin build",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-b13-celestial-rune",
+   "name": "Mobile joystick style b13-celestial-rune",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "KEEP",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "Codex UI",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP: default joystick; thumb delta 0.196; reads on snow"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Integrate: clean alpha residue (<8 -> 0), repack with edge extrusion, CSS pressed/disabled states",
+   "priority": "P1",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-a04-wildwood-jade",
+   "name": "Mobile joystick style a04-wildwood-jade",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "KEEP",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "Codex UI",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "KEEP: alternate skin; gold-bronze family; thumb delta 0.109"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Integrate: clean alpha residue (<8 -> 0), repack with edge extrusion, CSS pressed/disabled states",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-a10-dragonbone",
+   "name": "Mobile joystick style a10-dragonbone",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "REGEN",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "froggy (thumb only)",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "REGEN: optional third skin; thumb delta 0.017: lighten the thumb only"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Optional: thumb-only regen",
+   "priority": "P3",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-a02-frostglass",
+   "name": "Mobile joystick style a02-frostglass",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "DROP",
+    "B": "n/a",
+    "C": "n/a"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "none",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "DROP: thumb invisible (delta 0.001); redundant"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "None",
+   "priority": "-",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-a05-astral-orbit",
+   "name": "Mobile joystick style a05-astral-orbit",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "DROP",
+    "B": "n/a",
+    "C": "n/a"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "none",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "DROP: orbit lines 1-2 px at 1x; thumb delta 0.042"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "None",
+   "priority": "-",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-a08-dawn-petal",
+   "name": "Mobile joystick style a08-dawn-petal",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "DROP",
+    "B": "n/a",
+    "C": "n/a"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "none",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "DROP: washes out on light backgrounds; off identity"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "None",
+   "priority": "-",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-b04-floating-thumbstick",
+   "name": "Mobile joystick style b04-floating-thumbstick",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "DROP",
+    "B": "n/a",
+    "C": "n/a"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "none",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "DROP: invisible on light/snow backgrounds"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "None",
+   "priority": "-",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-joystick-b09-crystal-silver",
+   "name": "Mobile joystick style b09-crystal-silver",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "DROP",
+    "B": "n/a",
+    "C": "n/a"
+   },
+   "route": "PNG atlas (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "none",
+   "files": [
+    "Downloads\\Xexoria-Game\\sources\\\\froggy\\ui-controls-20261002\\xexoria-selected-controls.zip"
+   ],
+   "verdicts": {
+    "stage_a": "DROP: redundant with b13"
+   },
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "None",
+   "priority": "-",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": "planning/evidence/asset-review-20261002/ui-controls-20261002/",
+   "notes": null
+  },
+  {
+   "id": "ui-kit-v2",
+   "name": "UI control kit v2 (F7: buttons, frames, tabs, bars; gold/bronze)",
+   "class": "UI",
+   "region": "global HUD",
+   "stage": {
+    "A": "not_started",
+    "B": "n/a",
+    "C": "not_started"
+   },
+   "route": "PNG (froggy)",
+   "budget_class": "ui",
+   "budget": "PNG RGBA, 2x for DPR 2-3, 9-slice where relevant",
+   "owner_next": "Claude (send F7 when the UI lane needs it)",
+   "files": [],
+   "verdicts": {},
+   "credits": {
+    "planned": 0,
+    "worst_case": 0,
+    "spent_earlier": 0,
+    "pot": "none"
+   },
+   "next_action": "Send TASK F7 from the froggy task pack",
+   "priority": "P2",
+   "froggy_draft": null,
+   "tripo_card": null,
+   "stage_c_plan": null,
+   "evidence": null,
+   "notes": null
+  }
+ ],
+ "references": [
+  {
+   "id": "ref-ragnarok-style-mock-20260923",
+   "file": "Downloads\\Xexoria-Game\\sources\\\\ChatGPT Image Sep 23, 2026, 03_39_23 PM.png",
+   "verdict": "DROP as input (Ragnarok names Prontera/Poring/Lunatic and RO monster designs); mood only",
+   "evidence": "planning/evidence/asset-review-20261002/misc-ragnarok-style-mock-20260923/"
+  },
+  {
+   "id": "ref-third-party-phone-screenshot-20260927",
+   "file": "Downloads\\Xexoria-Game\\sources\\\\825273264_1123383600358091_1842412330977401661_n.jpg",
+   "verdict": "DROP as input (third-party game capture); mood only",
+   "evidence": "planning/evidence/asset-review-20261002/misc-third-party-phone-screenshot-20260927/"
+  },
+  {
+   "id": "ref-external-volcanic-sheet",
+   "file": "Downloads\\Other-Projects\\828712242_2201239613768764_7620184093363255989_n.jpg",
+   "verdict": "Reference only (direction for F18; never copied)",
+   "evidence": "planning/evidence/asset-review-20261002/misc-external-volcanic-sheet/"
+  },
+  {
+   "id": "ref-boss-solar-scorpion-staff",
+   "file": "Downloads\\Xexoria-Game\\sources\\\\boss\\ChatGPT Image 30 ก.ย. 2569 21_10_53.png / 21_10_56.png",
+   "verdict": "Optional reference; Blender if ever used (shaft 28 % thin parts)",
+   "evidence": "planning/evidence/asset-review-20261002/boss-solar-scorpion-staff/"
+  }
+ ]
+}

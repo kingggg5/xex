@@ -1,0 +1,850 @@
+{
+ "asset_id": "hero02_witch_lod0",
+ "blender": "5.2.2 LTS",
+ "blender_build_hash": "d13f752e3b9c",
+ "budget_class": "hero_lod0",
+ "color0_conversions": [],
+ "embed_images": false,
+ "export_seconds": 2.41,
+ "exporter_messages": [
+  "WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.",
+  "WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image."
+ ],
+ "exporter_options": {
+  "at_collection_center": false,
+  "check_existing": false,
+  "collection": "xex_export__hero02_witch_lod0",
+  "export_action_filter": false,
+  "export_active_vertex_color_when_no_material": false,
+  "export_all_influences": false,
+  "export_all_vertex_colors": false,
+  "export_anim_scene_split_object": true,
+  "export_anim_single_armature": true,
+  "export_anim_slide_to_zero": true,
+  "export_animation_mode": "ACTIONS",
+  "export_animations": true,
+  "export_apply": false,
+  "export_armature_object_remove": false,
+  "export_attributes": false,
+  "export_bake_animation": false,
+  "export_cameras": false,
+  "export_convert_animation_pointer": false,
+  "export_copyright": "Xexoria hero 02 (witch, Mage). Mesh and textures: owner's Tripo P2.0 job cfdd51e7 (paid-user Outputs, Tripo terms 5.2.2). Clips: Quaternius UAL1 CC0 retargets + authored. Not for redistribution outside the game.",
+  "export_current_frame": false,
+  "export_def_bones": true,
+  "export_draco_color_quantization": 10,
+  "export_draco_generic_quantization": 12,
+  "export_draco_mesh_compression_enable": false,
+  "export_draco_mesh_compression_level": 6,
+  "export_draco_normal_quantization": 10,
+  "export_draco_position_quantization": 14,
+  "export_draco_texcoord_quantization": 12,
+  "export_extra_animations": false,
+  "export_extras": true,
+  "export_force_sampling": true,
+  "export_format": "GLTF_SEPARATE",
+  "export_frame_range": false,
+  "export_frame_step": 1,
+  "export_gltfpack_kn": false,
+  "export_gltfpack_noq": true,
+  "export_gltfpack_sa": false,
+  "export_gltfpack_si": 1.0,
+  "export_gltfpack_slb": false,
+  "export_gltfpack_tc": true,
+  "export_gltfpack_tq": 8,
+  "export_gltfpack_vc": 8,
+  "export_gltfpack_vn": 8,
+  "export_gltfpack_vp": 14,
+  "export_gltfpack_vpi": "Integer",
+  "export_gltfpack_vt": 12,
+  "export_gn_mesh": false,
+  "export_gpu_instances": false,
+  "export_hierarchy_flatten_bones": false,
+  "export_hierarchy_flatten_objs": false,
+  "export_hierarchy_full_collections": false,
+  "export_image_add_webp": false,
+  "export_image_format": "AUTO",
+  "export_image_quality": 100,
+  "export_image_webp_fallback": false,
+  "export_import_convert_lighting_mode": "SPEC",
+  "export_influence_nb": 4,
+  "export_jpeg_quality": 100,
+  "export_keep_originals": false,
+  "export_leaf_bone": false,
+  "export_lights": false,
+  "export_loglevel": -1,
+  "export_materials": "EXPORT",
+  "export_merge_animation": "ACTION",
+  "export_meshopt_compression_enable": false,
+  "export_meshopt_extension": "EXT_meshopt_compression",
+  "export_morph": true,
+  "export_morph_animation": true,
+  "export_morph_normal": true,
+  "export_morph_reset_sk_data": true,
+  "export_morph_tangent": false,
+  "export_negative_frame": "SLIDE",
+  "export_nla_strips": true,
+  "export_nla_strips_merged_animation_name": "Animation",
+  "export_normals": true,
+  "export_optimize_animation_keep_anim_armature": true,
+  "export_optimize_animation_keep_anim_object": false,
+  "export_optimize_animation_size": true,
+  "export_optimize_disable_viewport": false,
+  "export_original_specular": false,
+  "export_pointer_animation": false,
+  "export_reset_pose_bones": true,
+  "export_rest_position_armature": true,
+  "export_sampling_interpolation_fallback": "LINEAR",
+  "export_shared_accessors": false,
+  "export_skins": true,
+  "export_tangents": true,
+  "export_texcoords": true,
+  "export_texture_dir": "tex",
+  "export_try_omit_sparse_sk": false,
+  "export_try_sparse_sk": true,
+  "export_unused_images": false,
+  "export_unused_textures": false,
+  "export_use_gltfpack": false,
+  "export_vertex_color": "MATERIAL",
+  "export_vertex_color_name": "Color",
+  "export_yup": true,
+  "use_active_collection": false,
+  "use_active_collection_with_nested": false,
+  "use_active_scene": true,
+  "use_mesh_edges": false,
+  "use_mesh_vertices": false,
+  "use_renderable": false,
+  "use_selection": false,
+  "use_visible": false,
+  "will_save_settings": false
+ },
+ "exporter_options_defaulted_on_purpose": {
+  "filter_glob": {
+   "default": "*.glb",
+   "reason": "file-browser filter (HIDDEN); no effect on the written file"
+  },
+  "gltf_export_id": {
+   "default": "",
+   "reason": "id used by File > Export All Collections exporters; unused for operator calls"
+  },
+  "ui_tab": {
+   "default": "GENERAL",
+   "reason": "export-dialog tab selector; no effect on the written file"
+  }
+ },
+ "exporter_rna_sha256": "5fb696d40d591624dacb08fcb591068070c7153392f890bc6f062be1644c1e66",
+ "failures": [],
+ "glb": {
+  "animations": [
+   {
+    "channels": 177,
+    "name": "base.death",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "base.dodge",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "base.hit_light",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "base.idle",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "base.run",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "base.walk",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "caster.attack_1",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "caster.attack_2",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "mage.skill_bolt",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "mage.skill_gale",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "mage.skill_nova",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "mage.skill_rift",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "mage.skill_starfall",
+    "samplers": 177
+   },
+   {
+    "channels": 177,
+    "name": "mage.skill_ward",
+    "samplers": 177
+   }
+  ],
+  "asset": {
+   "copyright": "Xexoria hero 02 (witch, Mage). Mesh and textures: owner's Tripo P2.0 job cfdd51e7 (paid-user Outputs, Tripo terms 5.2.2). Clips: Quaternius UAL1 CC0 retargets + authored. Not for redistribution outside the game.",
+   "extras": {
+    "xex_budget_class": "hero_lod0",
+    "xex_color0": "RGB",
+    "xex_double_sided": "explicit",
+    "xex_export_helper": "1.0.0",
+    "xex_profile": "character_skinned"
+   },
+   "generator": "Khronos glTF Blender I/O v5.2.40",
+   "version": "2.0"
+  },
+  "binary_bytes": 1038344,
+  "bounds_gltf": {
+   "max": [
+    0.47017,
+    1.97056,
+    0.23245
+   ],
+   "min": [
+    -0.48094,
+    0.0,
+    -0.31626
+   ]
+  },
+  "cameras": 0,
+  "extensionsRequired": [],
+  "extensionsUsed": [],
+  "images": [
+   {
+    "bytes": 5112141,
+    "embedded": false,
+    "file_exists": true,
+    "index": 0,
+    "mimeType": "image/png",
+    "name": "hero02_witch_normal_lod0",
+    "uri": "textures/hero02_witch_normal_lod0-6cd6aff00a5c.png"
+   },
+   {
+    "bytes": 1565686,
+    "embedded": false,
+    "file_exists": true,
+    "index": 1,
+    "mimeType": "image/png",
+    "name": "hero02_witch_orm",
+    "uri": "textures/hero02_witch_orm-faa63e6881f6.png"
+   },
+   {
+    "bytes": 4466106,
+    "embedded": false,
+    "file_exists": true,
+    "index": 2,
+    "mimeType": "image/png",
+    "name": "hero02_witch_albedo",
+    "uri": "textures/hero02_witch_albedo-31c5ed4ae06b.png"
+   }
+  ],
+  "lights": 0,
+  "material_count": 2,
+  "materials": [
+   {
+    "alphaCutoff": null,
+    "alphaMode": "OPAQUE",
+    "doubleSided": false,
+    "extensions": [],
+    "name": "hero02_witch_body",
+    "primitives": 1,
+    "textures": {
+     "baseColorTexture": {
+      "image": 2,
+      "texCoord": 0,
+      "texture": 2
+     },
+     "metallicRoughnessTexture": {
+      "image": 1,
+      "texCoord": 0,
+      "texture": 1
+     },
+     "normalTexture": {
+      "image": 0,
+      "texCoord": 0,
+      "texture": 0
+     },
+     "occlusionTexture": {
+      "image": 1,
+      "texCoord": 0,
+      "texture": 1
+     }
+    },
+    "triangles": 8889
+   },
+   {
+    "alphaCutoff": null,
+    "alphaMode": "OPAQUE",
+    "doubleSided": true,
+    "extensions": [],
+    "name": "hero02_witch_cloth",
+    "primitives": 1,
+    "textures": {
+     "baseColorTexture": {
+      "image": 2,
+      "texCoord": 0,
+      "texture": 5
+     },
+     "metallicRoughnessTexture": {
+      "image": 1,
+      "texCoord": 0,
+      "texture": 4
+     },
+     "normalTexture": {
+      "image": 0,
+      "texCoord": 0,
+      "texture": 3
+     },
+     "occlusionTexture": {
+      "image": 1,
+      "texCoord": 0,
+      "texture": 4
+     }
+    },
+    "triangles": 2914
+   }
+  ],
+  "mesh_count": 1,
+  "meshes": [
+   {
+    "name": "hero02_witch_lod0",
+    "nodes": [
+     "hero02_witch_lod0"
+    ],
+    "primitives": [
+     {
+      "attributes": {
+       "JOINTS_0": "VEC4/UNSIGNED_BYTE",
+       "NORMAL": "VEC3/FLOAT",
+       "POSITION": "VEC3/FLOAT",
+       "TANGENT": "VEC4/FLOAT",
+       "TEXCOORD_0": "VEC2/FLOAT",
+       "WEIGHTS_0": "VEC4/FLOAT"
+      },
+      "color0_mean": null,
+      "material": "hero02_witch_body",
+      "mode": 4,
+      "targets": 0,
+      "triangles": 8889,
+      "vertices": 7525
+     },
+     {
+      "attributes": {
+       "JOINTS_0": "VEC4/UNSIGNED_BYTE",
+       "NORMAL": "VEC3/FLOAT",
+       "POSITION": "VEC3/FLOAT",
+       "TANGENT": "VEC4/FLOAT",
+       "TEXCOORD_0": "VEC2/FLOAT",
+       "WEIGHTS_0": "VEC4/FLOAT"
+      },
+      "color0_mean": null,
+      "material": "hero02_witch_cloth",
+      "mode": 4,
+      "targets": 0,
+      "triangles": 2914,
+      "vertices": 2252
+     }
+    ],
+    "triangles": 11803,
+    "vertices": 9777
+   }
+  ],
+  "nodes": 72,
+  "primitives": 2,
+  "skins": [
+   {
+    "joints": 59,
+    "name": "hero02_XS1"
+   }
+  ],
+  "textures": 6,
+  "triangles": 11803,
+  "vertices": 9777
+ },
+ "gltf_addon": "5.2.40",
+ "helper": "assets/blender/tools/export_helper.py",
+ "helper_sha256": "c1d00088d1738d8ed1cfe0ad864d1d963f764ae8609d291845cf33d5efe26a15",
+ "helper_version": "1.0.0",
+ "images": [
+  {
+   "bytes": 5112141,
+   "dedup": "reused",
+   "file": "assets/models/heroes/hero02/helper/textures/hero02_witch_normal_lod0-6cd6aff00a5c.png",
+   "has_alpha_channel": false,
+   "height": 2048,
+   "mime": "image/png",
+   "name": "hero02_witch_normal_lod0",
+   "sha256": "6cd6aff00a5c6b7f9c17c5a5fd4938042140c65c08d748ad7c61e390ab9223cb",
+   "uri": "textures/hero02_witch_normal_lod0-6cd6aff00a5c.png",
+   "width": 2048
+  },
+  {
+   "bytes": 1565686,
+   "dedup": "reused",
+   "file": "assets/models/heroes/hero02/helper/textures/hero02_witch_orm-faa63e6881f6.png",
+   "has_alpha_channel": false,
+   "height": 1024,
+   "mime": "image/png",
+   "name": "hero02_witch_orm",
+   "sha256": "faa63e6881f6a26e32ff48fd82c31039457ceb18c2cbbb155e77415403c8ec1f",
+   "uri": "textures/hero02_witch_orm-faa63e6881f6.png",
+   "width": 1024
+  },
+  {
+   "bytes": 4466106,
+   "dedup": "reused",
+   "file": "assets/models/heroes/hero02/helper/textures/hero02_witch_albedo-31c5ed4ae06b.png",
+   "has_alpha_channel": false,
+   "height": 2048,
+   "mime": "image/png",
+   "name": "hero02_witch_albedo",
+   "sha256": "31c5ed4ae06b41ecf22a5defa5d6a3590e068d69c1d589f4046fe8881be337a4",
+   "uri": "textures/hero02_witch_albedo-31c5ed4ae06b.png",
+   "width": 2048
+  }
+ ],
+ "inputs": [],
+ "notes": "hero02 witch LOD0; clips only in LOD0; LOD1/LOD2 bind to the same XS1 joints",
+ "objects": [
+  {
+   "name": "fx_chest",
+   "type": "EMPTY"
+  },
+  {
+   "name": "fx_feet",
+   "type": "EMPTY"
+  },
+  {
+   "name": "fx_hand_L",
+   "type": "EMPTY"
+  },
+  {
+   "name": "fx_hand_R",
+   "type": "EMPTY"
+  },
+  {
+   "name": "fx_head",
+   "type": "EMPTY"
+  },
+  {
+   "name": "hero02_XS1",
+   "type": "ARMATURE"
+  },
+  {
+   "name": "hero02_witch_lod0",
+   "type": "MESH"
+  },
+  {
+   "name": "socket_back",
+   "type": "EMPTY"
+  },
+  {
+   "name": "socket_face",
+   "type": "EMPTY"
+  },
+  {
+   "name": "socket_head",
+   "type": "EMPTY"
+  },
+  {
+   "name": "socket_hip_L",
+   "type": "EMPTY"
+  },
+  {
+   "name": "socket_hip_R",
+   "type": "EMPTY"
+  },
+  {
+   "name": "socket_mouth",
+   "type": "EMPTY"
+  }
+ ],
+ "output": "assets/models/heroes/hero02/helper/hero02_witch_lod0.glb",
+ "outputs": [
+  {
+   "bytes": 1487124,
+   "kind": "glb",
+   "path": "assets/models/heroes/hero02/helper/hero02_witch_lod0.glb",
+   "sha256": "a3a0a6c1e369efd19f962bb06e4e28ab6bdd038d9f24ffe578e42025de4792ca"
+  }
+ ],
+ "policy": {
+  "animations": true,
+  "apply_modifiers": false,
+  "cameras_lights": "never",
+  "color0": "RGB",
+  "double_sided": {
+   "hero02_witch_body": {
+    "double_sided": false,
+    "reason": "export_glb(single_sided_materials=...)"
+   },
+   "hero02_witch_cloth": {
+    "double_sided": true,
+    "reason": "export_glb(double_sided_materials=...)"
+   }
+  },
+  "images": "external shared folder, deduplicated by SHA-256",
+  "tangents": {
+   "exported": true,
+   "materials_with_normal_maps": [
+    "hero02_witch_body",
+    "hero02_witch_cloth"
+   ],
+   "rule": "auto"
+  },
+  "vertex_alpha_links_detached": [],
+  "y_up": true
+ },
+ "postprocess_command": "node apps/client/scripts/gltf-postprocess.mjs assets/models/heroes/hero02/helper/hero02_witch_lod0.glb --class hero_lod0 --out <runtime>.glb --texture-out <runtime textures dir>",
+ "preflight": {
+  "images": [
+   {
+    "colorspace": "sRGB",
+    "file_format": "PNG",
+    "name": "hero02_witch_albedo.png",
+    "packed": false,
+    "roles": [
+     "color"
+    ],
+    "size": [
+     2048,
+     2048
+    ],
+    "source": "FILE"
+   },
+   {
+    "colorspace": "Non-Color",
+    "file_format": "PNG",
+    "name": "hero02_witch_normal_lod0",
+    "packed": false,
+    "roles": [
+     "normal"
+    ],
+    "size": [
+     2048,
+     2048
+    ],
+    "source": "FILE"
+   }
+  ]
+ },
+ "profile": "character_skinned",
+ "profile_summary": "Heroes, monsters, NPCs, pets: skins, morphs and NLA clips; modifiers other than Armature must be applied by the recipe (shape keys survive); cloth is tagged double-sided",
+ "receipt": "assets/models/heroes/hero02/helper/hero02_witch_lod0.receipt.json",
+ "reimport": {
+  "actions_created": 14,
+  "armatures": 1,
+  "bounds_blender": {
+   "max": [
+    0.47016,
+    0.31626,
+    1.97056
+   ],
+   "min": [
+    -0.48094,
+    -0.23245,
+    -0.0
+   ]
+  },
+  "cameras": 0,
+  "lights": 0,
+  "materials": {
+   "hero02_witch_body": {
+    "blend_method": "DITHERED",
+    "use_backface_culling": true
+   },
+   "hero02_witch_cloth": {
+    "blend_method": "DITHERED",
+    "use_backface_culling": false
+   }
+  },
+  "mesh_objects": 1,
+  "meshes": [
+   {
+    "color_attributes": [],
+    "object": "hero02_witch_lod0.001",
+    "triangles": 11803,
+    "uv_layers": 1
+   }
+  ],
+  "mode": "scratch",
+  "objects": 13,
+  "seconds": 0.37,
+  "triangles": 11803
+ },
+ "schema": "xexoria.export-receipt/1",
+ "seconds": 3.17,
+ "sizes": {
+  "binary_chunk_bytes": 1038344,
+  "glb_bytes": 1487124,
+  "referenced_texture_bytes": 11143933,
+  "unique_texture_files": 3
+ },
+ "source": {
+  "bounds_blender": {
+   "max": [
+    0.47017,
+    0.31626,
+    1.97056
+   ],
+   "min": [
+    -0.48094,
+    -0.23245,
+    0.0
+   ]
+  },
+  "meshes": [
+   {
+    "color_alpha_min": 1.0,
+    "color_attributes": [],
+    "color_mean_by_material": {},
+    "materials": [
+     "hero02_witch_body",
+     "hero02_witch_cloth"
+    ],
+    "modifiers": [
+     {
+      "name": "Armature",
+      "render": true,
+      "type": "ARMATURE",
+      "viewport": true
+     }
+    ],
+    "object": "hero02_witch_lod0",
+    "polygons": 11803,
+    "shape_keys": 0,
+    "triangles": 11803,
+    "uv_layers": [
+     "UV_atlas"
+    ],
+    "vertices": 6852
+   }
+  ],
+  "triangles": 11803
+ },
+ "status": "PASS",
+ "texture_dir": "assets/models/heroes/hero02/helper/textures",
+ "validation": [
+  {
+   "check": "no_forbidden_extensions",
+   "detail": "none",
+   "pass": true
+  },
+  {
+   "check": "extensions_required_subset_used",
+   "detail": {
+    "required": [],
+    "used": []
+   },
+   "pass": true
+  },
+  {
+   "check": "extensions_babylon_loadable",
+   "detail": "all loadable",
+   "pass": true
+  },
+  {
+   "check": "no_expensive_material_extensions",
+   "detail": "none",
+   "pass": true
+  },
+  {
+   "check": "triangles_source_eq_glb",
+   "detail": {
+    "glb": 11803,
+    "source": 11803
+   },
+   "pass": true
+  },
+  {
+   "check": "triangles_glb_eq_reimport",
+   "detail": {
+    "glb": 11803,
+    "reimport": 11803
+   },
+   "pass": true
+  },
+  {
+   "check": "bounds_source_eq_glb_yup",
+   "detail": {
+    "glb_bounds_gltf": {
+     "max": [
+      0.47017,
+      1.97056,
+      0.23245
+     ],
+     "min": [
+      -0.48094,
+      0.0,
+      -0.31626
+     ]
+    },
+    "max_dev_m": 0.0,
+    "source_bounds_as_gltf": {
+     "max": [
+      0.47017,
+      1.97056,
+      0.23245
+     ],
+     "min": [
+      -0.48094,
+      0.0,
+      -0.31626
+     ]
+    },
+    "tolerance_m": 0.0001
+   },
+   "pass": true
+  },
+  {
+   "check": "bounds_source_eq_reimport",
+   "detail": {
+    "max_dev_m": 1e-05,
+    "tolerance_m": 0.0001
+   },
+   "pass": true
+  },
+  {
+   "check": "materials_match",
+   "detail": {
+    "glb": [
+     "hero02_witch_body",
+     "hero02_witch_cloth"
+    ],
+    "source": [
+     "hero02_witch_body",
+     "hero02_witch_cloth"
+    ]
+   },
+   "pass": true
+  },
+  {
+   "check": "materials_reimport_match",
+   "detail": {
+    "glb": [
+     "hero02_witch_body",
+     "hero02_witch_cloth"
+    ],
+    "reimport": [
+     "hero02_witch_body",
+     "hero02_witch_cloth"
+    ]
+   },
+   "pass": true
+  },
+  {
+   "check": "double_sided_policy",
+   "detail": "every material matches its policy decision",
+   "pass": true
+  },
+  {
+   "check": "double_sided_only_on_cards",
+   "detail": "no opaque material is double-sided by rule",
+   "pass": true
+  },
+  {
+   "check": "double_sided_reimport",
+   "detail": "re-imported backface culling matches doubleSided",
+   "pass": true
+  },
+  {
+   "check": "vertex_attributes_within_limit",
+   "detail": "<= 8 per primitive",
+   "pass": true
+  },
+  {
+   "check": "attributes_babylon_readable",
+   "detail": "all attributes are read by Babylon",
+   "pass": true
+  },
+  {
+   "check": "discouraged_attributes_absent",
+   "detail": "none",
+   "pass": true
+  },
+  {
+   "check": "color0_rgb",
+   "detail": "COLOR_0 is VEC3 or absent (GAP-3)",
+   "pass": true
+  },
+  {
+   "check": "tangents_policy",
+   "detail": {
+    "missing": [],
+    "tangents": true,
+    "unexpected": []
+   },
+   "pass": true
+  },
+  {
+   "check": "max_four_influences",
+   "detail": "no JOINTS_1/WEIGHTS_1 (official-docs S2)",
+   "pass": true
+  },
+  {
+   "check": "uv_layers_exported",
+   "detail": "every source UV layer is a TEXCOORD set",
+   "pass": true
+  },
+  {
+   "check": "color0_values_match_source",
+   "detail": "no COLOR_0 to compare",
+   "pass": true
+  },
+  {
+   "check": "reimport_uv_sets",
+   "detail": "<= 2 UV sets after re-import",
+   "pass": true
+  },
+  {
+   "check": "no_cameras_or_lights",
+   "detail": {
+    "cameras": 0,
+    "lights": 0
+   },
+   "pass": true
+  },
+  {
+   "check": "images_external",
+   "detail": "no embedded images",
+   "pass": true
+  },
+  {
+   "check": "image_files_exist",
+   "detail": "every image uri resolves to a file",
+   "pass": true
+  },
+  {
+   "check": "images_png_or_jpeg",
+   "detail": "PNG/JPEG intermediates for KTX2",
+   "pass": true
+  }
+ ],
+ "warnings": []
+}

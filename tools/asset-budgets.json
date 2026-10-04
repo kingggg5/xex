@@ -1,0 +1,160 @@
+{
+ "schema": "xexoria.asset-budgets/1",
+ "status": "PROVISIONAL",
+ "updated": "2026-10-02",
+ "owner": "Claude (export helper, master plan P10)",
+ "used_by": [
+  "apps/client/scripts/gltf-postprocess.mjs (budget gate: exit 2 on a breach)",
+  "assets/blender/tools/export_helper.py (profile -> default budget class, written to asset.extras.xex_budget_class)"
+ ],
+ "provisional_rule": "Every 'medium' and 'low' tier value, and every limit listed in a class's 'provisional' array, is PROVISIONAL until docs/plans/2026-10-02-device-tiers-plan.md (being written) fixes the device tiers and a phone is measured (master plan section 1: phone results stay UNVERIFIED until a device is named). The 'high' limits come from the plans cited in each class.",
+ "metrics": {
+  "triangles": "sum of TRIANGLES-mode triangles x mesh-node instances in the runtime GLB",
+  "triangles_min": "lower bound (LOD0 detail floor); fails when the asset is below it",
+  "draw_calls": "primitives x mesh nodes for one placed copy (thin instances not multiplied)",
+  "materials": "unique glTF materials",
+  "texture_mib": "GPU memory of every texture the GLB references, block-compressed with full mips (UASTC -> ASTC 4x4/BC7 8 bpp; ETC1S -> ETC2 RGB/BC1 4 bpp, RGBA 8 bpp); shared atlases are counted in full",
+  "glb_kib": "runtime GLB bytes / 1024, external textures excluded",
+  "transfer_kib": "GLB + every referenced external texture, uncompressed by HTTP",
+  "vertex_attributes": "largest attribute count on one primitive (WebGPU allows 8 vertex buffers)",
+  "vertex_mib": "vertex + index buffer bytes after quantization / 2^20"
+ },
+ "gpu_bits_per_pixel": {"uastc_astc4x4_or_bc7": 8, "etc1s_rgb_etc2_or_bc1": 4, "etc1s_rgba_etc2_or_bc3": 8, "rgba8_fallback": 32, "mip_chain_factor": 1.333},
+ "defaults": {
+  "policy": {"color0": "RGB", "max_uv_sets": 2, "strip_unused_tangents": true, "weld": true, "double_sided": "explicit", "double_sided_opaque_fails": false},
+  "ktx": {"uastc": {"level": 2, "rdo": true, "rdoLambda": 2, "zstd": 9}, "etc1s": {"quality": 180}, "jobs": 2},
+  "ktx_source": "apps/client/scripts/build-city-asset.mjs:212-215 (UASTC level 2 + RDO lambda 2 + zstd 9 for normal/ORM; ETC1S quality 180 for base colour), KTX-Software 4.4.2"
+ },
+ "classes": {
+  "world_cell": {
+   "profile": "static_world",
+   "source": "master plan P1 gate (per cell <= 120k triangles, <= 40 materials); assets/models/sunmeadow-v2/blockout/cells.json (budget_draw_calls 40); P2 terrain texture memory High 24 / Medium 16 / Low 8 MiB; build-world-cells.mjs 2 MiB cell transfer cap; 2026-10-01 triangle research (Low tier <= 40k per 64 m cell)",
+   "limits": {"triangles": 120000, "draw_calls": 40, "materials": 40, "texture_mib": 24, "glb_kib": 2048, "vertex_attributes": 8},
+   "tiers": {"medium": {"texture_mib": 16}, "low": {"triangles": 40000, "texture_mib": 8}},
+   "provisional": ["glb_kib"],
+   "policy": {"double_sided": "explicit"}
+  },
+  "tree_lod0": {
+   "profile": "foliage",
+   "source": "master plan P3 (LOD0 4-6k); stylize_kit.py SPEC broadleaf 4000-6000, conifer 2500-5000; froggy art plan section 2 (tree 3-6k, shared bark + leaf atlas); shared atlas = 1024 bark albedo + 1024 bark normal + 1024 leaf atlas = 3.33 MiB",
+   "limits": {"triangles": 6000, "triangles_min": 2500, "draw_calls": 2, "materials": 2, "texture_mib": 4, "glb_kib": 512, "vertex_attributes": 8},
+   "tiers": {"medium": {"triangles": 4500}, "low": {"triangles": 3000}},
+   "provisional": ["glb_kib", "triangles_min"],
+   "policy": {"double_sided": "alpha"}
+  },
+  "tree_lod1": {
+   "profile": "foliage",
+   "source": "master plan P3 (LOD1 <= 1.6k); stylize_kit.py SPEC lod1_max broadleaf 1600, conifer 1400",
+   "limits": {"triangles": 1600, "draw_calls": 2, "materials": 2, "texture_mib": 4, "glb_kib": 256, "vertex_attributes": 8},
+   "provisional": ["glb_kib"],
+   "policy": {"double_sided": "alpha"}
+  },
+  "bush_lod0": {
+   "profile": "foliage",
+   "source": "stylize_kit.py SPEC bush lod0 300-900",
+   "limits": {"triangles": 900, "draw_calls": 1, "materials": 1, "texture_mib": 2, "glb_kib": 128, "vertex_attributes": 8},
+   "provisional": ["glb_kib"],
+   "policy": {"double_sided": "alpha"}
+  },
+  "bush_lod1": {
+   "profile": "foliage",
+   "source": "stylize_kit.py SPEC bush lod1_max 450",
+   "limits": {"triangles": 450, "draw_calls": 1, "materials": 1, "texture_mib": 2, "glb_kib": 64, "vertex_attributes": 8},
+   "provisional": ["glb_kib"],
+   "policy": {"double_sided": "alpha"}
+  },
+  "impostor_card": {
+   "profile": "impostor_card",
+   "source": "docs/tools/impostor-cards.md (256 px frames on 2048 pages, one draw per page); grass clump = 3 crossed cards (12 triangles, master plan P3). Page = 2048 ETC1S RGBA albedo (5.33 MiB) + 2048 UASTC normal (5.33 MiB)",
+   "limits": {"triangles": 64, "draw_calls": 1, "materials": 1, "texture_mib": 11, "glb_kib": 64, "vertex_attributes": 8},
+   "tiers": {"low": {"texture_mib": 6}},
+   "provisional": ["triangles", "texture_mib", "glb_kib"],
+   "policy": {"double_sided": "alpha"}
+  },
+  "prop": {
+   "profile": "prop",
+   "source": "froggy art plan section 2 (prop 300-2k LOD0, shared 1024 trim/atlas, instanced); master plan P5 (LOD0-2 + collider proxy)",
+   "limits": {"triangles": 2000, "draw_calls": 2, "materials": 2, "texture_mib": 4, "glb_kib": 256, "vertex_attributes": 8},
+   "provisional": ["draw_calls", "materials", "glb_kib"],
+   "policy": {"double_sided": "explicit"}
+  },
+  "prop_lod1": {
+   "profile": "prop",
+   "source": "froggy art plan section 2 (LOD1 = 50 % of LOD0)",
+   "limits": {"triangles": 1000, "draw_calls": 2, "materials": 2, "texture_mib": 4, "glb_kib": 128, "vertex_attributes": 8},
+   "provisional": ["glb_kib"]
+  },
+  "building_module": {
+   "profile": "static_world",
+   "source": "froggy art plan section 2 (building/dungeon module 1-6k, shared trim sheet, 0.5 m grid)",
+   "limits": {"triangles": 6000, "draw_calls": 3, "materials": 3, "texture_mib": 8, "glb_kib": 512, "vertex_attributes": 8},
+   "provisional": ["draw_calls", "materials", "texture_mib", "glb_kib"]
+  },
+  "hero_lod0": {
+   "profile": "character_skinned",
+   "source": "master plan P6 heroes 12k / 6k / 2.5k with a 2048 atlas; froggy art plan section 2 (player body + armour 12k, modular slots); 2048 ETC1S albedo 2.67 + 2048 UASTC normal 5.33 + 1024 UASTC ORM 1.33 MiB",
+   "limits": {"triangles": 12000, "draw_calls": 6, "materials": 2, "texture_mib": 10, "glb_kib": 1536, "vertex_attributes": 8},
+   "tiers": {"medium": {"triangles": 6000}, "low": {"triangles": 2500, "texture_mib": 5}},
+   "provisional": ["draw_calls", "glb_kib"],
+   "policy": {"double_sided": "explicit", "discouraged_attributes": ["COLOR_0", "TEXCOORD_1"], "max_uv_sets": 2}
+  },
+  "hero_lod1": {
+   "profile": "character_skinned",
+   "source": "master plan P6 (hero LOD1 6k)",
+   "limits": {"triangles": 6000, "draw_calls": 6, "materials": 2, "texture_mib": 10, "glb_kib": 768, "vertex_attributes": 8},
+   "provisional": ["glb_kib"],
+   "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}
+  },
+  "hero_lod2": {
+   "profile": "character_skinned",
+   "source": "master plan P6 (hero LOD2 2.5k)",
+   "limits": {"triangles": 2500, "draw_calls": 4, "materials": 2, "texture_mib": 10, "glb_kib": 384, "vertex_attributes": 8},
+   "provisional": ["glb_kib"],
+   "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}
+  },
+  "monster_lod0": {
+   "profile": "character_skinned",
+   "source": "master plan P6 regular monster 4-8k / 2.5k / 1k; froggy art plan section 2 (1024 textures); 1024 ETC1S albedo 0.67 + UASTC normal 1.33 + UASTC ORM 1.33 MiB",
+   "limits": {"triangles": 8000, "triangles_min": 4000, "draw_calls": 3, "materials": 2, "texture_mib": 4, "glb_kib": 1024, "vertex_attributes": 8},
+   "tiers": {"low": {"triangles": 2500}},
+   "provisional": ["draw_calls", "glb_kib"],
+   "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}
+  },
+  "monster_lod1": {"profile": "character_skinned", "source": "master plan P6 (2.5k)", "limits": {"triangles": 2500, "draw_calls": 3, "materials": 2, "texture_mib": 4, "vertex_attributes": 8}, "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}},
+  "monster_lod2": {"profile": "character_skinned", "source": "master plan P6 (1k)", "limits": {"triangles": 1000, "draw_calls": 2, "materials": 2, "texture_mib": 4, "vertex_attributes": 8}, "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}},
+  "boss_lod0": {
+   "profile": "character_skinned",
+   "source": "master plan P6 (boss <= 25k); froggy art plan section 2 (boss 15-25k / 8k / 3k, 2048, phase parts as separate meshes)",
+   "limits": {"triangles": 25000, "draw_calls": 8, "materials": 4, "texture_mib": 12, "glb_kib": 3072, "vertex_attributes": 8},
+   "provisional": ["draw_calls", "materials", "glb_kib"],
+   "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}
+  },
+  "boss_lod1": {"profile": "character_skinned", "source": "froggy art plan section 2 (8k)", "limits": {"triangles": 8000, "draw_calls": 8, "materials": 4, "texture_mib": 12, "vertex_attributes": 8}},
+  "boss_lod2": {"profile": "character_skinned", "source": "froggy art plan section 2 (3k)", "limits": {"triangles": 3000, "draw_calls": 6, "materials": 4, "texture_mib": 12, "vertex_attributes": 8}},
+  "npc_lod0": {
+   "profile": "character_skinned",
+   "source": "froggy art plan section 2 (NPC 8k / 4k / 1.5k, 1024)",
+   "limits": {"triangles": 8000, "draw_calls": 4, "materials": 2, "texture_mib": 4, "glb_kib": 1024, "vertex_attributes": 8},
+   "provisional": ["draw_calls", "glb_kib"],
+   "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}
+  },
+  "pet_lod0": {
+   "profile": "character_skinned",
+   "source": "froggy art plan section 2 (pet 2-4k / 1.5k / 600, 512-1024)",
+   "limits": {"triangles": 4000, "draw_calls": 2, "materials": 1, "texture_mib": 4, "glb_kib": 512, "vertex_attributes": 8},
+   "provisional": ["draw_calls", "materials", "glb_kib"],
+   "policy": {"discouraged_attributes": ["COLOR_0", "TEXCOORD_1"]}
+  },
+  "city_full": {
+   "profile": "static_world",
+   "source": "master plan P5/phase 4 gate (city <= 900k triangles); build-city-asset.mjs (900000-triangle check); native-docs transfer section 2 (45 materials, about 94 MB block-compressed texture estimate)",
+   "limits": {"triangles": 900000, "materials": 48, "draw_calls": 64, "texture_mib": 96, "vertex_attributes": 8},
+   "provisional": ["materials", "draw_calls", "texture_mib"]
+  },
+  "city_hlod": {
+   "profile": "static_world",
+   "source": "apps/client/scripts/build-city-hlod.mjs (25k triangles, 8 materials, 4 MiB, no images)",
+   "limits": {"triangles": 25000, "materials": 8, "draw_calls": 8, "texture_mib": 0, "glb_kib": 4096, "vertex_attributes": 8}
+  }
+ }
+}

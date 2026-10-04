@@ -1,0 +1,1013 @@
+{
+ "schema": "xexoria.terrain-spec/1",
+ "spec": "docs/reviews/2026-10-02-map-terrain-spec.md",
+ "seed": 20261002,
+ "folders": {
+  "scripts": "assets/blender/sunmeadow_v2/terrain",
+  "sources": "assets/models/sunmeadow-v2/terrain",
+  "layers": "assets/models/sunmeadow-v2/terrain/layers-r7",
+  "cells": "assets/models/sunmeadow-v2/terrain/cells",
+  "runtime": "apps/client/src/assets/world/terrain",
+  "evidence": "planning/evidence/terrain-splat-v1"
+ },
+ "cell": {
+  "size_m": 64.0,
+  "n": {
+   "high": 256,
+   "low": 128
+  },
+  "texels": {
+   "high": 257,
+   "low": 129
+  },
+  "origin_m": -512.0
+ },
+ "encodings": {
+  "splat": {
+   "format": "png-rgb8-linear",
+   "channels": {
+    "r": "L0 lush",
+    "g": "L1 dry",
+    "b": "L2 dirt"
+   },
+   "derived": "L3 mud/moss = 255 - r - g - b (largest-remainder rounding keeps the sum exact)"
+  },
+  "data": {
+   "format": "png-rgb8-linear",
+   "channels": {
+    "r": "path-edge SDF d = v/255*6.0 + (-2.0) m",
+    "g": "rut lateral L = v/254*6.0 + (-3.0) m; 255 = no rut",
+    "b": "baked ground AO 0..1"
+   }
+  },
+  "sdf": {
+   "min_m": -2.0,
+   "range_m": 6.0
+  },
+  "rut": {
+   "min_m": -3.0,
+   "range_m": 6.0,
+   "sentinel": 255,
+   "eval_max_m": 1.3
+  },
+  "forbidden_png_chunks": [
+   "gAMA",
+   "cHRM",
+   "sRGB",
+   "iCCP"
+  ],
+  "albedo": "srgb-bytes-in-unorm"
+ },
+ "layers": [
+  {
+   "id": "L0",
+   "name": "terrain_meadow_lush",
+   "role": "default meadow, shade, water band",
+   "channel": "R",
+   "kind": "ground",
+   "tile_m": 6.0,
+   "res": {
+    "high": 1024,
+    "medium": 1024,
+    "low": 512
+   },
+   "height_range_m": 0.1,
+   "palette": {
+    "base": [
+     "#3f6b2a",
+     "#4c7a2f"
+    ],
+    "light": [
+     "#9fbe55",
+     "#b9cc6a"
+    ],
+    "shadow": [
+     "#23401c"
+    ],
+    "accent": [
+     "#5f8a38"
+    ]
+   },
+   "targets": {
+    "normal": {
+     "flat_max": 0.15,
+     "mean": [
+      8.0,
+      16.0
+     ],
+     "p50_min": 6.0,
+     "p95_max": 38.0,
+     "mip2_mean_min": 4.0
+    },
+    "rough": {
+     "p5": 0.72,
+     "p95": 0.94,
+     "mean": 0.84,
+     "span_min": 0.12,
+     "corr_sign": -1
+    },
+    "ao": {
+     "mean": [
+      0.8,
+      0.92
+     ]
+    },
+    "albedo": {
+     "lum_mean": [
+      0.3,
+      0.36
+     ],
+     "sat_mean": [
+      0.45,
+      0.6
+     ],
+     "p2_min": 0.06,
+     "p98_max": 0.7
+    }
+   }
+  },
+  {
+   "id": "L1",
+   "name": "terrain_meadow_dry",
+   "role": "sunny patches, worn verges, camp, sun-facing slopes",
+   "channel": "G",
+   "kind": "ground",
+   "tile_m": 5.0,
+   "res": {
+    "high": 1024,
+    "medium": 512,
+    "low": 512
+   },
+   "height_range_m": 0.08,
+   "palette": {
+    "base": [
+     "#8a9a3f",
+     "#a5a14a"
+    ],
+    "light": [
+     "#c4b066"
+    ],
+    "shadow": [
+     "#6b5a35"
+    ],
+    "accent": [
+     "#9a6a3a"
+    ]
+   },
+   "targets": {
+    "normal": {
+     "flat_max": 0.18,
+     "mean": [
+      7.0,
+      14.0
+     ],
+     "p95_max": 36.0,
+     "mip2_mean_min": 3.5
+    },
+    "rough": {
+     "p5": 0.8,
+     "p95": 0.97,
+     "mean": 0.89,
+     "span_min": 0.1,
+     "corr_sign": -1
+    },
+    "ao": {
+     "mean": [
+      0.82,
+      0.94
+     ]
+    },
+    "albedo": {
+     "lum_mean": [
+      0.4,
+      0.48
+     ],
+     "sat_mean": [
+      0.35,
+      0.5
+     ],
+     "p2_min": 0.12,
+     "p98_max": 0.78
+    }
+   }
+  },
+  {
+   "id": "L2",
+   "name": "terrain_path_dirt",
+   "role": "paths, scree toes, erosion, aprons",
+   "channel": "B",
+   "kind": "ground",
+   "tile_m": 4.0,
+   "res": {
+    "high": 1024,
+    "medium": 1024,
+    "low": 512
+   },
+   "height_range_m": 0.06,
+   "palette": {
+    "base": [
+     "#b08a5a"
+    ],
+    "light": [
+     "#c49a64"
+    ],
+    "shadow": [
+     "#8a6a45",
+     "#7a5c3c"
+    ],
+    "accent": [
+     "#9c958a",
+     "#b7ae9e",
+     "#7c7569"
+    ]
+   },
+   "targets": {
+    "normal": {
+     "flat_max": 0.2,
+     "mean": [
+      6.0,
+      12.0
+     ],
+     "p95_range": [
+      25.0,
+      40.0
+     ],
+     "mip2_mean_min": 3.0
+    },
+    "rough": {
+     "p5": 0.62,
+     "p95": 0.97,
+     "mean": 0.86,
+     "span_min": 0.18,
+     "corr_sign": -1
+    },
+    "ao": {
+     "mean": [
+      0.8,
+      0.93
+     ]
+    },
+    "albedo": {
+     "lum_mean": [
+      0.42,
+      0.52
+     ],
+     "sat_mean": [
+      0.25,
+      0.42
+     ],
+     "p2_min": 0.18,
+     "p98_max": 0.78
+    }
+   }
+  },
+  {
+   "id": "L3",
+   "name": "terrain_bank_mudmoss",
+   "role": "banks, spray, shade moss, stream bed",
+   "channel": "A",
+   "kind": "ground",
+   "tile_m": 3.0,
+   "res": {
+    "high": 512,
+    "medium": 512,
+    "low": 512
+   },
+   "height_range_m": 0.05,
+   "palette": {
+    "base": [
+     "#4a3a28"
+    ],
+    "light": [
+     "#7d9a3a"
+    ],
+    "shadow": [
+     "#2f251a"
+    ],
+    "accent": [
+     "#4f6b2c",
+     "#5d625e"
+    ]
+   },
+   "targets": {
+    "normal": {
+     "flat_max": 0.3,
+     "mean": [
+      4.0,
+      10.0
+     ],
+     "p95_max": 32.0,
+     "mip2_mean_min": 2.5
+    },
+    "rough": {
+     "p5": 0.3,
+     "p95": 0.92,
+     "mean": 0.62,
+     "span_min": 0.3,
+     "corr_sign": 1
+    },
+    "ao": {
+     "mean": [
+      0.78,
+      0.92
+     ]
+    },
+    "albedo": {
+     "lum_mean": [
+      0.2,
+      0.28
+     ],
+     "sat_mean": [
+      0.3,
+      0.5
+     ],
+     "p2_min": 0.06,
+     "p98_max": 0.48
+    }
+   }
+  }
+ ],
+ "relief_layers": [
+  {
+   "id": "R0",
+   "name": "relief_rock_layered",
+   "role": "shared bluff/cliff/outcrop detail (tinted at runtime)",
+   "channel": null,
+   "kind": "relief",
+   "tile_m": 4.0,
+   "res": {
+    "high": 1024,
+    "medium": 512,
+    "low": 512
+   },
+   "height_range_m": 0.12,
+   "palette": {
+    "base": [
+     "#a08f78",
+     "#8a7c68"
+    ],
+    "light": [
+     "#c2ae8e"
+    ],
+    "shadow": [
+     "#4a4034"
+    ],
+    "accent": [
+     "#958673",
+     "#6f6556"
+    ]
+   },
+   "targets": {
+    "normal": {
+     "flat_max": 0.05,
+     "mean": [
+      10.0,
+      18.0
+     ],
+     "p95_max": 42.0,
+     "mip2_mean_min": 6.0
+    },
+    "rough": {
+     "p5": 0.55,
+     "p95": 0.95,
+     "mean": 0.82,
+     "span_min": 0.2,
+     "corr_sign": -1
+    },
+    "ao": {
+     "mean": [
+      0.75,
+      0.92
+     ]
+    },
+    "albedo": {
+     "lum_mean": [
+      0.4,
+      0.52
+     ],
+     "sat_max": 0.25,
+     "p2_min": 0.15,
+     "p98_max": 0.78
+    }
+   }
+  },
+  {
+   "id": "R1",
+   "name": "relief_moss_top",
+   "role": "moss cushions on ledges and tops",
+   "channel": null,
+   "kind": "relief",
+   "tile_m": 3.0,
+   "res": {
+    "high": 512,
+    "medium": 256,
+    "low": 256
+   },
+   "height_range_m": 0.05,
+   "palette": {
+    "base": [
+     "#4f6b2c",
+     "#5a7a30"
+    ],
+    "light": [
+     "#7d9a3a",
+     "#93ad48"
+    ],
+    "shadow": [
+     "#2c3d1a"
+    ],
+    "accent": [
+     "#6b5a35"
+    ]
+   },
+   "targets": {
+    "normal": {
+     "flat_max": 0.15,
+     "mean": [
+      8.0,
+      14.0
+     ],
+     "mip2_mean_min": 4.0
+    },
+    "rough": {
+     "p5": 0.7,
+     "p95": 0.92,
+     "mean": 0.82,
+     "span_min": 0.12,
+     "corr_sign": -1
+    },
+    "ao": {
+     "mean": [
+      0.8,
+      0.92
+     ]
+    },
+    "albedo": {
+     "lum_mean": [
+      0.28,
+      0.36
+     ],
+     "sat_mean": [
+      0.45,
+      0.62
+     ],
+     "p2_min": 0.08,
+     "p98_max": 0.62
+    }
+   }
+  }
+ ],
+ "gates": {
+  "albedo_channel_p01_min": 0.04,
+  "albedo_channel_p999_max": 0.9,
+  "rough_adjacent_p95_max": 0.05,
+  "rough_form_corr_min": 0.2,
+  "lum_height_corr_min": 0.25,
+  "lum_gradient_corr_max": 0.1,
+  "height_p1_max": 0.1,
+  "height_p99_min": 0.9,
+  "normal_height_corr_min": 0.85,
+  "seam_max": 1.15,
+  "flat_deg": 1.0,
+  "ah_psnr_mip0_min": 38.0,
+  "ah_psnr_mip2_min": 36.0,
+  "height_err_max": 6,
+  "height_err_mean_max": 1.5,
+  "normal_err_mean_max_deg": 1.0,
+  "normal_err_p99_max_deg": 4.0,
+  "rough_ao_err_p99_max": 5,
+  "seam_mips_max": 1.2,
+  "normal_y_corr_min": 0.5,
+  "size_1024_max_bytes": 900000,
+  "size_512_max_bytes": 250000
+ },
+ "path_classes": {
+  "gate_road": {
+   "s_c": 1.0,
+   "e_c": 0.9,
+   "worn": 0.75,
+   "worn_peak_m": 0.4,
+   "worn_end_m": 1.4,
+   "ruts": true,
+   "rut_gauge_m": 1.56,
+   "dirt_min_core": 0.85,
+   "mud": 0.0
+  },
+  "southbound_trail": {
+   "s_c": 0.95,
+   "e_c": 0.7,
+   "worn": 0.6,
+   "worn_peak_m": 0.4,
+   "worn_end_m": 1.4,
+   "ruts": false,
+   "tufts_inner_m": 0.4,
+   "tufts_weight": [
+    0.2,
+    0.4
+   ],
+   "dirt_min_core": 0.85,
+   "mud": 0.0
+  },
+  "east_return_path": {
+   "s_c": 0.6,
+   "e_c": 0.5,
+   "worn": 0.5,
+   "worn_peak_m": 0.35,
+   "worn_end_m": 1.2,
+   "ruts": false,
+   "track_m": 1.4,
+   "dirt_min_core": 0.5,
+   "mud": 0.0
+  },
+  "camp_spur": {
+   "s_c": 0.4,
+   "e_c": 0.6,
+   "worn": 0.9,
+   "worn_peak_m": 0.3,
+   "worn_end_m": 1.2,
+   "ruts": true,
+   "rut_faint": true,
+   "inner_dry": 0.6,
+   "dirt_min_core": 0.3,
+   "mud": 0.0
+  },
+  "boar_trail": {
+   "s_c": 0.45,
+   "e_c": 0.6,
+   "worn": 0.7,
+   "worn_peak_m": 0.3,
+   "worn_end_m": 1.2,
+   "ruts": false,
+   "inner_dry": 0.35,
+   "dirt_min_core": 0.3,
+   "mud": 0.25,
+   "note": "trampled mud-and-grass (layout); camp_spur-like + mud"
+  }
+ },
+ "path_class_of": {
+  "gate_road": "gate_road",
+  "gate_road_east": "gate_road",
+  "southbound_trail": "southbound_trail",
+  "east_return_path": "east_return_path",
+  "camp_spur": "camp_spur",
+  "boar_trail": "boar_trail"
+ },
+ "path_no_ruts": [
+  "gate_road_east"
+ ],
+ "rut": {
+  "centre_m": 0.78,
+  "width_m": 0.26,
+  "profile_half_m": 0.15,
+  "depth_m": 0.045,
+  "wander_m": 0.1,
+  "wander_freq": 0.11,
+  "floor_albedo": 0.86,
+  "floor_rough": 0.85,
+  "puddle_rough": 0.25,
+  "crown_grass": 0.35,
+  "junction_fade_m": 3.0
+ },
+ "berm": {
+  "d_min": 0.05,
+  "d_max": 0.45,
+  "height_m": 0.012,
+  "inner_ao": 0.08
+ },
+ "mask": {
+  "edge_noise_m": 0.7,
+  "edge_noise_amp": 0.3,
+  "macro_scales_m": [
+   32.0,
+   12.0
+  ],
+  "macro_weights": [
+   0.65,
+   0.35
+  ],
+  "macro_warp_m": 6.0,
+  "macro_mean": 0.479,
+  "macro_std": 0.102,
+  "dry_breath": [
+   6.0,
+   0.15
+  ],
+  "slope_scar_m": 2.5,
+  "slope_scar_edges": [
+   0.38,
+   0.62
+  ],
+  "dirt_slope": [
+   24.0,
+   32.0,
+   0.35
+  ],
+  "scree_toe": 0.62,
+  "toe_band_m": [
+   0.6,
+   1.2
+  ],
+  "toe_moss": 0.2,
+  "stone_base_extra_m": 0.9,
+  "stone_base_dirt": 0.5,
+  "altar_apron_m": 0.6,
+  "altar_apron_dirt": 0.6,
+  "camp_bounds": [
+   19.0,
+   31.0,
+   -16.0,
+   -3.0
+  ],
+  "camp_patch": 0.35,
+  "camp_noise": [
+   0.55,
+   0.75
+  ],
+  "bank": [
+   0.1,
+   1.5
+  ],
+  "bank_noise": 0.35,
+  "bank_slope_deg": 22.0,
+  "bank_slope_mud": 0.3,
+  "bank_slope_reach_m": 3.0,
+  "spray_r": [
+   2.5,
+   4.5
+  ],
+  "spray": 0.55,
+  "shade_ao": 0.65,
+  "shade_moss": 0.35,
+  "dry_macro": [
+   0.42,
+   0.72
+  ],
+  "dry_aspect": [
+   0.55,
+   0.45
+  ],
+  "dry_slope": [
+   12.0,
+   30.0,
+   0.25
+  ],
+  "dry_convex": 0.15,
+  "lush_suppress": 0.6,
+  "lush_band_m": [
+   1.5,
+   4.0
+  ],
+  "mud_dirt_suppress": 0.85,
+  "bridge_apron_m": 3.5,
+  "combat_dry": [
+   0.2,
+   0.7
+  ],
+  "combat_dirt_max": 0.08,
+  "combat_std_max": 0.07,
+  "border_default": [
+   0.65,
+   0.35
+  ],
+  "border_blend_m": 4.0,
+  "canopy_fade_m": 1.2,
+  "canopy_strength": 0.55
+ },
+ "validation": {
+  "dirt_core": 0.85,
+  "dirt_core_d": -0.4,
+  "dirt_core_paths": [
+   "gate_road",
+   "southbound_trail"
+  ],
+  "dirt_min": {
+   "east_return_path": 0.5,
+   "camp_spur": 0.3
+  },
+  "water_dirt_max": 0.2,
+  "water_dirt_reach_m": 1.5,
+  "bridge_centre": [
+   -14.0,
+   -50.0
+  ],
+  "bridge_exempt_m": 3.5,
+  "bank_mud_min": 0.6,
+  "bank_mud_reach_m": 0.4,
+  "far_mud_max": 0.15,
+  "far_mud_reach_m": 2.5,
+  "toe_coverage_min": 0.9,
+  "toe_band_min": 0.5,
+  "sdf_err_max_m": 0.013,
+  "sdf_err_reach_m": 2.0
+ },
+ "stage_coverage_expect": {
+  "dirt": [
+   0.07,
+   0.12
+  ],
+  "mud": [
+   0.03,
+   0.07
+  ],
+  "dry": [
+   0.2,
+   0.35
+  ],
+  "lush": [
+   0.5,
+   0.65
+  ]
+ },
+ "sun_xz": [
+  0.8436614877321076,
+  -0.5368754921931592
+ ],
+ "runtime": {
+  "plugin_priority": 186,
+  "rock_plugin_priority": 187,
+  "height_blend": {
+   "lam": 0.6,
+   "delta": 0.12,
+   "ramp": 0.3,
+   "h_scale": [
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ],
+   "h_bias": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "edge_breakup": {
+   "band_m": 0.7,
+   "amp": 0.9,
+   "freqs": [
+    1.3,
+    3.1
+   ],
+   "weights": [
+    0.55,
+    0.25,
+    0.2
+   ]
+  },
+  "anti_tiling": {
+   "rot_cos": 0.8,
+   "rot_sin": 0.6,
+   "offset": [
+    0.37,
+    0.71
+   ],
+   "mask_period_m": 7.3,
+   "mask_edges": [
+    0.3,
+    0.7
+   ],
+   "height_gain": 1.2
+  },
+  "macro": {
+   "periods_m": [
+    31.0,
+    13.0
+   ],
+   "weights": [
+    0.65,
+    0.35
+   ],
+   "value": [
+    0.9,
+    1.08
+   ],
+   "cool": [
+    0.97,
+    1.0,
+    1.04
+   ],
+   "warm": [
+    1.04,
+    1.0,
+    0.94
+   ],
+   "hue_edges": [
+    0.35,
+    0.75
+   ]
+  },
+  "rough": {
+   "ao_term": 0.08,
+   "wet_dirt": 0.45,
+   "wet_grass": 0.8,
+   "clamp": [
+    0.22,
+    1.0
+   ],
+   "weather_base": 0.94
+  },
+  "albedo": {
+   "wet_dirt": 0.72,
+   "wet_grass": 0.86,
+   "cell_ao": 0.75,
+   "dry_tint": [
+    0.914,
+    0.941,
+    0.863
+   ]
+  },
+  "wet": {
+   "mud_edges": [
+    0.25,
+    0.85
+   ],
+   "rain_base": 0.4,
+   "rain_low": 0.6,
+   "rain_span": 0.22
+  },
+  "far_fade": {
+   "2": [
+    70.0,
+    90.0
+   ],
+   "1": [
+    60.0,
+    80.0
+   ],
+   "0": [
+    45.0,
+    60.0
+   ]
+  },
+  "branch_eps": 0.004,
+  "tier0_nro_min": 0.15
+ },
+ "tiers": {
+  "2": {
+   "presets": [
+    "high",
+    "ultra"
+   ],
+   "anti_tiling": [
+    "L0",
+    "L1"
+   ],
+   "berm": true,
+   "ruts": true,
+   "anisotropy": 8,
+   "res": "high"
+  },
+  "1": {
+   "presets": [
+    "medium"
+   ],
+   "anti_tiling": [
+    "L0"
+   ],
+   "berm": false,
+   "ruts": true,
+   "anisotropy": 4,
+   "res": "medium"
+  },
+  "0": {
+   "presets": [
+    "low"
+   ],
+   "anti_tiling": [],
+   "berm": false,
+   "ruts": true,
+   "anisotropy": 2,
+   "res": "low"
+  }
+ },
+ "samplers": {
+  "base_pbr": 3,
+  "limit": 16,
+  "cell_custom": 10,
+  "far_custom": 2,
+  "hero_rock_custom": 6,
+  "generic_rock_custom": 4,
+  "decal_custom": 2
+ },
+ "rock": {
+  "tile_m": 4.0,
+  "moss_tile_m": 3.0,
+  "moss_edges": [
+   0.5,
+   0.82
+  ],
+  "moss_noise": 0.1,
+  "moss_allow": 0.25,
+  "north_shade": 0.05,
+  "convex": [
+   0.58,
+   0.85,
+   0.18,
+   "#e8d8b0",
+   -0.05
+  ],
+  "concave": [
+   0.18,
+   0.42,
+   0.25,
+   0.05
+  ],
+  "ao_mix": 0.7,
+  "wet_albedo": 0.72,
+  "wet_rough": 0.35,
+  "contact_m": 0.6,
+  "strata": {
+   "bluff": {
+    "period_m": 0.85,
+    "dip_deg": 4.0,
+    "dip_dir": "SW"
+   },
+   "cliffs": {
+    "period_m": 1.8,
+    "dip_deg": 7.0,
+    "dip_dir": "S"
+   },
+   "value_jitter": 0.06,
+   "bedding": 0.8,
+   "bedding_frac": 0.04
+  },
+  "palettes": {
+   "sandstone": [
+    "#a08f78",
+    "#8a7c68",
+    "#c2ae8e",
+    "#4a4034"
+   ],
+   "granite": [
+    "#7d7f80",
+    "#8f8c86",
+    "#a9a59b",
+    "#4b4f53"
+   ]
+  }
+ },
+ "ktx": {
+  "version": "4.4.2",
+  "pinned": ".harness/.cache/toolchains/ktx-4.4.2/portable/bin/ktx.exe",
+  "env": "KTX_SOFTWARE_BIN",
+  "ah": [
+   "--format",
+   "R8G8B8A8_UNORM",
+   "--assign-tf",
+   "linear",
+   "--encode",
+   "uastc",
+   "--uastc-quality",
+   "2",
+   "--uastc-rdo",
+   "--uastc-rdo-l",
+   "1.0",
+   "--zstd",
+   "18"
+  ],
+  "nro": [
+   "--format",
+   "R8G8B8A8_UNORM",
+   "--assign-tf",
+   "linear",
+   "--encode",
+   "uastc",
+   "--uastc-quality",
+   "3",
+   "--zstd",
+   "18"
+  ],
+  "mip_generate": [
+   "--generate-mipmap",
+   "--mipmap-filter",
+   "lanczos4",
+   "--mipmap-wrap",
+   "wrap"
+  ],
+  "origin": [
+   "--assign-texcoord-origin",
+   "bottom-left"
+  ],
+  "nro_mips": "explicit levels from the packer (decoded-vector average, renormalise, Toksvig roughness)",
+  "albedo_encoding": "srgb-bytes-in-unorm"
+ },
+ "budget_mib": {
+  "high": 24.0,
+  "medium": 16.0,
+  "low": 8.0
+ },
+ "resident_cells": 6,
+ "forge": {
+  "render_scale": 2,
+  "device_default": "cpu",
+  "samples": {
+   "albedo": 8,
+   "height": 8,
+   "normal": 6,
+   "id": 1,
+   "ao": 48,
+   "edge": 16
+  }
+ }
+}

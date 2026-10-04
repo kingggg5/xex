@@ -1,0 +1,600 @@
+{
+ "schema": "xexoria.terrain-layerset/1",
+ "spec": "docs/reviews/2026-10-02-map-terrain-spec.md",
+ "albedoEncoding": "srgb-bytes-in-unorm",
+ "layers": [
+  {
+   "id": "L0",
+   "name": "terrain_meadow_lush",
+   "channel": "R",
+   "kind": "ground",
+   "tile_m": 6,
+   "files": {
+    "ah": {
+     "512": "layers/terrain_meadow_lush_ah_512.ktx2",
+     "1024": "layers/terrain_meadow_lush_ah_1024.ktx2"
+    },
+    "nro": {
+     "512": "layers/terrain_meadow_lush_nro_512.ktx2",
+     "1024": "layers/terrain_meadow_lush_nro_1024.ktx2"
+    }
+   },
+   "packing": {
+    "ah": [
+     "albedo.r",
+     "albedo.g",
+     "albedo.b",
+     "height"
+    ],
+    "nro": [
+     "normal.x",
+     "normal.y",
+     "roughness",
+     "ao"
+    ]
+   },
+   "albedoEncoding": "srgb-bytes-in-unorm",
+   "height_range_m": 0.1,
+   "mean_linear_rgb": [
+    0.05224,
+    0.11942,
+    0.0316
+   ],
+   "mean_roughness": 0.8535,
+   "stats": {
+    "source_pass": true,
+    "decoded_pass": {
+     "512": false,
+     "1024": false
+    },
+    "mip0_tilt_deg": {
+     "512": 10.34,
+     "1024": 11.81
+    },
+    "mip2_tilt_deg": {
+     "512": 3.21,
+     "1024": 6.93
+    }
+   },
+   "sha256": {
+    "layers/terrain_meadow_lush_ah_512.ktx2": "faf23dff257f2747192e65190c7e193a7140a47d08b776932d3a3d7ce73875e6",
+    "layers/terrain_meadow_lush_nro_512.ktx2": "314905f53ae70f1f818a002355ef0d8f5ae294b8f15dac1a1eadc0419fd3ef77",
+    "layers/terrain_meadow_lush_ah_1024.ktx2": "f18e7a87a3aa769652261d626cb95901a04bd6ff1a9f511e3f2c6b73851c4e0a",
+    "layers/terrain_meadow_lush_nro_1024.ktx2": "dab6043bb430044bc815f18e853601154d8be6397d4efcb048ab45f0243dd1e6"
+   }
+  },
+  {
+   "id": "L1",
+   "name": "terrain_meadow_dry",
+   "channel": "G",
+   "kind": "ground",
+   "tile_m": 5,
+   "files": {
+    "ah": {
+     "512": "layers/terrain_meadow_dry_ah_512.ktx2",
+     "1024": "layers/terrain_meadow_dry_ah_1024.ktx2"
+    },
+    "nro": {
+     "512": "layers/terrain_meadow_dry_nro_512.ktx2",
+     "1024": "layers/terrain_meadow_dry_nro_1024.ktx2"
+    }
+   },
+   "packing": {
+    "ah": [
+     "albedo.r",
+     "albedo.g",
+     "albedo.b",
+     "height"
+    ],
+    "nro": [
+     "normal.x",
+     "normal.y",
+     "roughness",
+     "ao"
+    ]
+   },
+   "albedoEncoding": "srgb-bytes-in-unorm",
+   "height_range_m": 0.08,
+   "mean_linear_rgb": [
+    0.21329,
+    0.1633,
+    0.07096
+   ],
+   "mean_roughness": 0.90038,
+   "stats": {
+    "source_pass": true,
+    "decoded_pass": {
+     "512": false,
+     "1024": false
+    },
+    "mip0_tilt_deg": {
+     "512": 9.33,
+     "1024": 10.29
+    },
+    "mip2_tilt_deg": {
+     "512": 4.04,
+     "1024": 7.01
+    }
+   },
+   "sha256": {
+    "layers/terrain_meadow_dry_ah_512.ktx2": "58e9c969d4f58a876e2a8c014e916ec21e372d686d3eb3d62217a733f355149e",
+    "layers/terrain_meadow_dry_nro_512.ktx2": "240c385fb6db90c4468df02be3e539d9caf9ff3b57aefa3c46a4eed7faf04370",
+    "layers/terrain_meadow_dry_ah_1024.ktx2": "f8070624c01699e877fe04b417b625c8f3dea43f3a85458344fef4b0971b5d7e",
+    "layers/terrain_meadow_dry_nro_1024.ktx2": "3d3b1979b26ee1099fe200c289a9af2c69051cc289335deb98e4de69f101a022"
+   }
+  },
+  {
+   "id": "L2",
+   "name": "terrain_path_dirt",
+   "channel": "B",
+   "kind": "ground",
+   "tile_m": 4,
+   "files": {
+    "ah": {
+     "512": "layers/terrain_path_dirt_ah_512.ktx2",
+     "1024": "layers/terrain_path_dirt_ah_1024.ktx2"
+    },
+    "nro": {
+     "512": "layers/terrain_path_dirt_nro_512.ktx2",
+     "1024": "layers/terrain_path_dirt_nro_1024.ktx2"
+    }
+   },
+   "packing": {
+    "ah": [
+     "albedo.r",
+     "albedo.g",
+     "albedo.b",
+     "height"
+    ],
+    "nro": [
+     "normal.x",
+     "normal.y",
+     "roughness",
+     "ao"
+    ]
+   },
+   "albedoEncoding": "srgb-bytes-in-unorm",
+   "height_range_m": 0.06,
+   "mean_linear_rgb": [
+    0.25468,
+    0.17983,
+    0.10642
+   ],
+   "mean_roughness": 0.87072,
+   "stats": {
+    "source_pass": true,
+    "decoded_pass": {
+     "512": false,
+     "1024": false
+    },
+    "mip0_tilt_deg": {
+     "512": 8.04,
+     "1024": 8.83
+    },
+    "mip2_tilt_deg": {
+     "512": 5.12,
+     "1024": 6.72
+    }
+   },
+   "sha256": {
+    "layers/terrain_path_dirt_ah_512.ktx2": "2012fd79f9492819f87a3acd76eeca884cc91b0ff348fb5308095b6d552ea194",
+    "layers/terrain_path_dirt_nro_512.ktx2": "d5714785c11b7c05d110e2731648d98814bdc1874e7fc8af13133de959315a9d",
+    "layers/terrain_path_dirt_ah_1024.ktx2": "454d1b2192ea4b80a068b710005f5fc1046ed41491c761bf5b078aeac4f56a57",
+    "layers/terrain_path_dirt_nro_1024.ktx2": "a6aaae29b7858034b55e4b7dd0cb3c262b5c0fdcc3c47d9e7ea1fdd2daa14c7a"
+   }
+  },
+  {
+   "id": "L3",
+   "name": "terrain_bank_mudmoss",
+   "channel": "A",
+   "kind": "ground",
+   "tile_m": 3,
+   "files": {
+    "ah": {
+     "512": "layers/terrain_bank_mudmoss_ah_512.ktx2"
+    },
+    "nro": {
+     "512": "layers/terrain_bank_mudmoss_nro_512.ktx2"
+    }
+   },
+   "packing": {
+    "ah": [
+     "albedo.r",
+     "albedo.g",
+     "albedo.b",
+     "height"
+    ],
+    "nro": [
+     "normal.x",
+     "normal.y",
+     "roughness",
+     "ao"
+    ]
+   },
+   "albedoEncoding": "srgb-bytes-in-unorm",
+   "height_range_m": 0.05,
+   "mean_linear_rgb": [
+    0.05603,
+    0.05488,
+    0.02378
+   ],
+   "mean_roughness": 0.63522,
+   "stats": {
+    "source_pass": true,
+    "decoded_pass": {
+     "512": false
+    },
+    "mip0_tilt_deg": {
+     "512": 6.78
+    },
+    "mip2_tilt_deg": {
+     "512": 4.31
+    }
+   },
+   "sha256": {
+    "layers/terrain_bank_mudmoss_ah_512.ktx2": "5354d6216d70ec631209fa961e5b8420256d70d67058480c5f2ec7a1594d5e33",
+    "layers/terrain_bank_mudmoss_nro_512.ktx2": "f34014a5b3e119323b44491424a021e0d26816226f98b180255dcb01baf4c2b6"
+   }
+  }
+ ],
+ "relief": [
+  {
+   "id": "R0",
+   "name": "relief_rock_layered",
+   "channel": null,
+   "kind": "relief",
+   "tile_m": 4,
+   "files": {
+    "ah": {
+     "512": "layers/relief_rock_layered_ah_512.ktx2",
+     "1024": "layers/relief_rock_layered_ah_1024.ktx2"
+    },
+    "nro": {
+     "512": "layers/relief_rock_layered_nro_512.ktx2",
+     "1024": "layers/relief_rock_layered_nro_1024.ktx2"
+    }
+   },
+   "packing": {
+    "ah": [
+     "albedo.r",
+     "albedo.g",
+     "albedo.b",
+     "height"
+    ],
+    "nro": [
+     "normal.x",
+     "normal.y",
+     "roughness",
+     "ao"
+    ]
+   },
+   "albedoEncoding": "srgb-bytes-in-unorm",
+   "height_range_m": 0.12,
+   "mean_linear_rgb": [
+    0.20903,
+    0.18732,
+    0.14979
+   ],
+   "mean_roughness": 0.83617,
+   "stats": {
+    "source_pass": true,
+    "decoded_pass": {
+     "512": false,
+     "1024": false
+    },
+    "mip0_tilt_deg": {
+     "512": 13.98,
+     "1024": 14.01
+    },
+    "mip2_tilt_deg": {
+     "512": 13.74,
+     "1024": 13.92
+    }
+   },
+   "sha256": {
+    "layers/relief_rock_layered_ah_512.ktx2": "ed790ef965c674882417108d78c33dbe91b1f8c4113bf160513e10d306b9bc6f",
+    "layers/relief_rock_layered_nro_512.ktx2": "5ba1488a4392ef525b5a71f6323cb6647d0cf5c557034e0f45787d1159f3854f",
+    "layers/relief_rock_layered_ah_1024.ktx2": "b09e105c0e2774dfcfcd09431948c98254c219ee4a1f53fbec87d82fb69dde10",
+    "layers/relief_rock_layered_nro_1024.ktx2": "bafc67d0caeeceb7e3c0ec4cf1f20b0ddde40cd9c470e1f4f69375ab6054f521"
+   }
+  },
+  {
+   "id": "R1",
+   "name": "relief_moss_top",
+   "channel": null,
+   "kind": "relief",
+   "tile_m": 3,
+   "files": {
+    "ah": {
+     "256": "layers/relief_moss_top_ah_256.ktx2",
+     "512": "layers/relief_moss_top_ah_512.ktx2"
+    },
+    "nro": {
+     "256": "layers/relief_moss_top_nro_256.ktx2",
+     "512": "layers/relief_moss_top_nro_512.ktx2"
+    }
+   },
+   "packing": {
+    "ah": [
+     "albedo.r",
+     "albedo.g",
+     "albedo.b",
+     "height"
+    ],
+    "nro": [
+     "normal.x",
+     "normal.y",
+     "roughness",
+     "ao"
+    ]
+   },
+   "albedoEncoding": "srgb-bytes-in-unorm",
+   "height_range_m": 0.05,
+   "mean_linear_rgb": [
+    0.06979,
+    0.11806,
+    0.02652
+   ],
+   "mean_roughness": 0.82897,
+   "stats": {
+    "source_pass": true,
+    "decoded_pass": {
+     "256": false,
+     "512": false
+    },
+    "mip0_tilt_deg": {
+     "256": 9.35,
+     "512": 10.65
+    },
+    "mip2_tilt_deg": {
+     "256": 3.47,
+     "512": 7.12
+    }
+   },
+   "sha256": {
+    "layers/relief_moss_top_ah_256.ktx2": "a645784d0d8ff883567ac0384a35eb2ce180faa849a2fa3ecc004d444839777f",
+    "layers/relief_moss_top_nro_256.ktx2": "ea611e8087bbaba2ab645da9140bb041d9f40af1d0c84aadc41faed312831338",
+    "layers/relief_moss_top_ah_512.ktx2": "0ba9e554178e11474aa9e5f3764fdde0b84bcfad7826d97ad81094c28a287c1f",
+    "layers/relief_moss_top_nro_512.ktx2": "eecc32bc77bb32a44103b471a2a012e56cbf204853f4f081a2dada355a51bcb8"
+   }
+  }
+ ],
+ "cells": {
+  "lab": {
+   "terrain_lab": {
+    "bounds": [
+     -32,
+     32,
+     -32,
+     32
+    ],
+    "splat": {
+     "129": "cells/lab/terrain_lab_splat_129.png",
+     "257": "cells/lab/terrain_lab_splat_257.png"
+    },
+    "data": {
+     "129": "cells/lab/terrain_lab_terrain_129.png",
+     "257": "cells/lab/terrain_lab_terrain_257.png"
+    },
+    "sha256": {
+     "cells/lab/terrain_lab_splat_257.png": "d36416585b67468e3fac972e4a0c99038301e239a0ab9d41a144a0b968cdc8af",
+     "cells/lab/terrain_lab_terrain_257.png": "77e93f6c3d950747f642f07ba6d7d61e79960eabb122a89d6211c072b9dae230",
+     "cells/lab/terrain_lab_splat_129.png": "0cd1c418608ead69f3bd1b5d12994cc25078f09603b1d5a35d7d334736ab70ab",
+     "cells/lab/terrain_lab_terrain_129.png": "5606e551acf864f6ecb1624ab343958dd1a98d211fd976bad7d78dcb09f85bb2"
+    },
+    "masks_pass": true
+   }
+  },
+  "live": {
+   "sunmeadow_c7_r6": {
+    "bounds": [
+     -64,
+     0,
+     -128,
+     -64
+    ],
+    "splat": {
+     "129": "cells/live/sunmeadow_c7_r6_splat_129.png",
+     "257": "cells/live/sunmeadow_c7_r6_splat_257.png"
+    },
+    "data": {
+     "129": "cells/live/sunmeadow_c7_r6_terrain_129.png",
+     "257": "cells/live/sunmeadow_c7_r6_terrain_257.png"
+    },
+    "sha256": {
+     "cells/live/sunmeadow_c7_r6_splat_257.png": "56aa69d8a5efa6b5f8b90147900bbcdf15af4a4443634afd05a8b3509b851709",
+     "cells/live/sunmeadow_c7_r6_terrain_257.png": "9ccff7fb2a53a41b3512fb6e2a6de6ce83c173d7ef704eb1c357b3bfd04a8484",
+     "cells/live/sunmeadow_c7_r6_splat_129.png": "7c1b50eb20c150057615c649bd66dc897f0e7fc0367f07d107ee2dd86c262ae7",
+     "cells/live/sunmeadow_c7_r6_terrain_129.png": "1b4213eeb317f40216d9beb3d1e6028c50e990a68e844fa6c6fb2927ccf5595a"
+    },
+    "masks_pass": true
+   },
+   "sunmeadow_c8_r6": {
+    "bounds": [
+     0,
+     64,
+     -128,
+     -64
+    ],
+    "splat": {
+     "129": "cells/live/sunmeadow_c8_r6_splat_129.png",
+     "257": "cells/live/sunmeadow_c8_r6_splat_257.png"
+    },
+    "data": {
+     "129": "cells/live/sunmeadow_c8_r6_terrain_129.png",
+     "257": "cells/live/sunmeadow_c8_r6_terrain_257.png"
+    },
+    "sha256": {
+     "cells/live/sunmeadow_c8_r6_splat_257.png": "9e1378508d0df0ef6b718fcb688ad4939872e48aea01f2f583ded0399b526a54",
+     "cells/live/sunmeadow_c8_r6_terrain_257.png": "6eee95f317a1effd26db0d7467067ab19601bf3d753c4f0fe4fb20dc1a840d55",
+     "cells/live/sunmeadow_c8_r6_splat_129.png": "1e81faf4a52e08254e044911bfa1b1d7e0088cc2b5fb1e6fbdf02c48f3195df2",
+     "cells/live/sunmeadow_c8_r6_terrain_129.png": "5a6fb64af8ef7bbb3e0a6a280cdcc774b7f313f8dcc43aedbd47854ca88c8bae"
+    },
+    "masks_pass": true
+   }
+  },
+  "v2": {
+   "sunmeadow_c7_r6": {
+    "bounds": [
+     -64,
+     0,
+     -128,
+     -64
+    ],
+    "splat": {
+     "129": "cells/v2/sunmeadow_c7_r6_splat_129.png",
+     "257": "cells/v2/sunmeadow_c7_r6_splat_257.png"
+    },
+    "data": {
+     "129": "cells/v2/sunmeadow_c7_r6_terrain_129.png",
+     "257": "cells/v2/sunmeadow_c7_r6_terrain_257.png"
+    },
+    "sha256": {
+     "cells/v2/sunmeadow_c7_r6_splat_257.png": "f86a2dd2065b66ee28fed7ea492c71eeaa3fb5dac565e5994819f7d9455a5a4f",
+     "cells/v2/sunmeadow_c7_r6_terrain_257.png": "23b65537b284b100d0645192b79a0748a64459df0836e02b499f6bdbc7d03677",
+     "cells/v2/sunmeadow_c7_r6_splat_129.png": "b1d37c137615fbaaa9e7adbac1b71751a6c257d6bf97d4031e426275b0be77a7",
+     "cells/v2/sunmeadow_c7_r6_terrain_129.png": "aecbb28398b43ac6e867927b4da3af0981fcec4480d72d72ebc70a5e096a1f75"
+    },
+    "masks_pass": true
+   },
+   "sunmeadow_c7_r7": {
+    "bounds": [
+     -64,
+     0,
+     -64,
+     0
+    ],
+    "splat": {
+     "129": "cells/v2/sunmeadow_c7_r7_splat_129.png",
+     "257": "cells/v2/sunmeadow_c7_r7_splat_257.png"
+    },
+    "data": {
+     "129": "cells/v2/sunmeadow_c7_r7_terrain_129.png",
+     "257": "cells/v2/sunmeadow_c7_r7_terrain_257.png"
+    },
+    "sha256": {
+     "cells/v2/sunmeadow_c7_r7_splat_257.png": "4ce1ec60b1320b44bd76a5b9a5a41333ecd8239675115743d75be10b71d53e9a",
+     "cells/v2/sunmeadow_c7_r7_terrain_257.png": "d82bbdaea3a54adb71a93a5ecee4137ab5355756cbc50adefb18b9cebb4f42bf",
+     "cells/v2/sunmeadow_c7_r7_splat_129.png": "ffc0e9bec92e792a06bd695385d2d64888dab37d053856371ce1dce80d25c217",
+     "cells/v2/sunmeadow_c7_r7_terrain_129.png": "d297df757c06817206e7f2934116199a1503812ab6469676645227fc1d4fb6c3"
+    },
+    "masks_pass": true
+   },
+   "sunmeadow_c7_r8": {
+    "bounds": [
+     -64,
+     0,
+     0,
+     64
+    ],
+    "splat": {
+     "129": "cells/v2/sunmeadow_c7_r8_splat_129.png",
+     "257": "cells/v2/sunmeadow_c7_r8_splat_257.png"
+    },
+    "data": {
+     "129": "cells/v2/sunmeadow_c7_r8_terrain_129.png",
+     "257": "cells/v2/sunmeadow_c7_r8_terrain_257.png"
+    },
+    "sha256": {
+     "cells/v2/sunmeadow_c7_r8_splat_257.png": "ab6ea86197c0a50528cb1757bba1b95b94abbb93c0f1093fd7c4563af53946c1",
+     "cells/v2/sunmeadow_c7_r8_terrain_257.png": "aaf388634a9f6a9ecad5ac6d0a84569ce524cb19c1198cf54a59a85a7ed3f85c",
+     "cells/v2/sunmeadow_c7_r8_splat_129.png": "f21cc6aac040d5500f442546b0f35686f8eab52a31bf50fd281d8df21e04e297",
+     "cells/v2/sunmeadow_c7_r8_terrain_129.png": "3c8544528eef3da0a3e2e8d5173bd70a8f456efc4ffddf833926667d480de993"
+    },
+    "masks_pass": true
+   },
+   "sunmeadow_c8_r6": {
+    "bounds": [
+     0,
+     64,
+     -128,
+     -64
+    ],
+    "splat": {
+     "129": "cells/v2/sunmeadow_c8_r6_splat_129.png",
+     "257": "cells/v2/sunmeadow_c8_r6_splat_257.png"
+    },
+    "data": {
+     "129": "cells/v2/sunmeadow_c8_r6_terrain_129.png",
+     "257": "cells/v2/sunmeadow_c8_r6_terrain_257.png"
+    },
+    "sha256": {
+     "cells/v2/sunmeadow_c8_r6_splat_257.png": "fffb324914d84c1ed266f2d05971db152e1a84af2a64727534abbe40704f0de1",
+     "cells/v2/sunmeadow_c8_r6_terrain_257.png": "68cfdb2ee18e841c2ddf103be518e619454482b0755e3e56649535def7a05252",
+     "cells/v2/sunmeadow_c8_r6_splat_129.png": "bb5acbc6c0cbb556a630bfcd903235841e00535a58c4e05e2f7767f06b00f9e9",
+     "cells/v2/sunmeadow_c8_r6_terrain_129.png": "775f882b3fe592a2b3d7ad3cc5f10fc536cb0d692402d55ba7b91a131aac5da8"
+    },
+    "masks_pass": true
+   },
+   "sunmeadow_c8_r7": {
+    "bounds": [
+     0,
+     64,
+     -64,
+     0
+    ],
+    "splat": {
+     "129": "cells/v2/sunmeadow_c8_r7_splat_129.png",
+     "257": "cells/v2/sunmeadow_c8_r7_splat_257.png"
+    },
+    "data": {
+     "129": "cells/v2/sunmeadow_c8_r7_terrain_129.png",
+     "257": "cells/v2/sunmeadow_c8_r7_terrain_257.png"
+    },
+    "sha256": {
+     "cells/v2/sunmeadow_c8_r7_splat_257.png": "d85fe20b17fef3683008288513b07f46e7aad9ffc6db0194231028588bd5795d",
+     "cells/v2/sunmeadow_c8_r7_terrain_257.png": "a43be17cc1dc11d040b0d05a70e307e5f52e140ef4870de46f6db1fdaf015bdc",
+     "cells/v2/sunmeadow_c8_r7_splat_129.png": "8248f43168b9dc4ebea3a1a8a2a829717a1a05b1c2501efbe8f0ce206f6c7d6b",
+     "cells/v2/sunmeadow_c8_r7_terrain_129.png": "3d5ed20f1083df0cef83f9f17a9d03300c8a800fb04209f1fd5be77407d447e4"
+    },
+    "masks_pass": true
+   },
+   "sunmeadow_c8_r8": {
+    "bounds": [
+     0,
+     64,
+     0,
+     64
+    ],
+    "splat": {
+     "129": "cells/v2/sunmeadow_c8_r8_splat_129.png",
+     "257": "cells/v2/sunmeadow_c8_r8_splat_257.png"
+    },
+    "data": {
+     "129": "cells/v2/sunmeadow_c8_r8_terrain_129.png",
+     "257": "cells/v2/sunmeadow_c8_r8_terrain_257.png"
+    },
+    "sha256": {
+     "cells/v2/sunmeadow_c8_r8_splat_257.png": "ff5e50ca18b5c421db68f440c30d0f1b8107da1afbbde2dc20a3b384cf00b5cb",
+     "cells/v2/sunmeadow_c8_r8_terrain_257.png": "65431fbd48fc428c2fd2a224be0429e0ee2da5ddf917b5d258dfe0a00fd5341b",
+     "cells/v2/sunmeadow_c8_r8_splat_129.png": "4a0cc26d198c35bb41953f6b3ff0b119031b714d48b2472b55d94a5cffe1cb6a",
+     "cells/v2/sunmeadow_c8_r8_terrain_129.png": "d22c788a6d741e3765f6b1c07c28da28646e1cd1a77ef066055f97143ea2a93c"
+    },
+    "masks_pass": true
+   }
+  }
+ },
+ "calibration": {
+  "terrain_calibration_ah": {
+   "ktx2": "lab/terrain_calibration_ah.ktx2",
+   "png": "lab/terrain_calibration_ah.png",
+   "sha256": {
+    "ktx2": "069a5211736b89e561d8cb579d092facbd1dfab79fc3fea3478014edfee30233",
+    "png": "d1db912529119da135f493181498f70c36bf00871ec219d2740bc77faf51ba08"
+   }
+  },
+  "terrain_calibration_nro": {
+   "ktx2": "lab/terrain_calibration_nro.ktx2",
+   "png": "lab/terrain_calibration_nro.png",
+   "sha256": {
+    "ktx2": "a164c581e3e1f5a87331aba324e10c3804b30d4f206cce8a793490cb8861b641",
+    "png": "946834f206fe7cad7a215371ade1c68d7ea78645ec123767c3983559b16b2cc7"
+   }
+  }
+ },
+ "tools": {
+  "ktx": "ktx version: v4.4.2",
+  "node": "v24.15.0",
+  "python": "Python 3.12.10"
+ }
+}

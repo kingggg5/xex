@@ -1,0 +1,89 @@
+{
+  "items": [
+    {"id":"arcane_focus","type":"weapon","name_key":"item_arcane_focus","desc_key":"item_arcane_focus_desc","stack":1,"equip_slot":"weapon","atk":0,"equip_level_min":1},
+    {
+      "id": "trail_potion",
+      "type": "consumable",
+      "name_key": "item_trail_potion",
+      "desc_key": "item_trail_potion_desc",
+      "stack": 99,
+      "heal": 40
+    },
+    {
+      "id": "dew_bead",
+      "type": "material",
+      "name_key": "item_dew_bead",
+      "desc_key": "item_dew_bead_desc",
+      "stack": 99
+    },
+    {
+      "id": "gale_seed",
+      "type": "quest",
+      "name_key": "item_gale_seed",
+      "desc_key": "item_gale_seed_desc",
+      "stack": 99
+    },
+    {
+      "id": "ember_root",
+      "type": "consumable",
+      "name_key": "item_ember_root",
+      "desc_key": "item_ember_root_desc",
+      "stack": 99,
+      "buff_kind": "atk",
+      "buff_mult": 1.25,
+      "buff_duration_s": 60
+    },
+    {
+      "id": "gale_plume",
+      "type": "consumable",
+      "name_key": "item_gale_plume",
+      "desc_key": "item_gale_plume_desc",
+      "stack": 99,
+      "buff_kind": "speed",
+      "buff_mult": 1.2,
+      "buff_duration_s": 60
+    },
+    {
+      "id": "meadow_box",
+      "type": "box",
+      "name_key": "item_meadow_box",
+      "desc_key": "item_meadow_box_desc",
+      "stack": 99
+    },
+    {
+      "id": "frontier_blade",
+      "type": "weapon",
+      "name_key": "item_frontier_blade",
+      "desc_key": "item_frontier_blade_desc",
+      "stack": 1,
+      "equip_slot": "weapon",
+      "atk": 8,
+      "equip_level_min": 1
+    },
+    {
+      "id": "frontier_vest",
+      "type": "armor",
+      "name_key": "item_frontier_vest",
+      "desc_key": "item_frontier_vest_desc",
+      "stack": 1,
+      "equip_slot": "armor",
+      "def": 5,
+      "hp": 20,
+      "equip_level_min": 1
+    },
+    {
+      "id": "mvp_chest",
+      "type": "box",
+      "name_key": "item_mvp_chest",
+      "desc_key": "item_mvp_chest_desc",
+      "stack": 99
+    },
+    {
+      "id": "sunmeadow_rune",
+      "type": "material",
+      "name_key": "item_sunmeadow_rune",
+      "desc_key": "item_sunmeadow_rune_desc",
+      "stack": 99
+    }
+  ]
+}

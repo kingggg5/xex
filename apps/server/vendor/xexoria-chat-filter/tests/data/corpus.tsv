@@ -1,0 +1,60 @@
+# Hand-authored illustrative corpus, no population accuracy claim. label<TAB>input
+allow	สวัสดีครับ ไปตีบอสกัน
+allow	หาปาร์ตี้ดันเจี้ยน 3 คน
+allow	ขอฮีลหน่อย HP เหลือ 10%
+allow	ขายดาบ +7 ติดต่อหลังจบรอบ
+allow	วันนี้แม่งานจัดกิจกรรมดีมาก
+allow	อัศวินผู้เหี้ยมเกรียม
+allow	เหี้ยม
+allow	แม่งาน
+allow	เปิดหีบสมบัติแล้ว
+allow	กูเกิลหาแผนที่ให้แล้ว
+allow	ควายอยู่ข้างทุ่งนา
+allow	ฟักทองในสวน
+allow	Nice play, thanks for the heal!
+allow	Meet at the castle in five minutes.
+allow	class classic classification association
+allow	Scunthorpe is a town.
+allow	The assistant assigned a new class.
+allow	shiitake mushroom soup
+allow	This shield has 15 strength.
+allow	👩‍👩‍👧‍👦 🎮 🏰 GG!
+allow	café naïve résumé
+allow	ไทยfuckไทย
+allow	xfuck fuckx
+allow	fuck_quest
+allow	shitter
+allow	sh1tbox
+allow	f     uck
+allow	
+mask	fuck
+mask	FUCK!
+mask	this is fucking annoying
+mask	shit, the boss reset
+mask	bullshit!
+mask	you asshole
+mask	ＦＵＣＫ
+mask	👾 fuck ไทย
+mask	(fuck), [shit]!
+mask	fuck fuck
+review	bitch
+review	ควย
+review	เหี้ย
+review	สัส
+review	เย็ด
+review	แม่ง
+review	ไอ้เหี้ยทำอะไร
+review	แม่งบอสเก่งจริง
+review	เหี้ยมแต่เหี้ย
+review	แม่งานแม่ง
+review	f.u.c.k
+review	f u c k
+review	sh1t
+review	$hit
+review	fuuuuuck
+review	assssshole
+review	fück
+review	f​uck
+review	fuck​
+review	เหี้​ย
+review	เหี้ยกับ shit

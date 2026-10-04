@@ -1,3 +1,34 @@
+# harness local-only data
+.harness/.cache/
+.harness/local-capabilities.md
+
+# V5-00: never commit reference dumps, generated exports, deps or build output
+references/rathena/
+references/summer-cycle/
+references/shinobi-duel/
+exports/
+**/node_modules/
+**/dist/
+**/target/
+**/__pycache__/
+*.pyc
+apps/client/src/assets/codecs/ktx2decoder.worker.js
+
+# generated public copy (synced from apps/protocol/coordinate-fixture-v1.json)
+apps/client/public/coordinate-fixture-v1.json
+
+# V5-03: generated content bundle (build with the build_content binary)
+content/build/
+apps/client/public/content/
+
+# 2026-09-25 review: verify_plan.py regenerates this report on every run; it is
+# not immutable item evidence, so it stays local (plan §20, V5-00 clean tree)
+planning/evidence/plan-verification.json
+
+# Local dev database credentials (V5-12)
+apps/server/.env
+
+# Reviewed cloud bootstrap ignores
 # Merge with the game's original ignore rules; do not discard them.
 .env
 .env.*
@@ -8,3 +39,34 @@ target/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Credentials, private browser state and local agent artifacts
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+**/.npmrc
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/id_rsa
+**/id_ed25519
+**/storageState*.json
+**/credentials*.json
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+.claude/
+.playwright-mcp/
+.ui-baseline-cache/
+.zcode/
+.harness/cache/
+.harness/local-capabilities.md
+**/.cache/
+**/.venv/
+**/.svelte-kit/
+# Runtime art is intentional input. Never ignore it as generic generated output.
+planning/evidence/blueprint-p0-20261003/walk-support-tests.json
+planning/evidence/heroes-six-20261004/vfx-cpu-review.json
+tools/sweep/evidence/

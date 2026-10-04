@@ -1,0 +1,5 @@
+export interface GateTreePlacement { id: string; species: 'qn_conifer_m'; x: number; y: number; z: number; yaw: number; scale: number; cell: string; keep: boolean; order: number }
+export interface GateTreePrimitive { name: string; material: string; indices: ArrayLike<number>; gltfPositionAt(index: number): readonly number[] }
+export const GATE_CITY_TREE: { readonly id: string; readonly runtimeSha256: string; readonly placement: Readonly<GateTreePlacement>; readonly oldHeight: number; readonly replacementHeight: number; readonly removedTriangles: number };
+export const GATE_CITY_TREE_PARTS: ReadonlyArray<{ material: string; count: number; ranges: number[][]; hash: string; bounds: number[]; aabb: string; ends: number[][][] }>;
+export function planGateCityTreeCandidate(primitives: readonly GateTreePrimitive[], runtimeSha256: string): { placement: GateTreePlacement; removedTriangles: number; patches: Array<{ material: string; indices: Uint32Array; originalIndices: ArrayLike<number>; removedTriangles: number }> };

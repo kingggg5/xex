@@ -1,0 +1,510 @@
+{
+  "schema": "xexoria.blueprint-cc0/1",
+  "status": "CC0_STANDINS_READY_NATIVE_UNVERIFIED",
+  "region": "sunmeadow",
+  "created_utc": "2026-10-03T05:10:12.277Z",
+  "assets": [
+    {
+      "id": "blueprint_cc0_palm",
+      "status": "CC0_STANDIN",
+      "licence": "CC0",
+      "source": "https://kenney.nl/assets/nature-kit",
+      "standinFor": [
+        "PL1"
+      ],
+      "lods": [
+        {
+          "lod": 0,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_palm_lod0.meshopt.glb",
+          "tris": 336,
+          "sha256": "9033b1024d58d65ff27aaddb413437ed0e5f998eb4b43a3bee431f0a6e4f6ead",
+          "bytes": 9080
+        },
+        {
+          "lod": 1,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_palm_lod1.meshopt.glb",
+          "tris": 336,
+          "sha256": "9033b1024d58d65ff27aaddb413437ed0e5f998eb4b43a3bee431f0a6e4f6ead",
+          "bytes": 9080
+        },
+        {
+          "lod": 2,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_palm_lod2.meshopt.glb",
+          "tris": 336,
+          "sha256": "9033b1024d58d65ff27aaddb413437ed0e5f998eb4b43a3bee431f0a6e4f6ead",
+          "bytes": 9080
+        }
+      ],
+      "bounds": {
+        "min": [
+          -2.54319,
+          0,
+          -2.54318
+        ],
+        "max": [
+          2.54319,
+          6.99983,
+          2.5432
+        ]
+      },
+      "materialSlots": [
+        "woodBark",
+        "leafsGreen"
+      ],
+      "textures": [],
+      "provenance": {
+        "source": "https://kenney.nl/assets/nature-kit",
+        "licence": "CC0 inside downloaded Nature Kit2.1 zip",
+        "files": [
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-nature-kit/Models/GLTF format/tree_palmDetailedTall.glb",
+            "sha256": "2cbea0f9621cde884c63a7b4ad787bda1d051fa27ef3c66b9f2b65328dc53683"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-nature-kit/License.txt",
+            "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+          }
+        ]
+      },
+      "collider": {
+        "type": "cylinder",
+        "radius": 0.25,
+        "height": 7,
+        "rootAnchor": [
+          0,
+          0,
+          0
+        ],
+        "status": "PROXY_ONLY_ROOT_OWNS_ADMISSION"
+      },
+      "shadowProxy": {
+        "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_palm_lod2.meshopt.glb",
+        "tris": 336
+      },
+      "wind": {
+        "rootAnchor": [
+          0,
+          0,
+          0
+        ],
+        "nodeNames": [
+          "palm_fronds_0",
+          "palm_fronds_1"
+        ],
+        "maxDisplacementM": 0.08,
+        "frequencyHz": 0.6,
+        "status": "ANCHOR_METADATA_LOADER_REQUIRED"
+      },
+      "componentGaps": [
+        "Coconuts not present in this licensed stock model."
+      ],
+      "lodPolicy": "Protected silhouettes; equal low triangle counts at multiple LODs do not claim a reduction. Geometry remains compact."
+    },
+    {
+      "id": "blueprint_cc0_tent",
+      "status": "CC0_STANDIN",
+      "licence": "CC0",
+      "source": "https://kenney.nl/assets/nature-kit",
+      "standinFor": [
+        "ST3"
+      ],
+      "lods": [
+        {
+          "lod": 0,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_tent_lod0.meshopt.glb",
+          "tris": 232,
+          "sha256": "41af823311fcf3dea76909b38ed363aba042d2638f6eed05752862c052a6d7e0",
+          "bytes": 5780
+        },
+        {
+          "lod": 1,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_tent_lod1.meshopt.glb",
+          "tris": 232,
+          "sha256": "41af823311fcf3dea76909b38ed363aba042d2638f6eed05752862c052a6d7e0",
+          "bytes": 5780
+        },
+        {
+          "lod": 2,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_tent_lod2.meshopt.glb",
+          "tris": 232,
+          "sha256": "41af823311fcf3dea76909b38ed363aba042d2638f6eed05752862c052a6d7e0",
+          "bytes": 5780
+        }
+      ],
+      "bounds": {
+        "min": [
+          -1.79311,
+          0.00005,
+          -1.36583
+        ],
+        "max": [
+          1.79311,
+          2.29995,
+          1.36583
+        ]
+      },
+      "materialSlots": [
+        "colorRed",
+        "wood"
+      ],
+      "textures": [],
+      "provenance": {
+        "source": "https://kenney.nl/assets/nature-kit",
+        "licence": "CC0 inside Nature Kit zip",
+        "files": [
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-nature-kit/Models/GLTF format/tent_detailedOpen.glb",
+            "sha256": "d54d9665d07e0ff9680e56731c9f5338fc25d93788504d63b8375f54e6444193"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-nature-kit/License.txt",
+            "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+          }
+        ]
+      },
+      "collider": {
+        "type": "box",
+        "min": [
+          -1.79311,
+          0,
+          -1.36583
+        ],
+        "max": [
+          1.79311,
+          1.8,
+          1.36583
+        ],
+        "status": "PROXY_ONLY_ROOT_OWNS_ADMISSION"
+      },
+      "shadowProxy": {
+        "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_tent_lod2.meshopt.glb",
+        "tris": 232
+      },
+      "lodPolicy": "Protected silhouettes; equal low triangle counts at multiple LODs do not claim a reduction. Geometry remains compact."
+    },
+    {
+      "id": "blueprint_cc0_cart",
+      "status": "CC0_STANDIN",
+      "licence": "CC0",
+      "source": "https://kenney.nl/assets/fantasy-town-kit",
+      "standinFor": [
+        "C2",
+        "C3"
+      ],
+      "lods": [
+        {
+          "lod": 0,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_cart_lod0.meshopt.glb",
+          "tris": 1028,
+          "sha256": "d8558a5162d735b307a46ec5ed266d243b26d64875a68cfc49f1f488309e9e07",
+          "bytes": 25888
+        },
+        {
+          "lod": 1,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_cart_lod1.meshopt.glb",
+          "tris": 1022,
+          "sha256": "0819dba2f62c508f0a9b9de8e9ec665010d4d46d094f9b589dbe4fe8e16988f7",
+          "bytes": 25900
+        },
+        {
+          "lod": 2,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_cart_lod2.meshopt.glb",
+          "tris": 1022,
+          "sha256": "0819dba2f62c508f0a9b9de8e9ec665010d4d46d094f9b589dbe4fe8e16988f7",
+          "bytes": 25900
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.83017,
+          -0.00004,
+          -1.29227
+        ],
+        "max": [
+          0.83017,
+          1.60004,
+          1.29227
+        ]
+      },
+      "materialSlots": [
+        "colormap"
+      ],
+      "textures": [
+        {
+          "name": "colormap",
+          "mime": "image/ktx2",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "d3fed85999e13591d59e44cada9df5bc5d9c18d1b4f3eff7c4fb8f6f87edeb19"
+        }
+      ],
+      "provenance": {
+        "source": "https://kenney.nl/assets/fantasy-town-kit",
+        "licence": "CC0 extracted original kit licence",
+        "files": [
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/Models/GLB format/cart-high.glb",
+            "sha256": "4b0bce37e8645f3719a9032bf4d49048b7779ac891758ae6e2693238911c5eec"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/License.txt",
+            "sha256": "fb8e4817197ef9f62215e95b4451a0f09c769c8e03e416e3a2ce108dfa6117e4"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/Models/GLB format/Textures/colormap.png",
+            "sha256": "4aac939dc33195e35caf8c382ee3cb170054da763577f22d3c22692ec6afccdf"
+          }
+        ]
+      },
+      "collider": {
+        "type": "box",
+        "min": [
+          -0.83017,
+          0,
+          -1.29227
+        ],
+        "max": [
+          0.83017,
+          1.60004,
+          1.29227
+        ],
+        "status": "PROXY_ONLY_ROOT_OWNS_ADMISSION"
+      },
+      "shadowProxy": {
+        "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_cart_lod2.meshopt.glb",
+        "tris": 1022
+      },
+      "componentGaps": [
+        "Hay/crate loads remain separate loader dressing."
+      ],
+      "lodPolicy": "Protected silhouettes; equal low triangle counts at multiple LODs do not claim a reduction. Geometry remains compact."
+    },
+    {
+      "id": "blueprint_cc0_windmill",
+      "status": "CC0_STANDIN",
+      "licence": "CC0",
+      "source": "https://kenney.nl/assets/fantasy-town-kit",
+      "standinFor": [
+        "ST1"
+      ],
+      "lods": [
+        {
+          "lod": 0,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_windmill_lod0.meshopt.glb",
+          "tris": 2364,
+          "sha256": "e4fe14000c2b48ea9021dae4dac91c5cf91a28dee2a2c190d32c5b41b5a25ea9",
+          "bytes": 48376
+        },
+        {
+          "lod": 1,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_windmill_lod1.meshopt.glb",
+          "tris": 2360,
+          "sha256": "d6e3c8fd86ba5f20345026b98cb35998fffe697b49a238685d816c1dc546bf64",
+          "bytes": 48348
+        },
+        {
+          "lod": 2,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_windmill_lod2.meshopt.glb",
+          "tris": 2360,
+          "sha256": "d6e3c8fd86ba5f20345026b98cb35998fffe697b49a238685d816c1dc546bf64",
+          "bytes": 48348
+        }
+      ],
+      "bounds": {
+        "min": [
+          -4.17743,
+          0,
+          -4.61803
+        ],
+        "max": [
+          4.17743,
+          11,
+          4.61788
+        ]
+      },
+      "materialSlots": [
+        "colormap"
+      ],
+      "textures": [
+        {
+          "name": "colormap",
+          "mime": "image/ktx2",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "d3fed85999e13591d59e44cada9df5bc5d9c18d1b4f3eff7c4fb8f6f87edeb19"
+        }
+      ],
+      "provenance": {
+        "source": "https://kenney.nl/assets/fantasy-town-kit",
+        "licence": "CC0 modular assembly",
+        "files": [
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/Models/GLB format/wall-curved.glb",
+            "sha256": "d55b3e931383c0f9f6311a586a01cca57d64e06146d260c8d08a9d39987f6d59"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/Models/GLB format/roof-high-corner-round.glb",
+            "sha256": "fa4736aa73d17b55b20b5cfcbfc83160c4a18a4e9563ede334d0c7d2327ed727"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/Models/GLB format/windmill.glb",
+            "sha256": "72562df164f5fd36670521462da8f4161cf2c4c1c889799443f0fb44532ad5db"
+          },
+          {
+            "file": "assets/models/blueprint-cc0/source/kenney-fantasy-town-kit/License.txt",
+            "sha256": "fb8e4817197ef9f62215e95b4451a0f09c769c8e03e416e3a2ce108dfa6117e4"
+          }
+        ]
+      },
+      "collider": {
+        "type": "box",
+        "min": [
+          -3.7,
+          0,
+          -3.7
+        ],
+        "max": [
+          3.7,
+          7.8,
+          3.7
+        ],
+        "status": "TOWER_CORE_PROXY_SAILS_EXCLUDED_ROOT_OWNS_ADMISSION"
+      },
+      "shadowProxy": {
+        "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_windmill_lod2.meshopt.glb",
+        "tris": 2360
+      },
+      "motion": {
+        "nodeNames": [
+          "windmill_sails"
+        ],
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "periodSeconds": 18,
+        "status": "ANIMATION_HOOK_LOADER_REQUIRED"
+      },
+      "componentGaps": [
+        "Licensed assembled stand-in; authored facade/door detail remains replacement work."
+      ],
+      "lodPolicy": "Protected silhouettes; equal low triangle counts at multiple LODs do not claim a reduction. Geometry remains compact."
+    },
+    {
+      "id": "blueprint_cc0_guardian",
+      "status": "CC0_STANDIN",
+      "licence": "CC0",
+      "source": "MakeHumanCC0 anatomy + existing owner-authored guardianv2 cloth",
+      "standinFor": [
+        "S1",
+        "S2"
+      ],
+      "lods": [
+        {
+          "lod": 0,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_guardian_lod0.meshopt.glb",
+          "tris": 5005,
+          "sha256": "73e2495f7d18a786713f2372a892ac8672c3205f8d49baa1b0c30b8707c52d96",
+          "bytes": 46128
+        },
+        {
+          "lod": 1,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_guardian_lod1.meshopt.glb",
+          "tris": 3533,
+          "sha256": "703d4c85c07d7af4ca7f2d0d4611cb27242e334ae24e4a46f98fa7b0020aa7bb",
+          "bytes": 36476
+        },
+        {
+          "lod": 2,
+          "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_guardian_lod2.meshopt.glb",
+          "tris": 2697,
+          "sha256": "54bc96598c966a4a1884b07f5fbca5e85da067b2b89cea0dae34419bdd5103c6",
+          "bytes": 30520
+        }
+      ],
+      "bounds": {
+        "min": [
+          -4.8463,
+          -0.00034,
+          -0.78092
+        ],
+        "max": [
+          4.84629,
+          6,
+          0.78092
+        ]
+      },
+      "materialSlots": [
+        "magic_blue",
+        "marble_statue",
+        "metal_gold"
+      ],
+      "textures": [],
+      "provenance": {
+        "source": "MakeHumanCC0 anatomy + existing owner-authored guardianv2 cloth",
+        "licence": "Pinned source graphical assets CC0; project-authored derivative reused internally",
+        "files": [
+          {
+            "file": "assets/models/reference-city/r5/art-candidates/fountain-guardian-v2/fountain_guardian_lod1.glb",
+            "sha256": "b47c26fd6ac63ec4d298e542190a3f3c9215bc1dded4bb61b5dea057a10b4e05"
+          },
+          {
+            "file": "assets/models/reference-city/r5/art-candidates/fountain-guardian-v1/source/LICENSE.ASSETS.md",
+            "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c"
+          },
+          {
+            "file": "assets/models/reference-city/r5/art-candidates/fountain-guardian-v1/asset-manifest.json",
+            "sha256": "41c01a99f67e23bd548fb12259f65c54f03bc48ed49581517cec83cc986071da"
+          }
+        ]
+      },
+      "collider": {
+        "type": "box",
+        "min": [
+          -0.85,
+          0,
+          -0.6
+        ],
+        "max": [
+          0.85,
+          1.8,
+          0.6
+        ],
+        "status": "TORSO_PROXY_PLINTH_SEPARATE_ROOT_OWNS_ADMISSION"
+      },
+      "shadowProxy": {
+        "file": "assets/models/blueprint-cc0/runtime/blueprint_cc0_guardian_lod2.meshopt.glb",
+        "tris": 2697
+      },
+      "componentGaps": [
+        "Guardian design remains a stand-in; plinth1.2m is supplied by P0 loader."
+      ],
+      "lodPolicy": "Protected silhouettes; equal low triangle counts at multiple LODs do not claim a reduction. Geometry remains compact."
+    }
+  ],
+  "missingAssets": [
+    {
+      "id": "blueprint_cc0_sheep",
+      "standinFor": [
+        "F1"
+      ],
+      "reason": "No licensed sheep model in the on-disk packs or downloaded Nature Kit; no invented animal."
+    }
+  ],
+  "integrationNotes": [
+    "Loader owns exact blueprint anchors and terrain/physics admission.",
+    "PL1=8cove palms+2pier palms; mature Kenney source, no homemade/Tripo trees.",
+    "ST4 tower uses loader stone kit; no misleading watchtower asset emitted.",
+    "Source previews inspected; native render/animation/LOD silhouette acceptance remains pending due foreign live GPU lease."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema": "xexoria.turnaround_qa.config/1",
+  "required_views": [
+    "front",
+    "back",
+    "left",
+    "right"
+  ],
+  "analysis_max_side": 1024,
+  "target": {
+    "canvas_px": 2048,
+    "fill_height": 0.8,
+    "max_fill_width": 0.94
+  },
+  "segmentation": {
+    "border_strip_frac": 0.02,
+    "diff_min": 14.0,
+    "diff_noise_k": 3.0,
+    "alpha_threshold": 128,
+    "open_frac": 0.0015,
+    "close_frac": 0.004,
+    "keep_component_frac": 0.002,
+    "fill_holes_max_frac": 0.02,
+    "soft_alpha_lo": 0.6,
+    "soft_alpha_hi": 1.5
+  },
+  "shadow": {
+    "enabled": true,
+    "k_min": 0.35,
+    "k_max": 0.985,
+    "chroma_tol": 0.06,
+    "smooth_max": 9.0,
+    "edge_grad_max": 4.0,
+    "band_above_frac": 0.12,
+    "floor_anchor_frac": 0.08,
+    "min_area_frac": 0.0005
+  },
+  "checks": {
+    "resolution": {
+      "pass_min_side": 2048,
+      "fail_min_side": 1024,
+      "pass_subject_px": 1500,
+      "fail_subject_px": 900
+    },
+    "aspect": {
+      "square_tol": 0.01
+    },
+    "background": {
+      "pass_noise": 6.0,
+      "fail_noise": 20.0,
+      "pass_range": 10.0,
+      "pass_white_dist": 12.0,
+      "fail_cover": 0.75
+    },
+    "centring": {
+      "pass": 0.03,
+      "warn": 0.1
+    },
+    "margins": {
+      "fail_px": 1,
+      "pass_frac": 0.03
+    },
+    "fill": {
+      "pass": [
+        0.7,
+        0.9
+      ],
+      "warn": [
+        0.5,
+        0.97
+      ]
+    },
+    "height": {
+      "pass": 0.03,
+      "warn": 0.04
+    },
+    "baseline": {
+      "pass": 0.015,
+      "warn": 0.03
+    },
+    "width_front_back": {
+      "pass": 0.05,
+      "warn": 0.08
+    },
+    "width_left_right": {
+      "pass": 0.05,
+      "warn": 0.08
+    },
+    "mirror_left_right": {
+      "pass": 0.9,
+      "warn": 0.85,
+      "shift_search_frac": 0.03,
+      "asymmetry_relaxes": true
+    },
+    "mirror_front_back": {
+      "pass": 0.9,
+      "warn": 0.88,
+      "shift_search_frac": 0.03
+    },
+    "thin_parts": {
+      "diameter_frac_of_frame": 0.03,
+      "min_extent_frac": 0.05,
+      "min_extent_diameters": 2.5,
+      "pass": 0.005,
+      "warn": 0.02
+    },
+    "components": {
+      "warn_frac": 0.002,
+      "fail_frac": 0.01
+    },
+    "shadow": {
+      "pass_area": 0.01,
+      "fail_reach": 0.25,
+      "fail_area": 0.15,
+      "fail_darkness": 0.25
+    },
+    "lighting": {
+      "pass": 0.08,
+      "warn": 0.15,
+      "single_view_warn": 0.25
+    },
+    "palette": {
+      "pass": 10.0,
+      "warn": 16.0,
+      "clusters": 8,
+      "min_cluster_frac": 0.04
+    },
+    "view_colour_consistency": {
+      "pass": 8.0,
+      "warn": 14.0
+    },
+    "pose": {
+      "arm_gap_pass": 0.15,
+      "arm_gap_fail": 0.03
+    },
+    "profile": {
+      "warn_above": 0.85
+    }
+  }
+}

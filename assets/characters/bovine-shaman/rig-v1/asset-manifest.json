@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "asset": "bovine_shaman_minotaur_rig_v1",
+  "provider_job": "d8cbe7d6-7373-4b69-bfa6-47676945b149",
+  "source_url": "https://studio.tripo3d.ai/workspace/texture/d8cbe7d6-7373-4b69-bfa6-47676945b149",
+  "source_sha256": "f517f94f8583eec2851035315f310359087c89b170d406a565b0dbbeafe3cf13",
+  "source_bytes": 15977300,
+  "height_m": 2.4,
+  "deform_joints": 32,
+  "blender": "5.2.2 LTS",
+  "clip_fps": 30,
+  "clips": [
+    {
+      "name": "Idle",
+      "frames": 121,
+      "seconds": 4.0,
+      "loop": true
+    },
+    {
+      "name": "Walk",
+      "frames": 49,
+      "seconds": 1.6,
+      "loop": true
+    },
+    {
+      "name": "Run",
+      "frames": 33,
+      "seconds": 1.0666666666666667,
+      "loop": true
+    },
+    {
+      "name": "Talk",
+      "frames": 91,
+      "seconds": 3.0,
+      "loop": true
+    },
+    {
+      "name": "StaffCast",
+      "frames": 76,
+      "seconds": 2.5,
+      "loop": false
+    },
+    {
+      "name": "StaffStrike",
+      "frames": 52,
+      "seconds": 1.7,
+      "loop": false
+    },
+    {
+      "name": "HitReact",
+      "frames": 25,
+      "seconds": 0.8,
+      "loop": false
+    },
+    {
+      "name": "Death",
+      "frames": 91,
+      "seconds": 3.0,
+      "loop": false
+    }
+  ],
+  "provider_generation_credits_used_in_this_turn": 0,
+  "license_status": "User-supplied generated asset; public redistribution rights not independently established",
+  "evidence_scope": "Blender review and CPU Babylon checks; browser evidence recorded separately. No phone/multiplayer qualification.",
+  "files": [
+    {
+      "path": "minotaur_rig.blend",
+      "bytes": 17521607,
+      "sha256": "a4532609ac1326ca3abe525ba4060ff28885787768eec6196d1832bbad34777a"
+    },
+    {
+      "path": "rig-build.json",
+      "bytes": 1787,
+      "sha256": "2d8c5b1f9074b9b0e82b84d098707c23363562529227c9b96e418ed5143f3a59"
+    },
+    {
+      "path": "runtime/lod-export.json",
+      "bytes": 722,
+      "sha256": "3ab0b44c6ec84420c3263dd58b653e3f27462bb31b61e3c9cb8f26653bbbdb51"
+    },
+    {
+      "path": "animation-events.json",
+      "bytes": 507,
+      "sha256": "a2f470609f7cb8b774692b4169a258a4812a35f857fd12aa774e086a6bc8fb99"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5265,
+      "sha256": "3f3f5a922a1951c787c69465c743d4424ff8c932d1d078e86d6a3498b25d1b42"
+    },
+    {
+      "path": "review/minotaur-runtime-20261001-lod0.json",
+      "bytes": 6086,
+      "sha256": "63c418e57bd805c3bde9e0dd9b89aa8b85f27164b4e3e6de696bf65d33da5988"
+    },
+    {
+      "path": "review/minotaur-runtime-20261001-lod0-optimized.json",
+      "bytes": 6318,
+      "sha256": "703d5ce110a39319f9b7790d8377ba552af7c0b7fba1552cdf3673e38df6c471"
+    },
+    {
+      "path": "runtime/minotaur_lod0.glb",
+      "bytes": 5685436,
+      "sha256": "23c08dc6f6fff7e57bf51efbfa7b4e417059f95753abbec261348f53d16f6a58"
+    },
+    {
+      "path": "runtime/optimized/minotaur_lod0.uastc-meshopt.glb",
+      "bytes": 19892892,
+      "sha256": "5b04e1f1651c47c61acbe228623baad203dbe17c3b2f82aff27c40e024e2f2ac"
+    },
+    {
+      "path": "review/minotaur-runtime-20261001-lod1.json",
+      "bytes": 6084,
+      "sha256": "f42c77c7e51a0674e2ee6d573b6147744fd1f6dde59ab531e781d058ea722a04"
+    },
+    {
+      "path": "review/minotaur-runtime-20261001-lod1-optimized.json",
+      "bytes": 6317,
+      "sha256": "0b881e8020fc86cf7d71e320db40693407c3313c8121d48d90bf3c74095992a4"
+    },
+    {
+      "path": "runtime/minotaur_lod1.glb",
+      "bytes": 2720560,
+      "sha256": "50897f0899f648c6999ba152f3d57c6227736f7518093fcee24e68a83221b384"
+    },
+    {
+      "path": "runtime/optimized/minotaur_lod1.etc1s-meshopt.glb",
+      "bytes": 1588380,
+      "sha256": "8f147599883e5525c854419258a2dda74c8e787b3090f1190b28f774fa9022d3"
+    },
+    {
+      "path": "review/minotaur-runtime-20261001-lod2.json",
+      "bytes": 6082,
+      "sha256": "7a8e70817c2d5e1d58966d882afeab82e15ca9a3c49e5773b7355a1ad59aecd9"
+    },
+    {
+      "path": "review/minotaur-runtime-20261001-lod2-optimized.json",
+      "bytes": 6315,
+      "sha256": "ff9b71e8c8e812d49bd38860518ddf61ae218024f84ef61289438ef043604551"
+    },
+    {
+      "path": "runtime/minotaur_lod2.glb",
+      "bytes": 1395484,
+      "sha256": "d4425969efb9ff58365158f70b174fd350af6088e2c5972343c599ba92f80043"
+    },
+    {
+      "path": "runtime/optimized/minotaur_lod2.etc1s-meshopt.glb",
+      "bytes": 773964,
+      "sha256": "9ac8c6abb1e86e9cea25245cdcbe05b499f74dca8953e37ad730ed8af67cc258"
+    },
+    {
+      "path": "review/cast.png",
+      "bytes": 863276,
+      "sha256": "7565f8ef2eef976a2ce942fdb8635838a2681b359d7e38120d945eb19d55cf1c"
+    },
+    {
+      "path": "review/close.png",
+      "bytes": 1011140,
+      "sha256": "fef92ba0c747dce70af950f54867d30d92b052dbe37ee665de93de8ffb9f53ca"
+    },
+    {
+      "path": "review/death-mid.png",
+      "bytes": 778841,
+      "sha256": "3253c8e65b9238ed7df8e694c67b26f0a3a8de52d29331cc4c35af1db98489e3"
+    },
+    {
+      "path": "review/death.png",
+      "bytes": 779433,
+      "sha256": "b7d909c089d018c84bed037a55772dcfc8f8af009dc170cecafbeacd72185904"
+    },
+    {
+      "path": "review/front.png",
+      "bytes": 899750,
+      "sha256": "aad38403065c5a3732a8c785e39556badcd35156ad6c37e9f90225040fe5227e"
+    },
+    {
+      "path": "review/minotaur-visual-review-20261001.json",
+      "bytes": 4958,
+      "sha256": "62ee557db93e93cbbcfe1745df56f10c3dcf078939977ccb30b91c67cef7fbb3"
+    },
+    {
+      "path": "review/motion-check.json",
+      "bytes": 3628,
+      "sha256": "c21f2882f4dd58274e4cea62b3587d35eb8f4e940947075494a6d537086cb6dd"
+    },
+    {
+      "path": "review/player.png",
+      "bytes": 802448,
+      "sha256": "8a1071b0d4366da1343514298ffccb42746109df7e9e7c9924d1b7448dc89e2f"
+    },
+    {
+      "path": "review/side.png",
+      "bytes": 837139,
+      "sha256": "5678dbc2c50f0520876baa45c1ecffa17b05a47c32be23634fd41d063022c0fb"
+    },
+    {
+      "path": "review/stride.png",
+      "bytes": 898097,
+      "sha256": "fc97fd42ef425d0411903a1bce659137629bf4cb16c35cbab84c45e98d0ff387"
+    },
+    {
+      "path": "review/strike.png",
+      "bytes": 813554,
+      "sha256": "d0a98c4b497fa7b68f0cd8058e25e84a6cf0a3c2185ddcf48e2e00e2d0fbad73"
+    },
+    {
+      "path": "runtime/optimized/optimization-receipt.json",
+      "bytes": 4557,
+      "sha256": "e476796ab12ebb0dc6c7eb19f43a1e585702a9df4ce8e0972708c00ae5e8935d"
+    }
+  ]
+}

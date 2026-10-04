@@ -1,0 +1,449 @@
+{
+  "schema": "xexoria.document-consolidation/1",
+  "date": "2026-10-02 Asia/Bangkok",
+  "status": "APPLIED",
+  "before_docs_md": 95,
+  "planned_remove": [
+    "babylon-rust-webgame-chat.md",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v3.md",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v4.md",
+    "docs/city-lighting-review-20261001.md",
+    "docs/fountain-art-review-20261001.md",
+    "docs/level-environment-light-20261001.md",
+    "docs/mobile-hud-reference.md",
+    "docs/reviews/2026-09-25-deep-review.md",
+    "docs/reviews/2026-09-27-visual-direction.md",
+    "docs/reviews/2026-10-01-claude-review-round-1.md",
+    "docs/reviews/2026-10-01-codex-vfx-report.md",
+    "docs/reviews/2026-10-01-community-systems-report.md",
+    "docs/reviews/2026-10-01-mmo-ui-v2-report.md",
+    "docs/reviews/2026-10-02-root-handoff-trees-impostors.md",
+    "docs/ui/hud-control-layout-20261001.md",
+    "docs/ui/login-future-flow-20261002.md",
+    "docs/ui/minimap-design-20261001.md",
+    "plan.md"
+  ],
+  "planned_write": [
+    ".harness/CITY-DELIVERY-20261001.md",
+    ".harness/OWNERSHIP-20261001.md",
+    ".harness/WORKFLOW.md",
+    "README.md",
+    "docs/README.md",
+    "docs/blender-python-tripo-workflow.md",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v5.md",
+    "docs/competitor-teardown-lumivara.md",
+    "docs/game-system-landscape-study.md",
+    "docs/history/plans-v3-v4.md",
+    "docs/mmo-master-plan-2027.md",
+    "docs/p1-gameplay-contract.md",
+    "docs/production-quality-standard.md",
+    "docs/reviews/2026-10-01-codex-dungeon-d0-report.md",
+    "docs/reviews/2026-10-01-vfx-brief-for-codex.md",
+    "docs/reviews/2026-10-02-heroes-inventory-and-plan.md",
+    "docs/reviews/2026-10-02-root-handoff-maps-to-claude.md",
+    "docs/reviews/2026-10-02-root-handoff.md",
+    "docs/reviews/environment-integration-history.md",
+    "docs/reviews/historical-implementation-reports.md",
+    "docs/reviews/historical-visual-reviews.md",
+    "docs/system-design-catalog.md",
+    "docs/ui/channel-loading-flow-20261002.md",
+    "docs/ui/mobile-ui-reference-20261001.md"
+  ],
+  "renamed": {
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v3.md": {
+      "document": "docs/history/plans-v3-v4.md",
+      "anchor": "plan-v3"
+    },
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v4.md": {
+      "document": "docs/history/plans-v3-v4.md",
+      "anchor": "plan-v4"
+    },
+    "babylon-rust-webgame-chat.md": {
+      "document": "docs/history/plans-v3-v4.md",
+      "anchor": "initial-discussion"
+    },
+    "docs/reviews/2026-09-25-deep-review.md": {
+      "document": "docs/reviews/historical-visual-reviews.md",
+      "anchor": "deep-review-20260925"
+    },
+    "docs/reviews/2026-09-27-visual-direction.md": {
+      "document": "docs/reviews/historical-visual-reviews.md",
+      "anchor": "visual-direction-20260927"
+    },
+    "docs/reviews/2026-10-01-claude-review-round-1.md": {
+      "document": "docs/reviews/historical-visual-reviews.md",
+      "anchor": "claude-review-round1"
+    },
+    "docs/reviews/2026-10-01-community-systems-report.md": {
+      "document": "docs/reviews/historical-implementation-reports.md",
+      "anchor": "community-systems"
+    },
+    "docs/reviews/2026-10-01-codex-vfx-report.md": {
+      "document": "docs/reviews/historical-implementation-reports.md",
+      "anchor": "vfx-implementation"
+    },
+    "docs/city-lighting-review-20261001.md": {
+      "document": "docs/reviews/environment-integration-history.md",
+      "anchor": "city-lighting"
+    },
+    "docs/fountain-art-review-20261001.md": {
+      "document": "docs/reviews/environment-integration-history.md",
+      "anchor": "fountain-review"
+    },
+    "docs/level-environment-light-20261001.md": {
+      "document": "docs/reviews/environment-integration-history.md",
+      "anchor": "environment-light"
+    },
+    "docs/reviews/2026-10-02-root-handoff.md": {
+      "document": "docs/reviews/environment-integration-history.md",
+      "anchor": "root-handoff-history"
+    },
+    "docs/ui/mobile-ui-reference-20261001.md": {
+      "document": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "mobile-reference"
+    },
+    "docs/mobile-hud-reference.md": {
+      "document": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "early-mobile-concept"
+    },
+    "docs/ui/minimap-design-20261001.md": {
+      "document": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "minimap"
+    },
+    "docs/ui/hud-control-layout-20261001.md": {
+      "document": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "control-layout"
+    },
+    "docs/reviews/2026-10-01-mmo-ui-v2-report.md": {
+      "document": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "ui-v2-implementation"
+    },
+    "docs/ui/channel-loading-flow-20261002.md": {
+      "document": "docs/ui/channel-loading-flow-20261002.md",
+      "anchor": "channels-and-loading"
+    },
+    "docs/ui/login-future-flow-20261002.md": {
+      "document": "docs/ui/channel-loading-flow-20261002.md",
+      "anchor": "future-login"
+    },
+    "docs/reviews/2026-10-02-root-handoff-trees-impostors.md": {
+      "document": "docs/reviews/2026-10-02-root-handoff-maps-to-claude.md",
+      "anchor": "trees-impostors-history"
+    },
+    "plan.md": {
+      "document": "docs/online-storage-architecture.md",
+      "anchor": ""
+    }
+  },
+  "retained_sections": [
+    {
+      "source": "docs/browser_ragnarok_babylon_rust_10k_plan_v3.md",
+      "destination": "docs/history/plans-v3-v4.md",
+      "anchor": "plan-v3",
+      "source_sha256": "e66f6aea7f5a3a6a146abd11284bb4fb236ac95e732b21e87c48e859b0b7d92c",
+      "retained_rendered_section_sha256": "0a393244a70dd78fcbd5bd42db429efc50201a9e15b132593c900cc9aae46bf9"
+    },
+    {
+      "source": "docs/browser_ragnarok_babylon_rust_10k_plan_v4.md",
+      "destination": "docs/history/plans-v3-v4.md",
+      "anchor": "plan-v4",
+      "source_sha256": "795cc59b4b0cb9606230ef25b4ca57cd58a22029610cbfa74a137c0cfe43731e",
+      "retained_rendered_section_sha256": "9d3bd58ca983d5a1a70ffa319080d9e45f0bb2b8fa54fe8069c9c3c0a5973bc3"
+    },
+    {
+      "source": "babylon-rust-webgame-chat.md",
+      "destination": "docs/history/plans-v3-v4.md",
+      "anchor": "initial-discussion",
+      "source_sha256": "1f98aea9f42f3619db55e48965d2950432f241889dfe0ae7c173ff6aad47e8ac",
+      "retained_rendered_section_sha256": "d40d2110125387a882299aee43369d9185c054a75716e74089d3bdf21fc25d7b"
+    },
+    {
+      "source": "docs/reviews/2026-09-25-deep-review.md",
+      "destination": "docs/reviews/historical-visual-reviews.md",
+      "anchor": "deep-review-20260925",
+      "source_sha256": "af044dd68af0a12ba04e1b7f1d3733f337900c75c4ce5982709cbbd981b173c8",
+      "retained_rendered_section_sha256": "8a54b55ace43f0f98d3360413d9519680968032bd7fcd30398aec7c56a3d33ba"
+    },
+    {
+      "source": "docs/reviews/2026-09-27-visual-direction.md",
+      "destination": "docs/reviews/historical-visual-reviews.md",
+      "anchor": "visual-direction-20260927",
+      "source_sha256": "548382c2a7060bf61a5cef83bce628aabe09e969e1fee7edcef42f3608b36650",
+      "retained_rendered_section_sha256": "d182b1a4c6ae67ac540e646ed15c31ed965ad094f42f370d1c02cb04779532a1"
+    },
+    {
+      "source": "docs/reviews/2026-10-01-claude-review-round-1.md",
+      "destination": "docs/reviews/historical-visual-reviews.md",
+      "anchor": "claude-review-round1",
+      "source_sha256": "9656bbb9d0ab08e7ccd26cc7104846519d74d563bb88b892ce20690c0849f253",
+      "retained_rendered_section_sha256": "4d0109eb9c0add70d51f530d52949fe769abf635833e5ded19cc289ad7d76251"
+    },
+    {
+      "source": "docs/reviews/2026-10-01-community-systems-report.md",
+      "destination": "docs/reviews/historical-implementation-reports.md",
+      "anchor": "community-systems",
+      "source_sha256": "47c6055ee5f6a1204d3000f610bce34e7545461e1e9f4c9f4954d656a7cd5737",
+      "retained_rendered_section_sha256": "96da0fac76f1437b9cab7d01c8ebc585b1eae58750009035c9d8aa8965548eef"
+    },
+    {
+      "source": "docs/reviews/2026-10-01-codex-vfx-report.md",
+      "destination": "docs/reviews/historical-implementation-reports.md",
+      "anchor": "vfx-implementation",
+      "source_sha256": "c4c1d914fa784af99228e80de81b791ce28cb2c784696d3428cbfa172cce3301",
+      "retained_rendered_section_sha256": "a910560f29a36f7be3d0f981bc338a3a94b0dc3671de853f954fb1bb15605175"
+    },
+    {
+      "source": "docs/city-lighting-review-20261001.md",
+      "destination": "docs/reviews/environment-integration-history.md",
+      "anchor": "city-lighting",
+      "source_sha256": "a10109ec381a4acbc4f69679ea3b958273596a43626a8cfc00b70c6d95499c69",
+      "retained_rendered_section_sha256": "868a6cccea98293e8577bed4128173bc73c66449392ec2c887c3a6858736914a"
+    },
+    {
+      "source": "docs/fountain-art-review-20261001.md",
+      "destination": "docs/reviews/environment-integration-history.md",
+      "anchor": "fountain-review",
+      "source_sha256": "b876f95f47d24c4a578d471157bb61051cf2f4886fbff0bc27263d5b7d409370",
+      "retained_rendered_section_sha256": "081bce8d4bc02fa256699dbba446ed2eabf2ae6ce9a668216fb64517df671e8e"
+    },
+    {
+      "source": "docs/level-environment-light-20261001.md",
+      "destination": "docs/reviews/environment-integration-history.md",
+      "anchor": "environment-light",
+      "source_sha256": "4ccb807ef0921fe3216d1b88112488450961435f801f4d0bf7c01cb68fc70437",
+      "retained_rendered_section_sha256": "02641e0f387828b7ce3c58a39c48cc38be1297626378c559314da726a1d584bb"
+    },
+    {
+      "source": "docs/reviews/2026-10-02-root-handoff.md",
+      "destination": "docs/reviews/environment-integration-history.md",
+      "anchor": "root-handoff-history",
+      "source_sha256": "ee6498e67a440fdcc21bf499e4d22c95383f160c43fb5b174d7eaf4c69384eed",
+      "retained_rendered_section_sha256": "2d942074c6523044bdfbd0b0984d689c4195d9f483da0a33cd29c308dc150f54"
+    },
+    {
+      "source": "docs/ui/mobile-ui-reference-20261001.md",
+      "destination": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "mobile-reference",
+      "source_sha256": "dc4f430ce663a45f47f8a385a603db754b2bd46d10670ec5607db26aa235fe5b",
+      "retained_rendered_section_sha256": "2d9cdc7d88de89a89c35560923d4b2395473be8f9262618bf6e009f56d4bd132"
+    },
+    {
+      "source": "docs/mobile-hud-reference.md",
+      "destination": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "early-mobile-concept",
+      "source_sha256": "1c4ef08d84b5ed7045668ad1745fc5ffc81b7fa743edcf85ddf53bfe2dcd70b9",
+      "retained_rendered_section_sha256": "9c499337486218f3c75100f1e8bc4f098e4a4e49306f3b7c766ef2004b9eea03"
+    },
+    {
+      "source": "docs/ui/minimap-design-20261001.md",
+      "destination": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "minimap",
+      "source_sha256": "322a514fa3a9dff9f370eb617212ac1c5e72adcb4003003f1c1b5cf1f5411ff3",
+      "retained_rendered_section_sha256": "75b69f5d0d3f99d447e3a702eca9364d930d1aea4f45811a19a71060c21b1ede"
+    },
+    {
+      "source": "docs/ui/hud-control-layout-20261001.md",
+      "destination": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "control-layout",
+      "source_sha256": "8cc8ff71e1d120f8fd43cfd1dd60a53d19d1149feb561b17b91ec96af997f076",
+      "retained_rendered_section_sha256": "d049d2b67794d5e278a0b200a86ad367ea7090d3f05fc50d32f326bd07ee7f93"
+    },
+    {
+      "source": "docs/reviews/2026-10-01-mmo-ui-v2-report.md",
+      "destination": "docs/ui/mobile-ui-reference-20261001.md",
+      "anchor": "ui-v2-implementation",
+      "source_sha256": "67e44cda1f1f98ffa0f044f1e27a1bcbdd02d36b6c91d1feeee15a106c959b0d",
+      "retained_rendered_section_sha256": "6d51e2c4b14ab9a2cf810172414f82d03d7531e6097d32a4753562d64d5c59fe"
+    },
+    {
+      "source": "docs/ui/channel-loading-flow-20261002.md",
+      "destination": "docs/ui/channel-loading-flow-20261002.md",
+      "anchor": "channels-and-loading",
+      "source_sha256": "536f497b178e641699ce07cc2f59b969784faa610057f380e7ed1ba4df763743",
+      "retained_rendered_section_sha256": "23a97dc39d21c0ac3b6d99fde34b4ff0127c205c5a07b1b1284ea7886de5e5b0"
+    },
+    {
+      "source": "docs/ui/login-future-flow-20261002.md",
+      "destination": "docs/ui/channel-loading-flow-20261002.md",
+      "anchor": "future-login",
+      "source_sha256": "66b652eb8b075719377624470bcd8f16a5cc46c29ccf83835c83ec668c68450c",
+      "retained_rendered_section_sha256": "7fa429e5e3b1905bd06d53b4702c9a437c804e70a2db36e0ae345dfd2b50ac51"
+    },
+    {
+      "source": "docs/reviews/2026-10-02-root-handoff-trees-impostors.md",
+      "destination": "docs/reviews/2026-10-02-root-handoff-maps-to-claude.md",
+      "anchor": "trees-impostors-history",
+      "source_sha256": "b0cefc96973b8d73418420bdafe4ec9b4f20a3aea404fb98f321081a58535fda",
+      "retained_rendered_section_sha256": "2a9762ace3b53fcc39bc2a3c2b25fdedc023efea2992575b4456b24adfe4b082"
+    }
+  ],
+  "pre_existing_or_external_generated_missing_links": [],
+  "source_snapshot": {
+    "docs/asset-motion-trial-workflow.md": "1b95f15edb646dded2b144ed0761c1d82918d09bac42c4fd3767d35fa513f734",
+    "docs/blender-python-tripo-workflow.md": "5dfab78fcb5e8a8454a5fe44d8879ff32a7bac6e8ab262983113e28057b62a65",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v3.md": "e66f6aea7f5a3a6a146abd11284bb4fb236ac95e732b21e87c48e859b0b7d92c",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v4.md": "795cc59b4b0cb9606230ef25b4ca57cd58a22029610cbfa74a137c0cfe43731e",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v5.md": "410baa291c1ee3a7642dbbbde95b1614c32eb25cb519ebd53eea68d087664d64",
+    "docs/city-art-roadmap.md": "2e49889f458125fce18b45d8e68ba6a4d9f73d86fe940a06ffbab1392ad5e090",
+    "docs/city-district-streaming.md": "9d726ca126acd12e8115a2b523b4e0f9338ce37a50d2398af5dc779450aaea05",
+    "docs/city-lighting-review-20261001.md": "a10109ec381a4acbc4f69679ea3b958273596a43626a8cfc00b70c6d95499c69",
+    "docs/competitor-teardown-lumivara.md": "ab34beb926e708533b8e7a120cadd0e775d271ba1d897d22cf663ae84fd4c62c",
+    "docs/delivery-and-asset-playbook.md": "452bf80b555fc54c9fe3a875123dc8f26d74341adbe432711ad174a1d823b213",
+    "docs/dungeon-transition-design.md": "5b70dae517acfe462a2c728c00536e826f28806834161c9e4a8b3c63444e5b1d",
+    "docs/execution-backlog.md": "de2795f5aa08ae389291b923acc1ee29c0ebc51b1594919a06f233034ad45562",
+    "docs/fast-jev-codex-integration.md": "01b543a14bcd14e160c4c2a08fd569e1627e34ac6fa1b79120c4e88566b05a3b",
+    "docs/fountain-art-review-20261001.md": "b876f95f47d24c4a578d471157bb61051cf2f4886fbff0bc27263d5b7d409370",
+    "docs/free-asset-shortlist-20261001.md": "8950154e86303236267c78098924b9229047dbbc77da0961ec17d7533a64e69f",
+    "docs/free-fountain-water-20261001.md": "fdd93f528449a6f6b340876021097992370eb4dfd210df52b4446765a1dc41ae",
+    "docs/game-system-landscape-study.md": "6f4495a74466b9ac332c7abfb1b6e4380c39ec568c7da018f9ac860353203e77",
+    "docs/harness-jev-gpt-toolchain.md": "f79a20e73aaeee59e83debe983fa07d19bc4e57f2ce052b7587168ce71f0e5c5",
+    "docs/level-environment-light-20261001.md": "4ccb807ef0921fe3216d1b88112488450961435f801f4d0bf7c01cb68fc70437",
+    "docs/local-ai-asset-tools-20261001.md": "2d0ae3a4082f831fcf1e77c3faab7ec51e4548fb3dcf1025031c6cac1ea5d183",
+    "docs/mmo-master-plan-2027.md": "356e85c5237303e0e5339ae5472946a82559042ec927c19f99f693b3746dad84",
+    "docs/mobile-hud-reference.md": "1c4ef08d84b5ed7045668ad1745fc5ffc81b7fa743edcf85ddf53bfe2dcd70b9",
+    "docs/mr-mak-adoption-review-20261001.md": "1026053ea8f6abc085ee38e6e2e06cd49f5e0f5822b290ca42138bd96d4da4fd",
+    "docs/online-storage-architecture.md": "acbd69b04e4699dca599cd8c3b9815e8addb05e36db3ab903fb1e75f1592a0e2",
+    "docs/open-world-production-plan.md": "cc14b9a1c0353f8e305cce3d39f12c3344c42e30fc4ab9666e6ae979f2f1f93f",
+    "docs/p1-gameplay-contract.md": "8e9b1daf81097c973d7666f64fba3eff63da5e16ffaffc753f45825641979f69",
+    "docs/production-quality-standard.md": "2d58417325d2e64cf386d8fbeab0881026bc61001a48de52fcf3fcc9c00a39bf",
+    "docs/ragnarok-multi-source-audit.md": "9c9ff0b3b8c2b2b660085e16ac6ec06b7eba984cc770ec5f762432cff134ae59",
+    "docs/ragnarok-source-options.md": "9964b5242367b7b2351a0d40d34fceb0704e3d14d7f6fa744c8863528cc48d12",
+    "docs/ragnarok-source-research.md": "f8a2a65de2549f28d5fe45de19f2916121e3d5c150b405dd45b139586afa0a7a",
+    "docs/region-loading-and-dungeons.md": "0f1096c638a8242b375e8feae8a09472296fa9e13c345ca8e3873b54d8c9a7c5",
+    "docs/research-and-capabilities.md": "ab515f3481eeb2f7a2fc1ad6de8a6f5b3612b8804589d0c3ac4a40e1cf94a152",
+    "docs/scale-to-10k-plan.md": "ef60d7d78d67c9498ccfe3115a787b189e49498ddd208ba708c9431fc6bcedb4",
+    "docs/sunmeadow-compact-layout.md": "5eed7b64308529403f0f73166856a31b01121fcacebb82d6cf59b0b8509147bf",
+    "docs/system-design-catalog.md": "314d60f24282e8e3b022eaa19ea7a718a2d53c86024c9f3e492713b9bc02b15c",
+    "docs/ui-runtime-architecture.md": "80443bace792d1cc7f9af067176619c42dcb135a7954b891a4c877ddf5480a37",
+    "docs/world-expansion-500.md": "f32577a0d2afd2e1f95ec5997dd65476c93a0fe1e2084c228ec1300ee78acb3c",
+    "docs/asset-prompts/sunmeadow-props-v1.md": "78d1d4c883b0ba4abbf257b0b5206e76d0a4aecde6372dbd243a109b068d6375",
+    "docs/levels/sunken-temple-of-aurel.md": "88065ae59ba346a023fc33bc96654bc62ba8b9cc2fba1e861edba338552314d3",
+    "docs/levels/sunmeadow-v2-level-design.md": "7e200157243435d7110616e42c41a85215d9ee56aa4c8509e7376977adcb3548",
+    "docs/references/3d-impostors-blender-to-babylon-guide.md": "2546675a315a2d1438131526431bb95fc9e1d1016acd7b589707762586211569",
+    "docs/reviews/2026-09-25-deep-review.md": "af044dd68af0a12ba04e1b7f1d3733f337900c75c4ce5982709cbbd981b173c8",
+    "docs/reviews/2026-09-27-visual-direction.md": "548382c2a7060bf61a5cef83bce628aabe09e969e1fee7edcef42f3608b36650",
+    "docs/reviews/2026-09-30-assets-lod-texture-research.md": "f0933f785875a408f1dd6948e60b7ffad2937867ea11bc8d4329c61639cb4fd2",
+    "docs/reviews/2026-09-30-plan-reconciliation.md": "a34e81cb76203fca217292bbe9f8c995c2eeda6d19ab58dc428acb96db79df17",
+    "docs/reviews/2026-10-01-claude-codex-collaboration-plan.md": "b4736c49cbf1d0f4bd52e6fa552d17f7570b65625a566b553992f8c3c59dece2",
+    "docs/reviews/2026-10-01-claude-review-round-1.md": "9656bbb9d0ab08e7ccd26cc7104846519d74d563bb88b892ce20690c0849f253",
+    "docs/reviews/2026-10-01-codex-dungeon-d0-report.md": "b944bacb1bcdeb5c9005ab390e4c898e5e99ae29981fd6909c491760c0934eec",
+    "docs/reviews/2026-10-01-codex-vfx-report.md": "c4c1d914fa784af99228e80de81b791ce28cb2c784696d3428cbfa172cce3301",
+    "docs/reviews/2026-10-01-community-systems-report.md": "47c6055ee5f6a1204d3000f610bce34e7545461e1e9f4c9f4954d656a7cd5737",
+    "docs/reviews/2026-10-01-dungeon-program-roadmap.md": "7c74e1b9d564054da0766d15e960f1fa291df7a135cf0e6abbff08d021efff08",
+    "docs/reviews/2026-10-01-dungeon-systems-brief-for-codex.md": "396aebc31a12b2234fb40079d04663807db5d02df907d272fa8c901393721399",
+    "docs/reviews/2026-10-01-engine-selection.md": "795e5af882ad59bb9b5ef0cc74e02906200ea3fdf8dec9c1769a53d1af480b80",
+    "docs/reviews/2026-10-01-froggy-full-game-art-plan.md": "f8f9213d45df67879ebb5335c572e630576ff2f31b624cdc44c63ea6a858fe89",
+    "docs/reviews/2026-10-01-lookdev-v0-tooling.md": "773a21a16b7156e693e60e4388eb305ac2681151d8076d2af913122139d2f142",
+    "docs/reviews/2026-10-01-mmo-ui-v2-report.md": "67e44cda1f1f98ffa0f044f1e27a1bcbdd02d36b6c91d1feeee15a106c959b0d",
+    "docs/reviews/2026-10-01-scene-cleanup-vfx-handoff.md": "7b26699a1ee5a354db9c4464879d03677250505683989e4d72074dbe16f54b98",
+    "docs/reviews/2026-10-01-triangle-optimization-research.md": "63fb78a856927dd566360adaaaf70631b69561170dd15b8e2fb08f2eb527459b",
+    "docs/reviews/2026-10-01-vfx-brief-for-codex.md": "9193f8a4ebae81e932d2981f8c22e6d4ae291f4a6f3a630e0d4885a676a88b41",
+    "docs/reviews/2026-10-01-visual-quality-program.md": "adaacc6cebb3a9dc88fa1d33bb4e9f77198ca8b377bd84377d712fa56f440279",
+    "docs/reviews/2026-10-02-blender-asset-community-practice.md": "7507e860fd239d824e11b2140f072a10f242f5461c5a34caac98e711eaa09c5f",
+    "docs/reviews/2026-10-02-blender-asset-official-docs.md": "3cca1933f3706e3dbd7a59f3eee8038d2e214082da939e05db41b47407b9b008",
+    "docs/reviews/2026-10-02-blender-headless-automation.md": "771cc6abfea022dd444417cd53452cdd7fae6a3ccd382ad113b03072bdddcc6a",
+    "docs/reviews/2026-10-02-city-forge-native-checklist.md": "3cee9d3b5d74d5483d1188dbf7ccee360cf36a5774023b3211138e5f1aabb601",
+    "docs/reviews/2026-10-02-combo-input-window-table-v1.md": "34e14f9d66dc9eb2595d1f1c3d3994d3f476798f09f25ec286baf01684638418",
+    "docs/reviews/2026-10-02-forge-r6-native-review.md": "b9c7d443cbd320d9e152f890bf13f5cd52189c31e0b5b14563d6a21e79f3ded5",
+    "docs/reviews/2026-10-02-heroes-decisions.md": "470dfae26fff99b2efcdcfc51555e363547785045b10189fcfc9d96182f4f63b",
+    "docs/reviews/2026-10-02-heroes-inventory-and-plan.md": "5f220642d7943b9ad869cce379101425fe8cd6cf852be1637bf7ce986864ea94",
+    "docs/reviews/2026-10-02-heroes-rig-and-animation.md": "00c33f7b600edb2a8811021d450ea280192ba28c637ffa6a3dfa5d472515a5d1",
+    "docs/reviews/2026-10-02-map-grass-spec.md": "02998644d03ea2fdae9b7bdce3043542c2443c25cc2cb6b036ed9d9f1269212e",
+    "docs/reviews/2026-10-02-map-sky-light-spec.md": "7c40004946ec6c59a03b7d36ac018557d5eb92db08c205f396f03ee133d00635",
+    "docs/reviews/2026-10-02-map-terrain-spec.md": "7e89f4bca4bfd5fc1a2403785da0fa745425ddb10fa6f2eca9c8f0b1b3af0c14",
+    "docs/reviews/2026-10-02-map-water-spec.md": "2e85c69ba204f9b73d9960470af3dc4a4aa2439a52631423e6f9233b11205281",
+    "docs/reviews/2026-10-02-monster-combat-decisions.md": "d0ebd95c5cd8932cd3fef00e4cdb5ee50f29e604c7e663ef3dfd2562d0f23ff7",
+    "docs/reviews/2026-10-02-monsters-art-pipeline-and-sources.md": "0e2c9113d1a5150494efe22b43b2d78aa6176259e98d4473a1aa5ee8b480a0ed",
+    "docs/reviews/2026-10-02-monsters-code-audit.md": "52851e037d39086d35318e11d154938be9181b32758b7efb389e246526a68aaf",
+    "docs/reviews/2026-10-02-monsters-sunmeadow-roster-and-placement.md": "990f9e2fdf83e6f5b47719ba820a7876ab9ac7ef23e60ae3e802e37aed658f37",
+    "docs/reviews/2026-10-02-monsters-systems-to-copy.md": "b6b334f10a35050670179814dd6715cd13d48edc5f2227ce3617b1e9eb3a24be",
+    "docs/reviews/2026-10-02-monsters-visual-language-and-combat-ui.md": "ef8417220afe55c56eb22d8d367b1215ad1370f815289bccbb9a0a2eeeee0a1d",
+    "docs/reviews/2026-10-02-root-handoff-maps-to-claude.md": "0bb8d22b351b5be4a8cca12945c5afb2baa9d2b2eeb5203aae4edcd9245cb88b",
+    "docs/reviews/2026-10-02-root-handoff-trees-impostors.md": "b0cefc96973b8d73418420bdafe4ec9b4f20a3aea404fb98f321081a58535fda",
+    "docs/reviews/2026-10-02-root-handoff.md": "ee6498e67a440fdcc21bf499e4d22c95383f160c43fb5b174d7eaf4c69384eed",
+    "docs/reviews/2026-10-02-terrain-grass-probe-plan.md": "705d9ddd6709f81a1f4aa98f426a27947d53fa2c41610b7c97617c24501bf8c4",
+    "docs/reviews/2026-10-02-trees-free-assets-decision.md": "120b2b5dcc151d185d9184b1327e1047a856a80c396b15714ee0a9a40e963bbe",
+    "docs/reviews/2026-10-02-vfx-quality-bar-handoff.md": "6943447accd82cc57283da3a22eb3e5c91a0f64679133c9bf19d411c80c1ee4b",
+    "docs/reviews/2026-10-02-vfx-quality-bar.md": "0b25300be4fb4a9cba76429a65444a970e35dab5fa12c307380e734da3e8e995",
+    "docs/reviews/2026-10-02-vfx-sample-set-v1.md": "ae9f03407e51f2239ce995b19b3b948365e57a9139f25d005b6fe7e00bea762b",
+    "docs/reviews/2026-10-02-vfx-sample-v1-report.md": "6250770fe27c5d8e412e5c84dfb27181a687c0e75b3e0cd23d1bd6a0bbe25be2",
+    "docs/tools/impostor-cards.md": "eb114508aec94a2d5494562fd93ceecb85c0425ad0777fcf6472b091afd91c8e",
+    "docs/ui/channel-loading-flow-20261002.md": "536f497b178e641699ce07cc2f59b969784faa610057f380e7ed1ba4df763743",
+    "docs/ui/hud-control-layout-20261001.md": "8cc8ff71e1d120f8fd43cfd1dd60a53d19d1149feb561b17b91ec96af997f076",
+    "docs/ui/login-future-flow-20261002.md": "66b652eb8b075719377624470bcd8f16a5cc46c29ccf83835c83ec668c68450c",
+    "docs/ui/minimap-design-20261001.md": "322a514fa3a9dff9f370eb617212ac1c5e72adcb4003003f1c1b5cf1f5411ff3",
+    "docs/ui/mobile-ui-reference-20261001.md": "dc4f430ce663a45f47f8a385a603db754b2bd46d10670ec5607db26aa235fe5b",
+    "docs/ui/mobile-web-app-20261002.md": "3ea1407de8e3389cb0bb60af85280c8dd6fe0f01c1c8004d975689a52575bf88",
+    "README.md": "503fa5b819c8c8ded291ef776b2c89c4ccc6736c24e91f0f816f029e69b4359e",
+    "llm.txt": "138c7730bc608aef1c5c6afe893e34009c45a66a94f668aff2f5a7d7f4396b72",
+    "AGENTS.md": "1a6674c1df665097bc57eed7c2bc8bf84ec6c0148e90c913db00f75f56127604",
+    "plan.md": "183393eb9c2331e34a6fd3283721bb09df260d5709fbd91eab3f8cff79303037",
+    "babylon-rust-webgame-chat.md": "1f98aea9f42f3619db55e48965d2950432f241889dfe0ae7c173ff6aad47e8ac",
+    ".harness/CITY-DELIVERY-20261001.md": "dc4bb0601af720e2630747ee3bed2ec1af6ae47f115d84679548baf1780d035a",
+    ".harness/CONFIG.md": "e19db691acd048ab41191f0f2f0250092354ca37c5ea01ed85fcfe594fdbe0e3",
+    ".harness/INDEX.md": "92024d176f3429ec5c082b05b761f4a2548a2dc6636d56132b8cf85d9678dd8f",
+    ".harness/local-capabilities.md": "22494d3eed1e40691b29e88a3e37131d99c8afa8040d1f1e1aa883a5ca4175db",
+    ".harness/OWNERSHIP-20261001.md": "46cd15e10a479408ae78491fb8cc2b6eda818700f7c973956ec7570d142dd11f",
+    ".harness/TEAM-WORKFLOW-20261001.md": "05335ba64cbae4d1077e5a643f28e61a63e05e1a851a717eda8e86416858f6ab",
+    ".harness/WORKFLOW.md": "822d90b5b427b47cf6f935373745741719e0d7810d376780fb6cb1ffa94b6ef4"
+  },
+  "backup": "%USERPROFILE%\\Downloads\\Xexoria-Game\\agent-output\\20261002-doc-cleanup\\original-documents.zip",
+  "backup_sha256": "5842f83960c9f90d58cc94657a309a50784e8178b54555902769ab1857b24c08",
+  "after_docs_md": 84,
+  "workspace_changed_sha256": {
+    "docs/history/plans-v3-v4.md": "1d48f1415862d6d60d7275bce6363ba472170009da0055448326ad5195f29bb3",
+    "docs/reviews/historical-visual-reviews.md": "b5e78f0ffe1d2c22e4e270e5a162dcdf9a2ab1f4419b72c686a7b28e0298e94a",
+    "docs/reviews/historical-implementation-reports.md": "99a41879f03923dc5a82550a30522d92d166c72a52761a1af1c2e22bba674647",
+    "docs/reviews/environment-integration-history.md": "1c20dfdfbd07686ee926c56f259fc87c06e208359851083f7debffeb1efe084f",
+    "docs/ui/mobile-ui-reference-20261001.md": "9b1cead889ddbd91828d1eb6cff69f219def028ab370f8f01369901175e4296d",
+    "docs/ui/channel-loading-flow-20261002.md": "bad554476b5c3c84170ceb40bfe6841a848a5b10d8a64b55be36a1f1d08fb7f4",
+    "docs/reviews/2026-10-02-root-handoff-maps-to-claude.md": "e2b54359812ad08635f8ff468d2f84e6744324c3ad0bfbe5f8b8c01a560af184",
+    "docs/blender-python-tripo-workflow.md": "2d3bc5be19af9ad0d0fd392ef762cc696cd2f40fc80e2a5210802a35c8f478d8",
+    "docs/browser_ragnarok_babylon_rust_10k_plan_v5.md": "268c82d4a2893467a3ae5cd77179b4f86648b1eccd1c5d7a713e13192f2be297",
+    "docs/competitor-teardown-lumivara.md": "f0f0c942af845d566d8e3735c75edd992145548da6812cdc395b094a563a5421",
+    "docs/game-system-landscape-study.md": "c32ddfb817329b744eed485f20a44339ca7604e18784dff82a9a3b4bdb02f742",
+    "docs/mmo-master-plan-2027.md": "667f3dd079e571513c4e15a6b649a59bf07371ccd8ee15735343a80b85f19b94",
+    "docs/p1-gameplay-contract.md": "dbff5210e29343fc81c25b4bc7ffd8a3232302f951cf4fb25cedf897fcf3f31f",
+    "docs/production-quality-standard.md": "4e463a9e88b570b6c53603421fb5c80b5616f542650a597e119c5fb954f8504c",
+    "docs/system-design-catalog.md": "da4de48367bf7d8d2231a6558c0894a17476e3becf4f4810e48dbf917f93426b",
+    "docs/reviews/2026-10-01-codex-dungeon-d0-report.md": "df2edc4a1cc42096a2e179f83ad6b9ff9feff3e74719cd5d10a8e0101b4114be",
+    "docs/reviews/2026-10-01-vfx-brief-for-codex.md": "fb7111136fd429d7ca83ed1ae3e120a04641124aa47a08a53a49097563577976",
+    "docs/reviews/2026-10-02-heroes-inventory-and-plan.md": "052607abb6f5de3687b18cf819ee23e4330e5bca25f404de7754508fae0ab36d",
+    "README.md": "c39098b38bd73b4ac376d2a7bcfe1a83ec841362c6590b2d270f7d5439f0e832",
+    ".harness/CITY-DELIVERY-20261001.md": "3437d1154c60823c5594f2107ed6e2d8431bb04058b3badfebceae8e5d900c1b",
+    "docs/reviews/2026-10-02-root-handoff.md": "086e050da48aaaec1e5efe7673a61bdde33086a8079b740ea0859eadb390f2a8",
+    "docs/README.md": "8209e5d218b1bc1fa77c1fa45689902d6826034413e0de19ca1f4242db83ce8e",
+    ".harness/WORKFLOW.md": "3bc52c809640037c79f08abf8618d905316b925bd040d841c7a65c0a2889086f",
+    ".harness/OWNERSHIP-20261001.md": "4eb9c1b18e898b5e6093583bd72dad98960b101269acce20bf470248116dce37"
+  },
+  "runtime_code_or_asset_changes": false,
+  "canonical_identity_or_memory_changes": false,
+  "follow_up_clarifications": [
+    "Current ownership pointer before dated mobile UI sources",
+    "Subsequent D0 technical review link; D1 acceptance stays pending"
+  ],
+  "verification": {
+    "backup": "SHA256, CRC and all107 source hashes pass",
+    "retained_sections": 20,
+    "local_file_links_checked": 465,
+    "missing_file_targets": 0,
+    "redirected_anchor_routes_checked": 42,
+    "missing_redirected_anchors": 0,
+    "scoped_ui_handoff_links_checked": 23,
+    "ui_missing_fragments_or_duplicate_explicit_ids": 0,
+    "workflow_lines_before": 546,
+    "workflow_lines_after": 35,
+    "ownership_lines_before": 32,
+    "ownership_lines_after": 14,
+    "runtime_tests": "Not rerun: documentation-only operation",
+    "current_effects_and_art_acceptance": "Unchanged"
+  },
+  "later_workspace_observation": {
+    "docs_md_count": 85,
+    "new_documents_from_other_work": [
+      "docs/reviews/2026-10-02-claude-to-codex-inbox.md"
+    ],
+    "cleanup_net_md_reduction": 11,
+    "commit_docs_md_count": 84
+  }
+}

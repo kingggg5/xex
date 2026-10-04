@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Control layout DOM contracts</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#102236;color:#f0e7ca;font:14px system-ui}header{padding:16px}h1{font-size:22px;margin:0 0 8px}p{line-height:1.5}button{font:inherit}iframe{display:block;margin:16px;border:1px solid #998361}#results{padding:0 20px 20px}.pass{color:#b9edb5}.fail{color:#ffb3ae}#fixture{position:fixed;inset:0}#hud{position:absolute;inset:0;pointer-events:none}#hud>*{pointer-events:auto}.desktop-hotbar{display:flex;gap:8px;position:absolute;bottom:30px;left:35%;padding:10px}.desktop-hotbar button{width:52px;height:52px}.mobile-controls{display:none}.mobile-actions{position:absolute;right:20px;bottom:20px;transform:scale(.72);transform-origin:bottom right;width:200px;height:170px}.mobile-actions button{position:absolute;width:44px;height:44px}.mobile-actions [data-action="attack"]{right:0;bottom:0;width:72px;height:72px}.mobile-actions [data-action="arc_slash"]{left:0;top:0}.mobile-actions [data-action="guard"]{left:70px;top:0}.mobile-actions [data-action="dodge"]{left:0;bottom:0}#mobile-potion{left:70px;bottom:0}#joystick{position:absolute;left:20px;bottom:30px;width:104px;height:104px;border-radius:50%}#bag-button{position:absolute;right:28px;top:25px;width:44px;height:44px}#menu-button{position:absolute;right:82px;top:25px;width:44px;height:44px}.game-modal{position:absolute;z-index:20;inset:100px 20%;padding:15px;background:#1b3550}#case-results{position:absolute;top:110px;left:18px;max-width:250px;max-height:180px;overflow:auto;pointer-events:none;font-size:11px;line-height:1.4}@media(max-width:900px){.desktop-hotbar{display:none}.mobile-controls{display:block}.game-modal{inset:90px 5%}}.frame-mode>header,.frame-mode>#results{display:none}.fixture-mode header{display:none}.fixture-mode #results{display:none}button:focus-visible{outline:3px solid #c1e6ff}
+</style>
+<header><h1>Control layout DOM contracts</h1><p>This isolated fixture uses the production controller with in-memory storage. It checks DOM behavior and real CSS geometry. Synthetic pointer dispatch uses a capture stub; it does not qualify native touch gestures, safe-area hardware, the game itself or phone performance.</p><p id="summary" role="status">Running desktop, mobile landscape and mobile portrait contracts…</p></header>
+<ol id="results"></ol>
+<div id="fixture" hidden>
+  <div id="hud">
+    <div class="desktop-hotbar"><button data-action="attack">Attack</button><button data-action="arc_slash">Arc</button><button data-action="guard">Guard</button><button data-action="dodge">Dodge</button><button id="potion-button">Potion</button></div>
+    <section class="mobile-controls"><button id="joystick">Move</button><div class="mobile-actions"><button data-action="attack">Attack</button><button data-action="arc_slash">Arc</button><button data-action="guard">Guard</button><button data-action="dodge">Dodge</button><button id="mobile-potion">Potion</button></div></section>
+    <button id="bag-button">Bag</button><button id="menu-button">Menu</button>
+  </div>
+  <div id="modal-backdrop"></div><ol id="case-results"></ol>
+</div>
+<script type="module" src="./hud-control-layout-dom-review.mjs"></script>
+</html>

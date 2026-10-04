@@ -1,0 +1,27 @@
+{
+  "id": "xexoria-astral-ui-v2",
+  "started": "2026-10-01",
+  "reviewed": "2026-10-02",
+  "frame": {
+    "file": "panel-frame-v2.svg",
+    "size": [
+      192,
+      192
+    ],
+    "nine_slice": 48,
+    "origin": "Original hand-authored SVG",
+    "sha256": "7d7b3d792096f3738f7e2533c4120c0f04893c9a91eaca2fb744bc68c7a8ebc2"
+  },
+  "stone": {
+    "source": "apps/client/src/assets/world/stone_foundation_albedo.png",
+    "size": [
+      512,
+      512
+    ],
+    "origin": "Existing original project texture; tools/build_world_textures.py",
+    "pixel_modification": false
+  },
+  "fonts": "Existing OFL Noto Sans Thai and login Marcellus",
+  "new_raster_assets": 0,
+  "paid_generation_jobs": 0
+}

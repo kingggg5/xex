@@ -1,0 +1,55 @@
+{
+  "schema": "xexoria.sweep-delivery/1",
+  "task": "A30-SC1",
+  "created_utc": "2026-10-02T14:00:01.2801857Z",
+  "scope": "tools/sweep/** only",
+  "shared_harness_state_modified": false,
+  "shared_ledger_modified": false,
+  "server_client_source_modified": false,
+  "commits_pushes": false,
+  "checks": {
+    "fmt": "PASS",
+    "tests": 17,
+    "clippy": "PASS -D warnings",
+    "release_build": "PASS",
+    "patch_apply_check": "PASS (not applied)",
+    "cli_help": "PASS",
+    "capture_lock_guard": "PASS, no network or ledger",
+    "cargo_deny": "UNAVAILABLE: not installed"
+  },
+  "fixture": {
+    "path": "%USERPROFILE%\\Documents\\game\\tools\\sweep\\evidence\\tests\\a9c16afe-9e1f-4dd9-a2e0-201364938623",
+    "requested_counts": [
+      4,
+      6
+    ],
+    "admitted": 4,
+    "scenarios": [
+      "idle",
+      "wander",
+      "party-combat",
+      "zone-change"
+    ],
+    "ledger_rows": 8,
+    "synthetic": true
+  },
+  "remaining_gate": "500 actual admitted bots and server tick p95: NOT RUN; root hook wiring, disposable 500-session auth fixture and capture-free window required",
+  "jev": "UNVERIFIED: main-thread external private-data approval not carried into this side task; local deterministic fallback",
+  "sha256": {
+    "tools/sweep/src/lib.rs": "f3ca0f3372e6d710b447385a05ea806be32748d8ecea0d8bacd341ce12794407",
+    "tools/sweep/patches/tick_profile.rs": "bc46111b231f37db31d752ca1760dc0e45f16c7db556209d8e386e9553fa4217",
+    "tools/sweep/README.md": "950745e8728c21c35645ce65156cccf80f5fce407c3e363af86392256e59f773",
+    "tools/sweep/src/runner.rs": "1a33421b3c1c7975321d8d9b0f10baa989e1c3e1feee3d84a6ddb48fb9237074",
+    "tools/sweep/src/protocol.rs": "eff0869a38757de7d6612831c11e2768522ed4b54ff4c57524b44a3c572dfe65",
+    "tools/sweep/patches/README.md": "2f634cdfa0bf77655b848e5ea1e0f881613257e0d12a9f5f3785d269e7e1f66b",
+    "tools/sweep/src/config.rs": "a7a556a350f11fd32110f582d0ba377d0433a877bbb0327fb62c62f7d9e8ae95",
+    "tools/sweep/src/metrics.rs": "d82f66af87c59d7e4f9f95277a7cea3ae4f2047b08a1af2200da26f375ef78db",
+    "tools/sweep/src/main.rs": "fb0dd4103d0294a04eede517c7304ac5bb89a22a067d4aa62543dca953dcae43",
+    "tools/sweep/tests/loopback.rs": "1268bad45f30191f6b895840e3c68c7423420a3087f3101e1e39e2a605f47097",
+    "tools/sweep/tests/tick_profile_proposal.rs": "75c49e1d10c34d9e78c0c6213c10e34844754b1646a35cf8d4402e3b56cfbe11",
+    "tools/sweep/patches/tick-profile-hook.patch": "075067fdefa3be88668a1b5a7be54652b8d64fdd969b85e4e19b7200ad6d1825",
+    "tools/sweep/Cargo.lock": "bee59c9366480e0a6c5a47476c555a2a7e0f7fa1627ea3b9c88f179d66b0f639",
+    "tools/sweep/Cargo.toml": "8023e5fab5afe2fd16140f3b1fe17f6bcd090ee96dd63102a9d3df011178f586",
+    "tools/sweep/src/ledger.rs": "1866dc663ef54b28f8821ffe43c4e93bf67f29cff34af4bc92d5f5190c20aa60"
+  }
+}

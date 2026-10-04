@@ -1,0 +1,51 @@
+{
+  "schema": "xexoria.named-signpost-anchors/1",
+  "items": [
+    {
+      "id": "ST8_primary_trail_sign",
+      "xz": [
+        -10,
+        -22
+      ],
+      "sourceAnchor": "blueprintST8 primary;destination trail_start[0,-24]",
+      "pathMinClearance": 3.059644256269407,
+      "arenaClearance": 35.07440918375928,
+      "southWarpClearance": 76.63039620647382
+    },
+    {
+      "id": "ST8_falls_junction",
+      "xz": [
+        -6.5,
+        -51.2
+      ],
+      "sourceAnchor": "southbound_trail/cove_path join[-10,-54], northeastverge",
+      "pathMinClearance": 2.30096758272496,
+      "arenaClearance": 6.013605968822564,
+      "southWarpClearance": 47.222405358564814
+    },
+    {
+      "id": "ST8_glade_north",
+      "xz": [
+        -2.4,
+        -55.3
+      ],
+      "sourceAnchor": "southboundtrail northarenaedge, vergeoutside12mkeepclear",
+      "pathMinClearance": 1.2933123204865447,
+      "arenaClearance": 0.924782396620845,
+      "southWarpClearance": 42.762976301809736
+    },
+    {
+      "id": "ST8_south_road",
+      "xz": [
+        3.8,
+        -99
+      ],
+      "sourceAnchor": "southbound_trail→south_gate[0,-101], eastvergeoutsidewarp",
+      "pathMinClearance": 1.7999999999999998,
+      "arenaClearance": 19.232034836046143,
+      "southWarpClearance": 1.2941821107167772
+    }
+  ],
+  "counts": "fourposts total includingexplicitST8primary, not fourextra +primary",
+  "scope": "Rootroutinevergeplacement retainingexactprimary andnamedlayout destinations; terrain/collider native verification pending"
+}

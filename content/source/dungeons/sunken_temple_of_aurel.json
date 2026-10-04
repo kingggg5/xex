@@ -1,0 +1,50 @@
+{
+  "schema": "xexoria.dungeon/1",
+  "id": "sunken_temple_of_aurel",
+  "name_key": "dungeon.sunken_temple_of_aurel.name",
+  "overworld_entrance": {
+    "zone_ref": "starter_zone_draft",
+    "position": [64, 0, 64],
+    "radius": 8,
+    "facing": 1.5707963267948966
+  },
+  "package": {
+    "manifest_path": "dungeons/sunken_temple_of_aurel/d2_blockout_v1/manifest.json",
+    "critical_bytes_budget": 12582912
+  },
+  "spawn": { "room_id": "entrance_hall", "position": [0, 0, 3.5], "facing": 3.141592653589793 },
+  "return_portal": {
+    "room_id": "entrance_hall",
+    "position": [0, 0.32, 12.5],
+    "radius": 2.4,
+    "facing": 0,
+    "availability": "always",
+    "destination": { "zone_ref": "starter_zone_draft", "position": [64, 0, 48], "facing": 4.71238898038469 }
+  },
+  "rooms": [
+    { "id": "entrance_hall", "bounds": { "min": [-8, 0, -8], "max": [8, 7, 16] }, "encounter_refs": [] },
+    { "id": "descent_stair", "bounds": { "min": [-3, -3.2, -16], "max": [3, 7, -8] }, "encounter_refs": [] },
+    { "id": "flooded_colonnade", "bounds": { "min": [-12, -3.6, -48], "max": [12, 3.8, -16] }, "encounter_refs": ["colonnade_sentinels"] },
+    { "id": "corridor_2", "bounds": { "min": [-3, -3.2, -56], "max": [3, 3.8, -48] }, "encounter_refs": [] },
+    { "id": "gate_of_the_sun", "bounds": { "min": [-8, -3.2, -72], "max": [8, 3.8, -56] }, "encounter_refs": ["sun_gate_puzzle"] },
+    { "id": "dome_ramp", "bounds": { "min": [-3, -6.4, -86], "max": [3, 3.8, -72] }, "encounter_refs": [] },
+    { "id": "collapsed_dome", "bounds": { "min": [-14, -6.4, -114], "max": [14, 2.6, -86] }, "encounter_refs": ["dome_ambush"] },
+    { "id": "sanctum_stair", "bounds": { "min": [-3, -8, -124], "max": [3, 0.6, -114] }, "encounter_refs": [] },
+    { "id": "guardian_sanctum", "bounds": { "min": [-16, -8.6, -156], "max": [16, 1, -124] }, "encounter_refs": ["aurel_guardian"] },
+    { "id": "reward_alcove", "bounds": { "min": [-4, -8, -164], "max": [4, -1, -156] }, "encounter_refs": [] }
+  ],
+  "encounters": [
+    { "id": "colonnade_sentinels", "room_id": "flooded_colonnade", "kind": "combat", "content_ref": "aurel_statue_sentinels_draft", "spawn_positions": [[-4, -3.2, -26], [4, -3.2, -36], [-9, -3.6, -30], [9, -3.6, -40]] },
+    { "id": "sun_gate_puzzle", "room_id": "gate_of_the_sun", "kind": "puzzle", "content_ref": "aurel_sun_mirror_gate_draft", "spawn_positions": [[5, -3.2, -64], [-5, -3.2, -64], [0, -3.2, -69]] },
+    { "id": "dome_ambush", "room_id": "collapsed_dome", "kind": "combat", "content_ref": "aurel_dome_ambush_draft", "spawn_positions": [[6, -6.4, -96], [-6, -6.4, -104], [0, -6.4, -92], [10.5, -4, -104]] },
+    { "id": "aurel_guardian", "room_id": "guardian_sanctum", "kind": "boss", "content_ref": "aurel_guardian_draft", "spawn_positions": [[0, -7.52, -140]] }
+  ],
+  "boss": { "id": "aurel_guardian", "encounter_ref": "aurel_guardian", "content_ref": "aurel_guardian_draft" },
+  "rewards": {
+    "authority": "server",
+    "trigger_encounter_ref": "aurel_guardian",
+    "table_ref": "aurel_completion_rewards_draft",
+    "dedupe_scope": "instance_encounter_character"
+  },
+  "content_version": "aurel_d2_blockout_v1"
+}

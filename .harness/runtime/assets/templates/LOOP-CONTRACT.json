@@ -1,0 +1,58 @@
+{
+	"schema_version": 1,
+	"loop_id": "replace-me",
+	"project_id": "",
+	"run_id": "",
+	"level": "goal",
+	"trigger": {
+		"type": "human",
+		"spec": "manual",
+		"dedupe_key": "replace-me",
+		"overlap_policy": "reject",
+		"max_runs": 1
+	},
+	"objective": {
+		"outcome": "Replace this with one observable outcome.",
+		"baseline": "Replace this with the current measured or reproducible state and its evidence source.",
+		"done_when": [
+			"Every required verifier passes against the same accepted candidate."
+		],
+		"excluded_scope": [
+			"Anything outside the approved outcome and control scopes."
+		]
+	},
+	"verifiers": [
+		{
+			"id": "acceptance",
+			"kind": "deterministic",
+			"command_id": "project-acceptance",
+			"success": "The trusted verifier succeeds without weakening its checks.",
+			"evidence_path": ".harness/evidence/loop-acceptance.json"
+		}
+	],
+	"budgets": {
+		"max_iterations": 5,
+		"max_elapsed_seconds": 14400,
+		"max_iteration_seconds": 3600,
+		"max_tokens": 1000000,
+		"max_cost_microusd": 50000000,
+		"max_external_calls": 20,
+		"max_consecutive_failures": 3,
+		"no_progress_cycles": 2,
+		"max_parallel": 1
+	},
+	"control": {
+		"execution_strategy": "single-owner",
+		"graph_id": "",
+		"read_scope": ["."],
+		"write_scope": [],
+		"side_effect": "none",
+		"human_gates": ["scope-change", "budget-change", "architecture-change", "consequential-action"],
+		"rollback_revision": ""
+	},
+	"evidence": {
+		"progress_path": ".harness/EVIDENCE.md",
+		"best_artifact_path": ".harness/evidence/loop-best.json",
+		"usage_path": ".harness/evidence/loop-usage.json"
+	}
+}

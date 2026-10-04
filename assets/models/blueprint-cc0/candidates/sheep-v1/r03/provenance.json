@@ -1,0 +1,17 @@
+{
+  "author": "Quaternius",
+  "published": "2018-06-08",
+  "source": "https://opengameart.org/content/lowpoly-animated-farm-animal-pack",
+  "licence": "CC0-1.0",
+  "archive_url": "https://opengameart.org/sites/default/files/Farm%20Animals%20by%20%40Quaternius.zip",
+  "archive_sha256": "9ff42b7e2445eaf259e4734c08172637db92e4b59a6145909ac56d946152c39b",
+  "sheep_blend_sha256": "d4f137f393e5b3e5ba28af0977efbaef6e0ba7a6682e35b35f868f5caff47c7e",
+  "archive_original": "%USERPROFILE%\\Downloads\\Xexoria-Game\\sources\\cc0\\quaternius-farm-animal-2018-author-mirror\\Farm Animals by @Quaternius.zip",
+  "changes": [
+    "Metreunit/centre-foot normalization; sourcepose parity maxerror3.2098083538618706e-7m.",
+    "Matte nonmetal woolivory/facebrown materialslots preserved.",
+    "Bounded612/426/244triLODs; sourcejoint/validclips retained.",
+    "Removed95 dead curves targeting nonexistent sourceTail1–4bones; no new motion."
+  ],
+  "source_immutable": true
+}

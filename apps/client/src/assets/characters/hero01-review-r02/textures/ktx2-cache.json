@@ -1,0 +1,70 @@
+{
+ "schema": "xexoria.ktx2-cache/1",
+ "entries": {
+  "946d9a5a2f49c62d1ce4b1a7352920e2ec98cdd94316cf221b147ac07ff95edf": {
+   "file": "hero-01-p2-smartuv-4k-pbr-60b43240-glb_normal-5579e57426d0.ktx2",
+   "sha256": "5579e57426d0eb921987f225d470c99e4c3979d75ab56a41690677a189a973bf",
+   "bytes": 2168903,
+   "source_sha256": "5d94a205b70cbaf713105c65c96192fd5d819fa056e051381011d7ba83ab4d7b",
+   "mode": "uastc",
+   "settings": {
+    "level": 2,
+    "rdo": true,
+    "rdoLambda": 2,
+    "zstd": 9
+   },
+   "slots": [
+    "normalTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  },
+  "ce9a3affb57236917dcb8b12bdb039293358766724c6751d8219245e21f73a14": {
+   "file": "hero-01-p2-smartuv-4k-pbr-60b43240-glb_basecolor-afbd50b5d321.ktx2",
+   "sha256": "afbd50b5d321981e00d24270dce9361fa64c14e6686b57cefd7a938477f2ae63",
+   "bytes": 820956,
+   "source_sha256": "ddacd0d650baacc70b86ababe6ddfd5d129e99ae0fe6098831d736bd23a145ef",
+   "mode": "etc1s",
+   "settings": {
+    "quality": 180
+   },
+   "slots": [
+    "baseColorTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  },
+  "e2bdbae55ce5d6b66d50fd8aa5619a4e65bbd8429793e8761c1f927d88a22c54": {
+   "file": "hero-01-p2-smartuv-4k-pbr-60b43240-glb_rm-1a1e33df6f56.ktx2",
+   "sha256": "1a1e33df6f56fa7e6e265a6320815cd2919caa86976760fb4791a006cbe4a81f",
+   "bytes": 2775558,
+   "source_sha256": "3bccbdc1407ee7c5348a7d5ba4f06d4ad1cadbb32fb3333e0feb7d0383a06067",
+   "mode": "uastc",
+   "settings": {
+    "level": 2,
+    "rdo": true,
+    "rdoLambda": 2,
+    "zstd": 9
+   },
+   "slots": [
+    "metallicRoughnessTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  },
+  "8a3a18f859c04cd7b050cf8c1bb940030c14c6b4ef6af11150c190f8b7ce7936": {
+   "file": "hero-01-p2-smartuv-4k-pbr-60b43240-glb_rm-6b39015a1c48.ktx2",
+   "sha256": "6b39015a1c480939a7e03e2a4fc0051b2bf7acbda0a99094e53b9e779d57edbc",
+   "bytes": 812228,
+   "source_sha256": "86e5b070802ffe7d113b81e38bb9e14effd8bfad6463112dc00b5114c247953c",
+   "mode": "uastc",
+   "settings": {
+    "level": 2,
+    "rdo": true,
+    "rdoLambda": 2,
+    "zstd": 9
+   },
+   "slots": [
+    "metallicRoughnessTexture"
+   ],
+   "ktx": "ktx version: v4.4.2"
+  }
+ }
+}

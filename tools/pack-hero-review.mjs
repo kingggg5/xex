@@ -1,0 +1,31 @@
+import {createRequire} from 'node:module';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const requireClient=createRequire(path.join(root,'apps/client/package.json'));
+const load=name=>import(pathToFileURL(requireClient.resolve(name)).href);
+const {NodeIO}=await load('@gltf-transform/core');
+const {ALL_EXTENSIONS}=await load('@gltf-transform/extensions');
+const {MeshoptEncoder,MeshoptDecoder}=await load('meshoptimizer');
+await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'meshopt.encoder':MeshoptEncoder});
+const destination=path.join(root,'apps/client/src/assets/characters/heroes-review-r01');
+await mkdir(destination,{recursive:true});
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+const receipts=[];
+for(const name of ['hero02_witch_lod0','hero02_witch_lod1','hero02_witch_lod2','hero02_staff_lod0']){
+ const source=path.join(root,'assets/models/heroes/hero02/runtime',name+'.glb');
+ const before=await readFile(source),document=await io.read(source);
+ const textures=document.getRoot().listTextures().map(t=>({name:t.getName(),sha256:hash(t.getImage()),bytes:t.getImage().byteLength,mime:t.getMimeType()}));
+ const output=path.join(destination,name+'.glb'),bytes=await io.writeBinary(document);
+ if(!before.equals(await readFile(source)))throw Error('Source changed during pack: '+name);
+ await writeFile(output,bytes);
+ const checked=await io.read(output);
+ if(checked.getRoot().listSkins().length!==document.getRoot().listSkins().length||checked.getRoot().listAnimations().length!==document.getRoot().listAnimations().length)throw Error('Rig/clip count changed');
+ if(JSON.stringify(checked.getRoot().listTextures().map(t=>hash(t.getImage())))!==JSON.stringify(textures.map(t=>t.sha256)))throw Error('Texture bytes changed');
+ receipts.push({source:path.relative(root,source).replaceAll('\\','/'),sourceSha256:hash(before),output:path.relative(root,output).replaceAll('\\','/'),outputSha256:hash(bytes),bytes:bytes.length,skins:checked.getRoot().listSkins().length,joints:checked.getRoot().listSkins().map(s=>s.listJoints().length),clips:checked.getRoot().listAnimations().map(a=>a.getName()),textures,status:'SELF_CONTAINED_REVIEW_CANDIDATE_SOURCE_UNCHANGED'});
+}
+await writeFile(path.join(root,'planning/evidence/heroes-six-20261004/packed-hero02.json'),JSON.stringify({schema:'xexoria.hero-review-pack/1',createdAt:new Date().toISOString(),lossyChanges:false,receipts},null,2)+'\n');
+console.log(JSON.stringify(receipts.map(r=>({file:r.output,bytes:r.bytes,joints:r.joints,clips:r.clips}))));

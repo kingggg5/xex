@@ -1,0 +1,114 @@
+{
+  "id": "blueprint_cc0_palm",
+  "status": "CC0_STANDIN",
+  "licence": "CC0",
+  "source": "https://kenney.nl/assets/nature-kit",
+  "standinFor": [
+    "PL1"
+  ],
+  "lods": [
+    {
+      "lod": 0,
+      "file": "assets/models/blueprint-cc0/candidates/palm-palette-v2/blueprint_cc0_palm_palette_v2_lod0.meshopt.glb",
+      "tris": 336,
+      "sha256": "207fd44a788aaa121b513ad63c06f29bd02176ce517c30ad8977a7731ba86e38",
+      "bytes": 9192
+    },
+    {
+      "lod": 1,
+      "file": "assets/models/blueprint-cc0/candidates/palm-palette-v2/blueprint_cc0_palm_palette_v2_lod1.meshopt.glb",
+      "tris": 336,
+      "sha256": "207fd44a788aaa121b513ad63c06f29bd02176ce517c30ad8977a7731ba86e38",
+      "bytes": 9192
+    },
+    {
+      "lod": 2,
+      "file": "assets/models/blueprint-cc0/candidates/palm-palette-v2/blueprint_cc0_palm_palette_v2_lod2.meshopt.glb",
+      "tris": 336,
+      "sha256": "207fd44a788aaa121b513ad63c06f29bd02176ce517c30ad8977a7731ba86e38",
+      "bytes": 9192
+    }
+  ],
+  "bounds": {
+    "min": [
+      -2.54319,
+      0,
+      -2.54318
+    ],
+    "max": [
+      2.54319,
+      6.99983,
+      2.5432
+    ]
+  },
+  "materialSlots": [
+    "woodBark",
+    "leafsGreen"
+  ],
+  "textures": [],
+  "provenance": {
+    "source": "https://kenney.nl/assets/nature-kit",
+    "licence": "CC0 inside downloaded Nature Kit2.1 zip",
+    "files": [
+      {
+        "file": "assets/models/blueprint-cc0/source/kenney-nature-kit/Models/GLTF format/tree_palmDetailedTall.glb",
+        "sha256": "2cbea0f9621cde884c63a7b4ad787bda1d051fa27ef3c66b9f2b65328dc53683"
+      },
+      {
+        "file": "assets/models/blueprint-cc0/source/kenney-nature-kit/License.txt",
+        "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+      }
+    ]
+  },
+  "collider": {
+    "type": "cylinder",
+    "radius": 0.25,
+    "height": 7,
+    "rootAnchor": [
+      0,
+      0,
+      0
+    ],
+    "status": "PROXY_ONLY_ROOT_OWNS_ADMISSION"
+  },
+  "shadowProxy": {
+    "file": "assets/models/blueprint-cc0/candidates/palm-palette-v2/blueprint_cc0_palm_palette_v2_lod2.meshopt.glb",
+    "tris": 336
+  },
+  "wind": {
+    "rootAnchor": [
+      0,
+      0,
+      0
+    ],
+    "nodeNames": [
+      "palm_fronds_0",
+      "palm_fronds_1"
+    ],
+    "maxDisplacementM": 0.08,
+    "frequencyHz": 0.6,
+    "status": "ANCHOR_METADATA_LOADER_REQUIRED"
+  },
+  "componentGaps": [
+    "Coconuts not present in this licensed stock model."
+  ],
+  "lodPolicy": "Protected silhouettes; equal low triangle counts at multiple LODs do not claim a reduction. Geometry remains compact.",
+  "candidateVersion": "palm-palette-v2",
+  "admission": "NOT_ADMITTED_ROOT_COMPARISON_REQUIRED",
+  "palette": {
+    "leaf_srgb": "#B4C45A",
+    "bark_srgb": "#A38A64",
+    "storage": "linear glTF baseColorFactor",
+    "metallic": 0,
+    "emissive": [
+      0,
+      0,
+      0
+    ]
+  },
+  "verdict": {
+    "original_native": "ART_FAIL: almostblack/rigidslabs, preserved",
+    "palette": "STATIC_VALIDATED_NATIVE_PENDING",
+    "shape": "ITERATE: licensed stock geometry remains rigid slabs; no invented tree or shape approval."
+  }
+}

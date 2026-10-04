@@ -1,0 +1,448 @@
+{
+  "schema": "aetherfield.texture-foundry/1",
+  "revision": "r5-foundry-3",
+  "generator": "assets/blender/city_r5/foundry/build_materials_r5.py",
+  "library": "assets/blender/city_r5/foundry/fcore.py",
+  "license": "Original procedural images; no third-party scans or reference pixels.",
+  "size": [
+    1024,
+    1024
+  ],
+  "materials": [
+    {
+      "name": "stone_wall_warm",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/stone_wall_warm_albedo.png",
+          "bytes": 914058,
+          "sha256": "97cf188ca1a09c42b07f355bc69604c4da0530196fea11203fb450e971aec5da"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/stone_wall_warm_normal.png",
+          "bytes": 1744551,
+          "sha256": "87274b4ea2ae9263b375df0736318d976b7a316bcf0916a3cc44f413b47f6a04"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/stone_wall_warm_orm.png",
+          "bytes": 1201439,
+          "sha256": "743d09055a177488291a9ed596b299000b02453af64229abec13ef54fc54f9bc"
+        }
+      }
+    },
+    {
+      "name": "plaster_cream",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/plaster_cream_albedo.png",
+          "bytes": 1237778,
+          "sha256": "45208fb29f034ae97741c40d51d8b3d8b0295981356049979457dc9ee939a919"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/plaster_cream_normal.png",
+          "bytes": 1465018,
+          "sha256": "d4da41250542b6a614ec253ddceae66aa9678c08f18ac55c2afe07a25d2af5dc"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/plaster_cream_orm.png",
+          "bytes": 1345360,
+          "sha256": "7898ca0f7262a7b88fe1d8a205096cccbaa923077e28e9dd51346263b027bcb3"
+        }
+      }
+    },
+    {
+      "name": "timber_dark",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/timber_dark_albedo.png",
+          "bytes": 663202,
+          "sha256": "abb56a9987b3de57f13187d90e5ea45d3bc0996fee89f1968e29fb9bcdcd11be"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/timber_dark_normal.png",
+          "bytes": 251137,
+          "sha256": "16f6923d785b8c88f9190700ea1406894003aa764926e84aaeae3473dcf62714"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/timber_dark_orm.png",
+          "bytes": 495296,
+          "sha256": "8255a0c3cd9e42f513e4217fa0b3200cdfca0bb3f70cb28a2326775a86e21da9"
+        }
+      }
+    },
+    {
+      "name": "grass_ground",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/grass_ground_albedo.png",
+          "bytes": 1075141,
+          "sha256": "9926dd57b6a5810700e22e5c5967e3d838f8f3c504bb14aecb283856b9bbdff4"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/grass_ground_normal.png",
+          "bytes": 864540,
+          "sha256": "4dba4777db657d4dcf3cb6db4e0e38de5f858df48c0b1f06b8e7522adbda1073"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/grass_ground_orm.png",
+          "bytes": 944948,
+          "sha256": "8cb283a82d07b774489b81c90bd21bd8469b6fc8992dfaa235d37ef2b01f1c64"
+        }
+      }
+    },
+    {
+      "name": "cliff_rock",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/cliff_rock_albedo.png",
+          "bytes": 1321408,
+          "sha256": "ed964e864bd8ecfeb56843110675a8a555a31590ed1d2622afa847f1fc42468b"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/cliff_rock_normal.png",
+          "bytes": 1691641,
+          "sha256": "b10305bd959f7eb24f0fc774d604aa32d534987635268aec3d84eed00a9ece85"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/cliff_rock_orm.png",
+          "bytes": 1595761,
+          "sha256": "04ed84aeb7b751160ab5364602dfacfcb10c85edb64d72803999ee54c80d5a1d"
+        }
+      }
+    },
+    {
+      "name": "roof_slate_blue",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/roof_slate_blue_albedo.png",
+          "bytes": 968976,
+          "sha256": "280b8c88dcc807c6119cea7a2153de83936f55fae98df0344397c6d8138625f0"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/roof_slate_blue_normal.png",
+          "bytes": 1524472,
+          "sha256": "a0386e719bbf5a28db0bdaad009454c27f06297f6eb2cad39504c945c288735d"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/roof_slate_blue_orm.png",
+          "bytes": 996983,
+          "sha256": "f965ac66e117237367dbb1b1f8da5dd3f80a0d00e2cafee30da372d08835db24"
+        }
+      }
+    },
+    {
+      "name": "roof_slate_navy",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/roof_slate_navy_albedo.png",
+          "bytes": 880669,
+          "sha256": "b0632a8e7d03b5618480c07dff8f0a362c97e24cc56fd94f9f9c104b92cb14d3"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/roof_slate_navy_normal.png",
+          "bytes": 1521080,
+          "sha256": "d0b9c651c7c6d7313c7ec624b744ccb1717af1a55d3b4f0ba3c398256f6bc802"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/roof_slate_navy_orm.png",
+          "bytes": 998412,
+          "sha256": "34f579f406d0058b3a21d6bdf040f17e7a28709c28834ca92cbd5a805dbffaa6"
+        }
+      }
+    },
+    {
+      "name": "roof_shingle_green",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/roof_shingle_green_albedo.png",
+          "bytes": 906050,
+          "sha256": "128c64eda533738580051ac9e964d1f8e3be9766aa7b2534e3cf2d7fe4926aa6"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/roof_shingle_green_normal.png",
+          "bytes": 1523358,
+          "sha256": "bbaacc6ae3c408081c7e4dd12bad75c7acda540b5188808f7c6f6db0d0a25b3f"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/roof_shingle_green_orm.png",
+          "bytes": 996711,
+          "sha256": "c8e8af965df116fbd4560482685137cefbf55f21afad80d81e192050c427cab6"
+        }
+      }
+    },
+    {
+      "name": "roof_tile_red",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/roof_tile_red_albedo.png",
+          "bytes": 960714,
+          "sha256": "50dcf9258010c42a00edc7f8028589c9f78f43915fa0f5a4312d2489c38a8dc8"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/roof_tile_red_normal.png",
+          "bytes": 1519239,
+          "sha256": "33d304062c78424ae7150cd33d02c1d2e14d0ab339ddf8deaa25e50332623089"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/roof_tile_red_orm.png",
+          "bytes": 999709,
+          "sha256": "3dca3636c7c8485f610812ea45d9b9d0c490ae89df55236ceaff4512dd9ef978"
+        }
+      }
+    },
+    {
+      "name": "stone_trim_carved",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/stone_trim_carved_albedo.png",
+          "bytes": 1271537,
+          "sha256": "2769efa4760817706228c4117801dcbb6df73e4fc60ae77b99a84d3c71c4af97"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/stone_trim_carved_normal.png",
+          "bytes": 2013740,
+          "sha256": "9b7ff40158ee8599348045999e56d3fd033fe4e3e489e85bec76808b285e93ac"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/stone_trim_carved_orm.png",
+          "bytes": 1373262,
+          "sha256": "ebf5d5fd62b15360f761404a3b73a50f592fdc9a9778befaf73a6dd793a63da5"
+        }
+      }
+    },
+    {
+      "name": "stone_foundation",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/stone_foundation_albedo.png",
+          "bytes": 1176214,
+          "sha256": "1d3825fdaf1f927e264f850de18b6ab31cd3497e40a89683d251cd7218ef09f2"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/stone_foundation_normal.png",
+          "bytes": 1967263,
+          "sha256": "cd95cabce21ea35cf3a798f37b9749469d4123fabe2438e81b84bafcd5402a5f"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/stone_foundation_orm.png",
+          "bytes": 1514702,
+          "sha256": "045fc2b78ef0b77a82e6178aac3ee41a6087d5e5d773a94e1b1744a425e94ad7"
+        }
+      }
+    },
+    {
+      "name": "plaza_flagstone",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/plaza_flagstone_albedo.png",
+          "bytes": 1464732,
+          "sha256": "d919d8ed65b813beb2289fbb04106f622ea96cbd931818a894d3920a8a340226"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/plaza_flagstone_normal.png",
+          "bytes": 1849727,
+          "sha256": "b6914634a820e10d58ff2ff7c92b30ed54acc50028a415f903367e1151cc390d"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/plaza_flagstone_orm.png",
+          "bytes": 1648591,
+          "sha256": "00bc091f7611a08d790aca01f99f8a09e9907dd3c83a32e17a6a76a2f040db8b"
+        }
+      }
+    },
+    {
+      "name": "paver_surface",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/paver_surface_albedo.png",
+          "bytes": 993938,
+          "sha256": "e6080af363603e4e65c731dce7930a4d95b13e2845a534e4b9cf82286f3dc14c"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/paver_surface_normal.png",
+          "bytes": 1282306,
+          "sha256": "709e46a5f728e2ba11bd72cde0f8f2303a027d3348a8d493f813230d79baf16c"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/paver_surface_orm.png",
+          "bytes": 1146659,
+          "sha256": "cb73c7b3d51d8a866e49f61e4755377072f9f46a4010500998345b5f491067ca"
+        }
+      }
+    },
+    {
+      "name": "stone_accent_bluegrey",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/stone_accent_bluegrey_albedo.png",
+          "bytes": 1205786,
+          "sha256": "70638945bd92e07680b33080d4c86ded9562f66af3c8ccc684ebc8df6850fc2c"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/stone_accent_bluegrey_normal.png",
+          "bytes": 1987163,
+          "sha256": "7cebf3cce876d600c38d732091bd1aa20fe69121109f8df98e3b2cacc0b5e214"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/stone_accent_bluegrey_orm.png",
+          "bytes": 1454319,
+          "sha256": "680907f0eb631ee95b9b95bee7c6aaa4ce9f1d0c0882c4e2c49718b759143c32"
+        }
+      }
+    },
+    {
+      "name": "cobble_path",
+      "size": [
+        1024,
+        1024
+      ],
+      "tileable_seam_score": {
+        "albedo": 0.0,
+        "normal": 0.0,
+        "orm": 0.0
+      },
+      "files": {
+        "albedo": {
+          "path": "assets/models/reference-city/r5/textures/cobble_path_albedo.png",
+          "bytes": 1248318,
+          "sha256": "34cb17a73c00a44aa50722c468f69bc9c22b1e97b8ee7be5dd725c219a2fd314"
+        },
+        "normal": {
+          "path": "assets/models/reference-city/r5/textures/cobble_path_normal.png",
+          "bytes": 1877696,
+          "sha256": "77f56619f7423e9b3e0d956c0ac85834eda6778f1aa9355e73a1dc47889a58eb"
+        },
+        "orm": {
+          "path": "assets/models/reference-city/r5/textures/cobble_path_orm.png",
+          "bytes": 1492444,
+          "sha256": "5536427a35db8bddd229e5ecaa21b4f0105fe0754fc7ed4ec2850306d6bb758f"
+        }
+      }
+    }
+  ]
+}

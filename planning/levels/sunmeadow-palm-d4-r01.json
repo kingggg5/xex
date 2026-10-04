@@ -1,0 +1,22 @@
+{
+  "schema": "xexoria.palm-defect-overlay/1",
+  "revision": "D4-r01",
+  "scope": "Move only the existing ten PL1 roots; no new palms. Runtime art candidate, paired collider promotion remains pending.",
+  "targetHeightM": 6.5,
+  "groundingOffsetM": 0.02796299835435716,
+  "laneWidthM": 6,
+  "crest": {"min": [-42, -88], "max": [-36, -72]},
+  "camera": {"alpha": -1.5707963267948966, "beta": 1.18, "radius": 13, "target": [-45, 1, -78], "player": [-42, -84]},
+  "patches": [
+    {"id":"bp_PL1_000","x":-42,"z":-76,"yaw":-1.7831,"pitch":0.0872664626},
+    {"id":"bp_PL1_001","x":-40.5,"z":-75,"yaw":-2.0762,"pitch":0.0872664626},
+    {"id":"bp_PL1_002","x":-39,"z":-76,"yaw":-1.615,"pitch":0.0872664626},
+    {"id":"bp_PL1_003","x":-37.5,"z":-75,"yaw":-1.9454,"pitch":0.0872664626},
+    {"id":"bp_PL1_004","x":-36,"z":-76,"yaw":-1.892,"pitch":0.0872664626},
+    {"id":"bp_PL1_005","x":-42,"z":-72.5,"yaw":-1.6922,"pitch":0.0872664626},
+    {"id":"bp_PL1_006","x":-40.5,"z":-72.5,"yaw":-2.0685,"pitch":0.0872664626},
+    {"id":"bp_PL1_007","x":-39,"z":-72.5,"yaw":-1.6532,"pitch":0.0872664626},
+    {"id":"bp_PL1_008","x":-37.5,"z":-72.5,"yaw":-2.0527,"pitch":0.0872664626},
+    {"id":"bp_PL1_009","x":-36,"z":-72.5,"yaw":-2.1245,"pitch":0.0872664626}
+  ]
+}

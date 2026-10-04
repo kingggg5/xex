@@ -1,0 +1,22 @@
+{
+  "schema": "xexoria.third-party-provenance/1",
+  "asset": "Quaternius Universal Animation Library (UAL1) Standard, free tier",
+  "author": "Quaternius (https://quaternius.com)",
+  "licence": "CC0-1.0",
+  "licence_file": "LICENSE",
+  "release": "itch.io release of 2025-06-10 (UAL v1 rig naming: root, DEF-hips, DEF-spine.001..., Rigify-style)",
+  "retrieved_from": "https://github.com/J-Ponzo/gltf-universal-animation-library (CC0 mirror of the free Standard glTF; the mirror author states the files are as distributed on itch.io)",
+  "commit": "e24c23cf2a1323488a3faa226ea7ea21f644b73e",
+  "retrieved_on": "2026-10-02",
+  "retrieved_by": "Claude (hero02 witch integration agent) with curl over HTTPS; no installer, no account",
+  "approval": "docs/reviews/2026-10-02-heroes-rig-and-animation.md section 4.1 L0 and section 7 item 2: UAL1/UAL2 Standard are covered by the standing CC0 approval",
+  "files": [
+    {"file": "AnimationLibrary_Godot_Standard.gltf", "bytes": 2459987, "sha256": "0ff075c7ad6855c5c2c37a171592ee8f0d6ab2f58259e2be77a9b63dd8027765"},
+    {"file": "AnimationLibrary_Godot_Standard.bin", "bytes": 1587224, "sha256": "6e65377d81558333c4093dbb144a48fd19019343d82b1a3a7992a98ec0e0543c"},
+    {"file": "LICENSE", "bytes": 7048, "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"},
+    {"file": "README.md", "bytes": 1051, "sha256": "370e6ff244ef43b269f936be7d630a77a3eb7ed8bbc3315ffcae5b327b814fcb"}
+  ],
+  "skeleton": "53 joints, T-pose rest, mannequin 1.829 m, faces +Z (glTF)",
+  "clips": 46,
+  "use_in_xexoria": "Reference and retarget source for hero02 (XS1) clips; every retargeted clip records the UAL clip name in hero02_witch.clips.json"
+}

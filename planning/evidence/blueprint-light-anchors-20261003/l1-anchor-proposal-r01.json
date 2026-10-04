@@ -1,0 +1,1045 @@
+{
+  "schema": "xexoria.l1-anchor-proposal/1",
+  "status": "PROPOSED_ROOT_APPROVAL_REQUIRED_NOT_ADMITTED",
+  "started_ict": "2026-10-03T20:19:57+07:00",
+  "created_utc": "2026-10-03T13:37:00.458Z",
+  "request": "Eight existing L1 posts, minimum movements within authored route bands; no source activation",
+  "inputs_sha256": {
+    "planning/levels/sunmeadow-v2-layout.json": "d263582c15fabe8efbbac8e2ed55c1929e3b14c8b9d043309fb1003cc627314d",
+    "planning/levels/sunmeadow-blueprint-v1.json": "0baf981b84f41ce2a9416856b40c03448b17eb96e89f680619e1ab7de69e9d16",
+    "planning/levels/sunmeadow-v3-dressing.json": "da6bd4a1b034f9a0a9e201065c9d4d1d3f336c9505d002e32a54caadbb44b6ec",
+    "planning/levels/sunmeadow-v3-dressing-p1.json": "eaad30b6debd8e54af905c9d5e8b516cece1d488be9654f0b548fe34ee742550",
+    "planning/levels/sunmeadow-v3-dressing-p2.json": "b1a1fd25383dd9caa5c80cf9c6cfd56b660bf3220e547a88c5c850c6ee508ee8",
+    "content/source/zones.json": "8c837d8b448782644852a77463582e64247fdf4477a865eb237fa19310f8272d",
+    "planning/evidence/blueprint-p0-20261003/collision-addon-candidate.json": "c263e7a0bd2ffd3911f11bbc264da48920d435fbed6d001de911fa4e5ad24d2e",
+    "planning/evidence/water-20261002/water-derived.json": "5c925b68bb61f7b5b40a5362cc8d5531899772a8d8e9c719db79caaff644db46",
+    "apps/client/src/grounded-city.mjs": "ab984e5c8a9c2a5707830216914a087b0fd1e8aa9be105e29e9c77a2e69f1b84"
+  },
+  "interpretation": {
+    "post_declared_footprint_radius_m": 0.3,
+    "target_minimum_full_post_to_walkable_edge_m": 2.5,
+    "centre_to_edge_required_m": 2.8,
+    "upper_review_band_centre_to_edge_m": 3.1,
+    "primary_blueprint_xz": [
+      3,
+      -20
+    ],
+    "primary_change": "Explicit review item: original exact anchor violates full walkable-edge clearance. Same primary ID/nearby route station retained; root must approve lateral/northward adjustment."
+  },
+  "footprint_basis": "Current L1 entry footprint_r=.3; actual target dimensions.35x2.5x.35 provide a smaller .2475m circumscribed footprint, so declared.3m is conservative.",
+  "math_sources": {
+    "walk": "All authored walk_network polylines with their own half widths, plus deck/plaza polygons. Minimum signed edge distance, not nearest centreline first.",
+    "arena": "Blueprint boss circle(0,-68)r12 and Oak Wallow(32,-77.5)r10, with full post footprint.",
+    "calm": "All four authored calm_zones circles, with full post footprint.",
+    "collider": "Canonical city_traversal blockers +65 P0 addon blockers +authored featurecolliders whose Y intervals intersect0..2.5m. Capsule featurecolliders use conservative enclosing circles.",
+    "water": "Authored stream maxwidth4.5, fallspool, derivedlakes andP2rain polygons; .6m outer bank plus.3m footprint.",
+    "mounds": "T1 plus all P1 extra_mounds polygon_xz, .6m buffer plus.3m footprint.",
+    "support": "Actual canonical parseCityTraversal/sampleCityHeight,72 centre/cardinal/diagonal footprint samples. Schema1 world_support absent/false gives Y0 outside city; no hill support inferred."
+  },
+  "proposal_rows": [
+    {
+      "id": "bp_L1_000",
+      "assigned_route": "gate_road",
+      "old": {
+        "p": [
+          3,
+          -20
+        ],
+        "edge": 0.1041630560342619,
+        "arena": 36.093658625644196,
+        "calm": 9.5,
+        "full_post_to_walk_edge_m": -0.1958369439657381
+      },
+      "proposed": {
+        "q": [
+          6.012203379376158,
+          -18.118443541118122
+        ],
+        "move": 3.5515664018409194,
+        "edge": 2.8125147521618086,
+        "arena": 38.24257421983474,
+        "calm": 11.592691490480718,
+        "blocker": 10.84205597033729,
+        "water": 20.781449676424028,
+        "mound": 27.772788644740487,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.5125147521618088,
+        "path_surplus_over_required_2_5m": 0.012514752161808751,
+        "full_post_to_arena_m": 37.94257421983474,
+        "full_post_to_calm_m": 11.292691490480717,
+        "collider_surplus_with_0_3post_and_0_35player_m": 10.19205597033729,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 19.88144967642403,
+        "mound_surplus_with_0_3post_and_0_6band_m": 26.87278864474049,
+        "support_probes": [
+          {
+            "xz": [
+              6.012203379376158,
+              -18.118443541118122
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.312203379376157,
+              -18.118443541118122
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.224335413732121,
+              -17.906311506762158
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.012203379376158,
+              -17.81844354111812
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.800071345020194,
+              -17.906311506762158
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.712203379376158,
+              -18.118443541118122
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.800071345020193,
+              -18.330575575474086
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.012203379376158,
+              -18.418443541118123
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.224335413732121,
+              -18.330575575474086
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 16,
+      "route_projection": {
+        "station": 35.498693060491746,
+        "distance": 5.119999999999999,
+        "foot": [
+          0.9436619718309862,
+          -17.394366197183096
+        ],
+        "length": 42.17139085478733
+      },
+      "main_projection": {
+        "station": 35.498693060491746,
+        "distance": 5.119999999999999,
+        "foot": [
+          0.9436619718309862,
+          -17.394366197183096
+        ],
+        "length": 139.6647426485426
+      }
+    },
+    {
+      "id": "bp_L1_001",
+      "assigned_route": "gate_road",
+      "old": {
+        "p": [
+          -5,
+          0
+        ],
+        "edge": 0.7000000000000002,
+        "arena": 56.18357573492314,
+        "calm": 21.547683449261044,
+        "full_post_to_walk_edge_m": 0.4000000000000002
+      },
+      "proposed": {
+        "q": [
+          -6.574454192667576,
+          -1.4022668558852822
+        ],
+        "move": 2.1083781302040925,
+        "edge": 2.800923467665231,
+        "arena": 54.92145775359499,
+        "calm": 20.12613012960812,
+        "blocker": 12.790274963071996,
+        "water": 25.161059964316763,
+        "mound": 23.323488966965556,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.500923467665231,
+        "path_surplus_over_required_2_5m": 0.0009234676652312146,
+        "full_post_to_arena_m": 54.621457753594996,
+        "full_post_to_calm_m": 19.82613012960812,
+        "collider_surplus_with_0_3post_and_0_35player_m": 12.140274963071995,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 24.261059964316765,
+        "mound_surplus_with_0_3post_and_0_6band_m": 22.423488966965557,
+        "support_probes": [
+          {
+            "xz": [
+              -6.574454192667576,
+              -1.4022668558852822
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.2744541926675765,
+              -1.4022668558852822
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.3623221583116125,
+              -1.190134821529318
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.574454192667576,
+              -1.1022668558852822
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.78658622702354,
+              -1.190134821529318
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.874454192667576,
+              -1.4022668558852822
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.786586227023541,
+              -1.6143988902412465
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.574454192667576,
+              -1.7022668558852823
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -6.3623221583116125,
+              -1.6143988902412465
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 77,
+      "route_projection": {
+        "station": 15.501696289444439,
+        "distance": 5.100923467665231,
+        "foot": [
+          -2.493715418535392,
+          1.658287224713856
+        ],
+        "length": 42.17139085478733
+      },
+      "main_projection": {
+        "station": 15.501696289444439,
+        "distance": 5.100923467665231,
+        "foot": [
+          -2.493715418535392,
+          1.658287224713856
+        ],
+        "length": 139.6647426485426
+      }
+    },
+    {
+      "id": "bp_L1_002",
+      "assigned_route": "southbound_trail",
+      "old": {
+        "p": [
+          5,
+          -40
+        ],
+        "edge": -3.737596714501675,
+        "arena": 16.442925306655788,
+        "calm": -7.938447187191169,
+        "full_post_to_walk_edge_m": -4.037596714501675
+      },
+      "proposed": {
+        "q": [
+          -21.076,
+          -32.068
+        ],
+        "move": 27.25572233495198,
+        "edge": 2.820000000000003,
+        "arena": 29.657009014090292,
+        "calm": 15.196991883953132,
+        "blocker": 14.076,
+        "water": 5.944549541386631,
+        "mound": 13.97072257118377,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.520000000000003,
+        "path_surplus_over_required_2_5m": 0.020000000000003126,
+        "full_post_to_arena_m": 29.35700901409029,
+        "full_post_to_calm_m": 14.896991883953131,
+        "collider_surplus_with_0_3post_and_0_35player_m": 13.426,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 5.044549541386631,
+        "mound_surplus_with_0_3post_and_0_6band_m": 13.07072257118377,
+        "support_probes": [
+          {
+            "xz": [
+              -21.076,
+              -32.068
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -20.776,
+              -32.068
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -20.863867965644037,
+              -31.855867965644034
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -21.076,
+              -31.767999999999997
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -21.288132034355964,
+              -31.855867965644034
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -21.376,
+              -32.068
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -21.288132034355964,
+              -32.280132034355965
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -21.076,
+              -32.367999999999995
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -20.863867965644037,
+              -32.280132034355965
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 382,
+      "route_projection": {
+        "station": 21.349110640673516,
+        "distance": 4.820000000000003,
+        "foot": [
+          -17.22,
+          -34.96
+        ],
+        "length": 97.49335179375527
+      },
+      "main_projection": {
+        "station": 63.52050149546085,
+        "distance": 4.820000000000003,
+        "foot": [
+          -17.22,
+          -34.96
+        ],
+        "length": 139.6647426485426
+      }
+    },
+    {
+      "id": "bp_L1_003",
+      "assigned_route": "southbound_trail",
+      "old": {
+        "p": [
+          -4,
+          -60
+        ],
+        "edge": -0.5253825430657266,
+        "arena": -3.055728090000841,
+        "calm": 11.662179022434469,
+        "full_post_to_walk_edge_m": -0.8253825430657267
+      },
+      "proposed": {
+        "q": [
+          -9.59335679251417,
+          -60.168210052023724
+        ],
+        "move": 5.595885526881892,
+        "edge": 2.8199999999999985,
+        "arena": 0.3842411288580774,
+        "calm": 14.202635023032872,
+        "blocker": 14.336979810878377,
+        "water": 9.262647902733848,
+        "mound": 25.33868412527776,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.5199999999999987,
+        "path_surplus_over_required_2_5m": 0.019999999999998685,
+        "full_post_to_arena_m": 0.08424112885807739,
+        "full_post_to_calm_m": 13.902635023032872,
+        "collider_surplus_with_0_3post_and_0_35player_m": 13.686979810878377,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 8.362647902733848,
+        "mound_surplus_with_0_3post_and_0_6band_m": 24.43868412527776,
+        "support_probes": [
+          {
+            "xz": [
+              -9.59335679251417,
+              -60.168210052023724
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.29335679251417,
+              -60.168210052023724
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.381224758158206,
+              -59.95607801766776
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.59335679251417,
+              -59.86821005202373
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.805488826870134,
+              -59.95607801766776
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.89335679251417,
+              -60.168210052023724
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.805488826870134,
+              -60.38034208637969
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.59335679251417,
+              -60.46821005202372
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              -9.381224758158206,
+              -60.38034208637969
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 555,
+      "route_projection": {
+        "station": 47.83319043245189,
+        "distance": 4.8199999999999985,
+        "foot": [
+          -6.8292682926829285,
+          -56.21951219512195
+        ],
+        "length": 97.49335179375527
+      },
+      "main_projection": {
+        "station": 90.00458128723923,
+        "distance": 4.8199999999999985,
+        "foot": [
+          -6.8292682926829285,
+          -56.21951219512195
+        ],
+        "length": 139.6647426485426
+      }
+    },
+    {
+      "id": "bp_L1_004",
+      "assigned_route": "southbound_trail",
+      "old": {
+        "p": [
+          6,
+          -81
+        ],
+        "edge": 2.919349550499539,
+        "arena": 2.3178210632763516,
+        "calm": 31.608292442733095,
+        "full_post_to_walk_edge_m": 2.619349550499539
+      },
+      "proposed": {
+        "q": [
+          6,
+          -81
+        ],
+        "move": 0,
+        "edge": 2.919349550499539,
+        "arena": 2.3178210632763516,
+        "calm": 31.608292442733095,
+        "blocker": 11.400000000000004,
+        "water": 23.920075250717755,
+        "mound": 11.400000000000004,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.619349550499539,
+        "path_surplus_over_required_2_5m": 0.11934955049953899,
+        "full_post_to_arena_m": 2.017821063276352,
+        "full_post_to_calm_m": 31.308292442733094,
+        "collider_surplus_with_0_3post_and_0_35player_m": 10.750000000000004,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 23.020075250717756,
+        "mound_surplus_with_0_3post_and_0_6band_m": 10.500000000000004,
+        "support_probes": [
+          {
+            "xz": [
+              6,
+              -81
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.3,
+              -81
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.212132034355964,
+              -80.78786796564404
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6,
+              -80.7
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.787867965644036,
+              -80.78786796564404
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.7,
+              -81
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.787867965644035,
+              -81.21213203435596
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6,
+              -81.3
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              6.212132034355964,
+              -81.21213203435596
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 154,
+      "route_projection": {
+        "station": 74.9156430297556,
+        "distance": 4.919349550499539,
+        "foot": [
+          1.6,
+          -78.8
+        ],
+        "length": 97.49335179375527
+      },
+      "main_projection": {
+        "station": 117.08703388454295,
+        "distance": 4.919349550499539,
+        "foot": [
+          1.6,
+          -78.8
+        ],
+        "length": 139.6647426485426
+      }
+    },
+    {
+      "id": "bp_L1_005",
+      "assigned_route": "southbound_trail",
+      "old": {
+        "p": [
+          9,
+          -99
+        ],
+        "edge": 7,
+        "arena": 20.280024783137947,
+        "calm": 49.80175582706582,
+        "full_post_to_walk_edge_m": 6.7
+      },
+      "proposed": {
+        "q": [
+          4.82,
+          -99
+        ],
+        "move": 4.18,
+        "edge": 2.8200000000000003,
+        "arena": 19.372478384724406,
+        "calm": 47.25776236072368,
+        "blocker": 7.18,
+        "water": 32.945092290051335,
+        "mound": 7.18,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.5200000000000005,
+        "path_surplus_over_required_2_5m": 0.020000000000000462,
+        "full_post_to_arena_m": 19.072478384724405,
+        "full_post_to_calm_m": 46.957762360723684,
+        "collider_surplus_with_0_3post_and_0_35player_m": 6.529999999999999,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 32.045092290051336,
+        "mound_surplus_with_0_3post_and_0_6band_m": 6.279999999999999,
+        "support_probes": [
+          {
+            "xz": [
+              4.82,
+              -99
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.12,
+              -99
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.032132034355964,
+              -98.78786796564404
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              4.82,
+              -98.7
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              4.6078679656440364,
+              -98.78786796564404
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              4.5200000000000005,
+              -99
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              4.607867965644036,
+              -99.21213203435596
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              4.82,
+              -99.3
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              5.032132034355964,
+              -99.21213203435596
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 136,
+      "route_projection": {
+        "station": 95.49335179375527,
+        "distance": 4.82,
+        "foot": [
+          0,
+          -99
+        ],
+        "length": 97.49335179375527
+      },
+      "main_projection": {
+        "station": 137.6647426485426,
+        "distance": 4.82,
+        "foot": [
+          0,
+          -99
+        ],
+        "length": 139.6647426485426
+      }
+    },
+    {
+      "id": "bp_L1_006",
+      "assigned_route": "croft_lane",
+      "old": {
+        "p": [
+          21,
+          1
+        ],
+        "edge": 4,
+        "arena": 60.12489168102785,
+        "calm": 3.826576959181928,
+        "full_post_to_walk_edge_m": 3.7
+      },
+      "proposed": {
+        "q": [
+          23.771934930067104,
+          -0.17964224400286666
+        ],
+        "move": 3.012503789269358,
+        "edge": 2.820000000000002,
+        "arena": 59.86588771086589,
+        "calm": 1.0290717517214105,
+        "blocker": 4.235596630237569,
+        "water": 43.33160720319563,
+        "mound": 40.42772816593898,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.5200000000000022,
+        "path_surplus_over_required_2_5m": 0.020000000000002238,
+        "full_post_to_arena_m": 59.565887710865894,
+        "full_post_to_calm_m": 0.7290717517214105,
+        "collider_surplus_with_0_3post_and_0_35player_m": 3.585596630237569,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 42.43160720319563,
+        "mound_surplus_with_0_3post_and_0_6band_m": 39.52772816593898,
+        "support_probes": [
+          {
+            "xz": [
+              23.771934930067104,
+              -0.17964224400286666
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              24.071934930067105,
+              -0.17964224400286666
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.984066964423068,
+              0.03248979035309757
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.771934930067104,
+              0.12035775599713333
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.55980289571114,
+              0.0324897903530976
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.471934930067103,
+              -0.17964224400286663
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.55980289571114,
+              -0.3917742783588309
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.771934930067104,
+              -0.47964224400286665
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              23.984066964423068,
+              -0.39177427835883094
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 128,
+      "route_projection": {
+        "station": 0,
+        "distance": 4.070000000000002,
+        "foot": [
+          26.5,
+          -3.2
+        ],
+        "length": 10.417468539684027
+      }
+    },
+    {
+      "id": "bp_L1_007",
+      "assigned_route": "croft_south_lane",
+      "old": {
+        "p": [
+          33,
+          -13
+        ],
+        "edge": -0.02538263315004996,
+        "arena": 52.1404708432983,
+        "calm": -0.3289400519253558,
+        "full_post_to_walk_edge_m": -0.32538263315004995
+      },
+      "proposed": {
+        "q": [
+          37.10922848944001,
+          -15.121855267248435
+        ],
+        "move": 4.624719294570788,
+        "edge": 2.820000000000001,
+        "arena": 52.58703664543807,
+        "calm": 0.3593866428855321,
+        "blocker": 0.9218552672484339,
+        "water": 38.5627148457408,
+        "mound": 28.97432332126642,
+        "height": 0,
+        "full_post_to_walk_edge_m": 2.5200000000000014,
+        "path_surplus_over_required_2_5m": 0.02000000000000135,
+        "full_post_to_arena_m": 52.28703664543807,
+        "full_post_to_calm_m": 0.05938664288553214,
+        "collider_surplus_with_0_3post_and_0_35player_m": 0.2718552672484339,
+        "water_bank_surplus_with_0_3post_and_0_6band_m": 37.6627148457408,
+        "mound_surplus_with_0_3post_and_0_6band_m": 28.074323321266423,
+        "support_probes": [
+          {
+            "xz": [
+              37.10922848944001,
+              -15.121855267248435
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              37.409228489440004,
+              -15.121855267248435
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              37.321360523795974,
+              -14.909723232892471
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              37.10922848944001,
+              -14.821855267248434
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              36.89709645508404,
+              -14.909723232892471
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              36.80922848944001,
+              -15.121855267248435
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              36.89709645508404,
+              -15.333987301604399
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              37.10922848944001,
+              -15.421855267248436
+            ],
+            "y": 0
+          },
+          {
+            "xz": [
+              37.321360523795974,
+              -15.333987301604399
+            ],
+            "y": 0
+          }
+        ]
+      },
+      "search_candidates": 121,
+      "route_projection": {
+        "station": 18.534211504206784,
+        "distance": 4.070000000000001,
+        "foot": [
+          33.56603773584906,
+          -17.124528301886794
+        ],
+        "length": 34.66196606316488
+      }
+    }
+  ],
+  "movement": {
+    "changed_ids": [
+      "bp_L1_000",
+      "bp_L1_001",
+      "bp_L1_002",
+      "bp_L1_003",
+      "bp_L1_005",
+      "bp_L1_006",
+      "bp_L1_007"
+    ],
+    "unchanged_ids": [
+      "bp_L1_004"
+    ],
+    "sum_euclidean_m": 50.328775477719034,
+    "search": "Bounded .1m segment station sampling and1degree vertex-cap directions, sorted by movement. Not a continuous/global optimality claim.",
+    "spacing_guard_for_002": "Southbound source arc station18..23m prevents nearest-position repair retaining37m unlit route gap. This moves002 towestbank; eastbank candidates in that station band fail stream/featureclearance."
+  },
+  "route_spacing": {
+    "ordered_main_ids": [
+      "bp_L1_001",
+      "bp_L1_000",
+      "bp_L1_002",
+      "bp_L1_003",
+      "bp_L1_004",
+      "bp_L1_005"
+    ],
+    "gaps": [
+      {
+        "from": "bp_L1_001",
+        "to": "bp_L1_000",
+        "arc_gap_m": 19.996996771047307
+      },
+      {
+        "from": "bp_L1_000",
+        "to": "bp_L1_002",
+        "arc_gap_m": 28.021808434969103
+      },
+      {
+        "from": "bp_L1_002",
+        "to": "bp_L1_003",
+        "arc_gap_m": 26.484079791778385
+      },
+      {
+        "from": "bp_L1_003",
+        "to": "bp_L1_004",
+        "arc_gap_m": 27.082452597303714
+      },
+      {
+        "from": "bp_L1_004",
+        "to": "bp_L1_005",
+        "arc_gap_m": 20.577708763999667
+      }
+    ],
+    "arc_station_origin": "gate_road north endpoint(-10,15), continuing through southbound_trail",
+    "target_m": 20,
+    "actual_min_m": 19.996996771047307,
+    "actual_max_m": 28.021808434969103,
+    "status": "APPROXIMATE_20M_WITH26_48_TO28_02M_DETOUR_AND_ARENA_GAPS_ROOT_REVIEW",
+    "croft": "Two posts assigned to croft_lane and croft_south_lane. There is an authored yard connection between these separate polylines; do not call their Euclidean gap route length or invent an unrecorded connecting centreline."
+  },
+  "technical": "Eight rows have nonnegative full post/path/arena/calm/collider margins and72 finiteY0 support probes.",
+  "gameplay": "UNVERIFIED: no native placement or authoritative-server route movement; proposals only.",
+  "activation": "Root approval required before waterloadercandidate applies these rows. FrozenP0/P1 remain untouched; no material,lightclock,grade,runtimeobserver orGPU change.",
+  "limitations": [
+    "Target2.5m setback is distinct from postheight2.5m.",
+    "~20m station target is not exact20m coverage; longer numeric gaps disclosed.",
+    "Canonical outside-city Y0 fallback is a contract sample, not native visual/physical hill admission.",
+    "No proposed pole or lightpool loaded in this audit."
+  ],
+  "resource_status": "QUIESCED; lightweight math-only Node, no build/Blender/GPU/browser/preview"
+}

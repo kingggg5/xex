@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "purpose": "Xexoria login visual refinement, scoped to authentication only",
+  "methods": [
+    "google",
+    "discord",
+    "guest"
+  ],
+  "logo_source": "%USERPROFILE%/Downloads/logoxex",
+  "logo_handling": "Copied byte-for-byte; not regenerated",
+  "generation": "Built-in image_gen; no external API key",
+  "references": [
+    "%USERPROFILE%/AppData/Local/Temp/codex-clipboard-432b539b-e515-407d-a180-8a06f1b39ff3.png",
+    "%USERPROFILE%/AppData/Local/Temp/codex-clipboard-7af0e6a7-bb66-41e5-9be7-2909cd4c202b.png"
+  ],
+  "prompts": {
+    "floating-kingdom.png": "Edit supplied login illustration into a clean background plate. Preserve floating kingdom, waterfalls, white-haired woman and wolf, portal banners, jeweled armillary, flowers and terrace. Remove all UI, logo, text, navigation and platform logos; reconstruct coherent scenery. Same landscape 3:2 composition. No writing or new focal objects.",
+    "empty-button-atlas.png": "Preserve exact ultra-wide 3:1 atlas geometry, all ten widget positions, transparent margins, gold/silver filigree and crystals. Remove all labels, letters, brand logos, people, checkmarks and arrows inside widgets; reconstruct clean blue/navy/purple/gold materials. Do not rearrange or crop. Preserve genuine alpha outside widgets.",
+    "ornate-panel.png": "Extract only the central fantasy login panel as one portrait empty dark navy panel, width:height4:5. Preserve antique gold filigree border, centered blue diamond, corner crystals, lower diamond and thin fantasy curves. Remove all interior UI and text. Broad quiet midnight navy interior, genuine transparency outside. No scene, characters, labels or collage.",
+    "ornate-panel-detail-v2.png": "Refine exact empty panel without redesign: preserve portrait canvas, silhouette and gemstone positions; add minute engraved gold linework, edge scratches, restrained patina in recesses, bevel highlights and crystal inclusions; add faint worn navy material variation inside. Keep center quiet for live text, and preserve genuine alpha outside. No typography, runes, controls, new ornaments or backdrop."
+  },
+  "assets": [
+    {
+      "file": "empty-button-atlas.png",
+      "bytes": 1866822,
+      "sha256": "be0e5199f5d848329dd04e58bfcc39fd186ae48afb6674d4419ad501abc59b52"
+    },
+    {
+      "file": "floating-kingdom.png",
+      "bytes": 3243690,
+      "sha256": "798ceaf8a244badf573648fcf25c770d4f9b91b7ff8508926084534f07ddd0f3"
+    },
+    {
+      "file": "ornate-panel.png",
+      "bytes": 1544367,
+      "sha256": "0751775dfd4c9af8e350012be75646b9d80b15b76eae03e1e7d470cc245808f5"
+    },
+    {
+      "file": "xexoria-logo.png",
+      "bytes": 1465621,
+      "sha256": "17de01b155a46cf7b28e6f4d0f5fc8433f508d549db9390ca55770ef9b438f15"
+    },
+    {
+      "file": "ornate-panel-detail-v2.png",
+      "bytes": 1998436,
+      "sha256": "2d605f5f38310ee3a3e2a59a484cbb00a9cacd1b083ec873e50bfc5b370ea240"
+    }
+  ],
+  "auth_limit": "Existing provider availability, routes, guest session and room choice logic retained; no backend auth changes",
+  "preview": "/login-preview.html; isolated visual surface; no auth or game-session requests",
+  "navigation": {
+    "home": "/",
+    "preview": "/login-preview.html",
+    "facebook": "",
+    "tiktok": "",
+    "community": ""
+  },
+  "guest_design": "Blue login frame with visible LOG IN and separate GUEST caption below; existing guest endpoint unchanged",
+  "fonts": {
+    "metadata": "fonts/provenance-v2.json",
+    "display_and_navigation": "Marcellus",
+    "body_and_provider_labels": "Cormorant Garamond",
+    "thai": "Trirong",
+    "delivery": "Local WOFF2; no runtime external font requests"
+  },
+  "language": {
+    "supported": [
+      "en",
+      "th"
+    ],
+    "control": "Native language select; auth-surface-only translation; preserves provider state and request handlers",
+    "preference_key": "xexoria_login_language",
+    "preview_persistence": false
+  },
+  "alignment": "All three button elements share the same width and center; text uses symmetric padding; primary frame has no extra negative margins.",
+  "mobile_landscape": "Google/Discord row plus full-width Guest, 9-slice frame, bounded inner scroll on small screens, visible language select"
+}

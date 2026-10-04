@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Xexoria VFX lab</title>
+	<style>
+		html, body { margin: 0; height: 100%; background: #0b1626; overflow: hidden; font: 13px Consolas, monospace; color: #d6e2ea; }
+		#lab { width: 1280px; height: 720px; display: block; }
+		#ui { position: fixed; left: 10px; bottom: 10px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+		button { background: #1b2a3a; color: #e8f2f8; border: 1px solid #3d5a78; border-radius: 4px; padding: 6px 10px; font: inherit; cursor: pointer; }
+		button:hover { background: #26405a; }
+		#status { position: fixed; left: 10px; top: 8px; text-shadow: 0 1px 2px #000; }
+	</style>
+</head>
+<body>
+	<canvas id="lab" width="1280" height="720"></canvas>
+	<div id="status">loading…</div>
+	<div id="ui">
+		<button data-skill="xs_bladeward_nova">Bladeward Nova</button>
+		<button data-skill="xs_gale_palm">Gale Palm</button>
+		<button data-skill="xs_void_rift">Void Rift</button>
+		<button id="tod">Day / Night</button>
+	</div>
+	<script type="module" src="/src/vfx-lab/vfx-lab.ts"></script>
+</body>
+</html>

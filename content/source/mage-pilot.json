@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "base_power": 25,
+  "allocated_int_coefficient": 2,
+  "allocated_dex_divisor": 5,
+  "basic": {"range_m":9.0,"windup_ms":100,"cooldown_ms":600,"recovery_ms":200,"sp_cost":0,"projectile_speed_m_s":20.0,"damage_numerator":1,"damage_denominator":1,"cancel_on_move":false},
+  "star_lance": {"range_m":11.0,"windup_ms":500,"cooldown_ms":5000,"recovery_ms":300,"sp_cost":8,"projectile_speed_m_s":20.0,"damage_numerator":7,"damage_denominator":4,"cancel_on_move":true}
+}

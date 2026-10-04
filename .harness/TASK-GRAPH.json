@@ -1,0 +1,1927 @@
+{
+  "schema_version": 1,
+  "graph_id": "xexoria-sunmeadow-program-20261002",
+  "project_id": "project-a6dcbc9c-dcdf-4efe-9428-b88a9b5694bf",
+  "run_id": "RUN-20260923-mmorpg-plan-v3",
+  "coordinator": "Project Manager",
+  "isolation_strategy": "same-worktree-sequential",
+  "base_revision": "999038d330084ee98cbb3c5d1ec59c9c966b3e81",
+  "max_parallel": 1,
+  "max_transitions": 208,
+  "entry_nodes": [
+    "c-l0",
+    "c-p0-fsr",
+    "c-p0-fps",
+    "c-p0-env",
+    "c-p0-doc",
+    "c-r-mob",
+    "c-r-ios",
+    "c-r-load",
+    "c-r-nat",
+    "r-a1a2",
+    "r-a4",
+    "v-b4",
+    "f-f1",
+    "f-f2",
+    "f-f3",
+    "f-f4",
+    "f-f5",
+    "o-tripo"
+  ],
+  "nodes": [
+    {
+      "id": "c-l0",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Sunmeadow v2 layout + checks",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-l0"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "planning/levels/sunmeadow-v2-layout.json",
+        "planning/evidence/sunmeadow-v2-layout/checks.json"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "render_layout_plan.py 66/66"
+      ]
+    },
+    {
+      "id": "c-l1",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Monster spawn plan r3",
+      "inputs": [
+        "receipt-c-l0"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-l1"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "planning/levels/sunmeadow-v2-monsters.json"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "check_monster_spawns.py 5268/5268"
+      ]
+    },
+    {
+      "id": "c-b5",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Blockout pass 5 (arena keep-clear, prop moves, mushroom ring)",
+      "inputs": [
+        "receipt-c-l0"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-b5"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "assets/models/sunmeadow-v2/blockout",
+        "planning/evidence/sunmeadow-v2-blockout/pass5"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "re-import, collider-visual, walk, arena and sightline checks with numbers"
+      ]
+    },
+    {
+      "id": "c-p0-fsr",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "FSR1 render scaling + adaptive resolution",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-fsr"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/render-scaling.ts",
+        "apps/client/src/render-scale-controller.mjs",
+        "docs/reviews/2026-10-02-render-scaling-fsr1.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "npm test + check pass; A/B table both renderers; crops; per-tier table incl. iPhone 11"
+      ]
+    },
+    {
+      "id": "c-p0-fps",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Frame-rate policy (Auto/30/60/90/120/Max) + limiter",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-fps"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/frame-rate-policy.mjs",
+        "docs/reviews/2026-10-02-auto-fps-frame-pacing.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "tests incl. 60/90/120/144 Hz, Low Power 30 Hz; root hunk proposal",
+        "Soft dependencies: C-P0-FSR"
+      ]
+    },
+    {
+      "id": "c-p0-env",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Environment quick wins: opt-in glow, clouds out of shadows, freeze statics",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-env"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/environment.ts",
+        "docs/reviews/2026-10-02-env-perf-quickwins.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "before/after both renderers; VFX still glow; tests pass"
+      ]
+    },
+    {
+      "id": "c-p0-doc",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Apply recheck C1-C17, P10 performance/mobile block, inbox A12 + A18-A21",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-doc"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "docs/plans/2026-10-02-visual-detail-master-plan.md",
+        "docs/reviews/2026-10-02-claude-to-codex-inbox.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "every correction accounted for"
+      ]
+    },
+    {
+      "id": "c-r-mob",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Research: PC-level detail on mobile",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-r-mob"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "docs/reviews/2026-10-02-mobile-pc-detail-research.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "technique table + iPhone 11 tier"
+      ]
+    },
+    {
+      "id": "c-r-ios",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Research: iPhone 11 Safari target + device test plan",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-r-ios"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "docs/reviews/2026-10-02-iphone11-safari-target.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "verified profile + owner test steps"
+      ]
+    },
+    {
+      "id": "c-r-load",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Research + measure: fast load, compression, vcache, workers",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-r-load"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "docs/reviews/2026-10-02-fastload-research.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "current bytes/requests + top 15 actions"
+      ]
+    },
+    {
+      "id": "c-r-nat",
+      "kind": "model",
+      "owner": "claude-agent",
+      "objective": "Owner native docs transfer (fastload, LZ4, vcache, enkiTS, more)",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-r-nat"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "docs/reviews/2026-10-02-native-docs-transfer.md"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "adopt/skip verdicts with owners"
+      ]
+    },
+    {
+      "id": "c-p0-exp",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Blender glTF export helper (explicit options, EXT_meshopt, quantization, vcache reorder, KTX2, receipts)",
+      "inputs": [
+        "receipt-c-r-load",
+        "receipt-c-r-nat"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-exp"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "assets/blender/tools/export_helper.py"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "re-import validation + receipt; size and decode time before/after"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-p0-cap",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Capture harness: locked views x times x renderers + metrics",
+      "inputs": [
+        "receipt-c-p0-fsr"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-cap"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/lookdev",
+        "tools/capture"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "one command produces labelled sheets + metrics JSON"
+      ]
+    },
+    {
+      "id": "c-p0-light",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Light pass 0-1 (rig, PBR lit materials, IBL rotation, contrast)",
+      "inputs": [
+        "receipt-c-p0-env",
+        "receipt-v-b4"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p0-light"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/environment.ts"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "day/night captures both renderers; no clipping; B4 merged atomically"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "r-a12",
+      "kind": "model",
+      "owner": "codex-root",
+      "objective": "WebGPU features/limits + self-hosted KTX2 transcoders (ship together)",
+      "inputs": [
+        "receipt-c-p0-fsr",
+        "receipt-r-a3"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a12"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/scene.ts",
+        "apps/client/src/asset-codecs.ts",
+        "apps/client/src/ktx2decoder.worker.ts"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "VRAM before/after; no CDN requests; both renderers"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "r-loop",
+      "kind": "model",
+      "owner": "codex-root",
+      "objective": "Render-loop frame limiter hunk (from C-P0-FPS proposal)",
+      "inputs": [
+        "receipt-c-p0-fps"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-loop"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/main.ts or scene.ts"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "even pacing at 120 Hz for 60/40 caps; sim/network tick unaffected"
+      ]
+    },
+    {
+      "id": "r-a18-21",
+      "kind": "model",
+      "owner": "codex-root",
+      "objective": "Phone engine options, cheap picking, pools/AssetContainers, animation LOD/VAT",
+      "inputs": [
+        "receipt-c-p0-doc"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a18-21"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "measured CPU deltas"
+      ]
+    },
+    {
+      "id": "u-fps",
+      "kind": "model",
+      "owner": "codex-ui",
+      "objective": "Settings: FPS Auto/30/60/90/120/Max (shows detected Hz), Thai labels",
+      "inputs": [
+        "receipt-c-p0-fps",
+        "receipt-u-c4c5"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-u-fps"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/ui"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "setting persists; Auto respects Low Power 30"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "r-perf",
+      "kind": "model",
+      "owner": "codex-root+ui",
+      "objective": "In-game perf overlay ?perf=1 (fps, p95, renderer, DPR, render size, memory)",
+      "inputs": [
+        "receipt-c-r-ios"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-perf"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "readable on iPhone 11; off by default"
+      ]
+    },
+    {
+      "id": "o-iph",
+      "kind": "human",
+      "owner": "owner",
+      "objective": "Owner runs the iPhone 11 device test plan",
+      "inputs": [
+        "receipt-r-perf",
+        "receipt-c-r-ios"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-o-iph"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "p95 <= 33.3 ms on the slice route; no tab kill in 20 min"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "r-a1a2",
+      "kind": "model",
+      "owner": "codex-root",
+      "objective": "Local-only hit feedback; hit-stop never pauses movement",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a1a2"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/main.ts",
+        "apps/client/src/scene.ts",
+        "apps/client/src/monster-view-registry.mjs",
+        "apps/client/src/combat-event-routing.mjs"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "regression tests"
+      ]
+    },
+    {
+      "id": "r-a4",
+      "kind": "model",
+      "owner": "codex-server",
+      "objective": "Snapshot cap 64 enforced in content validation",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a4"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "r-a3",
+      "kind": "model",
+      "owner": "codex-root",
+      "objective": "Dynamic monster views from snapshot ids; name atlas limit",
+      "inputs": [
+        "receipt-r-a1a2"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a3"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/main.ts",
+        "apps/client/src/scene.ts",
+        "apps/client/src/monster-view-registry.mjs",
+        "apps/client/src/combat-event-routing.mjs"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "r-a5",
+      "kind": "model",
+      "owner": "codex-server",
+      "objective": "Respawn at home; collider resets",
+      "inputs": [
+        "receipt-r-a4"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a5"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "r-a6",
+      "kind": "model",
+      "owner": "codex-server",
+      "objective": "Party EXP split via shared reward resolver",
+      "inputs": [
+        "receipt-r-a5"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a6"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "r-a7",
+      "kind": "model",
+      "owner": "codex-root+server",
+      "objective": "Protocol: crit/miss bits, heal/exp notices, level/rank, u32 HP (DTO first)",
+      "inputs": [
+        "receipt-r-a6",
+        "receipt-r-a3"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a7"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content",
+        "apps/client/src/wire.mjs",
+        "apps/client/src/protocol.ts",
+        "apps/protocol"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "r-a8",
+      "kind": "model",
+      "owner": "codex-server",
+      "objective": "Tagging, crit/miss rules, MVP contribution rewards",
+      "inputs": [
+        "receipt-r-a7"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a8"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "r-a16",
+      "kind": "model",
+      "owner": "codex-root+server",
+      "objective": "Core-loop reliability: input clearing, idempotent mutations, reconnect snapshot, reason codes",
+      "inputs": [
+        "receipt-r-a8"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a16"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "apps/client/src/main.ts",
+        "apps/client/src/combat-actions.mjs"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "deep review §10.1 tests"
+      ]
+    },
+    {
+      "id": "r-a9",
+      "kind": "model",
+      "owner": "codex-server",
+      "objective": "Spawn migration step 0 + moved-prop content migration",
+      "inputs": [
+        "receipt-c-b5",
+        "receipt-r-a17"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a9"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "r-a10",
+      "kind": "model",
+      "owner": "codex-root",
+      "objective": "Seam check Z=-64 + c7/c8 bounds; verify exported walk/colliders",
+      "inputs": [
+        "receipt-c-b5"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a10"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "r-a17",
+      "kind": "model",
+      "owner": "codex-server",
+      "objective": "Encounter model + RewardReceipt (Galehorn)",
+      "inputs": [
+        "receipt-r-a8",
+        "receipt-r-a16"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-r-a17"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/server",
+        "content"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "v-b1-3",
+      "kind": "model",
+      "owner": "codex-vfx",
+      "objective": "VFX bar, damage numbers, hit feedback/telegraphs",
+      "inputs": [
+        "receipt-r-a7"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-v-b1-3"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/combat-fx.ts",
+        "apps/client/src/world-combat-labels.ts",
+        "apps/client/src/combat-vfx-kit.ts"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "v-b4",
+      "kind": "model",
+      "owner": "codex-vfx",
+      "objective": "world-weather sampleAt; remove light/fog/post writes",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-v-b4"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/world-weather.ts"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance.",
+        "Atomic handoff with C-P0-LIGHT"
+      ]
+    },
+    {
+      "id": "v-b5",
+      "kind": "model",
+      "owner": "codex-vfx",
+      "objective": "Celestial + painted cloud layers",
+      "inputs": [
+        "receipt-f-f5"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-v-b5"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/world-celestial.ts",
+        "apps/client/src/cloud-surface.ts",
+        "apps/client/src/ambient-world.ts"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "u-c1c2",
+      "kind": "model",
+      "owner": "codex-ui",
+      "objective": "DOM nameplates/HP + target frame",
+      "inputs": [
+        "receipt-r-a3"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-u-c1c2"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/ui",
+        "apps/client/src/ui.ts",
+        "apps/client/src/style.css"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "u-c4c5",
+      "kind": "model",
+      "owner": "codex-ui",
+      "objective": "Death UI + load/transaction states",
+      "inputs": [
+        "receipt-r-a16",
+        "receipt-u-c1c2"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-u-c4c5"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [
+        "apps/client/src/ui",
+        "apps/client/src/ui.ts",
+        "apps/client/src/style.css"
+      ],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-p1-form",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Forms pass: bluff/cliff sculpt, stone circle + altar, bridge, camp kit",
+      "inputs": [
+        "receipt-c-b5",
+        "receipt-c-p0-exp"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-form"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "silhouettes at 13 m; budgets"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-p1-terr",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Terrain splat (terrain-surface.ts) + Blender-baked control maps",
+      "inputs": [
+        "receipt-c-b5",
+        "receipt-c-p0-light"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-terr"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "terrain spec gates; <= 4 draws/cell; <= +0.8 ms p95",
+        "Soft dependencies: F-F4"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-p1-tree",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Trees in Babylon: shared atlas + KTX2, impostor v3, TEXCOORD_1 wind, captures",
+      "inputs": [
+        "receipt-c-p0-env",
+        "receipt-c-p0-exp"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-tree"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "tree doc §4.4 gate; both renderers day/night",
+        "Soft dependencies: F-F3"
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-p1-grass",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Grass field per grass spec",
+      "inputs": [
+        "receipt-c-p1-terr"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-grass"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "c-p1-water",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Natural water per water spec (+ recheck corrections)",
+      "inputs": [
+        "receipt-c-p1-terr"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-water"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "c-p1-sky",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Sky, fog, clouds pass 2",
+      "inputs": [
+        "receipt-c-p0-light",
+        "receipt-v-b5"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-sky"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-p1-rock",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Rock detail plugin (MountainRIver rules, desktop) + Blender bake (mobile)",
+      "inputs": [
+        "receipt-c-p1-form"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-p1-rock"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "f-f1",
+      "kind": "human",
+      "owner": "froggy",
+      "objective": "froggy: Reddit-first deep research (mobile detail, Safari, fast load, auto fps)",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-f-f1"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "f-f2",
+      "kind": "human",
+      "owner": "froggy",
+      "objective": "froggy: Sunmeadow monster concept pack (Mossling first, Galehorn boss)",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-f-f2"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "f-f3",
+      "kind": "human",
+      "owner": "froggy",
+      "objective": "froggy: foliage atlas v2 + bark (value range 0.60)",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-f-f3"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "f-f4",
+      "kind": "human",
+      "owner": "froggy",
+      "objective": "froggy: hand-painted terrain tileables",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-f-f4"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "f-f5",
+      "kind": "human",
+      "owner": "froggy",
+      "objective": "froggy: painted cloud layers noon/dusk",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-f-f5"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "o-tripo",
+      "kind": "human",
+      "owner": "owner",
+      "objective": "Owner: Tripo login and credit stage 1 (600)",
+      "inputs": [
+        "program-request"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-o-tripo"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ]
+    },
+    {
+      "id": "c-m1",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Monster sample S1 Mossling: Tripo -> Blender -> paint -> XS1 rig -> clips -> LODs",
+      "inputs": [
+        "receipt-f-f2",
+        "receipt-o-tripo",
+        "receipt-c-p0-exp"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-m1"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "c-h2",
+      "kind": "model",
+      "owner": "claude",
+      "objective": "Hero 02 pilot repair, then hero 01",
+      "inputs": [
+        "receipt-o-tripo",
+        "receipt-c-p0-exp"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-c-h2"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 3,
+      "timeout_seconds": 3600,
+      "side_effect": "reversible",
+      "success_criteria": [
+        "Verified implementation and evidence; external status is not acceptance."
+      ],
+      "join": "all"
+    },
+    {
+      "id": "g-slice",
+      "kind": "human",
+      "owner": "owner",
+      "objective": "Gate: Sunmeadow slice accepted (desktop + iPhone 11)",
+      "inputs": [
+        "receipt-c-p1-tree",
+        "receipt-c-p1-grass",
+        "receipt-c-p1-water",
+        "receipt-c-p1-sky",
+        "receipt-c-p1-rock",
+        "receipt-r-a8",
+        "receipt-r-a16",
+        "receipt-u-c1c2",
+        "receipt-u-c4c5",
+        "receipt-v-b1-3",
+        "receipt-o-iph",
+        "receipt-c-p0-cap"
+      ],
+      "optional_inputs": [],
+      "outputs": [
+        "receipt-g-slice"
+      ],
+      "read_scope": [
+        "."
+      ],
+      "write_scope": [],
+      "max_attempts": 1,
+      "timeout_seconds": 900,
+      "side_effect": "none",
+      "success_criteria": [
+        "master plan phase 1 gate + deep review §10.1 + device run"
+      ],
+      "join": "all"
+    }
+  ],
+  "edges": [
+    {
+      "from": "c-l0",
+      "to": "c-l1",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-l0"
+      ]
+    },
+    {
+      "from": "c-l0",
+      "to": "c-b5",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-l0"
+      ]
+    },
+    {
+      "from": "c-r-load",
+      "to": "c-p0-exp",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-r-load"
+      ]
+    },
+    {
+      "from": "c-r-nat",
+      "to": "c-p0-exp",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-r-nat"
+      ]
+    },
+    {
+      "from": "c-p0-fsr",
+      "to": "c-p0-cap",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-fsr"
+      ]
+    },
+    {
+      "from": "c-p0-env",
+      "to": "c-p0-light",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-env"
+      ]
+    },
+    {
+      "from": "v-b4",
+      "to": "c-p0-light",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-v-b4"
+      ]
+    },
+    {
+      "from": "c-p0-fsr",
+      "to": "r-a12",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-fsr"
+      ]
+    },
+    {
+      "from": "r-a3",
+      "to": "r-a12",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a3"
+      ]
+    },
+    {
+      "from": "c-p0-fps",
+      "to": "r-loop",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-fps"
+      ]
+    },
+    {
+      "from": "c-p0-doc",
+      "to": "r-a18-21",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-doc"
+      ]
+    },
+    {
+      "from": "c-p0-fps",
+      "to": "u-fps",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-fps"
+      ]
+    },
+    {
+      "from": "u-c4c5",
+      "to": "u-fps",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-u-c4c5"
+      ]
+    },
+    {
+      "from": "c-r-ios",
+      "to": "r-perf",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-r-ios"
+      ]
+    },
+    {
+      "from": "r-perf",
+      "to": "o-iph",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-perf"
+      ]
+    },
+    {
+      "from": "c-r-ios",
+      "to": "o-iph",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-r-ios"
+      ]
+    },
+    {
+      "from": "r-a1a2",
+      "to": "r-a3",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a1a2"
+      ]
+    },
+    {
+      "from": "r-a4",
+      "to": "r-a5",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a4"
+      ]
+    },
+    {
+      "from": "r-a5",
+      "to": "r-a6",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a5"
+      ]
+    },
+    {
+      "from": "r-a6",
+      "to": "r-a7",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a6"
+      ]
+    },
+    {
+      "from": "r-a3",
+      "to": "r-a7",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a3"
+      ]
+    },
+    {
+      "from": "r-a7",
+      "to": "r-a8",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a7"
+      ]
+    },
+    {
+      "from": "r-a8",
+      "to": "r-a16",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a8"
+      ]
+    },
+    {
+      "from": "c-b5",
+      "to": "r-a9",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-b5"
+      ]
+    },
+    {
+      "from": "r-a17",
+      "to": "r-a9",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a17"
+      ]
+    },
+    {
+      "from": "c-b5",
+      "to": "r-a10",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-b5"
+      ]
+    },
+    {
+      "from": "r-a8",
+      "to": "r-a17",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a8"
+      ]
+    },
+    {
+      "from": "r-a16",
+      "to": "r-a17",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a16"
+      ]
+    },
+    {
+      "from": "r-a7",
+      "to": "v-b1-3",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a7"
+      ]
+    },
+    {
+      "from": "f-f5",
+      "to": "v-b5",
+      "type": "data",
+      "condition": "on_approve",
+      "consumes": [
+        "receipt-f-f5"
+      ]
+    },
+    {
+      "from": "r-a3",
+      "to": "u-c1c2",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a3"
+      ]
+    },
+    {
+      "from": "r-a16",
+      "to": "u-c4c5",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a16"
+      ]
+    },
+    {
+      "from": "u-c1c2",
+      "to": "u-c4c5",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-u-c1c2"
+      ]
+    },
+    {
+      "from": "c-b5",
+      "to": "c-p1-form",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-b5"
+      ]
+    },
+    {
+      "from": "c-p0-exp",
+      "to": "c-p1-form",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-exp"
+      ]
+    },
+    {
+      "from": "c-b5",
+      "to": "c-p1-terr",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-b5"
+      ]
+    },
+    {
+      "from": "c-p0-light",
+      "to": "c-p1-terr",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-light"
+      ]
+    },
+    {
+      "from": "c-p0-env",
+      "to": "c-p1-tree",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-env"
+      ]
+    },
+    {
+      "from": "c-p0-exp",
+      "to": "c-p1-tree",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-exp"
+      ]
+    },
+    {
+      "from": "c-p1-terr",
+      "to": "c-p1-grass",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-terr"
+      ]
+    },
+    {
+      "from": "c-p1-terr",
+      "to": "c-p1-water",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-terr"
+      ]
+    },
+    {
+      "from": "c-p0-light",
+      "to": "c-p1-sky",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-light"
+      ]
+    },
+    {
+      "from": "v-b5",
+      "to": "c-p1-sky",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-v-b5"
+      ]
+    },
+    {
+      "from": "c-p1-form",
+      "to": "c-p1-rock",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-form"
+      ]
+    },
+    {
+      "from": "f-f2",
+      "to": "c-m1",
+      "type": "data",
+      "condition": "on_approve",
+      "consumes": [
+        "receipt-f-f2"
+      ]
+    },
+    {
+      "from": "o-tripo",
+      "to": "c-m1",
+      "type": "data",
+      "condition": "on_approve",
+      "consumes": [
+        "receipt-o-tripo"
+      ]
+    },
+    {
+      "from": "c-p0-exp",
+      "to": "c-m1",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-exp"
+      ]
+    },
+    {
+      "from": "o-tripo",
+      "to": "c-h2",
+      "type": "data",
+      "condition": "on_approve",
+      "consumes": [
+        "receipt-o-tripo"
+      ]
+    },
+    {
+      "from": "c-p0-exp",
+      "to": "c-h2",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-exp"
+      ]
+    },
+    {
+      "from": "c-p1-tree",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-tree"
+      ]
+    },
+    {
+      "from": "c-p1-grass",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-grass"
+      ]
+    },
+    {
+      "from": "c-p1-water",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-water"
+      ]
+    },
+    {
+      "from": "c-p1-sky",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-sky"
+      ]
+    },
+    {
+      "from": "c-p1-rock",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p1-rock"
+      ]
+    },
+    {
+      "from": "r-a8",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a8"
+      ]
+    },
+    {
+      "from": "r-a16",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-r-a16"
+      ]
+    },
+    {
+      "from": "u-c1c2",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-u-c1c2"
+      ]
+    },
+    {
+      "from": "u-c4c5",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-u-c4c5"
+      ]
+    },
+    {
+      "from": "v-b1-3",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-v-b1-3"
+      ]
+    },
+    {
+      "from": "o-iph",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_approve",
+      "consumes": [
+        "receipt-o-iph"
+      ]
+    },
+    {
+      "from": "c-p0-cap",
+      "to": "g-slice",
+      "type": "data",
+      "condition": "on_success",
+      "consumes": [
+        "receipt-c-p0-cap"
+      ]
+    }
+  ]
+}

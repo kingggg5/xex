@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>Xexoria — Connection lobby fixture</title>
+		<style>
+			html, body { margin: 0; width: 100%; height: 100%; background: #091326; }
+			#game { position: relative; width: 100%; height: 100%; overflow: hidden; }
+			#fixture-label { position: fixed; bottom: 2px; left: 50%; transform: translateX(-50%); z-index: 100; color: #bbc9df; font: 9px/1.4 system-ui; white-space: nowrap; pointer-events: none; }
+		</style>
+	</head>
+	<body>
+		<main id="game"><div id="legacy-hud"><button id="previous-focus">Fixture game control</button></div></main>
+		<aside id="fixture-label">Visual fixture · synthetic channel and transfer data</aside>
+		<script type="module" src="./preview.ts"></script>
+	</body>
+</html>

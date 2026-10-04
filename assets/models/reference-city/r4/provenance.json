@@ -1,0 +1,311 @@
+{
+  "provider": "Poly Haven",
+  "license": "CC0, verified on each asset page",
+  "downloaded_at": "2026-09-28",
+  "assets": [
+    "cliff_side",
+    "cobblestone_floor_001",
+    "plastered_stone_wall",
+    "roof_tiles",
+    "stone_wall_04",
+    "weathered_planks"
+  ],
+  "maps": [
+    {
+      "slug": "stone_wall_04",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_wall_04/stone_wall_04_diff_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/stone_wall_04_diff_1k.jpg",
+      "bytes": 944234,
+      "sha256": "613f08ad506e0aba1cda2b78d2f46902902e928537708c5576ce728d26cf0309"
+    },
+    {
+      "slug": "stone_wall_04",
+      "map": "nor_gl",
+      "resolution": "1k",
+      "format": "png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/stone_wall_04/stone_wall_04_nor_gl_1k.png",
+      "path": "assets/models/reference-city/r4/source-textures/stone_wall_04_nor_gl_1k.png",
+      "bytes": 5907227,
+      "sha256": "b0d74a9ad518818cd38cd641b35658231a5e9b8690d1a910c021fb8af7169436"
+    },
+    {
+      "slug": "stone_wall_04",
+      "map": "Rough",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_wall_04/stone_wall_04_rough_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/stone_wall_04_rough_1k.jpg",
+      "bytes": 434007,
+      "sha256": "21f49bfa570e33749f5111ff3561a1511933b0a10843201f1d0c858550cc13f1"
+    },
+    {
+      "slug": "roof_tiles",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_diff_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/roof_tiles_diff_1k.jpg",
+      "bytes": 1105673,
+      "sha256": "1b30c1f0a9d3f761afb1354d95b36990fc670fac5f811889af8cb2ab682c8e66"
+    },
+    {
+      "slug": "roof_tiles",
+      "map": "nor_gl",
+      "resolution": "1k",
+      "format": "png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/roof_tiles/roof_tiles_nor_gl_1k.png",
+      "path": "assets/models/reference-city/r4/source-textures/roof_tiles_nor_gl_1k.png",
+      "bytes": 5477255,
+      "sha256": "ee711bb54bf50ecd5a56aee35a279c20a1b66b6064f1884d7de064affaae403c"
+    },
+    {
+      "slug": "roof_tiles",
+      "map": "Rough",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_rough_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/roof_tiles_rough_1k.jpg",
+      "bytes": 919232,
+      "sha256": "b4e832d544fb663728128fe178919d1c9be4d937236d8e8d3f7669a8b896e86c"
+    },
+    {
+      "slug": "cobblestone_floor_001",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_001/cobblestone_floor_001_diff_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/cobblestone_floor_001_diff_1k.jpg",
+      "bytes": 626906,
+      "sha256": "893d3e7b4506c5935cbc6aca5b914d637bd4464484bcaa5d69e2ee205bb9ae9c"
+    },
+    {
+      "slug": "cobblestone_floor_001",
+      "map": "nor_gl",
+      "resolution": "1k",
+      "format": "png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/cobblestone_floor_001/cobblestone_floor_001_nor_gl_1k.png",
+      "path": "assets/models/reference-city/r4/source-textures/cobblestone_floor_001_nor_gl_1k.png",
+      "bytes": 2106760,
+      "sha256": "34e2ace7b704d34ede66643624ac2ed807a769f6ea4a535635111ad945ae0f8f"
+    },
+    {
+      "slug": "cobblestone_floor_001",
+      "map": "Rough",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_001/cobblestone_floor_001_rough_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/cobblestone_floor_001_rough_1k.jpg",
+      "bytes": 403395,
+      "sha256": "ac7cfc342f9d13b5dff1972200daaf864fbdf5455a2ed2da96491b823f411f36"
+    },
+    {
+      "slug": "cliff_side",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cliff_side/cliff_side_diff_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/cliff_side_diff_1k.jpg",
+      "bytes": 859756,
+      "sha256": "5c6858541108fc34e5726ecf4d8d942d6301155c489e7341619260f2909570c5"
+    },
+    {
+      "slug": "cliff_side",
+      "map": "nor_gl",
+      "resolution": "1k",
+      "format": "png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/cliff_side/cliff_side_nor_gl_1k.png",
+      "path": "assets/models/reference-city/r4/source-textures/cliff_side_nor_gl_1k.png",
+      "bytes": 5658685,
+      "sha256": "a55291598da38138d516c3701ff67a7ce30d4979930d30d6ab3c5e8667432f7e"
+    },
+    {
+      "slug": "cliff_side",
+      "map": "Rough",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cliff_side/cliff_side_rough_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/cliff_side_rough_1k.jpg",
+      "bytes": 422579,
+      "sha256": "9d62079c5fc52d1a0dc659d2ad7f807e489dea18b5cb1a130bcea276fdc9f550"
+    },
+    {
+      "slug": "weathered_planks",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_planks/weathered_planks_diff_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/weathered_planks_diff_1k.jpg",
+      "bytes": 599581,
+      "sha256": "01c9a372cfd7a7bf471b59c2458ed3ccecc93448aebf7ba0cc5b3b5b6ed24349"
+    },
+    {
+      "slug": "weathered_planks",
+      "map": "nor_gl",
+      "resolution": "1k",
+      "format": "png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/weathered_planks/weathered_planks_nor_gl_1k.png",
+      "path": "assets/models/reference-city/r4/source-textures/weathered_planks_nor_gl_1k.png",
+      "bytes": 5414916,
+      "sha256": "29a0a65faa6f06a733a0dcb8f5854fa62b9850aaae05aa11566a17703f4e38fc"
+    },
+    {
+      "slug": "weathered_planks",
+      "map": "Rough",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_planks/weathered_planks_rough_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/weathered_planks_rough_1k.jpg",
+      "bytes": 218802,
+      "sha256": "a017728183597417a350d1846a5a46db9702ee6d472a21c5da2f23015d606aa3"
+    },
+    {
+      "slug": "stone_wall_04",
+      "map": "AO",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_wall_04/stone_wall_04_ao_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/stone_wall_04_ao_1k.jpg",
+      "bytes": 744270,
+      "sha256": "d6b778cb56fa7380acc8debfaf9dbe3cfbc29e7ddd178ffc3a2998ae494961c2"
+    },
+    {
+      "slug": "roof_tiles",
+      "map": "AO",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_ao_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/roof_tiles_ao_1k.jpg",
+      "bytes": 565196,
+      "sha256": "2127ba0805214ea95a0ea454624d163bce497e947ef0f99bb337cd810b54fc60"
+    },
+    {
+      "slug": "cobblestone_floor_001",
+      "map": "arm",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_001/cobblestone_floor_001_arm_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/cobblestone_floor_001_arm_1k.jpg",
+      "bytes": 191651,
+      "sha256": "a22891ec85735b468ff75ae6eb8ea0d92caf0bd4fe9b2e1b029d9c578bf46cf5"
+    },
+    {
+      "slug": "cliff_side",
+      "map": "AO",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cliff_side/cliff_side_ao_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/cliff_side_ao_1k.jpg",
+      "bytes": 412993,
+      "sha256": "726a57a786c5130a8bcb7c78d81657b68652dd4ee424a7e4683225cfdbb00dfc"
+    },
+    {
+      "slug": "weathered_planks",
+      "map": "AO",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_planks/weathered_planks_ao_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/weathered_planks_ao_1k.jpg",
+      "bytes": 594177,
+      "sha256": "a4ff0df66640229e315f75637a135622504094cf4d6d57c6cca4dacf619b1a5b"
+    },
+    {
+      "slug": "plastered_stone_wall",
+      "map": "AO",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_ao_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/plastered_stone_wall_ao_1k.jpg",
+      "bytes": 678440,
+      "sha256": "d1a8fdbf39639536c11911354e6675c80678a7e0d59190bc541a5b7d153cec0d"
+    },
+    {
+      "slug": "plastered_stone_wall",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_diff_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/plastered_stone_wall_diff_1k.jpg",
+      "bytes": 680077,
+      "sha256": "b86e9a408aac5b493c31a4ec221e5022b0b704d2f51596006f7d6840a6a3300a"
+    },
+    {
+      "slug": "plastered_stone_wall",
+      "map": "nor_gl",
+      "resolution": "1k",
+      "format": "png",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/plastered_stone_wall/plastered_stone_wall_nor_gl_1k.png",
+      "path": "assets/models/reference-city/r4/source-textures/plastered_stone_wall_nor_gl_1k.png",
+      "bytes": 6487453,
+      "sha256": "bd3f5ce5e747e23054f5b3f8bdc2cee688856bc507bcc39f4ccf520bf55b6820"
+    },
+    {
+      "slug": "plastered_stone_wall",
+      "map": "Rough",
+      "resolution": "1k",
+      "format": "jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_stone_wall/plastered_stone_wall_rough_1k.jpg",
+      "path": "assets/models/reference-city/r4/source-textures/plastered_stone_wall_rough_1k.jpg",
+      "bytes": 508548,
+      "sha256": "978bd1d9f8d4132564d40375f705975e897ca588c2d756e6257f68946651bab0"
+    }
+  ],
+  "sources": [
+    {
+      "asset": "cliff_side",
+      "page": "https://polyhaven.com/a/cliff_side",
+      "license": "CC0"
+    },
+    {
+      "asset": "cobblestone_floor_001",
+      "page": "https://polyhaven.com/a/cobblestone_floor_001",
+      "license": "CC0"
+    },
+    {
+      "asset": "plastered_stone_wall",
+      "page": "https://polyhaven.com/a/plastered_stone_wall",
+      "license": "CC0"
+    },
+    {
+      "asset": "roof_tiles",
+      "page": "https://polyhaven.com/a/roof_tiles",
+      "license": "CC0"
+    },
+    {
+      "asset": "stone_wall_04",
+      "page": "https://polyhaven.com/a/stone_wall_04",
+      "license": "CC0"
+    },
+    {
+      "asset": "weathered_planks",
+      "page": "https://polyhaven.com/a/weathered_planks",
+      "license": "CC0"
+    }
+  ],
+  "credit": "Powered by Poly Haven (https://polyhaven.com) \u2014 public API used for offline authoring downloads only.",
+  "authors": {
+    "stone_wall_04": [
+      "Amal Kumar"
+    ],
+    "roof_tiles": [
+      "Stephan Seeliger"
+    ],
+    "cobblestone_floor_001": [
+      "Rob Tuytel"
+    ],
+    "cliff_side": [
+      "Dario Barresi",
+      "James Ray Cock",
+      "Jenelle van Heerden"
+    ],
+    "weathered_planks": [
+      "Dimitrios Savva",
+      "Dario Barresi"
+    ],
+    "plastered_stone_wall": [
+      "Rob Tuytel"
+    ]
+  }
+}
