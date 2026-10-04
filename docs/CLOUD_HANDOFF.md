@@ -7,7 +7,7 @@ Date: 2026-10-05 (Asia/Bangkok). Target environment: **xex**.
 - Repository: `https://github.com/kingggg5/xex` — verified **public**.
 - Dedicated branch: `codex/xex-cloud-checkpoint-20261005`.
 - Reviewed remote base: `f3ecd63fb6007000ef860a1484d31a2328c97b24` (11 bootstrap commits).
-- Exact tested game-code commit: **PENDING REFINEMENT SEAL**.
+- Exact tested game-code commit: `782d8c050c651ade73e22b355017f9c52da7d6cb`.
 - Original PC source HEAD: `999038d330084ee98cbb3c5d1ec59c9c966b3e81`, branch `master`.
 - This is a snapshot of the existing dirty game, not a new implementation. The isolated checkout preserves the target bootstrap history. The private 28-commit PC history is not uploaded or rewritten.
 - The PC project at `%USERPROFILE%/Documents/game` remains the fallback. Do not retire it until the exact approved checkpoint builds and passes checks in cloud.
