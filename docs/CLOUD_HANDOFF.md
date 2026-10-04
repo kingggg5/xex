@@ -7,7 +7,7 @@ Date: 2026-10-05 (Asia/Bangkok). Target environment: **xex**.
 - Repository: `https://github.com/kingggg5/xex` — verified **public**.
 - Dedicated branch: `codex/xex-cloud-checkpoint-20261005`.
 - Reviewed remote base: `f3ecd63fb6007000ef860a1484d31a2328c97b24` (11 bootstrap commits).
-- Exact tested game-code commit: **PENDING LOCAL SEAL**.
+- Exact tested game-code commit: `80b8eb8c305ffef67a33704b22b7ef80199987bc`.
 - Original PC source HEAD: `999038d330084ee98cbb3c5d1ec59c9c966b3e81`, branch `master`.
 - This is a snapshot of the existing dirty game, not a new implementation. The isolated checkout preserves the target bootstrap history. The private 28-commit PC history is not uploaded or rewritten.
 - The PC project at `%USERPROFILE%/Documents/game` remains the fallback. Do not retire it until the exact approved checkpoint builds and passes checks in cloud.
@@ -128,4 +128,6 @@ Binary art, fonts and codecs use Git LFS. Keep their real objects available; a s
 
 The target's actual committed bootstrap was inspected and merged with existing project instructions. Its default dependency roots were corrected to the real `apps/*` layout. The earlier separate “Configure Xexoria cloud workflow” task stopped with an incomplete untested candidate; those fragments were not blindly adopted, and no notification/resumption of that task is claimed.
 
-Next priority: finish the local seal and owner push approval, then materialize/build/test the same commit in `xex`. Preserve the PC fallback until cloud acceptance. Resume art/material and gameplay work only after that checkpoint is reproducible.
+This document is sealed in a documentation-only successor to the exact tested game-code commit above; all game/runtime files are identical. The final branch HEAD is the upload checkpoint and must be recorded by `git rev-parse HEAD` in cloud.
+
+Next priority: owner push approval, then materialize/build/test the approved branch HEAD in `xex`. Preserve the PC fallback until cloud acceptance. Resume art/material and gameplay work only after that checkpoint is reproducible.
