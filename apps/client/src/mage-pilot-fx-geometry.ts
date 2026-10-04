@@ -1,13 +1,17 @@
 /** Original authored geometric spell shapes. No reference pixels or provider assets. */
 export interface MageShape { positions: number[]; indices: number[]; colors: number[] }
 const faceColours = [[.24,.61,.87],[.43,.79,.95],[.64,.88,.98],[.25,.43,.77]] as const;
+// Cool violet underside and a cyan shoulder make the spear's planes readable
+// over meadow green. Preserve the basic bolt's smaller, paler identity.
+const lanceFaceColours = [[.22,.40,.82],[.32,.70,.96],[.58,.86,.97],[.32,.25,.65]] as const;
 
 export function magePointedShape(lance: boolean): MageShape {
- const length=lance?1.8:.45,width=lance?.16:.07;
+ const length=lance?1.8:.45,width=lance?.22:.07;
  const p=[[0,0,length*.62],[-width,0,0],[0,width*.65,0],[width,0,0],[0,-width*.65,0],[0,0,-length*.38]];
  const faces=[[0,1,2],[0,2,3],[0,3,4],[0,4,1],[5,2,1],[5,3,2],[5,4,3],[5,1,4]];
  const shape:MageShape={positions:[],indices:[],colors:[]};
- for(const [i,face] of faces.entries())for(const v of face){shape.indices.push(shape.indices.length);shape.positions.push(...p[v]);shape.colors.push(...faceColours[i%4],v===0?.92:v===5?.10:.38);}
+ const palette=lance?lanceFaceColours:faceColours;
+ for(const [i,face] of faces.entries())for(const v of face){shape.indices.push(shape.indices.length);shape.positions.push(...p[v]);shape.colors.push(...palette[i%4],v===0?.92:v===5?.10:lance?.56:.38);}
  // Four cyan physical ribs trace the faceted taper, in the SAME draw/material.
  // The tiny outward offset prevents coplanar shimmer; the tail rib fades away.
  for(const [nx,ny] of [[1,0],[0,1],[-1,0],[0,-1]]){

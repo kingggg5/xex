@@ -150,7 +150,7 @@ export function createMagePilotFx(scene:Scene,options:MagePilotOptions){
   const actual=readLow()?Math.min(4,count):count;
   for(let q=0;q<count;q++){
    const a=slot.contactFacing+(q/Math.max(1,count-1)-.5)*Math.PI*2/3,t=age/1000;
-   const r=(slot.lance?.12:.06)+t*(slot.lance?1.7:1.2),size=q<actual?(slot.lance?.10:.065)*fade:0;
+   const r=(slot.lance?.12:.06)+t*(slot.lance?1.7:1.2),size=q<actual?(slot.lance?.125:.065)*fade:0;
    const x=slot.contact.x+Math.sin(a)*r,y=slot.contact.y+t*(.9+(q%3)*.25)-2*t*t,z=slot.contact.z+Math.cos(a)*r;
    // Four actual facets, a sharp tip, and a volumetric base; no flat fleck cloud.
    for(let v=0;v<4;v++){const offset=q*12+v*3;p[offset]=x+(v===1?-size:v===2?size:0);

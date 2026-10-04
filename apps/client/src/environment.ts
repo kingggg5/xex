@@ -60,6 +60,9 @@ import cityR6CandidateAssetUrl from '../../../assets/models/reference-city/r6-ca
 import keepHlodAssetUrl from "./assets/models/env_reference_city_hlod.glb?url";
 import arrivalHlodReviewUrl from '../../../assets/models/reference-city/r5/arrival-hlod-r01/arrival-hlod-r01-runtime.glb?url';
 import arrivalHlodReviewR02Url from '../../../assets/models/reference-city/r5/arrival-hlod-r02/arrival-hlod-r02-runtime-final.glb?url';
+import arrivalHlodReviewR03Url from '../../../assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb?url';
+import guardianMaterialR03Url from '../../../assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb?url';
+import {createCityLampPools} from './city-lamp-pools';
 import meadowTreeAssetUrl from "./assets/models/env_meadow_tree_v2.meshopt.glb?url";
 import southMeadowWestAssetUrl from "./assets/world/env_sunmeadow_c7_r6.meshopt.glb?url";
 import southMeadowEastAssetUrl from "./assets/world/env_sunmeadow_c8_r6.meshopt.glb?url";
@@ -385,6 +388,10 @@ export async function createEnvironment(
 		console.warn("Authored mountain border unavailable; fallback ridges remain.", error);
 	}
 	createFencesAndHills(scene, materials);
+	if (import.meta.env.DEV && debug.get('arrivalProps') === 'r01') {
+		try { await (await import('./arrival-fence-review')).createArrivalFenceReview(scene); }
+		catch (error) { console.warn('Arrival fence review failed; original fences retained.', error); }
+	}
 	const proceduralTrees = createTrees(scene, materials, rng);
 	await createKenneyFoliage(scene);
 	const legacyPlants = createMeadowDressing(scene, materials, rng);
@@ -397,7 +404,7 @@ export async function createEnvironment(
 	recordCityRepresentationPhase(scene, 'cold');
 	const ensureDetailedCity = await upgradeKeepAndTrees(
 		scene, proceduralKeep, proceduralTrees, cityGateZ, () => shadows, shadowsEnabled, prepareDetailedCity,
-		natureClock, legacyTreeBark, () => profile.waterDetail, sunmeadowTrees,
+		natureClock, legacyTreeBark, () => profile.waterDetail, sunmeadowTrees, getGroundHeight,
 	);
 	const weather = createWorldWeather(scene, sun, hemisphere, terrainMaterial, natureClock);
 	// C-P1-WATER begin
@@ -1110,19 +1117,21 @@ async function upgradeKeepAndTrees(
 	legacyBark: () => PBRMaterial,
 	getWaterDetail: () => number,
 	trees: SunmeadowTrees,
+	getGroundHeight: (x:number,z:number)=>number|null,
 ): Promise<(() => Promise<void>) & { getState(): "idle" | "loading" | "prepared" | "ready" | "failed"; reveal(): void; getWaterStats(): ReturnType<typeof createCityFountain>['stats'] }> {
 	let hlodMesh: Mesh | null = null;
 	let preparedMesh: Mesh | null = null;
 	let gateTreeCandidate: ReturnType<typeof prepareGateCityTreeCandidate> | null = null;
 	let gateTreeAdded = false;
+	let cityLampPools: ReturnType<typeof createCityLampPools> | null = null;
 	const fountain = createCityFountain(scene, cityGateZ + 152, natureClock);
 	fountain.setDetail(getWaterDetail());
 	const fountainQuality = scene.onBeforeRenderObservable.add(() => fountain.setDetail(getWaterDetail()));
 	scene.onDisposeObservable.addOnce(() => scene.onBeforeRenderObservable.remove(fountainQuality));
 	try {
 		const arrivalVersion = import.meta.env.DEV ? new URLSearchParams(location.search).get('cityArrival') : null;
-		const arrivalReview = arrivalVersion === 'r01' || arrivalVersion === 'r02';
-		const hlodUrl = arrivalVersion === 'r02' ? arrivalHlodReviewR02Url : arrivalReview ? arrivalHlodReviewUrl : keepHlodAssetUrl;
+		const arrivalReview = arrivalVersion === 'r01' || arrivalVersion === 'r02' || arrivalVersion === 'r03';
+		const hlodUrl = arrivalVersion === 'r03' ? arrivalHlodReviewR03Url : arrivalVersion === 'r02' ? arrivalHlodReviewR02Url : arrivalReview ? arrivalHlodReviewUrl : keepHlodAssetUrl;
 		const loadedHlod = await SceneLoader.ImportMeshAsync("", "", hlodUrl, scene);
 		if (!loadedHlod.meshes.some((mesh) => mesh instanceof Mesh && mesh.getTotalVertices() > 0)) {
 			throw new Error("Meadow HLOD has no static geometry.");
@@ -1134,7 +1143,8 @@ async function upgradeKeepAndTrees(
 		}
 		hlodMesh = mergeStaticModel(loadedHlod, "reference-city-hlod-merged");
 		hlodMesh.metadata = { ...hlodMesh.metadata, arrivalHlod: arrivalReview ? `${arrivalVersion}-unadmitted` : 'baseline',
-			assetSha256: arrivalVersion === 'r02' ? 'dc17f36aa72c3b4d8427cc50fc993ab993914b6f296b80ad7776e9d7167d520c'
+			assetSha256: arrivalVersion === 'r03' ? 'fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111'
+				: arrivalVersion === 'r02' ? 'dc17f36aa72c3b4d8427cc50fc993ab993914b6f296b80ad7776e9d7167d520c'
 				: arrivalReview ? '8aaa42a1ab65900d25ba46845cf02c8cd9f77139ab3b7c1914f44a040c0dae1c'
 				: '771fdf2bc450c3df2cc937f231176145d9d27bfae7772b616298a0dd063038b5' };
 		hlodMesh.receiveShadows = true;
@@ -1154,7 +1164,7 @@ async function upgradeKeepAndTrees(
 	const ensureCity = createStagedCityLoader(async () => {
 		// Container loading keeps raw, unpositioned meshes out of the live scene.
 		const reviewGuardian = import.meta.env.DEV ? new URLSearchParams(location.search).get('cityArtCandidate') : null;
-		const selectedUrl = reviewGuardian === 'forge-r6' ? forgeR6ReviewAssetUrl : reviewGuardian === 'guardian-v2' ? guardianReviewV2AssetUrl : reviewGuardian === 'guardian-v1' ? guardianReviewAssetUrl : keepAssetUrl;
+		const selectedUrl = reviewGuardian === 'guardian-r03' ? guardianMaterialR03Url : reviewGuardian === 'forge-r6' ? forgeR6ReviewAssetUrl : reviewGuardian === 'guardian-v2' ? guardianReviewV2AssetUrl : reviewGuardian === 'guardian-v1' ? guardianReviewAssetUrl : keepAssetUrl;
 		// C-MAPDRESS-R6 begin: DEV-only ?city=r6 previews the r6 dressing candidate (visual only; traversal/colliders stay r5)
 		const cityR6Preview = import.meta.env.DEV && new URLSearchParams(location.search).get('city') === 'r6';
 		if (cityR6Preview) console.info('[city] r6 dressing candidate preview (not admitted)');
@@ -1188,6 +1198,9 @@ async function upgradeKeepAndTrees(
 			}
 		}
 		const detailedMesh = mergeStaticModel(loadedCity, "reference-city-merged");
+		if (reviewGuardian === 'guardian-r03' && !cityR6Preview) detailedMesh.metadata = {...detailedMesh.metadata,
+			cityArtCandidate: 'guardian-r03-unadmitted', assetSha256: 'a8a8182e83a4ba6deefa38f223e3709a198770eef1981f33870b22b8d5d8cc7b',
+			triangleBudgetPassed: false, geometryDonor: 'guardian-v2'};
 		detailedMesh.receiveShadows = true;
 		detailedMesh.isVisible = false;
 		const detailedRoot = new TransformNode("reference-city-detail", scene);
@@ -1196,6 +1209,10 @@ async function upgradeKeepAndTrees(
 		detailedRoot.position.set(0, 0, cityGateZ + 152);
 		detailedRoot.rotation.y = Math.PI;
 		cityLighting = bindCityMaterialLighting(scene, detailedMesh, () => getShadows().getLight().intensity);
+		if(import.meta.env.DEV && new URLSearchParams(location.search).get('look')==='v2' && !cityR6Preview) {
+			cityLampPools=createCityLampPools(scene,cityGateZ+152,getGroundHeight);
+			await cityLampPools.ready;
+		}
 		const removedWaterFaces = removeFountainPlaceholders(detailedMesh, cityGateZ + 152);
 		if (import.meta.env.DEV && new URLSearchParams(location.search).get('debugFountain') === '1') console.info('Fountain placeholder faces removed', removedWaterFaces, detailedMesh.subMeshes.map(sub => ({material:sub.getMaterial()?.name,indices:sub.indexCount})).filter(sub=>/water|foam|magic/.test(sub.material ?? '')));
 		// Compile the full materials while the small HLOD remains on screen.
@@ -1216,6 +1233,7 @@ async function upgradeKeepAndTrees(
 		return;
 		} catch (error) {
 			cityLighting?.dispose();
+		cityLampPools?.dispose();cityLampPools=null;
 			candidateRoot?.dispose(false, true);
 			loadedCity.dispose();
 			throw error;
@@ -1224,6 +1242,7 @@ async function upgradeKeepAndTrees(
 		if (!preparedMesh || scene.isDisposed) throw new Error("Prepared city is no longer available");
 		if (shadowsEnabled) getShadows().addShadowCaster(preparedMesh, false);
 		preparedMesh.isVisible = true;
+		cityLampPools?.reveal();
 		if (gateTreeCandidate && !gateTreeAdded) {
 			gateTreeAdded = true;
 			void trees.add([gateTreeCandidate.placement]).then(() => {

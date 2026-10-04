@@ -1,12 +1,12 @@
 # Cloud assets and licence limits
 
-This isolated checkpoint preserves the current game. Public push remains pending explicit owner review and approval. This document is not legal/security certification and does not assert that all assets are CC0.
+The owner approved push and baseline `cfa9a09` is already pushed. This document records Root’s reviewed local refinement. Root owns further commit/push actions. Authorization does not change licences or constitute legal/security certification; assets are not all CC0.
 
 [CLOUD_ASSETS.json](CLOUD_ASSETS.json) records relative paths, source SHA256 and current checkpoint SHA256 after Root froze copy/metadata normalization. The captured Git head is the reviewed bootstrap base, not a claim that the new snapshot is committed/uploaded. Original PC assets/history remain intact.
 
 ## Input closure and regeneration
 
-The initial static audit recorded 800 asset/data rows. Actual isolated suites found additional semantic inputs and missing canonical Mage files that had caused five critical NullEngine tests to skip. With the primary-author licence page, 20 exact additions total 12,485,962 bytes. Two original rows are regenerated test outputs, not inputs. The final reconciled roster contains 818 inputs: 815 copied files and 3 generated requirements. No whole source folder was transferred.
+The initial static audit recorded 800 asset/data rows. Actual isolated suites found additional semantic inputs and missing canonical Mage files that had caused five critical NullEngine tests to skip. With the primary-author licence page, 20 exact additions total 12,485,962 bytes. Two original rows are regenerated test outputs, not inputs. The earlier reconciled roster contained 818 inputs: 815 copied and 3 generated requirements. Five new static DEV/build GLBs bring the current roster to 823 inputs: 820 copied and 3 generated requirements. No whole source folder was transferred.
 
 The additions include three `stone/source/sm_boulder_01_lod0-2.glb` files, monster stand-in runtime/source/licence/archive files, 2020 licence evidence, and canonical `assets/models/heroes/hero02/runtime/` Witch LOD 0/1/2, staff LOD 0 and clips JSON. Their required test role does not promote candidate art into default gameplay. Earlier static scanning must not be represented as final complete test closure. The corrected five Mage tests passed with zero skips; Root owns full suite/build results.
 
@@ -42,13 +42,25 @@ Witch LOD 0/1/2 models retain this exact notice:
 
 > Xexoria hero 02 (witch, Mage). Mesh and textures: owner's Tripo P2.0 job cfdd51e7 (paid-user Outputs, Tripo terms 5.2.2). Clips: Quaternius UAL1 CC0 retargets + authored. Not for redistribution outside the game.
 
-Staff retains its distinct paid-output notice. Every in-file notice is in the JSON manifest. The Mage receipt documents local project custody without public publication/deployed-build qualification. It does not itself prohibit or settle private cloud custody. Private access, public raw-source redistribution and distribution inside the game are separate scopes. Root/owner review is required before public push. Do not relabel paid/owner work CC0 or suppress the game-only notice.
+Staff retains its distinct paid-output notice. Every in-file notice is in the JSON manifest. The Mage receipt documents local project custody without public publication/deployed-build qualification. It does not itself prohibit or settle private cloud custody. Private access, public raw-source redistribution and distribution inside the game are separate scopes. Owner-approved transfer/push does not erase preserved licence restrictions; Root retains licence/security responsibility. Do not relabel paid/owner work CC0 or suppress the game-only notice.
 
 ## Delivery
 
-Five required city GLBs exceed 50 MiB; none of the current input roster exceeds 100 MiB. Broader source inventory contains 119 files over 10 MiB,26 over 50 MiB and13 over 100 MiB. Optional raw/source/authoring files remain listed for a separate reviewed transfer, not automatic upload or silent runtime exclusion.
+Six required city GLBs now exceed 50 MiB; none of the current input roster exceeds 100 MiB. Broader recorded source inventory now contains 120 files over 10 MiB, 27 over 50 MiB and 13 over 100 MiB. Optional raw/source/authoring files remain listed for a separate reviewed transfer, not automatic upload or silent runtime exclusion.
 
 `.gitattributes` declares binary formats for Git LFS. Root records actual object count/transfer results later. Cloud must fetch payloads and verify SHA256/size; pointer text is not a usable asset. Any separately authorized transfer restores exact relative paths/hashes. Delivery does not waive licence/privacy review.
+
+## Reviewed city refinement
+
+Root copied 32 reviewed refinement files after the approved baseline. Five new GLBs remain required build inputs even with DEV flags off. Three croft source GLBs are separate optional builder inputs. All 32 current file hashes/scopes are recorded. The exact arrival candidate manifest closes optional verifier metadata; no cloud reproduction is claimed.
+
+- `cityArrival=r03`: 23,468 triangles, 9 materials; staged masonry.
+- `arrivalProps=r01`: 2,344 / 1,344 / 744 triangles; one shared 1K wood set, lower LOD geometry borrowing LOD0 material.
+- `cityArtCandidate=guardian-r03`: 915,073 triangles; **BUDGET FAIL** against 900,000 by 15,073. Art candidate only; no waiver/default promotion.
+
+Existing Forge/CC0/owner-authored source scope and notices are unchanged. Generated validation receipts are outputs, not runtime inputs. Art regeneration is outside bootstrap. Recorded large-source inventory is now 120 files above 10 MiB,27 above 50 MiB and13 above 100 MiB; optional raw/source transfers remain separate.
+
+Root reports 917 original-local tests passing, typecheck exit 0 and GL2 city day plus GL2/WebGPU night real walks passing with zero errors. Isolated local checkpoint reports 916 passed, one optional native KTX tool skip and build PASS. These Root-reported local results do not establish cloud/device/performance/AAA acceptance. Guardian budget failure and unfinished art remain open.
 
 ## Evidence boundary
 

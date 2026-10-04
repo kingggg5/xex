@@ -1,0 +1,4179 @@
+{
+  "schema": "xexoria.arrival-fence-r01/1",
+  "status": "CPU_ADAPTED_CANDIDATE_NATIVE_REQUIRED_NOT_ADMITTED",
+  "sourceKit": [
+    {
+      "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod0.glb",
+      "sha256": "ad573ee51ef412de3a871476e9c4eafdc093116ab8da25421006b831ad6fc4a3"
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod1.glb",
+      "sha256": "a112aaf104549898f69b41df6dcdd18add4edf5bf7c0c9fc4a579c307da1049e"
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod2.glb",
+      "sha256": "b77aac10c8116955e574a2003cbaf4d8209d21a1a87db84e41a3098405796f46"
+    }
+  ],
+  "legacyLayoutFunctionSHA": "2f3639a5c97171a6d72e571a54be039869c13e4afe0a571e1db709ce59b3a6a9",
+  "legacyTargets": [
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1--4",
+      "center": [
+        -5.01305756364019,
+        0.56,
+        -4
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1--2.1",
+      "center": [
+        -5.136895818776171,
+        0.56,
+        -2.1
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1--0.20000000000000018",
+      "center": [
+        -5.284004266325346,
+        0.56,
+        -0.20000000000000018
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1-1.6999999999999997",
+      "center": [
+        -5.433394836856325,
+        0.56,
+        1.6999999999999997
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1-3.5999999999999996",
+      "center": [
+        -5.563753868788589,
+        0.56,
+        3.5999999999999996
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1-5.5",
+      "center": [
+        -5.656482944024574,
+        0.56,
+        5.5
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1-7.4",
+      "center": [
+        -5.698352337815056,
+        0.56,
+        7.4
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1-9.3",
+      "center": [
+        -5.683388513231566,
+        0.56,
+        9.3
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": -1,
+      "name": "env-fence-post--1-11.200000000000001",
+      "center": [
+        -5.613726370033768,
+        0.56,
+        11.200000000000001
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "rail",
+      "side": -1,
+      "name": "env-fence-rail--1-0.45",
+      "center": [
+        -5.35,
+        0.45,
+        3.4
+      ],
+      "size": [
+        0.16,
+        0.16,
+        16
+      ]
+    },
+    {
+      "kind": "rail",
+      "side": -1,
+      "name": "env-fence-rail--1-0.88",
+      "center": [
+        -5.35,
+        0.88,
+        3.4
+      ],
+      "size": [
+        0.16,
+        0.16,
+        16
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1--4",
+      "center": [
+        5.01305756364019,
+        0.56,
+        -4
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1--2.1",
+      "center": [
+        5.136895818776171,
+        0.56,
+        -2.1
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1--0.20000000000000018",
+      "center": [
+        5.284004266325346,
+        0.56,
+        -0.20000000000000018
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1-1.6999999999999997",
+      "center": [
+        5.433394836856325,
+        0.56,
+        1.6999999999999997
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1-3.5999999999999996",
+      "center": [
+        5.563753868788589,
+        0.56,
+        3.5999999999999996
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1-5.5",
+      "center": [
+        5.656482944024574,
+        0.56,
+        5.5
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1-7.4",
+      "center": [
+        5.698352337815056,
+        0.56,
+        7.4
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1-9.3",
+      "center": [
+        5.683388513231566,
+        0.56,
+        9.3
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "post",
+      "side": 1,
+      "name": "env-fence-post-1-11.200000000000001",
+      "center": [
+        5.613726370033768,
+        0.56,
+        11.200000000000001
+      ],
+      "size": [
+        0.22,
+        1.15,
+        0.22
+      ]
+    },
+    {
+      "kind": "rail",
+      "side": 1,
+      "name": "env-fence-rail-1-0.45",
+      "center": [
+        5.35,
+        0.45,
+        3.4
+      ],
+      "size": [
+        0.16,
+        0.16,
+        16
+      ]
+    },
+    {
+      "kind": "rail",
+      "side": 1,
+      "name": "env-fence-rail-1-0.88",
+      "center": [
+        5.35,
+        0.88,
+        3.4
+      ],
+      "size": [
+        0.16,
+        0.16,
+        16
+      ]
+    }
+  ],
+  "legacyRunEnvelopes": [
+    {
+      "side": -1,
+      "min": [
+        -5.808352337815056,
+        -0.014999999999999902,
+        -4.6
+      ],
+      "max": [
+        -4.90305756364019,
+        1.135,
+        11.4
+      ]
+    },
+    {
+      "side": 1,
+      "min": [
+        4.90305756364019,
+        -0.014999999999999902,
+        -4.6
+      ],
+      "max": [
+        5.808352337815056,
+        1.135,
+        11.4
+      ]
+    }
+  ],
+  "lods": [
+    {
+      "file": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+      "sha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9",
+      "bytes": 1429316,
+      "triangles": 2344,
+      "sourcePostTriangles": 44,
+      "sourceRailTriangles": 44,
+      "originalRunEnvelopeMaxDeltaM": 9.71445146547012e-17,
+      "minimumUVArea": 6.919916037117974e-06,
+      "materials": 1,
+      "images": 3,
+      "parts": [
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.123057563640191,
+              -0.015,
+              -4.11
+            ],
+            "max": [
+              -4.90305756364019,
+              1.055,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.123057563640191,
+              1.05,
+              -4.11
+            ],
+            "max": [
+              -4.90305756364019,
+              1.135,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.246895818776172,
+              -0.015,
+              -2.21
+            ],
+            "max": [
+              -5.026895818776171,
+              1.055,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.246895818776172,
+              1.05,
+              -2.21
+            ],
+            "max": [
+              -5.026895818776171,
+              1.135,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--0.20000000000000018",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.3940042663253465,
+              -0.015,
+              -0.31000000000000016
+            ],
+            "max": [
+              -5.174004266325346,
+              1.055,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--0.20000000000000018",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.3940042663253465,
+              1.05,
+              -0.31000000000000016
+            ],
+            "max": [
+              -5.174004266325346,
+              1.135,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-1.6999999999999997",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.543394836856326,
+              -0.015,
+              1.5899999999999996
+            ],
+            "max": [
+              -5.323394836856325,
+              1.055,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-1.6999999999999997",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.543394836856326,
+              1.05,
+              1.5899999999999996
+            ],
+            "max": [
+              -5.323394836856325,
+              1.135,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.673753868788589,
+              -0.015,
+              3.4899999999999998
+            ],
+            "max": [
+              -5.4537538687885885,
+              1.055,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.673753868788589,
+              1.05,
+              3.4899999999999998
+            ],
+            "max": [
+              -5.4537538687885885,
+              1.135,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.766482944024574,
+              -0.015,
+              5.39
+            ],
+            "max": [
+              -5.546482944024573,
+              1.055,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.766482944024574,
+              1.05,
+              5.39
+            ],
+            "max": [
+              -5.546482944024573,
+              1.135,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.808352337815056,
+              -0.015,
+              7.29
+            ],
+            "max": [
+              -5.5883523378150555,
+              1.055,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.808352337815056,
+              1.05,
+              7.29
+            ],
+            "max": [
+              -5.5883523378150555,
+              1.135,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.793388513231566,
+              -0.015,
+              9.190000000000001
+            ],
+            "max": [
+              -5.573388513231565,
+              1.055,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.793388513231566,
+              1.05,
+              9.190000000000001
+            ],
+            "max": [
+              -5.573388513231565,
+              1.135,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.723726370033768,
+              -0.015,
+              11.090000000000002
+            ],
+            "max": [
+              -5.5037263700337675,
+              1.055,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.723726370033768,
+              1.05,
+              11.090000000000002
+            ],
+            "max": [
+              -5.5037263700337675,
+              1.135,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": -1,
+          "source": "env-fence-rail--1-0.45",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.43,
+              0.37,
+              -4.6
+            ],
+            "max": [
+              -5.27,
+              0.53,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": -1,
+          "source": "env-fence-rail--1-0.88",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.43,
+              0.8,
+              -4.6
+            ],
+            "max": [
+              -5.27,
+              0.96,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              4.90305756364019,
+              -0.015,
+              -4.11
+            ],
+            "max": [
+              5.123057563640191,
+              1.055,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              4.90305756364019,
+              1.05,
+              -4.11
+            ],
+            "max": [
+              5.123057563640191,
+              1.135,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.026895818776171,
+              -0.015,
+              -2.21
+            ],
+            "max": [
+              5.246895818776172,
+              1.055,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.026895818776171,
+              1.05,
+              -2.21
+            ],
+            "max": [
+              5.246895818776172,
+              1.135,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--0.20000000000000018",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.174004266325346,
+              -0.015,
+              -0.31000000000000016
+            ],
+            "max": [
+              5.3940042663253465,
+              1.055,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--0.20000000000000018",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.174004266325346,
+              1.05,
+              -0.31000000000000016
+            ],
+            "max": [
+              5.3940042663253465,
+              1.135,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-1.6999999999999997",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.323394836856325,
+              -0.015,
+              1.5899999999999996
+            ],
+            "max": [
+              5.543394836856326,
+              1.055,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-1.6999999999999997",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.323394836856325,
+              1.05,
+              1.5899999999999996
+            ],
+            "max": [
+              5.543394836856326,
+              1.135,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.4537538687885885,
+              -0.015,
+              3.4899999999999998
+            ],
+            "max": [
+              5.673753868788589,
+              1.055,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.4537538687885885,
+              1.05,
+              3.4899999999999998
+            ],
+            "max": [
+              5.673753868788589,
+              1.135,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.546482944024573,
+              -0.015,
+              5.39
+            ],
+            "max": [
+              5.766482944024574,
+              1.055,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.546482944024573,
+              1.05,
+              5.39
+            ],
+            "max": [
+              5.766482944024574,
+              1.135,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.5883523378150555,
+              -0.015,
+              7.29
+            ],
+            "max": [
+              5.808352337815056,
+              1.055,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.5883523378150555,
+              1.05,
+              7.29
+            ],
+            "max": [
+              5.808352337815056,
+              1.135,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.573388513231565,
+              -0.015,
+              9.190000000000001
+            ],
+            "max": [
+              5.793388513231566,
+              1.055,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.573388513231565,
+              1.05,
+              9.190000000000001
+            ],
+            "max": [
+              5.793388513231566,
+              1.135,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.5037263700337675,
+              -0.015,
+              11.090000000000002
+            ],
+            "max": [
+              5.723726370033768,
+              1.055,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.5037263700337675,
+              1.05,
+              11.090000000000002
+            ],
+            "max": [
+              5.723726370033768,
+              1.135,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": 1,
+          "source": "env-fence-rail-1-0.45",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.27,
+              0.37,
+              -4.6
+            ],
+            "max": [
+              5.43,
+              0.53,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": 1,
+          "source": "env-fence-rail-1-0.88",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.27,
+              0.8,
+              -4.6
+            ],
+            "max": [
+              5.43,
+              0.96,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.395,
+              -4.055
+            ],
+            "max": [
+              -4.958057563640191,
+              0.505,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.825,
+              -4.055
+            ],
+            "max": [
+              -4.958057563640191,
+              0.935,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.395,
+              -2.1550000000000002
+            ],
+            "max": [
+              -5.081895818776172,
+              0.505,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.825,
+              -2.1550000000000002
+            ],
+            "max": [
+              -5.081895818776172,
+              0.935,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.6187538687885885,
+              0.395,
+              3.5449999999999995
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.6187538687885885,
+              0.825,
+              3.5449999999999995
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.711482944024573,
+              0.395,
+              5.445
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.711482944024573,
+              0.825,
+              5.445
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.7533523378150555,
+              0.395,
+              7.345000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.7533523378150555,
+              0.825,
+              7.345000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.738388513231565,
+              0.395,
+              9.245000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.738388513231565,
+              0.825,
+              9.245000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.668726370033768,
+              0.395,
+              11.145000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              -5.668726370033768,
+              0.825,
+              11.145000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              4.958057563640191,
+              0.395,
+              -4.055
+            ],
+            "max": [
+              5.404999999999999,
+              0.505,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              4.958057563640191,
+              0.825,
+              -4.055
+            ],
+            "max": [
+              5.404999999999999,
+              0.935,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.081895818776172,
+              0.395,
+              -2.1550000000000002
+            ],
+            "max": [
+              5.404999999999999,
+              0.505,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.081895818776172,
+              0.825,
+              -2.1550000000000002
+            ],
+            "max": [
+              5.404999999999999,
+              0.935,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              3.5449999999999995
+            ],
+            "max": [
+              5.6187538687885885,
+              0.505,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              3.5449999999999995
+            ],
+            "max": [
+              5.6187538687885885,
+              0.935,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              5.445
+            ],
+            "max": [
+              5.711482944024573,
+              0.505,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              5.445
+            ],
+            "max": [
+              5.711482944024573,
+              0.935,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              7.345000000000001
+            ],
+            "max": [
+              5.7533523378150555,
+              0.505,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              7.345000000000001
+            ],
+            "max": [
+              5.7533523378150555,
+              0.935,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              9.245000000000001
+            ],
+            "max": [
+              5.738388513231565,
+              0.505,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              9.245000000000001
+            ],
+            "max": [
+              5.738388513231565,
+              0.935,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              11.145000000000001
+            ],
+            "max": [
+              5.668726370033768,
+              0.505,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 44,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              11.145000000000001
+            ],
+            "max": [
+              5.668726370033768,
+              0.935,
+              11.255
+            ]
+          }
+        }
+      ],
+      "materialPolicy": "SELF_CONTAINED_SINGLE_SHARED_TEXTURE_SET"
+    },
+    {
+      "file": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+      "sha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3",
+      "bytes": 203228,
+      "triangles": 1344,
+      "sourcePostTriangles": 24,
+      "sourceRailTriangles": 24,
+      "originalRunEnvelopeMaxDeltaM": 9.71445146547012e-17,
+      "minimumUVArea": 1.9142913428405492e-05,
+      "materials": 1,
+      "images": 0,
+      "parts": [
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.123057563640191,
+              -0.015,
+              -4.11
+            ],
+            "max": [
+              -4.90305756364019,
+              1.055,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.123057563640191,
+              1.05,
+              -4.11
+            ],
+            "max": [
+              -4.90305756364019,
+              1.135,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.246895818776172,
+              -0.015,
+              -2.21
+            ],
+            "max": [
+              -5.026895818776171,
+              1.055,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.246895818776172,
+              1.05,
+              -2.21
+            ],
+            "max": [
+              -5.026895818776171,
+              1.135,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--0.20000000000000018",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.3940042663253465,
+              -0.015,
+              -0.31000000000000016
+            ],
+            "max": [
+              -5.174004266325346,
+              1.055,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--0.20000000000000018",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.3940042663253465,
+              1.05,
+              -0.31000000000000016
+            ],
+            "max": [
+              -5.174004266325346,
+              1.135,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-1.6999999999999997",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.543394836856326,
+              -0.015,
+              1.5899999999999996
+            ],
+            "max": [
+              -5.323394836856325,
+              1.055,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-1.6999999999999997",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.543394836856326,
+              1.05,
+              1.5899999999999996
+            ],
+            "max": [
+              -5.323394836856325,
+              1.135,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.673753868788589,
+              -0.015,
+              3.4899999999999998
+            ],
+            "max": [
+              -5.4537538687885885,
+              1.055,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.673753868788589,
+              1.05,
+              3.4899999999999998
+            ],
+            "max": [
+              -5.4537538687885885,
+              1.135,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.766482944024574,
+              -0.015,
+              5.39
+            ],
+            "max": [
+              -5.546482944024573,
+              1.055,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.766482944024574,
+              1.05,
+              5.39
+            ],
+            "max": [
+              -5.546482944024573,
+              1.135,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.808352337815056,
+              -0.015,
+              7.29
+            ],
+            "max": [
+              -5.5883523378150555,
+              1.055,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.808352337815056,
+              1.05,
+              7.29
+            ],
+            "max": [
+              -5.5883523378150555,
+              1.135,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.793388513231566,
+              -0.015,
+              9.190000000000001
+            ],
+            "max": [
+              -5.573388513231565,
+              1.055,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.793388513231566,
+              1.05,
+              9.190000000000001
+            ],
+            "max": [
+              -5.573388513231565,
+              1.135,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.723726370033768,
+              -0.015,
+              11.090000000000002
+            ],
+            "max": [
+              -5.5037263700337675,
+              1.055,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.723726370033768,
+              1.05,
+              11.090000000000002
+            ],
+            "max": [
+              -5.5037263700337675,
+              1.135,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": -1,
+          "source": "env-fence-rail--1-0.45",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.43,
+              0.37,
+              -4.6
+            ],
+            "max": [
+              -5.27,
+              0.53,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": -1,
+          "source": "env-fence-rail--1-0.88",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.43,
+              0.8,
+              -4.6
+            ],
+            "max": [
+              -5.27,
+              0.96,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              4.90305756364019,
+              -0.015,
+              -4.11
+            ],
+            "max": [
+              5.123057563640191,
+              1.055,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              4.90305756364019,
+              1.05,
+              -4.11
+            ],
+            "max": [
+              5.123057563640191,
+              1.135,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.026895818776171,
+              -0.015,
+              -2.21
+            ],
+            "max": [
+              5.246895818776172,
+              1.055,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.026895818776171,
+              1.05,
+              -2.21
+            ],
+            "max": [
+              5.246895818776172,
+              1.135,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--0.20000000000000018",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.174004266325346,
+              -0.015,
+              -0.31000000000000016
+            ],
+            "max": [
+              5.3940042663253465,
+              1.055,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--0.20000000000000018",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.174004266325346,
+              1.05,
+              -0.31000000000000016
+            ],
+            "max": [
+              5.3940042663253465,
+              1.135,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-1.6999999999999997",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.323394836856325,
+              -0.015,
+              1.5899999999999996
+            ],
+            "max": [
+              5.543394836856326,
+              1.055,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-1.6999999999999997",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.323394836856325,
+              1.05,
+              1.5899999999999996
+            ],
+            "max": [
+              5.543394836856326,
+              1.135,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.4537538687885885,
+              -0.015,
+              3.4899999999999998
+            ],
+            "max": [
+              5.673753868788589,
+              1.055,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.4537538687885885,
+              1.05,
+              3.4899999999999998
+            ],
+            "max": [
+              5.673753868788589,
+              1.135,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.546482944024573,
+              -0.015,
+              5.39
+            ],
+            "max": [
+              5.766482944024574,
+              1.055,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.546482944024573,
+              1.05,
+              5.39
+            ],
+            "max": [
+              5.766482944024574,
+              1.135,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.5883523378150555,
+              -0.015,
+              7.29
+            ],
+            "max": [
+              5.808352337815056,
+              1.055,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.5883523378150555,
+              1.05,
+              7.29
+            ],
+            "max": [
+              5.808352337815056,
+              1.135,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.573388513231565,
+              -0.015,
+              9.190000000000001
+            ],
+            "max": [
+              5.793388513231566,
+              1.055,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.573388513231565,
+              1.05,
+              9.190000000000001
+            ],
+            "max": [
+              5.793388513231566,
+              1.135,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.5037263700337675,
+              -0.015,
+              11.090000000000002
+            ],
+            "max": [
+              5.723726370033768,
+              1.055,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.5037263700337675,
+              1.05,
+              11.090000000000002
+            ],
+            "max": [
+              5.723726370033768,
+              1.135,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": 1,
+          "source": "env-fence-rail-1-0.45",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.27,
+              0.37,
+              -4.6
+            ],
+            "max": [
+              5.43,
+              0.53,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": 1,
+          "source": "env-fence-rail-1-0.88",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.27,
+              0.8,
+              -4.6
+            ],
+            "max": [
+              5.43,
+              0.96,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.395,
+              -4.055
+            ],
+            "max": [
+              -4.958057563640191,
+              0.505,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.825,
+              -4.055
+            ],
+            "max": [
+              -4.958057563640191,
+              0.935,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.395,
+              -2.1550000000000002
+            ],
+            "max": [
+              -5.081895818776172,
+              0.505,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.825,
+              -2.1550000000000002
+            ],
+            "max": [
+              -5.081895818776172,
+              0.935,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.6187538687885885,
+              0.395,
+              3.5449999999999995
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.6187538687885885,
+              0.825,
+              3.5449999999999995
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.711482944024573,
+              0.395,
+              5.445
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.711482944024573,
+              0.825,
+              5.445
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.7533523378150555,
+              0.395,
+              7.345000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.7533523378150555,
+              0.825,
+              7.345000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.738388513231565,
+              0.395,
+              9.245000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.738388513231565,
+              0.825,
+              9.245000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.668726370033768,
+              0.395,
+              11.145000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              -5.668726370033768,
+              0.825,
+              11.145000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              4.958057563640191,
+              0.395,
+              -4.055
+            ],
+            "max": [
+              5.404999999999999,
+              0.505,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              4.958057563640191,
+              0.825,
+              -4.055
+            ],
+            "max": [
+              5.404999999999999,
+              0.935,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.081895818776172,
+              0.395,
+              -2.1550000000000002
+            ],
+            "max": [
+              5.404999999999999,
+              0.505,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.081895818776172,
+              0.825,
+              -2.1550000000000002
+            ],
+            "max": [
+              5.404999999999999,
+              0.935,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              3.5449999999999995
+            ],
+            "max": [
+              5.6187538687885885,
+              0.505,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              3.5449999999999995
+            ],
+            "max": [
+              5.6187538687885885,
+              0.935,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              5.445
+            ],
+            "max": [
+              5.711482944024573,
+              0.505,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              5.445
+            ],
+            "max": [
+              5.711482944024573,
+              0.935,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              7.345000000000001
+            ],
+            "max": [
+              5.7533523378150555,
+              0.505,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              7.345000000000001
+            ],
+            "max": [
+              5.7533523378150555,
+              0.935,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              9.245000000000001
+            ],
+            "max": [
+              5.738388513231565,
+              0.505,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              9.245000000000001
+            ],
+            "max": [
+              5.738388513231565,
+              0.935,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              11.145000000000001
+            ],
+            "max": [
+              5.668726370033768,
+              0.505,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 24,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              11.145000000000001
+            ],
+            "max": [
+              5.668726370033768,
+              0.935,
+              11.255
+            ]
+          }
+        }
+      ],
+      "materialPolicy": "GEOMETRY_ONLY_REUSE_LOD0_MATERIAL_BEFORE_ENABLE"
+    },
+    {
+      "file": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+      "sha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2",
+      "bytes": 113228,
+      "triangles": 744,
+      "sourcePostTriangles": 12,
+      "sourceRailTriangles": 12,
+      "originalRunEnvelopeMaxDeltaM": 9.71445146547012e-17,
+      "minimumUVArea": 0.001512499999999992,
+      "materials": 1,
+      "images": 0,
+      "parts": [
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.123057563640191,
+              -0.015,
+              -4.11
+            ],
+            "max": [
+              -4.90305756364019,
+              1.055,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.123057563640191,
+              1.05,
+              -4.11
+            ],
+            "max": [
+              -4.90305756364019,
+              1.135,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.246895818776172,
+              -0.015,
+              -2.21
+            ],
+            "max": [
+              -5.026895818776171,
+              1.055,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.246895818776172,
+              1.05,
+              -2.21
+            ],
+            "max": [
+              -5.026895818776171,
+              1.135,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1--0.20000000000000018",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.3940042663253465,
+              -0.015,
+              -0.31000000000000016
+            ],
+            "max": [
+              -5.174004266325346,
+              1.055,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1--0.20000000000000018",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.3940042663253465,
+              1.05,
+              -0.31000000000000016
+            ],
+            "max": [
+              -5.174004266325346,
+              1.135,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-1.6999999999999997",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.543394836856326,
+              -0.015,
+              1.5899999999999996
+            ],
+            "max": [
+              -5.323394836856325,
+              1.055,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-1.6999999999999997",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.543394836856326,
+              1.05,
+              1.5899999999999996
+            ],
+            "max": [
+              -5.323394836856325,
+              1.135,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.673753868788589,
+              -0.015,
+              3.4899999999999998
+            ],
+            "max": [
+              -5.4537538687885885,
+              1.055,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.673753868788589,
+              1.05,
+              3.4899999999999998
+            ],
+            "max": [
+              -5.4537538687885885,
+              1.135,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.766482944024574,
+              -0.015,
+              5.39
+            ],
+            "max": [
+              -5.546482944024573,
+              1.055,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.766482944024574,
+              1.05,
+              5.39
+            ],
+            "max": [
+              -5.546482944024573,
+              1.135,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.808352337815056,
+              -0.015,
+              7.29
+            ],
+            "max": [
+              -5.5883523378150555,
+              1.055,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.808352337815056,
+              1.05,
+              7.29
+            ],
+            "max": [
+              -5.5883523378150555,
+              1.135,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.793388513231566,
+              -0.015,
+              9.190000000000001
+            ],
+            "max": [
+              -5.573388513231565,
+              1.055,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.793388513231566,
+              1.05,
+              9.190000000000001
+            ],
+            "max": [
+              -5.573388513231565,
+              1.135,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.723726370033768,
+              -0.015,
+              11.090000000000002
+            ],
+            "max": [
+              -5.5037263700337675,
+              1.055,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              -5.723726370033768,
+              1.05,
+              11.090000000000002
+            ],
+            "max": [
+              -5.5037263700337675,
+              1.135,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": -1,
+          "source": "env-fence-rail--1-0.45",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.43,
+              0.37,
+              -4.6
+            ],
+            "max": [
+              -5.27,
+              0.53,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": -1,
+          "source": "env-fence-rail--1-0.88",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.43,
+              0.8,
+              -4.6
+            ],
+            "max": [
+              -5.27,
+              0.96,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              4.90305756364019,
+              -0.015,
+              -4.11
+            ],
+            "max": [
+              5.123057563640191,
+              1.055,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              4.90305756364019,
+              1.05,
+              -4.11
+            ],
+            "max": [
+              5.123057563640191,
+              1.135,
+              -3.89
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.026895818776171,
+              -0.015,
+              -2.21
+            ],
+            "max": [
+              5.246895818776172,
+              1.055,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.026895818776171,
+              1.05,
+              -2.21
+            ],
+            "max": [
+              5.246895818776172,
+              1.135,
+              -1.99
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1--0.20000000000000018",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.174004266325346,
+              -0.015,
+              -0.31000000000000016
+            ],
+            "max": [
+              5.3940042663253465,
+              1.055,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1--0.20000000000000018",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.174004266325346,
+              1.05,
+              -0.31000000000000016
+            ],
+            "max": [
+              5.3940042663253465,
+              1.135,
+              -0.09000000000000018
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-1.6999999999999997",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.323394836856325,
+              -0.015,
+              1.5899999999999996
+            ],
+            "max": [
+              5.543394836856326,
+              1.055,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-1.6999999999999997",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.323394836856325,
+              1.05,
+              1.5899999999999996
+            ],
+            "max": [
+              5.543394836856326,
+              1.135,
+              1.8099999999999998
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.4537538687885885,
+              -0.015,
+              3.4899999999999998
+            ],
+            "max": [
+              5.673753868788589,
+              1.055,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.4537538687885885,
+              1.05,
+              3.4899999999999998
+            ],
+            "max": [
+              5.673753868788589,
+              1.135,
+              3.7099999999999995
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.546482944024573,
+              -0.015,
+              5.39
+            ],
+            "max": [
+              5.766482944024574,
+              1.055,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.546482944024573,
+              1.05,
+              5.39
+            ],
+            "max": [
+              5.766482944024574,
+              1.135,
+              5.61
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.5883523378150555,
+              -0.015,
+              7.29
+            ],
+            "max": [
+              5.808352337815056,
+              1.055,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.5883523378150555,
+              1.05,
+              7.29
+            ],
+            "max": [
+              5.808352337815056,
+              1.135,
+              7.510000000000001
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.573388513231565,
+              -0.015,
+              9.190000000000001
+            ],
+            "max": [
+              5.793388513231566,
+              1.055,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.573388513231565,
+              1.05,
+              9.190000000000001
+            ],
+            "max": [
+              5.793388513231566,
+              1.135,
+              9.41
+            ]
+          }
+        },
+        {
+          "kind": "post",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.5037263700337675,
+              -0.015,
+              11.090000000000002
+            ],
+            "max": [
+              5.723726370033768,
+              1.055,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "cap",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 8,
+          "boundsWorld": {
+            "min": [
+              5.5037263700337675,
+              1.05,
+              11.090000000000002
+            ],
+            "max": [
+              5.723726370033768,
+              1.135,
+              11.31
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": 1,
+          "source": "env-fence-rail-1-0.45",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.27,
+              0.37,
+              -4.6
+            ],
+            "max": [
+              5.43,
+              0.53,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "rail",
+          "side": 1,
+          "source": "env-fence-rail-1-0.88",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.27,
+              0.8,
+              -4.6
+            ],
+            "max": [
+              5.43,
+              0.96,
+              11.4
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.395,
+              -4.055
+            ],
+            "max": [
+              -4.958057563640191,
+              0.505,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.825,
+              -4.055
+            ],
+            "max": [
+              -4.958057563640191,
+              0.935,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.395,
+              -2.1550000000000002
+            ],
+            "max": [
+              -5.081895818776172,
+              0.505,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1--2.1",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.404999999999999,
+              0.825,
+              -2.1550000000000002
+            ],
+            "max": [
+              -5.081895818776172,
+              0.935,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.6187538687885885,
+              0.395,
+              3.5449999999999995
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-3.5999999999999996",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.6187538687885885,
+              0.825,
+              3.5449999999999995
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.711482944024573,
+              0.395,
+              5.445
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-5.5",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.711482944024573,
+              0.825,
+              5.445
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.7533523378150555,
+              0.395,
+              7.345000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-7.4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.7533523378150555,
+              0.825,
+              7.345000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.738388513231565,
+              0.395,
+              9.245000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-9.3",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.738388513231565,
+              0.825,
+              9.245000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.668726370033768,
+              0.395,
+              11.145000000000001
+            ],
+            "max": [
+              -5.295,
+              0.505,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": -1,
+          "source": "env-fence-post--1-11.200000000000001",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              -5.668726370033768,
+              0.825,
+              11.145000000000001
+            ],
+            "max": [
+              -5.295,
+              0.935,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              4.958057563640191,
+              0.395,
+              -4.055
+            ],
+            "max": [
+              5.404999999999999,
+              0.505,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              4.958057563640191,
+              0.825,
+              -4.055
+            ],
+            "max": [
+              5.404999999999999,
+              0.935,
+              -3.945
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.081895818776172,
+              0.395,
+              -2.1550000000000002
+            ],
+            "max": [
+              5.404999999999999,
+              0.505,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1--2.1",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.081895818776172,
+              0.825,
+              -2.1550000000000002
+            ],
+            "max": [
+              5.404999999999999,
+              0.935,
+              -2.045
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              3.5449999999999995
+            ],
+            "max": [
+              5.6187538687885885,
+              0.505,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-3.5999999999999996",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              3.5449999999999995
+            ],
+            "max": [
+              5.6187538687885885,
+              0.935,
+              3.655
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              5.445
+            ],
+            "max": [
+              5.711482944024573,
+              0.505,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-5.5",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              5.445
+            ],
+            "max": [
+              5.711482944024573,
+              0.935,
+              5.555
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              7.345000000000001
+            ],
+            "max": [
+              5.7533523378150555,
+              0.505,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-7.4",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              7.345000000000001
+            ],
+            "max": [
+              5.7533523378150555,
+              0.935,
+              7.455
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              9.245000000000001
+            ],
+            "max": [
+              5.738388513231565,
+              0.505,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-9.3",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              9.245000000000001
+            ],
+            "max": [
+              5.738388513231565,
+              0.935,
+              9.355
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.395,
+              11.145000000000001
+            ],
+            "max": [
+              5.668726370033768,
+              0.505,
+              11.255
+            ]
+          }
+        },
+        {
+          "kind": "joint",
+          "side": 1,
+          "source": "env-fence-post-1-11.200000000000001",
+          "triangles": 12,
+          "boundsWorld": {
+            "min": [
+              5.295,
+              0.825,
+              11.145000000000001
+            ],
+            "max": [
+              5.668726370033768,
+              0.935,
+              11.255
+            ]
+          }
+        }
+      ],
+      "materialPolicy": "GEOMETRY_ONLY_REUSE_LOD0_MATERIAL_BEFORE_ENABLE"
+    }
+  ],
+  "coordinateContract": "glTF(-worldX,worldY,worldZ); placement0/scale1; default Babylon X reflection through current static loader. No recenter/target-height fitting.",
+  "geometry": "Existing authored bevelled croft post/rail pieces, fitted to original envelope; short timber joinery only at28disconnected old intersections;18pitched caps below original1.135m top.",
+  "textureSet": [
+    {
+      "role": "albedo",
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "encodedBytes": 48227,
+      "sha256": "9d09e6cc8370d7da1c9140494001cb5b375efc295c4107efcde6f9ee7163d725",
+      "existingEncodedBytesExact": true
+    },
+    {
+      "role": "orm",
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "encodedBytes": 424623,
+      "sha256": "a6143e68ff16e6a4c25d71d80fc857619763393f069c40737239529d4ad20c09",
+      "existingEncodedBytesExact": true
+    },
+    {
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "encodedBytes": 602430,
+      "sha256": "d5f9c85b60499984a01999a5b472280d092c15588b774b676df2d3db107fb5fb",
+      "existingEncodedBytesExact": true
+    }
+  ],
+  "textureSource": "Existing active R5 city timber_dark/foundry maps; no new painted map/encoding or reference pixels.",
+  "materialSharing": "One shared material/set acrossbothruns. ImportLOD1/2 geometry with material disabled/replaced by retainedLOD0material before showing; no duplicate texture allocation.",
+  "collisionContract": "Existing server/coordinate/collider files unchanged; decorative runtime meshes do not add physics. Visual joinery occupies gaps inside originalrun envelopes; no path/anchor expansion.",
+  "preservation": {
+    "sourceFilesOverwritten": 0,
+    "runtimeCodeChanged": 0,
+    "colliderOrMapFilesChanged": 0,
+    "originalAnchorsOrRailEndpointsChanged": 0,
+    "blenderRuns": 0,
+    "gpuRuns": 0
+  },
+  "remaining": [
+    "Native same-camera form/material/contact review required; no default/AAA/device/FPS admission.",
+    "Wood kit is still a bounded low-cost construction; texture cannot qualify missing whole-city detail.",
+    "Actual normal direction, texture minification, source-loader orientation, sharedLODmaterial/disposal and draw delta need Root integration proof."
+  ],
+  "normalMethod": "Geometric plane normals recomputed after anisotropic authored-piece fitting; source weighted normals not reused for short joints.",
+  "nativeMountFilesOnly": [
+    "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+    "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+    "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb"
+  ],
+  "preliminaryFailures": "rejected-preliminary-exports.json",
+  "lodPolicy": {
+    "distanceMetric": "Nearest original run XZ envelope",
+    "lod0MaxM": 18,
+    "lod1MaxM": 40,
+    "singleActiveLOD": true,
+    "crossfadeBudgetAdmitted": false
+  },
+  "placement": {
+    "glTFCoordinate": "(-worldX,worldY,worldZ)",
+    "babylonAutoImporter": "Default LH X reflection retained until static-model merge/bake",
+    "parentPosition": [
+      0,
+      0,
+      0
+    ],
+    "parentScale": [
+      1,
+      1,
+      1
+    ],
+    "parentRotation": [
+      0,
+      0,
+      0
+    ],
+    "recenterOrTargetHeightFit": false
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "xexoria.arrival-material-r03.readback/1",
+  "status": "CPU_DECODED_PRESERVATION_PASS_NATIVE_UNVERIFIED",
+  "sourceSHA": "dc17f36aa72c3b4d8427cc50fc993ab993914b6f296b80ad7776e9d7167d520c",
+  "candidateSHA": "fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111",
+  "triangles": 23468,
+  "materialSlots": 9,
+  "originalSlotsExact": 8,
+  "newSlot": "HLOD_Stone_ArrivalR03",
+  "selectedGateTriangles": 1212,
+  "untouchedTrianglesUVAndMaterialExact": 22256,
+  "allTrianglePositionNormalColorRecordsExact": true,
+  "originalBinPrefixExact": true,
+  "activeBoundsGltf": {
+    "before": {
+      "min": [
+        -124.08157900120663,
+        -90.99661244646501,
+        -130.3305206298828
+      ],
+      "max": [
+        123.45275866682269,
+        94.19847742160132,
+        162.8372344970703
+      ]
+    },
+    "after": {
+      "min": [
+        -124.08157900120663,
+        -90.99661244646501,
+        -130.3305206298828
+      ],
+      "max": [
+        123.45275866682269,
+        94.19847742160132,
+        162.8372344970703
+      ]
+    },
+    "maxDeltaM": 0
+  },
+  "textures": [
+    {
+      "name": "arrival_r03_stone_albedo",
+      "bytes": 140429,
+      "sha256": "3acc4b046b20eb2f44c00435398aa8eb89c3862c8b33948085f60187c39fe723",
+      "sourceEncodedBytesExact": true
+    },
+    {
+      "name": "arrival_r03_stone_orm",
+      "bytes": 455199,
+      "sha256": "d3c703ba89075ae979cf24b1bf7c7eaaa618762374902012eaa260a4ee6ec50e",
+      "sourceEncodedBytesExact": true
+    },
+    {
+      "name": "arrival_r03_stone_normal",
+      "bytes": 1291382,
+      "sha256": "9281207a7dbc5ae69db8d1b74b4df6cd9e81a72044a15d98b41cbae57fb33a25",
+      "sourceEncodedBytesExact": true
+    }
+  ],
+  "explicitTangents": false,
+  "sourceNormalMapSemantics": "GLTF OpenGL+Y, classic loader inversion retained; derivative basis nonsingular in source mapping proof. Native direction/readability remains required.",
+  "engineOrArtPass": false,
+  "limits": [
+    "No native browser/renderer run, frame-time/draw/memory or phone claim.",
+    "Stored old gate vertices remain unreferenced in original Stone mesh; new compact gate primitive reuses exact vertex records. No duplicated drawn triangles.",
+    "Source mapping uses a separate shared material so untouched zero-UV geometry never samples the new normal/albedo maps."
+  ]
+}

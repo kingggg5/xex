@@ -19,6 +19,7 @@ import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
 import {heroReviewIdentity} from './hero-review-policy.mjs';
 import {playerFraming} from './player-framing.mjs';
+import {bindHeroReadabilityLight} from './hero-readability-light';
 import type {MageCastState} from './mage-pilot-client.mjs';
 import {resolveWeaponFxMarkers} from './combat-vfx-weapon-markers';
 import quaterniusWarriorAssetUrl from "./assets/characters/quaternius-warrior.meshopt-etc1s.glb?url";
@@ -394,6 +395,7 @@ export async function createGameScene(
 		mesh.receiveShadows = true;
 	}
 	const heroAnimations = new Map(heroAsset.animationGroups.map((group) => [group.name, group]));
+	if (heroReview) bindHeroReadabilityLight(scene, heroAsset.meshes);
 	let currentHeroAnimation = "";
 	let wantedHeroMotion: "idle" | "run" = "idle";
 	let localPresentationPaused = false;
@@ -447,7 +449,8 @@ export async function createGameScene(
 		return materials.windmark;
 	};
 	const monsterNames = new Map(enemyKinds.map(enemy=>[enemy.kind,enemy.name]));
-	const monsterReview = import.meta.env.DEV && new URLSearchParams(location.search).get('dressing') === 'v3'
+	const monsterReview = import.meta.env.DEV && (new URLSearchParams(location.search).get('dressing') === 'v3'
+		|| new URLSearchParams(location.search).get('monsterStandins') === 'on')
 		&& new URLSearchParams(location.search).get('monsterStandins') !== 'off';
 	const standinKit = monsterReview ? await preloadMonsterStandins(scene) : null;
 	const monsterViews = createMonsterViewRegistry<{id:number;kind:number;x:number;z:number;hp:number;max_hp:number;active:boolean;facing?:number},typeof slimes extends Map<number,infer V> ? V : never>({

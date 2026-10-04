@@ -1,20 +1,20 @@
 {
   "schema": "xexoria.cloud-assets/1",
-  "status": "FROZEN_LOCAL_ASSET_INVENTORY_PUBLIC_PUSH_PENDING_OWNER_REVIEW",
-  "createdUTC": "2026-10-04T18:33:37.859588+00:00",
+  "status": "REVIEWED_LOCAL_REFINEMENT_ASSET_INVENTORY_ROOT_HANDOFF",
+  "createdUTC": "2026-10-04T20:36:41.291640+00:00",
   "repository": "kingggg5/xex",
   "environment": "xex",
   "source": {
     "commit": "999038d330084ee98cbb3c5d1ec59c9c966b3e81",
-    "assetRosterSha256": "3c180ab2ae574cc933b1e24db8a728970e4b0f962e075beb5f91d34773c85b17",
+    "assetRosterSha256": "e88268139e28a3ee9eba9dcdfed6d2cbaf9128e0f295bb735db9c102f35630ed",
     "scope": "Audited working tree with untracked assets; source commit alone cannot recreate all bytes. Original PC source/index/branch preserved."
   },
   "checkpoint": {
-    "capturedGitHead": "f3ecd63fb6007000ef860a1484d31a2328c97b24",
+    "capturedGitHead": "cfa9a096dfc1f4c6f28d605bdef6424fa497214e",
     "branch": "codex/xex-cloud-checkpoint-20261005",
-    "assetRosterSha256": "5d28f30d2fdf05143eb575e9b1bfcf02b1552ff4d65b656c6f02649ec8668ac4",
+    "assetRosterSha256": "1e8510fb0bcdcf3c6139b064511c1e9d14f5d76c56e3c1aec78cad8504d2833b",
     "hashStatus": "FINAL_CURRENT_AFTER_ROOT_TEST_AND_METADATA_FREEZE",
-    "scope": "Isolated working tree; captured Git head does not imply new snapshot already committed/uploaded.",
+    "scope": "Owner-approved baseline cfa9a09 already pushed. Current reviewed refinement is a local staged working tree; Root owns commit/push.",
     "handoffDocument": "CLOUD_HANDOFF.md"
   },
   "summary": {
@@ -22,25 +22,29 @@
     "testOnlyInputsAndEvidenceAddedAfterActualSuiteDiscovery": 20,
     "testAdditionBytes": 12485962,
     "testOutputsReclassifiedNotInputs": 2,
-    "requiredInputFiles": 818,
-    "copiedRequiredInputs": 815,
+    "requiredInputFiles": 823,
+    "copiedRequiredInputs": 820,
     "requiredGeneratedInputsNotCopied": 3,
-    "sourceRequiredInputBytes": 651051217,
-    "checkpointCopiedRequiredInputBytes": 649645665,
-    "sourceRequiredInputMiB": 620.891,
-    "checkpointCopiedRequiredInputMiB": 619.55,
+    "sourceRequiredInputBytes": 740141469,
+    "checkpointCopiedRequiredInputBytes": 738735917,
+    "sourceRequiredInputMiB": 705.854,
+    "checkpointCopiedRequiredInputMiB": 704.513,
     "metadataNormalizedCopiedInputs": 6,
     "originalCanonicalLicenceNoticeProvenanceRecords": 61,
     "additionalCanonicalLicenceEvidenceRecords": 1,
     "totalCanonicalLicenceRecords": 62,
     "originalEmbeddedCopyrightNoticesExactMatches": 393,
-    "largeSourceInventoryOver10MiB": 119,
-    "largeSourceInventoryOver50MiB": 26,
+    "largeSourceInventoryOver10MiB": 120,
+    "largeSourceInventoryOver50MiB": 27,
     "largeSourceInventoryOver100MiB": 13,
-    "requiredInputFilesOver50MiB": 5,
+    "requiredInputFilesOver50MiB": 6,
     "requiredInputFilesOver100MiB": 0,
     "additionalEmbeddedCopyrightNoticesExactMatches": 4,
-    "totalEmbeddedCopyrightNoticesExactMatches": 397
+    "totalEmbeddedCopyrightNoticesExactMatches": 400,
+    "reviewedRefinementFiles": 32,
+    "newRequiredRuntimeGLBs": 5,
+    "optionalCopiedBuilderSourceGLBs": 3,
+    "refinementEmbeddedCopyrightNoticesAdded": 3
   },
   "requiredAssets": [
     {
@@ -5187,6 +5191,20 @@
       "contentRelation": "BYTE_IDENTICAL_TO_AUDITED_SOURCE"
     },
     {
+      "path": "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+      "requiredScopes": [
+        "client-runtime-dev-typescript",
+        "static-build-input-even-with-review-flag-off"
+      ],
+      "status": "COPIED",
+      "sourceSha256": "fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111",
+      "sourceBytes": 2968372,
+      "checkpointSha256": "fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111",
+      "checkpointBytes": 2968372,
+      "contentRelation": "BYTE_IDENTICAL_TO_REVIEWED_REFINEMENT",
+      "discovery": "Explicit current Vite URL import; candidate status does not remove build dependency."
+    },
+    {
       "path": "assets/models/reference-city/r5/forge-r6-texture-review-candidate/city-runtime.meshopt.glb",
       "requiredScopes": [
         "client-runtime-dev-typescript"
@@ -5221,6 +5239,20 @@
       "checkpointSha256": "8e7668042f044ff175a2d2d3fc45cfedc1eb4fdd6c058be7150271d862d02f05",
       "checkpointBytes": 86607852,
       "contentRelation": "BYTE_IDENTICAL_TO_AUDITED_SOURCE"
+    },
+    {
+      "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb",
+      "requiredScopes": [
+        "client-runtime-dev-typescript",
+        "static-build-input-even-with-review-flag-off"
+      ],
+      "status": "COPIED",
+      "sourceSha256": "a8a8182e83a4ba6deefa38f223e3709a198770eef1981f33870b22b8d5d8cc7b",
+      "sourceBytes": 84376108,
+      "checkpointSha256": "a8a8182e83a4ba6deefa38f223e3709a198770eef1981f33870b22b8d5d8cc7b",
+      "checkpointBytes": 84376108,
+      "contentRelation": "BYTE_IDENTICAL_TO_REVIEWED_REFINEMENT",
+      "discovery": "Explicit current Vite URL import; candidate status does not remove build dependency."
     },
     {
       "path": "assets/models/reference-city/r5/market-repair-candidate/city-traversal-v1.json",
@@ -5294,6 +5326,48 @@
       "checkpointSha256": "616cd80dcd5dfb5940261827e5a92f80a31623564545c952da1d91c9e2e933e5",
       "checkpointBytes": 188942,
       "contentRelation": "BYTE_IDENTICAL_TO_AUDITED_SOURCE"
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+      "requiredScopes": [
+        "client-runtime-dev-typescript",
+        "static-build-input-even-with-review-flag-off"
+      ],
+      "status": "COPIED",
+      "sourceSha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9",
+      "sourceBytes": 1429316,
+      "checkpointSha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9",
+      "checkpointBytes": 1429316,
+      "contentRelation": "BYTE_IDENTICAL_TO_REVIEWED_REFINEMENT",
+      "discovery": "Explicit current Vite URL import; candidate status does not remove build dependency."
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+      "requiredScopes": [
+        "client-runtime-dev-typescript",
+        "static-build-input-even-with-review-flag-off"
+      ],
+      "status": "COPIED",
+      "sourceSha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3",
+      "sourceBytes": 203228,
+      "checkpointSha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3",
+      "checkpointBytes": 203228,
+      "contentRelation": "BYTE_IDENTICAL_TO_REVIEWED_REFINEMENT",
+      "discovery": "Explicit current Vite URL import; candidate status does not remove build dependency."
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+      "requiredScopes": [
+        "client-runtime-dev-typescript",
+        "static-build-input-even-with-review-flag-off"
+      ],
+      "status": "COPIED",
+      "sourceSha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2",
+      "sourceBytes": 113228,
+      "checkpointSha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2",
+      "checkpointBytes": 113228,
+      "contentRelation": "BYTE_IDENTICAL_TO_REVIEWED_REFINEMENT",
+      "discovery": "Explicit current Vite URL import; candidate status does not remove build dependency."
     },
     {
       "path": "assets/models/sunmeadow-props/craft/runtime/sm_brazier_cresset_collider.glb",
@@ -13114,6 +13188,24 @@
       "copyright": "Xexoria hero 02 staff. Owner's Tripo P2.0 job 24cd0fd7 (paid-user Outputs, Tripo terms 5.2.2).",
       "sourceSha256": "afcd667b764da5bd23865e61396f4248402c8d9019509f7bc8e2af8d46da1092",
       "checkpointSha256": "afcd667b764da5bd23865e61396f4248402c8d9019509f7bc8e2af8d46da1092"
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+      "copyright": "Xexoria original procedural croft fence adaptation; existing original R5 foundry timber PBR. No third-party reference pixels.",
+      "sourceSha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9",
+      "checkpointSha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9"
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+      "copyright": "Xexoria original procedural croft fence adaptation; existing original R5 foundry timber PBR. No third-party reference pixels.",
+      "sourceSha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3",
+      "checkpointSha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3"
+    },
+    {
+      "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+      "copyright": "Xexoria original procedural croft fence adaptation; existing original R5 foundry timber PBR. No third-party reference pixels.",
+      "sourceSha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2",
+      "checkpointSha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2"
     }
   ],
   "requiredExternalTestSourceHelpers": [
@@ -14326,6 +14418,16 @@
       "over100MiB": false,
       "requiredForCurrentCheckpoint": false,
       "transferStatus": "OPTIONAL_AUTHORING_SOURCE_SEPARATE_REVIEWED_TRANSFER"
+    },
+    {
+      "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb",
+      "sourceSha256": "a8a8182e83a4ba6deefa38f223e3709a198770eef1981f33870b22b8d5d8cc7b",
+      "sourceBytes": 84376108,
+      "MiB": 80.467,
+      "over50MiB": true,
+      "over100MiB": false,
+      "requiredForCurrentCheckpoint": true,
+      "transferStatus": "COPIED_REQUIRED_DEV_REFINEMENT_INPUT"
     }
   ],
   "licenceScopes": [
@@ -14508,16 +14610,17 @@
     "inventoryIsUploadApproval": false
   },
   "rights": {
-    "publicPush": "PENDING_EXPLICIT_OWNER_REVIEW_APPROVAL",
+    "publicPush": "OWNER_APPROVED_BASELINE_PUSHED_REFINEMENT_GIT_ACTIONS_OWNED_BY_ROOT",
     "privateCloudCustody": "Local paid-output receipts do not themselves settle private-cloud access/storage scope.",
     "allAssetsCC0": false,
     "legalOrSecurityCertification": false,
     "notes": "CLOUD_ASSET_LICENSES.md",
-    "copyrightNoticesChanged": false
+    "copyrightNoticesChanged": false,
+    "approvalScope": "Owner-approved transfer/push, not blanket CC0, licence change or legal certification."
   },
   "evidence": {
     "method": "Streamed one 1 MiB buffer per file; GLB copyright comparison reads JSON headers, not geometry or pixels.",
-    "copyrightExactMatches": 397,
+    "copyrightExactMatches": 400,
     "copyrightMismatches": 0,
     "selectedCopiedInputMissing": 0,
     "qualification": "Current selected bytes/hash availability only; not proof that every future test path is closed.",
@@ -14537,7 +14640,10 @@
       "gpu": 0,
       "blender": 0
     },
-    "frozenCopiedInputHashMatches": 815
+    "refinementFileHashMatches": 32,
+    "baselineFrozenCopiedInputHashMatches": 815,
+    "refinementNewRequiredAssetHashMatches": 5,
+    "currentCopiedIntegrityScope": "815baseline input hashes were verified before the owner-approved baseline push; the5new required asset hashes and all32sync files are verified in this refresh."
   },
   "limits": [
     "Required test closure expanded after actual suite discovery; final tests/build results belong to Root.",
@@ -14563,6 +14669,724 @@
       "ignored": 7,
       "ignoredScope": "SQL integration; separate database authorization/setup."
     },
-    "independentlyExecutedByDocumentationWorker": false
+    "independentlyExecutedByDocumentationWorker": false,
+    "refinementOriginalLocal": {
+      "source": "Task-owner report for original local game; not this worker/cloud execution",
+      "clientPassed": 917,
+      "typecheckExit": 0,
+      "native": [
+        "Original GL2 city daylight real walk PASS, zero errors",
+        "Original GL2 city night real walk PASS, zero errors",
+        "Original WebGPU city night real walk PASS, zero errors"
+      ],
+      "cloudDeviceAAAcceptance": false
+    },
+    "refinementCheckpointLocal": {
+      "source": "Task-owner report for isolated local checkpoint",
+      "clientPassed": 916,
+      "clientSkipped": 1,
+      "remainingSkip": "Optional native KTX tooling, not an omitted asset",
+      "build": "PASS",
+      "cloudExecution": false,
+      "independentlyExecutedByDocumentationWorker": false
+    }
+  },
+  "reviewedRefinementBatch": {
+    "baselineCommit": "cfa9a096dfc1f4c6f28d605bdef6424fa497214e",
+    "files": [
+      {
+        "path": "apps/client/src/environment.ts",
+        "sourceSha256": "a030d025ab47ed9eee50a9018cbdaf15f09042c241ee2c121c1bd67cec427c29",
+        "checkpointSha256": "a030d025ab47ed9eee50a9018cbdaf15f09042c241ee2c121c1bd67cec427c29",
+        "sourceBytes": 113377,
+        "checkpointBytes": 113377,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/scene.ts",
+        "sourceSha256": "eb93aa05eb431af84bdbbdf02d1da7a7a1ecb0e4a049330e1f21d288d04bfa69",
+        "checkpointSha256": "eb93aa05eb431af84bdbbdf02d1da7a7a1ecb0e4a049330e1f21d288d04bfa69",
+        "sourceBytes": 55709,
+        "checkpointBytes": 55709,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/mage-pilot-fx.ts",
+        "sourceSha256": "c3678e89ae24d1ca9c7c4aa4a52ba34b1e3b979c12f39b850d7da804790fae38",
+        "checkpointSha256": "c3678e89ae24d1ca9c7c4aa4a52ba34b1e3b979c12f39b850d7da804790fae38",
+        "sourceBytes": 23760,
+        "checkpointBytes": 23760,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/mage-pilot-fx-geometry.ts",
+        "sourceSha256": "b00340643f68be76ede79cc63f669359f5754ec9d4e65fe2663ba8614e56e421",
+        "checkpointSha256": "b00340643f68be76ede79cc63f669359f5754ec9d4e65fe2663ba8614e56e421",
+        "sourceBytes": 3659,
+        "checkpointBytes": 3659,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/hero-readability-light.ts",
+        "sourceSha256": "ab29a20462fb56a2a2c12474ff139faae7408fbb6e638abb8e689374a890c9e6",
+        "checkpointSha256": "ab29a20462fb56a2a2c12474ff139faae7408fbb6e638abb8e689374a890c9e6",
+        "sourceBytes": 1634,
+        "checkpointBytes": 1634,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/arrival-fence-review.ts",
+        "sourceSha256": "3d25c7af4305496c60b43ac15e9433cc678ecaa406b4a4c4d1165293771c2ad6",
+        "checkpointSha256": "3d25c7af4305496c60b43ac15e9433cc678ecaa406b4a4c4d1165293771c2ad6",
+        "sourceBytes": 3675,
+        "checkpointBytes": 3675,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/city-lamp-pools.ts",
+        "sourceSha256": "df3a00ee44e67374c1eaca1392403c590eca8bbfef55ca923ccf9d0bcf4c2a53",
+        "checkpointSha256": "df3a00ee44e67374c1eaca1392403c590eca8bbfef55ca923ccf9d0bcf4c2a53",
+        "sourceBytes": 4474,
+        "checkpointBytes": 4474,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/ui/panels/CharacterPanel.svelte",
+        "sourceSha256": "186dc0bc09277048e56538ab50951b9b7a91e8d07fb2f0fdaf33089854a3fb5a",
+        "checkpointSha256": "186dc0bc09277048e56538ab50951b9b7a91e8d07fb2f0fdaf33089854a3fb5a",
+        "sourceBytes": 13925,
+        "checkpointBytes": 13925,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/ui/character-inventory.css",
+        "sourceSha256": "f41b667d0a48da64495586aa6ad2c342f3e201c4807aaa92af1371ead1b198f4",
+        "checkpointSha256": "f41b667d0a48da64495586aa6ad2c342f3e201c4807aaa92af1371ead1b198f4",
+        "sourceBytes": 8672,
+        "checkpointBytes": 8672,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/src/ui/EquipmentCopy.svelte",
+        "sourceSha256": "83af9919c1bb40fd52af9ed66ceeedaebe4556c2395a9ea6a48724ffc4397f65",
+        "checkpointSha256": "83af9919c1bb40fd52af9ed66ceeedaebe4556c2395a9ea6a48724ffc4397f65",
+        "sourceBytes": 1657,
+        "checkpointBytes": 1657,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/tests/hero-readability-light.test.mjs",
+        "sourceSha256": "e6f5139abe7777a68cad8e7867d05a293eb046eb98c81766b0bf0f13d7e0d517",
+        "checkpointSha256": "e6f5139abe7777a68cad8e7867d05a293eb046eb98c81766b0bf0f13d7e0d517",
+        "sourceBytes": 2457,
+        "checkpointBytes": 2457,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "apps/client/tests/city-lamp-pools.test.mjs",
+        "sourceSha256": "1c1f39353084e33043984e4264375c6c406189b790c79ff4307c825988906a1f",
+        "checkpointSha256": "1c1f39353084e33043984e4264375c6c406189b790c79ff4307c825988906a1f",
+        "sourceBytes": 2696,
+        "checkpointBytes": 2696,
+        "scope": "reviewed-client-code-or-tests",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+        "sourceSha256": "fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111",
+        "checkpointSha256": "fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111",
+        "sourceBytes": 2968372,
+        "checkpointBytes": 2968372,
+        "scope": "client-static-dev-build-asset",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb",
+        "sourceSha256": "a8a8182e83a4ba6deefa38f223e3709a198770eef1981f33870b22b8d5d8cc7b",
+        "checkpointSha256": "a8a8182e83a4ba6deefa38f223e3709a198770eef1981f33870b22b8d5d8cc7b",
+        "sourceBytes": 84376108,
+        "checkpointBytes": 84376108,
+        "scope": "client-static-dev-build-asset",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/README.md",
+        "sourceSha256": "1a5f0b1feca077384c72c0934f22ab70e7354572540bd96d0c40bb73ebe4e790",
+        "checkpointSha256": "1a5f0b1feca077384c72c0934f22ab70e7354572540bd96d0c40bb73ebe4e790",
+        "sourceBytes": 2261,
+        "checkpointBytes": 2261,
+        "scope": "candidate-provenance-or-readback",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/blender/city_r5/quality_r7/build_arrival_material_r03.mjs",
+        "sourceSha256": "4d292f8bade3f6396481ed36a8e47de553658d5d400712117b59116729ace121",
+        "checkpointSha256": "4d292f8bade3f6396481ed36a8e47de553658d5d400712117b59116729ace121",
+        "sourceBytes": 16163,
+        "checkpointBytes": 16163,
+        "scope": "optional-asset-reproduction-tool",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/blender/city_r5/quality_r7/verify_arrival_material_r03.mjs",
+        "sourceSha256": "dd798f4eed188ac43ff03c1dc5f2621e7c69923f612a85a5f04c2390e6fb66bd",
+        "checkpointSha256": "dd798f4eed188ac43ff03c1dc5f2621e7c69923f612a85a5f04c2390e6fb66bd",
+        "sourceBytes": 7109,
+        "checkpointBytes": 7109,
+        "scope": "optional-asset-reproduction-tool",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/blender/city_r5/quality_r7/build_arrival_fence_r01.mjs",
+        "sourceSha256": "8d074ed4b5aa68d77695ba254fb184ffe305ac25035bf8208085821950bfd419",
+        "checkpointSha256": "8d074ed4b5aa68d77695ba254fb184ffe305ac25035bf8208085821950bfd419",
+        "sourceBytes": 15320,
+        "checkpointBytes": 15320,
+        "scope": "optional-asset-reproduction-tool",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/blender/city_r5/quality_r7/verify_arrival_fence_r01.mjs",
+        "sourceSha256": "4e7721e17916efdae740eee01d801d0c4773b076fdaa35f078f39b892260dc04",
+        "checkpointSha256": "4e7721e17916efdae740eee01d801d0c4773b076fdaa35f078f39b892260dc04",
+        "sourceBytes": 6205,
+        "checkpointBytes": 6205,
+        "scope": "optional-asset-reproduction-tool",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "tools/city-quality-20261005/pack-guardian-selected-forge.mjs",
+        "sourceSha256": "b13a788b27775b03a7b40368d358e0dba4149dafec13d710dbe2cd92d42fc47e",
+        "checkpointSha256": "b13a788b27775b03a7b40368d358e0dba4149dafec13d710dbe2cd92d42fc47e",
+        "sourceBytes": 18562,
+        "checkpointBytes": 18562,
+        "scope": "optional-asset-reproduction-tool",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "tools/city-quality-20261005/pack-guardian-selected-forge.test.mjs",
+        "sourceSha256": "0ebfad4a3d4848009ea0641a2cf9f52deaab6ea60671df4e48209aca63232206",
+        "checkpointSha256": "0ebfad4a3d4848009ea0641a2cf9f52deaab6ea60671df4e48209aca63232206",
+        "sourceBytes": 3886,
+        "checkpointBytes": 3886,
+        "scope": "optional-asset-reproduction-tool",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/candidate-ready-manifest.json",
+        "sourceSha256": "7203bd9097ef23865edbd30efd94897e810d4071a92ace6f22b8e3adebd2a095",
+        "checkpointSha256": "7203bd9097ef23865edbd30efd94897e810d4071a92ace6f22b8e3adebd2a095",
+        "sourceBytes": 99472,
+        "checkpointBytes": 99472,
+        "scope": "candidate-provenance-or-readback",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "planning/evidence/map-quality-20261005/asset/r03-material-receipt.json",
+        "sourceSha256": "9d914b049c0db610f8cdf4847e8c55ac735d02fd65c5bf4d62b0054d45bd0fcc",
+        "checkpointSha256": "9d914b049c0db610f8cdf4847e8c55ac735d02fd65c5bf4d62b0054d45bd0fcc",
+        "sourceBytes": 4930,
+        "checkpointBytes": 4930,
+        "scope": "candidate-provenance-or-readback",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "planning/evidence/map-quality-20261005/asset/r03-material-readback.json",
+        "sourceSha256": "89f811ee09e04727dcc413a98a2175788b11eeb3a52e5785a5f3819323599d35",
+        "checkpointSha256": "89f811ee09e04727dcc413a98a2175788b11eeb3a52e5785a5f3819323599d35",
+        "sourceBytes": 2330,
+        "checkpointBytes": 2330,
+        "scope": "candidate-provenance-or-readback",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+        "sourceSha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9",
+        "checkpointSha256": "e15836880f3b903a231dea351ecbedd270dc31ed540662175db99bedf0d134d9",
+        "sourceBytes": 1429316,
+        "checkpointBytes": 1429316,
+        "scope": "client-static-dev-build-asset",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod0.glb",
+        "sourceSha256": "ad573ee51ef412de3a871476e9c4eafdc093116ab8da25421006b831ad6fc4a3",
+        "checkpointSha256": "ad573ee51ef412de3a871476e9c4eafdc093116ab8da25421006b831ad6fc4a3",
+        "sourceBytes": 39084,
+        "checkpointBytes": 39084,
+        "scope": "optional-authored-builder-source",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+        "sourceSha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3",
+        "checkpointSha256": "b230a42768fb9796d4ab5e1bb03c0a9a6aee945110b397983b8ede669908dad3",
+        "sourceBytes": 203228,
+        "checkpointBytes": 203228,
+        "scope": "client-static-dev-build-asset",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod1.glb",
+        "sourceSha256": "a112aaf104549898f69b41df6dcdd18add4edf5bf7c0c9fc4a579c307da1049e",
+        "checkpointSha256": "a112aaf104549898f69b41df6dcdd18add4edf5bf7c0c9fc4a579c307da1049e",
+        "sourceBytes": 25504,
+        "checkpointBytes": 25504,
+        "scope": "optional-authored-builder-source",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+        "sourceSha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2",
+        "checkpointSha256": "1971aecd7547fa31cb61b49a8a3a1135dd7bfdeb7b0d6b43b958ab1cc8f17fa2",
+        "sourceBytes": 113228,
+        "checkpointBytes": 113228,
+        "scope": "client-static-dev-build-asset",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod2.glb",
+        "sourceSha256": "b77aac10c8116955e574a2003cbaf4d8209d21a1a87db84e41a3098405796f46",
+        "checkpointSha256": "b77aac10c8116955e574a2003cbaf4d8209d21a1a87db84e41a3098405796f46",
+        "sourceBytes": 10916,
+        "checkpointBytes": 10916,
+        "scope": "optional-authored-builder-source",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/runtime-pack-receipt.json",
+        "sourceSha256": "cde8695518180692916f79669584f622de03774f585dbe04cc62269ccac3cc69",
+        "checkpointSha256": "cde8695518180692916f79669584f622de03774f585dbe04cc62269ccac3cc69",
+        "sourceBytes": 65222,
+        "checkpointBytes": 65222,
+        "scope": "candidate-provenance-or-readback",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/reference-city/r5/arrival-hlod-r03/candidate-manifest.json",
+        "sourceSha256": "9d914b049c0db610f8cdf4847e8c55ac735d02fd65c5bf4d62b0054d45bd0fcc",
+        "checkpointSha256": "9d914b049c0db610f8cdf4847e8c55ac735d02fd65c5bf4d62b0054d45bd0fcc",
+        "sourceBytes": 4930,
+        "checkpointBytes": 4930,
+        "scope": "candidate-provenance-or-readback",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      }
+    ],
+    "fileCount": 32,
+    "bytes": 89647841,
+    "newRequiredRuntimeGLBs": [
+      "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+      "assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb",
+      "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+      "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+      "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb"
+    ],
+    "optionalCopiedBuilderSourceGLBs": [
+      {
+        "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod0.glb",
+        "sourceSha256": "ad573ee51ef412de3a871476e9c4eafdc093116ab8da25421006b831ad6fc4a3",
+        "checkpointSha256": "ad573ee51ef412de3a871476e9c4eafdc093116ab8da25421006b831ad6fc4a3",
+        "sourceBytes": 39084,
+        "checkpointBytes": 39084,
+        "scope": "optional-authored-builder-source",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod1.glb",
+        "sourceSha256": "a112aaf104549898f69b41df6dcdd18add4edf5bf7c0c9fc4a579c307da1049e",
+        "checkpointSha256": "a112aaf104549898f69b41df6dcdd18add4edf5bf7c0c9fc4a579c307da1049e",
+        "sourceBytes": 25504,
+        "checkpointBytes": 25504,
+        "scope": "optional-authored-builder-source",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod2.glb",
+        "sourceSha256": "b77aac10c8116955e574a2003cbaf4d8209d21a1a87db84e41a3098405796f46",
+        "checkpointSha256": "b77aac10c8116955e574a2003cbaf4d8209d21a1a87db84e41a3098405796f46",
+        "sourceBytes": 10916,
+        "checkpointBytes": 10916,
+        "scope": "optional-authored-builder-source",
+        "status": "COPIED_REVIEWED_REFINEMENT"
+      }
+    ],
+    "candidateStates": [
+      {
+        "path": "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+        "candidate": "arrival-hlod-r03",
+        "triangles": 23468,
+        "materials": 9,
+        "images": 3,
+        "state": "STAGED_DEV_NOT_DEFAULT_ADMITTED",
+        "budget": {
+          "limitTriangles": 25000,
+          "status": "WITHIN_SCOPED_SOURCE_BUDGET"
+        },
+        "cloudDeviceArtAcceptance": "NOT_ESTABLISHED"
+      },
+      {
+        "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb",
+        "candidate": "guardian-material-r03",
+        "triangles": 915073,
+        "materials": 45,
+        "images": 54,
+        "state": "STAGED_DEV_NOT_DEFAULT_ADMITTED",
+        "budget": {
+          "limitTriangles": 900000,
+          "excessTriangles": 15073,
+          "status": "FAIL_NO_WAIVER"
+        },
+        "cloudDeviceArtAcceptance": "NOT_ESTABLISHED"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+        "candidate": "arrival-fence-r01",
+        "triangles": 2344,
+        "materials": 1,
+        "images": 3,
+        "state": "STAGED_DEV_NOT_DEFAULT_ADMITTED",
+        "budget": {
+          "limitTriangles": 2500,
+          "status": "WITHIN_SCOPED_SOURCE_BUDGET"
+        },
+        "cloudDeviceArtAcceptance": "NOT_ESTABLISHED"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+        "candidate": "arrival-fence-r01",
+        "triangles": 1344,
+        "materials": 1,
+        "images": 0,
+        "state": "STAGED_DEV_NOT_DEFAULT_ADMITTED",
+        "budget": {
+          "limitTriangles": 2500,
+          "status": "WITHIN_SCOPED_SOURCE_BUDGET"
+        },
+        "cloudDeviceArtAcceptance": "NOT_ESTABLISHED"
+      },
+      {
+        "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+        "candidate": "arrival-fence-r01",
+        "triangles": 744,
+        "materials": 1,
+        "images": 0,
+        "state": "STAGED_DEV_NOT_DEFAULT_ADMITTED",
+        "budget": {
+          "limitTriangles": 2500,
+          "status": "WITHIN_SCOPED_SOURCE_BUDGET"
+        },
+        "cloudDeviceArtAcceptance": "NOT_ESTABLISHED"
+      }
+    ],
+    "requiredImportAudit": {
+      "sourceModules": [
+        "apps/client/src/environment.ts",
+        "apps/client/src/scene.ts",
+        "apps/client/src/mage-pilot-fx.ts",
+        "apps/client/src/mage-pilot-fx-geometry.ts",
+        "apps/client/src/hero-readability-light.ts",
+        "apps/client/src/arrival-fence-review.ts",
+        "apps/client/src/city-lamp-pools.ts",
+        "apps/client/src/ui/panels/CharacterPanel.svelte",
+        "apps/client/src/ui/EquipmentCopy.svelte"
+      ],
+      "directAssetImports": [
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/models/env_reference_city.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/fountain-guardian-review-candidate/city-runtime.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/fountain-guardian-review-v2-candidate/city-runtime.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/forge-r6-texture-review-candidate/city-runtime.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r6-candidate/city-runtime.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/models/env_reference_city_hlod.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/arrival-hlod-r01/arrival-hlod-r01-runtime.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/arrival-hlod-r02/arrival-hlod-r02-runtime-final.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "assets/models/reference-city/r5/guardian-material-r03-candidate/city-runtime.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/models/env_meadow_tree_v2.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/env_sunmeadow_c7_r6.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/env_sunmeadow_c8_r6.meshopt.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/water-art-pass4b/host-mask/land-cutout-v3.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/water-art-pass4b/host-mask/land-cutout-v3.json",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/meadow_grass_painted_albedo.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/meadow_grass_painted_normal.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/leaf_canopy_albedo_v2.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/stone_painted_albedo.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/stone_painted_normal.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/timber_dark_albedo.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/timber_dark_normal.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/world_tree_bark_albedo.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/meadow_road_painted_albedo.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/meadow_road_painted_normal.png",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/foliage/kenney/plant_bushDetailed.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/foliage/kenney/rock_largeA.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/foliage/kenney/rock_largeB.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/environment.ts",
+          "path": "apps/client/src/assets/world/impostors/sunmeadow-trees-v3/sunmeadow_trees_v3.impostors.json",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/scene.ts",
+          "path": "apps/client/src/assets/characters/quaternius-warrior.meshopt-etc1s.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/scene.ts",
+          "path": "apps/client/src/assets/models/prop_village_lantern_01.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/scene.ts",
+          "path": "apps/client/src/assets/models/prop_wayfarer_kit.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/arrival-fence-review.ts",
+          "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/arrival-fence-review.ts",
+          "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+          "present": true
+        },
+        {
+          "source": "apps/client/src/arrival-fence-review.ts",
+          "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+          "present": true
+        }
+      ],
+      "missing": 0
+    },
+    "optionalBuilderClosure": [
+      {
+        "tool": "assets/blender/city_r5/quality_r7/build_arrival_material_r03.mjs",
+        "scope": "OPTIONAL_REGENERATION_NOT_BOOTSTRAP",
+        "inputs": [
+          {
+            "path": "assets/models/reference-city/r5/arrival-hlod-r02/arrival-hlod-r02-runtime-final.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/reference-city/r5/forge-r6-texture-review-candidate/city-runtime.meshopt.glb",
+            "present": true
+          }
+        ],
+        "qualification": "Copied inputs; create-only versioned output, no cloud regeneration run."
+      },
+      {
+        "tool": "assets/blender/city_r5/quality_r7/verify_arrival_material_r03.mjs",
+        "scope": "OPTIONAL_VERIFIER",
+        "inputs": [
+          {
+            "path": "assets/models/reference-city/r5/arrival-hlod-r02/arrival-hlod-r02-runtime-final.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/reference-city/r5/arrival-hlod-r03/candidate-manifest.json",
+            "present": true
+          }
+        ],
+        "qualification": "Exact metadata added to close the initial optional verifier gap; copied readback is not cloud reproduction."
+      },
+      {
+        "tool": "assets/blender/city_r5/quality_r7/build_arrival_fence_r01.mjs",
+        "scope": "OPTIONAL_REGENERATION_NOT_BOOTSTRAP",
+        "inputs": [
+          {
+            "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod0.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod1.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/sunmeadow-props/craft/source/sm_croft_fence_lod2.glb",
+            "present": true
+          },
+          {
+            "path": "apps/client/src/assets/models/env_reference_city.glb",
+            "present": true
+          },
+          {
+            "path": "apps/client/src/environment.ts",
+            "present": true
+          }
+        ],
+        "qualification": "Three exact croft source LODs copied for optional generation, not ordinary runtime imports; no generation run here."
+      },
+      {
+        "tool": "assets/blender/city_r5/quality_r7/verify_arrival_fence_r01.mjs",
+        "scope": "OPTIONAL_VERIFIER",
+        "inputs": [
+          {
+            "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/candidate-ready-manifest.json",
+            "present": true
+          },
+          {
+            "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod0-ready.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod1-ready.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/sunmeadow-props/craft/arrival-fence-r01/arrival_fence_lod2-ready.glb",
+            "present": true
+          }
+        ],
+        "generatedOutputs": [
+          "assets/models/sunmeadow-props/craft/arrival-fence-r01/validation-ready-receipt.json",
+          "planning/evidence/map-quality-20261005/asset/arrival-fence-r01-ready-readback.json"
+        ],
+        "qualification": "Validation receipts are generated outputs, not missing runtime inputs; verifier not executed in cloud."
+      },
+      {
+        "tool": "tools/city-quality-20261005/pack-guardian-selected-forge.mjs",
+        "scope": "OPTIONAL_REGENERATION_NOT_BOOTSTRAP",
+        "inputs": [
+          {
+            "path": "assets/models/reference-city/r5/fountain-guardian-review-v2-candidate/city-runtime.meshopt.glb",
+            "present": true
+          },
+          {
+            "path": "assets/models/reference-city/r5/forge-r6-texture-review-candidate/city-runtime.meshopt.glb",
+            "present": true
+          }
+        ],
+        "qualification": "Donor/Forge inputs copied; no cloud packer run or budget waiver."
+      }
+    ],
+    "optionalMetadataInputGapClosed": true,
+    "licenceChange": false,
+    "defaultAssetAdmissionChange": false
   }
 }

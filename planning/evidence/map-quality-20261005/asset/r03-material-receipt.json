@@ -1,0 +1,135 @@
+{
+  "schema": "xexoria.arrival-material-r03/1",
+  "status": "CPU_MAPPING_PASS_NATIVE_REQUIRED_NOT_ADMITTED",
+  "candidate": {
+    "path": "assets/models/reference-city/r5/arrival-hlod-r03/arrival-hlod-r03-runtime.glb",
+    "sha256": "fd7ec28b2302c5658988c78dd0234780356c00fe141a5568585490cf1a536111",
+    "bytes": 2968372,
+    "triangles": 23468,
+    "materials": 9,
+    "primitives": 9,
+    "images": 3
+  },
+  "source": {
+    "path": "assets/models/reference-city/r5/arrival-hlod-r02/arrival-hlod-r02-runtime-final.glb",
+    "sha256": "dc17f36aa72c3b4d8427cc50fc993ab993914b6f296b80ad7776e9d7167d520c",
+    "forgeEncodedPackageSHA": "93910787c74e3655f40df4c8fb73630503d67e540d7fe98286febd0a1907fb61"
+  },
+  "selection": {
+    "components": [
+      "m5-p0-c193",
+      "m5-p0-c194",
+      "m5-p0-c195",
+      "m5-p0-c196"
+    ],
+    "triangles": 1212,
+    "vertices": 2481,
+    "stoneTriangleRange": [
+      6331,
+      7543
+    ],
+    "sourceVertexRange": [
+      10453,
+      12934
+    ],
+    "outsideSelectionVerticesShared": false
+  },
+  "preservation": {
+    "allOriginalBinBytesExact": true,
+    "originalBinSHA": "af037147b315b544f1b313e6760bfb642f1b678a4814c8155409abb80b3805e6",
+    "originalEightMaterialsExact": true,
+    "allPositionsNormalsColorsAndTriangleVertexRecordsExact": true,
+    "oldGateTrianglesReassignedNotDuplicated": true,
+    "trianglesAdded": 0,
+    "anchorTraversalColliderFilesChanged": 0,
+    "worldOrHostGeometryChanged": false,
+    "originalSourceOverwrite": false
+  },
+  "mapping": {
+    "tileM": 4.8,
+    "role": "Masonry courses deliberately twice the2.4m forge tile to read at the locked player camera; no microdetail expansion.",
+    "horizontalCaps": "worldXZ projected",
+    "walls": "horizontal tangent from original plane normal plus world height",
+    "minimumUVTriangleArea": 0.0001373672347426691,
+    "maximumUVTriangleArea": 1.6896942738404799,
+    "degenerateUVTriangles": 0,
+    "minimumDerivativeBasisDeterminant": 23.03248866256231,
+    "maximumPlaneNormalMismatch": 0.1728215427425177,
+    "explicitTangents": false,
+    "reason": "Classic merge bakes reflected tangentXYZ but preservesw. Derivative TBN uses unchanged world positions/normals and full-rank mapped UVs, preserving current glTF loader normal inversion semantics without an extra attribute."
+  },
+  "material": {
+    "addedName": "HLOD_Stone_ArrivalR03",
+    "slotDelta": 1,
+    "originalSlotNames": [
+      "HLOD_Accent",
+      "HLOD_Cliff",
+      "HLOD_Ground",
+      "HLOD_RoofBlue",
+      "HLOD_RoofWarm",
+      "HLOD_Stone",
+      "HLOD_Water",
+      "HLOD_Wood"
+    ],
+    "albedo": "sRGB",
+    "orm": "linear AO-R/roughness-G/metal-B",
+    "normal": "Existing OpenGL+Y glTF normal map, scale.35; no engine inversion override.",
+    "normalScale": 0.35,
+    "occlusionStrength": 0.65,
+    "emissive": false,
+    "alphaMode": "OPAQUE",
+    "shaderAttributeKinds": 4,
+    "attributeBindingsWithInstanceMatrix": 8
+  },
+  "textures": [
+    {
+      "role": "albedo",
+      "sourceImageName": "stone_wall_warm_albedo",
+      "encodedBytes": 140429,
+      "sha256": "3acc4b046b20eb2f44c00435398aa8eb89c3862c8b33948085f60187c39fe723",
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "transferFunction": 2,
+      "pixelsNewlyGenerated": false,
+      "encodedBytesCopiedExactly": true
+    },
+    {
+      "role": "orm",
+      "sourceImageName": "stone_wall_warm_orm",
+      "encodedBytes": 455199,
+      "sha256": "d3c703ba89075ae979cf24b1bf7c7eaaa618762374902012eaa260a4ee6ec50e",
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "transferFunction": 1,
+      "pixelsNewlyGenerated": false,
+      "encodedBytesCopiedExactly": true
+    },
+    {
+      "role": "normal",
+      "sourceImageName": "stone_wall_warm_normal",
+      "encodedBytes": 1291382,
+      "sha256": "9281207a7dbc5ae69db8d1b74b4df6cd9e81a72044a15d98b41cbae57fb33a25",
+      "width": 1024,
+      "height": 1024,
+      "mips": 11,
+      "transferFunction": 1,
+      "pixelsNewlyGenerated": false,
+      "encodedBytesCopiedExactly": true
+    }
+  ],
+  "resources": {
+    "blenderRuns": 0,
+    "gpuRuns": 0,
+    "fullCityGeometryLoaded": false,
+    "sourceForgeRead": "Header JSON plus selected image byte ranges; complete package SHA streamed in1MiB buffer."
+  },
+  "licence": "Existing original procedural Xexoria Forge maps; no third-party pixels or reference-image copy. Encoded candidate map bytes reused exactly, no new painted map or encoding.",
+  "remaining": [
+    "Native albedo colour/courses/normal direction, minification and actual renderer bindings remain unverified.",
+    "Source preserved shape still monumental; texture does not supply missing bridge planks/joints or fix far-city proxies.",
+    "One added shared material/submesh; actual across-pass draw/time/memory delta unmeasured.",
+    "Encoded Forge source is an existing candidate; pixel reuse does not promote its artistic acceptance."
+  ]
+}

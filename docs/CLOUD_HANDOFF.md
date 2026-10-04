@@ -7,11 +7,11 @@ Date: 2026-10-05 (Asia/Bangkok). Target environment: **xex**.
 - Repository: `https://github.com/kingggg5/xex` — verified **public**.
 - Dedicated branch: `codex/xex-cloud-checkpoint-20261005`.
 - Reviewed remote base: `f3ecd63fb6007000ef860a1484d31a2328c97b24` (11 bootstrap commits).
-- Exact tested game-code commit: `80b8eb8c305ffef67a33704b22b7ef80199987bc`.
+- Exact tested game-code commit: **PENDING REFINEMENT SEAL**.
 - Original PC source HEAD: `999038d330084ee98cbb3c5d1ec59c9c966b3e81`, branch `master`.
 - This is a snapshot of the existing dirty game, not a new implementation. The isolated checkout preserves the target bootstrap history. The private 28-commit PC history is not uploaded or rewritten.
 - The PC project at `%USERPROFILE%/Documents/game` remains the fallback. Do not retire it until the exact approved checkpoint builds and passes checks in cloud.
-- **No push, deployment, cloud build or cloud memory-capacity verification has occurred.** The owner's estimated 16 GiB is not an observed resource measurement.
+- **Initial migration checkpoint `cfa9a096dfc1f4c6f28d605bdef6424fa497214e` was pushed with owner approval. No deployment, cloud build or cloud memory-capacity verification has occurred.** The owner's estimated 16 GiB is not an observed resource measurement.
 
 ## Architecture and working features
 
@@ -88,11 +88,11 @@ Local checkpoint results (updated before seal):
 | Locked Node dependency installation | PASS, offline `npm ci --ignore-scripts`, 231 packages |
 | Rust content build | PASS, content hash `76178777f179d667`, 1,374,951-byte bundle |
 | TypeScript/Svelte check | PASS, 0 errors / 0 warnings |
-| Full client tests | PASS: 912 passed, 0 failed, 1 skipped (913 cases); only optional native KTX-Software coverage skipped |
+| Full client tests | PASS: 916 passed, 0 failed, 1 skipped (917 cases); only optional native KTX-Software coverage skipped |
 | Client production build | PASS; existing large-chunk warning remains |
 | Rust all-target tests | PASS: 310 passed, 0 failed, 7 SQL tests ignored |
 | Sweep tooling | 17 unit tests PASS; loopback integration PASS on isolated rerun; `cargo check` PASS. Initial loopback run during concurrent checks failed timing validity and is retained as a failed run, not erased |
-| LFS/secret/privacy final audit | PASS: LFS fsck; 704 LFS files, 635,237,859 bytes. Scoped privacy scan: 0 public-blocking findings across 2,143 candidate paths; this is not a full security certification |
+| LFS/secret/privacy final audit | PASS: LFS fsck; 719 LFS files, 725,249,492 bytes. Scoped privacy scan: 0 public-blocking findings across 2,143 candidate paths; this is not a full security certification |
 | Checkpoint HTTP/session smoke | PASS: session 204, whoami 200, 32-byte join ticket; content hash matches. Wrong localhost Origin was correctly rejected with 403; canonical 127.0.0.1 Origin passed. No credentials logged |
 | Staged whitespace review | Existing whitespace warnings in imported source/docs/licence files retained; no mass reformat or licence-byte changes |
 | Linux/cloud checks, physical-phone QA | NOT RUN |
@@ -122,7 +122,7 @@ Optional local tooling names include `XEXORIA_ASSET_SOURCE_ROOT`, `XEXORIA_AGENT
 
 ## Assets, privacy and bootstrap coordination
 
-Read `docs/CLOUD_ASSETS.json` for the required, generated and separately retained authoring inputs, sizes and hashes; read `docs/CLOUD_ASSET_LICENSES.md` for provenance and unresolved scope. The manifest records 818 required inputs: 815 copied (619.550 MiB) and three regenerated. All 815 copied hashes and 397 copyright notices match their sources. Five required city GLBs are 69–83 MiB each. Disabled DEV imports still require their files during bundling.
+Read `docs/CLOUD_ASSETS.json` for the required, generated and separately retained authoring inputs, sizes and hashes; read `docs/CLOUD_ASSET_LICENSES.md` for provenance and unresolved scope. The manifest records 823 required inputs: 820 copied (704.513 MiB) and three regenerated. Five new DEV asset imports are included, three optional fence source GLBs support reproducible authoring, and 400 copyright notices are recorded. Five required city GLBs are 69–83 MiB each. Disabled DEV imports still require their files during bundling.
 
 Binary art, fonts and codecs use Git LFS. Keep their real objects available; a small pointer text file is not a usable GLB. The first isolated Node run found indirect monster/stone fixtures omitted by static scanning; they were copied exactly from the PC. Five missing Hero02 fixture paths initially triggered skips, then were restored and all five rig/clip/staff tests passed. Final full-suite counts above include those tests. Large optional Blender/source exports remain on the PC and are listed for separate transfer, not silently discarded. No raw theme folder, private browser state, `.env`, private keys, dependency caches, build outputs, generated sweep logs or full local conversation history is intended for upload.
 
@@ -130,4 +130,21 @@ The target's actual committed bootstrap was inspected and merged with existing p
 
 This document is sealed in a documentation-only successor to the exact tested game-code commit above; all game/runtime files are identical. The final branch HEAD is the upload checkpoint and must be recorded by `git rev-parse HEAD` in cloud.
 
-Next priority: owner push approval, then materialize/build/test the approved branch HEAD in `xex`. Preserve the PC fallback until cloud acceptance. Resume art/material and gameplay work only after that checkpoint is reproducible.
+Next priority: materialize/build/test the approved branch HEAD in `xex`, then continue city art and performance work. Preserve the PC fallback until cloud acceptance. Resume art/material and gameplay work only after that checkpoint is reproducible.
+
+## 2026-10-05 reference-grounded refinement
+
+The original PC checkout remains intact. New work extends the existing code: the Star Lance has a wider faceted core and larger signature fragments using the same draws; a scene-owned, hero-only night fill reads the existing weather clock. Character equipment actions now fit beside the copy list on landscape screens, and selected copies keep a visible check marker. TH/EN and server transaction guards remain.
+
+Fresh local evidence verified 14 actual defeats, Base/Job level 2, three stat points, INT allocation (power25→27; maxSP32→37), refinement/unequip/equip of the same physical copy and reconnect. Full original client suite: 917 passed / 0 skipped; isolated checkpoint: 916 passed / 1 optional KTX tool skip. Production build and TS/Svelte passed. Rust source is unchanged from the 310 passed / 7 SQL ignored migration checkpoint.
+
+City art is explicit DEV review, not silent live promotion:
+- cityArrival=r03: four textured gate bodies;23,468triangles and all geometry bounds unchanged.
+- arrivalProps=r01: adapted22existing fence pieces,2,344/1,344/744triangle LODs, one shared1K PBR set; no collider changes. The lone mirrored glTF winding issue was repaired before final WebGPU review.
+- monsterStandins=on: independent access to existing CC0 interim creature models without loading the entire dressing experiment. These remain interim art.
+- cityArtCandidate=guardian-r03: existing approved-concept guardian form plus15selected Forge stone/plaster maps. Other39maps and donor geometry/UVs remain exact. **915,073 triangles exceeds the 900,000 city gate. Two strict metal-index reduction attempts were rejected; no R04 model exists and this candidate is not admitted.**
+- look=v2: existing shared sky/weather grade; new single-batch crystal-light footprints follow the12authored plaza lamps. They are hidden by day and while city preparation is incomplete, skip unsupported/stepped ground, use no new point lights/shadow targets, and are prewarmed with a bounded timeout.
+
+Actual server-backed keyboard movement along the flank bank and through the city passed. The straight centre approach is a canal, not a supported route; two initial test paths were corrected without changing physics. Native GL2day and GL2/WebGPUnight captures have zero recorded errors and unchanged source pins. One1080pWebGPU attempt and one extra baseline attempt ended without complete receipts and are retained as incomplete, not passes. Compact retries are1280×720; desktop arrival comparisons are1920×1080 CSS with actual render sizes stored in receipts. No phone/cloud/FPS qualification is implied.
+
+Local evidence is retained in planning/evidence/city-quality-20261005 and planning/evidence/mage-progression-20261004/native-20261005-* on the PC. Reference images and raw private browser/session state are not uploaded. Large-city ball canopies, simple flower disks/props, uniform ground, strong magenta doorway accents, weak small-prop shadows and the total city budget remain unresolved. The result is not a 99 percent reference match or a finished whole-map art pass.
